@@ -1,9 +1,9 @@
 ---
-title: This is my title
+title: IpyPublish
 layout: mylayout
 ---
 
-# IpyPublish
+
 
 A workflow for creating and editing publication ready scientific reports from one or more Jupyter Notebooks, without leaving the browser!
 
