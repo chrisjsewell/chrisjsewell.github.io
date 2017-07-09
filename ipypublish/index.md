@@ -51,8 +51,10 @@ For improved latex/pdf output, [ipynb_latex_setup.py](https://github.com/chrisjs
 
 To use this script, in the first cell of a notebook, insert:
 
-	from ipynb_latex_setup import *
-	
+```python
+from ipynb_latex_setup import *
+```
+
 It is recommended that you also set this cell as an initialisation cell (i.e. have `"init_cell": true` in the metadata)
 
 ## Running run_nbconvert script
@@ -102,18 +104,22 @@ For **titlepage**, enter in notebook metadata:
 To  **ignore a markdown cell**:
 
 ```json
+{
 	"latex_ignore" : true
+}
 ```
 
 For  **figures**, enter in cell metadata:
 
 ```json
+{
 	  "latex_figure": {
 	    "caption": "Figure caption.",
 	    "label": "fig:flabel",
 	    "placement": "H"
 	    "widefigure": false
 	  }
+}
 ```
 
 - `placement` is optional and constitutes using a placement arguments for the figure (e.g. \begin{figure}[H]). See https://www.sharelatex.com/learn/Positioning_images_and_tables.
@@ -122,12 +128,14 @@ For  **figures**, enter in cell metadata:
 For  **tables**, enter in cell metadata:
 
 ```json
+{
 "latex_table": {
 	    "caption": "Table caption.",
 	    "label": "tbl:tlabel"
 	    "placement": "H"
         "alternate": "gray!20"
 	  }
+}
 ```
 
 - `placement` is optional and constitutes using a placement arguments for the table (e.g. \begin{table}[H]). See https://www.sharelatex.com/learn/Positioning_images_and_tables.
@@ -137,9 +145,11 @@ For  **tables**, enter in cell metadata:
 For  **equations**, enter in cell metadata:
 
 ```json
+{
 	  "latex_equation": {
 	    "label": "eqn:elabel"
 	  }
+}
 ```
 
 label is optional
@@ -151,7 +161,9 @@ Especially for long captions, it would be prefered that captions can be viewed a
 If a **markdown cell** has the metadata tag:
 
 ```json
+{
 	"latex_caption": "fig:example_mpl"
+}
 ```
 
 Then, instead of it being input directly into the .tex file, it will be stored as a variable;
@@ -162,10 +174,12 @@ Then, instead of it being input directly into the .tex file, it will be stored a
 If a subsequent **figure or table** cell has a label matching any stored variable name, for example:
 
 ```json
+{
 	"latex_figure": {
 	"caption": "",
 	"label": "fig:example_mpl",
 	}
+}
 ```
 
 Then its caption will be overriden with that variable. 
