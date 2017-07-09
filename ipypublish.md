@@ -4,9 +4,7 @@ A workflow for creating and editing publication ready scientific reports from on
 
 ![](https://github.com/chrisjsewell/ipypublish/blob/master/example_workflow.gif)
 
-Hosted at [ipypublish](https://github.com/chrisjsewell/ipypublish).
-
-See [notebooks/Example.ipynb](https://github.com/chrisjsewell/ipypublish/blob/master/notebooks/Example.ipynb) and [converted/Example.pdf](https://github.com/chrisjsewell/ipypublish/blob/master/converted/Example.pdf) for an example of the potential input/output.
+Hosted at [ipypublish](https://github.com/chrisjsewell/ipypublish). See [notebooks/Example.ipynb](https://github.com/chrisjsewell/ipypublish/blob/master/notebooks/Example.ipynb) and [converted/Example.pdf](https://github.com/chrisjsewell/ipypublish/blob/master/converted/Example.pdf) for an example of the potential input/output.
 
 - [Workflow](#worklow)
 - [Setting up the environment](#setting-up-the-environment)
