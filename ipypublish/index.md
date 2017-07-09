@@ -116,7 +116,7 @@ For  **figures**, enter in cell metadata:
 	  "latex_figure": {
 	    "caption": "Figure caption.",
 	    "label": "fig:flabel",
-	    "placement": "H"
+	    "placement": "H",
 	    "widefigure": false
 	  }
 }
@@ -131,9 +131,9 @@ For  **tables**, enter in cell metadata:
 {
 "latex_table": {
 	    "caption": "Table caption.",
-	    "label": "tbl:tlabel"
-	    "placement": "H"
-        "alternate": "gray!20"
+	    "label": "tbl:tlabel",
+	    "placement": "H",
+            "alternate": "gray!20"
 	  }
 }
 ```
@@ -177,7 +177,7 @@ If a subsequent **figure or table** cell has a label matching any stored variabl
 {
 	"latex_figure": {
 	"caption": "",
-	"label": "fig:example_mpl",
+	"label": "fig:example_mpl"
 	}
 }
 ```
