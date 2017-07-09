@@ -9,7 +9,7 @@ from one or more Jupyter Notebooks, without leaving the browser!
 ## Workflow
 
 1. Create a notebook with some content!
-2. optionaly create a .bib file and logo image
+2. optionally create a .bib file and logo image
 3. Adjust the notebook and cell metadata. 
 4. Clone the ipypublish [GitHub repository](https://github.com/chrisjsewell/ipypublish) and run the run_nbconvert.sh script for either the specific notebook, or a folder containing multiple notebooks. 
 5. A converted folder will be created, into which final .tex .pdf and _viewpdf.html files will be output, named by the notebook or folder input
@@ -242,18 +242,18 @@ variable2 = 'something'
 ...
 ```
 
-The best-practice for this (in my opinion) is to use the JSON format (as long as the data isn't [relational](http://www.sarahmei.com/blog/2013/11/11/why-you-should-never-use-mongodb/)), because it is:
+The best-practice for accessing heirarchical data (in my opinion) is to use the JSON format (as long as the data isn't [relational](http://www.sarahmei.com/blog/2013/11/11/why-you-should-never-use-mongodb/)), because it is:
 
 - applicable for any data structure
 - lightweight and easy to read and edit
-- has a simple read/write mapping to python objects  (using [json](https://docs.python.org/3.6/library/json.html))
+- has a simple read/write mapping to python objects (using [json](https://docs.python.org/3.6/library/json.html))
 - widely used (especially in web technologies)
 
 A good way to store multiple bits of JSON data is in a [mongoDB](https://docs.mongodb.com/manual/administration/install-community/) and accessing it via [pymongo](https://api.mongodb.com/python/current/). This will also make it easy to move all the data to a cloud server at a later time, if required.
 
     conda install pymongo
 
-But, if the data is coming from files output from different simulation or experimental code, where the user has no control of the output format. Then writing JSON parsers may be the way to go, and this is where  [jsonextended](https://github.com/chrisjsewell/jsonextended) comes in, which implements:
+But, if the data is coming from files output from different simulation or experimental code, where the user has no control of the output format. Then writing JSON parsers may be the way to go, and this is where [jsonextended](https://github.com/chrisjsewell/jsonextended) comes in, which implements:
 
 - a lightweight plugin system to define bespoke classes for parsing different file extensions and data types.
 - a 'lazy loader' for treating an entire directory structure as a nested dictionary.
@@ -270,6 +270,11 @@ variable3 = data[['folder1','file2.csv','key1']]
 variable4 = data[['folder2','subfolder1','file3.other','key1']]
 ...    
 ```
+
+If you are dealing with numerical data arrays which are to large to be loaded directly in to memory, 
+then the [h5py](http://docs.h5py.org/en/latest/index.html) interface to the [HDF5](http://hdfgroup.org/) binary data format,
+allows for the manipultion of even multi-terabyte datasets stored on disk, as if they were real NumPy arrays. 
+These files are also supported by [jsonextended](https://github.com/chrisjsewell/jsonextended) lazy loading.
 
 ## Miscellaneous
 
