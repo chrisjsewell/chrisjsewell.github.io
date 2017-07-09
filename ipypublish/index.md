@@ -279,8 +279,8 @@ I also use the Firefox Split Pannel extension to view the {name}_viewpdf.html pa
 
 I took strong influence from:
 
-- http://blog.juliusschulz.de/blog/ultimate-ipython-notebook#cite2c
-- https://livingthing.danmackinlay.name/jupyter.html
-- Notebook concatination adapted from https://github.com/jupyter/nbconvert/issues/253
+- [Julius Schulz](http://blog.juliusschulz.de/blog/ultimate-ipython-notebook)
+- [Dan Mackinlay](https://livingthing.danmackinlay.name/jupyter.html)
+- Notebook concatination was adapted from [nbconvert issue#253](https://github.com/jupyter/nbconvert/issues/253)
 
 
