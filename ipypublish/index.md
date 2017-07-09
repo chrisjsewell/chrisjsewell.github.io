@@ -105,7 +105,7 @@ To  **ignore a markdown cell**:
 
 ```json
 {
-	"latex_ignore" : true
+    "latex_ignore" : true
 }
 ```
 
@@ -113,11 +113,11 @@ For  **figures**, enter in cell metadata:
 
 ```json
 {
-	  "latex_figure": {
-	    "caption": "Figure caption.",
-	    "label": "fig:flabel",
-	    "placement": "H",
-	    "widefigure": false
+    "latex_figure": {
+       "caption": "Figure caption.",
+       "label": "fig:flabel",
+       "placement": "H",
+       "widefigure": false
 	  }
 }
 ```
@@ -130,10 +130,10 @@ For  **tables**, enter in cell metadata:
 ```json
 {
 "latex_table": {
-	    "caption": "Table caption.",
-	    "label": "tbl:tlabel",
-	    "placement": "H",
-            "alternate": "gray!20"
+       "caption": "Table caption.",
+       "label": "tbl:tlabel",
+       "placement": "H",
+       "alternate": "gray!20"
 	  }
 }
 ```
@@ -146,9 +146,9 @@ For  **equations**, enter in cell metadata:
 
 ```json
 {
-	  "latex_equation": {
-	    "label": "eqn:elabel"
-	  }
+       "latex_equation": {
+       "label": "eqn:elabel"
+       }
 }
 ```
 
@@ -162,7 +162,7 @@ If a **markdown cell** has the metadata tag:
 
 ```json
 {
-	"latex_caption": "fig:example_mpl"
+       "latex_caption": "fig:example_mpl"
 }
 ```
 
@@ -175,9 +175,9 @@ If a subsequent **figure or table** cell has a label matching any stored variabl
 
 ```json
 {
-	"latex_figure": {
-	"caption": "",
-	"label": "fig:example_mpl"
+       "latex_figure": {
+       "caption": "",
+       "label": "fig:example_mpl"
 	}
 }
 ```
