@@ -2,16 +2,8 @@
 
 Hosted at [ipypublish](https://github.com/chrisjsewell/ipypublish). See [notebooks/Example.ipynb](https://github.com/chrisjsewell/ipypublish/blob/master/notebooks/Example.ipynb) and [converted/Example.pdf](https://github.com/chrisjsewell/ipypublish/blob/master/converted/Example.pdf) for an example of the potential input/output.
 
-- [Workflow](#worklow)
-- [Setting up the environment](#setting-up-the-environment)
-- [Setting up a Notebook ](#setting-up-a-notebook)
-- [Running run_nbconvert script](#running-run_nbconvert-script)
-- [Metadata Tags](#metadata-tags)
-    - [**NEW** Captions in a Markdown cell](#captions-in-a-markdown-cell)
-- [Citations and Bibliography](#citations-and-bibliography)
-- [Dealing with external data](#dealing-with-external-data)
-- [Miscellaneous](#miscellaneous)
-- [Acknowledgements](#acknowledgements)
+* TOC
+{:toc}
 
 ## Workflow
 
