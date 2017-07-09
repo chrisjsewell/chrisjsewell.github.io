@@ -1,5 +1,5 @@
 ---
-layout: mylayout
+theme: jekyll-theme-cayman
 title: IpyPublish
 description: A workflow for creating and editing publication ready scientific reports from one or more Jupyter Notebooks, without leaving the browser!
 ---
