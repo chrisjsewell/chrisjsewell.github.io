@@ -57,7 +57,7 @@ from ipynb_latex_setup import *
 
 It is recommended that you also set this cell as an initialisation cell (i.e. have `"init_cell": true` in the metadata)
 
-## Running run_nbconvert script
+## Running run_nbconvert.sh
 
 To see all options for this script:
 
