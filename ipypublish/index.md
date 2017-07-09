@@ -1,3 +1,8 @@
+---
+title: This is my title
+layout: post
+---
+
 # IpyPublish
 
 A workflow for creating and editing publication ready scientific reports from one or more Jupyter Notebooks, without leaving the browser!
