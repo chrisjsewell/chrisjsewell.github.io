@@ -1,6 +1,7 @@
-![](example_workflow.gif)
+A workflow for creating and editing publication ready scientific reports, 
+from one or more Jupyter Notebooks, without leaving the browser!
 
-Hosted at [ipypublish](https://github.com/chrisjsewell/ipypublish). See [notebooks/Example.ipynb](https://github.com/chrisjsewell/ipypublish/blob/master/notebooks/Example.ipynb) and [converted/Example.pdf](https://github.com/chrisjsewell/ipypublish/blob/master/converted/Example.pdf) for an example of the potential input/output.
+![](example_workflow.gif)
 
 * TOC
 {:toc}
@@ -10,10 +11,11 @@ Hosted at [ipypublish](https://github.com/chrisjsewell/ipypublish). See [noteboo
 1. Create a notebook with some content!
 2. optionaly create a .bib file and logo image
 3. Adjust the notebook and cell metadata. 
-4. Run the run_nbconvert.sh script for either the specific notebook, or a folder containing multiple notebooks. 
+4. Clone the ipypublish [GitHub repository](https://github.com/chrisjsewell/ipypublish) and run the run_nbconvert.sh script for either the specific notebook, or a folder containing multiple notebooks. 
 5. A converted folder will be created, into which final .tex .pdf and _viewpdf.html files will be output, named by the notebook or folder input
 
-The default latex template (latex_hide_input_output.tplx) outputs all raw/markdown cells (unless tagged latex_ignore), and then only output cells with latex_figure, latex_table or latex_equation meta tags (see [Metadata Tags](#metadata-tags)).
+The default latex template (latex_hide_input_output.tplx) outputs all raw/markdown cells (unless tagged latex_ignore), and then only output cells with latex [Metadata Tags](#metadata-tags). 
+See [Example.ipynb](https://github.com/chrisjsewell/ipypublish/blob/master/notebooks/Example.ipynb) and [Example.pdf](https://github.com/chrisjsewell/ipypublish/blob/master/converted/Example.pdf) for an example of the potential input and output.
 
 ## Setting up the environment
 
