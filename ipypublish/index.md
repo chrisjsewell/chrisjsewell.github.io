@@ -1,11 +1,8 @@
 ---
-title: IpyPublish
 layout: mylayout
+title: IpyPublish
+description: A workflow for creating and editing publication ready scientific reports from one or more Jupyter Notebooks, without leaving the browser!
 ---
-
-
-
-A workflow for creating and editing publication ready scientific reports from one or more Jupyter Notebooks, without leaving the browser!
 
 ![](example_workflow.gif)
 
