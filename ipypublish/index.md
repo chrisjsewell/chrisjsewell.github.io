@@ -14,7 +14,7 @@ from one or more Jupyter Notebooks, without leaving the browser!
 4. Clone the ipypublish [GitHub repository](https://github.com/chrisjsewell/ipypublish) and run the run_nbconvert.sh script for either the specific notebook, or a folder containing multiple notebooks. 
 5. A converted folder will be created, into which final .tex .pdf and _viewpdf.html files will be output, named by the notebook or folder input
 
-The default latex template (latex_hide_input_output.tplx) outputs all raw/markdown cells (unless tagged latex_ignore), and then only output cells with latex [Metadata Tags](#metadata-tags). 
+The default latex template outputs all markdown cells (unless tagged latex_ignore), and then only code and output cells with [latex metadata tags](#latex-metadata-tags). 
 See [Example.ipynb](https://github.com/chrisjsewell/ipypublish/blob/master/notebooks/Example.ipynb) and [Example.pdf](https://github.com/chrisjsewell/ipypublish/blob/master/converted/Example.pdf) for an example of the potential input and output.
 
 ## Setting up the environment
@@ -57,9 +57,9 @@ from ipynb_latex_setup import *
 
 It is recommended that you also set this cell as an initialisation cell (i.e. have `"init_cell": true` in the metadata)
 
-## Running run_nbconvert.sh
+## Converting Notebooks
 
-To see all options for this script:
+The run_nbconvert script handles parsing the notebooks to nbconvert, with the appropriate converter. To see all options for this script:
 
 	./run_nbconvert.sh -h
 
@@ -69,9 +69,65 @@ For example, to convert the Example.ipynb notebook:
 
 If a folder is input, then the .ipynb files it contains are processed and combined in 'natural' sorted order, i.e. 2_name.ipynb before 10_name.ipynb
 
+Currently, three output converters are availiable out-the-box (in the nbconvert/scripts folder):
+
+- latex_ipypublish_main.py is the default and converts to latex according to metadata tags.replicates the standard latex article template, which comes with nbconvert.
+- html_toc_toggle_input.py converts the entire notebook(s) to html and adds a table of contents sidebar and a button to toggle input code on/off. 
+
 The current `nbconvert --to pdf` does not correctly resolve references and citations (since it copies the files to a temporary directory). Therefore nbconvert is only used for the initial `nbconvert --to latex` phase, followed by using `latexmk` to create the pdf and correctly resolve everything.
- 
-## Metadata Tags
+
+### Creating a bespoke converter
+
+nbconvert uses [Jinja templates](https://jinja2.readthedocs.io/en/latest/intro.html) to specify the rules for how each element of the notebook should be converted, and also what each section of the latex file should contain. To create a [custom template](https://nbconvert.readthedocs.io/en/latest/customizing.html#Custom-Templates) they employ an inheritance method to build up this template. However, in my experience this makes it;
+
+1. non-trivial to understand the full conversion process (having to go through the inheritance tree to find where particular methods have been implemented/overriden)  
+2. difficult to swap in/out multiple rules
+
+To improve this, ipypublish implements a pluginesque system to systematically append to blank template placeholders. For example, to create a document (with standard formatting) with a natbib bibliography where only input markdown is output, we could create the following dictionary:
+
+```python
+
+my_tplx_dict = { 
+'meta_docstring':'with a natbib bibliography',
+
+'notebook_input_markdown':r"""
+    ((( cell.source | citation2latex | strip_files_prefix | convert_pandoc('markdown', 'json',extra_args=[]) | resolve_references | convert_pandoc('json','latex') )))
+""",
+
+'document_packages':r"""
+	\usepackage[numbers, square, super, sort&compress]{natbib}
+	\usepackage{doi} % hyperlink doi's	
+""",
+
+'document_bibliography':r"""
+\bibliographystyle{unsrtnat} % sort citations by order of first appearance
+\bibliography{bibliography}
+"""
+
+}
+```
+
+The converter would then look like this:
+
+```python
+
+from latex.create_tplx import create_tplx
+from latex.standard import standard_article as doc
+from latex.standard import standard_definitions as defs
+from latex.standard import standard_packages as package
+
+create_tplx('created.tplx',
+    [package.tplx_dict,defs.tplx_dict,doc.tplx_dict,
+    my_tplx_dict])
+
+c = get_config() 
+c.NbConvertApp.export_format = 'latex'   
+c.TemplateExporter.filters = c.Exporter.filters = {}
+c.Exporter.template_file = 'created.tplx'
+
+```
+
+## Latex Metadata Tags
 
 For **titlepage**, enter in notebook metadata:
 
@@ -101,23 +157,36 @@ For **titlepage**, enter in notebook metadata:
 - if run_nbconvert.sh is called on a folder, then the meta data from the first notebook will be used
 - logo should be the name (without extension) of the logo, then use e.g. `run_nbconvert.sh -l logos/logo_example.png Example.ipynb`
 
-To  **ignore a markdown cell**:
+To  **output ignore a markdown cell**:
 
 ```json
 {
-    "latex_ignore" : true
+	"latex_ignore" : true
 }
 ```
+
+To  **output a code cell**:
+
+```json
+{
+	"latex_code" : {
+		"exec_number":true
+	}
+}
+```
+
+- `exec number` is optional and contitutes showing the current execution number of the cell.
+
 
 For  **figures**, enter in cell metadata:
 
 ```json
 {
-    "latex_figure": {
-       "caption": "Figure caption.",
-       "label": "fig:flabel",
-       "placement": "H",
-       "widefigure": false
+	  "latex_figure": {
+	    "caption": "Figure caption.",
+	    "label": "fig:flabel",
+	    "placement": "H",
+	    "widefigure": false
 	  }
 }
 ```
@@ -130,10 +199,10 @@ For  **tables**, enter in cell metadata:
 ```json
 {
 "latex_table": {
-       "caption": "Table caption.",
-       "label": "tbl:tlabel",
-       "placement": "H",
-       "alternate": "gray!20"
+	    "caption": "Table caption.",
+	    "label": "tbl:tlabel",
+	    "placement": "H",
+            "alternate": "gray!20"
 	  }
 }
 ```
@@ -146,9 +215,9 @@ For  **equations**, enter in cell metadata:
 
 ```json
 {
-       "latex_equation": {
-       "label": "eqn:elabel"
-       }
+	  "latex_equation": {
+	    "label": "eqn:elabel"
+	  }
 }
 ```
 
@@ -156,13 +225,13 @@ label is optional
 
 ### Captions in a Markdown cell
 
-Especially for long captions, it would be prefered that captions can be viewed and edited in a notebook Markdown cell, rather than hidden in the metadata. Enter the following (experimental) approach, implemented in `latex_hide_input_output`.
+Especially for long captions, it would be prefered that captions can be viewed and edited in a notebook Markdown cell, rather than hidden in the metadata. This can be achieved using the default latex template:
 
 If a **markdown cell** has the metadata tag:
 
 ```json
 {
-       "latex_caption": "fig:example_mpl"
+	"latex_caption": "fig:example_mpl"
 }
 ```
 
@@ -175,9 +244,9 @@ If a subsequent **figure or table** cell has a label matching any stored variabl
 
 ```json
 {
-       "latex_figure": {
-       "caption": "",
-       "label": "fig:example_mpl"
+	"latex_figure": {
+	"caption": "",
+	"label": "fig:example_mpl"
 	}
 }
 ```
