@@ -2,3 +2,4 @@ theme: jekyll-theme-leap-day
 sidebar: right
 title: IpyPublish
 description: Scientific publishing made easy
+google_analytics: UA-64089951-3
