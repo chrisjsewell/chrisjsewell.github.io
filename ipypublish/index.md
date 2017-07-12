@@ -191,6 +191,23 @@ To control the output of **contents tables**:
 }
 ```
 
+To override the default **placement of figures and tables**:
+
+```json
+{
+"latex_doc": {
+    "figure": {
+      "placement": "!bp"
+      }
+    "table": {
+      "placement": "!bp"
+      }
+  }
+}
+```
+
+See [Positioning_images_and_tables](https://www.sharelatex.com/learn/Positioning_images_and_tables) for placement options.
+
 ### Cell Tags
 
 To  **ignore any cell**:
