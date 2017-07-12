@@ -280,7 +280,7 @@ label is optional
 
 Especially for long captions, it would be prefered that they can be viewed and edited in a notebook Markdown cell, rather than hidden in the metadata. This can be achieved using the default latex template:
 
-If a **markdown cell** has the metadata tag:
+If a **markdown input** or **latex output** cell has the metadata tag:
 
 ```json
 {
