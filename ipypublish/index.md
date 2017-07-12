@@ -139,28 +139,37 @@ c.Exporter.template_file = 'created.tplx'
 
 ## Latex Metadata Tags
 
+All information additional information, used to specify how a particular notebook/cell in latex is represented, is stored in the metadata under:
+
+```json
+{
+		"latex_doc": {}
+}
+```
+
 ### Document Tags
 
 For **titlepage**, enter in notebook metadata:
 
 ```json
 {
-	"latex_titlepage": {
+"latex_doc": {
+  "titlepage": {
 	"author": "Authors Name",
 	"email": "authors@email.com",
 	"supervisors": [
-	"First Supervisor",
-	"Second Supervisor"
+	  "First Supervisor",
+	  "Second Supervisor"
 	],
 	"title": "Main-Title",
 	"subtitle": "Sub-Title",
 	"tagline": "A tagline for the report.",
 	"institution": [
-	"Institution1",
-	"Institution2"
+	  "Institution1",
+	  "Institution2"
 	],
 	"logo": "logo_example"
-	}
+  }
 }
 ```
 
@@ -173,20 +182,24 @@ To control the output of **contents tables**:
 
 ```json
 {
-  "latex_toc": true,
-  "latex_listfigures": true,
-  "latex_listtables": true,
-  "latex_listcode": true,
+"latex_doc": {
+  "toc": true,
+  "listfigures": true,
+  "listtables": true,
+  "listcode": true,
+  }
 }
 ```
 
 ### Cell Tags
 
-To  **output ignore a markdown cell**:
+To  **ignore any cell**:
 
 ```json
 {
-	"latex_ignore" : true
+"latex_doc": {
+	"ignore" : true
+	}
 }
 ```
 
@@ -194,13 +207,15 @@ To  **output a code block**:
 
 ```json
 {
-  "latex_code": {
+"latex_doc": {
+  "code": {
     "asfloat": true,
     "caption": "",
     "label": "code:example_sym",
     "widefigure": false,
     "placement": "H"
-  },
+    }
+  }
 }
 ```
 
@@ -214,12 +229,14 @@ For  **figures**, enter in cell metadata:
 
 ```json
 {
-	  "latex_figure": {
-	    "caption": "Figure caption.",
-	    "label": "fig:flabel",
-	    "placement": "H",
-	    "widefigure": false
-	  }
+"latex_doc": {
+  "figure": {
+    "caption": "Figure caption.",
+    "label": "fig:flabel",
+    "placement": "H",
+    "widefigure": false
+    }
+  }
 }
 ```
 
@@ -230,12 +247,14 @@ For  **tables**, enter in cell metadata:
 
 ```json
 {
-"latex_table": {
+"latex_doc": {
+     "table": {
 	    "caption": "Table caption.",
 	    "label": "tbl:tlabel",
 	    "placement": "H",
             "alternate": "gray!20"
 	  }
+   }
 }
 ```
 
@@ -247,9 +266,11 @@ For  **equations**, enter in cell metadata:
 
 ```json
 {
-	  "latex_equation": {
+  "latex_doc": {
+	  "equation": {
 	    "label": "eqn:elabel"
 	  }
+  }
 }
 ```
 
@@ -263,7 +284,9 @@ If a **markdown cell** has the metadata tag:
 
 ```json
 {
-	"latex_caption": "fig:example_mpl"
+ "latex_doc": {
+	"caption": "fig:example_mpl"
+	}
 }
 ```
 
@@ -276,10 +299,12 @@ If a subsequent **figure, table or code** cell has a label matching any stored v
 
 ```json
 {
-	"latex_figure": {
+"latex_doc": {
+	"figure": {
 	"caption": "",
 	"label": "fig:example_mpl"
 	}
+  }
 }
 ```
 
@@ -324,6 +349,12 @@ Can use:
 
 to make it look better in html, but not specifically available for drag and drop in Zotero 
 	
+## Live Slideshows
+
+The [Reveal.js - Jupyter/IPython Slideshow Extension (RISE)](https://github.com/damianavila/RISE) notebook extension offers rendering as a Reveal.js-based slideshow, where you can execute code or show to the audience whatever you can show/do inside the notebook itself! Click on the image to see a demo:
+
+[![RISE Demo](https://img.youtube.com/vi/sXyFa_r1nxA/0.jpg)](https://www.youtube.com/watch?v=sXyFa_r1nxA) 
+
 ## Dealing with external data
 
 A goal for scientific publishing is automated reproducibility of analyses, which the Jupyter notebook excels at. But, more than that, it should be possible to efficiently reproduce the analysis with different data sets. This entails having **one point of access** to a data set within the notebook, rather than having copy-pasted data into variables, i.e. this:
