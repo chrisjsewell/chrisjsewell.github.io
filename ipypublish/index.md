@@ -89,7 +89,7 @@ If a folder is input, then the .ipynb files it contains are processed and combin
 All available converters are also listed by `nbpublish -h`. Three of note are:
 
 - **latex_ipypublish** is the default and converts cells to latex according to metadata tags on an 'opt in' basis.
-- **html_toc_toggle** converts the entire notebook(s) to html and adds a table of contents sidebar and a button to toggle input code and output cells visible/hidden. 
+- **html_ipypublish** converts the entire notebook(s) to html and adds a table of contents sidebar and a button to toggle input code and output cells visible/hidden, with latex citations and references resolved. 
 - **slides_ipypublish** converts the notebook to [reveal.js](http://lab.hakim.se/reveal-js/#/) slides, with latex citations and references resolved. See the [Live Slideshows](#live-slideshows) section for using `nbpresent` to serve these slides to a webbrowser. 
 
 The current `nbconvert --to pdf` does not correctly resolve references and citations (since it copies the files to a temporary directory). Therefore nbconvert is only used for the initial `nbconvert --to latex` phase, followed by using `latexmk` to create the pdf and correctly resolve everything.
