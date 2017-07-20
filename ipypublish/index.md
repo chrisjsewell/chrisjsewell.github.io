@@ -24,9 +24,8 @@ In essence, the dream is to have the ultimate hybrid of Jupyter Notebook, WYSIWY
 5. A converted folder will be created, into which final .tex .pdf and _viewpdf.html files will be output, named by the notebook or folder input
 
 The default latex template outputs all markdown cells (unless tagged latex_ignore), and then only code and output cells with [latex metadata tags](#latex-metadata-tags). 
-See [Example.ipynb](https://github.com/chrisjsewell/ipypublish/blob/master/example/notebooks/Example.ipynb), [Example.pdf](https://chrisjsewell.github.io/ipypublish/Example.view_pdf.html), 
-[Example.html](https://chrisjsewell.github.io/ipypublish/Example.html) and
-[Example.slides.html](https://chrisjsewell.github.io/ipypublish/Example.slides.html#/) for an example of the potential input and output.
+See [Example.ipynb](https://github.com/chrisjsewell/ipypublish/blob/master/example/notebooks/Example.ipynb), [Example.pdf](https://chrisjsewell.github.io/ipypublish/Example.view_pdf.html),
+[Example.html](https://chrisjsewell.github.io/ipypublish/Example.html) and [Example.slides.html](https://chrisjsewell.github.io/ipypublish/Example.slides.html#/) for examples of the potential input and output.
 
 ## Setting up the environment
 
@@ -76,6 +75,8 @@ from ipypublish.scripts.ipynb_latex_setup import *
 
 It is recommended that you also set this cell as an initialisation cell (i.e. have `"init_cell": true` in the metadata)
 
+For existing notebooks: the **nb_ipypublish_all** and **nb_ipypublish_nocode** converters (see below) can be helpful for outputting a notebook, with identical content to that input, but with default metatags defining how content is to be output.
+
 ## Converting Notebooks
 
 The nbpublish script handles parsing the notebooks to nbconvert, with the appropriate converter. To see all options for this script:
@@ -90,59 +91,149 @@ If a folder is input, then the .ipynb files it contains are processed and combin
 
 All available converters are also listed by `nbpublish -h`. Three of note are:
 
-- **latex_ipypublish** is the default and converts cells to latex according to metadata tags on an 'opt in' basis.
-- **html_ipypublish** converts the entire notebook(s) to html and adds a table of contents sidebar and a button to toggle input code and output cells visible/hidden, with latex citations and references resolved. 
-- **slides_ipypublish** converts the notebook to [reveal.js](http://lab.hakim.se/reveal-js/#/) slides, with latex citations and references resolved. See the [Live Slideshows](#live-slideshows) section for using `nbpresent` to serve these slides to a webbrowser. 
+- **latex_ipypublish_main_** is the **default** and converts cells to latex according to metadata tags on an 'opt in' basis. Note that, for this converter, **no code cells or output** will appear in the final tex/pdf document unless they have a suitable [latex_doc metadata tag](#latex-metadata-tags).
+- **html_ipypublish_main** converts the entire notebook(s) to html and adds a table of contents sidebar and a button to toggle input code and output cells visible/hidden, with latex citations and references resolved. 
+- **slides_ipypublish_main** converts the notebook to [reveal.js](http://lab.hakim.se/reveal-js/#/) slides, with latex citations and references resolved. See the [Live Slideshows](#live-slideshows) section for using `nbpresent` to serve these slides to a webbrowser. 
+- The **all** and **nocode** variants of these converters preprocess a copy of the notebook, to add default metadata tags to the notebook and all cells, such that all output is rendered (with or without the code)
 
 The current `nbconvert --to pdf` does not correctly resolve references and citations (since it copies the files to a temporary directory). Therefore nbconvert is only used for the initial `nbconvert --to latex` phase, followed by using `latexmk` to create the pdf and correctly resolve everything.
 
 ### Creating a bespoke converter
 
-nbconvert uses [Jinja templates](https://jinja2.readthedocs.io/en/latest/intro.html) to specify the rules for how each element of the notebook should be converted, and also what each section of the latex file should contain. To create a [custom template](https://nbconvert.readthedocs.io/en/latest/customizing.html#Custom-Templates) they employ an inheritance method to build up this template. However, in my experience this makes it;
+On instatiation, ipypublish loads all converter plugins in its internal [export_plugins](https://github.com/chrisjsewell/ipypublish/tree/master/ipypublish/export_plugins) folder. Additionally, when `nbpublish` or `nbpresent` are called, if a folder named **ipypublish_plugins** is present in the current working directory, they will load all plugins in this folder. Programatically, it is the `ipypublish.export_plugins.add_directory` function which is being called and adding modules to an internal dictionary.
 
-1. non-trivial to understand the full conversion process (having to go through the inheritance tree to find where particular methods have been implemented/overriden)  
-2. difficult to swap in/out multiple rules
+The simplest application of this, would be to copy the [latex_ipypublish_all.py](https://github.com/chrisjsewell/ipypublish/blob/master/ipypublish/export_plugins/latex_ipypublish_all.py) file (or the html/slides variants) and make changes to the `cell_defaults` and `nb_defaults` dictionaries to suit your output needs.
 
-To improve this, ipypublish implements a pluginesque system to systematically append to blank template placeholders. For example, to create a document (with standard formatting) with a natbib bibliography where only input markdown is output, we could create the following dictionary:
+A plugin is a python (.py) file with at least the following four variables (i.e. it's interface spec):
+
+1. a **docstring** describing its output format
+2. an **oformat** string,  specifying a base exporter prefix (for any of the exporters listed [here](https://nbconvert.readthedocs.io/en/latest/api/exporters.html#specialized-exporter-classes))
+3. a **config** dictionary, containing any configuration option (as a string) listed [here](https://nbconvert.readthedocs.io/en/latest/api/exporters.html#specialized-exporter-classes). This is mainly to supply preprocessors (which act on the notbook object before it is parsed) or filters (which are functions supplied to the jinja template).
+4. a **template** string, specifying the [Jinja templates](https://jinja2.readthedocs.io/en/latest/intro.html), which contains rules for how each element of the notebook should be converted, and also what each section of the latex file should contain. 
+
+So a simple plugin would look like this (create_tplx will be explained below) 
 
 ```python
-
-my_tplx_dict = { 
-'meta_docstring':'with a natbib bibliography',
-
-'notebook_input_markdown':r"""
-    ((( cell.source | citation2latex | strip_files_prefix | convert_pandoc('markdown', 'json',extra_args=[]) | resolve_references | convert_pandoc('json','latex') )))
-""",
-
-'document_packages':r"""
-	\usepackage[numbers, square, super, sort&compress]{natbib}
-	\usepackage{doi} % hyperlink doi's	
-""",
-
-'document_bibliography':r"""
-\bibliographystyle{unsrtnat} % sort citations by order of first appearance
-\bibliography{bibliography}
+"""this exporter exports a .tex file with nothing in it
 """
+from ipypublish.latex.create_tplx import create_tplx
+oformat = 'Latex'
+config = {}
+template = create_tplx()
 
-}
 ```
 
-The converter would then look like this:
+This is similar to how nbconvert works, except for one key difference, 
+the plugin must specify the entire jinja template (rather than using a default one).
+The advantage of this, is that the plugin has complete control over the look of the final document.
+
+To aid in the creation of the jinja template, the `create_tplx` (for latex) and `create_tpl` (for html) functions
+work by creating an inital *skeleton* template, with placeholders in all the relevant [structural blocks](https://nbconvert.readthedocs.io/en/latest/customizing.html#Template-structure). 
+They then take a list of *fragment* dictionaries which progressively append input to the relevant blocks. 
+So, for instance:   
 
 ```python
+"""exports a .tex file containing 
+some latex setup and
+only input markdown cells from the notebook 
+"""
+from ipypublish.latex.create_tplx import create_tplx
+oformat = 'Latex'
+config = {}
+
+doc_dict = {
+	'document_docclass':r'\documentclass[11pt]{article}',
+	'document_packages':r"""
+	\usepackage{caption}
+	 \usepackage{amsmath}
+	"""
+}
+
+mkdown_dict = {
+  'notebook_input_markdown':r"""
+ 	((( cell.source | citation2latex | strip_files_prefix | convert_pandoc('markdown', 'json',extra_args=[]) | resolve_references | convert_pandoc('json','latex') )))
+	"""
+}
+
+template = create_tplx([doc_dict,mkdown_dict])
+
+```
+
+This approach allows independant aspects of the document to be 
+stored separately then pieced together in the desired manner. 
+ipypublish stores all of the standard fragments in separate modules,
+for instance the latex_standard_article plugin looks like this: 
+
+```python
+"""latex article in the standard nbconvert format
+"""
 
 from ipypublish.latex.create_tplx import create_tplx
 from ipypublish.latex.standard import standard_article as doc
-from ipypublish.latex.standard import standard_definitions as defs
 from ipypublish.latex.standard import standard_packages as package
+from ipypublish.latex.standard import standard_definitions as defs
+from ipypublish.latex.standard import standard_contents as content
+from ipypublish.latex.standard import in_out_prompts as prompts
 
 oformat = 'Latex'
-template = create_tplx([package.tplx_dict,defs.tplx_dict,
-		     doc.tplx_dict,my_tplx_dict])
+template = create_tplx(
+    [package.tplx_dict,defs.tplx_dict,doc.tplx_dict,
+    content.tplx_dict,prompts.tplx_dict])
 
-config = {'TemplateExporter.filters':{},
-          'Exporter.filters':{}}
+config = {}
 
+```
+
+Now, if you wanted mainly the same output format but without input and output prompts shown,
+simply copy this plugin but remove the prompts.tplx_dict.
+
+By default, sections are appended to, so;
+
+```python
+dict1 = {'notebook_input':'a'}
+dict2 = {'notebook_input':'b'}
+template = create_tplx([dict1,dict2])
+```
+
+would show a, then b. But, if you want to redefine a particular section(s);
+
+```python
+dict1 = {'notebook_input':'a'}
+dict2 = {
+	'overwrite':['notebook_input'],
+	'notebook_input':'b'}
+template = create_tplx([dict1,dict2])
+```
+
+will only show b.
+
+Note that, the `create_tpl` template additionally has *pre* and *post* placeholder. 
+This is helpful for wrapping cells in extra html tags. For instance:
+
+```python
+
+dict1 = {
+  'notebook_input_markdown_pre':r"<div class="inner">",
+  'notebook_input_markdown':"test",
+  'notebook_input_markdown_post':r"</div>",
+}
+dict2 = {
+  'notebook_input_markdown_pre':r"<div class="outer">",
+  'notebook_input_markdown_post':r"</div>",
+}
+
+template = create_tpl([dict1,dict2])
+
+```
+
+will result in a template containing:
+
+```html
+<div class="outer">
+<div class="inner">
+test
+</div>
+</div>
 ```
 
 ## Latex Metadata Tags
@@ -154,6 +245,14 @@ All information additional information, used to specify how a particular noteboo
 		"latex_doc": {}
 }
 ```
+
+To access metadata, in the Jupyter Notebook Toolbar:
+
+- For notebook level: go to Edit -> Edit Notebook Metadata
+- For cell level: go to View -> Cell Toolbar -> Edit Metadata and a button will appear above each cell.
+
+**Please note**, setting a value to `"value":{}` is the same as `"value":false` so,
+if you are not setting additional options, use `"value":true`.
 
 ### Document Tags
 
@@ -189,6 +288,7 @@ For **titlepage**, enter in notebook metadata:
 	  "Institution2"
 	],
 	"logo": "path/to/logo_example.png"
+	}
   }
 }
 ```
@@ -246,6 +346,7 @@ To  **output a code block**:
 {
 "latex_doc": {
   "code": {
+	"format" : {},
     "asfloat": true,
     "caption": "",
     "label": "code:example_sym",
@@ -258,11 +359,35 @@ To  **output a code block**:
 
 all extra tags are optional:
 
+- `format` can contain any keywords related to the latex [Listings](https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings) package (such as syntax highlighting colors)
+- `asfloat` contitutes whether the code is wrapped in a codecell (float) environment or is inline.
+- all other tags work the same as figure (below).
+
+To  **output text produced by the code** (e.g. *via* the `print` command):
+
+```json
+{
+"latex_doc": {
+  "text": {
+	"format" : {},
+    "asfloat": true,
+    "caption": "",
+    "label": "code:example_sym",
+    "widefigure": false,
+    "placement": "H"
+    }
+  }
+}
+```
+
+all extra tags are optional:
+
+- `format` can contain any keywords related to the latex [Listings](https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings) package (such as syntax highlighting colors)
 - `asfloat` contitutes whether the code is wrapped in a codecell (float) environment or is inline.
 - all other tags work the same as figure (below).
 
 
-For  **figures**, enter in cell metadata:
+For **figures** (i.e. any graphics output by the code), enter in cell metadata:
 
 ```json
 {
@@ -277,10 +402,11 @@ For  **figures**, enter in cell metadata:
 }
 ```
 
+- `caption` and `label` are optional
 - `placement` is optional and constitutes using a placement arguments for the figure (e.g. \begin{figure}[H]). See [Positioning_images_and_tables](https://www.sharelatex.com/learn/Positioning_images_and_tables).
 - `widefigure` is optional and constitutes expanding the figure to the page width (i.e. \begin{figure*}) (placement arguments will then be ignored)
 
-For  **tables**, enter in cell metadata:
+For  **tables** (e.g. those output by `pandas`), enter in cell metadata:
 
 ```json
 {
@@ -295,11 +421,12 @@ For  **tables**, enter in cell metadata:
 }
 ```
 
+- `caption` and `label` are optional
 - `placement` is optional and constitutes using a placement arguments for the table (e.g. \begin{table}[H]). See [Positioning_images_and_tables](https://www.sharelatex.com/learn/Positioning_images_and_tables).
 - `alternate` is optional and constitutes using alternating colors for the table rows (e.g. \rowcolors{2}{gray!25}{white}). See (https://tex.stackexchange.com/a/5365/107738)[https://tex.stackexchange.com/a/5365/107738].
 
 
-For  **equations**, enter in cell metadata:
+For  **equations** (e.g. thos output by `sympy`), enter in cell metadata:
 
 ```json
 {
@@ -311,11 +438,11 @@ For  **equations**, enter in cell metadata:
 }
 ```
 
-label is optional
+- label is optional
 
 ### Captions in a Markdown cell
 
-Especially for long captions, it would be prefered that they can be viewed and edited in a notebook Markdown cell, rather than hidden in the metadata. This can be achieved using the default latex template:
+Especially for long captions, it would be prefered that they can be viewed and edited in a notebook Markdown cell, rather than hidden in the metadata. This can be achieved using the default ipypublish converters:
 
 If a **markdown input** or **latex output** cell has the metadata tag:
 
@@ -327,43 +454,25 @@ If a **markdown input** or **latex output** cell has the metadata tag:
 }
 ```
 
-Then, instead of it being input directly into the .tex file, it will be stored as a variable;
+Then, during the the postprocessor stage, this cell will be removed from the notebook object, and its text stored as a *resource*;
 
-- the variable's name is created from the latex_caption value
-- the variable's value is the first paragraph of the markdown text (i.e. nothing after a \n) 
+- the cell's text is the first paragraph of the markdown string, i.e. nothing after a newline (\n) 
+- if there are multiple instance of the same cation name, then only the last instance will be stored
 
-If a subsequent **figure, table or code** cell has a label matching any stored variable name, for example:
+During the jinja templating, if a **figure, table or code** cell has a label matching any stored caption name, for example:
 
 ```json
 {
 "latex_doc": {
 	"figure": {
-	"caption": "",
-	"label": "fig:example_mpl"
+	  "caption": "",
+	  "label": "fig:example_mpl"
 	}
   }
 }
 ```
 
-Then its caption will be overriden with that variable. 
-
-The manner in which this works can be found in [Example.tex](https://github.com/chrisjsewell/ipypublish/blob/master/converted/):
-
-```latex
-\newcommand{\kyfigcexampleumpl}{A matplotlib figure, with the caption set in the markdowncell above the figure.}
-
-\begin{figure}
-    \begin{center}\adjustimage{max size={0.9\linewidth}{0.4\paperheight}}{Example_files/Example_14_0.pdf}\end{center}
-    \ifdefined\kyfigcexampleumpl
-	\caption{\kyfigcexampleumpl}
-    \else
-	\caption{}
-    \fi
-    \label{fig:example_mpl}
-\end{figure}
-```
-
-Note, this approach has the implicit contraint that caption cells must be above the corresponding figure/table to be output in the latex/pdf.
+Then its caption will be overriden with the stored text. 
 
 ## Citations and Bibliography
 
@@ -392,7 +501,8 @@ The **nbpresent** script handles serving [reveal.js](http://lab.hakim.se/reveal-
 
 	nbpresent -h
 	
-Note that, for offline use, simply download the lates version of reveal.js [here](https://github.com/hakimel/reveal.js/releases), rename the entire folder to reveal.js and place it in the same folder as the converted .slides.html file. The slides can also be save to PDF my appending `pdf-export` to the url (see [here](https://github.com/hakimel/reveal.js#pdf-export) for details).
+Note that, for offline use, simply download the latest version of reveal.js [here](https://github.com/hakimel/reveal.js/releases), rename the entire folder to reveal.js and place it in the same folder as the converted .slides.html file. The slides can also be save to PDF my appending `pdf-export` to the url (see [here](https://github.com/hakimel/reveal.js#pdf-export) for details).
+
 
 Additionally, the [Reveal.js - Jupyter/IPython Slideshow Extension (RISE)](https://github.com/damianavila/RISE) notebook extension offers rendering as a Reveal.js-based slideshow, where you can execute code or show to the audience whatever you can show/do inside the notebook itself! Click on the image to see a demo:
 
@@ -464,3 +574,5 @@ I took strong influence from:
 - [Julius Schulz](http://blog.juliusschulz.de/blog/ultimate-ipython-notebook)
 - [Dan Mackinlay](https://livingthing.danmackinlay.name/jupyter.html)
 - Notebook concatination was adapted from [nbconvert issue#253](https://github.com/jupyter/nbconvert/issues/253)
+
+
