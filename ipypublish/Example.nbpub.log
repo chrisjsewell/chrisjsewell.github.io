@@ -1,0 +1,22 @@
+started ipypublish at Thu Jul 20 18:54:18 2017
+logging to: /Users/cjs14/GitHub/ipypublish/converted/Example.nbpub.log
+running for ipynb(s) at: example/notebooks/Example.ipynb
+with conversion: slides_ipypublish_main
+Reading notebook
+getting output format from exporter plugin
+running nbconvert
+resolving external file paths in latex_doc metadata to: example/notebooks/Example.ipynb
+extracting caption cells
+processing notebook for html output in latex_doc metadata to: example/notebooks/Example.ipynb
+converting latex tags to html
+reading bibliopath: /Users/cjs14/GitHub/ipypublish/example/bibliographies/example.bib
+outputting converted file to: /Users/cjs14/GitHub/ipypublish/converted/Example.slides.html
+process finished successfully
+Redirecting reveal.js requests to https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0
+Redirecting reveal.js requests to https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0
+Attempting to serve at http://127.0.0.1:8000/Example.slides.html
+Serving your slides at http://127.0.0.1:8000/Example.slides.html
+Use Control-C to stop this server
+200 GET /Example.slides.html (127.0.0.1) 13.68ms
+
+Interrupted
