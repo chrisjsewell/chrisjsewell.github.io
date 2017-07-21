@@ -21471,7 +21471,8 @@ require(
                   condition: function() { return !document.body.classList; } },
                 { src: "reveal.js/plugin/toc-progress/toc-progress.js",
                   async: true,
-                  callback: function() { toc_progress.initialize(); toc_progress.create(); } }
+                  callback: function() { toc_progress.initialize(); },
+			      reducescroll: 'reduce' }
             ]
         });
 
