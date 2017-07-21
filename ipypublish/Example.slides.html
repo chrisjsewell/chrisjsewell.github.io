@@ -21467,9 +21467,11 @@ require(
             dependencies: [
                 { src: "reveal.js/lib/js/classList.js",
                   condition: function() { return !document.body.classList; } },
-                { src: "reveal.js/plugin/notes/notes.js",
+                { src: "reveal.js/lib/js/classList.js",
+                  condition: function() { return !document.body.classList; } },
+                { src: "plugin/toc-progress/toc-progress.js",
                   async: true,
-                  condition: function() { return !!document.body.classList; } }
+                  condition: function() { toc_progress.initialize(); toc_progress.create(); } }
             ]
         });
 
