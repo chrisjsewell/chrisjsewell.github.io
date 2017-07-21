@@ -1,4 +1,4 @@
-A workflow for creating and editing publication ready scientific reports, 
+A workflow for creating and editing publication ready scientific reports and presentations, 
 from one or more Jupyter Notebooks, without leaving the browser!
 
 ![](example_workflow.gif)
