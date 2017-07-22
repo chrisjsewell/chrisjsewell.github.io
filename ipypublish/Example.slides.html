@@ -21546,7 +21546,10 @@ require(
 				{ src: "reveal.js/plugin/menu/menu.js" },
                 { src: "reveal.js/plugin/notes/notes.js",
                   async: true,
-                  condition: function() { return !!document.body.classList; } }
+                  condition: function() { return !!document.body.classList; } },
+                { src: "reveal.js/plugin/toc-progress/toc-progress.js",
+                  async: true,
+                  callback: function() { toc_progress.initialize(); toc_progress.create(); } }
             ]
         });
 
