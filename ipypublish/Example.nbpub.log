@@ -1,143 +1,16 @@
-INFO:main:started ipypublish at Fri Jul 21 06:13:42 2017
+INFO:main:started ipypublish at Mon Jul 24 10:37:47 2017
 INFO:main:logging to: /Users/cjs14/GitHub/ipypublish/converted/Example.nbpub.log
 INFO:main:running for ipynb(s) at: example/notebooks/Example.ipynb
-INFO:main:with conversion: latex_ipypublish_main
+INFO:main:with conversion: html_ipypublish_main
 INFO:nbmerge:Reading notebook
 INFO:main:getting output format from exporter plugin
 INFO:nbexport:running nbconvert
-INFO:latex_doc:resolving external file paths in latex_doc metadata to: example/notebooks/Example.ipynb
-INFO:latex_doc:extracting caption cells
-INFO:main:outputting converted file to: /Users/cjs14/GitHub/ipypublish/converted/Example.tex
-INFO:main:dumping external files to: /Users/cjs14/GitHub/ipypublish/converted/Example_files
-INFO:main:running pdf conversion
-INFO:pdfexport:running: latexmk -bibtex -pdf --interaction=batchmode <outpath>
-INFO:pdfexport:latexmk: Latexmk: This is Latexmk, John Collins, 5 February 2015, version: 4.43a.
-INFO:pdfexport:latexmk: Rule 'pdflatex': Rules & subrules not known to be previously run:
-INFO:pdfexport:latexmk: pdflatex
-INFO:pdfexport:latexmk: Rule 'pdflatex': The following rules & subrules became out-of-date:
-INFO:pdfexport:latexmk: 'pdflatex'
-INFO:pdfexport:latexmk: ------------
-INFO:pdfexport:latexmk: Run number 1 of rule 'pdflatex'
-INFO:pdfexport:latexmk: ------------
-INFO:pdfexport:latexmk: ------------
-INFO:pdfexport:latexmk: Running 'pdflatex  --interaction=batchmode -recorder  "/var/folders/dm/b2qnkb_n3r72slmpxlfmcjvm00lbnd/T/tmp_ebm0gve/Example.tex"'
-INFO:pdfexport:latexmk: ------------
-INFO:pdfexport:latexmk: Latexmk: applying rule 'pdflatex'...
-INFO:pdfexport:latexmk: This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex)
-INFO:pdfexport:latexmk: restricted \write18 enabled.
-INFO:pdfexport:latexmk: entering extended mode
-INFO:pdfexport:latexmk: Latexmk: Non-existent bbl file 'Example.bbl'
-INFO:pdfexport:latexmk: No file Example.bbl.
-INFO:pdfexport:latexmk: Latexmk: References changed.
-INFO:pdfexport:latexmk: Latexmk: References changed.
-INFO:pdfexport:latexmk: Latexmk: Log file says output to 'Example.pdf'
-INFO:pdfexport:latexmk: Latexmk: List of undefined refs and citations:
-INFO:pdfexport:latexmk: Citation `kirkeminde_thermodynamic_2012' on page 3 undefined on input line 456
-INFO:pdfexport:latexmk: Citation `zelenyak_molecular_2016' on page 3 undefined on input line 454
-INFO:pdfexport:latexmk: Reference `code:example_mpl' on page 1 undefined on input line 449
-INFO:pdfexport:latexmk: Reference `eqn:example_sympy' on page 1 undefined on input line 449
-INFO:pdfexport:latexmk: Reference `eqn:example_sympy' on page 1 undefined on input line 543
-INFO:pdfexport:latexmk: Reference `fig:example' on page 1 undefined on input line 448
-INFO:pdfexport:latexmk: Reference `fig:example' on page 1 undefined on input line 452
-INFO:pdfexport:latexmk: Reference `fig:example_h' on page 1 undefined on input line 452
-INFO:pdfexport:latexmk: Reference `fig:example_mpl' on page 1 undefined on input line 496
-INFO:pdfexport:latexmk: Reference `fig:example_v' on page 1 undefined on input line 452
-INFO:pdfexport:latexmk: Reference `tbl:example' on page 1 undefined on input line 448
-INFO:pdfexport:latexmk: Reference `tbl:example' on page 1 undefined on input line 511
-INFO:pdfexport:latexmk: Latexmk: Found bibliography file(s) [Example_files/example.bib]
-INFO:pdfexport:latexmk: Latexmk: Summary of warnings:
-INFO:pdfexport:latexmk: Latex failed to resolve 12 reference(s)
-INFO:pdfexport:latexmk: Latex failed to resolve 2 citation(s)
-INFO:pdfexport:latexmk: Rule 'bibtex Example': File changes, etc:
-INFO:pdfexport:latexmk: Non-existent destination files:
-INFO:pdfexport:latexmk: 'Example.bbl'
-INFO:pdfexport:latexmk: ------------
-INFO:pdfexport:latexmk: Run number 1 of rule 'bibtex Example'
-INFO:pdfexport:latexmk: ------------
-INFO:pdfexport:latexmk: ------------
-INFO:pdfexport:latexmk: Running 'bibtex  "Example"'
-INFO:pdfexport:latexmk: ------------
-INFO:pdfexport:latexmk: Latexmk: applying rule 'bibtex Example'...
-INFO:pdfexport:latexmk: For rule 'bibtex Example', running '&run_bibtex(  )' ...
-INFO:pdfexport:latexmk: This is BibTeX, Version 0.99d (TeX Live 2015)
-INFO:pdfexport:latexmk: The top-level auxiliary file: Example.aux
-INFO:pdfexport:latexmk: The style file: unsrtnat.bst
-INFO:pdfexport:latexmk: Database file #1: Example_files/example.bib.bib
-INFO:pdfexport:latexmk: Warning--empty journal in zelenyak_molecular_2016
-INFO:pdfexport:latexmk: Warning--empty year in zelenyak_molecular_2016
-INFO:pdfexport:latexmk: Warning--empty year in zelenyak_molecular_2016
-INFO:pdfexport:latexmk: Warning--empty journal in kirkeminde_thermodynamic_2012
-INFO:pdfexport:latexmk: Warning--empty year in kirkeminde_thermodynamic_2012
-INFO:pdfexport:latexmk: Warning--empty year in kirkeminde_thermodynamic_2012
-INFO:pdfexport:latexmk: (There were 6 warnings)
-INFO:pdfexport:latexmk: Rule 'pdflatex': File changes, etc:
-INFO:pdfexport:latexmk: Changed files, or newly in use since previous run(s):
-INFO:pdfexport:latexmk: 'Example.aux'
-INFO:pdfexport:latexmk: 'Example.bbl'
-INFO:pdfexport:latexmk: ------------
-INFO:pdfexport:latexmk: Run number 2 of rule 'pdflatex'
-INFO:pdfexport:latexmk: ------------
-INFO:pdfexport:latexmk: ------------
-INFO:pdfexport:latexmk: Running 'pdflatex  --interaction=batchmode -recorder  "/var/folders/dm/b2qnkb_n3r72slmpxlfmcjvm00lbnd/T/tmp_ebm0gve/Example.tex"'
-INFO:pdfexport:latexmk: ------------
-INFO:pdfexport:latexmk: Latexmk: applying rule 'pdflatex'...
-INFO:pdfexport:latexmk: This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex)
-INFO:pdfexport:latexmk: restricted \write18 enabled.
-INFO:pdfexport:latexmk: entering extended mode
-INFO:pdfexport:latexmk: Latexmk: Found input bbl file 'Example.bbl'
-INFO:pdfexport:latexmk: Latexmk: References changed.
-INFO:pdfexport:latexmk: Latexmk: References changed.
-INFO:pdfexport:latexmk: Latexmk: Log file says output to 'Example.pdf'
-INFO:pdfexport:latexmk: Latexmk: List of undefined refs and citations:
-INFO:pdfexport:latexmk: Citation `kirkeminde_thermodynamic_2012' on page 3 undefined on input line 456
-INFO:pdfexport:latexmk: Citation `zelenyak_molecular_2016' on page 3 undefined on input line 454
-INFO:pdfexport:latexmk: Latexmk: Found bibliography file(s) [Example_files/example.bib]
-INFO:pdfexport:latexmk: Latexmk: Summary of warnings:
-INFO:pdfexport:latexmk: Latex failed to resolve 2 citation(s)
-INFO:pdfexport:latexmk: Rule 'bibtex Example': File changes, etc:
-INFO:pdfexport:latexmk: Changed files, or newly in use since previous run(s):
-INFO:pdfexport:latexmk: 'Example.aux'
-INFO:pdfexport:latexmk: ------------
-INFO:pdfexport:latexmk: Run number 2 of rule 'bibtex Example'
-INFO:pdfexport:latexmk: ------------
-INFO:pdfexport:latexmk: ------------
-INFO:pdfexport:latexmk: Running 'bibtex  "Example"'
-INFO:pdfexport:latexmk: ------------
-INFO:pdfexport:latexmk: Latexmk: applying rule 'bibtex Example'...
-INFO:pdfexport:latexmk: For rule 'bibtex Example', running '&run_bibtex(  )' ...
-INFO:pdfexport:latexmk: This is BibTeX, Version 0.99d (TeX Live 2015)
-INFO:pdfexport:latexmk: The top-level auxiliary file: Example.aux
-INFO:pdfexport:latexmk: The style file: unsrtnat.bst
-INFO:pdfexport:latexmk: Database file #1: Example_files/example.bib.bib
-INFO:pdfexport:latexmk: Warning--empty journal in zelenyak_molecular_2016
-INFO:pdfexport:latexmk: Warning--empty year in zelenyak_molecular_2016
-INFO:pdfexport:latexmk: Warning--empty year in zelenyak_molecular_2016
-INFO:pdfexport:latexmk: Warning--empty journal in kirkeminde_thermodynamic_2012
-INFO:pdfexport:latexmk: Warning--empty year in kirkeminde_thermodynamic_2012
-INFO:pdfexport:latexmk: Warning--empty year in kirkeminde_thermodynamic_2012
-INFO:pdfexport:latexmk: (There were 6 warnings)
-INFO:pdfexport:latexmk: Rule 'pdflatex': File changes, etc:
-INFO:pdfexport:latexmk: Changed files, or newly in use since previous run(s):
-INFO:pdfexport:latexmk: './Example.out'
-INFO:pdfexport:latexmk: 'Example.aux'
-INFO:pdfexport:latexmk: 'Example.frm'
-INFO:pdfexport:latexmk: 'Example.lof'
-INFO:pdfexport:latexmk: 'Example.lot'
-INFO:pdfexport:latexmk: 'Example.out'
-INFO:pdfexport:latexmk: 'Example.toc'
-INFO:pdfexport:latexmk: ------------
-INFO:pdfexport:latexmk: Run number 3 of rule 'pdflatex'
-INFO:pdfexport:latexmk: ------------
-INFO:pdfexport:latexmk: ------------
-INFO:pdfexport:latexmk: Running 'pdflatex  --interaction=batchmode -recorder  "/var/folders/dm/b2qnkb_n3r72slmpxlfmcjvm00lbnd/T/tmp_ebm0gve/Example.tex"'
-INFO:pdfexport:latexmk: ------------
-INFO:pdfexport:latexmk: Latexmk: applying rule 'pdflatex'...
-INFO:pdfexport:latexmk: This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex)
-INFO:pdfexport:latexmk: restricted \write18 enabled.
-INFO:pdfexport:latexmk: entering extended mode
-INFO:pdfexport:latexmk: Latexmk: Found input bbl file 'Example.bbl'
-INFO:pdfexport:latexmk: Latexmk: Log file says output to 'Example.pdf'
-INFO:pdfexport:latexmk: Latexmk: Found bibliography file(s) [Example_files/example.bib]
-INFO:pdfexport:latexmk: Latexmk: All targets (Example.pdf) are up-to-date
-INFO:pdfexport:pdf conversion complete
+INFO:latex_doc_links:resolving external file paths in latex_doc metadata to: example/notebooks/Example.ipynb
+INFO:latex_doc_html:processing notebook for html output in latex_doc metadata to: example/notebooks/Example.ipynb
+INFO:latex_doc_html:attmepting to embed html in notebook from:: /Users/cjs14/GitHub/ipypublish/example/html/embed.html
+INFO:latex_doc_html:successfuly embedded html in cell
+INFO:latextags_to_html:converting latex tags to html
+INFO:latextags_to_html:reading bibliopath: /Users/cjs14/GitHub/ipypublish/example/bibliographies/example.bib
+INFO:latex_doc_captions:extracting caption cells
+INFO:main:outputting converted file to: /Users/cjs14/GitHub/ipypublish/converted/Example.html
 INFO:main:process finished successfully
