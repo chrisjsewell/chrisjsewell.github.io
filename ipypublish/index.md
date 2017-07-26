@@ -3,6 +3,10 @@ from one or more Jupyter Notebooks, without leaving the browser!
 
 ![](example_workflow.gif)
 
+See [Example.pdf](https://chrisjsewell.github.io/ipypublish/Example.view_pdf.html),
+[Example.html](https://chrisjsewell.github.io/ipypublish/Example.html) and 
+[Example.slides.html](https://chrisjsewell.github.io/ipypublish/Example.slides.html#/) for an example of the potential outputs.
+
 * TOC
 {:toc}
 
@@ -91,12 +95,55 @@ If a folder is input, then the .ipynb files it contains are processed and combin
 
 All available converters are also listed by `nbpublish -h`. Three of note are:
 
-- **latex_ipypublish_main_** is the **default** and converts cells to latex according to metadata tags on an 'opt in' basis. Note that, for this converter, **no code cells or output** will appear in the final tex/pdf document unless they have a suitable [latex_doc metadata tag](#latex-metadata-tags).
+- **latex_ipypublish_main** is the **default** and converts cells to latex according to metadata tags on an 'opt in' basis. Note that, for this converter, **no code cells or output** will appear in the final tex/pdf document unless they have a suitable [ipub metadata tag](#latex-metadata-tags).
 - **html_ipypublish_main** converts the entire notebook(s) to html and adds a table of contents sidebar and a button to toggle input code and output cells visible/hidden, with latex citations and references resolved. 
-- **slides_ipypublish_main** converts the notebook to [reveal.js](http://lab.hakim.se/reveal-js/#/) slides, with latex citations and references resolved. See the [Live Slideshows](#live-slideshows) section for using `nbpresent` to serve these slides to a webbrowser. 
+- **slides_ipypublish_main** converts the notebook to [reveal.js](http://lab.hakim.se/reveal-js/#/) slides, with latex citations and references resolved and slide partitioning by markdown headers. See the [Live Slideshows](#live-slideshows) section for using `nbpresent` to serve these slides to a webbrowser. 
 - The **all** and **nocode** variants of these converters preprocess a copy of the notebook, to add default metadata tags to the notebook and all cells, such that all output is rendered (with or without the code)
 
-The current `nbconvert --to pdf` does not correctly resolve references and citations (since it copies the files to a temporary directory). Therefore nbconvert is only used for the initial `nbconvert --to latex` phase, followed by using `latexmk` to create the pdf and correctly resolve everything.
+The current `nbconvert --to pdf` does not correctly resolve references and citations (since it copies the files to a temporary directory). Therefore nbconvert is only used for the initial `nbconvert --to latex` phase, followed by using `latexmk` to create the pdf and correctly resolve everything. **To convert your own notebook to PDF** for the first time, a good route would be to use:
+
+	nbpublish -f latex_ipypublish_all -pdf --pdf-debug path/to/YourNotebook.ipynb
+	
+**To raise any issues** please include the converted/YourNotebook.nbpub.log file.
+
+### The ipypublish defaults
+
+The ipypublish 'main' converters are designed with the goal of creating a single notebook, which may contain lots of exploratory code/outputs, mixed with final output, and that can be output as both a document (latex/pdf or html) and a presentation (reveal.js). The logic behind the default output is then:
+
+- For documents: all headings and body text is generally required, but only a certain subset of code/output
+- For slides: all headings are required, but most of the body text will be left out and sustituted with 'abbreviated' versions, and only a certain subset of code/output.
+
+This leads to the following logic flow (discussed further in the [Metadata Tags](#metadata-tags) section):
+
+**latex_ipypublish_main**/**html_ipypublish_main**:
+
+- all cells: bypass "ignore" and "slideonly" tags
+- markdown cells: include all
+- code cells (input): only include if the "code" tag is present
+- code cells (output): only include if the following tags are present
+    - "figure" for png/svg/pdf/jpeg or html (html only)
+	- "table" or "equation" for latex or html (html only)
+	- "mkdown" for markdown text
+	- "text" for plain text
+
+**slides_ipypublish_main**:
+
+- all cells: bypass "ignore"
+- markdown cells: are first split into header (beggining #)/non-header components
+    - headers: include all
+	- non-headers: only include if "slide" tag
+- code cells (input): only include if the "code" tag is present
+- code cells (output): only include if the following tags are present
+    - "figure" for png/svg/pdf/jpeg/html
+	- "table" or "equation" for latex/html
+	- "mkdown" for markdown text
+	- "text" for plain text
+
+Note that this is principally envisioned for use with **one output per code cell**, but it will work in a limited capacity for multiple outputs (e.g. you will not be able to specify separate specificaions, like captions). 
+[TO COME: using `IPython.display(obj,metadata={"ipub":{}})` to provide specifications for individual outputs]
+
+Packages, such as pandas and matplotlib, use jupyter notebooks [rich representation](http://ipython.readthedocs.io/en/stable/config/integrating.html#rich-display) mechanics to store a single output in multiple formats. nbconvert (and hence ipypublish) then selects only the highest priority (compatible) format to be output. This allows, for example, for pandas DataFrames to be output as 
+latex tables in latex documents and html tables in html documents/slides.
 
 ### Creating a bespoke converter
 
@@ -110,6 +157,7 @@ A plugin is a python (.py) file with at least the following four variables (i.e.
 2. an **oformat** string,  specifying a base exporter prefix (for any of the exporters listed [here](https://nbconvert.readthedocs.io/en/latest/api/exporters.html#specialized-exporter-classes))
 3. a **config** dictionary, containing any configuration option (as a string) listed [here](https://nbconvert.readthedocs.io/en/latest/api/exporters.html#specialized-exporter-classes). This is mainly to supply preprocessors (which act on the notbook object before it is parsed) or filters (which are functions supplied to the jinja template).
 4. a **template** string, specifying the [Jinja templates](https://jinja2.readthedocs.io/en/latest/intro.html), which contains rules for how each element of the notebook should be converted, and also what each section of the latex file should contain. 
+5. It is not required, but recommended, to also include the version number of ipypublish which the plugin was written for.
 
 So a simple plugin would look like this (create_tplx will be explained below) 
 
@@ -243,7 +291,7 @@ when converted, is stored in the metadata under:
 
 ```json
 {
-		"latex_doc": {}
+		"ipub": {}
 }
 ```
 
@@ -251,6 +299,8 @@ To access metadata, in the Jupyter Notebook Toolbar:
 
 - For notebook level: go to Edit -> Edit Notebook Metadata
 - For cell level: go to View -> Cell Toolbar -> Edit Metadata and a button will appear above each cell.
+[TO COME: output level, using `IPython.display(obj,metadata={"ipub":{}})`]
+
 
 **Please note**, setting a value to `"value":{}` is the same as `"value":false` so,
 if you are not setting additional options, use `"value":true`.
@@ -261,7 +311,7 @@ To specify where the **bibliography** is:
 
 ```json
 {
-"latex_doc": {
+"ipub": {
 	"bibliography" : "path/to/bibliograph.bib"
 	}
 }
@@ -273,7 +323,7 @@ For **titlepage**, enter in notebook metadata:
 
 ```json
 {
-"latex_doc": {
+"ipub": {
   "titlepage": {
 	"author": "Authors Name",
 	"email": "authors@email.com",
@@ -303,7 +353,7 @@ To control the output of **contents tables**:
 
 ```json
 {
-"latex_doc": {
+"ipub": {
   "toc": true,
   "listfigures": true,
   "listtables": true,
@@ -316,7 +366,7 @@ To override the default **placement of figures and tables**:
 
 ```json
 {
-"latex_doc": {
+"ipub": {
     "figure": {
       "placement": "!bp"
       },
@@ -331,12 +381,22 @@ See [Positioning_images_and_tables](https://www.sharelatex.com/learn/Positioning
 
 ### Cell Tags
 
-To  **ignore any cell**:
+To **ignore any cell** for all outputs:
 
 ```json
 {
-"latex_doc": {
+"ipub": {
 	"ignore" : true
+	}
+}
+```
+
+To mark any cell as for output to **slides only**:
+
+```json
+{
+"ipub": {
+	"slideonly" : true
 	}
 }
 ```
@@ -345,7 +405,7 @@ To  **output a code block**:
 
 ```json
 {
-"latex_doc": {
+"ipub": {
   "code": {
 	"format" : {},
     "asfloat": true,
@@ -368,9 +428,11 @@ To  **output text produced by the code** (e.g. *via* the `print` command):
 
 ```json
 {
-"latex_doc": {
+"ipub": {
   "text": {
-	"format" : {},
+      "format": {
+       "basicstyle": "\\small"
+      },
     "asfloat": true,
     "caption": "",
     "label": "code:example_sym",
@@ -383,7 +445,7 @@ To  **output text produced by the code** (e.g. *via* the `print` command):
 
 all extra tags are optional:
 
-- `format` can contain any keywords related to the latex [Listings](https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings) package (such as syntax highlighting colors)
+- `format` can contain any keywords related to the latex [Listings](https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings) package (such as syntax highlighting colors). N.B. in place of `\` use `\\`.
 - `asfloat` contitutes whether the code is wrapped in a codecell (float) environment or is inline.
 - all other tags work the same as figure (below).
 
@@ -392,7 +454,7 @@ For **figures** (i.e. any graphics output by the code), enter in cell metadata:
 
 ```json
 {
-"latex_doc": {
+"ipub": {
   "figure": {
     "caption": "Figure caption.",
     "label": "fig:flabel",
@@ -411,7 +473,7 @@ For  **tables** (e.g. those output by `pandas`), enter in cell metadata:
 
 ```json
 {
-"latex_doc": {
+"ipub": {
      "table": {
 	    "caption": "Table caption.",
 	    "label": "tbl:tlabel",
@@ -431,7 +493,7 @@ For  **equations** (e.g. thos output by `sympy`), enter in cell metadata:
 
 ```json
 {
-  "latex_doc": {
+  "ipub": {
 	  "equation": {
 	    "label": "eqn:elabel"
 	  }
@@ -441,15 +503,27 @@ For  **equations** (e.g. thos output by `sympy`), enter in cell metadata:
 
 - label is optional
 
+For **slide output**:
+
+```json
+{
+  "ipub": {
+	  "slide": true
+  }
+}
+```
+
+- the value of slide can be true, "new" (to indicate the start of a new slide) or "notes"
+
 ### Captions in a Markdown cell
 
 Especially for long captions, it would be prefered that they can be viewed and edited in a notebook Markdown cell, rather than hidden in the metadata. This can be achieved using the default ipypublish converters:
 
-If a **markdown input** or **latex output** cell has the metadata tag:
+If a **markdown cell** or **code cell with latex/text output** has the metadata tag:
 
 ```json
 {
- "latex_doc": {
+ "ipub": {
 	"caption": "fig:example_mpl"
 	}
 }
@@ -464,7 +538,7 @@ During the jinja templating, if a **figure, table or code** cell has a label mat
 
 ```json
 {
-"latex_doc": {
+"ipub": {
 	"figure": {
 	  "caption": "",
 	  "label": "fig:example_mpl"
@@ -488,11 +562,11 @@ IPywidgets offers a [save notebook with widgets](http://ipywidgets.readthedocs.i
 A better solution, recently offered, is to save a [html snippet](http://ipywidgets.readthedocs.io/en/latest/embedding.html#embeddable-html-snippet) 
 of the current widget state to file. 
 This file can be re-embedded into the notebook, at the conversion stage, 
-using the `embed_html` tag, the treating it as any other output in the notebook.
+using the `embed_html` tag, then treating it as any other output in the notebook.
 
 ```json
 {
-  "latex_doc": {
+  "ipub": {
     "embed_html": {
       "filepath": "path/to/embed.html"
     },
