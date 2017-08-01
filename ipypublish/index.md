@@ -139,9 +139,6 @@ This leads to the following logic flow (discussed further in the [Metadata Tags]
 	- "mkdown" for markdown text
 	- "text" for plain text
 
-Note that this is principally envisioned for use with **one output per code cell**, but it will work in a limited capacity for multiple outputs (e.g. you will not be able to specify separate specificaions, like captions). 
-[TO COME: using `IPython.display(obj,metadata={"ipub":{}})` to provide specifications for individual outputs]
-
 Packages, such as pandas and matplotlib, use jupyter notebooks [rich representation](http://ipython.readthedocs.io/en/stable/config/integrating.html#rich-display) mechanics to store a single output in multiple formats. nbconvert (and hence ipypublish) then selects only the highest priority (compatible) format to be output. This allows, for example, for pandas DataFrames to be output as 
 latex tables in latex documents and html tables in html documents/slides.
 
@@ -286,8 +283,7 @@ test
 
 ## Metadata Tags
 
-All information additional information, used to specify how a particular notebook/cell will be represented
-when converted, is stored in the metadata under:
+All information additional information, used to specify how a particular notebook/cell/output will be represented, when converted, is stored in the metadata under:
 
 ```json
 {
@@ -295,17 +291,29 @@ when converted, is stored in the metadata under:
 }
 ```
 
-To access metadata, in the Jupyter Notebook Toolbar:
+There are three levels of metadata:
 
-- For notebook level: go to Edit -> Edit Notebook Metadata
-- For cell level: go to View -> Cell Toolbar -> Edit Metadata and a button will appear above each cell.
-[TO COME: output level, using `IPython.display(obj,metadata={"ipub":{}})`]
-
+- For notebook level: in the Jupyter Notebook Toolbar go to Edit -> Edit Notebook Metadata
+- For cell level: in the Jupyter Notebook Toolbar go to View -> Cell Toolbar -> Edit Metadata and a button will appear above each cell.
+- For output level: using `IPython.display.display(obj,metadata={"ipub":{}})`, you can set metadata specific to a certain output. Options set at the output level will override options set at the cell level. for an example of this, run the [MultiOutput_Example.ipynb](example/notebooks/MultiOutput_Example.ipynb).
 
 **Please note**, setting a value to `"value":{}` is the same as `"value":false` so,
 if you are not setting additional options, use `"value":true`.
 
 ### Document Tags
+
+To change the **language** of the document:
+
+```json
+{
+"ipub": {
+	"language" : "french"
+	}
+}
+```
+
+where the language can be any specified in the 
+[babel](https://people.phys.ethz.ch/~ihn/latex/babel.pdf) package.
 
 To specify where the **bibliography** is:
 
@@ -437,7 +445,8 @@ To  **output text produced by the code** (e.g. *via* the `print` command):
     "caption": "",
     "label": "code:example_sym",
     "widefigure": false,
-    "placement": "H"
+    "placement": "H",
+	"use_ansi": false
     }
   }
 }
@@ -447,6 +456,7 @@ all extra tags are optional:
 
 - `format` can contain any keywords related to the latex [Listings](https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings) package (such as syntax highlighting colors). N.B. in place of `\` use `\\`.
 - `asfloat` contitutes whether the code is wrapped in a codecell (float) environment or is inline.
+- if `use_ansi` is true then, instead of stripping ansi colors in latex output, they will be converted to latex, wrapped in % characters and the listings option escapechar=\% set. 
 - all other tags work the same as figure (below).
 
 
@@ -459,13 +469,15 @@ For **figures** (i.e. any graphics output by the code), enter in cell metadata:
     "caption": "Figure caption.",
     "label": "fig:flabel",
     "placement": "H",
-    "widefigure": false
+	"height":0.4,
+    "widefigure": false,
     }
   }
 }
 ```
 
-- `caption` and `label` are optional
+- all tags are optional
+- height/width correspond to the fraction of the page height/width, only one should be used (aspect ratio will be maintained automatically)
 - `placement` is optional and constitutes using a placement arguments for the figure (e.g. \begin{figure}[H]). See [Positioning_images_and_tables](https://www.sharelatex.com/learn/Positioning_images_and_tables).
 - `widefigure` is optional and constitutes expanding the figure to the page width (i.e. \begin{figure*}) (placement arguments will then be ignored)
 
@@ -487,6 +499,7 @@ For  **tables** (e.g. those output by `pandas`), enter in cell metadata:
 - `caption` and `label` are optional
 - `placement` is optional and constitutes using a placement arguments for the table (e.g. \begin{table}[H]). See [Positioning_images_and_tables](https://www.sharelatex.com/learn/Positioning_images_and_tables).
 - `alternate` is optional and constitutes using alternating colors for the table rows (e.g. \rowcolors{2}{gray!25}{white}). See (https://tex.stackexchange.com/a/5365/107738)[https://tex.stackexchange.com/a/5365/107738].
+- if tables exceed the text width, in latex, they will be shrunk to fit 
 
 
 For  **equations** (e.g. thos output by `sympy`), enter in cell metadata:
@@ -560,15 +573,18 @@ IPywidgets offers a [save notebook with widgets](http://ipywidgets.readthedocs.i
 
 
 A better solution, recently offered, is to save a [html snippet](http://ipywidgets.readthedocs.io/en/latest/embedding.html#embeddable-html-snippet) 
-of the current widget state to file. 
-This file can be re-embedded into the notebook, at the conversion stage, 
-using the `embed_html` tag, then treating it as any other output in the notebook.
+of the current widget state to file and embed it into the html/slides output as an iframe. This is also particularly useful in reveal.js slides, 
+since the iframe content can be [*lazy loaded*](https://github.com/hakimel/reveal.js/#lazy-loading).
+To embed html, use the `embed_html` tag:
 
 ```json
 {
   "ipub": {
     "embed_html": {
-      "filepath": "path/to/embed.html"
+      "filepath": "path/to/file.html"
+	  "url": "https//path/to/url.html"
+	  "width":0.5,
+	  "height":0.5
     },
     "figure": {
       "caption": "An example of embedded html"
@@ -577,7 +593,11 @@ using the `embed_html` tag, then treating it as any other output in the notebook
 }
 ```
 
-A possible workflow is then to have a single notebook cell with a static image of the widget in the output, and a path to the embed html in the metadata so that a) if you export to latex/pdf, you get the static image or b) if you export to html/reveal slides, you get the html. 
+If the cell already contains an output, then this tag will create/overwrite the first output's "text/html" type. 
+This allows for a single notebook cell with a static image of the widget in the output, and a path to the embed html in the metadata so that a) if you export to latex/pdf, you get the static image or b) if you export to html/reveal slides, you get the html.
+
+- use either filepath or url
+- width/height refers to the fraction of the viewspace used (e.g. 0.5 width -> 50vw and 0.5 height -> 50vh)
 
 An example of how this works is in the [Example.ipynb](example/notebooks/Example.pdf), and the 
 [Example.html](https://chrisjsewell.github.io/ipypublish/Example.html#Embedded-HTML-6) and 

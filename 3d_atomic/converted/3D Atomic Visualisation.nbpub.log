@@ -1,4 +1,4 @@
-started ipypublish at Tue Aug  1 04:44:41 2017
+started ipypublish at Tue Aug  1 15:03:30 2017
 logging to: /Users/cjs14/GitHub/chrisjsewell.github.io/3d_atomic/converted/3D Atomic Visualisation.nbpub.log
 running for ipynb(s) at: 3D Atomic Visualisation.ipynb
 with conversion: slides_ipypublish_main
@@ -22,4 +22,16 @@ Serving local reveal.js
 Attempting to serve at http://127.0.0.1:8000/3D Atomic Visualisation.slides.html
 Serving your slides at http://127.0.0.1:8000/3D Atomic Visualisation.slides.html
 Use Control-C to stop this server
-200 GET /3D%20Atomic%20Visualisation.slides.html (127.0.0.1) 11.48ms
+200 GET /3D%20Atomic%20Visualisation.slides.html (127.0.0.1) 13.85ms
+304 GET /3D%20Atomic%20Visualisation_files/ivol_example1.html (127.0.0.1) 8.72ms
+304 GET /3D%20Atomic%20Visualisation_files/ivol_example2.html (127.0.0.1) 5.35ms
+304 GET /3D%20Atomic%20Visualisation_files/ivol_example2.html (127.0.0.1) 0.86ms
+404 GET /3D%20Atomic%20Visualisation_files/ipyvolume.js (127.0.0.1) 0.95ms
+404 GET /3D%20Atomic%20Visualisation_files/ipyvolume.js (127.0.0.1) 1.09ms
+200 GET /3D%20Atomic%20Visualisation_files/ivol_example3.html (127.0.0.1) 4.66ms
+404 GET /3D%20Atomic%20Visualisation_files/ipyvolume.js (127.0.0.1) 0.68ms
+404 GET /3D%20Atomic%20Visualisation_files/ipyvolume.js (127.0.0.1) 0.51ms
+304 GET /3D%20Atomic%20Visualisation_files/ivol_example3.html (127.0.0.1) 2.71ms
+404 GET /3D%20Atomic%20Visualisation_files/ipyvolume.js (127.0.0.1) 0.69ms
+
+Interrupted

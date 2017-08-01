@@ -5,9 +5,9 @@
 	bibliography=totocnumbered,
 	captions=tableheading,numbers=noendperiod]{scrartcl}
 %\usepackage{polyglossia}
-%\setmainlanguage{portuguese}
+%\setmainlanguage{british}
 %\DeclareTextCommandDefault{\nobreakspace}{\leavevmode\nobreak\ } 
-\usepackage[portuguese]{babel}
+\usepackage[british]{babel}
 
     \usepackage[T1]{fontenc} % Nicer default font (+ math font) than Computer Modern for most use cases
     \usepackage{mathpazo}
@@ -410,8 +410,7 @@ nohead,includefoot,footskip=25pt}
 		\end{minipage}
 		\hspace{\fill}
 		\begin{minipage}{0.39\textwidth}
-		\begin{flushright} \Large\emph{\GetTranslation{Supervisors}:} \\
-			  one
+		\begin{flushright} \Large
 		\end{flushright}
 		\end{minipage}
 		\end{center}   
@@ -437,7 +436,7 @@ nohead,includefoot,footskip=25pt}
 
 		\begingroup
     \let\cleardoublepage\relax
-    \let\clearpage\relax\tableofcontents\listoffigures\listoftables\listof{codecell}{\GetTranslation{List of Codes}}
+    \let\clearpage\relax\tableofcontents\listoffigures\listoftables
     \endgroup
 
 \section{Introduction}\label{introduction}
@@ -563,7 +562,7 @@ a pre-constructed csv table.
   %\textcolor{ansi-blue}{centre}%: [ 1.83675 1.83675 2.5164 ]
   %\textcolor{ansi-blue}{color}%: rgb(224,102,51)
   %\textcolor{ansi-blue}{coords}%: [[ 0. 0. 0.], [ 1.83675000e+00 1.83675000e+00 
-                   2.24937001e-16]]
+          2.24937001e-16]]
   %\textcolor{ansi-blue}{label}%: Fe
   %\textcolor{ansi-blue}{radius}%: 1.32
   %\textcolor{ansi-blue}{transparency}%: 1.0
@@ -576,8 +575,8 @@ a pre-constructed csv table.
     %\textcolor{ansi-blue}{c}%: [ 0. 0. 5.0328]
   %\textcolor{ansi-blue}{centre}%: [ 1.83675 1.83675 2.5164 ]
   %\textcolor{ansi-blue}{color}%: rgb(178,178,0)
-  %\textcolor{ansi-blue}{coords}%: [[ -1.12468500e-16 1.83675000e+00 
-                   1.30953456e+00], [ 1.83675 0. 3.72326544]]
+  %\textcolor{ansi-blue}{coords}%: [[ -1.12468500e-16 1.83675000e+00 1.30953456e+00], [ 
+          1.83675 0. 3.72326544]]
   %\textcolor{ansi-blue}{label}%: S
   %\textcolor{ansi-blue}{radius}%: 1.05
   %\textcolor{ansi-blue}{transparency}%: 1.0
@@ -616,38 +615,29 @@ geometric operation and element types.
 %\textcolor{ansi-blue}{mackinawite\_Fe}%: 
   %\textcolor{ansi-blue}{cell\_vectors}%: 
     %\textcolor{ansi-blue}{a}%: [ -6.74811003e-16 -1.10205000e+01 -1.47911420e-31]
-    %\textcolor{ansi-blue}{b}%: [ 3.67350000e+00 -1.37734189e-32 -4.93038066e-32]
-    %\textcolor{ansi-blue}{c}%: [ 3.08170121e-16 -3.08170121e-16 5.03280000e+00]
+    %\textcolor{ansi-blue}{b}%: [ 1.10205000e+01 -4.13202567e-32 -1.47911420e-31]
+    %\textcolor{ansi-blue}{c}%: [ 9.24510362e-16 -9.24510362e-16 1.50984000e+01]
   %\textcolor{ansi-blue}{centre}%: [ 0. 0. 0.]
   %\textcolor{ansi-blue}{color}%: rgb(224,102,51)
-  %\textcolor{ansi-blue}{coords}%: [[-1.83675 5.51025 -2.5164 ], [ 0. 3.6735 
-                   -2.5164], [-1.83675 1.83675 -2.5164 ], [ 
-                   -2.22044605e-16 0.00000000e+00 -2.51640000e+00], 
-                   [-1.83675 -1.83675 -2.5164 ], [ -4.44089210e-16 
-                   -3.67350000e+00 -2.51640000e+00]]
+  %\textcolor{ansi-blue}{coords}%: [[-5.51025 5.51025 -7.5492 ], {\ldots}(x53)]
   %\textcolor{ansi-blue}{label}%: Fe
   %\textcolor{ansi-blue}{radius}%: 1.32
   %\textcolor{ansi-blue}{transparency}%: 1.0
   %\textcolor{ansi-blue}{type}%: scatter
-  %\textcolor{ansi-blue}{visible}%: [True, True, True, True, True, True]
+  %\textcolor{ansi-blue}{visible}%: [True, {\ldots}(x53)]
 %\textcolor{ansi-blue}{mackinawite\_S}%: 
   %\textcolor{ansi-blue}{cell\_vectors}%: 
     %\textcolor{ansi-blue}{a}%: [ -6.74811003e-16 -1.10205000e+01 -1.47911420e-31]
-    %\textcolor{ansi-blue}{b}%: [ 3.67350000e+00 -1.37734189e-32 -4.93038066e-32]
-    %\textcolor{ansi-blue}{c}%: [ 3.08170121e-16 -3.08170121e-16 5.03280000e+00]
+    %\textcolor{ansi-blue}{b}%: [ 1.10205000e+01 -4.13202567e-32 -1.47911420e-31]
+    %\textcolor{ansi-blue}{c}%: [ 9.24510362e-16 -9.24510362e-16 1.50984000e+01]
   %\textcolor{ansi-blue}{centre}%: [ 0. 0. 0.]
   %\textcolor{ansi-blue}{color}%: rgb(178,178,0)
-  %\textcolor{ansi-blue}{coords}%: [[ 2.22044605e-16 5.51025000e+00 
-                   -1.20686544e+00], [-1.83675 3.6735 1.20686544], 
-                   [ 0. 1.83675 -1.20686544], [ -1.83675000e+00 
-                   -8.88178420e-16 1.20686544e+00], [ 
-                   -2.22044605e-16 -1.83675000e+00 
-                   -1.20686544e+00], [-1.83675 -3.6735 1.20686544]]
+  %\textcolor{ansi-blue}{coords}%: [[-3.6735 5.51025 -6.23966544], {\ldots}(x53)]
   %\textcolor{ansi-blue}{label}%: S
   %\textcolor{ansi-blue}{radius}%: 1.05
   %\textcolor{ansi-blue}{transparency}%: 1.0
   %\textcolor{ansi-blue}{type}%: scatter
-  %\textcolor{ansi-blue}{visible}%: [True, False, True, False, True, False]
+  %\textcolor{ansi-blue}{visible}%: [True, {\ldots}(x53)]
 
 \end{lstlisting}
 
@@ -717,12 +707,15 @@ both these files:
 
 \begin{lstlisting}[language={},postbreak={},numbers=none,xrightmargin=7pt,belowskip=5pt,aboveskip=5pt,breakindent=0pt]
 ech3.out: 
-  structure: Full Formula (Si2) Reduced Formula: Si abc   :   3.832519 
-                      3.832519   3.832519 angles:  60.000000  60.000000 
-                      60.000000 Sites (2)   #  SP           a         b 
-                      c ---  ----  --------  --------  --------   0  Si 
-                      0.125092  0.125092  0.125092   1  Si    0.874908  0.875277 
-                      0.874908
+  structure: Full Formula (Si2)
+             Reduced Formula: Si
+             abc   :   3.832519   3.832519   3.832519
+             angles:  60.000000  60.000000  60.000000
+             Sites (2)
+               #  SP           a         b         c
+             ---  ----  --------  --------  --------
+               0  Si    0.125092  0.125092  0.125092
+               1  Si    0.874908  0.875277  0.874908
 ech3_dat.prop3d: 
   charge_density: np.array((100, 100, 100), min=2.68E-03, max=5.36E+02)
   da_vec: [ 0. 0.051729 0.051729]
@@ -768,14 +761,28 @@ type.
 \end{lstlisting}
 
 \begin{lstlisting}[language={},postbreak={},numbers=none,xrightmargin=7pt,belowskip=5pt,aboveskip=5pt,breakindent=0pt]
-cell_vectors: 
-  a: [ 0. 10.84 10.84]
-  b: [ 10.84 0. 10.84]
-  c: [ 10.84 10.84 0. ]
-centre: [ 0. 0. 0.]
-dcube:  np.array((400, 400, 400), min=2.68E-03, max=5.36E+02)
-slices: [([ 0. 0. 1.], None, -4, None)]
-type:   volume
+Silicon Charge: 
+  cell_vectors: 
+    a: [ 0. 10.84 10.84]
+    b: [ 10.84 0. 10.84]
+    c: [ 10.84 10.84 0. ]
+  centre: [ 0. 0. 0.]
+  dcube: np.array((400, 400, 400), min=2.68E-03, max=5.36E+02)
+  slices: [([ 0. 0. 1.], ...(x3))]
+  type: volume
+Silicon_Si: 
+  cell_vectors: 
+    a: [ 0. 10.84 10.84]
+    b: [ 10.84 0. 10.84]
+    c: [ 10.84 10.84 0. ]
+  centre: [ 0. 0. 0.]
+  color: rgb(127,153,153)
+  coords: [[-10.162 -10.162 -10.162], ...(x127)]
+  label: Si
+  radius: 1.11
+  transparency: 1.0
+  type: scatter
+  visible: [True, ...(x127)]
 
 \end{lstlisting}
 
@@ -819,56 +826,44 @@ A Jupyter Widget
 
 Because the data is stored in a representation agnostic manner, this
 allows for the possibility of displaying the data in multiple ways. In
-particular, for publication quality images we may want to create a 2D
-representation of the scene.
+particular, for publication quality images we may want to create a
+2D-representation of the scene. Below we plot the atoms with a depth
+perception effect, created by lightening the color of the atoms w.r.t
+their depth into the page.
 
-\begin{lstlisting}[language={},postbreak={},numbers=none,xrightmargin=7pt,belowskip=5pt,aboveskip=5pt,breakindent=0pt]
-mackinawite_Fe: 
-  cell_vectors: {...}
-  centre:       
-  color:        
-  coords:       
-  label:        
-  radius:       
-  transparency: 
-  type:         
-  visible:      
-mackinawite_S: 
-  cell_vectors: {...}
-  centre:       
-  color:        
-  coords:       
-  label:        
-  radius:       
-  transparency: 
-  type:         
-  visible:      
-
-\end{lstlisting}
-
-\begin{lstlisting}[language={},postbreak={},numbers=none,xrightmargin=7pt,breakindent=0pt,aboveskip=5pt,belowskip=5pt]
-dict_keys(['mackinawite_Fe', 'mackinawite_S'])
-\end{lstlisting}
-
-\begin{figure}[H]\begin{center}\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{3D Atomic Visualisation_files/output_62_1.pdf}\end{center}
+\begin{figure}[H]\begin{center}\adjustimage{max size={0.9\linewidth}{0.9\paperheight},height=0.2\paperheight}{3D Atomic Visualisation_files/output_62_0.pdf}\end{center}\caption{an example of an 2D scatter plot (with depth perception)}\label{fig:mplplot1}
     \end{figure}
 
-\section{Analysis Distribution}\label{analysis-distribution}
+\section{Publishing and Distributing
+Analysis}\label{publishing-and-distributing-analysis}
+
+As discussed above, individual visualisations can be saved individually
+as images or HTML. But a more complete solution is to use
+\href{https://github.com/chrisjsewell/ipypublish}{ipypublish} to convert
+the entire Jupyter Notebook to a document and/or presentation.
+ipypublish utilises notebook/cell/output level metadata attributes to
+define a greater level of control as to how elements in the notebook are
+converted.
+
+This entire document is a single notebook which is available as a
+\href{https://github.com/chrisjsewell/chrisjsewell.github.io/blob/master/3d_atomic/3D\%20Atomic\%20Visualisation.ipynb}{Notebook},
+\href{https://chrisjsewell.github.io/3d_atomic/converted/3D\%20Atomic\%20Visualisation.view_pdf.html}{PDF},
+\href{https://chrisjsewell.github.io/3d_atomic/converted/3D\%20Atomic\%20Visualisation.html}{HTML}
+or
+\href{https://chrisjsewell.github.io/3d_atomic/converted/3D\%20Atomic\%20Visualisation.slides.html}{Reveal.JS
+slideshow} document (click the hyperlinks to view them). This was
+achieved by only the following command line commands:
+
+\begin{verbatim}
+$ nbpublish -pdf -ptemp -f latex_ipypublish_nocode "3D Atomic Visualisation.ipynb"
+$ nbpublish -f html_ipypublish_all "3D Atomic Visualisation.ipynb"
+$ nbpresent "3D Atomic Visualisation.ipynb"
+\end{verbatim}
 
 \section{TODO}\label{todo}
 
 \begin{itemize}
 \tightlist
-\item
-  Finalise electronic density section
-
-  \begin{itemize}
-  \tightlist
-  \item
-    transfer parsing code into jsonextended plugin
-  \item
-    tidy rest of code and put into document
-  \end{itemize}
 \item
   Orthographic camera. Not yet implemented in ipyvolume, see
   \href{https://github.com/maartenbreddels/ipyvolume/issues/31}{this
@@ -879,20 +874,33 @@ dict_keys(['mackinawite_Fe', 'mackinawite_S'])
   \begin{itemize}
   \tightlist
   \item
-    radius rather than size
+    exact control of radii (radius rather than scaling size)
   \item
-    more segments
+    more segments (either direct control of segments, or a
+    "sphere\_hi\_res" type)
   \item
     transparency level
+  \item
+    should color allow (r,g,b) tuple/array? because at the moment that
+    doesn't work
   \end{itemize}
 \item
-  show lattice bounding box: parallelepiped wire frames
+  creation of array of arbitrary lines (like scatter but with;
+  x0,y0,z0,x1,y1,z1)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    show lattice bounding boxes: parallelepiped wire frames
+  \item
+    show bonds (i.e. connections) between different scatters
+  \end{itemize}
 \item
   show nearest-neighbour coordination: polygons with vertices at
   nearest-neighbour positions (as shown in \cref{fig:nnpolygons})
 \end{itemize}
 
-\begin{figure}[H]\begin{center}\adjustimage{max size={0.9\linewidth}{0.9\paperheight},height=0.2\paperheight}{3D Atomic Visualisation_files/output_68_0.jpeg}\end{center}\caption{an example of nearest-neighbour polygons}\label{fig:nnpolygons}
+\begin{figure}[H]\begin{center}\adjustimage{max size={0.9\linewidth}{0.9\paperheight},height=0.2\paperheight}{3D Atomic Visualisation_files/output_67_0.jpeg}\end{center}\caption{an example of nearest-neighbour polygons}\label{fig:nnpolygons}
     \end{figure}
 
 \begin{itemize}
@@ -915,7 +923,7 @@ dict_keys(['mackinawite_Fe', 'mackinawite_S'])
   \item
     isosurface rendering
   \item
-    multiple volumes
+    multiple volumes in single plot
   \item
     volumes with arbitrary centres
   \item
@@ -930,7 +938,15 @@ dict_keys(['mackinawite_Fe', 'mackinawite_S'])
     fails to open if multiple views instantiated
   \item
     if volume is present, then the rendering becomes very low resolution
-    and the volume disappears completely on exit
+    and, sometimes, the volume disappears completely on exit
+  \end{itemize}
+\item
+  2d volume representation
+
+  \begin{itemize}
+  \tightlist
+  \item
+    define slice into cube and use matplotlib.contour
   \end{itemize}
 \end{itemize}
 
