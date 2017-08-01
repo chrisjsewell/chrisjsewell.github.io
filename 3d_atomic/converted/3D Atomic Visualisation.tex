@@ -1,0 +1,938 @@
+
+
+	\documentclass[10pt,parskip=half,
+	toc=sectionentrywithdots,
+	bibliography=totocnumbered,
+	captions=tableheading,numbers=noendperiod]{scrartcl}
+%\usepackage{polyglossia}
+%\setmainlanguage{portuguese}
+%\DeclareTextCommandDefault{\nobreakspace}{\leavevmode\nobreak\ } 
+\usepackage[portuguese]{babel}
+
+    \usepackage[T1]{fontenc} % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+    \usepackage{graphicx}
+    \usepackage[skip=3pt]{caption}    
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage[table]{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+
+    \usepackage{translations}
+	\usepackage{microtype} % improves the spacing between words and letters
+	\usepackage{placeins} % placement of figures
+    % could use \usepackage[section]{placeins} but placing in subsection in command section
+	% Places the float at precisely the location in the LaTeX code (with H)
+	\usepackage{float}
+	\usepackage[colorinlistoftodos,obeyFinal,textwidth=.8in]{todonotes} % to mark to-dos
+	% number figures, tables and equations by section
+	\usepackage{chngcntr}
+	% header/footer
+	\usepackage[footsepline=0.25pt]{scrlayer-scrpage}
+
+	% bibliography formatting
+	\usepackage[numbers, square, super, sort&compress]{natbib}
+	% hyperlink doi's
+	\usepackage{doi}	
+
+    % define a code float
+    \usepackage{newfloat} % to define a new float types
+    \DeclareFloatingEnvironment[
+        fileext=frm,placement={!ht},
+        within=section,name=Code]{codecell}
+    \DeclareFloatingEnvironment[
+        fileext=frm,placement={!ht},
+        within=section,name=Text]{textcell}
+    \DeclareFloatingEnvironment[
+        fileext=frm,placement={!ht},
+        within=section,name=Text]{errorcell}
+
+    \usepackage{listings} % a package for wrapping code in a box
+    \usepackage[framemethod=tikz]{mdframed} % to fram code
+
+% Pygments definitions
+
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+% ANSI colors
+\definecolor{ansi-black}{HTML}{3E424D}
+\definecolor{ansi-black-intense}{HTML}{282C36}
+\definecolor{ansi-red}{HTML}{E75C58}
+\definecolor{ansi-red-intense}{HTML}{B22B31}
+\definecolor{ansi-green}{HTML}{00A250}
+\definecolor{ansi-green-intense}{HTML}{007427}
+\definecolor{ansi-yellow}{HTML}{DDB62B}
+\definecolor{ansi-yellow-intense}{HTML}{B27D12}
+\definecolor{ansi-blue}{HTML}{208FFB}
+\definecolor{ansi-blue-intense}{HTML}{0065CA}
+\definecolor{ansi-magenta}{HTML}{D160C4}
+\definecolor{ansi-magenta-intense}{HTML}{A03196}
+\definecolor{ansi-cyan}{HTML}{60C6C8}
+\definecolor{ansi-cyan-intense}{HTML}{258F8F}
+\definecolor{ansi-white}{HTML}{C5C1B4}
+\definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+% commands and environments needed by pandoc snippets
+% extracted from the output of `pandoc -s`
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\NormalTok}[1]{{#1}}
+
+% Additional commands for more recent versions of Pandoc
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+\newcommand{\ImportTok}[1]{{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+\newcommand{\BuiltInTok}[1]{{#1}}
+\newcommand{\ExtensionTok}[1]{{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+
+% Define a nice break command that doesn't care if a line doesn't already
+% exist.
+\def\br{\hspace*{\fill} \\* }
+
+% Math Jax compatability definitions
+\def\gt{>}
+\def\lt{<}
+
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+\DeclareTranslationFallback{Author}{Author}
+\DeclareTranslation{Portuges}{Author}{Autor}
+
+\DeclareTranslationFallback{List of Codes}{List of Codes}
+\DeclareTranslation{Catalan}{List of Codes}{Llista de Codis}
+\DeclareTranslation{Danish}{List of Codes}{Liste over Koder}
+\DeclareTranslation{German}{List of Codes}{Liste der Codes}
+\DeclareTranslation{Spanish}{List of Codes}{Lista de C\'{o}digos}
+\DeclareTranslation{French}{List of Codes}{Liste des Codes}
+\DeclareTranslation{Italian}{List of Codes}{Elenco dei Codici}
+\DeclareTranslation{Dutch}{List of Codes}{Lijst van Codes}
+\DeclareTranslation{Portuges}{List of Codes}{Lista de C\'{o}digos} 
+
+\DeclareTranslationFallback{Supervisors}{Supervisors}
+\DeclareTranslation{Catalan}{Supervisors}{Supervisors}
+\DeclareTranslation{Danish}{Supervisors}{Vejledere}
+\DeclareTranslation{German}{Supervisors}{Vorgesetzten}
+\DeclareTranslation{Spanish}{Supervisors}{Supervisores}
+\DeclareTranslation{French}{Supervisors}{Superviseurs}
+\DeclareTranslation{Italian}{Supervisors}{Le autorit\`{a} di vigilanza}
+\DeclareTranslation{Dutch}{Supervisors}{supervisors}
+\DeclareTranslation{Portuguese}{Supervisors}{Supervisores} 
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.95}
+
+\lstdefinestyle{mystyle}{
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily,
+    breakatwhitespace=false,         
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=10pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    breaklines=true,
+    literate={\-}{}{0\discretionary{-}{}{-}},
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+}
+
+\lstset{style=mystyle} 
+
+\surroundwithmdframed[
+  hidealllines=true,
+  backgroundcolor=backcolour,
+  innerleftmargin=0pt,
+  innerrightmargin=0pt,
+  innertopmargin=0pt,
+  innerbottommargin=0pt]{lstlisting}
+
+ % Used to adjust the document margins
+\usepackage{geometry}
+\geometry{tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in,
+nohead,includefoot,footskip=25pt}
+% you can use showframe option to check the margins visually 
+
+	% ensure new section starts on new page
+	\addtokomafont{section}{\clearpage}
+
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+
+    % ensure figures are placed within subsections
+    \makeatletter
+    \AtBeginDocument{%
+      \expandafter\renewcommand\expandafter\subsection\expandafter
+        {\expandafter\@fb@secFB\subsection}%
+      \newcommand\@fb@secFB{\FloatBarrier
+        \gdef\@fb@afterHHook{\@fb@topbarrier \gdef\@fb@afterHHook{}}}%
+      \g@addto@macro\@afterheading{\@fb@afterHHook}%
+      \gdef\@fb@afterHHook{}%
+    }
+    \makeatother
+
+	% number figures, tables and equations by section
+	\usepackage{chngcntr}
+	\counterwithout{figure}{section}
+	\counterwithout{table}{section}
+	\counterwithout{equation}{section}
+	\makeatletter
+	\@addtoreset{table}{section}
+	\@addtoreset{figure}{section}
+	\@addtoreset{equation}{section}
+	\makeatother
+	\renewcommand\thetable{\thesection.\arabic{table}}
+	\renewcommand\thefigure{\thesection.\arabic{figure}}
+	\renewcommand\theequation{\thesection.\arabic{equation}}
+
+        % set global options for float placement
+        \makeatletter
+          \providecommand*\setfloatlocations[2]{\@namedef{fps@#1}{#2}}
+        \makeatother
+
+    % align captions to left (indented)
+	\captionsetup{justification=raggedright,
+	singlelinecheck=false,format=hang,labelfont={it,bf}} 
+
+	% shift footer down so space between separation line
+	\ModifyLayer[addvoffset=.6ex]{scrheadings.foot.odd}
+	\ModifyLayer[addvoffset=.6ex]{scrheadings.foot.even}
+	\ModifyLayer[addvoffset=.6ex]{scrheadings.foot.oneside}
+	\ModifyLayer[addvoffset=.6ex]{plain.scrheadings.foot.odd}
+	\ModifyLayer[addvoffset=.6ex]{plain.scrheadings.foot.even}
+	\ModifyLayer[addvoffset=.6ex]{plain.scrheadings.foot.oneside}
+	\pagestyle{scrheadings}
+	\clearscrheadfoot{}
+	\ifoot{\leftmark}
+	\renewcommand{\sectionmark}[1]{\markleft{\thesection\ #1}}
+	\ofoot{\pagemark}
+	\cfoot{}
+
+% clereref must be loaded after anything that changes the referencing system
+\usepackage{cleveref}
+\creflabelformat{equation}{#2#1#3}
+
+% make the code float work with cleverref
+\crefname{codecell}{code}{codes}
+\Crefname{codecell}{code}{codes}
+% make the text float work with cleverref
+\crefname{textcell}{text}{texts}
+\Crefname{textcell}{text}{texts}
+% make the text float work with cleverref
+\crefname{errorcell}{error}{errors}
+\Crefname{errorcell}{error}{errors}
+
+	\begin{document}
+
+		\begin{titlepage}
+
+	\begin{center}
+
+	\vspace*{1cm}
+
+	\Huge\textbf{Visualisation of 3D atomic and electronic data}
+
+	\vspace{0.5cm}
+
+	\vspace{1.5cm}
+
+	\begin{minipage}{0.8\textwidth}   
+		\begin{center}  
+		\begin{minipage}{0.39\textwidth}
+		\begin{flushleft} \Large
+		\emph{\GetTranslation{Author}:}\\Chris Sewell\\
+		\end{flushleft}
+		\end{minipage}
+		\hspace{\fill}
+		\begin{minipage}{0.39\textwidth}
+		\begin{flushright} \Large\emph{\GetTranslation{Supervisors}:} \\
+			  one
+		\end{flushright}
+		\end{minipage}
+		\end{center}   
+	\end{minipage}
+
+	\vfill
+
+	\begin{minipage}{0.8\textwidth}
+	\begin{center}
+	\end{center} 
+	\end{minipage}
+
+	\vspace{0.8cm}
+		  \LARGE{Imperial College London}\\
+		  \LARGE{South Kensington, London}\\
+
+	\vspace{0.4cm}
+
+	\today
+
+	\end{center}
+	\end{titlepage}
+
+		\begingroup
+    \let\cleardoublepage\relax
+    \let\clearpage\relax\tableofcontents\listoffigures\listoftables\listof{codecell}{\GetTranslation{List of Codes}}
+    \endgroup
+
+\section{Introduction}\label{introduction}
+
+With the improvements in Jupyter Notebook, allowing for the synergy of
+browser-side javascript and client-side python coding, it is becoming
+possible to replicate the functionality of standalone atomic
+visualisation packages (such as
+\href{https://ovito.org/index.php/about}{ovito}). The added benefits
+this approach brings is:
+
+\begin{itemize}
+\tightlist
+\item
+  Greater control and flexibility in the analysis and visualisation
+  process
+\item
+  Fully autonomous replication of the analysis and visualisation
+\item
+  Better documentation of the analysis and visualisation
+\end{itemize}
+
+The goal of this notebook is to show a method for:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  reading/creating atomic configurations
+\item
+  visualising these in a Jupyter Notebook
+\item
+  Adding dynamic controls
+\item
+  Overlaying electronic level data (probability/spin densities)
+\item
+  Distributing the output
+\end{enumerate}
+
+\section{Creating Atomic
+Configurations}\label{creating-atomic-configurations}
+
+The \href{http://pymatgen.org/}{pymatgen} package offers a means to
+create/manipulate atomic configurations with repeating boundary
+conditions.
+
+For this demonstration, we would like to select structures from a folder
+of cif (crystallographic information files). This is achieved by writing
+a \emph{plugin} for
+\href{https://github.com/chrisjsewell/jsonextended}{jsonextended}, which
+is a package parsing file types into a json format and subsequent
+manipulation.
+
+\begin{lstlisting}[language={},postbreak={},numbers=none,xrightmargin=7pt,belowskip=5pt,aboveskip=5pt,breakindent=0pt]
+FeS_greigite.cif: {...}
+FeS_mackinawite.cif: {...}
+FeS_marcasite.cif: {...}
+FeS_pyrite.cif: {...}
+FeS_pyrrhotite_4C_c2c.cif: {...}
+FeS_troilite.cif: {...}
+Fe_bcc.cif: {...}
+S_8alpha_fddd.cif: {...}
+S_8beta_p21c.cif: {...}
+
+\end{lstlisting}
+
+For each cif, we can now access a pymatgen structure:
+
+\begin{lstlisting}[language={},postbreak={},numbers=none,xrightmargin=7pt,breakindent=0pt,aboveskip=5pt,belowskip=5pt]
+Structure Summary
+Lattice
+    abc : 3.6735000000000002 3.6735000000000002 5.0327999999999999
+ angles : 90.0 90.0 90.0
+ volume : 67.91563420380001
+      A : 3.6735000000000002 0.0 2.2493700083339009e-16
+      B : -2.2493700083339009e-16 3.6735000000000002 2.2493700083339009e-16
+      C : 0.0 0.0 5.0327999999999999
+PeriodicSite: Fe (0.0000, 0.0000, 0.0000) [0.0000, 0.0000, 0.0000]
+PeriodicSite: Fe (1.8367, 1.8368, 0.0000) [0.5000, 0.5000, 0.0000]
+PeriodicSite: S (-0.0000, 1.8368, 1.3095) [0.0000, 0.5000, 0.2602]
+PeriodicSite: S (1.8368, 0.0000, 3.7233) [0.5000, 0.0000, 0.7398]
+\end{lstlisting}
+
+\section{Preparation for
+visualisation}\label{preparation-for-visualisation}
+
+A visualisation requires the configuration to contain some additional
+information, including the atom shape (e.g. sphere radius) and texture
+(e.g. sphere color).
+
+Therefore, it will be helpful to create a view agnostic (i.e.
+independendant of any specific graphics package) representation of all
+elements we wish to visualise. We do this by deconstructing the pymatgen
+structure and applying a mapping of atomic number to radius/color, using
+a pre-constructed csv table.
+
+    \begin{table}[H]\caption{The first rows of the atomic data lookup.}
+
+        \centering
+		\begin{adjustbox}{max width=\textwidth}
+        \begin{tabular}{lrrrrrrlrrrrl}
+\toprule
+{} &  Blue &  ElAffinity &  ElNeg &  Green &  Ionization &   Mass &       Name &   RBO &  RCov &  RVdW &   Red & Symbol \\
+\midrule
+  &       &             &        &        &             &        &            &       &       &       &       &        \\
+1 &  0.75 &        0.75 &   2.20 &   0.75 &       13.60 &   1.01 &   Hydrogen &  0.31 &  0.31 &  1.10 &  0.75 &      H \\
+2 &  1.00 &        0.00 &   0.00 &   1.00 &       24.59 &   4.00 &     Helium &  0.28 &  0.28 &  1.40 &  0.85 &     He \\
+3 &  1.00 &        0.62 &   0.98 &   0.50 &        5.39 &   6.94 &    Lithium &  1.28 &  1.28 &  1.81 &  0.80 &     Li \\
+4 &  0.00 &        0.00 &   1.57 &   1.00 &        9.32 &   9.01 &  Beryllium &  0.96 &  0.96 &  1.53 &  0.76 &     Be \\
+5 &  0.71 &        0.28 &   2.04 &   0.71 &        8.30 &  10.81 &      Boron &  0.84 &  0.84 &  1.92 &  1.00 &      B \\
+\bottomrule
+\end{tabular}
+
+		\end{adjustbox}
+        \end{table}
+
+\begin{lstlisting}[language={},postbreak={},numbers=none,xrightmargin=7pt,belowskip=5pt,aboveskip=5pt,breakindent=0pt,escapechar=\%]
+%\textcolor{ansi-blue}{mackinawite\_Fe}%: 
+  %\textcolor{ansi-blue}{cell\_vectors}%: 
+    %\textcolor{ansi-blue}{a}%: [ 3.67350000e+00 0.00000000e+00 2.24937001e-16]
+    %\textcolor{ansi-blue}{b}%: [ -2.24937001e-16 3.67350000e+00 2.24937001e-16]
+    %\textcolor{ansi-blue}{c}%: [ 0. 0. 5.0328]
+  %\textcolor{ansi-blue}{centre}%: [ 1.83675 1.83675 2.5164 ]
+  %\textcolor{ansi-blue}{color}%: rgb(224,102,51)
+  %\textcolor{ansi-blue}{coords}%: [[ 0. 0. 0.], [ 1.83675000e+00 1.83675000e+00 
+                   2.24937001e-16]]
+  %\textcolor{ansi-blue}{label}%: Fe
+  %\textcolor{ansi-blue}{radius}%: 1.32
+  %\textcolor{ansi-blue}{transparency}%: 1.0
+  %\textcolor{ansi-blue}{type}%: scatter
+  %\textcolor{ansi-blue}{visible}%: [True, True]
+%\textcolor{ansi-blue}{mackinawite\_S}%: 
+  %\textcolor{ansi-blue}{cell\_vectors}%: 
+    %\textcolor{ansi-blue}{a}%: [ 3.67350000e+00 0.00000000e+00 2.24937001e-16]
+    %\textcolor{ansi-blue}{b}%: [ -2.24937001e-16 3.67350000e+00 2.24937001e-16]
+    %\textcolor{ansi-blue}{c}%: [ 0. 0. 5.0328]
+  %\textcolor{ansi-blue}{centre}%: [ 1.83675 1.83675 2.5164 ]
+  %\textcolor{ansi-blue}{color}%: rgb(178,178,0)
+  %\textcolor{ansi-blue}{coords}%: [[ -1.12468500e-16 1.83675000e+00 
+                   1.30953456e+00], [ 1.83675 0. 3.72326544]]
+  %\textcolor{ansi-blue}{label}%: S
+  %\textcolor{ansi-blue}{radius}%: 1.05
+  %\textcolor{ansi-blue}{transparency}%: 1.0
+  %\textcolor{ansi-blue}{type}%: scatter
+  %\textcolor{ansi-blue}{visible}%: [True, True]
+
+\end{lstlisting}
+
+Since the representation is in a JSON format, it makes it very easy to
+extend to new types of elements. Note that we group atoms with the same
+visual representations, rather than specifying each atom separately.
+This is because it will be more efficient for the rendering process (see
+\href{http://www.ianww.com/blog/2012/11/04/optimizing-three-dot-js-performance-simulating-tens-of-thousands-of-independent-moving-objects/}{here}
+for an explanation). Here we do this by atomic number, but equally it
+could be done by symmetry equivalence or another metric.
+
+\subsection{Geometry Manipulation}\label{geometry-manipulation}
+
+We will also likely want to:
+
+\begin{itemize}
+\tightlist
+\item
+  create a supercell of the configuration
+\item
+  orientate the configuration in a convenient manner in the cartesian
+  coordinate space
+\item
+  slice into the configuration
+\end{itemize}
+
+We can group these operations into a class, which is extensible to more
+geometric operation and element types.
+
+\begin{lstlisting}[language={},postbreak={},numbers=none,xrightmargin=7pt,belowskip=5pt,aboveskip=5pt,breakindent=0pt,escapechar=\%]
+%\textcolor{ansi-blue}{mackinawite\_Fe}%: 
+  %\textcolor{ansi-blue}{cell\_vectors}%: 
+    %\textcolor{ansi-blue}{a}%: [ -6.74811003e-16 -1.10205000e+01 -1.47911420e-31]
+    %\textcolor{ansi-blue}{b}%: [ 3.67350000e+00 -1.37734189e-32 -4.93038066e-32]
+    %\textcolor{ansi-blue}{c}%: [ 3.08170121e-16 -3.08170121e-16 5.03280000e+00]
+  %\textcolor{ansi-blue}{centre}%: [ 0. 0. 0.]
+  %\textcolor{ansi-blue}{color}%: rgb(224,102,51)
+  %\textcolor{ansi-blue}{coords}%: [[-1.83675 5.51025 -2.5164 ], [ 0. 3.6735 
+                   -2.5164], [-1.83675 1.83675 -2.5164 ], [ 
+                   -2.22044605e-16 0.00000000e+00 -2.51640000e+00], 
+                   [-1.83675 -1.83675 -2.5164 ], [ -4.44089210e-16 
+                   -3.67350000e+00 -2.51640000e+00]]
+  %\textcolor{ansi-blue}{label}%: Fe
+  %\textcolor{ansi-blue}{radius}%: 1.32
+  %\textcolor{ansi-blue}{transparency}%: 1.0
+  %\textcolor{ansi-blue}{type}%: scatter
+  %\textcolor{ansi-blue}{visible}%: [True, True, True, True, True, True]
+%\textcolor{ansi-blue}{mackinawite\_S}%: 
+  %\textcolor{ansi-blue}{cell\_vectors}%: 
+    %\textcolor{ansi-blue}{a}%: [ -6.74811003e-16 -1.10205000e+01 -1.47911420e-31]
+    %\textcolor{ansi-blue}{b}%: [ 3.67350000e+00 -1.37734189e-32 -4.93038066e-32]
+    %\textcolor{ansi-blue}{c}%: [ 3.08170121e-16 -3.08170121e-16 5.03280000e+00]
+  %\textcolor{ansi-blue}{centre}%: [ 0. 0. 0.]
+  %\textcolor{ansi-blue}{color}%: rgb(178,178,0)
+  %\textcolor{ansi-blue}{coords}%: [[ 2.22044605e-16 5.51025000e+00 
+                   -1.20686544e+00], [-1.83675 3.6735 1.20686544], 
+                   [ 0. 1.83675 -1.20686544], [ -1.83675000e+00 
+                   -8.88178420e-16 1.20686544e+00], [ 
+                   -2.22044605e-16 -1.83675000e+00 
+                   -1.20686544e+00], [-1.83675 -3.6735 1.20686544]]
+  %\textcolor{ansi-blue}{label}%: S
+  %\textcolor{ansi-blue}{radius}%: 1.05
+  %\textcolor{ansi-blue}{transparency}%: 1.0
+  %\textcolor{ansi-blue}{type}%: scatter
+  %\textcolor{ansi-blue}{visible}%: [True, False, True, False, True, False]
+
+\end{lstlisting}
+
+\section{Visualising in the Jupyter
+Notebook}\label{visualising-in-the-jupyter-notebook}
+
+To create 3D renderings of the configuration, we will use
+\href{http://ipyvolume.readthedocs.io}{ipyvolume} and its implementation
+of the model/view pattern.
+
+\begin{lstlisting}[language={},postbreak={},numbers=none,xrightmargin=7pt,breakindent=0pt,aboveskip=5pt,belowskip=5pt]
+A Jupyter Widget
+\end{lstlisting}
+
+The rendering can also be captured as a screenshot or saved as an
+image/html. We shall discuss in Section \ref{analysis-distribution} how
+this can be utilised for to distribute the analysis.
+
+\begin{lstlisting}[language={},postbreak={},numbers=none,xrightmargin=7pt,breakindent=0pt,aboveskip=5pt,belowskip=5pt]
+A Jupyter Widget
+\end{lstlisting}
+
+\begin{figure}[H]\begin{center}\adjustimage{max size={0.9\linewidth}{0.9\paperheight},height=0.3\paperheight}{3D Atomic Visualisation_files/output_29_0.png}\end{center}\caption{an example of an ipyvolume scatter plot}\label{fig:ipyvol1}
+    \end{figure}
+
+\section{Adding Dynamic Controls}\label{adding-dynamic-controls}
+
+\href{http://ipyvolume.readthedocs.io}{ipyvolume} utilises the
+\href{http://ipywidgets.readthedocs.io}{ipywidgets} framework and thus
+it is relatively trivial to set up dynamic controls.
+
+\begin{lstlisting}[language={},postbreak={},numbers=none,xrightmargin=7pt,breakindent=0pt,aboveskip=5pt,belowskip=5pt]
+A Jupyter Widget
+\end{lstlisting}
+
+We can bundle these in with the original container to create a bespoke
+GUI.
+
+\begin{lstlisting}[language={},postbreak={},numbers=none,xrightmargin=7pt,breakindent=0pt,aboveskip=5pt,belowskip=5pt]
+A Jupyter Widget
+\end{lstlisting}
+
+\begin{lstlisting}[language={},postbreak={},numbers=none,xrightmargin=7pt,breakindent=0pt,aboveskip=5pt,belowskip=5pt]
+A Jupyter Widget
+\end{lstlisting}
+
+\begin{figure}[H]\begin{center}\adjustimage{max size={0.9\linewidth}{0.9\paperheight},height=0.3\paperheight}{3D Atomic Visualisation_files/output_37_0.png}\end{center}\caption{an example of an ipyvolume scatter plot (with bespoke controls)}\label{fig:ipyvol2}
+    \end{figure}
+
+\section{Overlaying electronic level
+data}\label{overlaying-electronic-level-data}
+
+\emph{Ab initio} quantum simulation packages can compute electronic/spin
+densities (to accompany the nuclei positions) in the form of a
+discretized 3D cube. These can be overlayed onto the nuclei, by
+\href{https://en.wikipedia.org/wiki/Volume_rendering}{volume rendering}
+or \href{https://en.wikipedia.org/wiki/Isosurface}{isosurface} methods.
+
+\subsection{Data Parsing}\label{data-parsing}
+
+Taking the \href{http://www.crystal.unito.it/index.php}{CRYSTAL} program
+as an example, output from the electronic density is principally output
+into two files; one that contains the lattice vectors and nuclei
+coordinates and one that contains a data cube of the electronic density,
+with axis relating to the cell vectors. We can write parser plugins for
+both these files:
+
+\begin{lstlisting}[language={},postbreak={},numbers=none,xrightmargin=7pt,belowskip=5pt,aboveskip=5pt,breakindent=0pt]
+ech3.out: 
+  structure: Full Formula (Si2) Reduced Formula: Si abc   :   3.832519 
+                      3.832519   3.832519 angles:  60.000000  60.000000 
+                      60.000000 Sites (2)   #  SP           a         b 
+                      c ---  ----  --------  --------  --------   0  Si 
+                      0.125092  0.125092  0.125092   1  Si    0.874908  0.875277 
+                      0.874908
+ech3_dat.prop3d: 
+  charge_density: np.array((100, 100, 100), min=2.68E-03, max=5.36E+02)
+  da_vec: [ 0. 0.051729 0.051729]
+  db_vec: [ 0.051729 0. 0.051729]
+  dc_vec: [ 0.051729 0.051729 0. ]
+  na:    100
+  nb:    100
+  nc:    100
+  o_vec: [0.0, 0.0, 0.0]
+
+\end{lstlisting}
+
+\subsection{Visualisation Preparation}\label{visualisation-preparation}
+
+We then, follow the same process as for atoms; converting to a common
+structure and adding geometric manipulation functions for this data
+type.
+
+\begin{lstlisting}[language={},postbreak={},numbers=none,xrightmargin=7pt,belowskip=5pt,aboveskip=5pt,breakindent=0pt,escapechar=\%]
+%\textcolor{ansi-blue}{Silicon Charge}%: 
+  %\textcolor{ansi-blue}{cell\_vectors}%: 
+    %\textcolor{ansi-blue}{a}%: [ 0. 2.71 2.71]
+    %\textcolor{ansi-blue}{b}%: [ 2.71 0. 2.71]
+    %\textcolor{ansi-blue}{c}%: [ 2.71 2.71 0. ]
+  %\textcolor{ansi-blue}{centre}%: [ 2.71 2.71 2.71]
+  %\textcolor{ansi-blue}{dcube}%: np.array((100, 100, 100), min=2.68E-03, max=5.36E+02)
+  %\textcolor{ansi-blue}{slices}%: []
+  %\textcolor{ansi-blue}{type}%: volume
+%\textcolor{ansi-blue}{Silicon\_Si}%: 
+  %\textcolor{ansi-blue}{cell\_vectors}%: 
+    %\textcolor{ansi-blue}{a}%: [ 0. 2.71 2.71]
+    %\textcolor{ansi-blue}{b}%: [ 2.71 0. 2.71]
+    %\textcolor{ansi-blue}{c}%: [ 2.71 2.71 0. ]
+  %\textcolor{ansi-blue}{centre}%: [ 2.71 2.71 2.71]
+  %\textcolor{ansi-blue}{color}%: rgb(127,153,153)
+  %\textcolor{ansi-blue}{coords}%: [[ 0.678 0.678 0.678], [ 4.743 4.742 4.743]]
+  %\textcolor{ansi-blue}{label}%: Si
+  %\textcolor{ansi-blue}{radius}%: 1.11
+  %\textcolor{ansi-blue}{transparency}%: 1.0
+  %\textcolor{ansi-blue}{type}%: scatter
+  %\textcolor{ansi-blue}{visible}%: [True, True]
+
+\end{lstlisting}
+
+\begin{lstlisting}[language={},postbreak={},numbers=none,xrightmargin=7pt,belowskip=5pt,aboveskip=5pt,breakindent=0pt]
+cell_vectors: 
+  a: [ 0. 10.84 10.84]
+  b: [ 10.84 0. 10.84]
+  c: [ 10.84 10.84 0. ]
+centre: [ 0. 0. 0.]
+dcube:  np.array((400, 400, 400), min=2.68E-03, max=5.36E+02)
+slices: [([ 0. 0. 1.], None, -4, None)]
+type:   volume
+
+\end{lstlisting}
+
+\subsection{Visualisation}\label{visualisation}
+
+For ipyvolume, at present, the volume data must a cube of equal
+dimensions. Therefore, we use the cell vectors to transform the data
+cube into cartesian coordinates, such that voxels (cube sections)
+outside of the cell volume are set as np.nan values. We also resize the
+discretisation of the cube to an appropriate size for the renderer to
+handle.
+
+Additionally, for ipyvolume (in its current state), there can only be
+one volume rendering per scene and it is assumed that the volumes bottom
+left corner is at (0,0,0).
+
+\begin{lstlisting}[language={},postbreak={},numbers=none,xrightmargin=7pt,belowskip=5pt,aboveskip=5pt,breakindent=0pt]
+cell_vectors: 
+  a: [ 0. 10.84 10.84]
+  b: [ 10.84 0. 10.84]
+  c: [ 10.84 10.84 0. ]
+centre: [ 0. 0. 0.]
+dcube:  np.array((400, 400, 400), min=2.68E-03, max=5.36E+02)
+slices: [([ 0. 1. 1.], -2, 0, None)]
+type:   volume
+
+\end{lstlisting}
+
+\begin{lstlisting}[language={},postbreak={},numbers=none,xrightmargin=7pt,breakindent=0pt,aboveskip=5pt,belowskip=5pt]
+A Jupyter Widget
+\end{lstlisting}
+
+\begin{lstlisting}[language={},postbreak={},numbers=none,xrightmargin=7pt,breakindent=0pt,aboveskip=5pt,belowskip=5pt]
+A Jupyter Widget
+\end{lstlisting}
+
+\begin{figure}[H]\begin{center}\adjustimage{max size={0.9\linewidth}{0.9\paperheight},height=0.3\paperheight}{3D Atomic Visualisation_files/output_58_0.png}\end{center}\caption{an example of an ipyvolume volume and scatter plot (with bespoke controls)}\label{fig:ipyvol3}
+    \end{figure}
+
+\section{2D Representations}\label{d-representations}
+
+Because the data is stored in a representation agnostic manner, this
+allows for the possibility of displaying the data in multiple ways. In
+particular, for publication quality images we may want to create a 2D
+representation of the scene.
+
+\begin{lstlisting}[language={},postbreak={},numbers=none,xrightmargin=7pt,belowskip=5pt,aboveskip=5pt,breakindent=0pt]
+mackinawite_Fe: 
+  cell_vectors: {...}
+  centre:       
+  color:        
+  coords:       
+  label:        
+  radius:       
+  transparency: 
+  type:         
+  visible:      
+mackinawite_S: 
+  cell_vectors: {...}
+  centre:       
+  color:        
+  coords:       
+  label:        
+  radius:       
+  transparency: 
+  type:         
+  visible:      
+
+\end{lstlisting}
+
+\begin{lstlisting}[language={},postbreak={},numbers=none,xrightmargin=7pt,breakindent=0pt,aboveskip=5pt,belowskip=5pt]
+dict_keys(['mackinawite_Fe', 'mackinawite_S'])
+\end{lstlisting}
+
+\begin{figure}[H]\begin{center}\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{3D Atomic Visualisation_files/output_62_1.pdf}\end{center}
+    \end{figure}
+
+\section{Analysis Distribution}\label{analysis-distribution}
+
+\section{TODO}\label{todo}
+
+\begin{itemize}
+\tightlist
+\item
+  Finalise electronic density section
+
+  \begin{itemize}
+  \tightlist
+  \item
+    transfer parsing code into jsonextended plugin
+  \item
+    tidy rest of code and put into document
+  \end{itemize}
+\item
+  Orthographic camera. Not yet implemented in ipyvolume, see
+  \href{https://github.com/maartenbreddels/ipyvolume/issues/31}{this
+  issue} for current status.
+\item
+  better control of spheres
+
+  \begin{itemize}
+  \tightlist
+  \item
+    radius rather than size
+  \item
+    more segments
+  \item
+    transparency level
+  \end{itemize}
+\item
+  show lattice bounding box: parallelepiped wire frames
+\item
+  show nearest-neighbour coordination: polygons with vertices at
+  nearest-neighbour positions (as shown in \cref{fig:nnpolygons})
+\end{itemize}
+
+\begin{figure}[H]\begin{center}\adjustimage{max size={0.9\linewidth}{0.9\paperheight},height=0.2\paperheight}{3D Atomic Visualisation_files/output_68_0.jpeg}\end{center}\caption{an example of nearest-neighbour polygons}\label{fig:nnpolygons}
+    \end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  functional (browser side) controls, e.g. slider to translate/rotate
+  point set. Not yet implemented in ipywidgets, see
+  \href{https://github.com/jupyter-widgets/ipywidgets/issues/1109}{this
+  issue} for current status.
+\item
+  volumes:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    RuntimeWarning: invalid value encountered in true\_divide
+    (serialize.py:43) presumably for (0,0,0) gradients
+  \item
+    rarely get artifact rendering
+  \item
+    isosurface rendering
+  \item
+    multiple volumes
+  \item
+    volumes with arbitrary centres
+  \item
+    rotating volumes
+  \end{itemize}
+\item
+  fullscreen
+
+  \begin{itemize}
+  \tightlist
+  \item
+    fails to open if multiple views instantiated
+  \item
+    if volume is present, then the rendering becomes very low resolution
+    and the volume disappears completely on exit
+  \end{itemize}
+\end{itemize}
+
+	\end{document}
+

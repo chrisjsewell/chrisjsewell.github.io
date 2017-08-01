@@ -1,16 +1,17 @@
-INFO:main:started ipypublish at Wed Jul 26 06:16:39 2017
+INFO:main:started ipypublish at Tue Aug  1 04:27:36 2017
 INFO:main:logging to: /Users/cjs14/GitHub/ipypublish/converted/Example.nbpub.log
 INFO:main:running for ipynb(s) at: example/notebooks/Example.ipynb
 INFO:main:with conversion: html_ipypublish_main
 INFO:nbmerge:Reading notebook
 INFO:main:getting output format from exporter plugin
 INFO:nbexport:running nbconvert
+INFO:split_outputs:splitting outputs into separate cells
 INFO:latex_doc_links:resolving external file paths in ipub metadata to: example/notebooks/Example.ipynb
 INFO:latex_doc_html:processing notebook for html output in ipub metadata to: example/notebooks/Example.ipynb
-INFO:latex_doc_html:attmepting to embed html in notebook from:: /Users/cjs14/GitHub/ipypublish/example/html/embed.html
-INFO:latex_doc_html:successfuly embedded html in cell
+INFO:latex_doc_html:embedding html in notebook from: Example_files/embed.html
 INFO:latextags_to_html:converting latex tags to html
 INFO:latextags_to_html:reading bibliopath: /Users/cjs14/GitHub/ipypublish/example/bibliographies/example.bib
 INFO:latex_doc_captions:extracting caption cells
 INFO:main:outputting converted file to: /Users/cjs14/GitHub/ipypublish/converted/Example.html
+INFO:main:dumping external files to: /Users/cjs14/GitHub/ipypublish/converted/Example_files
 INFO:main:process finished successfully
