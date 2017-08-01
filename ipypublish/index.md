@@ -7,6 +7,9 @@ See [Example.pdf](https://chrisjsewell.github.io/ipypublish/Example.view_pdf.htm
 [Example.html](https://chrisjsewell.github.io/ipypublish/Example.html) and 
 [Example.slides.html](https://chrisjsewell.github.io/ipypublish/Example.slides.html#/) for an example of the potential outputs.
 
+Or, for a practical example of the ipypublish capability, see these documents on Atomic 3D Visualisation: 
+[Notebook](https://github.com/chrisjsewell/chrisjsewell.github.io/blob/master/3d_atomic/3D%20Atomic%20Visualisation.ipynb), [PDF](https://chrisjsewell.github.io/3d_atomic/converted/3D Atomic Visualisation.view_pdf.html), [HTML](https://chrisjsewell.github.io/3d_atomic/converted/3D%20Atomic%20Visualisation.html) or [Reveal.JS slideshow](https://chrisjsewell.github.io/3d_atomic/converted/3D Atomic Visualisation.slides.html).
+
 * TOC
 {:toc}
 
