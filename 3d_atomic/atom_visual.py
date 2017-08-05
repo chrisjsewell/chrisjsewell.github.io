@@ -16,10 +16,32 @@ plugins.load_builtin_plugins()
 from collections import OrderedDict
 from scipy.spatial import Delaunay
 from scipy.interpolate import interpn
+from scipy.ndimage import zoom as ndzoom
 from fractions import Fraction
-from jsonschema import validate
+from jsonschema import validators, Draft4Validator, FormatChecker
+from jsonschema.exceptions import ValidationError
+import matplotlib as mpl
+import numpy as np
 
 import data
+
+# add some validators for n-dimensional data
+def nddim_validator(validator, value, instance, schema):
+    dim = len(np.asarray(instance).shape)
+    if value != dim:
+        yield ValidationError(
+            "object is of dimension {} not {}".format(dim, value))
+def ndtype_validator(validator, value, instance, schema):
+    try:
+        np.asarray(instance,dtype=value)
+    except (ValueError, TypeError):
+        yield ValidationError(
+            "object cannot be coerced to type %s" % value)
+validator = validators.extend(
+    Draft4Validator,
+    validators={
+        'nddim': nddim_validator,
+        'ndtype':ndtype_validator})
 
 my_data = edict.LazyLoad(get_module_path(data))
 _default_atom_map = pd.DataFrame(my_data.atom_data_csv.to_dict())
@@ -36,7 +58,7 @@ def struct_to_visual(struct,name,atom_map=None):
     
     if atom_map is None:
         atom_map = _default_atom_map
-    color = 'rgb({r},{g},{b})'
+    #color = 'rgb({r},{g},{b})'
     a,b,c = [_ for _ in struct.lattice.matrix]
     centre = 0.5*(a+b+c)
     
@@ -50,23 +72,38 @@ def struct_to_visual(struct,name,atom_map=None):
             sdict[key]['label'] = atom_map.loc[anum].Symbol            
             sdict[key]['radius'] = atom_map.loc[anum].RCov    
             sdict[key]['transparency'] = 1.0
-            sdict[key]['color'] = color.format(r=int(float(atom_map.loc[anum].Red)*255),
-                                          g=int(float(atom_map.loc[anum].Green)*255),
-                                          b=int(float(atom_map.loc[anum].Blue)*255))
+            sdict[key]['color'] = mpl.colors.to_hex((
+             atom_map.loc[anum].Red, atom_map.loc[anum].Green,
+             atom_map.loc[anum].Blue))
             sdict[key]['centre'] = centre.tolist()
             sdict[key]['cell_vectors'] = {}
             sdict[key]['cell_vectors']['a'] = a.tolist()
             sdict[key]['cell_vectors']['b'] = b.tolist()
             sdict[key]['cell_vectors']['c'] = c.tolist()
             sdict[key]['coords'] = []
-            #sdict[key]['visible'] = []
-            #sdict[key]['transforms'] = []
+            sdict[key]['transforms'] = []
             
         sdict[key]['coords'].append(pos.tolist())
-        #sdict[key]['visible'].append(True)
     
     return {'elements':list(sdict.values()),'transforms':[]}
         
+def dcube_to_visual(cube,struct,sname,label):
+    sdict = {}
+    a,b,c = [_ for _ in struct.lattice.matrix]
+    centre = 0.5*(a+b+c)
+
+    sdict['type'] = 'repeat_density'
+    sdict['sname'] = sname
+    sdict['label'] = label
+    sdict['centre'] = centre.tolist()
+    sdict['dcube'] = cube.copy()
+    sdict['cell_vectors'] = {}
+    sdict['cell_vectors']['a'] = a.tolist()
+    sdict['cell_vectors']['b'] = b.tolist()
+    sdict['cell_vectors']['c'] = c.tolist() 
+    sdict['transforms'] = []
+    return {'elements':[sdict],'transforms':[]}
+
 def add_transform_repeat(vstruct,vector='a',rep=1,
                         recentre=True):
     """repeat all elements by their local centre and cell vectors
@@ -99,6 +136,18 @@ def add_transform_align(vstruct,
         'type':'local_align',
         'cvector':vector,
         'direction':direction})
+
+def add_transform_resize(vstruct,sfraction=1.):
+    """resize data array
+    for example array of shape (16,16,16) with sfraction 0.5
+    -> shape (8,8,8)
+                
+    sfraction : float
+        resize data by fraction
+    """
+    vstruct['transforms'].append({
+        'type':'resize',
+        'sfraction':sfraction})
 
 def add_transform_slice(vstruct,
             normal=(1,0,0),lbound=None,ubound=None,
@@ -267,6 +316,91 @@ def _cslice_repeat_cell(vstruct,normal=(1,0,0),lbound=None,ubound=None,
     vstruct['coords'] = np.asarray(vstruct['coords'])[mask].tolist()
                     
 
+def _repeat_repeat_density(vstruct,cvector='a',rep=1,
+                recentre=True):    
+    reps = OrderedDict([('a',1),('b',1),('c',1)])
+    reps[cvector] += abs(rep)
+    vstruct['dcube'] = np.tile(vstruct['dcube'],
+                               list(reps.values()))
+
+    a = np.array(vstruct['cell_vectors']['a'],dtype=float)
+    b = np.array(vstruct['cell_vectors']['b'],dtype=float)
+    c = np.array(vstruct['cell_vectors']['c'],dtype=float)
+    vecs = OrderedDict([('a',a),('b',b),('c',c)])
+        
+    repv = vecs[cvector] * (abs(rep)+1)
+    vstruct['cell_vectors'][cvector] = repv.tolist()
+    
+    if recentre:
+        centre = 0.5*(a+b+c)
+        vstruct['centre'] = centre.tolist()
+    
+def _resize_repeat_density(vstruct,sfraction):
+    vstruct['dcube'] = ndzoom(vstruct['dcube'],sfraction)
+    
+def _recentre_repeat_density(vstruct,centre=(0.,0.,0.)):
+    vstruct['centre'] = np.asarray(centre,dtype=float).tolist()   
+
+def _cslice_repeat_density(dstruct,
+               normal,lbound=None,ubound=None,
+               centre=None):
+    """
+    Examples
+    --------
+    >>> from pprint import pprint
+    >>> dstruct = {
+    ...  'dcube':np.ones((3,3,3)),
+    ...  'centre':[0.,0.,0.],
+    ...  'cell_vectors':{
+    ...      'a':[1,0,0],
+    ...      'b':[0,1,0],
+    ...      'c':[0,0,1]}
+    ... }
+    >>> normal = np.array((0.,0.,1.))
+    >>> ubound=0.25
+    >>> _cslice_repeat_density(
+    ...     dstruct,normal,ubound=ubound)
+    >>> pprint(dstruct)
+    {'cell_vectors': {'a': [1, 0, 0], 'b': [0, 1, 0], 'c': [0, 0, 1]},
+     'centre': [0.0, 0.0, 0.0],
+     'dcube': array([[[  1.,   1.,   1.],
+             [  1.,   1.,   1.],
+             [  1.,   1.,   1.]],
+
+            [[  1.,   1.,   1.],
+             [  1.,   1.,   1.],
+             [  1.,   1.,   1.]],
+
+            [[ nan,  nan,  nan],
+             [ nan,  nan,  nan],
+             [ nan,  nan,  nan]]])}
+    """
+    normal=np.asarray(normal,dtype=float)
+    centre = dstruct['centre'] if centre is None else centre
+    a = np.array(dstruct['cell_vectors']['a'],dtype=float)
+    b = np.array(dstruct['cell_vectors']['b'],dtype=float)
+    c = np.array(dstruct['cell_vectors']['c'],dtype=float)    
+    
+    tr = (2,0,1)
+    cubet = dstruct['dcube'].transpose(tr)
+    ldim,mdim,ndim = cubet.shape
+
+    l,m,n = np.meshgrid(np.arange(0,ldim),np.arange(0,mdim),np.arange(0,ndim))
+    l = l.reshape((l.shape[0]*l.shape[1]*l.shape[2],))
+    m = m.reshape((m.shape[0]*m.shape[1]*m.shape[2],))
+    n = n.reshape((n.shape[0]*n.shape[1]*n.shape[2],))
+    indices = np.array((l,m,n)).T
+        
+    #fcoords = np.divide(indices,np.array((ldim-1,mdim-1,ndim-1)))
+    coords = np.einsum('...jk,...k->...j',np.array([a,b,c]).T,
+                       np.divide(indices,np.array((ldim-1,mdim-1,ndim-1)))
+                      ) - (a+b+c)/2
+        
+    mask = _slice_mask(coords,normal,lbound,ubound)
+    mask = mask.reshape(cubet.shape)
+    cubet[~mask] = np.nan
+    dstruct['dcube'] = cubet.transpose(tr)
+
 def _get_vstruct_schema(eschemas=None,tschemas=None):
     eschemas = [{}] if eschemas is None else eschemas
     tschemas = [{}] if tschemas is None else tschemas
@@ -278,7 +412,10 @@ def _get_vstruct_schema(eschemas=None,tschemas=None):
                 'type':'array',
                 'items':{
                     'type':'object',
-                    'required':['type'],
+                    'required':['type','transforms'],
+                    'properties':{
+                        'transforms':{'type':'array'},
+                    },
                     'oneOf':eschemas
                 },
                 
@@ -297,15 +434,27 @@ def _get_vstruct_schema(eschemas=None,tschemas=None):
     
     return vstruct_schema
 
-_cell_repeat_transform_schema = {
+_element_schema = [
+   {
     'type':'object',
-    'required':['cell_vectors','centre','coords','type'],
+    'required':['cell_vectors','centre','coords','type',
+                'radius','color'],
     'properties':{
         'type':{'type':'string','pattern':'repeat_cell'},
         'cell_vectors':{'required':['a','b','c']},
         'coords':{'type':'array'}
-    }
-}
+        }
+  },
+   {
+    'type':'object',
+    'required':['cell_vectors','centre','dcube','type'],
+    'properties':{
+        'type':{'type':'string','pattern':'repeat_density'},
+        'cell_vectors':{'required':['a','b','c']},
+        'dcube':{'nddim':3,'ndtype':'float'}
+        }
+  },
+]
 
 _transform_schema = [
     {
@@ -336,162 +485,66 @@ _transform_schema = [
         'type':{'type':'string','pattern':'slice'},
         }        
     },
+    {
+    'type':'object',
+    'required':['type','sfraction'],
+    'properties':{
+        'type':{'type':'string','pattern':'resize'},
+        'sfraction':{'type':'number'}
+        }        
+    },
 ]
 
 def apply_transforms(vstruct):
     
-    tfuncs = {'repeat_cell':
-                  {'local_repeat':_repeat_repeat_cell,
+    tfuncs = {'repeat_cell':{
+                   'local_repeat':_repeat_repeat_cell,
                    'recentre':_recentre_repeat_cell,
                    'local_align':_align_repeat_cell,
-                   'slice':_cslice_repeat_cell}}
+                   'slice':_cslice_repeat_cell
+               },
+               'repeat_density':{
+                   'local_repeat':_repeat_repeat_density,
+                   'recentre':_recentre_repeat_density,                   
+                   'slice':_cslice_repeat_density,
+                   'resize':_resize_repeat_density,
+               }
+           
+           }
     
-    schema = _get_vstruct_schema([_cell_repeat_transform_schema],
+    schema = _get_vstruct_schema(_element_schema,
                                  _transform_schema)
-    validate(vstruct,schema)
+    validator(schema).validate(vstruct)
+    
     new_struct = copy.deepcopy(vstruct)
-    transforms = new_struct.pop('transforms')
+    gtransforms = new_struct.pop('transforms')
     new_struct['transforms'] = []
     
     for e in new_struct['elements']:
-        for trans in transforms:
+        
+        # apply global transforms
+        for trans in gtransforms:
             trans = copy.deepcopy(trans)
             ttype = trans.pop('type')
-            tfuncs[e['type']][ttype](e,**trans)
+            tset = tfuncs[e['type']]
+            if ttype not in tset:
+                raise ValueError(
+                'a {0} transform is not available for {1}'.format(ttype,e['type']))
+            tset[ttype](e,**trans)
+            
+        # apply local transforms
+        ltransforms = e.pop('transforms')
+        e['transforms'] = []
+        for trans in ltransforms:
+            trans = copy.deepcopy(trans)
+            ttype = trans.pop('type')
+            tset = tfuncs[e['type']]
+            if ttype not in tset:
+                raise ValueError(
+                'a {0} transform is not available for {1}'.format(ttype,e['type']))
+            tset[ttype](e,**trans)        
             
     return new_struct
-
-def create_ivol(vstruct,
-                width=500,height=400):
-                
-    
-    new_struct = apply_transforms(vstruct)
-    
-    p3.clear()
-    fig = p3.figure(width=width,height=height,controls=True)
-    fig.screen_capture_enabled = True
-    
-    for element in new_struct['elements']:
-        if element['type'] == 'repeat_cell':    
-            x, y, z = np.array(element['coords']).T
-            s = p3.scatter(x,y,z,marker='sphere',size=6,color=element['color'])        
-            element['ivol'] = s
-    
-    # split up controls
-    figbox, fullscreen = p3.gcc().children
-    
-    return new_struct, fig, {'view':[fullscreen]}
-
-def create_ivol_control(vstruct,vparam,ctype,cparam='value',**ckwargs):
-    """"""
-    assert 'ivol' in vstruct
-    ctrl = getattr(widgets,ctype)(**ckwargs)
-    widgets.jslink((vstruct['ivol'], vparam), (ctrl, cparam))
-    
-    return ctrl
-
-def add_controls(fig, ctrl_layout,
-                top=False):
-    """"""
-    if not ctrl_layout:
-        return fig
-    if isinstance(ctrl_layout,list):
-        layout = []
-        for cntrl in ctrl_layout:
-            if isinstance(cntrl,list):
-                cntrl = widgets.HBox(cntrl)
-            layout.append(cntrl)
-        options = widgets.VBox(layout)
-    else:
-        tabs = OrderedDict()
-        for name, cntrls in ctrl_layout.items():
-            layout = []
-            for cntrl in cntrls:
-                if isinstance(cntrl,list):
-                    cntrl = widgets.HBox(cntrl)
-                layout.append(cntrl)
-            tabs[name] = widgets.VBox(cntrls)
-        options = widgets.Tab(children=tuple(tabs.values()))
-        for i, name in enumerate(tabs):
-            options.set_title(i, name)
-        
-    if top:
-        return widgets.VBox([options,fig])
-    else:
-        return widgets.VBox([fig,options])
-    
-def dcube_to_visual(cube,struct,name):
-    sdict = {name:{}}
-    a,b,c = [_ for _ in struct.lattice.matrix]
-    centre = 0.5*(a+b+c)
-
-    sdict[name]['type'] = 'volume'
-    sdict[name]['centre'] = centre.copy()
-    sdict[name]['dcube'] = cube.copy()
-    sdict[name]['cell_vectors'] = {}
-    sdict[name]['cell_vectors']['a'] = a.copy()
-    sdict[name]['cell_vectors']['b'] = b.copy()
-    sdict[name]['cell_vectors']['c'] = c.copy() 
-    sdict[name]['slices'] = []
-    return sdict
-
-def _repeat_cell_volume(vstruct,vector='a',rep=1,
-                newcentre=True):    
-    assert vstruct['type'] == 'volume'
-    reps = OrderedDict([('a',1),('b',1),('c',1)])
-    reps[vector] += abs(rep)
-    vstruct['dcube'] = np.tile(vstruct['dcube'],
-                               list(reps.values()))
-    
-    repv = vstruct['cell_vectors'][vector]
-    vstruct['cell_vectors'][vector] = repv * (abs(rep)+1)
-    
-    if newcentre:
-        vstruct['centre'] = 0.5*(vstruct['cell_vectors']['a']
-                                +vstruct['cell_vectors']['b']
-                                +vstruct['cell_vectors']['c'])
-
-def _recentre_volume(vstruct,centre=(0.,0.,0.)):
-    assert vstruct['type'] == 'volume'
-    vstruct['centre'] = np.asarray(centre,dtype=float)   
-
-def _align_volume(vstruct,vector='a',direction=(1,0,0)):
-    """align cell vector to a cartesian direction"""
-    assert vstruct['type'] == 'volume'
-    direction=np.asarray(direction,dtype=float)
-    v = vstruct['cell_vectors'][vector]
-    new_cell = _realign_vectors([vstruct['cell_vectors']['a'],
-                                 vstruct['cell_vectors']['b'],
-                                 vstruct['cell_vectors']['c']],
-                                 v,direction)
-    vstruct['cell_vectors']['a'] = new_cell[0]
-    vstruct['cell_vectors']['b'] = new_cell[1]
-    vstruct['cell_vectors']['c'] = new_cell[2]
-
-def _cslice_volume(vstruct,normal=(1,0,0),lbound=None,ubound=None,
-          centre=None):
-    assert vstruct['type'] == 'volume'
-    normal=np.asarray(normal,dtype=float)
-    vstruct['slices'].append((
-        normal,lbound,ubound,centre)) 
-
-class GeometryManipulationWithVol(object):
-    _manip_dict = {
-        'scatter':{'repeat_cell':_repeat_repeat_cell,
-                   'recentre':_recentre_repeat_cell,
-                   'align':_align_repeat_cell,
-                   'cslice':_cslice_repeat_cell},
-        'volume':{'repeat_cell':_repeat_cell_volume,
-                   'recentre':_recentre_volume,
-                   'align':_align_volume,
-                   'cslice':_cslice_volume}
-    }
-    def align(self,*args,**kwargs):
-        raise NotImplementedError(
-            'rotating cell vectors currently not working for volumes')        
-            
-from scipy.spatial import Delaunay
-from scipy.interpolate import interpn
 
 def _cartesian_basis3d(A,v1,v2,v3,
                       centre=(0.,0.,0.),
@@ -603,39 +656,27 @@ def _cartesian_basis3d(A,v1,v2,v3,
             np.array((xmin,ymin,zmin)) - 0.5*(v1+v2+v3) + np.array(centre), 
             np.array((xmax,ymax,zmax)) - 0.5*(v1+v2+v3) + np.array(centre))
 
-def _slice_cube(cube,minb,maxb,
-               normal,lbound=None,ubound=None,
-               origin=(0.,0.,0.)):
-    tr = (2,0,1)
-    cubet = cube.transpose(tr)
-    xdim,ydim,zdim = cubet.shape
-
-    x,y,z = np.meshgrid(np.arange(0,xdim),np.arange(0,ydim),np.arange(0,zdim))
-    indices = np.array((x.flatten(),y.flatten(),z.flatten())).T
-    coords = np.divide(indices,np.array((xdim-1,ydim-1,zdim-1)))
-    coords = coords * (np.abs(maxb-minb)) + minb
-
-    mask = _slice_mask(coords,normal,lbound,ubound,origin)
-    mask = mask.reshape(cubet.shape)
-    cubet[~mask] = np.nan
-    return cubet.transpose(tr)
-
-def create_ivol_withvol(vstructs,
+def create_ivol(vstruct,
                 width=500,height=400,
-                max_dim=100,
-                controls=True,
-                **volargs):
+                ssize=5,
+                max_dim=100,**volargs):
+                
+    new_struct = apply_transforms(vstruct)
     
-    # ensure there is only one volume
-    voltypes = edict.filter_keyvals(vstructs,[('type','volume')]) 
-    assert len(voltypes)<=1, "there can only be one volume rendering per scene"
-
+    # ivolume currently only allows one volume rendering per plot
+    #voltypes = edict.filter_keyvals(vstructs,[('type','repeat_density')]) 
+    vol_index = [i for i, el in enumerate(new_struct['elements']) 
+                                if el['type']=='repeat_density']
+    assert len(vol_index)<=1, "ipyvolume only allows one volume rendering per scene"
+    
     p3.clear()
-    fig = p3.figure(width=width,height=height,controls=controls)
+    fig = p3.figure(width=width,height=height,controls=True)
     fig.screen_capture_enabled = True
-
-    if voltypes:
-        volstruct = vstructs[list(voltypes.keys())[0]]
+    
+    # the volume rendering must be created first, 
+    # for appropriately scaled axis
+    if vol_index:
+        volstruct = new_struct['elements'][vol_index[0]]
         a = volstruct['cell_vectors']['a']
         b = volstruct['cell_vectors']['b']
         c = volstruct['cell_vectors']['c']
@@ -644,32 +685,25 @@ def create_ivol_withvol(vstructs,
         out = _cartesian_basis3d(volstruct['dcube'],a,b,c,
                                 volstruct['centre'],
                                 max_dim=max_dim)
-        new_density, minb, maxb = out
-        for norm,lbound,ubound,centre in volstruct['slices']:
-            new_density = _slice_cube(
-                new_density,minb,maxb,
-                norm,lbound,ubound,
-                volstruct['centre'] if centre is None else centre)
-
+        new_density, (xmin,ymin,zmin), (xmax,ymax,zmax) = out
         vol = p3.volshow(new_density,**volargs,)
         volstruct['ivol'] = vol
         
         # appropriately scale axis
-        xmin,ymin,zmin = minb
-        xmax,ymax,zmax = maxb
         p3.xlim(xmin,xmax)
         p3.ylim(ymin,ymax)
         p3.zlim(zmin,zmax)    
     
-    for vstruct in vstructs.values():
-        if vstruct['type'] == 'scatter':    
-            coords = np.array(vstruct['coords'])[vstruct['visible']]
-            x, y, z = coords.T
-            s = p3.scatter(x,y,z,marker='sphere',size=3,color=vstruct['color'])        
-            vstruct['ivol'] = s
+    for element in new_struct['elements']:
+        if element['type'] == 'repeat_density':
+            continue    
+        if element['type'] == 'repeat_cell':    
+            x, y, z = np.array(element['coords']).T
+            s = p3.scatter(x,y,z,marker='sphere',size=ssize*element['radius'],color=element['color'])        
+            element['ivol'] = s
     
     # split up controls
-    if voltypes:
+    if vol_index:
         (level_ctrls, figbox, fullscreen, 
          extractrl1,extractrl2) = p3.gcc().children
         controls = OrderedDict([('transfer function',[level_ctrls]),
@@ -679,8 +713,46 @@ def create_ivol_withvol(vstructs,
         figbox, fullscreen = p3.gcc().children    
         controls = {'view':[fullscreen]}
     
-    return fig, controls
+    return new_struct, fig, {'view':[fullscreen]}
+
+def create_ivol_control(vstruct,vparam,ctype,cparam='value',**ckwargs):
+    """"""
+    assert 'ivol' in vstruct
+    ctrl = getattr(widgets,ctype)(**ckwargs)
+    widgets.jslink((vstruct['ivol'], vparam), (ctrl, cparam))
     
+    return ctrl
+
+def add_controls(fig, ctrl_layout,
+                top=False):
+    """"""
+    if not ctrl_layout:
+        return fig
+    if isinstance(ctrl_layout,list):
+        layout = []
+        for cntrl in ctrl_layout:
+            if isinstance(cntrl,list):
+                cntrl = widgets.HBox(cntrl)
+            layout.append(cntrl)
+        options = widgets.VBox(layout)
+    else:
+        tabs = OrderedDict()
+        for name, cntrls in ctrl_layout.items():
+            layout = []
+            for cntrl in cntrls:
+                if isinstance(cntrl,list):
+                    cntrl = widgets.HBox(cntrl)
+                layout.append(cntrl)
+            tabs[name] = widgets.VBox(layout)
+        options = widgets.Tab(children=tuple(tabs.values()))
+        for i, name in enumerate(tabs):
+            options.set_title(i, name)
+        
+    if top:
+        return widgets.VBox([options,fig])
+    else:
+        return widgets.VBox([fig,options])
+        
 def _color_to_rgb(item):
     try:
         if item.startswith('rgb('):
@@ -703,7 +775,7 @@ def _lighter_color(color, fraction=0.1):
     vector = white-color
     return color + vector * fraction
 
-def plot_atoms_top(structs,color_depth=None,
+def plot_atoms_top(vstruct,color_depth=None,
                axis_range=None,
                ax=None, legend=None,
                show_legend=True):
@@ -712,7 +784,7 @@ def plot_atoms_top(structs,color_depth=None,
     
     Parameters
     ----------
-    structs : dict
+    vstructs : dict
     color_depth: float
         z-depth at which colors are completely lightened 
     zrotation : float
@@ -721,6 +793,7 @@ def plot_atoms_top(structs,color_depth=None,
         (xmin,xmax,ymin,ymax)
                
     """
+    new_struct = apply_transforms(vstruct)
 
     if ax is None:
         fig = plt.figure()
@@ -729,24 +802,29 @@ def plot_atoms_top(structs,color_depth=None,
     legend = {} if legend is None else legend
     default_axis_range = None
 
-    # filter scatter type 
-    skeys = edict.filter_keyvals(structs,[('type','scatter')]).keys()
-    scatters = {k:structs[k] for k in skeys}
+    # filter repeat_cell type 
+    rcell_indices = [i for i, el in enumerate(new_struct['elements']) 
+                                if el['type']=='repeat_cell']
+    
+    
+    #skeys = edict.filter_keyvals(new_struct['elements'],[('type','repeat_cell')]).keys()
+    #scatters = {k:structs[k] for k in skeys}
+    scatters = [new_struct['elements'][i] for i in rcell_indices]
 
     # create list of atoms
     flatten = lambda l: [item for sublist in l for item in sublist]
-    items =   [len(v['coords']) for v in scatters.values()]
-    coords = flatten([v['coords'] for v in scatters.values()])
+    items =   [len(v['coords']) for v in scatters]
+    coords = flatten([v['coords'] for v in scatters])
     df = pd.DataFrame({
     'x':[v[0] for v in coords],
     'y':[v[1] for v in coords],
     'z':[v[2] for v in coords],
-    'visible':flatten([v['visible'] for v in scatters.values()]),
-    'radius':flatten([[v['radius']]*i for i,v in zip(items,scatters.values())]),
-    'transparency':flatten([[v['transparency']]*i for i,v in zip(items,scatters.values())]),
-    'color':flatten([[v['color']]*i for i,v in zip(items,scatters.values())])
+    #'visible':flatten([v['visible'] for v in scatters.values()]),
+    'radius':flatten([[v['radius']]*i for i,v in zip(items,scatters)]),
+    'transparency':flatten([[v['transparency']]*i for i,v in zip(items,scatters)]),
+    'color':flatten([[v['color']]*i for i,v in zip(items,scatters)])
     })
-    df = df[df.visible]
+    #df = df[df.visible]
     df.color = df.color.apply(_color_to_rgb)
 
     if color_depth is not None:
@@ -778,9 +856,12 @@ def plot_atoms_top(structs,color_depth=None,
                                          alpha=row.transparency,color=zcolor))
 
     if show_legend:
-        for name, scatter in scatters.items():
+        for scatter in scatters:
             color = _color_to_rgb(scatter['color'])
-            label = name.replace('_',' ')
+            label = scatter['label']
+            if scatter['sname']:
+                label += ' ('+scatter['sname']+')'
+            
             Artist = plt.Line2D((0,1),(0,0), color=color, marker='o', linestyle='')
             if label in legend:
                 raise ValueError('attempting to set muliple legend keys for label: {}'.format(label))
