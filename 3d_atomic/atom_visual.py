@@ -2,6 +2,7 @@
 
 
 import warnings
+import copy
 #warnings.filterwarnings("ignore")
 from ipypublish.scripts.ipynb_latex_setup import *
 from IPython.display import display, Image, IFrame
@@ -16,6 +17,7 @@ from collections import OrderedDict
 from scipy.spatial import Delaunay
 from scipy.interpolate import interpn
 from fractions import Fraction
+from jsonschema import validate
 
 import data
 
@@ -29,6 +31,9 @@ def get_atom_map():
     return _default_atom_map.copy()
 
 def struct_to_visual(struct,name,atom_map=None):
+    
+    assert isinstance(struct, pym.core.structure.Structure)
+    
     if atom_map is None:
         atom_map = _default_atom_map
     color = 'rgb({r},{g},{b})'
@@ -37,52 +42,116 @@ def struct_to_visual(struct,name,atom_map=None):
     
     sdict = {}
     for anum, pos in zip(struct.atomic_numbers,struct.cart_coords):
-        key = name+'_'+atom_map.loc[anum].Symbol
+        key = atom_map.loc[anum].Symbol
         if key not in sdict:
             sdict[key] = {}
-            sdict[key]['type'] = 'scatter'
+            sdict[key]['type'] = 'repeat_cell'
+            sdict[key]['sname'] = name                        
+            sdict[key]['label'] = atom_map.loc[anum].Symbol            
             sdict[key]['radius'] = atom_map.loc[anum].RCov    
             sdict[key]['transparency'] = 1.0
             sdict[key]['color'] = color.format(r=int(float(atom_map.loc[anum].Red)*255),
                                           g=int(float(atom_map.loc[anum].Green)*255),
                                           b=int(float(atom_map.loc[anum].Blue)*255))
-            sdict[key]['label'] = atom_map.loc[anum].Symbol
-            sdict[key]['centre'] = centre.copy()
+            sdict[key]['centre'] = centre.tolist()
             sdict[key]['cell_vectors'] = {}
-            sdict[key]['cell_vectors']['a'] = a.copy()
-            sdict[key]['cell_vectors']['b'] = b.copy()
-            sdict[key]['cell_vectors']['c'] = c .copy()           
+            sdict[key]['cell_vectors']['a'] = a.tolist()
+            sdict[key]['cell_vectors']['b'] = b.tolist()
+            sdict[key]['cell_vectors']['c'] = c.tolist()
             sdict[key]['coords'] = []
-            sdict[key]['visible'] = []
+            #sdict[key]['visible'] = []
+            #sdict[key]['transforms'] = []
             
-        sdict[key]['coords'].append(pos)
-        sdict[key]['visible'].append(True)
+        sdict[key]['coords'].append(pos.tolist())
+        #sdict[key]['visible'].append(True)
     
-    return sdict    
-    
-def _repeat_cell_scatter(vstruct,vector='a',rep=1,
-                newcentre=True):
-    assert vstruct['type'] == 'scatter'
+    return {'elements':list(sdict.values()),'transforms':[]}
+        
+def add_transform_repeat(vstruct,vector='a',rep=1,
+                        recentre=True):
+    """repeat all elements by their local centre and cell vectors
+    vector : ['a','b','c']
+    rep : int
+    recentre: bool
+        if True, move centre by 0.5 * rep * vector
+    """
+    vstruct['transforms'].append({
+        'type':'local_repeat',
+        'cvector':vector,
+        'rep':rep,
+        'recentre':recentre})
+
+def add_transform_recentre(vstruct,centre=(0.,0.,0.)):
+    """recentre all elements
+    centre : (x,y,z)
+    """
+    vstruct['transforms'].append({
+        'type':'recentre',
+        'centre':centre})
+
+def add_transform_align(vstruct,
+                vector='a',direction=(1,0,0)):
+    """align all elements (locally) in a cartesian direction
+    vector : ['a','b','c']
+    direction : (x,y,z)
+    """
+    vstruct['transforms'].append({
+        'type':'local_align',
+        'cvector':vector,
+        'direction':direction})
+
+def add_transform_slice(vstruct,
+            normal=(1,0,0),lbound=None,ubound=None,
+            centre=None):
+    """slice all elements 
+    norma : array((3,))
+        the vector normal to the slice planes
+    ubound : None or float
+        the fractional length (+/-) along the vector to create the upper slice plane
+        if None, no upper bound
+    lbound : None or float
+        the fractional length (+/-) along the vector to create the lower slice plane
+        if None, no lower bound
+    origin : array((3,))
+        the origin of the vector,
+        if None, use local centre
+    """
+    vstruct['transforms'].append({
+        'type':'slice',
+        'normal':normal,
+        'lbound':lbound,
+        'ubound':ubound,
+        'centre':centre})
+
+def _repeat_repeat_cell(vstruct,cvector='a',rep=1,
+                        recentre=True):
     init_coords = vstruct['coords'][:]
-    repv = vstruct['cell_vectors'][vector]
-    vstruct['cell_vectors'][vector] = repv * (abs(rep)+1)
+    repv = np.asarray(vstruct['cell_vectors'][cvector],dtype=float)
+    newvector = repv * (abs(rep)+1)
+    vstruct['cell_vectors'][cvector] = newvector.tolist()
     
-    if newcentre:
-        vstruct['centre'] = 0.5*(vstruct['cell_vectors']['a']
-                                +vstruct['cell_vectors']['b']
-                                +vstruct['cell_vectors']['c'])
+    if recentre:
+        centre = np.asarray(vstruct['centre']) 
+        centre = centre + repv * (abs(rep))/2.
+        vstruct['centre'] = centre.tolist()
     
     for r in range(abs(rep)):
         v = -repv*(r+1) if rep<0 else repv*(r+1)
-        vstruct['coords'] += [c+v for c in init_coords]
-        vstruct['visible'] += [True for c in init_coords]
+        new_coords = []
+        for c in init_coords:
+            new_c = np.array(c,dtype=float)+v
+            new_coords.append(new_c.tolist())
+        vstruct['coords'] += new_coords 
 
-def _recentre_scatter(vstruct,centre=(0.,0.,0.)):
-    assert vstruct['type'] == 'scatter'
+def _recentre_repeat_cell(vstruct,centre=(0.,0.,0.)):
     centre=np.asarray(centre,dtype=float)
-    tr = centre - vstruct['centre']
-    vstruct['centre'] = centre
-    vstruct['coords'] = [c+tr for c in vstruct['coords']]       
+    tr = centre - np.asarray(vstruct['centre'],dtype=float)
+    vstruct['centre'] = centre.tolist()
+    new_coords = []
+    for c in vstruct['coords']:
+        new_c = np.array(c,dtype=float)+tr
+        new_coords.append(new_c.tolist())
+    vstruct['coords'] = new_coords 
     
 def _realign_vectors(vectors,v1,v2):
     """
@@ -123,22 +192,23 @@ def _realign_vectors(vectors,v1,v2):
         (1.0 - rcos) * uvw[:,None] * uvw[None,:])
     return np.einsum('...jk,...k->...j',R.T,vectors)    
 
-def _align_scatter(vstruct,vector='a',direction=(1,0,0)):
+def _align_repeat_cell(vstruct,cvector='a',direction=(1,0,0)):
     """align cell vector to a cartesian direction"""
-    assert vstruct['type'] == 'scatter'
     direction=np.asarray(direction,dtype=float)
-    v = vstruct['cell_vectors'][vector]
+    v = vstruct['cell_vectors'][cvector]
     coords = np.array(vstruct['coords'])
     new_coords = _realign_vectors(coords,v,direction)
     vstruct['coords'] = new_coords.tolist()
     new_cell = _realign_vectors([vstruct['cell_vectors']['a'],
                                  vstruct['cell_vectors']['b'],
-                                 vstruct['cell_vectors']['c']],
+                                 vstruct['cell_vectors']['c'],
+                                 vstruct['centre']],
                                  v,direction)
-    vstruct['cell_vectors']['a'] = new_cell[0]
-    vstruct['cell_vectors']['b'] = new_cell[1]
-    vstruct['cell_vectors']['c'] = new_cell[2]
-
+    vstruct['cell_vectors']['a'] = new_cell[0].tolist()
+    vstruct['cell_vectors']['b'] = new_cell[1].tolist()
+    vstruct['cell_vectors']['c'] = new_cell[2].tolist()
+    vstruct['centre'] = new_cell[3].tolist()
+    
 def _slice_mask(points, vector, 
                lbound=None,ubound=None, 
                origin=(0,0,0),
@@ -187,75 +257,130 @@ def _slice_mask(points, vector,
 
     return mask   
 
-def _cslice_scatter(vstruct,normal=(1,0,0),lbound=None,ubound=None,
+def _cslice_repeat_cell(vstruct,normal=(1,0,0),lbound=None,ubound=None,
           centre=None):
-    assert vstruct['type'] == 'scatter'
     normal=np.asarray(normal,dtype=float)
     centre = vstruct['centre'] if centre is None else centre
-    vstruct['visible'] = _slice_mask(vstruct['coords'],
+    mask = _slice_mask(vstruct['coords'],
                     normal,lbound,ubound,
-                    centre,vstruct['visible']).tolist()
+                    centre)
+    vstruct['coords'] = np.asarray(vstruct['coords'])[mask].tolist()
                     
-class GeometryManipulation(object):
-    
-    _manip_dict = {
-        'scatter':{'repeat_cell':_repeat_cell_scatter,
-                   'recentre':_recentre_scatter,
-                   'align':_align_scatter,
-                   'cslice':_cslice_scatter}
-    }
-    def _apply_manip(self,vstructs,manip,*args,**kwargs):
-        for vstruct in vstructs.values():
-            vtype = vstruct['type']
-            if vtype not in self._manip_dict:
-                warning.warn('skipping type {} as not available'.format(vtype))
-                continue
-            func = self._manip_dict[vtype][manip]
-            func(vstruct,*args,**kwargs)
-    
-    def repeat_cell(self,vstructs,vector='a',rep=1,
-                    newcentre=True):
-        """repeat the cell <rep> times in the <vector> direction
-        if newcentre, apply a new centre position, 
-        at the midpoint of the cell vectors
-        """
-        self._apply_manip(vstructs,'repeat_cell',
-                    vector,rep,newcentre)            
-    def recentre(self,vstructs,centre=(0.,0.,0.)):   
-        """translate the element positions to the new centre
-        """
-        self._apply_manip(vstructs,'recentre',centre)
-    def align(self,vstructs,vector='a',direction=(1,0,0)):
-        """ align a cell vector to a cartesian vector
-        """
-        self._apply_manip(vstructs,'align',
-                    vector,direction)
-    def cslice(self,vstructs,normal=(1,0,0),
-               lbound=None,ubound=None,centre=None):
-        """ set elements visibility, outside the slice planes,
-        to be False
-        """
-        self._apply_manip(vstructs,'cslice',
-                    normal,lbound,ubound,centre)
 
-def create_ivol(vstructs,
-                width=500,height=400,
-                size=5, marker='sphere'):
+def _get_vstruct_schema(eschemas=None,tschemas=None):
+    eschemas = [{}] if eschemas is None else eschemas
+    tschemas = [{}] if tschemas is None else tschemas
+    vstruct_schema = {
+        'type':'object',
+        'required':['elements','transforms'],
+        'properties':{
+            'elements':{
+                'type':'array',
+                'items':{
+                    'type':'object',
+                    'required':['type'],
+                    'oneOf':eschemas
+                },
+                
+            },
+            'transforms':{
+                'type':'array',
+                'items':{
+                    'type':'object',
+                    'required':['type'],
+                    'oneOf':tschemas
+                },
+                
+            }
+        }
+    }
+    
+    return vstruct_schema
+
+_cell_repeat_transform_schema = {
+    'type':'object',
+    'required':['cell_vectors','centre','coords','type'],
+    'properties':{
+        'type':{'type':'string','pattern':'repeat_cell'},
+        'cell_vectors':{'required':['a','b','c']},
+        'coords':{'type':'array'}
+    }
+}
+
+_transform_schema = [
+    {
+    'type':'object',
+    'required':['cvector','rep','type'],
+    'properties':{
+        'type':{'type':'string','pattern':'local_repeat'},
+        }        
+    },
+    {
+    'type':'object',
+    'required':['cvector','direction','type'],
+    'properties':{
+        'type':{'type':'string','pattern':'local_align'},
+        }        
+    },
+    {
+    'type':'object',
+    'required':['centre','type'],
+    'properties':{
+        'type':{'type':'string','pattern':'recentre'},
+        }        
+    },
+    {
+    'type':'object',
+    'required':['type','centre','normal','lbound','ubound'],
+    'properties':{
+        'type':{'type':'string','pattern':'slice'},
+        }        
+    },
+]
+
+def apply_transforms(vstruct):
+    
+    tfuncs = {'repeat_cell':
+                  {'local_repeat':_repeat_repeat_cell,
+                   'recentre':_recentre_repeat_cell,
+                   'local_align':_align_repeat_cell,
+                   'slice':_cslice_repeat_cell}}
+    
+    schema = _get_vstruct_schema([_cell_repeat_transform_schema],
+                                 _transform_schema)
+    validate(vstruct,schema)
+    new_struct = copy.deepcopy(vstruct)
+    transforms = new_struct.pop('transforms')
+    new_struct['transforms'] = []
+    
+    for e in new_struct['elements']:
+        for trans in transforms:
+            trans = copy.deepcopy(trans)
+            ttype = trans.pop('type')
+            tfuncs[e['type']][ttype](e,**trans)
+            
+    return new_struct
+
+def create_ivol(vstruct,
+                width=500,height=400):
+                
+    
+    new_struct = apply_transforms(vstruct)
+    
     p3.clear()
     fig = p3.figure(width=width,height=height,controls=True)
     fig.screen_capture_enabled = True
     
-    for vstruct in vstructs.values():
-        if vstruct['type'] == 'scatter':    
-            coords = np.array(vstruct['coords'])[vstruct['visible']]
-            x, y, z = coords.T
-            s = p3.scatter(x,y,z,marker=marker,size=size,color=vstruct['color'])        
-            vstruct['ivol'] = s
+    for element in new_struct['elements']:
+        if element['type'] == 'repeat_cell':    
+            x, y, z = np.array(element['coords']).T
+            s = p3.scatter(x,y,z,marker='sphere',size=6,color=element['color'])        
+            element['ivol'] = s
     
     # split up controls
     figbox, fullscreen = p3.gcc().children
     
-    return fig, {'view':[fullscreen]}
+    return new_struct, fig, {'view':[fullscreen]}
 
 def create_ivol_control(vstruct,vparam,ctype,cparam='value',**ckwargs):
     """"""
@@ -350,12 +475,12 @@ def _cslice_volume(vstruct,normal=(1,0,0),lbound=None,ubound=None,
     vstruct['slices'].append((
         normal,lbound,ubound,centre)) 
 
-class GeometryManipulationWithVol(GeometryManipulation):
+class GeometryManipulationWithVol(object):
     _manip_dict = {
-        'scatter':{'repeat_cell':_repeat_cell_scatter,
-                   'recentre':_recentre_scatter,
-                   'align':_align_scatter,
-                   'cslice':_cslice_scatter},
+        'scatter':{'repeat_cell':_repeat_repeat_cell,
+                   'recentre':_recentre_repeat_cell,
+                   'align':_align_repeat_cell,
+                   'cslice':_cslice_repeat_cell},
         'volume':{'repeat_cell':_repeat_cell_volume,
                    'recentre':_recentre_volume,
                    'align':_align_volume,
