@@ -195,4 +195,4 @@ class ECH3CubePlugin(object):
 
         return dic
         
-print(plugins.load_plugin_classes([BANDPlugin, DOSSPlugin, ECH3OutPlugin,ECH3CubePlugin,CIFPlugin],'parsers'))
+_load_errors = plugins.load_plugin_classes([BANDPlugin, DOSSPlugin, ECH3OutPlugin,ECH3CubePlugin,CIFPlugin],'parsers')

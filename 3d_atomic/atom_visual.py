@@ -14,9 +14,10 @@ from jsonextended import edict, plugins
 from jsonextended.utils import get_module_path
 plugins.load_builtin_plugins()
 from collections import OrderedDict
-from scipy.spatial import Delaunay
+from scipy.spatial import Delaunay, ConvexHull
 from scipy.interpolate import interpn
 from scipy.ndimage import zoom as ndzoom
+from scipy.spatial import cKDTree
 from fractions import Fraction
 from jsonschema import validators, Draft4Validator, FormatChecker
 from jsonschema.exceptions import ValidationError
@@ -26,6 +27,7 @@ import numpy as np
 import data
 
 # add some validators for n-dimensional data
+# an example of custom validators: https://lat.sk/2017/03/custom-json-schema-type-validator-format-python/
 def nddim_validator(validator, value, instance, schema):
     dim = len(np.asarray(instance).shape)
     if value != dim:
@@ -47,7 +49,111 @@ my_data = edict.LazyLoad(get_module_path(data))
 _default_atom_map = pd.DataFrame(my_data.atom_data_csv.to_dict())
 _default_atom_map = _default_atom_map.apply(pd.to_numeric,axis=0, errors='ignore')
 _default_atom_map.set_index('Number',inplace=True)
-_default_atom_map.index.name = 'atomic\nnumber'
+_default_atom_map.index.name = ''
+
+def _get_vstruct_schema(eschemas=None,tschemas=None):
+    eschemas = [{}] if eschemas is None else eschemas
+    tschemas = [{}] if tschemas is None else tschemas
+    vstruct_schema = {
+        'type':'object',
+        'required':['elements','transforms'],
+        'properties':{
+            'elements':{
+                'type':'array',
+                'items':{
+                    'type':'object',
+                    'required':['type','transforms'],
+                    'properties':{
+                        'transforms':{'type':'array'},
+                    },
+                    'oneOf':eschemas
+                },
+                
+            },
+            'transforms':{
+                'type':'array',
+                'items':{
+                    'type':'object',
+                    'required':['type'],
+                    'oneOf':tschemas
+                },
+                
+            }
+        }
+    }
+    
+    return vstruct_schema
+
+_element_schema = [
+   {
+    'type':'object',
+    'required':['cell_vectors','centre','coords','type',
+                'radius','color'],
+    'properties':{
+        'type':{'type':'string','pattern':'repeat_cell'},
+        'cell_vectors':{'required':['a','b','c']},
+        'coords':{'type':'array'}
+        }
+  },
+   {
+    'type':'object',
+    'required':['cell_vectors','centre','polys','type',
+                'color'],
+    'properties':{
+        'type':{'type':'string','pattern':'repeat_poly'},
+        'cell_vectors':{'required':['a','b','c']},
+        'polys':{'type':'array'}
+        }
+  },
+   {
+    'type':'object',
+    'required':['cell_vectors','centre','dcube','type'],
+    'properties':{
+        'type':{'type':'string','pattern':'repeat_density'},
+        'cell_vectors':{'required':['a','b','c']},
+        'dcube':{'nddim':3,'ndtype':'float'}
+        }
+  },
+]
+
+_transform_schema = [
+    {
+    'type':'object',
+    'required':['cvector','rep','type'],
+    'properties':{
+        'type':{'type':'string','pattern':'local_repeat'},
+        }        
+    },
+    {
+    'type':'object',
+    'required':['cvector','direction','type'],
+    'properties':{
+        'type':{'type':'string','pattern':'local_align'},
+        }        
+    },
+    {
+    'type':'object',
+    'required':['centre','type'],
+    'properties':{
+        'type':{'type':'string','pattern':'recentre'},
+        }        
+    },
+    {
+    'type':'object',
+    'required':['type','centre','normal','lbound','ubound'],
+    'properties':{
+        'type':{'type':'string','pattern':'slice'},
+        }        
+    },
+    {
+    'type':'object',
+    'required':['type','sfraction'],
+    'properties':{
+        'type':{'type':'string','pattern':'resize'},
+        'sfraction':{'type':'number'}
+        }        
+    },
+]
 
 def get_atom_map():
     return _default_atom_map.copy()
@@ -87,6 +193,56 @@ def struct_to_visual(struct,name,atom_map=None):
     
     return {'elements':list(sdict.values()),'transforms':[]}
         
+def coord_to_visual(main, coordinating,
+            max_coord=99,min_dist=.1,max_dist=3.):
+    """ create polygons from atomic coordination
+    
+    main: dict
+        repeat_cell element
+    coordinating: dict
+        repeat_cell element
+    max_coord: int
+        maximum coordination
+    min_dist: float
+        minimum distance to be considered
+    max_dist: float
+        maximum distance to be considered
+        
+    """
+    
+    # create coordinating lattice 
+    # that will be larger than main lattice
+    icoords = np.array(coordinating['coords'])
+    a = np.array(coordinating['cell_vectors']['a'])
+    b = np.array(coordinating['cell_vectors']['b'])
+    c = np.array(coordinating['cell_vectors']['c'])
+    coords = np.concatenate((
+        icoords - a, icoords, icoords + a))
+    coords = np.concatenate((
+        coords - b, coords, coords + b))
+    coords = np.concatenate((
+        coords - c, coords, coords + c))
+
+    ltree = cKDTree(coords)
+    all_dists, all_ids = ltree.query(
+        np.array(main['coords']),k=max_coord,
+        distance_upper_bound=max_dist)
+    masks = np.logical_and(all_dists>min_dist, all_dists<np.inf)
+    polys = [coords[ids[mask]].tolist() for ids, mask in zip(all_ids, masks)]
+
+    sdict = {}
+    sdict['type'] = 'repeat_poly'
+    sdict['transforms'] = []
+    for var in ['sname','color','centre','transparency']:
+        sdict[var] = copy.deepcopy(main[var])
+    sdict['polys'] = polys
+    sdict['label'] = main['label']+' (by {})'.format(coordinating['label'])
+    sdict['cell_vectors'] = {}
+    for cvec in ['a','b','c']:
+        vector = copy.deepcopy(main['cell_vectors'][cvec])
+        sdict['cell_vectors'][cvec] = vector
+    return sdict
+    
 def dcube_to_visual(cube,struct,sname,label):
     sdict = {}
     a,b,c = [_ for _ in struct.lattice.matrix]
@@ -313,8 +469,77 @@ def _cslice_repeat_cell(vstruct,normal=(1,0,0),lbound=None,ubound=None,
     mask = _slice_mask(vstruct['coords'],
                     normal,lbound,ubound,
                     centre)
-    vstruct['coords'] = np.asarray(vstruct['coords'])[mask].tolist()
-                    
+    vstruct['coords'] = np.asarray(vstruct['coords'])[mask].tolist()                    
+
+def _repeat_repeat_poly(vstruct,cvector='a',rep=1,
+                        recentre=True):
+    init_polys = copy.deepcopy(vstruct['polys'])
+    repv = np.asarray(vstruct['cell_vectors'][cvector],dtype=float)
+    newvector = repv * (abs(rep)+1)
+    vstruct['cell_vectors'][cvector] = newvector.tolist()
+    
+    if recentre:
+        centre = np.asarray(vstruct['centre']) 
+        centre = centre + repv * (abs(rep))/2.
+        vstruct['centre'] = centre.tolist()
+    
+    for r in range(abs(rep)):
+        v = -repv*(r+1) if rep<0 else repv*(r+1)
+        new_polys = []
+        for p in init_polys:
+            new_coords = []
+            for c in p:
+                new_c = np.array(c,dtype=float)+v
+                new_coords.append(new_c.tolist())
+            new_polys.append(new_coords)
+        vstruct['polys'] += new_polys 
+
+def _recentre_repeat_poly(vstruct,centre=(0.,0.,0.)):
+    centre=np.asarray(centre,dtype=float)
+    tr = centre - np.asarray(vstruct['centre'],dtype=float)
+    vstruct['centre'] = centre.tolist()
+    init_polys = copy.deepcopy(vstruct['polys'])
+    
+    new_polys = []
+    for p in init_polys:
+        new_coords = []
+        for c in p:
+            new_c = np.array(c,dtype=float)+tr
+            new_coords.append(new_c.tolist())
+        new_polys.append(new_coords)
+    vstruct['polys'] = new_polys 
+
+def _align_repeat_poly(vstruct,cvector='a',direction=(1,0,0)):
+    """align poly vectors to a cartesian direction"""
+    direction=np.asarray(direction,dtype=float)
+    v = vstruct['cell_vectors'][cvector]
+    
+    new_polys = []
+    for coords in vstruct['polys']:
+        new_coords = np.array(coords)
+        new_polys.append(_realign_vectors(new_coords,v,direction).tolist())        
+    vstruct['polys'] = new_polys
+    
+    new_cell = _realign_vectors([vstruct['cell_vectors']['a'],
+                                 vstruct['cell_vectors']['b'],
+                                 vstruct['cell_vectors']['c'],
+                                 vstruct['centre']],
+                                 v,direction)
+    vstruct['cell_vectors']['a'] = new_cell[0].tolist()
+    vstruct['cell_vectors']['b'] = new_cell[1].tolist()
+    vstruct['cell_vectors']['c'] = new_cell[2].tolist()
+    vstruct['centre'] = new_cell[3].tolist()
+
+def _cslice_repeat_poly(vstruct,normal=(1,0,0),
+        lbound=None,ubound=None,centre=None):
+    normal=np.asarray(normal,dtype=float)
+    centre = vstruct['centre'] if centre is None else centre
+
+    pcentres = [np.mean(c,axis=0) for c in vstruct['polys']]
+    mask = _slice_mask(pcentres,
+                    normal,lbound,ubound,
+                    centre)
+    vstruct['polys'] = np.asarray(vstruct['polys'])[mask].tolist()
 
 def _repeat_repeat_density(vstruct,cvector='a',rep=1,
                 recentre=True):    
@@ -401,116 +626,28 @@ def _cslice_repeat_density(dstruct,
     cubet[~mask] = np.nan
     dstruct['dcube'] = cubet.transpose(tr)
 
-def _get_vstruct_schema(eschemas=None,tschemas=None):
-    eschemas = [{}] if eschemas is None else eschemas
-    tschemas = [{}] if tschemas is None else tschemas
-    vstruct_schema = {
-        'type':'object',
-        'required':['elements','transforms'],
-        'properties':{
-            'elements':{
-                'type':'array',
-                'items':{
-                    'type':'object',
-                    'required':['type','transforms'],
-                    'properties':{
-                        'transforms':{'type':'array'},
-                    },
-                    'oneOf':eschemas
-                },
-                
-            },
-            'transforms':{
-                'type':'array',
-                'items':{
-                    'type':'object',
-                    'required':['type'],
-                    'oneOf':tschemas
-                },
-                
-            }
-        }
-    }
-    
-    return vstruct_schema
-
-_element_schema = [
-   {
-    'type':'object',
-    'required':['cell_vectors','centre','coords','type',
-                'radius','color'],
-    'properties':{
-        'type':{'type':'string','pattern':'repeat_cell'},
-        'cell_vectors':{'required':['a','b','c']},
-        'coords':{'type':'array'}
-        }
-  },
-   {
-    'type':'object',
-    'required':['cell_vectors','centre','dcube','type'],
-    'properties':{
-        'type':{'type':'string','pattern':'repeat_density'},
-        'cell_vectors':{'required':['a','b','c']},
-        'dcube':{'nddim':3,'ndtype':'float'}
-        }
-  },
-]
-
-_transform_schema = [
-    {
-    'type':'object',
-    'required':['cvector','rep','type'],
-    'properties':{
-        'type':{'type':'string','pattern':'local_repeat'},
-        }        
-    },
-    {
-    'type':'object',
-    'required':['cvector','direction','type'],
-    'properties':{
-        'type':{'type':'string','pattern':'local_align'},
-        }        
-    },
-    {
-    'type':'object',
-    'required':['centre','type'],
-    'properties':{
-        'type':{'type':'string','pattern':'recentre'},
-        }        
-    },
-    {
-    'type':'object',
-    'required':['type','centre','normal','lbound','ubound'],
-    'properties':{
-        'type':{'type':'string','pattern':'slice'},
-        }        
-    },
-    {
-    'type':'object',
-    'required':['type','sfraction'],
-    'properties':{
-        'type':{'type':'string','pattern':'resize'},
-        'sfraction':{'type':'number'}
-        }        
-    },
-]
-
 def apply_transforms(vstruct):
     
-    tfuncs = {'repeat_cell':{
-                   'local_repeat':_repeat_repeat_cell,
-                   'recentre':_recentre_repeat_cell,
-                   'local_align':_align_repeat_cell,
-                   'slice':_cslice_repeat_cell
-               },
-               'repeat_density':{
-                   'local_repeat':_repeat_repeat_density,
-                   'recentre':_recentre_repeat_density,                   
-                   'slice':_cslice_repeat_density,
-                   'resize':_resize_repeat_density,
-               }
-           
-           }
+    tfuncs = {
+            'repeat_cell':{
+               'local_repeat':_repeat_repeat_cell,
+               'recentre':_recentre_repeat_cell,
+               'local_align':_align_repeat_cell,
+               'slice':_cslice_repeat_cell
+           },
+            'repeat_poly':{
+               'local_repeat':_repeat_repeat_poly,
+               'recentre':_recentre_repeat_poly,
+               'local_align':_align_repeat_poly,
+               'slice':_cslice_repeat_poly
+           },
+           'repeat_density':{
+               'local_repeat':_repeat_repeat_density,
+               'recentre':_recentre_repeat_density,                   
+               'slice':_cslice_repeat_density,
+               'resize':_resize_repeat_density,
+           }           
+         }
     
     schema = _get_vstruct_schema(_element_schema,
                                  _transform_schema)
@@ -701,6 +838,15 @@ def create_ivol(vstruct,
             x, y, z = np.array(element['coords']).T
             s = p3.scatter(x,y,z,marker='sphere',size=ssize*element['radius'],color=element['color'])        
             element['ivol'] = s
+        if element['type'] == 'repeat_poly':  
+            polys = []
+            for poly in element['polys']: 
+                x, y, z = np.array(poly).T 
+                hull = ConvexHull(poly)
+                triangles = hull.simplices.tolist()
+                p = p3.plot_trisurf(x, y, z, triangles=triangles, color=element['color'])
+                polys.append(p)
+            element['ivol'] = polys 
     
     # split up controls
     if vol_index:

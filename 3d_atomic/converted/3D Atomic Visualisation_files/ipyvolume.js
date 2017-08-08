@@ -34,7 +34,7 @@ define(function() { return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.c = installedModules;
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "https://unpkg.com/ipyvolume@0.4.0-alpha.1/dist/";
+/******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -44,16 +44,18 @@ define(function() { return /******/ (function(modules) { // webpackBootstrap
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	// Entry point for the unpkg bundle containing custom model definitions.
+	// Entry point for the notebook bundle containing custom model definitions.
 	//
-	// It differs from the notebook bundle in that it does not need to define a
-	// dynamic baseURL for the static assets and may load some css that would
-	// already be loaded by the notebook otherwise.
+	// Setup notebook base URL
+	//
+	// Some static assets may be required by the custom widget javascript. The base
+	// url for the notebook is not known at build time and is therefore computed
+	// dynamically.
+	__webpack_require__.p = document.querySelector('body').getAttribute('data-base-url') + 'nbextensions/ipyvolume/';
 	
-	// Export widget models and views, and the npm package version number.
 	var _ = __webpack_require__(1)
 	// Export widget models and views, and the npm package version number.
-	module.exports = _.extend({}, __webpack_require__(2), __webpack_require__(178), __webpack_require__(150),  __webpack_require__(156), __webpack_require__(146));
+	module.exports = _.extend({}, __webpack_require__(2), __webpack_require__(178), __webpack_require__(150), __webpack_require__(156), __webpack_require__(146));
 	module.exports['version'] = __webpack_require__(147).version;
 
 
@@ -1677,6 +1679,7 @@ define(function() { return /******/ (function(modules) { // webpackBootstrap
 	        var width = this.model.get("width");
 	        var height = this.model.get("height");
 	        this.renderer = new THREE.WebGLRenderer({antialias: true});
+	        this.el.classList.add("jupyter-widgets");
 	        this.el.appendChild(this.renderer.domElement);
 	
 	        // el_mirror is a 'mirror' dom tree that d3 needs
@@ -1954,7 +1957,9 @@ define(function() { return /******/ (function(modules) { // webpackBootstrap
 	        window.last_volume = this;
 	        //navigator.wakeLock.request("display")
 	        
+	        //ensure initial sync of view with figure model
 	        this.update_current_control();
+	        this.update_light();
 	        
 	        return
 	    },
@@ -116275,7 +116280,7 @@ define(function() { return /******/ (function(modules) { // webpackBootstrap
 /* 147 */
 /***/ (function(module, exports) {
 
-	module.exports = {"name":"ipyvolume","version":"0.4.0-alpha.1","description":"IPython widget for rendering 3d volumes","author":"Maarten A. Breddels","main":"src/index.js","repository":{"type":"git","url":"https://github.com/maartenbreddels/ipyvolume.git"},"keywords":["jupyter","widgets","ipython","ipywidgets"],"scripts":{"prepublish":"webpack ","test":"echo \"Error: no test specified\" && exit 1"},"devDependencies":{"json-loader":"^0.5.4","karma-chrome-launcher":"^2.0.0","karma-mocha":"^1.3.0","url-loader":"^0.5.7","webpack":"^1.12.14","raw-loader":"^0.5.1"},"dependencies":{"@jupyter-widgets/base":"^0.5.1","underscore":"^1.8.3","gl-matrix":"^2.0.0","jquery":"^3.1.1","three":"^0.85.0","three-text2d":"~0.3.2","d3":"~4.6.0","is-typedarray":"~1.0.0","ndarray":"~1.0.18"}}
+	module.exports = {"name":"ipyvolume","version":"0.4.0-alpha.1","description":"IPython widget for rendering 3d volumes","author":"Maarten A. Breddels","main":"src/index.js","repository":{"type":"git","url":"https://github.com/maartenbreddels/ipyvolume.git"},"keywords":["jupyter","widgets","ipython","ipywidgets"],"scripts":{"prepublish":"webpack ","test":"echo \"Error: no test specified\" && exit 1"},"devDependencies":{"@types/expect.js":"^0.3.29","@types/mocha":"^2.2.41","json-loader":"^0.5.4","karma-chrome-launcher":"^2.0.0","karma-typescript":"^2.0.3","karma-mocha":"^1.3.0","karma-chai":"^0.1.0","karma-webpack":"^2.0.3","karma-sourcemap-loader":"^0.3.7","url-loader":"^0.5.7","webpack":"^1.12.14","raw-loader":"^0.5.1","mocha":"^3.3.0","chai":"^4.0.0","sinon":"^2.1.0","sinon-chai":"^2.11.0","typescript":"~2.3.1","ts-loader":"~2.2.2"},"dependencies":{"@jupyter-widgets/base":"^0.5.1","underscore":"^1.8.3","gl-matrix":"^2.0.0","jquery":"^3.1.1","three":"^0.85.0","three-text2d":"~0.3.2","d3":"~4.6.0","is-typedarray":"~1.0.0","ndarray":"~1.0.18"}}
 
 /***/ }),
 /* 148 */
@@ -117440,9 +117445,10 @@ define(function() { return /******/ (function(modules) { // webpackBootstrap
 	            var v = current.array['v']
 	            if(texture && u && v) {
 	                material = this.material_texture
-	                material.uniforms['texture'].value = this.textures[sequence_index]; // TODO/BUG: there could
+	                var sequence_index_texture = sequence_index;
+	                material.uniforms['texture'].value = this.textures[sequence_index_texture % this.textures.length]; // TODO/BUG: there could
 	                // be a situation where texture property is modified, but this.textures isn't done yet..
-	                material.uniforms['texture_previous'].value = this.textures[sequence_index_previous];
+	                material.uniforms['texture_previous'].value = this.textures[sequence_index_previous % this.textures.length];
 	                geometry.addAttribute('u', new THREE.BufferAttribute(u, 1))
 	                geometry.addAttribute('v', new THREE.BufferAttribute(v, 1))
 	                var u_previous = previous.array['u']
@@ -117454,6 +117460,9 @@ define(function() { return /******/ (function(modules) { // webpackBootstrap
 	            }
 	
 	            this.surface_mesh = new THREE.Mesh(geometry, material);
+	            // BUG? because of our custom shader threejs thinks our object if out
+	            // of the frustum
+	            this.surface_mesh.frustumCulled = false;
 	            this.surface_mesh.material_rgb = this.material_rgb
 	            this.surface_mesh.material_normal = material
 	            this.meshes.push(this.surface_mesh)
@@ -117474,6 +117483,7 @@ define(function() { return /******/ (function(modules) { // webpackBootstrap
 	            geometry.setIndex(new THREE.BufferAttribute(lines[0], 1))
 	
 	            this.line_segments = new THREE.LineSegments(geometry, this.line_material);
+	            this.line_segments.frustumCulled = false;
 	            //TODO: check lines with volume rendering, also in scatter
 	            this.line_segments.material_rgb = this.line_material_rgb
 	            this.line_segments.material_normal = this.line_material
