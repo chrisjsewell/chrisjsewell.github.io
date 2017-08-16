@@ -850,16 +850,16 @@ def create_ivol(vstruct,
     
     # split up controls
     if vol_index:
-        (level_ctrls, figbox, fullscreen, 
+        (level_ctrls, figbox, 
          extractrl1,extractrl2) = p3.gcc().children
         controls = OrderedDict([('transfer function',[level_ctrls]),
-                    ('lighting',[extractrl1,extractrl2]),
-                    ('view',[fullscreen])])
+                    ('lighting',[extractrl1,extractrl2])])
     else:
-        figbox, fullscreen = p3.gcc().children    
-        controls = {'view':[fullscreen]}
+        #figbox, fullscreen = p3.gcc().children    
+        figbox = p3.gcc().children
+        controls = {}
     
-    return new_struct, fig, {'view':[fullscreen]}
+    return new_struct, fig, controls
 
 def create_ivol_control(vstruct,vparam,ctype,cparam='value',**ckwargs):
     """"""
