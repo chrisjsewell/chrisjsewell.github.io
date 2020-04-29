@@ -1,0 +1,537 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.manage.caching &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/togglebutton.js"></script>
+        <script src="../../../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../aiida.html">aiida</a> &raquo;</li>
+        
+      <li>aiida.manage.caching</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for aiida.manage.caching</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1">###########################################################################</span>
+<span class="c1"># Copyright (c), The AiiDA team. All rights reserved.                     #</span>
+<span class="c1"># This file is part of the AiiDA code.                                    #</span>
+<span class="c1">#                                                                         #</span>
+<span class="c1"># The code is hosted on GitHub at https://github.com/aiidateam/aiida-core #</span>
+<span class="c1"># For further information on the license, see the LICENSE.txt file        #</span>
+<span class="c1"># For further information please visit http://www.aiida.net               #</span>
+<span class="c1">###########################################################################</span>
+<span class="sd">&quot;&quot;&quot;Definition of caching mechanism and configuration for calculations.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">keyword</span>
+<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+<span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span><span class="p">,</span> <span class="n">suppress</span>
+
+<span class="kn">import</span> <span class="nn">yaml</span>
+<span class="kn">from</span> <span class="nn">wrapt</span> <span class="kn">import</span> <span class="n">decorator</span>
+
+<span class="kn">from</span> <span class="nn">aiida.common</span> <span class="kn">import</span> <span class="n">exceptions</span>
+<span class="kn">from</span> <span class="nn">aiida.common.lang</span> <span class="kn">import</span> <span class="n">type_check</span>
+
+<span class="kn">from</span> <span class="nn">aiida.plugins.entry_point</span> <span class="kn">import</span> <span class="n">ENTRY_POINT_STRING_SEPARATOR</span><span class="p">,</span> <span class="n">ENTRY_POINT_GROUP_TO_MODULE_PATH_MAP</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;get_use_cache&#39;</span><span class="p">,</span> <span class="s1">&#39;enable_caching&#39;</span><span class="p">,</span> <span class="s1">&#39;disable_caching&#39;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">ConfigKeys</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Valid keys for caching configuration.&quot;&quot;&quot;</span>
+
+    <span class="n">DEFAULT</span> <span class="o">=</span> <span class="s1">&#39;default&#39;</span>
+    <span class="n">ENABLED</span> <span class="o">=</span> <span class="s1">&#39;enabled&#39;</span>
+    <span class="n">DISABLED</span> <span class="o">=</span> <span class="s1">&#39;disabled&#39;</span>
+
+
+<span class="n">DEFAULT_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">ConfigKeys</span><span class="o">.</span><span class="n">DEFAULT</span><span class="o">.</span><span class="n">value</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">ConfigKeys</span><span class="o">.</span><span class="n">ENABLED</span><span class="o">.</span><span class="n">value</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="n">ConfigKeys</span><span class="o">.</span><span class="n">DISABLED</span><span class="o">.</span><span class="n">value</span><span class="p">:</span> <span class="p">[],</span>
+<span class="p">}</span>
+
+
+<span class="k">def</span> <span class="nf">_get_config</span><span class="p">(</span><span class="n">config_file</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return the caching configuration.</span>
+
+<span class="sd">    :param config_file: the absolute path to the caching configuration file</span>
+<span class="sd">    :return: the configuration dictionary</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">aiida.manage.configuration</span> <span class="kn">import</span> <span class="n">get_profile</span>
+
+    <span class="n">profile</span> <span class="o">=</span> <span class="n">get_profile</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">profile</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">exceptions</span><span class="o">.</span><span class="n">ConfigurationError</span><span class="p">(</span><span class="s1">&#39;no profile has been loaded&#39;</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">config_file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">handle</span><span class="p">:</span>
+            <span class="n">config</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">handle</span><span class="p">)[</span><span class="n">profile</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="ne">IOError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">):</span>
+        <span class="c1"># No config file, or no config for this profile</span>
+        <span class="k">return</span> <span class="n">DEFAULT_CONFIG</span>
+
+    <span class="c1"># Validate configuration</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">config</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">DEFAULT_CONFIG</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">ConfigurationError</span><span class="p">(</span><span class="s2">&quot;Configuration error: Invalid key &#39;</span><span class="si">{}</span><span class="s2">&#39; in cache_config.yml&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+
+    <span class="c1"># Add defaults where key is either completely missing or specifies no values in which case it will be `None`</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">default_config</span> <span class="ow">in</span> <span class="n">DEFAULT_CONFIG</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">config</span> <span class="ow">or</span> <span class="n">config</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">config</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">default_config</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">type_check</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="n">ConfigKeys</span><span class="o">.</span><span class="n">DEFAULT</span><span class="o">.</span><span class="n">value</span><span class="p">],</span> <span class="nb">bool</span><span class="p">)</span>
+        <span class="n">type_check</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="n">ConfigKeys</span><span class="o">.</span><span class="n">ENABLED</span><span class="o">.</span><span class="n">value</span><span class="p">],</span> <span class="nb">list</span><span class="p">)</span>
+        <span class="n">type_check</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="n">ConfigKeys</span><span class="o">.</span><span class="n">DISABLED</span><span class="o">.</span><span class="n">value</span><span class="p">],</span> <span class="nb">list</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">ConfigurationError</span><span class="p">(</span><span class="s1">&#39;Invalid type in caching configuration file.&#39;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span>
+
+    <span class="c1"># Check validity of enabled and disabled entries</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">identifier</span> <span class="ow">in</span> <span class="n">config</span><span class="p">[</span><span class="n">ConfigKeys</span><span class="o">.</span><span class="n">ENABLED</span><span class="o">.</span><span class="n">value</span><span class="p">]</span> <span class="o">+</span> <span class="n">config</span><span class="p">[</span><span class="n">ConfigKeys</span><span class="o">.</span><span class="n">DISABLED</span><span class="o">.</span><span class="n">value</span><span class="p">]:</span>
+            <span class="n">_validate_identifier_pattern</span><span class="p">(</span><span class="n">identifier</span><span class="o">=</span><span class="n">identifier</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">ConfigurationError</span><span class="p">(</span><span class="s1">&#39;Invalid identifier pattern in enable or disable list.&#39;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span>
+
+    <span class="k">return</span> <span class="n">config</span>
+
+
+<span class="n">_CONFIG</span> <span class="o">=</span> <span class="p">{}</span>
+
+
+<span class="k">def</span> <span class="nf">configure</span><span class="p">(</span><span class="n">config_file</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Reads the caching configuration file and sets the _CONFIG variable.&quot;&quot;&quot;</span>
+    <span class="c1"># pylint: disable=global-statement</span>
+    <span class="k">if</span> <span class="n">config_file</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">aiida.manage.configuration</span> <span class="kn">import</span> <span class="n">get_config</span>
+
+        <span class="n">config</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
+        <span class="n">config_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">dirpath</span><span class="p">,</span> <span class="s1">&#39;cache_config.yml&#39;</span><span class="p">)</span>
+
+    <span class="k">global</span> <span class="n">_CONFIG</span>
+    <span class="n">_CONFIG</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">_CONFIG</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">_get_config</span><span class="p">(</span><span class="n">config_file</span><span class="o">=</span><span class="n">config_file</span><span class="p">))</span>
+
+
+<span class="nd">@decorator</span>
+<span class="k">def</span> <span class="nf">_with_config</span><span class="p">(</span><span class="n">wrapped</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Function decorator to load the caching configuration for the scope of the wrapped function.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">_CONFIG</span><span class="p">:</span>
+        <span class="n">configure</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">wrapped</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="get_use_cache"><a class="viewcode-back" href="../../../apidoc/aiida.manage.html#aiida.manage.caching.get_use_cache">[docs]</a><span class="nd">@_with_config</span>
+<span class="k">def</span> <span class="nf">get_use_cache</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">identifier</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return whether the caching mechanism should be used for the given process type according to the configuration.</span>
+
+<span class="sd">    :param identifier: Process type string of the node</span>
+<span class="sd">    :type identifier: str</span>
+<span class="sd">    :return: boolean, True if caching is enabled, False otherwise</span>
+<span class="sd">    :raises: `~aiida.common.exceptions.ConfigurationError` if the configuration is invalid, either due to a general</span>
+<span class="sd">        configuration error, or by defining the class both enabled and disabled</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">type_check</span><span class="p">(</span><span class="n">identifier</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="n">allow_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">identifier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">type_check</span><span class="p">(</span><span class="n">identifier</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+
+        <span class="n">enable_matches</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">pattern</span> <span class="k">for</span> <span class="n">pattern</span> <span class="ow">in</span> <span class="n">_CONFIG</span><span class="p">[</span><span class="n">ConfigKeys</span><span class="o">.</span><span class="n">ENABLED</span><span class="o">.</span><span class="n">value</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">_match_wildcard</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="n">identifier</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="n">pattern</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="n">disable_matches</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">pattern</span> <span class="k">for</span> <span class="n">pattern</span> <span class="ow">in</span> <span class="n">_CONFIG</span><span class="p">[</span><span class="n">ConfigKeys</span><span class="o">.</span><span class="n">DISABLED</span><span class="o">.</span><span class="n">value</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">_match_wildcard</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="n">identifier</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="n">pattern</span><span class="p">)</span>
+        <span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">enable_matches</span> <span class="ow">and</span> <span class="n">disable_matches</span><span class="p">:</span>
+            <span class="c1"># If both enable and disable have matching identifier, we search for</span>
+            <span class="c1"># the most specific one. This is determined by checking whether</span>
+            <span class="c1"># all other patterns match the specific pattern.</span>
+            <span class="n">PatternWithResult</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;PatternWithResult&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;pattern&#39;</span><span class="p">,</span> <span class="s1">&#39;use_cache&#39;</span><span class="p">])</span>
+            <span class="n">most_specific</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">specific_pattern</span> <span class="ow">in</span> <span class="n">enable_matches</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">all</span><span class="p">(</span>
+                    <span class="n">_match_wildcard</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="n">specific_pattern</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="n">other_pattern</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">other_pattern</span> <span class="ow">in</span> <span class="n">enable_matches</span> <span class="o">+</span> <span class="n">disable_matches</span>
+                <span class="p">):</span>
+                    <span class="n">most_specific</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PatternWithResult</span><span class="p">(</span><span class="n">pattern</span><span class="o">=</span><span class="n">specific_pattern</span><span class="p">,</span> <span class="n">use_cache</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">specific_pattern</span> <span class="ow">in</span> <span class="n">disable_matches</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">all</span><span class="p">(</span>
+                    <span class="n">_match_wildcard</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="n">specific_pattern</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="n">other_pattern</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">other_pattern</span> <span class="ow">in</span> <span class="n">enable_matches</span> <span class="o">+</span> <span class="n">disable_matches</span>
+                <span class="p">):</span>
+                    <span class="n">most_specific</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PatternWithResult</span><span class="p">(</span><span class="n">pattern</span><span class="o">=</span><span class="n">specific_pattern</span><span class="p">,</span> <span class="n">use_cache</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">most_specific</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">ConfigurationError</span><span class="p">((</span>
+                    <span class="s1">&#39;Invalid configuration: multiple matches for identifier </span><span class="si">{}</span><span class="s1">&#39;</span>
+                    <span class="s1">&#39;, but the most specific identifier is not unique. Candidates: </span><span class="si">{}</span><span class="s1">&#39;</span>
+                <span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">identifier</span><span class="p">,</span> <span class="p">[</span><span class="n">match</span><span class="o">.</span><span class="n">pattern</span> <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">most_specific</span><span class="p">]))</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">most_specific</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">ConfigurationError</span><span class="p">(</span>
+                    <span class="s1">&#39;Invalid configuration: multiple matches for identifier </span><span class="si">{}</span><span class="s1">, but none of them is most specific.&#39;</span><span class="o">.</span>
+                    <span class="nb">format</span><span class="p">(</span><span class="n">identifier</span><span class="p">)</span>
+                <span class="p">)</span>
+            <span class="k">return</span> <span class="n">most_specific</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">use_cache</span>
+        <span class="k">if</span> <span class="n">enable_matches</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">disable_matches</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="n">_CONFIG</span><span class="p">[</span><span class="n">ConfigKeys</span><span class="o">.</span><span class="n">DEFAULT</span><span class="o">.</span><span class="n">value</span><span class="p">]</span></div>
+
+
+<span class="nd">@contextmanager</span>
+<span class="nd">@_with_config</span>
+<span class="k">def</span> <span class="nf">_reset_config</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Reset the configuration by clearing the contents of the global config variable.&quot;&quot;&quot;</span>
+    <span class="c1"># pylint: disable=global-statement</span>
+    <span class="k">global</span> <span class="n">_CONFIG</span>
+    <span class="n">config_copy</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">_CONFIG</span><span class="p">)</span>
+    <span class="k">yield</span>
+    <span class="n">_CONFIG</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">_CONFIG</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">config_copy</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="enable_caching"><a class="viewcode-back" href="../../../apidoc/aiida.manage.html#aiida.manage.caching.enable_caching">[docs]</a><span class="nd">@contextmanager</span>
+<span class="k">def</span> <span class="nf">enable_caching</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">identifier</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Context manager to enable caching, either for a specific node class, or globally.</span>
+
+<span class="sd">    .. warning:: this does not affect the behavior of the daemon, only the local Python interpreter.</span>
+
+<span class="sd">    :param identifier: Process type string of the node, or a pattern with &#39;*&#39; wildcard that matches it.</span>
+<span class="sd">    :type identifier: str</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">type_check</span><span class="p">(</span><span class="n">identifier</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="n">allow_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">_reset_config</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">identifier</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">_CONFIG</span><span class="p">[</span><span class="n">ConfigKeys</span><span class="o">.</span><span class="n">DEFAULT</span><span class="o">.</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">_CONFIG</span><span class="p">[</span><span class="n">ConfigKeys</span><span class="o">.</span><span class="n">DISABLED</span><span class="o">.</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_validate_identifier_pattern</span><span class="p">(</span><span class="n">identifier</span><span class="o">=</span><span class="n">identifier</span><span class="p">)</span>
+            <span class="n">_CONFIG</span><span class="p">[</span><span class="n">ConfigKeys</span><span class="o">.</span><span class="n">ENABLED</span><span class="o">.</span><span class="n">value</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">identifier</span><span class="p">)</span>
+            <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+                <span class="n">_CONFIG</span><span class="p">[</span><span class="n">ConfigKeys</span><span class="o">.</span><span class="n">DISABLED</span><span class="o">.</span><span class="n">value</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">identifier</span><span class="p">)</span>
+        <span class="k">yield</span></div>
+
+
+<div class="viewcode-block" id="disable_caching"><a class="viewcode-back" href="../../../apidoc/aiida.manage.html#aiida.manage.caching.disable_caching">[docs]</a><span class="nd">@contextmanager</span>
+<span class="k">def</span> <span class="nf">disable_caching</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">identifier</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Context manager to disable caching, either for a specific node class, or globally.</span>
+
+<span class="sd">    .. warning:: this does not affect the behavior of the daemon, only the local Python interpreter.</span>
+
+<span class="sd">    :param identifier: Process type string of the node, or a pattern with &#39;*&#39; wildcard that matches it.</span>
+<span class="sd">    :type identifier: str</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">type_check</span><span class="p">(</span><span class="n">identifier</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="n">allow_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">_reset_config</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">identifier</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">_CONFIG</span><span class="p">[</span><span class="n">ConfigKeys</span><span class="o">.</span><span class="n">DEFAULT</span><span class="o">.</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">_CONFIG</span><span class="p">[</span><span class="n">ConfigKeys</span><span class="o">.</span><span class="n">ENABLED</span><span class="o">.</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_validate_identifier_pattern</span><span class="p">(</span><span class="n">identifier</span><span class="o">=</span><span class="n">identifier</span><span class="p">)</span>
+            <span class="n">_CONFIG</span><span class="p">[</span><span class="n">ConfigKeys</span><span class="o">.</span><span class="n">DISABLED</span><span class="o">.</span><span class="n">value</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">identifier</span><span class="p">)</span>
+            <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+                <span class="n">_CONFIG</span><span class="p">[</span><span class="n">ConfigKeys</span><span class="o">.</span><span class="n">ENABLED</span><span class="o">.</span><span class="n">value</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">identifier</span><span class="p">)</span>
+        <span class="k">yield</span></div>
+
+
+<span class="k">def</span> <span class="nf">_match_wildcard</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">pattern</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Helper function to check whether a given name matches a pattern</span>
+<span class="sd">    which can contain &#39;*&#39; wildcards.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">regexp</span> <span class="o">=</span> <span class="s1">&#39;.*&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">part</span><span class="p">)</span> <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">pattern</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">fullmatch</span><span class="p">(</span><span class="n">pattern</span><span class="o">=</span><span class="n">regexp</span><span class="p">,</span> <span class="n">string</span><span class="o">=</span><span class="n">string</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+
+<span class="k">def</span> <span class="nf">_validate_identifier_pattern</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">identifier</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The identifier (without wildcards) can have one of two forms:</span>
+
+<span class="sd">    1.  &lt;group_name&gt;&lt;ENTRY_POINT_STRING_SEPARATOR&gt;&lt;tail&gt;</span>
+
+<span class="sd">        where `group_name` is one of the keys in `ENTRY_POINT_GROUP_TO_MODULE_PATH_MAP`</span>
+<span class="sd">        and `tail` can be anything _except_ `ENTRY_POINT_STRING_SEPARATOR`.</span>
+
+<span class="sd">    2. a fully qualified Python name</span>
+
+<span class="sd">        this is a colon-separated string, where each part satisfies</span>
+<span class="sd">        `part.isidentifier() and not keyword.iskeyword(part)`</span>
+
+<span class="sd">    This function checks if an identifier _with_ wildcards can possibly</span>
+<span class="sd">    match one of these two forms. If it can not, a `ValueError` is raised.</span>
+
+<span class="sd">    :param identifier: Process type string, or a pattern with &#39;*&#39; wildcard that matches it.</span>
+<span class="sd">    :type identifier: str</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">common_error_msg</span> <span class="o">=</span> <span class="s2">&quot;Invalid identifier pattern &#39;</span><span class="si">{}</span><span class="s2">&#39;: &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">identifier</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">ENTRY_POINT_STRING_SEPARATOR</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s1">&#39;.*&#39;</span>  <span class="c1"># The logic of this function depends on this</span>
+    <span class="c1"># Check if it can be an entry point string</span>
+    <span class="k">if</span> <span class="n">identifier</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">ENTRY_POINT_STRING_SEPARATOR</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="n">common_error_msg</span> <span class="o">+</span>
+            <span class="s2">&quot;Can contain at most one entry point string separator &#39;</span><span class="si">{}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ENTRY_POINT_STRING_SEPARATOR</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="c1"># If there is one separator, it must be an entry point string.</span>
+    <span class="c1"># Check if the left hand side is a matching pattern</span>
+    <span class="k">if</span> <span class="n">ENTRY_POINT_STRING_SEPARATOR</span> <span class="ow">in</span> <span class="n">identifier</span><span class="p">:</span>
+        <span class="n">group_pattern</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">identifier</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">ENTRY_POINT_STRING_SEPARATOR</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span>
+            <span class="n">_match_wildcard</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="n">group_name</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="n">group_pattern</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">group_name</span> <span class="ow">in</span> <span class="n">ENTRY_POINT_GROUP_TO_MODULE_PATH_MAP</span>
+        <span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="n">common_error_msg</span> <span class="o">+</span> <span class="s2">&quot;Group name pattern &#39;</span><span class="si">{}</span><span class="s2">&#39; does not match any of the AiiDA entry point group names.&quot;</span><span class="o">.</span>
+                <span class="nb">format</span><span class="p">(</span><span class="n">group_pattern</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="c1"># The group name pattern matches, and there are no further</span>
+        <span class="c1"># entry point string separators in the identifier, hence it is</span>
+        <span class="c1"># a valid pattern.</span>
+        <span class="k">return</span>
+    <span class="c1"># The separator might be swallowed in a wildcard, for example</span>
+    <span class="c1"># aiida.* or aiida.calculations*</span>
+    <span class="k">if</span> <span class="s1">&#39;*&#39;</span> <span class="ow">in</span> <span class="n">identifier</span><span class="p">:</span>
+        <span class="n">group_part</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">identifier</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">group_name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">group_part</span><span class="p">)</span> <span class="k">for</span> <span class="n">group_name</span> <span class="ow">in</span> <span class="n">ENTRY_POINT_GROUP_TO_MODULE_PATH_MAP</span><span class="p">):</span>
+            <span class="k">return</span>
+    <span class="c1"># Finally, check if it could be a fully qualified Python name</span>
+    <span class="k">for</span> <span class="n">identifier_part</span> <span class="ow">in</span> <span class="n">identifier</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+        <span class="c1"># If it contains a wildcard, we can not check for keywords.</span>
+        <span class="c1"># Replacing all wildcards with a single letter must give an</span>
+        <span class="c1"># identifier - this checks for invalid characters, and that it</span>
+        <span class="c1"># does not start with a number.</span>
+        <span class="k">if</span> <span class="s1">&#39;*&#39;</span> <span class="ow">in</span> <span class="n">identifier_part</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">identifier_part</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">isidentifier</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="n">common_error_msg</span> <span class="o">+</span>
+                    <span class="s2">&quot;Identifier part &#39;</span><span class="si">{}</span><span class="s2">&#39; can not match a fully qualified Python name.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">identifier_part</span><span class="p">)</span>
+                <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">identifier_part</span><span class="o">.</span><span class="n">isidentifier</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">common_error_msg</span> <span class="o">+</span> <span class="s2">&quot;&#39;</span><span class="si">{}</span><span class="s2">&#39; is not a valid Python identifier.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">identifier_part</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">keyword</span><span class="o">.</span><span class="n">iskeyword</span><span class="p">(</span><span class="n">identifier_part</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">common_error_msg</span> <span class="o">+</span> <span class="s2">&quot;&#39;</span><span class="si">{}</span><span class="s2">&#39; is a reserved Python keyword.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">identifier_part</span><span class="p">))</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

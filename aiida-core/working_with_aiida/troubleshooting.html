@@ -1,0 +1,348 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Increasing the debug level &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Increasing the debug level</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/working_with_aiida/troubleshooting.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="increasing-the-debug-level">
+<h1>Increasing the debug level<a class="headerlink" href="#increasing-the-debug-level" title="Permalink to this headline">¶</a></h1>
+<p>By default, the logging level of AiiDA is minimal to avoid filling logfiles.
+Only warnings and errors are logged to the daemon log files, while info and debug
+messages are discarded.</p>
+<p>If you are experiencing a problem, you can change the default minimum logging
+level of AiiDA messages:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">verdi</span> <span class="n">config</span> <span class="n">logging</span><span class="o">.</span><span class="n">aiida_loglevel</span> <span class="n">DEBUG</span>
+</pre></div>
+</div>
+<p>You might also be interested in circus log messages (the <code class="docutils literal notranslate"><span class="pre">circus</span></code> library is the daemonizer that manages the daemon runners) but most often it is used by AiiDA developers:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">verdi</span> <span class="n">config</span> <span class="n">logging</span><span class="o">.</span><span class="n">circus_loglevel</span> <span class="n">DEBUG</span>
+</pre></div>
+</div>
+<p>For each profile that runs a daemon, there will be two unique logfiles, one for
+AiiDA log messages (named <code class="docutils literal notranslate"><span class="pre">aiida-&lt;profile_name&gt;.log</span></code>) and one for the circus logs (named <code class="docutils literal notranslate"><span class="pre">circus-&lt;profile_name&gt;.log</span></code>). Those files can be found
+in the <code class="docutils literal notranslate"><span class="pre">~/.aiida/daemon/log</span></code> folder.</p>
+<p>After rebooting the daemon (<code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">daemon</span> <span class="pre">restart</span></code>), the number of messages
+logged will increase significantly and may help in understanding
+the source of the problem.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the command above, you can use a different level than <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code>.
+The list of the levels and their order is the same of the <a class="reference external" href="https://docs.python.org/3/library/logging.html#logging-levels">standard python
+logging module</a>.
+In addition to the standard logging levels, we define our custom <code class="docutils literal notranslate"><span class="pre">REPORT</span></code> level,
+which, with a value of <code class="docutils literal notranslate"><span class="pre">23</span></code>, sits between the standard <code class="docutils literal notranslate"><span class="pre">INFO</span></code> and <code class="docutils literal notranslate"><span class="pre">WARNING</span></code>
+levels. The <code class="docutils literal notranslate"><span class="pre">REPORT</span></code> level is the default logging level as this is what is used
+by messages from, among other things, the work chain report..</p>
+</div>
+<p>When the problem is solved, we suggest to bring back the default logging level, using the two commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">verdi</span> <span class="n">config</span> <span class="n">logging</span><span class="o">.</span><span class="n">circus_loglevel</span> <span class="o">--</span><span class="n">unset</span>
+<span class="n">verdi</span> <span class="n">config</span> <span class="n">logging</span><span class="o">.</span><span class="n">aiida_loglevel</span> <span class="o">--</span><span class="n">unset</span>
+</pre></div>
+</div>
+<p>to avoid to fill the logfiles.</p>
+<p>The config options set for the current profile can be viewed using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">verdi</span> <span class="n">profile</span> <span class="n">show</span>
+</pre></div>
+</div>
+<p>in the <code class="docutils literal notranslate"><span class="pre">options</span></code> row.</p>
+</div>
+<div class="section" id="aiida-performance-tuning">
+<span id="repo-troubleshooting"></span><h1>AiiDA performance tuning<a class="headerlink" href="#aiida-performance-tuning" title="Permalink to this headline">¶</a></h1>
+<p>AiiDA supports running hundreds of thousands of calculations and graphs with
+millions of nodes. However, to scale to this amount, you might need to properly
+configure some variables in AiiDA to balance the load on your CPU and disk.</p>
+<p>Here are a few things you can do in order to keep AiiDA running smoothly:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p><a class="reference internal" href="tips/move_db.html#move-postgresql"><span class="std std-ref">Move the Postgresql database</span></a> to a fast disk (SSD),
+ideally on a large partition.</p></li>
+<li><p>Use AiiDA’s tools for making <a class="reference internal" href="../backup/index.html#repository-backup"><span class="std std-ref">efficient incremental
+backups</span></a> of the file repository.</p></li>
+<li><p>Your operating system may be indexing the file repository.
+<a class="reference internal" href="tips/repo_indexing.html#disable-repo-indexing"><span class="std std-ref">Disable this</span></a>.</p></li>
+<li><p>The verdi deamon can manage an arbitrary number of parallel workers;
+by default only one is activated. If <code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">daemon</span> <span class="pre">status</span></code> shows
+the daemon worker(s) constantly at high CPU usage, use
+<code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">daemon</span> <span class="pre">incr</span> <span class="pre">X</span></code> to add <code class="docutils literal notranslate"><span class="pre">X</span></code> daemon workers.
+However, don’t use many more workers than CPU cores on your machine
+(or ideally, if you have many cores, leave one or two available for the
+database).</p></li>
+<li><p>If you submit to a supercomputer shared by many users (e.g., in a
+supercomputer center), be careful not to overload the supercomputer with
+too many jobs:</p>
+<ul>
+<li><p>keep the number of jobs in the queue under control (the exact number
+depends on the supercomputer: discuss this with your supercomputer
+administrators, and you can redirect them to
+<a class="reference internal" href="tips/for_cluster_admins.html#for-cluster-admins"><span class="std std-ref">this page</span></a> that may contain useful information
+for them).
+While in the future <a class="reference external" href="https://github.com/aiidateam/aiida-core/issues/88">this might be dealt by AiiDA
+automatically</a>,
+you are responsible for this at the moment. This can be achieved for
+instance by submitting only a maximum number of workflows to AiiDA,
+and submitting new ones only when the previous ones complete.</p></li>
+<li><p>Tune the parameters that AiiDA uses to avoid overloading the
+supercomputer with connections or batch requests. For SSH transports,
+the default is 30 seconds, which means that when each worker opens
+a SSH connection to a computer, it will reuse it as long as there are
+tasks to execute and then close it. Opening a new connection will not
+happen before 30 seconds has passed from the opening of the previous
+one. We stress that this is <em>per daemon worker</em>, so that if you have
+10 workers, your supercomputer will on average see 10 connections every
+30 seconds. Therefore, if you are using many workers and you mostly have
+long-running jobs, you can set a longer time (e.g., 120 seconds)
+by reconfiguring the computer with
+<code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">computer</span> <span class="pre">configure</span> <span class="pre">ssh</span> <span class="pre">&lt;COMPUTER_NAME&gt;</span></code> and changing the value
+of the <em>Connection cooldown time</em> or, alternatively, by running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">verdi</span> <span class="n">computer</span> <span class="n">configure</span> <span class="n">ssh</span> <span class="o">--</span><span class="n">non</span><span class="o">-</span><span class="n">interactive</span> <span class="o">--</span><span class="n">safe</span><span class="o">-</span><span class="n">interval</span> <span class="o">&lt;</span><span class="n">SECONDS</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">COMPUTER_NAME</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>In addition to the connection cooldown time described above, AiiDA also
+avoids running too often the command to get the list of jobs in the queue
+(<code class="docutils literal notranslate"><span class="pre">squeue</span></code>, <code class="docutils literal notranslate"><span class="pre">qstat</span></code>, …), as this can also impact the
+performance of the scheduler. For a given computer, you can increase
+how many seconds must pass between requests. First load the
+computer in a shell with <code class="docutils literal notranslate"><span class="pre">computer</span> <span class="pre">=</span> <span class="pre">load_computer(&lt;COMPUTER_NAME&gt;)</span></code>.
+You can check the current value in seconds (by default, 10) with
+<code class="docutils literal notranslate"><span class="pre">computer.get_minimum_job_poll_interval()</span></code>.
+You can then set it to a higher value using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">computer</span><span class="o">.</span><span class="n">set_minimum_job_poll_interval</span><span class="p">(</span><span class="o">&lt;</span><span class="n">NEW_VALUE_SECONDS</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="various-tips-tricks">
+<h1>Various tips &amp; tricks<a class="headerlink" href="#various-tips-tricks" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tips/ssh_proxycommand.html">Using the proxy_command option with ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips/move_db.html">Moving the database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips/repo_indexing.html">Exclude file repository from index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips/for_cluster_admins.html">Tips for supercomputer cluster administrators</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

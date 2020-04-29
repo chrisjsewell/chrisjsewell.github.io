@@ -1,0 +1,276 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Caching: implementation details &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/togglebutton.js"></script>
+        <script src="../../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Caching: implementation details</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/developer_guide/core/caching.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="caching-implementation-details">
+<h1>Caching: implementation details<a class="headerlink" href="#caching-implementation-details" title="Permalink to this headline">¶</a></h1>
+<p>This section covers some details of the caching mechanism which are not discussed in the <a class="reference internal" href="../../working_with_aiida/caching.html#caching"><span class="std std-ref">user guide</span></a>.
+If you are developing plugins and want to modify the caching behavior of your classes, we recommend you read <a class="reference internal" href="../../working_with_aiida/caching.html#caching-matches"><span class="std std-ref">this section</span></a> first.</p>
+<div class="section" id="controlling-hashing">
+<span id="devel-controlling-hashing"></span><h2>Controlling hashing<a class="headerlink" href="#controlling-hashing" title="Permalink to this headline">¶</a></h2>
+<p>Below are some methods you can use to control how the hashes of calculation and data classes are computed:</p>
+<ul class="simple">
+<li><p>To ignore specific attributes, a <a class="reference internal" href="../../apidoc/aiida.orm.nodes.html#aiida.orm.nodes.Node" title="aiida.orm.nodes.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a> subclass can have a <code class="docutils literal notranslate"><span class="pre">_hash_ignored_attributes</span></code> attribute.
+This is a list of attribute names, which are ignored when creating the hash.</p></li>
+<li><p>For calculations, the <code class="docutils literal notranslate"><span class="pre">_hash_ignored_inputs</span></code> attribute lists inputs that should be ignored when creating the hash.</p></li>
+<li><p>To add things which should be considered in the hash, you can override the <a class="reference internal" href="../../apidoc/aiida.orm.nodes.html#aiida.orm.nodes.Node._get_objects_to_hash" title="aiida.orm.nodes.Node._get_objects_to_hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">_get_objects_to_hash()</span></code></a> method. Note that doing so overrides the behavior described above, so you should make sure to use the <code class="docutils literal notranslate"><span class="pre">super()</span></code> method.</p></li>
+<li><p>Pass a keyword argument to <a class="reference internal" href="../../apidoc/aiida.orm.nodes.html#aiida.orm.nodes.Node.get_hash" title="aiida.orm.nodes.Node.get_hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_hash()</span></code></a>.
+These are passed on to <a class="reference internal" href="../../apidoc/aiida.common.html#aiida.common.hashing.make_hash" title="aiida.common.hashing.make_hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">make_hash()</span></code></a>.</p></li>
+</ul>
+</div>
+<div class="section" id="controlling-caching">
+<span id="devel-controlling-caching"></span><h2>Controlling caching<a class="headerlink" href="#controlling-caching" title="Permalink to this headline">¶</a></h2>
+<p>There are several methods you can use to disable caching for particular nodes:</p>
+<p>On the level of generic <a class="reference internal" href="../../apidoc/aiida.orm.nodes.html#aiida.orm.nodes.Node" title="aiida.orm.nodes.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.orm.nodes.Node</span></code></a>:</p>
+<ul class="simple">
+<li><p>The <a class="reference internal" href="../../apidoc/aiida.orm.nodes.html#aiida.orm.nodes.Node.is_valid_cache" title="aiida.orm.nodes.Node.is_valid_cache"><code class="xref py py-meth docutils literal notranslate"><span class="pre">is_valid_cache()</span></code></a> property determines whether a particular node can be used as a cache. This is used for example to disable caching from failed calculations.</p></li>
+<li><p>Node classes have a <code class="docutils literal notranslate"><span class="pre">_cachable</span></code> attribute, which can be set to <code class="docutils literal notranslate"><span class="pre">False</span></code> to completely switch off caching for nodes of that class. This avoids performing queries for the hash altogether.</p></li>
+</ul>
+<p>On the level of <a class="reference internal" href="../../apidoc/aiida.engine.processes.html#aiida.engine.processes.process.Process" title="aiida.engine.processes.process.Process"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.engine.processes.process.Process</span></code></a> and <a class="reference internal" href="../../apidoc/aiida.orm.nodes.process.html#aiida.orm.nodes.process.ProcessNode" title="aiida.orm.nodes.process.ProcessNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.orm.nodes.process.ProcessNode</span></code></a>:</p>
+<ul class="simple">
+<li><p>The <a class="reference internal" href="../../apidoc/aiida.orm.nodes.process.html#aiida.orm.nodes.process.ProcessNode.is_valid_cache" title="aiida.orm.nodes.process.ProcessNode.is_valid_cache"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ProcessNode.is_valid_cache</span></code></a> calls <a class="reference internal" href="../../apidoc/aiida.engine.processes.html#aiida.engine.processes.process.Process.is_valid_cache" title="aiida.engine.processes.process.Process.is_valid_cache"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.is_valid_cache</span></code></a>, passing the node itself. This can be used in <a class="reference internal" href="../../apidoc/aiida.engine.processes.html#aiida.engine.processes.process.Process" title="aiida.engine.processes.process.Process"><code class="xref py py-class docutils literal notranslate"><span class="pre">Process</span></code></a> subclasses (e.g. in calculation plugins) to implement custom ways of invalidating the cache.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">spec.exit_code</span></code> has a keyword argument <code class="docutils literal notranslate"><span class="pre">invalidates_cache</span></code>. If this is set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, returning that exit code means the process is no longer considered a valid cache. This is implemented in <a class="reference internal" href="../../apidoc/aiida.engine.processes.html#aiida.engine.processes.process.Process.is_valid_cache" title="aiida.engine.processes.process.Process.is_valid_cache"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.is_valid_cache</span></code></a>.</p></li>
+</ul>
+<div class="section" id="the-workflownode-example">
+<h3>The <code class="docutils literal notranslate"><span class="pre">WorkflowNode</span></code> example<a class="headerlink" href="#the-workflownode-example" title="Permalink to this headline">¶</a></h3>
+<p>As discussed in the <a class="reference internal" href="../../working_with_aiida/caching.html#caching-limitations"><span class="std std-ref">user guide</span></a>, nodes which can have <code class="docutils literal notranslate"><span class="pre">RETURN</span></code> links cannot be cached.
+This is enforced on two levels:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">_cachable</span></code> property is set to <code class="docutils literal notranslate"><span class="pre">False</span></code> in the <a class="reference internal" href="../../apidoc/aiida.orm.nodes.html#aiida.orm.nodes.Node" title="aiida.orm.nodes.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a>, and only re-enabled in <a class="reference internal" href="../../apidoc/aiida.orm.nodes.process.calculation.html#aiida.orm.nodes.process.calculation.calculation.CalculationNode" title="aiida.orm.nodes.process.calculation.calculation.CalculationNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">CalculationNode</span></code></a> (which affects CalcJobs and calcfunctions).
+This means that a <a class="reference internal" href="../../apidoc/aiida.orm.nodes.process.workflow.html#aiida.orm.nodes.process.workflow.workflow.WorkflowNode" title="aiida.orm.nodes.process.workflow.workflow.WorkflowNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">WorkflowNode</span></code></a> will not be cached.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">_store_from_cache</span></code> method, which is used to “clone” an existing node, will raise an error if the existing node has any <code class="docutils literal notranslate"><span class="pre">RETURN</span></code> links.
+This extra safe-guard prevents cases where a user might incorrectly override the <code class="docutils literal notranslate"><span class="pre">_cachable</span></code> property on a <code class="docutils literal notranslate"><span class="pre">WorkflowNode</span></code> subclass.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="design-guidelines">
+<h2>Design guidelines<a class="headerlink" href="#design-guidelines" title="Permalink to this headline">¶</a></h2>
+<p>When modifying the hashing/caching behaviour of your classes, keep in mind that cache matches can go wrong in two ways:</p>
+<ul class="simple">
+<li><p>False negatives, where two nodes <em>should</em> have the same hash but do not</p></li>
+<li><p>False positives, where two different nodes get the same hash by mistake</p></li>
+</ul>
+<p>False negatives are <strong>highly preferrable</strong> because they only increase the runtime of your calculations, while false positives can lead to wrong results.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

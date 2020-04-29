@@ -1,0 +1,470 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Provenance &mdash; AiiDA 1.2.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Graph concept" href="../concepts/provenance.html" />
+    <link rel="prev" title="AiiDA cookbook (useful code snippets)" href="../working_with_aiida/cookbook.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install/quick_installation.html">Quick installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/configuration.html">Configure AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/updating_installation.html">Updating AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Working with AiiDA</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../working_with_aiida/index.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../working_with_aiida/index.html#command-line-interface">Command line interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../working_with_aiida/index.html#python-interface">Python interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../working_with_aiida/index.html#manage-data">Manage data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../working_with_aiida/index.html#caching">Caching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../working_with_aiida/index.html#schedulers">Schedulers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../working_with_aiida/index.html#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../working_with_aiida/index.html#cookbook">Cookbook</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Provenance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/provenance.html">Graph concept</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/provenance.html#implementation">Implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/provenance.html#consistency">Consistency</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#data">Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../working/data.html">Concept</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working/data.html#creating-new-data-types">Creating new data types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working/data.html#database-or-repository">Database or repository?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#processes">Processes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/processes.html">Concept</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working/processes.html">Application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#process-functions">Process functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../working/functions.html">About</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working/functions.html#function-signatures">Function signatures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working/functions.html#default-arguments">Default arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working/functions.html#variable-and-keyword-arguments">Variable and keyword arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working/functions.html#return-values">Return values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working/functions.html#exit-codes">Exit codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working/functions.html#provenance">Provenance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#calculations">Calculations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/calculations.html">Concept</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working/calculations.html">Application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#workflows">Workflows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/workflows.html">Concept</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working/workflows.html">Application</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developer_guide/plugins.html">Plugin development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_guide/core.html">Core development</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aiida.html">aiida package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../restapi/index.html">AiiDA REST API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Provenance</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/reference/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="provenance">
+<h1>Provenance<a class="headerlink" href="#provenance" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/provenance.html">Graph concept</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/provenance.html#nodes-and-links">Nodes and links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/provenance.html#data-provenance-and-logical-provenance">Data provenance and logical provenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/provenance.html#other-entities">Other entities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/provenance.html#implementation">Implementation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/provenance.html#graph-nodes">Graph nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/provenance.html#graph-links">Graph links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/provenance.html#graph-examples">Graph examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/provenance.html#consistency">Consistency</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/provenance.html#traversal-rules">Traversal Rules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../concepts/provenance.html#data-and-calculation-nodes">Data and Calculation Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../concepts/provenance.html#data-and-workflow-nodes">Data and Workflow Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../concepts/provenance.html#workflows-and-calculation-nodes">Workflows and Calculation Nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/provenance.html#cascading-rules-an-example">Cascading rules: an example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../concepts/provenance.html#customizing-the-graph-traversal-for-deletion-or-export">Customizing the graph traversal (for deletion or export)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="data">
+<h1>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../working/data.html">Concept</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../working/data.html#creating-new-data-types">Creating new data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../working/data.html#database-or-repository">Database or repository?</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="processes">
+<h1>Processes<a class="headerlink" href="#processes" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/processes.html">Concept</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/processes.html#process-types">Process types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/processes.html#process-state">Process state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/processes.html#process-exit-codes">Process exit codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/processes.html#process-lifetime">Process lifetime</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../concepts/processes.html#process-and-node-distinction">Process and node distinction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../concepts/processes.html#process-tasks">Process tasks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../concepts/processes.html#process-checkpoints">Process checkpoints</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/processes.html#process-sealing">Process sealing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../working/processes.html">Application</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../working/processes.html#defining-processes">Defining processes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../working/processes.html#process-specification">Process specification</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../working/processes.html#ports-and-port-namespaces">Ports and Port namespaces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../working/processes.html#validation-and-defaults">Validation and defaults</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../working/processes.html#dynamic-namespaces">Dynamic namespaces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../working/processes.html#non-storable-inputs">Non storable inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../working/processes.html#automatic-input-serialization">Automatic input serialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../working/processes.html#exit-codes">Exit codes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../working/processes.html#process-metadata">Process metadata</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../working/processes.html#launching-processes">Launching processes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../working/processes.html#process-launch">Process launch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working/processes.html#process-builder">Process builder</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../working/processes.html#monitoring-processes">Monitoring processes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../working/processes.html#verdi-process-list">verdi process list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working/processes.html#verdi-process-report">verdi process report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working/processes.html#verdi-process-status">verdi process status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working/processes.html#verdi-process-show">verdi process show</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../working/processes.html#manipulating-processes">Manipulating processes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../working/processes.html#verdi-process-pause-play-kill">verdi process pause/play/kill</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="process-functions">
+<h1>Process functions<a class="headerlink" href="#process-functions" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../working/functions.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../working/functions.html#function-signatures">Function signatures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../working/functions.html#default-arguments">Default arguments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../working/functions.html#variable-and-keyword-arguments">Variable and keyword arguments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../working/functions.html#return-values">Return values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../working/functions.html#exit-codes">Exit codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../working/functions.html#provenance">Provenance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../working/functions.html#reproducibility-guidelines">Reproducibility guidelines</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="calculations">
+<h1>Calculations<a class="headerlink" href="#calculations" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/calculations.html">Concept</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/calculations.html#calculation-functions">Calculation functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/calculations.html#calculation-jobs">Calculation jobs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../concepts/calculations.html#transport-tasks">Transport tasks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../concepts/calculations.html#exponential-backoff-mechanism">Exponential backoff mechanism</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../concepts/calculations.html#parsers">Parsers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../working/calculations.html">Application</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../working/calculations.html#calculation-functions">Calculation functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../working/calculations.html#creating-data">Creating data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../working/calculations.html#calculation-jobs">Calculation jobs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../working/calculations.html#define">Define</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working/calculations.html#prepare">Prepare</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working/calculations.html#file-lists">File lists</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../working/calculations.html#local-copy-list">Local copy list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../working/calculations.html#provenance-exclude-list">Provenance exclude list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../working/calculations.html#remote-copy-list">Remote copy list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../working/calculations.html#retrieve-list">Retrieve list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../working/calculations.html#retrieve-temporary-list">Retrieve temporary list</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../working/calculations.html#options">Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working/calculations.html#launch">Launch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working/calculations.html#dry-run">Dry run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working/calculations.html#parsing">Parsing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="workflows">
+<h1>Workflows<a class="headerlink" href="#workflows" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/workflows.html">Concept</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/workflows.html#work-functions">Work functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/workflows.html#work-chains">Work chains</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../concepts/workflows.html#why">Why?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../concepts/workflows.html#implementation">Implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../concepts/workflows.html#advantages">Advantages</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/workflows.html#when-to-use-which">When to use which</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../working/workflows.html">Application</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../working/workflows.html#work-functions">Work functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../working/workflows.html#returning-data">Returning data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working/workflows.html#exit-codes">Exit codes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../working/workflows.html#work-chains">Work chains</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../working/workflows.html#define">Define</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working/workflows.html#inputs-and-outputs">Inputs and outputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working/workflows.html#outline">Outline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working/workflows.html#working-workchains-define-exit-codes">Exit codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working/workflows.html#launching-work-chains">Launching work chains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working/workflows.html#context">Context</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working/workflows.html#submitting-sub-processes">Submitting sub processes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../working/workflows.html#to-context">To context</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../working/workflows.html#appending">Appending</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../working/workflows.html#reporting">Reporting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working/workflows.html#aborting-and-exit-codes">Aborting and exit codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working/workflows.html#modular-workflow-design">Modular workflow design</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../working/workflows.html#exposing-inputs-and-outputs">Exposing inputs and outputs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../concepts/provenance.html" class="btn btn-neutral float-right" title="Graph concept" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../working_with_aiida/cookbook.html" class="btn btn-neutral float-left" title="AiiDA cookbook (useful code snippets)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

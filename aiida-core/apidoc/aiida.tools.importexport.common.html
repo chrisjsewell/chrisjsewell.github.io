@@ -1,0 +1,1097 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.tools.importexport.common package &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>aiida.tools.importexport.common package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/aiida.tools.importexport.common.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-aiida.tools.importexport.common">
+<span id="aiida-tools-importexport-common-package"></span><h1>aiida.tools.importexport.common package<a class="headerlink" href="#module-aiida.tools.importexport.common" title="Permalink to this headline">¶</a></h1>
+<p>Common utility functions, classes, and exceptions</p>
+<dl class="class">
+<dt id="aiida.tools.importexport.common.Archive">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.tools.importexport.common.</code><code class="sig-name descname">Archive</code><span class="sig-paren">(</span><em class="sig-param">filepath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#Archive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.Archive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Utility class to operate on exported archive files or directories.</p>
+<p>The main usage should be to construct the class with the filepath of the export archive as an argument.
+The contents will be lazily unpacked into a sand box folder which is constructed upon entering the instance
+within a context and which will be automatically cleaned upon leaving that context. Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">Archive</span><span class="p">(</span><span class="s1">&#39;/some/path/archive.aiida&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">archive</span><span class="p">:</span>
+    <span class="n">archive</span><span class="o">.</span><span class="n">version</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.Archive.FILENAME_DATA">
+<code class="sig-name descname">FILENAME_DATA</code><em class="property"> = 'data.json'</em><a class="headerlink" href="#aiida.tools.importexport.common.Archive.FILENAME_DATA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.Archive.FILENAME_METADATA">
+<code class="sig-name descname">FILENAME_METADATA</code><em class="property"> = 'metadata.json'</em><a class="headerlink" href="#aiida.tools.importexport.common.Archive.FILENAME_METADATA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.Archive.__dict__">
+<code class="sig-name descname">__dict__</code><em class="property"> = mappingproxy({'__module__': 'aiida.tools.importexport.common.archive', '__doc__': &quot;Utility class to operate on exported archive files or directories.\n\n    The main usage should be to construct the class with the filepath of the export archive as an argument.\n    The contents will be lazily unpacked into a sand box folder which is constructed upon entering the instance\n    within a context and which will be automatically cleaned upon leaving that context. Example::\n\n        with Archive('/some/path/archive.aiida') as archive:\n            archive.version\n\n    &quot;, 'FILENAME_DATA': 'data.json', 'FILENAME_METADATA': 'metadata.json', '__init__': &lt;function Archive.__init__&gt;, '__enter__': &lt;function Archive.__enter__&gt;, '__exit__': &lt;function Archive.__exit__&gt;, 'ensure_within_context': &lt;AdapterWrapper at 0x12cb37c10 for function&gt;, 'ensure_unpacked': &lt;AdapterWrapper at 0x12cb37c78 for function&gt;, 'unpack': &lt;FunctionWrapper at 0x12cb7fe80 for function&gt;, 'filepath': &lt;property object&gt;, 'folder': &lt;property object&gt;, 'data': &lt;property object&gt;, 'meta_data': &lt;property object&gt;, 'unpacked': &lt;property object&gt;, 'get_info': &lt;FunctionWrapper at 0x12cb7fdb0 for function&gt;, 'get_data_statistics': &lt;FunctionWrapper at 0x12cb7fa70 for function&gt;, 'version_aiida': &lt;property object&gt;, 'version_format': &lt;property object&gt;, 'conversion_info': &lt;property object&gt;, '_read_json_file': &lt;FunctionWrapper at 0x12cb7fe18 for FunctionWrapper&gt;, '__dict__': &lt;attribute '__dict__' of 'Archive' objects&gt;, '__weakref__': &lt;attribute '__weakref__' of 'Archive' objects&gt;})</em><a class="headerlink" href="#aiida.tools.importexport.common.Archive.__dict__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.Archive.__enter__">
+<code class="sig-name descname">__enter__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#Archive.__enter__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.Archive.__enter__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instantiate a SandboxFolder into which the archive can be lazily unpacked.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.Archive.__exit__">
+<code class="sig-name descname">__exit__</code><span class="sig-paren">(</span><em class="sig-param">exc_type</em>, <em class="sig-param">exc_value</em>, <em class="sig-param">traceback</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#Archive.__exit__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.Archive.__exit__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clean the sandbox folder if it was instatiated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.Archive.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">filepath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#Archive.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.Archive.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.Archive.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.importexport.common.archive'</em><a class="headerlink" href="#aiida.tools.importexport.common.Archive.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.Archive.__weakref__">
+<code class="sig-name descname">__weakref__</code><a class="headerlink" href="#aiida.tools.importexport.common.Archive.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.Archive._read_json_file">
+<code class="sig-name descname">_read_json_file</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#Archive._read_json_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.Archive._read_json_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the contents of a JSON file from the unpacked archive contents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> – the filename relative to the sandbox folder</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a dictionary with the loaded JSON content</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.Archive.conversion_info">
+<em class="property">property </em><code class="sig-name descname">conversion_info</code><a class="headerlink" href="#aiida.tools.importexport.common.Archive.conversion_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return information about migration events that were applied to this archive.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of conversion notifications</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.Archive.data">
+<em class="property">property </em><code class="sig-name descname">data</code><a class="headerlink" href="#aiida.tools.importexport.common.Archive.data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the loaded content of the data file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary with contents of data file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.Archive.ensure_unpacked">
+<code class="sig-name descname">ensure_unpacked</code><span class="sig-paren">(</span><em class="sig-param">instance</em>, <em class="sig-param">args</em>, <em class="sig-param">kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#Archive.ensure_unpacked"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.Archive.ensure_unpacked" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator to ensure that the archive is unpacked before entering the decorated function.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.Archive.ensure_within_context">
+<code class="sig-name descname">ensure_within_context</code><span class="sig-paren">(</span><em class="sig-param">instance</em>, <em class="sig-param">args</em>, <em class="sig-param">kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#Archive.ensure_within_context"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.Archive.ensure_within_context" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator to ensure that the instance is called within a context manager.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.Archive.filepath">
+<em class="property">property </em><code class="sig-name descname">filepath</code><a class="headerlink" href="#aiida.tools.importexport.common.Archive.filepath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the filepath of the archive</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the archive filepath</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.Archive.folder">
+<em class="property">property </em><code class="sig-name descname">folder</code><a class="headerlink" href="#aiida.tools.importexport.common.Archive.folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the sandbox folder</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>sandbox folder <a class="reference internal" href="aiida.common.html#aiida.common.folders.SandboxFolder" title="aiida.common.folders.SandboxFolder"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.common.folders.SandboxFolder</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.Archive.get_data_statistics">
+<code class="sig-name descname">get_data_statistics</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#Archive.get_data_statistics"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.Archive.get_data_statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return dictionary with statistics about data content, i.e. how many entries of each entity type it contains.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a dictionary with basic details</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.Archive.get_info">
+<code class="sig-name descname">get_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#Archive.get_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.Archive.get_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dictionary with basic information about the archive.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a dictionary with basic details</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.Archive.meta_data">
+<em class="property">property </em><code class="sig-name descname">meta_data</code><a class="headerlink" href="#aiida.tools.importexport.common.Archive.meta_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the loaded content of the meta data file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary with contents of meta data file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.Archive.unpack">
+<code class="sig-name descname">unpack</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#Archive.unpack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.Archive.unpack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unpack the archive and store the contents in a sandbox.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.Archive.unpacked">
+<em class="property">property </em><code class="sig-name descname">unpacked</code><a class="headerlink" href="#aiida.tools.importexport.common.Archive.unpacked" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether the archive has been unpacked into the sandbox folder.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.Archive.version_aiida">
+<em class="property">property </em><code class="sig-name descname">version_aiida</code><a class="headerlink" href="#aiida.tools.importexport.common.Archive.version_aiida" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the version of AiiDA the archive was created with.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>version number</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.Archive.version_format">
+<em class="property">property </em><code class="sig-name descname">version_format</code><a class="headerlink" href="#aiida.tools.importexport.common.Archive.version_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the version of the archive format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>version number</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.common.extract_zip">
+<code class="sig-prename descclassname">aiida.tools.importexport.common.</code><code class="sig-name descname">extract_zip</code><span class="sig-paren">(</span><em class="sig-param">infile</em>, <em class="sig-param">folder</em>, <em class="sig-param">nodes_export_subfolder=None</em>, <em class="sig-param">silent=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#extract_zip"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.extract_zip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract the nodes to be imported from a zip file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>infile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – file path</p></li>
+<li><p><strong>folder</strong> (<a class="reference internal" href="aiida.common.html#aiida.common.folders.SandboxFolder" title="aiida.common.folders.SandboxFolder"><code class="xref py py-class docutils literal notranslate"><span class="pre">SandboxFolder</span></code></a>) – a temporary folder used to extract the file tree</p></li>
+<li><p><strong>nodes_export_subfolder</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – name of the subfolder for AiiDA nodes</p></li>
+<li><p><strong>silent</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – suppress debug print</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.8)"><strong>TypeError</strong></a> – if parameter types are not respected</p></li>
+<li><p><a class="reference internal" href="#aiida.tools.importexport.common.exceptions.CorruptArchive" title="aiida.tools.importexport.common.exceptions.CorruptArchive"><strong>CorruptArchive</strong></a> – if the archive misses files or files have
+incorrect formats</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.common.extract_tar">
+<code class="sig-prename descclassname">aiida.tools.importexport.common.</code><code class="sig-name descname">extract_tar</code><span class="sig-paren">(</span><em class="sig-param">infile</em>, <em class="sig-param">folder</em>, <em class="sig-param">nodes_export_subfolder=None</em>, <em class="sig-param">silent=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#extract_tar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.extract_tar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract the nodes to be imported from a (possibly zipped) tar file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>infile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – file path</p></li>
+<li><p><strong>folder</strong> (<a class="reference internal" href="aiida.common.html#aiida.common.folders.SandboxFolder" title="aiida.common.folders.SandboxFolder"><code class="xref py py-class docutils literal notranslate"><span class="pre">SandboxFolder</span></code></a>) – a temporary fodler used to extract the file tree</p></li>
+<li><p><strong>nodes_export_subfolder</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – name of the subfolder for AiiDA nodes</p></li>
+<li><p><strong>silent</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – suppress debug print</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.8)"><strong>TypeError</strong></a> – if parameter types are not respected</p></li>
+<li><p><a class="reference internal" href="#aiida.tools.importexport.common.exceptions.CorruptArchive" title="aiida.tools.importexport.common.exceptions.CorruptArchive"><strong>CorruptArchive</strong></a> – if the archive misses files or files have
+incorrect formats</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.common.extract_tree">
+<code class="sig-prename descclassname">aiida.tools.importexport.common.</code><code class="sig-name descname">extract_tree</code><span class="sig-paren">(</span><em class="sig-param">infile</em>, <em class="sig-param">folder</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#extract_tree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.extract_tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare to import nodes from plain file system tree by copying in the given sandbox folder.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>the contents of the unpacked archive directory are copied into the sandbox folder, because the files will
+anyway haven to be copied to the repository at some point. By copying the contents of the source directory now
+and continuing operation only on the sandbox folder, we do not risk to modify the source files accidentally.
+During import then, the node files from the sandbox can be moved to the repository, so they won’t have to be
+copied again in any case.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>infile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – absolute filepath point to the unpacked archive directory</p></li>
+<li><p><strong>folder</strong> (<a class="reference internal" href="aiida.common.html#aiida.common.folders.SandboxFolder" title="aiida.common.folders.SandboxFolder"><code class="xref py py-class docutils literal notranslate"><span class="pre">SandboxFolder</span></code></a>) – a temporary folder to which the archive contents are copied</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.importexport.common.ExportImportException">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.importexport.common.</code><code class="sig-name descname">ExportImportException</code><a class="reference internal" href="../_modules/aiida/tools/importexport/common/exceptions.html#ExportImportException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.ExportImportException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="aiida.common.html#aiida.common.exceptions.AiidaException" title="aiida.common.exceptions.AiidaException"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.common.exceptions.AiidaException</span></code></a></p>
+<p>Base class for all AiiDA export/import module exceptions.</p>
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.ExportImportException.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.importexport.common.exceptions'</em><a class="headerlink" href="#aiida.tools.importexport.common.ExportImportException.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.importexport.common.ArchiveExportError">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.importexport.common.</code><code class="sig-name descname">ArchiveExportError</code><a class="reference internal" href="../_modules/aiida/tools/importexport/common/exceptions.html#ArchiveExportError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.ArchiveExportError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.importexport.common.exceptions.ExportImportException" title="aiida.tools.importexport.common.exceptions.ExportImportException"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.importexport.common.exceptions.ExportImportException</span></code></a></p>
+<p>Base class for all AiiDA export exceptions.</p>
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.ArchiveExportError.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.importexport.common.exceptions'</em><a class="headerlink" href="#aiida.tools.importexport.common.ArchiveExportError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.importexport.common.ArchiveImportError">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.importexport.common.</code><code class="sig-name descname">ArchiveImportError</code><a class="reference internal" href="../_modules/aiida/tools/importexport/common/exceptions.html#ArchiveImportError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.ArchiveImportError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.importexport.common.exceptions.ExportImportException" title="aiida.tools.importexport.common.exceptions.ExportImportException"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.importexport.common.exceptions.ExportImportException</span></code></a></p>
+<p>Base class for all AiiDA import exceptions.</p>
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.ArchiveImportError.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.importexport.common.exceptions'</em><a class="headerlink" href="#aiida.tools.importexport.common.ArchiveImportError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.importexport.common.CorruptArchive">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.importexport.common.</code><code class="sig-name descname">CorruptArchive</code><a class="reference internal" href="../_modules/aiida/tools/importexport/common/exceptions.html#CorruptArchive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.CorruptArchive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.importexport.common.exceptions.ExportImportException" title="aiida.tools.importexport.common.exceptions.ExportImportException"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.importexport.common.exceptions.ExportImportException</span></code></a></p>
+<p>Raised when an operation is applied to a corrupt export archive, e.g. missing files or invalid formats.</p>
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.CorruptArchive.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.importexport.common.exceptions'</em><a class="headerlink" href="#aiida.tools.importexport.common.CorruptArchive.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.importexport.common.IncompatibleArchiveVersionError">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.importexport.common.</code><code class="sig-name descname">IncompatibleArchiveVersionError</code><a class="reference internal" href="../_modules/aiida/tools/importexport/common/exceptions.html#IncompatibleArchiveVersionError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.IncompatibleArchiveVersionError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.importexport.common.exceptions.ExportImportException" title="aiida.tools.importexport.common.exceptions.ExportImportException"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.importexport.common.exceptions.ExportImportException</span></code></a></p>
+<p>Raised when trying to import an export archive with an incompatible schema version.</p>
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.IncompatibleArchiveVersionError.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.importexport.common.exceptions'</em><a class="headerlink" href="#aiida.tools.importexport.common.IncompatibleArchiveVersionError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.importexport.common.ExportValidationError">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.importexport.common.</code><code class="sig-name descname">ExportValidationError</code><a class="reference internal" href="../_modules/aiida/tools/importexport/common/exceptions.html#ExportValidationError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.ExportValidationError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.importexport.common.exceptions.ArchiveExportError" title="aiida.tools.importexport.common.exceptions.ArchiveExportError"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.importexport.common.exceptions.ArchiveExportError</span></code></a></p>
+<p>Raised when validation fails during export, e.g. for non-sealed <code class="docutils literal notranslate"><span class="pre">ProcessNode</span></code> s.</p>
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.ExportValidationError.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.importexport.common.exceptions'</em><a class="headerlink" href="#aiida.tools.importexport.common.ExportValidationError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.importexport.common.ImportUniquenessError">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.importexport.common.</code><code class="sig-name descname">ImportUniquenessError</code><a class="reference internal" href="../_modules/aiida/tools/importexport/common/exceptions.html#ImportUniquenessError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.ImportUniquenessError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.importexport.common.exceptions.ArchiveImportError" title="aiida.tools.importexport.common.exceptions.ArchiveImportError"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.importexport.common.exceptions.ArchiveImportError</span></code></a></p>
+<p>Raised when the user tries to violate a uniqueness constraint.</p>
+<p>Similar to <a class="reference internal" href="aiida.common.html#aiida.common.exceptions.UniquenessError" title="aiida.common.exceptions.UniquenessError"><code class="xref py py-class docutils literal notranslate"><span class="pre">UniquenessError</span></code></a>.</p>
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.ImportUniquenessError.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.importexport.common.exceptions'</em><a class="headerlink" href="#aiida.tools.importexport.common.ImportUniquenessError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.importexport.common.ImportValidationError">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.importexport.common.</code><code class="sig-name descname">ImportValidationError</code><a class="reference internal" href="../_modules/aiida/tools/importexport/common/exceptions.html#ImportValidationError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.ImportValidationError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.importexport.common.exceptions.ArchiveImportError" title="aiida.tools.importexport.common.exceptions.ArchiveImportError"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.importexport.common.exceptions.ArchiveImportError</span></code></a></p>
+<p>Raised when validation fails during import, e.g. for parameter types and values.</p>
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.ImportValidationError.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.importexport.common.exceptions'</em><a class="headerlink" href="#aiida.tools.importexport.common.ImportValidationError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.importexport.common.ArchiveMigrationError">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.importexport.common.</code><code class="sig-name descname">ArchiveMigrationError</code><a class="reference internal" href="../_modules/aiida/tools/importexport/common/exceptions.html#ArchiveMigrationError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.ArchiveMigrationError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.importexport.common.exceptions.ExportImportException" title="aiida.tools.importexport.common.exceptions.ExportImportException"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.importexport.common.exceptions.ExportImportException</span></code></a></p>
+<p>Base class for all AiiDA export archive migration exceptions.</p>
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.ArchiveMigrationError.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.importexport.common.exceptions'</em><a class="headerlink" href="#aiida.tools.importexport.common.ArchiveMigrationError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.importexport.common.MigrationValidationError">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.importexport.common.</code><code class="sig-name descname">MigrationValidationError</code><a class="reference internal" href="../_modules/aiida/tools/importexport/common/exceptions.html#MigrationValidationError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.MigrationValidationError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.importexport.common.exceptions.ArchiveMigrationError" title="aiida.tools.importexport.common.exceptions.ArchiveMigrationError"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.importexport.common.exceptions.ArchiveMigrationError</span></code></a></p>
+<p>Raised when validation fails during migration of export archives.</p>
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.MigrationValidationError.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.importexport.common.exceptions'</em><a class="headerlink" href="#aiida.tools.importexport.common.MigrationValidationError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.importexport.common.DanglingLinkError">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.importexport.common.</code><code class="sig-name descname">DanglingLinkError</code><a class="reference internal" href="../_modules/aiida/tools/importexport/common/exceptions.html#DanglingLinkError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.DanglingLinkError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.importexport.common.exceptions.MigrationValidationError" title="aiida.tools.importexport.common.exceptions.MigrationValidationError"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.importexport.common.exceptions.MigrationValidationError</span></code></a></p>
+<p>Raised when an export archive is detected to contain dangling links when importing.</p>
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.DanglingLinkError.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.importexport.common.exceptions'</em><a class="headerlink" href="#aiida.tools.importexport.common.DanglingLinkError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="module-aiida.tools.importexport.common.archive">
+<span id="submodules"></span><h2>Submodules<a class="headerlink" href="#module-aiida.tools.importexport.common.archive" title="Permalink to this headline">¶</a></h2>
+<p>Utility functions and classes to interact with AiiDA export archives.</p>
+<dl class="class">
+<dt id="aiida.tools.importexport.common.archive.Archive">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.tools.importexport.common.archive.</code><code class="sig-name descname">Archive</code><span class="sig-paren">(</span><em class="sig-param">filepath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#Archive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.archive.Archive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Utility class to operate on exported archive files or directories.</p>
+<p>The main usage should be to construct the class with the filepath of the export archive as an argument.
+The contents will be lazily unpacked into a sand box folder which is constructed upon entering the instance
+within a context and which will be automatically cleaned upon leaving that context. Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">Archive</span><span class="p">(</span><span class="s1">&#39;/some/path/archive.aiida&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">archive</span><span class="p">:</span>
+    <span class="n">archive</span><span class="o">.</span><span class="n">version</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.archive.Archive.FILENAME_DATA">
+<code class="sig-name descname">FILENAME_DATA</code><em class="property"> = 'data.json'</em><a class="headerlink" href="#aiida.tools.importexport.common.archive.Archive.FILENAME_DATA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.archive.Archive.FILENAME_METADATA">
+<code class="sig-name descname">FILENAME_METADATA</code><em class="property"> = 'metadata.json'</em><a class="headerlink" href="#aiida.tools.importexport.common.archive.Archive.FILENAME_METADATA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.archive.Archive.__dict__">
+<code class="sig-name descname">__dict__</code><em class="property"> = mappingproxy({'__module__': 'aiida.tools.importexport.common.archive', '__doc__': &quot;Utility class to operate on exported archive files or directories.\n\n    The main usage should be to construct the class with the filepath of the export archive as an argument.\n    The contents will be lazily unpacked into a sand box folder which is constructed upon entering the instance\n    within a context and which will be automatically cleaned upon leaving that context. Example::\n\n        with Archive('/some/path/archive.aiida') as archive:\n            archive.version\n\n    &quot;, 'FILENAME_DATA': 'data.json', 'FILENAME_METADATA': 'metadata.json', '__init__': &lt;function Archive.__init__&gt;, '__enter__': &lt;function Archive.__enter__&gt;, '__exit__': &lt;function Archive.__exit__&gt;, 'ensure_within_context': &lt;AdapterWrapper at 0x12cb37c10 for function&gt;, 'ensure_unpacked': &lt;AdapterWrapper at 0x12cb37c78 for function&gt;, 'unpack': &lt;FunctionWrapper at 0x12cb7fe80 for function&gt;, 'filepath': &lt;property object&gt;, 'folder': &lt;property object&gt;, 'data': &lt;property object&gt;, 'meta_data': &lt;property object&gt;, 'unpacked': &lt;property object&gt;, 'get_info': &lt;FunctionWrapper at 0x12cb7fdb0 for function&gt;, 'get_data_statistics': &lt;FunctionWrapper at 0x12cb7fa70 for function&gt;, 'version_aiida': &lt;property object&gt;, 'version_format': &lt;property object&gt;, 'conversion_info': &lt;property object&gt;, '_read_json_file': &lt;FunctionWrapper at 0x12cb7fe18 for FunctionWrapper&gt;, '__dict__': &lt;attribute '__dict__' of 'Archive' objects&gt;, '__weakref__': &lt;attribute '__weakref__' of 'Archive' objects&gt;})</em><a class="headerlink" href="#aiida.tools.importexport.common.archive.Archive.__dict__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.archive.Archive.__enter__">
+<code class="sig-name descname">__enter__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#Archive.__enter__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.archive.Archive.__enter__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instantiate a SandboxFolder into which the archive can be lazily unpacked.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.archive.Archive.__exit__">
+<code class="sig-name descname">__exit__</code><span class="sig-paren">(</span><em class="sig-param">exc_type</em>, <em class="sig-param">exc_value</em>, <em class="sig-param">traceback</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#Archive.__exit__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.archive.Archive.__exit__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clean the sandbox folder if it was instatiated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.archive.Archive.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">filepath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#Archive.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.archive.Archive.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.archive.Archive.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.importexport.common.archive'</em><a class="headerlink" href="#aiida.tools.importexport.common.archive.Archive.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.archive.Archive.__weakref__">
+<code class="sig-name descname">__weakref__</code><a class="headerlink" href="#aiida.tools.importexport.common.archive.Archive.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.archive.Archive._read_json_file">
+<code class="sig-name descname">_read_json_file</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#Archive._read_json_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.archive.Archive._read_json_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the contents of a JSON file from the unpacked archive contents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> – the filename relative to the sandbox folder</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a dictionary with the loaded JSON content</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.archive.Archive.conversion_info">
+<em class="property">property </em><code class="sig-name descname">conversion_info</code><a class="headerlink" href="#aiida.tools.importexport.common.archive.Archive.conversion_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return information about migration events that were applied to this archive.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of conversion notifications</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.archive.Archive.data">
+<em class="property">property </em><code class="sig-name descname">data</code><a class="headerlink" href="#aiida.tools.importexport.common.archive.Archive.data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the loaded content of the data file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary with contents of data file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.archive.Archive.ensure_unpacked">
+<code class="sig-name descname">ensure_unpacked</code><span class="sig-paren">(</span><em class="sig-param">instance</em>, <em class="sig-param">args</em>, <em class="sig-param">kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#Archive.ensure_unpacked"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.archive.Archive.ensure_unpacked" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator to ensure that the archive is unpacked before entering the decorated function.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.archive.Archive.ensure_within_context">
+<code class="sig-name descname">ensure_within_context</code><span class="sig-paren">(</span><em class="sig-param">instance</em>, <em class="sig-param">args</em>, <em class="sig-param">kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#Archive.ensure_within_context"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.archive.Archive.ensure_within_context" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator to ensure that the instance is called within a context manager.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.archive.Archive.filepath">
+<em class="property">property </em><code class="sig-name descname">filepath</code><a class="headerlink" href="#aiida.tools.importexport.common.archive.Archive.filepath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the filepath of the archive</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the archive filepath</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.archive.Archive.folder">
+<em class="property">property </em><code class="sig-name descname">folder</code><a class="headerlink" href="#aiida.tools.importexport.common.archive.Archive.folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the sandbox folder</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>sandbox folder <a class="reference internal" href="aiida.common.html#aiida.common.folders.SandboxFolder" title="aiida.common.folders.SandboxFolder"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.common.folders.SandboxFolder</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.archive.Archive.get_data_statistics">
+<code class="sig-name descname">get_data_statistics</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#Archive.get_data_statistics"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.archive.Archive.get_data_statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return dictionary with statistics about data content, i.e. how many entries of each entity type it contains.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a dictionary with basic details</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.archive.Archive.get_info">
+<code class="sig-name descname">get_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#Archive.get_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.archive.Archive.get_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dictionary with basic information about the archive.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a dictionary with basic details</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.archive.Archive.meta_data">
+<em class="property">property </em><code class="sig-name descname">meta_data</code><a class="headerlink" href="#aiida.tools.importexport.common.archive.Archive.meta_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the loaded content of the meta data file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary with contents of meta data file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.archive.Archive.unpack">
+<code class="sig-name descname">unpack</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#Archive.unpack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.archive.Archive.unpack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unpack the archive and store the contents in a sandbox.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.archive.Archive.unpacked">
+<em class="property">property </em><code class="sig-name descname">unpacked</code><a class="headerlink" href="#aiida.tools.importexport.common.archive.Archive.unpacked" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether the archive has been unpacked into the sandbox folder.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.archive.Archive.version_aiida">
+<em class="property">property </em><code class="sig-name descname">version_aiida</code><a class="headerlink" href="#aiida.tools.importexport.common.archive.Archive.version_aiida" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the version of AiiDA the archive was created with.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>version number</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.archive.Archive.version_format">
+<em class="property">property </em><code class="sig-name descname">version_format</code><a class="headerlink" href="#aiida.tools.importexport.common.archive.Archive.version_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the version of the archive format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>version number</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.common.archive.extract_zip">
+<code class="sig-prename descclassname">aiida.tools.importexport.common.archive.</code><code class="sig-name descname">extract_zip</code><span class="sig-paren">(</span><em class="sig-param">infile</em>, <em class="sig-param">folder</em>, <em class="sig-param">nodes_export_subfolder=None</em>, <em class="sig-param">silent=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#extract_zip"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.archive.extract_zip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract the nodes to be imported from a zip file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>infile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – file path</p></li>
+<li><p><strong>folder</strong> (<a class="reference internal" href="aiida.common.html#aiida.common.folders.SandboxFolder" title="aiida.common.folders.SandboxFolder"><code class="xref py py-class docutils literal notranslate"><span class="pre">SandboxFolder</span></code></a>) – a temporary folder used to extract the file tree</p></li>
+<li><p><strong>nodes_export_subfolder</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – name of the subfolder for AiiDA nodes</p></li>
+<li><p><strong>silent</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – suppress debug print</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.8)"><strong>TypeError</strong></a> – if parameter types are not respected</p></li>
+<li><p><a class="reference internal" href="#aiida.tools.importexport.common.exceptions.CorruptArchive" title="aiida.tools.importexport.common.exceptions.CorruptArchive"><strong>CorruptArchive</strong></a> – if the archive misses files or files have
+incorrect formats</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.common.archive.extract_tar">
+<code class="sig-prename descclassname">aiida.tools.importexport.common.archive.</code><code class="sig-name descname">extract_tar</code><span class="sig-paren">(</span><em class="sig-param">infile</em>, <em class="sig-param">folder</em>, <em class="sig-param">nodes_export_subfolder=None</em>, <em class="sig-param">silent=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#extract_tar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.archive.extract_tar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract the nodes to be imported from a (possibly zipped) tar file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>infile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – file path</p></li>
+<li><p><strong>folder</strong> (<a class="reference internal" href="aiida.common.html#aiida.common.folders.SandboxFolder" title="aiida.common.folders.SandboxFolder"><code class="xref py py-class docutils literal notranslate"><span class="pre">SandboxFolder</span></code></a>) – a temporary fodler used to extract the file tree</p></li>
+<li><p><strong>nodes_export_subfolder</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – name of the subfolder for AiiDA nodes</p></li>
+<li><p><strong>silent</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – suppress debug print</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.8)"><strong>TypeError</strong></a> – if parameter types are not respected</p></li>
+<li><p><a class="reference internal" href="#aiida.tools.importexport.common.exceptions.CorruptArchive" title="aiida.tools.importexport.common.exceptions.CorruptArchive"><strong>CorruptArchive</strong></a> – if the archive misses files or files have
+incorrect formats</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.common.archive.extract_tree">
+<code class="sig-prename descclassname">aiida.tools.importexport.common.archive.</code><code class="sig-name descname">extract_tree</code><span class="sig-paren">(</span><em class="sig-param">infile</em>, <em class="sig-param">folder</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/archive.html#extract_tree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.archive.extract_tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare to import nodes from plain file system tree by copying in the given sandbox folder.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>the contents of the unpacked archive directory are copied into the sandbox folder, because the files will
+anyway haven to be copied to the repository at some point. By copying the contents of the source directory now
+and continuing operation only on the sandbox folder, we do not risk to modify the source files accidentally.
+During import then, the node files from the sandbox can be moved to the repository, so they won’t have to be
+copied again in any case.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>infile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – absolute filepath point to the unpacked archive directory</p></li>
+<li><p><strong>folder</strong> (<a class="reference internal" href="aiida.common.html#aiida.common.folders.SandboxFolder" title="aiida.common.folders.SandboxFolder"><code class="xref py py-class docutils literal notranslate"><span class="pre">SandboxFolder</span></code></a>) – a temporary folder to which the archive contents are copied</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-aiida.tools.importexport.common.config"></span><p>Configuration file for AiiDA Import/Export module</p>
+<span class="target" id="module-aiida.tools.importexport.common.exceptions"></span><p>Module that defines the exceptions thrown by AiiDA’s export/import module.</p>
+<dl class="simple">
+<dt>Note: In order to not override the built-in <cite>ImportError</cite>, both <cite>ImportError</cite> and <cite>ExportError</cite> are prefixed with</dt><dd><p><cite>Archive</cite>.</p>
+</dd>
+</dl>
+<dl class="exception">
+<dt id="aiida.tools.importexport.common.exceptions.ExportImportException">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.importexport.common.exceptions.</code><code class="sig-name descname">ExportImportException</code><a class="reference internal" href="../_modules/aiida/tools/importexport/common/exceptions.html#ExportImportException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.exceptions.ExportImportException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="aiida.common.html#aiida.common.exceptions.AiidaException" title="aiida.common.exceptions.AiidaException"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.common.exceptions.AiidaException</span></code></a></p>
+<p>Base class for all AiiDA export/import module exceptions.</p>
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.exceptions.ExportImportException.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.importexport.common.exceptions'</em><a class="headerlink" href="#aiida.tools.importexport.common.exceptions.ExportImportException.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.importexport.common.exceptions.ArchiveExportError">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.importexport.common.exceptions.</code><code class="sig-name descname">ArchiveExportError</code><a class="reference internal" href="../_modules/aiida/tools/importexport/common/exceptions.html#ArchiveExportError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.exceptions.ArchiveExportError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.importexport.common.exceptions.ExportImportException" title="aiida.tools.importexport.common.exceptions.ExportImportException"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.importexport.common.exceptions.ExportImportException</span></code></a></p>
+<p>Base class for all AiiDA export exceptions.</p>
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.exceptions.ArchiveExportError.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.importexport.common.exceptions'</em><a class="headerlink" href="#aiida.tools.importexport.common.exceptions.ArchiveExportError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.importexport.common.exceptions.ArchiveImportError">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.importexport.common.exceptions.</code><code class="sig-name descname">ArchiveImportError</code><a class="reference internal" href="../_modules/aiida/tools/importexport/common/exceptions.html#ArchiveImportError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.exceptions.ArchiveImportError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.importexport.common.exceptions.ExportImportException" title="aiida.tools.importexport.common.exceptions.ExportImportException"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.importexport.common.exceptions.ExportImportException</span></code></a></p>
+<p>Base class for all AiiDA import exceptions.</p>
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.exceptions.ArchiveImportError.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.importexport.common.exceptions'</em><a class="headerlink" href="#aiida.tools.importexport.common.exceptions.ArchiveImportError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.importexport.common.exceptions.CorruptArchive">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.importexport.common.exceptions.</code><code class="sig-name descname">CorruptArchive</code><a class="reference internal" href="../_modules/aiida/tools/importexport/common/exceptions.html#CorruptArchive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.exceptions.CorruptArchive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.importexport.common.exceptions.ExportImportException" title="aiida.tools.importexport.common.exceptions.ExportImportException"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.importexport.common.exceptions.ExportImportException</span></code></a></p>
+<p>Raised when an operation is applied to a corrupt export archive, e.g. missing files or invalid formats.</p>
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.exceptions.CorruptArchive.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.importexport.common.exceptions'</em><a class="headerlink" href="#aiida.tools.importexport.common.exceptions.CorruptArchive.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.importexport.common.exceptions.IncompatibleArchiveVersionError">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.importexport.common.exceptions.</code><code class="sig-name descname">IncompatibleArchiveVersionError</code><a class="reference internal" href="../_modules/aiida/tools/importexport/common/exceptions.html#IncompatibleArchiveVersionError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.exceptions.IncompatibleArchiveVersionError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.importexport.common.exceptions.ExportImportException" title="aiida.tools.importexport.common.exceptions.ExportImportException"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.importexport.common.exceptions.ExportImportException</span></code></a></p>
+<p>Raised when trying to import an export archive with an incompatible schema version.</p>
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.exceptions.IncompatibleArchiveVersionError.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.importexport.common.exceptions'</em><a class="headerlink" href="#aiida.tools.importexport.common.exceptions.IncompatibleArchiveVersionError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.importexport.common.exceptions.ExportValidationError">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.importexport.common.exceptions.</code><code class="sig-name descname">ExportValidationError</code><a class="reference internal" href="../_modules/aiida/tools/importexport/common/exceptions.html#ExportValidationError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.exceptions.ExportValidationError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.importexport.common.exceptions.ArchiveExportError" title="aiida.tools.importexport.common.exceptions.ArchiveExportError"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.importexport.common.exceptions.ArchiveExportError</span></code></a></p>
+<p>Raised when validation fails during export, e.g. for non-sealed <code class="docutils literal notranslate"><span class="pre">ProcessNode</span></code> s.</p>
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.exceptions.ExportValidationError.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.importexport.common.exceptions'</em><a class="headerlink" href="#aiida.tools.importexport.common.exceptions.ExportValidationError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.importexport.common.exceptions.ImportUniquenessError">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.importexport.common.exceptions.</code><code class="sig-name descname">ImportUniquenessError</code><a class="reference internal" href="../_modules/aiida/tools/importexport/common/exceptions.html#ImportUniquenessError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.exceptions.ImportUniquenessError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.importexport.common.exceptions.ArchiveImportError" title="aiida.tools.importexport.common.exceptions.ArchiveImportError"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.importexport.common.exceptions.ArchiveImportError</span></code></a></p>
+<p>Raised when the user tries to violate a uniqueness constraint.</p>
+<p>Similar to <a class="reference internal" href="aiida.common.html#aiida.common.exceptions.UniquenessError" title="aiida.common.exceptions.UniquenessError"><code class="xref py py-class docutils literal notranslate"><span class="pre">UniquenessError</span></code></a>.</p>
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.exceptions.ImportUniquenessError.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.importexport.common.exceptions'</em><a class="headerlink" href="#aiida.tools.importexport.common.exceptions.ImportUniquenessError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.importexport.common.exceptions.ImportValidationError">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.importexport.common.exceptions.</code><code class="sig-name descname">ImportValidationError</code><a class="reference internal" href="../_modules/aiida/tools/importexport/common/exceptions.html#ImportValidationError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.exceptions.ImportValidationError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.importexport.common.exceptions.ArchiveImportError" title="aiida.tools.importexport.common.exceptions.ArchiveImportError"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.importexport.common.exceptions.ArchiveImportError</span></code></a></p>
+<p>Raised when validation fails during import, e.g. for parameter types and values.</p>
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.exceptions.ImportValidationError.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.importexport.common.exceptions'</em><a class="headerlink" href="#aiida.tools.importexport.common.exceptions.ImportValidationError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.importexport.common.exceptions.ArchiveMigrationError">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.importexport.common.exceptions.</code><code class="sig-name descname">ArchiveMigrationError</code><a class="reference internal" href="../_modules/aiida/tools/importexport/common/exceptions.html#ArchiveMigrationError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.exceptions.ArchiveMigrationError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.importexport.common.exceptions.ExportImportException" title="aiida.tools.importexport.common.exceptions.ExportImportException"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.importexport.common.exceptions.ExportImportException</span></code></a></p>
+<p>Base class for all AiiDA export archive migration exceptions.</p>
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.exceptions.ArchiveMigrationError.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.importexport.common.exceptions'</em><a class="headerlink" href="#aiida.tools.importexport.common.exceptions.ArchiveMigrationError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.importexport.common.exceptions.MigrationValidationError">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.importexport.common.exceptions.</code><code class="sig-name descname">MigrationValidationError</code><a class="reference internal" href="../_modules/aiida/tools/importexport/common/exceptions.html#MigrationValidationError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.exceptions.MigrationValidationError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.importexport.common.exceptions.ArchiveMigrationError" title="aiida.tools.importexport.common.exceptions.ArchiveMigrationError"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.importexport.common.exceptions.ArchiveMigrationError</span></code></a></p>
+<p>Raised when validation fails during migration of export archives.</p>
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.exceptions.MigrationValidationError.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.importexport.common.exceptions'</em><a class="headerlink" href="#aiida.tools.importexport.common.exceptions.MigrationValidationError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.importexport.common.exceptions.DanglingLinkError">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.importexport.common.exceptions.</code><code class="sig-name descname">DanglingLinkError</code><a class="reference internal" href="../_modules/aiida/tools/importexport/common/exceptions.html#DanglingLinkError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.exceptions.DanglingLinkError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.importexport.common.exceptions.MigrationValidationError" title="aiida.tools.importexport.common.exceptions.MigrationValidationError"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.importexport.common.exceptions.MigrationValidationError</span></code></a></p>
+<p>Raised when an export archive is detected to contain dangling links when importing.</p>
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.exceptions.DanglingLinkError.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.importexport.common.exceptions'</em><a class="headerlink" href="#aiida.tools.importexport.common.exceptions.DanglingLinkError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-aiida.tools.importexport.common.utils"></span><p>Utility functions for import/export of AiiDA entities</p>
+<dl class="class">
+<dt id="aiida.tools.importexport.common.utils.HTMLGetLinksParser">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.tools.importexport.common.utils.</code><code class="sig-name descname">HTMLGetLinksParser</code><span class="sig-paren">(</span><em class="sig-param">filter_extension=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/utils.html#HTMLGetLinksParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.utils.HTMLGetLinksParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/html.parser.html#html.parser.HTMLParser" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">html.parser.HTMLParser</span></code></a></p>
+<p>If a filter_extension is passed, only links with extension matching
+the given one will be returned.</p>
+<dl class="method">
+<dt id="aiida.tools.importexport.common.utils.HTMLGetLinksParser.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">filter_extension=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/utils.html#HTMLGetLinksParser.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.utils.HTMLGetLinksParser.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize and reset this instance.</p>
+<p>If convert_charrefs is True (the default), all character references
+are automatically converted to the corresponding Unicode characters.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.importexport.common.utils.HTMLGetLinksParser.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.importexport.common.utils'</em><a class="headerlink" href="#aiida.tools.importexport.common.utils.HTMLGetLinksParser.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.utils.HTMLGetLinksParser.get_links">
+<code class="sig-name descname">get_links</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/utils.html#HTMLGetLinksParser.get_links"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.utils.HTMLGetLinksParser.get_links" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the links that were found during the parsing phase.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.importexport.common.utils.HTMLGetLinksParser.handle_starttag">
+<code class="sig-name descname">handle_starttag</code><span class="sig-paren">(</span><em class="sig-param">tag</em>, <em class="sig-param">attrs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/utils.html#HTMLGetLinksParser.handle_starttag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.utils.HTMLGetLinksParser.handle_starttag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store the urls encountered, if they match the request.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.common.utils.export_shard_uuid">
+<code class="sig-prename descclassname">aiida.tools.importexport.common.utils.</code><code class="sig-name descname">export_shard_uuid</code><span class="sig-paren">(</span><em class="sig-param">uuid</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/utils.html#export_shard_uuid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.utils.export_shard_uuid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sharding of the UUID for the import/export</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>uuid</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – UUID to be sharded (v4)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Sharded UUID as a subfolder path</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.common.utils.get_valid_import_links">
+<code class="sig-prename descclassname">aiida.tools.importexport.common.utils.</code><code class="sig-name descname">get_valid_import_links</code><span class="sig-paren">(</span><em class="sig-param">url</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/utils.html#get_valid_import_links"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.utils.get_valid_import_links" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open the given URL, parse the HTML and return a list of valid links where
+the link file has a .aiida extension.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.common.utils.schema_to_entity_names">
+<code class="sig-prename descclassname">aiida.tools.importexport.common.utils.</code><code class="sig-name descname">schema_to_entity_names</code><span class="sig-paren">(</span><em class="sig-param">class_string</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/common/utils.html#schema_to_entity_names"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.common.utils.schema_to_entity_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mapping from classes path to entity names (used by the SQLA import/export)
+This could have been written much simpler if it is only for SQLA but there
+is an attempt the SQLA import/export code to be used for Django too.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

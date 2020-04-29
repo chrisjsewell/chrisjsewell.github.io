@@ -1,0 +1,716 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.tools.importexport.migration package &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>aiida.tools.importexport.migration package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/aiida.tools.importexport.migration.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-aiida.tools.importexport.migration">
+<span id="aiida-tools-importexport-migration-package"></span><h1>aiida.tools.importexport.migration package<a class="headerlink" href="#module-aiida.tools.importexport.migration" title="Permalink to this headline">¶</a></h1>
+<p>Migration export files from old export versions to the newest, used by <cite>verdi export migrate</cite> command.</p>
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.migrate_recursively">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.</code><code class="sig-name descname">migrate_recursively</code><span class="sig-paren">(</span><em class="sig-param">metadata</em>, <em class="sig-param">data</em>, <em class="sig-param">folder</em>, <em class="sig-param">version='0.9'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration.html#migrate_recursively"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.migrate_recursively" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recursive migration of export files from v0.1 to a newer version.</p>
+<p>See specific migration functions for detailed descriptions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metadata</strong> – the content of an export archive metadata.json file</p></li>
+<li><p><strong>data</strong> – the content of an export archive data.json file</p></li>
+<li><p><strong>folder</strong> – SandboxFolder in which the archive has been unpacked (workdir)</p></li>
+<li><p><strong>version</strong> – the version to migrate to, by default the current export version</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.verify_metadata_version">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.</code><code class="sig-name descname">verify_metadata_version</code><span class="sig-paren">(</span><em class="sig-param">metadata</em>, <em class="sig-param">version=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/utils.html#verify_metadata_version"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.verify_metadata_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility function to verify that the metadata has the correct version number.</p>
+<p>If no version number is passed, it will just extract the version number and return it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metadata</strong> – the content of an export archive metadata.json file</p></li>
+<li><p><strong>version</strong> – string version number that the metadata is expected to have</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="module-aiida.tools.importexport.migration.utils">
+<span id="submodules"></span><h2>Submodules<a class="headerlink" href="#module-aiida.tools.importexport.migration.utils" title="Permalink to this headline">¶</a></h2>
+<p>Utility functions for migration of export-files.</p>
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.utils.remove_fields">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.utils.</code><code class="sig-name descname">remove_fields</code><span class="sig-paren">(</span><em class="sig-param">metadata</em>, <em class="sig-param">data</em>, <em class="sig-param">entities</em>, <em class="sig-param">fields</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/utils.html#remove_fields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.utils.remove_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove fields under entities from data.json and metadata.json.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metadata</strong> – the content of an export archive metadata.json file</p></li>
+<li><p><strong>data</strong> – the content of an export archive data.json file</p></li>
+<li><p><strong>entities</strong> – list of ORM entities</p></li>
+<li><p><strong>fields</strong> – list of fields to be removed from the export archive files</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.utils.update_metadata">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.utils.</code><code class="sig-name descname">update_metadata</code><span class="sig-paren">(</span><em class="sig-param">metadata</em>, <em class="sig-param">version</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/utils.html#update_metadata"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.utils.update_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the metadata with a new version number and a notification of the conversion that was executed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metadata</strong> – the content of an export archive metadata.json file</p></li>
+<li><p><strong>version</strong> – string version number that the updated metadata should get</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.utils.verify_metadata_version">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.utils.</code><code class="sig-name descname">verify_metadata_version</code><span class="sig-paren">(</span><em class="sig-param">metadata</em>, <em class="sig-param">version=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/utils.html#verify_metadata_version"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.utils.verify_metadata_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility function to verify that the metadata has the correct version number.</p>
+<p>If no version number is passed, it will just extract the version number and return it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metadata</strong> – the content of an export archive metadata.json file</p></li>
+<li><p><strong>version</strong> – string version number that the metadata is expected to have</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-aiida.tools.importexport.migration.v01_to_v02"></span><p>Migration from v0.1 to v0.2, used by <cite>verdi export migrate</cite> command.</p>
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v01_to_v02.migrate_v1_to_v2">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v01_to_v02.</code><code class="sig-name descname">migrate_v1_to_v2</code><span class="sig-paren">(</span><em class="sig-param">metadata</em>, <em class="sig-param">data</em>, <em class="sig-param">*args</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v01_to_v02.html#migrate_v1_to_v2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v01_to_v02.migrate_v1_to_v2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migration of export files from v0.1 to v0.2, which means generalizing the
+field names with respect to the database backend</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metadata</strong> – the content of an export archive metadata.json file</p></li>
+<li><p><strong>data</strong> – the content of an export archive data.json file</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-aiida.tools.importexport.migration.v02_to_v03"></span><p>Migration from v0.2 to v0.3, used by <cite>verdi export migrate</cite> command.</p>
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v02_to_v03.migrate_v2_to_v3">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v02_to_v03.</code><code class="sig-name descname">migrate_v2_to_v3</code><span class="sig-paren">(</span><em class="sig-param">metadata</em>, <em class="sig-param">data</em>, <em class="sig-param">*args</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v02_to_v03.html#migrate_v2_to_v3"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v02_to_v03.migrate_v2_to_v3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migration of export files from v0.2 to v0.3, which means adding the link
+types to the link entries and making the entity key names backend agnostic
+by effectively removing the prefix ‘aiida.backends.djsite.db.models’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – the content of an export archive data.json file</p></li>
+<li><p><strong>metadata</strong> – the content of an export archive metadata.json file</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-aiida.tools.importexport.migration.v03_to_v04"></span><p>Migration from v0.3 to v0.4, used by <cite>verdi export migrate</cite> command.</p>
+<p>The migration steps are named similarly to the database migrations for Django and SQLAlchemy.
+In the description of each migration, a revision number is given, which refers to the Django migrations.
+The individual Django database migrations may be found at:</p>
+<blockquote>
+<div><p><cite>aiida.backends.djsite.db.migrations.00XX_&lt;migration-name&gt;.py</cite></p>
+</div></blockquote>
+<p>Where XX are the numbers in the migrations’ documentation: REV. 1.0.XX
+And migration-name is the name of the particular migration.
+The individual SQLAlchemy database migrations may be found at:</p>
+<blockquote>
+<div><p><cite>aiida.backends.sqlalchemy.migrations.versions.&lt;id&gt;_&lt;migration-name&gt;.py</cite></p>
+</div></blockquote>
+<p>Where id is a SQLA id and migration-name is the name of the particular migration.</p>
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v03_to_v04.add_extras">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v03_to_v04.</code><code class="sig-name descname">add_extras</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v03_to_v04.html#add_extras"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v03_to_v04.add_extras" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update data.json with the new Extras
+Since Extras were not available previously and usually only include hashes,
+the Node ids will be added, but included as empty dicts</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v03_to_v04.migrate_v3_to_v4">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v03_to_v04.</code><code class="sig-name descname">migrate_v3_to_v4</code><span class="sig-paren">(</span><em class="sig-param">metadata</em>, <em class="sig-param">data</em>, <em class="sig-param">*args</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v03_to_v04.html#migrate_v3_to_v4"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v03_to_v04.migrate_v3_to_v4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migration of export files from v0.3 to v0.4</p>
+<p>Note concerning migration 0032 - REV. 1.0.32:
+Remove legacy workflow tables: DbWorkflow, DbWorkflowData, DbWorkflowStep
+These were (according to Antimo Marrazzo) never exported.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v03_to_v04.migration_add_node_uuid_unique_constraint">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v03_to_v04.</code><code class="sig-name descname">migration_add_node_uuid_unique_constraint</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v03_to_v04.html#migration_add_node_uuid_unique_constraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v03_to_v04.migration_add_node_uuid_unique_constraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply migration: 0014 - REV. 1.0.14, 0018 - REV. 1.0.18
+Check that no entries with the same uuid are present in the export file
+if yes - stop the import process</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v03_to_v04.migration_base_data_plugin_type_string">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v03_to_v04.</code><code class="sig-name descname">migration_base_data_plugin_type_string</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v03_to_v04.html#migration_base_data_plugin_type_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v03_to_v04.migration_base_data_plugin_type_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply migration: 0009 - REV. 1.0.9
+<cite>DbNode.type</cite> content changes:
+‘data.base.Bool.’  -&gt; ‘data.bool.Bool.’
+‘data.base.Float.’ -&gt; ‘data.float.Float.’
+‘data.base.Int.’   -&gt; ‘data.int.Int.’
+‘data.base.Str.’   -&gt; ‘data.str.Str.’
+‘data.base.List.’  -&gt; ‘data.list.List.’</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v03_to_v04.migration_calc_job_option_attribute_keys">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v03_to_v04.</code><code class="sig-name descname">migration_calc_job_option_attribute_keys</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v03_to_v04.html#migration_calc_job_option_attribute_keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v03_to_v04.migration_calc_job_option_attribute_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply migrations: 0023 - REV. 1.0.23
+<cite>custom_environment_variables</cite> -&gt; <cite>environment_variables</cite>
+<cite>jobresource_params</cite> -&gt; <cite>resources</cite>
+<cite>_process_label</cite> -&gt; <cite>process_label</cite>
+<cite>parser</cite> -&gt; <cite>parser_name</cite></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v03_to_v04.migration_code_sub_class_of_data">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v03_to_v04.</code><code class="sig-name descname">migration_code_sub_class_of_data</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v03_to_v04.html#migration_code_sub_class_of_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v03_to_v04.migration_code_sub_class_of_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply migrations: 0016 - REV. 1.0.16
+The Code class used to be just a sub class of Node, but was changed to act like a Data node.
+code.Code. -&gt; data.code.Code.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v03_to_v04.migration_dbgroup_name_to_label_type_to_type_string">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v03_to_v04.</code><code class="sig-name descname">migration_dbgroup_name_to_label_type_to_type_string</code><span class="sig-paren">(</span><em class="sig-param">metadata</em>, <em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v03_to_v04.html#migration_dbgroup_name_to_label_type_to_type_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v03_to_v04.migration_dbgroup_name_to_label_type_to_type_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply migrations: 0021 - REV. 1.0.21
+Rename dbgroup fields:
+name -&gt; label
+type -&gt; type_string</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v03_to_v04.migration_dbgroup_type_string_change_content">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v03_to_v04.</code><code class="sig-name descname">migration_dbgroup_type_string_change_content</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v03_to_v04.html#migration_dbgroup_type_string_change_content"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v03_to_v04.migration_dbgroup_type_string_change_content" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply migrations: 0022 - REV. 1.0.22
+Change type_string according to the following rule:
+‘’ -&gt; ‘user’
+‘data.upf.family’ -&gt; ‘data.upf’
+‘aiida.import’ -&gt; ‘auto.import’
+‘autogroup.run’ -&gt; ‘auto.run’</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v03_to_v04.migration_dbnode_type_to_dbnode_node_type">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v03_to_v04.</code><code class="sig-name descname">migration_dbnode_type_to_dbnode_node_type</code><span class="sig-paren">(</span><em class="sig-param">metadata</em>, <em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v03_to_v04.html#migration_dbnode_type_to_dbnode_node_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v03_to_v04.migration_dbnode_type_to_dbnode_node_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply migration: 0030 - REV. 1.0.30
+Renaming DbNode.type to DbNode.node_type</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v03_to_v04.migration_migrate_builtin_calculations">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v03_to_v04.</code><code class="sig-name descname">migration_migrate_builtin_calculations</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v03_to_v04.html#migration_migrate_builtin_calculations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v03_to_v04.migration_migrate_builtin_calculations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply migrations: 0019 - REV. 1.0.19
+Remove ‘simpleplugin’ from ArithmeticAddCalculation and TemplatereplacerCalculation type</p>
+<p>ATTENTION:</p>
+<p>The ‘process_type’ column did not exist before migration 0010, consequently, it could not be present in any
+export archive of the currently existing stable releases (0.12.*). Here, however, the migration acts
+on the content of the ‘process_type’ column, which could only be introduced in alpha releases of AiiDA 1.0.
+Assuming that ‘add’ and ‘templateplacer’ calculations are expected to have both ‘type’ and ‘process_type’ columns,
+they will be added based solely on the ‘type’ column content (unlike the way it is done in the DB migration,
+where the ‘type_string’ content was also checked).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v03_to_v04.migration_move_data_within_node_module">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v03_to_v04.</code><code class="sig-name descname">migration_move_data_within_node_module</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v03_to_v04.html#migration_move_data_within_node_module"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v03_to_v04.migration_move_data_within_node_module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply migrations: 0025 - REV. 1.0.25
+The type string for <cite>Data</cite> nodes changed from <cite>data.*</cite> to <cite>node.data.*</cite>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v03_to_v04.migration_process_type">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v03_to_v04.</code><code class="sig-name descname">migration_process_type</code><span class="sig-paren">(</span><em class="sig-param">metadata</em>, <em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v03_to_v04.html#migration_process_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v03_to_v04.migration_process_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply migrations: 0010 - REV. 1.0.10
+Add <cite>DbNode.process_type</cite> column</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v03_to_v04.migration_provenance_redesign">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v03_to_v04.</code><code class="sig-name descname">migration_provenance_redesign</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v03_to_v04.html#migration_provenance_redesign"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v03_to_v04.migration_provenance_redesign" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply migration: 0020 - REV. 1.0.20
+Provenance redesign</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v03_to_v04.migration_remove_dbcomputer_enabled">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v03_to_v04.</code><code class="sig-name descname">migration_remove_dbcomputer_enabled</code><span class="sig-paren">(</span><em class="sig-param">metadata</em>, <em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v03_to_v04.html#migration_remove_dbcomputer_enabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v03_to_v04.migration_remove_dbcomputer_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply migration: 0031 - REV. 1.0.31
+Remove DbComputer.enabled</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v03_to_v04.migration_remove_node_prefix">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v03_to_v04.</code><code class="sig-name descname">migration_remove_node_prefix</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v03_to_v04.html#migration_remove_node_prefix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v03_to_v04.migration_remove_node_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply migrations: 0028 - REV. 1.0.28
+Change node type strings:
+‘node.data.’ -&gt; ‘data.’
+‘node.process.’ -&gt; ‘process.’</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v03_to_v04.migration_rename_parameter_data_to_dict">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v03_to_v04.</code><code class="sig-name descname">migration_rename_parameter_data_to_dict</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v03_to_v04.html#migration_rename_parameter_data_to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v03_to_v04.migration_rename_parameter_data_to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply migration: 0029 - REV. 1.0.29
+Update ParameterData to Dict</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v03_to_v04.migration_replace_text_field_with_json_field">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v03_to_v04.</code><code class="sig-name descname">migration_replace_text_field_with_json_field</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v03_to_v04.html#migration_replace_text_field_with_json_field"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v03_to_v04.migration_replace_text_field_with_json_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply migration 0033 - REV. 1.0.33
+Store dict-values as JSON serializable dicts instead of strings
+NB! Specific for Django backend</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v03_to_v04.migration_trajectory_symbols_to_attribute">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v03_to_v04.</code><code class="sig-name descname">migration_trajectory_symbols_to_attribute</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">folder</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v03_to_v04.html#migration_trajectory_symbols_to_attribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v03_to_v04.migration_trajectory_symbols_to_attribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply migrations: 0026 - REV. 1.0.26 and 0027 - REV. 1.0.27
+Create the symbols attribute from the repository array for all <cite>TrajectoryData</cite> nodes.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.tools.importexport.migration.v04_to_v05"></span><p>Migration from v0.4 to v0.5, used by <cite>verdi export migrate</cite> command.</p>
+<p>The migration steps are named similarly to the database migrations for Django and SQLAlchemy.
+In the description of each migration, a revision number is given, which refers to the Django migrations.
+The individual Django database migrations may be found at:</p>
+<blockquote>
+<div><p><cite>aiida.backends.djsite.db.migrations.00XX_&lt;migration-name&gt;.py</cite></p>
+</div></blockquote>
+<p>Where XX are the numbers in the migrations’ documentation: REV. 1.0.XX
+And migration-name is the name of the particular migration.
+The individual SQLAlchemy database migrations may be found at:</p>
+<blockquote>
+<div><p><cite>aiida.backends.sqlalchemy.migrations.versions.&lt;id&gt;_&lt;migration-name&gt;.py</cite></p>
+</div></blockquote>
+<p>Where id is a SQLA id and migration-name is the name of the particular migration.</p>
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v04_to_v05.migrate_v4_to_v5">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v04_to_v05.</code><code class="sig-name descname">migrate_v4_to_v5</code><span class="sig-paren">(</span><em class="sig-param">metadata</em>, <em class="sig-param">data</em>, <em class="sig-param">*args</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v04_to_v05.html#migrate_v4_to_v5"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v04_to_v05.migrate_v4_to_v5" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migration of export files from v0.4 to v0.5</p>
+<p>This is from migration 0034 (drop_node_columns_nodeversion_public) and onwards</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v04_to_v05.migration_drop_computer_transport_params">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v04_to_v05.</code><code class="sig-name descname">migration_drop_computer_transport_params</code><span class="sig-paren">(</span><em class="sig-param">metadata</em>, <em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v04_to_v05.html#migration_drop_computer_transport_params"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v04_to_v05.migration_drop_computer_transport_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply migration 0036 - REV. 1.0.36
+Drop the column <cite>transport_params</cite> from the <cite>Computer</cite> model</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v04_to_v05.migration_drop_node_columns_nodeversion_public">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v04_to_v05.</code><code class="sig-name descname">migration_drop_node_columns_nodeversion_public</code><span class="sig-paren">(</span><em class="sig-param">metadata</em>, <em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v04_to_v05.html#migration_drop_node_columns_nodeversion_public"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v04_to_v05.migration_drop_node_columns_nodeversion_public" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply migration 0034 - REV. 1.0.34
+Drop the columns <cite>nodeversion</cite> and <cite>public</cite> from the <cite>Node</cite> model</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.tools.importexport.migration.v05_to_v06"></span><p>Migration from v0.5 to v0.6, used by <cite>verdi export migrate</cite> command.</p>
+<p>The migration steps are named similarly to the database migrations for Django and SQLAlchemy.
+In the description of each migration, a revision number is given, which refers to the Django migrations.
+The individual Django database migrations may be found at:</p>
+<blockquote>
+<div><p><cite>aiida.backends.djsite.db.migrations.00XX_&lt;migration-name&gt;.py</cite></p>
+</div></blockquote>
+<p>Where XX are the numbers in the migrations’ documentation: REV. 1.0.XX
+And migration-name is the name of the particular migration.
+The individual SQLAlchemy database migrations may be found at:</p>
+<blockquote>
+<div><p><cite>aiida.backends.sqlalchemy.migrations.versions.&lt;id&gt;_&lt;migration-name&gt;.py</cite></p>
+</div></blockquote>
+<p>Where id is a SQLA id and migration-name is the name of the particular migration.</p>
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v05_to_v06.migrate_deserialized_datetime">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v05_to_v06.</code><code class="sig-name descname">migrate_deserialized_datetime</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">conversion</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v05_to_v06.html#migrate_deserialized_datetime"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v05_to_v06.migrate_deserialized_datetime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deserialize datetime strings from export archives, meaning to reattach the UTC timezone information.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v05_to_v06.migrate_v5_to_v6">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v05_to_v06.</code><code class="sig-name descname">migrate_v5_to_v6</code><span class="sig-paren">(</span><em class="sig-param">metadata</em>, <em class="sig-param">data</em>, <em class="sig-param">*args</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v05_to_v06.html#migrate_v5_to_v6"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v05_to_v06.migrate_v5_to_v6" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migration of export files from v0.5 to v0.6</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v05_to_v06.migration_migrate_legacy_job_calculation_data">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v05_to_v06.</code><code class="sig-name descname">migration_migrate_legacy_job_calculation_data</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v05_to_v06.html#migration_migrate_legacy_job_calculation_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v05_to_v06.migration_migrate_legacy_job_calculation_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply migration 0038 - REV. 1.0.38</p>
+<p>Migrates legacy <cite>JobCalculation</cite> data to the new process system. Essentially old <cite>JobCalculation</cite> nodes, which
+have already been migrated to <cite>CalcJobNodes</cite>, are missing important attributes <cite>process_state</cite>, <cite>exit_status</cite> and
+<cite>process_status</cite>. These are inferred from the old <cite>state</cite> attribute, which is then discarded as its values have
+been deprecated.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v05_to_v06.migration_serialize_datetime_objects">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v05_to_v06.</code><code class="sig-name descname">migration_serialize_datetime_objects</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v05_to_v06.html#migration_serialize_datetime_objects"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v05_to_v06.migration_serialize_datetime_objects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply migration 0037 - REV. 1.0.37</p>
+<p>Migrates the node <cite>attributes</cite> and <cite>extras</cite> from the EAV schema to JSONB columns. Since JSON does not support
+datetime objects, and the EAV did, existing datetime objects have to be serialized to strings. Just like the
+database migration they were serialized to the standard ISO format, except that they were first converted to UTC
+timezone and then the stored without a timezone reference. Since existing datetimes in the attributes and extras in
+the database were timezone aware and have been migrated to an ISO format string <em>including</em> the timezone information
+we should now add the same timezone information to datetime attributes and extras in existing export archives. All
+that one needs to do for this is to append the <cite>+00:00</cite> suffix, which signifies the UTC timezone.</p>
+<p>Since the datetime objects were the only types being serialized in the attributes and extras, after the reinstating
+of the timeonze information, there is no longer a need for the de/serialization dictionaries for each node, stored
+in <cite>node_attributes_conversion</cite> and <cite>node_extras_conversion</cite>, respectively. They are no longer added to new archives
+and so they can and should be removed from existing archives, reducing the size enormously.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.tools.importexport.migration.v06_to_v07"></span><p>Migration from v0.6 to v0.7, used by <cite>verdi export migrate</cite> command.</p>
+<p>The migration steps are named similarly to the database migrations for Django and SQLAlchemy.
+In the description of each migration, a revision number is given, which refers to the Django migrations.
+The individual Django database migrations may be found at:</p>
+<blockquote>
+<div><p><cite>aiida.backends.djsite.db.migrations.00XX_&lt;migration-name&gt;.py</cite></p>
+</div></blockquote>
+<p>Where XX are the numbers in the migrations’ documentation: REV. 1.0.XX
+And migration-name is the name of the particular migration.
+The individual SQLAlchemy database migrations may be found at:</p>
+<blockquote>
+<div><p><cite>aiida.backends.sqlalchemy.migrations.versions.&lt;id&gt;_&lt;migration-name&gt;.py</cite></p>
+</div></blockquote>
+<p>Where id is a SQLA id and migration-name is the name of the particular migration.</p>
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v06_to_v07.migrate_v6_to_v7">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v06_to_v07.</code><code class="sig-name descname">migrate_v6_to_v7</code><span class="sig-paren">(</span><em class="sig-param">metadata</em>, <em class="sig-param">data</em>, <em class="sig-param">*args</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v06_to_v07.html#migrate_v6_to_v7"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v06_to_v07.migrate_v6_to_v7" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migration of export files from v0.6 to v0.7</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v06_to_v07.migration_data_migration_legacy_process_attributes">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v06_to_v07.</code><code class="sig-name descname">migration_data_migration_legacy_process_attributes</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v06_to_v07.html#migration_data_migration_legacy_process_attributes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v06_to_v07.migration_data_migration_legacy_process_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply migration 0040 - REV. 1.0.40
+Data migration for some legacy process attributes.</p>
+<p>Attribute keys that are renamed:</p>
+<ul class="simple">
+<li><p><cite>_sealed</cite> -&gt; <cite>sealed</cite></p></li>
+</ul>
+<p>Attribute keys that are removed entirely:</p>
+<ul class="simple">
+<li><p><cite>_finished</cite></p></li>
+<li><p><cite>_failed</cite></p></li>
+<li><p><cite>_aborted</cite></p></li>
+<li><p><cite>_do_abort</cite></p></li>
+</ul>
+<p>Finally, after these first migrations, any remaining process nodes are screened for the existence of the
+<cite>process_state</cite> attribute. If they have it, it is checked whether the state is active or not, if not, the <cite>sealed</cite>
+attribute is created and set to <cite>True</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="aiida.tools.importexport.common.html#aiida.tools.importexport.common.exceptions.CorruptArchive" title="aiida.tools.importexport.common.exceptions.CorruptArchive"><strong>CorruptArchive</strong></a> – if a Node, found to have attributes,
+cannot be found in the list of exported entities.</p></li>
+<li><p><a class="reference internal" href="aiida.tools.importexport.common.html#aiida.tools.importexport.common.exceptions.CorruptArchive" title="aiida.tools.importexport.common.exceptions.CorruptArchive"><strong>CorruptArchive</strong></a> – if the ‘sealed’ attribute does not exist and
+the ProcessNode is in an active state, i.e. <cite>process_state</cite> is one of (‘created’, ‘running’, ‘waiting’).
+A log-file, listing all illegal ProcessNodes, will be produced in the current directory.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v06_to_v07.remove_attribute_link_metadata">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v06_to_v07.</code><code class="sig-name descname">remove_attribute_link_metadata</code><span class="sig-paren">(</span><em class="sig-param">metadata</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v06_to_v07.html#remove_attribute_link_metadata"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v06_to_v07.remove_attribute_link_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove Attribute and Link from metadata.json
+This is not a database migration, but purely to do with the import/export schema.</p>
+<p>The “entities” ATTRIBUTE_ENTITY_NAME and LINK_ENTITY_NAME were introduced in v0.3 or v0.4 of the
+import/export schema. However, they were never used - or the usage has been reverted.
+They will be removed from metadata.json, slightly simplifying the import functions as well.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.tools.importexport.migration.v07_to_v08"></span><p>Migration from v0.7 to v0.8, used by <cite>verdi export migrate</cite> command.</p>
+<p>The migration steps are named similarly to the database migrations for Django and SQLAlchemy.
+In the description of each migration, a revision number is given, which refers to the Django migrations.
+The individual Django database migrations may be found at:</p>
+<blockquote>
+<div><p><cite>aiida.backends.djsite.db.migrations.00XX_&lt;migration-name&gt;.py</cite></p>
+</div></blockquote>
+<p>Where XX are the numbers in the migrations’ documentation: REV. 1.0.XX
+And migration-name is the name of the particular migration.
+The individual SQLAlchemy database migrations may be found at:</p>
+<blockquote>
+<div><p><cite>aiida.backends.sqlalchemy.migrations.versions.&lt;id&gt;_&lt;migration-name&gt;.py</cite></p>
+</div></blockquote>
+<p>Where id is a SQLA id and migration-name is the name of the particular migration.</p>
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v07_to_v08.migrate_v7_to_v8">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v07_to_v08.</code><code class="sig-name descname">migrate_v7_to_v8</code><span class="sig-paren">(</span><em class="sig-param">metadata</em>, <em class="sig-param">data</em>, <em class="sig-param">*args</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v07_to_v08.html#migrate_v7_to_v8"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v07_to_v08.migrate_v7_to_v8" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migration of export files from v0.7 to v0.8.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v07_to_v08.migration_default_link_label">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v07_to_v08.</code><code class="sig-name descname">migration_default_link_label</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v07_to_v08.html#migration_default_link_label"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v07_to_v08.migration_default_link_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply migration 0043 - REV. 1.0.43</p>
+<p>Rename all link labels <cite>_return</cite> to <cite>result</cite>.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.tools.importexport.migration.v08_to_v09"></span><p>Migration from v0.8 to v0.9, used by <cite>verdi export migrate</cite> command.</p>
+<p>The migration steps are named similarly to the database migrations for Django and SQLAlchemy.
+In the description of each migration, a revision number is given, which refers to the Django migrations.
+The individual Django database migrations may be found at:</p>
+<blockquote>
+<div><p><cite>aiida.backends.djsite.db.migrations.00XX_&lt;migration-name&gt;.py</cite></p>
+</div></blockquote>
+<p>Where XX are the numbers in the migrations’ documentation: REV. 1.0.XX
+And migration-name is the name of the particular migration.
+The individual SQLAlchemy database migrations may be found at:</p>
+<blockquote>
+<div><p><cite>aiida.backends.sqlalchemy.migrations.versions.&lt;id&gt;_&lt;migration-name&gt;.py</cite></p>
+</div></blockquote>
+<p>Where id is a SQLA id and migration-name is the name of the particular migration.</p>
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v08_to_v09.migrate_v8_to_v9">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v08_to_v09.</code><code class="sig-name descname">migrate_v8_to_v9</code><span class="sig-paren">(</span><em class="sig-param">metadata</em>, <em class="sig-param">data</em>, <em class="sig-param">*args</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v08_to_v09.html#migrate_v8_to_v9"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v08_to_v09.migrate_v8_to_v9" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migration of export files from v0.8 to v0.9.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.importexport.migration.v08_to_v09.migration_dbgroup_type_string">
+<code class="sig-prename descclassname">aiida.tools.importexport.migration.v08_to_v09.</code><code class="sig-name descname">migration_dbgroup_type_string</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/importexport/migration/v08_to_v09.html#migration_dbgroup_type_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.importexport.migration.v08_to_v09.migration_dbgroup_type_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply migration 0044 - REV. 1.0.44</p>
+<p>Rename the <cite>type_string</cite> columns of all <cite>Group</cite> instances.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

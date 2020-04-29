@@ -1,0 +1,21 @@
+aiida.tools.groups package
+==========================
+
+.. automodule:: aiida.tools.groups
+   :members:
+   :special-members:
+   :private-members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+
+.. automodule:: aiida.tools.groups.paths
+   :members:
+   :special-members:
+   :private-members:
+   :undoc-members:
+   :show-inheritance:
+

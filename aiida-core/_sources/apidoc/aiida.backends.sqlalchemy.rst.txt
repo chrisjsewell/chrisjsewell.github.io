@@ -1,0 +1,61 @@
+aiida.backends.sqlalchemy package
+=================================
+
+.. automodule:: aiida.backends.sqlalchemy
+   :members:
+   :special-members:
+   :private-members:
+   :undoc-members:
+   :show-inheritance:
+
+Subpackages
+-----------
+
+.. toctree::
+
+   aiida.backends.sqlalchemy.migrations
+   aiida.backends.sqlalchemy.models
+
+Submodules
+----------
+
+
+.. automodule:: aiida.backends.sqlalchemy.manage
+   :members:
+   :special-members:
+   :private-members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: aiida.backends.sqlalchemy.manager
+   :members:
+   :special-members:
+   :private-members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: aiida.backends.sqlalchemy.queries
+   :members:
+   :special-members:
+   :private-members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: aiida.backends.sqlalchemy.testbase
+   :members:
+   :special-members:
+   :private-members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: aiida.backends.sqlalchemy.utils
+   :members:
+   :special-members:
+   :private-members:
+   :undoc-members:
+   :show-inheritance:
+

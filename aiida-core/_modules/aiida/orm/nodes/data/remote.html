@@ -1,0 +1,408 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.orm.nodes.data.remote &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/language_data.js"></script>
+        <script src="../../../../../_static/togglebutton.js"></script>
+        <script src="../../../../../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../../aiida.html">aiida</a> &raquo;</li>
+        
+      <li>aiida.orm.nodes.data.remote</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for aiida.orm.nodes.data.remote</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1">###########################################################################</span>
+<span class="c1"># Copyright (c), The AiiDA team. All rights reserved.                     #</span>
+<span class="c1"># This file is part of the AiiDA code.                                    #</span>
+<span class="c1">#                                                                         #</span>
+<span class="c1"># The code is hosted on GitHub at https://github.com/aiidateam/aiida-core #</span>
+<span class="c1"># For further information on the license, see the LICENSE.txt file        #</span>
+<span class="c1"># For further information please visit http://www.aiida.net               #</span>
+<span class="c1">###########################################################################</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">.data</span> <span class="kn">import</span> <span class="n">Data</span>
+<span class="kn">from</span> <span class="nn">aiida.orm</span> <span class="kn">import</span> <span class="n">AuthInfo</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;RemoteData&#39;</span><span class="p">,)</span>
+
+
+<div class="viewcode-block" id="RemoteData"><a class="viewcode-back" href="../../../../../apidoc/aiida.orm.nodes.data.html#aiida.orm.RemoteData">[docs]</a><span class="k">class</span> <span class="nc">RemoteData</span><span class="p">(</span><span class="n">Data</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Store a link to a file or folder on a remote machine.</span>
+
+<span class="sd">    Remember to pass a computer!</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="RemoteData.__init__"><a class="viewcode-back" href="../../../../../apidoc/aiida.orm.nodes.data.html#aiida.orm.RemoteData.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">remote_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">remote_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_remote_path</span><span class="p">(</span><span class="n">remote_path</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="RemoteData.get_computer_name"><a class="viewcode-back" href="../../../../../apidoc/aiida.orm.nodes.data.html#aiida.orm.RemoteData.get_computer_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_computer_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">computer</span><span class="o">.</span><span class="n">name</span></div>
+
+<div class="viewcode-block" id="RemoteData.get_remote_path"><a class="viewcode-back" href="../../../../../apidoc/aiida.orm.nodes.data.html#aiida.orm.RemoteData.get_remote_path">[docs]</a>    <span class="k">def</span> <span class="nf">get_remote_path</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s1">&#39;remote_path&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="RemoteData.set_remote_path"><a class="viewcode-back" href="../../../../../apidoc/aiida.orm.nodes.data.html#aiida.orm.RemoteData.set_remote_path">[docs]</a>    <span class="k">def</span> <span class="nf">set_remote_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_attribute</span><span class="p">(</span><span class="s1">&#39;remote_path&#39;</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if remote folder is empty</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">authinfo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_authinfo</span><span class="p">()</span>
+        <span class="n">transport</span> <span class="o">=</span> <span class="n">authinfo</span><span class="o">.</span><span class="n">get_transport</span><span class="p">()</span>
+
+        <span class="k">with</span> <span class="n">transport</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">transport</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_remote_path</span><span class="p">())</span>
+            <span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+                <span class="c1"># If the transport IOError the directory no longer exists and was deleted</span>
+                <span class="k">return</span> <span class="kc">True</span>
+
+            <span class="k">return</span> <span class="ow">not</span> <span class="n">transport</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span>
+
+<div class="viewcode-block" id="RemoteData.getfile"><a class="viewcode-back" href="../../../../../apidoc/aiida.orm.nodes.data.html#aiida.orm.RemoteData.getfile">[docs]</a>    <span class="k">def</span> <span class="nf">getfile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">relpath</span><span class="p">,</span> <span class="n">destpath</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Connects to the remote folder and retrieves the content of a file.</span>
+
+<span class="sd">        :param relpath:  The relative path of the file on the remote to retrieve.</span>
+<span class="sd">        :param destpath: The absolute path of where to store the file on the local machine.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">authinfo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_authinfo</span><span class="p">()</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">authinfo</span><span class="o">.</span><span class="n">get_transport</span><span class="p">()</span>
+
+        <span class="k">with</span> <span class="n">t</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">full_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_remote_path</span><span class="p">(),</span> <span class="n">relpath</span><span class="p">)</span>
+                <span class="n">t</span><span class="o">.</span><span class="n">getfile</span><span class="p">(</span><span class="n">full_path</span><span class="p">,</span> <span class="n">destpath</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">errno</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>  <span class="c1"># file not existing</span>
+                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s1">&#39;The required remote file </span><span class="si">{}</span><span class="s1"> on </span><span class="si">{}</span><span class="s1"> does not exist or has been deleted.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="n">full_path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">computer</span><span class="o">.</span><span class="n">name</span>
+                    <span class="p">))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span></div>
+
+<div class="viewcode-block" id="RemoteData.listdir"><a class="viewcode-back" href="../../../../../apidoc/aiida.orm.nodes.data.html#aiida.orm.RemoteData.listdir">[docs]</a>    <span class="k">def</span> <span class="nf">listdir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">relpath</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Connects to the remote folder and lists the directory content.</span>
+
+<span class="sd">        :param relpath: If &#39;relpath&#39; is specified, lists the content of the given subfolder.</span>
+<span class="sd">        :return: a flat list of file/directory names (as strings).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">authinfo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_authinfo</span><span class="p">()</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">authinfo</span><span class="o">.</span><span class="n">get_transport</span><span class="p">()</span>
+
+        <span class="k">with</span> <span class="n">t</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">full_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_remote_path</span><span class="p">(),</span> <span class="n">relpath</span><span class="p">)</span>
+                <span class="n">t</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">full_path</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">errno</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">e</span><span class="o">.</span><span class="n">errno</span> <span class="o">==</span> <span class="mi">20</span><span class="p">:</span>  <span class="c1"># directory not existing or not a directory</span>
+                    <span class="n">exc</span> <span class="o">=</span> <span class="ne">IOError</span><span class="p">(</span>
+                        <span class="s1">&#39;The required remote folder </span><span class="si">{}</span><span class="s1"> on </span><span class="si">{}</span><span class="s1"> does not exist, is not a directory or has been deleted.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                            <span class="n">full_path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">computer</span><span class="o">.</span><span class="n">name</span>
+                        <span class="p">))</span>
+                    <span class="n">exc</span><span class="o">.</span><span class="n">errno</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">errno</span>
+                    <span class="k">raise</span> <span class="n">exc</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">t</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span>
+            <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">errno</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">e</span><span class="o">.</span><span class="n">errno</span> <span class="o">==</span> <span class="mi">20</span><span class="p">:</span>  <span class="c1"># directory not existing or not a directory</span>
+                    <span class="n">exc</span> <span class="o">=</span> <span class="ne">IOError</span><span class="p">(</span>
+                        <span class="s1">&#39;The required remote folder </span><span class="si">{}</span><span class="s1"> on </span><span class="si">{}</span><span class="s1"> does not exist, is not a directory or has been deleted.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                            <span class="n">full_path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">computer</span><span class="o">.</span><span class="n">name</span>
+                        <span class="p">))</span>
+                    <span class="n">exc</span><span class="o">.</span><span class="n">errno</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">errno</span>
+                    <span class="k">raise</span> <span class="n">exc</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span></div>
+
+<div class="viewcode-block" id="RemoteData.listdir_withattributes"><a class="viewcode-back" href="../../../../../apidoc/aiida.orm.nodes.data.html#aiida.orm.RemoteData.listdir_withattributes">[docs]</a>    <span class="k">def</span> <span class="nf">listdir_withattributes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Connects to the remote folder and lists the directory content.</span>
+
+<span class="sd">        :param relpath: If &#39;relpath&#39; is specified, lists the content of the given subfolder.</span>
+<span class="sd">        :return: a list of dictionaries, where the documentation is in :py:class:Transport.listdir_withattributes.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">authinfo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_authinfo</span><span class="p">()</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">authinfo</span><span class="o">.</span><span class="n">get_transport</span><span class="p">()</span>
+
+        <span class="k">with</span> <span class="n">t</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">full_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_remote_path</span><span class="p">(),</span> <span class="n">path</span><span class="p">)</span>
+                <span class="n">t</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">full_path</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">errno</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">e</span><span class="o">.</span><span class="n">errno</span> <span class="o">==</span> <span class="mi">20</span><span class="p">:</span>  <span class="c1"># directory not existing or not a directory</span>
+                    <span class="n">exc</span> <span class="o">=</span> <span class="ne">IOError</span><span class="p">(</span>
+                        <span class="s1">&#39;The required remote folder </span><span class="si">{}</span><span class="s1"> on </span><span class="si">{}</span><span class="s1"> does not exist, is not a directory or has been deleted.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                            <span class="n">full_path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">computer</span><span class="o">.</span><span class="n">name</span>
+                        <span class="p">))</span>
+                    <span class="n">exc</span><span class="o">.</span><span class="n">errno</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">errno</span>
+                    <span class="k">raise</span> <span class="n">exc</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">t</span><span class="o">.</span><span class="n">listdir_withattributes</span><span class="p">()</span>
+            <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">errno</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">e</span><span class="o">.</span><span class="n">errno</span> <span class="o">==</span> <span class="mi">20</span><span class="p">:</span>  <span class="c1"># directory not existing or not a directory</span>
+                    <span class="n">exc</span> <span class="o">=</span> <span class="ne">IOError</span><span class="p">(</span>
+                        <span class="s1">&#39;The required remote folder </span><span class="si">{}</span><span class="s1"> on </span><span class="si">{}</span><span class="s1"> does not exist, is not a directory or has been deleted.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                            <span class="n">full_path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">computer</span><span class="o">.</span><span class="n">name</span>
+                        <span class="p">))</span>
+                    <span class="n">exc</span><span class="o">.</span><span class="n">errno</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">errno</span>
+                    <span class="k">raise</span> <span class="n">exc</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span></div>
+
+<div class="viewcode-block" id="RemoteData._clean"><a class="viewcode-back" href="../../../../../apidoc/aiida.orm.nodes.data.html#aiida.orm.RemoteData._clean">[docs]</a>    <span class="k">def</span> <span class="nf">_clean</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Remove all content of the remote folder on the remote computer</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">aiida.orm.utils.remote</span> <span class="kn">import</span> <span class="n">clean_remote</span>
+
+        <span class="n">authinfo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_authinfo</span><span class="p">()</span>
+        <span class="n">transport</span> <span class="o">=</span> <span class="n">authinfo</span><span class="o">.</span><span class="n">get_transport</span><span class="p">()</span>
+        <span class="n">remote_dir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_remote_path</span><span class="p">()</span>
+
+        <span class="k">with</span> <span class="n">transport</span><span class="p">:</span>
+            <span class="n">clean_remote</span><span class="p">(</span><span class="n">transport</span><span class="p">,</span> <span class="n">remote_dir</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="RemoteData._validate"><a class="viewcode-back" href="../../../../../apidoc/aiida.orm.nodes.data.html#aiida.orm.RemoteData._validate">[docs]</a>    <span class="k">def</span> <span class="nf">_validate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">aiida.common.exceptions</span> <span class="kn">import</span> <span class="n">ValidationError</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_validate</span><span class="p">()</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">get_remote_path</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span><span class="s2">&quot;attribute &#39;remote_path&#39; not set.&quot;</span><span class="p">)</span>
+
+        <span class="n">computer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">computer</span>
+        <span class="k">if</span> <span class="n">computer</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span><span class="s1">&#39;Remote computer not set.&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="RemoteData.get_authinfo"><a class="viewcode-back" href="../../../../../apidoc/aiida.orm.nodes.data.html#aiida.orm.RemoteData.get_authinfo">[docs]</a>    <span class="k">def</span> <span class="nf">get_authinfo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">AuthInfo</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">dbcomputer</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">computer</span><span class="p">,</span> <span class="n">aiidauser</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,458 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.orm.utils.serialize &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/togglebutton.js"></script>
+        <script src="../../../../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../aiida.html">aiida</a> &raquo;</li>
+        
+          <li><a href="../utils.html">aiida.orm.utils</a> &raquo;</li>
+        
+      <li>aiida.orm.utils.serialize</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for aiida.orm.utils.serialize</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1">###########################################################################</span>
+<span class="c1"># Copyright (c), The AiiDA team. All rights reserved.                     #</span>
+<span class="c1"># This file is part of the AiiDA code.                                    #</span>
+<span class="c1">#                                                                         #</span>
+<span class="c1"># The code is hosted on GitHub at https://github.com/aiidateam/aiida-core #</span>
+<span class="c1"># For further information on the license, see the LICENSE.txt file        #</span>
+<span class="c1"># For further information please visit http://www.aiida.net               #</span>
+<span class="c1">###########################################################################</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Serialisation functions for AiiDA types</span>
+
+<span class="sd">WARNING: Changing the representation of things here may break people&#39;s current saved e.g. things like</span>
+<span class="sd">checkpoints and messages in the RabbitMQ queue so do so with caution.  It is fine to add representers</span>
+<span class="sd">for new types though.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+<span class="kn">import</span> <span class="nn">yaml</span>
+
+<span class="kn">from</span> <span class="nn">plumpy</span> <span class="kn">import</span> <span class="n">Bundle</span>
+<span class="kn">from</span> <span class="nn">plumpy.utils</span> <span class="kn">import</span> <span class="n">AttributesFrozendict</span>
+
+<span class="kn">from</span> <span class="nn">aiida</span> <span class="kn">import</span> <span class="n">orm</span>
+<span class="kn">from</span> <span class="nn">aiida.common</span> <span class="kn">import</span> <span class="n">AttributeDict</span>
+
+<span class="n">_NODE_TAG</span> <span class="o">=</span> <span class="s1">&#39;!aiida_node&#39;</span>
+<span class="n">_GROUP_TAG</span> <span class="o">=</span> <span class="s1">&#39;!aiida_group&#39;</span>
+<span class="n">_COMPUTER_TAG</span> <span class="o">=</span> <span class="s1">&#39;!aiida_computer&#39;</span>
+<span class="n">_ATTRIBUTE_DICT_TAG</span> <span class="o">=</span> <span class="s1">&#39;!aiida_attributedict&#39;</span>
+<span class="n">_PLUMPY_ATTRIBUTES_FROZENDICT_TAG</span> <span class="o">=</span> <span class="s1">&#39;!plumpy:attributes_frozendict&#39;</span>
+<span class="n">_PLUMPY_BUNDLE</span> <span class="o">=</span> <span class="s1">&#39;!plumpy:bundle&#39;</span>
+
+
+<div class="viewcode-block" id="represent_node"><a class="viewcode-back" href="../../../../apidoc/aiida.orm.utils.html#aiida.orm.utils.serialize.represent_node">[docs]</a><span class="k">def</span> <span class="nf">represent_node</span><span class="p">(</span><span class="n">dumper</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Represent a node in yaml.</span>
+
+<span class="sd">    :param dumper: the dumper to use</span>
+<span class="sd">    :param node: the node to represent</span>
+<span class="sd">    :type node: :class:`aiida.orm.nodes.node.Node`</span>
+<span class="sd">    :return: the representation</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">node</span><span class="o">.</span><span class="n">is_stored</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;node </span><span class="si">{}</span><span class="s1">&lt;</span><span class="si">{}</span><span class="s1">&gt; cannot be represented because it is not stored&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">node</span><span class="p">),</span> <span class="n">node</span><span class="o">.</span><span class="n">uuid</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">dumper</span><span class="o">.</span><span class="n">represent_scalar</span><span class="p">(</span><span class="n">_NODE_TAG</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">node</span><span class="o">.</span><span class="n">uuid</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="node_constructor"><a class="viewcode-back" href="../../../../apidoc/aiida.orm.utils.html#aiida.orm.utils.serialize.node_constructor">[docs]</a><span class="k">def</span> <span class="nf">node_constructor</span><span class="p">(</span><span class="n">loader</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Load a node from the yaml representation.</span>
+
+<span class="sd">    :param loader: the yaml loader</span>
+<span class="sd">    :param node: the yaml representation</span>
+<span class="sd">    :return: the aiida node</span>
+<span class="sd">    :rtype: :class:`aiida.orm.nodes.node.Node`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">yaml_node</span> <span class="o">=</span> <span class="n">loader</span><span class="o">.</span><span class="n">construct_scalar</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">orm</span><span class="o">.</span><span class="n">load_node</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="n">yaml_node</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="represent_group"><a class="viewcode-back" href="../../../../apidoc/aiida.orm.utils.html#aiida.orm.utils.serialize.represent_group">[docs]</a><span class="k">def</span> <span class="nf">represent_group</span><span class="p">(</span><span class="n">dumper</span><span class="p">,</span> <span class="n">group</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Represent a group in yaml.</span>
+
+<span class="sd">    :param dumper: the dumper to use</span>
+<span class="sd">    :param group: the group to represent</span>
+<span class="sd">    :type group: :class:`aiida.orm.Group`</span>
+<span class="sd">    :return: the representation</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">group</span><span class="o">.</span><span class="n">is_stored</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;group </span><span class="si">{}</span><span class="s1"> cannot be represented because it is not stored&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">group</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">dumper</span><span class="o">.</span><span class="n">represent_scalar</span><span class="p">(</span><span class="n">_GROUP_TAG</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">group</span><span class="o">.</span><span class="n">uuid</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="group_constructor"><a class="viewcode-back" href="../../../../apidoc/aiida.orm.utils.html#aiida.orm.utils.serialize.group_constructor">[docs]</a><span class="k">def</span> <span class="nf">group_constructor</span><span class="p">(</span><span class="n">loader</span><span class="p">,</span> <span class="n">group</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Load a group from the yaml representation.</span>
+
+<span class="sd">    :param loader: the yaml loader</span>
+<span class="sd">    :param group: the yaml representation</span>
+<span class="sd">    :return: the aiida group</span>
+<span class="sd">    :rtype: :class:`aiida.orm.Group`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">yaml_node</span> <span class="o">=</span> <span class="n">loader</span><span class="o">.</span><span class="n">construct_scalar</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">orm</span><span class="o">.</span><span class="n">load_group</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="n">yaml_node</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="represent_computer"><a class="viewcode-back" href="../../../../apidoc/aiida.orm.utils.html#aiida.orm.utils.serialize.represent_computer">[docs]</a><span class="k">def</span> <span class="nf">represent_computer</span><span class="p">(</span><span class="n">dumper</span><span class="p">,</span> <span class="n">computer</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Represent a computer in yaml.</span>
+
+<span class="sd">    :param dumper: the dumper to use</span>
+<span class="sd">    :param computer: the computer to represent</span>
+<span class="sd">    :type computer: :class:`aiida.orm.Computer`</span>
+<span class="sd">    :return: the representation</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">computer</span><span class="o">.</span><span class="n">is_stored</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;computer </span><span class="si">{}</span><span class="s1"> cannot be represented because it is not stored&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">computer</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">dumper</span><span class="o">.</span><span class="n">represent_scalar</span><span class="p">(</span><span class="n">_COMPUTER_TAG</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">computer</span><span class="o">.</span><span class="n">uuid</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="computer_constructor"><a class="viewcode-back" href="../../../../apidoc/aiida.orm.utils.html#aiida.orm.utils.serialize.computer_constructor">[docs]</a><span class="k">def</span> <span class="nf">computer_constructor</span><span class="p">(</span><span class="n">loader</span><span class="p">,</span> <span class="n">computer</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Load a computer from the yaml representation.</span>
+
+<span class="sd">    :param loader: the yaml loader</span>
+<span class="sd">    :param computer: the yaml representation</span>
+<span class="sd">    :return: the aiida computer</span>
+<span class="sd">    :rtype: :class:`aiida.orm.Computer`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">yaml_node</span> <span class="o">=</span> <span class="n">loader</span><span class="o">.</span><span class="n">construct_scalar</span><span class="p">(</span><span class="n">computer</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">orm</span><span class="o">.</span><span class="n">Computer</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="n">yaml_node</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="represent_mapping"><a class="viewcode-back" href="../../../../apidoc/aiida.orm.utils.html#aiida.orm.utils.serialize.represent_mapping">[docs]</a><span class="k">def</span> <span class="nf">represent_mapping</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="n">dumper</span><span class="p">,</span> <span class="n">mapping</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Represent a mapping in yaml.</span>
+
+<span class="sd">    :param tag: the yaml tag to use</span>
+<span class="sd">    :param dumper: the dumper to use</span>
+<span class="sd">    :type dumper: :class:`yaml.dumper.Dumper`</span>
+<span class="sd">    :param mapping: the mapping to represent</span>
+<span class="sd">    :return: the representation</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">dumper</span><span class="o">.</span><span class="n">represent_mapping</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="n">mapping</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="mapping_constructor"><a class="viewcode-back" href="../../../../apidoc/aiida.orm.utils.html#aiida.orm.utils.serialize.mapping_constructor">[docs]</a><span class="k">def</span> <span class="nf">mapping_constructor</span><span class="p">(</span><span class="n">mapping_type</span><span class="p">,</span> <span class="n">loader</span><span class="p">,</span> <span class="n">mapping</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Construct a mapping from the representation.</span>
+
+<span class="sd">    :param mapping_type: the class of the mapping to construct, must accept a dictionary as a sole constructor argument</span>
+<span class="sd">        to be compatible.</span>
+<span class="sd">    :param loader: the yaml loader</span>
+<span class="sd">    :type loader: :class:`yaml.loader.Loader`</span>
+<span class="sd">    :param mapping: the mapping representation</span>
+<span class="sd">    :return: the reconstructed mapping</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">yaml_node</span> <span class="o">=</span> <span class="n">loader</span><span class="o">.</span><span class="n">construct_mapping</span><span class="p">(</span><span class="n">mapping</span><span class="p">,</span> <span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">mapping_type</span><span class="p">(</span><span class="n">yaml_node</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="represent_bundle"><a class="viewcode-back" href="../../../../apidoc/aiida.orm.utils.html#aiida.orm.utils.serialize.represent_bundle">[docs]</a><span class="k">def</span> <span class="nf">represent_bundle</span><span class="p">(</span><span class="n">dumper</span><span class="p">,</span> <span class="n">bundle</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Represent an `plumpy.Bundle` in yaml</span>
+
+<span class="sd">    :param tag: the yaml  tag to use</span>
+<span class="sd">    :param dumper: the dumper to use</span>
+<span class="sd">    :type dumper: :class:`yaml.dumper.Dumper`</span>
+<span class="sd">    :param bundle: the bundle to represent</span>
+<span class="sd">    :return: the representation</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">as_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">bundle</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dumper</span><span class="o">.</span><span class="n">represent_mapping</span><span class="p">(</span><span class="n">_PLUMPY_BUNDLE</span><span class="p">,</span> <span class="n">as_dict</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="bundle_constructor"><a class="viewcode-back" href="../../../../apidoc/aiida.orm.utils.html#aiida.orm.utils.serialize.bundle_constructor">[docs]</a><span class="k">def</span> <span class="nf">bundle_constructor</span><span class="p">(</span><span class="n">loader</span><span class="p">,</span> <span class="n">bundle</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Construct an `plumpy.Bundle` from the representation</span>
+
+<span class="sd">    :param loader: the yaml loader</span>
+<span class="sd">    :type loader: :class:`yaml.loader.Loader`</span>
+<span class="sd">    :param bundle: the bundle representation</span>
+<span class="sd">    :return: the mapping type</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">yaml_node</span> <span class="o">=</span> <span class="n">loader</span><span class="o">.</span><span class="n">construct_mapping</span><span class="p">(</span><span class="n">bundle</span><span class="p">)</span>
+    <span class="n">bundle</span> <span class="o">=</span> <span class="n">Bundle</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="n">Bundle</span><span class="p">)</span>
+    <span class="n">bundle</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">yaml_node</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">bundle</span></div>
+
+
+<div class="viewcode-block" id="AiiDADumper"><a class="viewcode-back" href="../../../../apidoc/aiida.orm.utils.html#aiida.orm.utils.serialize.AiiDADumper">[docs]</a><span class="k">class</span> <span class="nc">AiiDADumper</span><span class="p">(</span><span class="n">yaml</span><span class="o">.</span><span class="n">Dumper</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Custom AiiDA yaml dumper.</span>
+
+<span class="sd">    Needed so that we don&#39;t have to encode each type in the AiiDA graph hierarchy separately using a custom representer.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AiiDADumper.represent_data"><a class="viewcode-back" href="../../../../apidoc/aiida.orm.utils.html#aiida.orm.utils.serialize.AiiDADumper.represent_data">[docs]</a>    <span class="k">def</span> <span class="nf">represent_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">orm</span><span class="o">.</span><span class="n">Node</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">represent_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">orm</span><span class="o">.</span><span class="n">Computer</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">represent_computer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">orm</span><span class="o">.</span><span class="n">Group</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">represent_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">represent_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="AiiDALoader"><a class="viewcode-back" href="../../../../apidoc/aiida.orm.utils.html#aiida.orm.utils.serialize.AiiDALoader">[docs]</a><span class="k">class</span> <span class="nc">AiiDALoader</span><span class="p">(</span><span class="n">yaml</span><span class="o">.</span><span class="n">FullLoader</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;AiiDA specific yaml loader</span>
+
+<span class="sd">    .. note:: we subclass the `FullLoader` which is the one that since `pyyaml&gt;=5.1` is the loader that prevents</span>
+<span class="sd">        arbitrary code execution. Even though this is in principle only used internally, one could imagine someone</span>
+<span class="sd">        sharing a database with a maliciously crafted process instance dump, which when reloaded could execute arbitrary</span>
+<span class="sd">        code. This load prevents this: https://github.com/yaml/pyyaml/wiki/PyYAML-yaml.load(input)-Deprecation</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<span class="n">yaml</span><span class="o">.</span><span class="n">add_representer</span><span class="p">(</span><span class="n">Bundle</span><span class="p">,</span> <span class="n">represent_bundle</span><span class="p">,</span> <span class="n">Dumper</span><span class="o">=</span><span class="n">AiiDADumper</span><span class="p">)</span>
+<span class="n">yaml</span><span class="o">.</span><span class="n">add_representer</span><span class="p">(</span><span class="n">AttributeDict</span><span class="p">,</span> <span class="n">partial</span><span class="p">(</span><span class="n">represent_mapping</span><span class="p">,</span> <span class="n">_ATTRIBUTE_DICT_TAG</span><span class="p">),</span> <span class="n">Dumper</span><span class="o">=</span><span class="n">AiiDADumper</span><span class="p">)</span>
+<span class="n">yaml</span><span class="o">.</span><span class="n">add_constructor</span><span class="p">(</span><span class="n">_ATTRIBUTE_DICT_TAG</span><span class="p">,</span> <span class="n">partial</span><span class="p">(</span><span class="n">mapping_constructor</span><span class="p">,</span> <span class="n">AttributeDict</span><span class="p">),</span> <span class="n">Loader</span><span class="o">=</span><span class="n">AiiDALoader</span><span class="p">)</span>
+<span class="n">yaml</span><span class="o">.</span><span class="n">add_representer</span><span class="p">(</span>
+    <span class="n">AttributesFrozendict</span><span class="p">,</span> <span class="n">partial</span><span class="p">(</span><span class="n">represent_mapping</span><span class="p">,</span> <span class="n">_PLUMPY_ATTRIBUTES_FROZENDICT_TAG</span><span class="p">),</span> <span class="n">Dumper</span><span class="o">=</span><span class="n">AiiDADumper</span>
+<span class="p">)</span>
+<span class="n">yaml</span><span class="o">.</span><span class="n">add_constructor</span><span class="p">(</span>
+    <span class="n">_PLUMPY_ATTRIBUTES_FROZENDICT_TAG</span><span class="p">,</span> <span class="n">partial</span><span class="p">(</span><span class="n">mapping_constructor</span><span class="p">,</span> <span class="n">AttributesFrozendict</span><span class="p">),</span> <span class="n">Loader</span><span class="o">=</span><span class="n">AiiDALoader</span>
+<span class="p">)</span>
+<span class="n">yaml</span><span class="o">.</span><span class="n">add_constructor</span><span class="p">(</span><span class="n">_PLUMPY_BUNDLE</span><span class="p">,</span> <span class="n">bundle_constructor</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">AiiDALoader</span><span class="p">)</span>
+<span class="n">yaml</span><span class="o">.</span><span class="n">add_constructor</span><span class="p">(</span><span class="n">_NODE_TAG</span><span class="p">,</span> <span class="n">node_constructor</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">AiiDALoader</span><span class="p">)</span>
+<span class="n">yaml</span><span class="o">.</span><span class="n">add_constructor</span><span class="p">(</span><span class="n">_GROUP_TAG</span><span class="p">,</span> <span class="n">group_constructor</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">AiiDALoader</span><span class="p">)</span>
+<span class="n">yaml</span><span class="o">.</span><span class="n">add_constructor</span><span class="p">(</span><span class="n">_COMPUTER_TAG</span><span class="p">,</span> <span class="n">computer_constructor</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">AiiDALoader</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="serialize"><a class="viewcode-back" href="../../../../apidoc/aiida.orm.utils.html#aiida.orm.utils.serialize.serialize">[docs]</a><span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Serialize the given data structure into a yaml dump.</span>
+
+<span class="sd">    The function supports standard data containers such as maps and lists as well as AiiDA nodes which will be</span>
+<span class="sd">    serialized into strings, before the whole data structure is dumped into a string using yaml.</span>
+
+<span class="sd">    :param data: the general data to serialize</span>
+<span class="sd">    :param encoding: optional encoding for the serialized string</span>
+<span class="sd">    :return: string representation of the serialized data structure or byte array if specific encoding is specified</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">encoding</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">serialized</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">Dumper</span><span class="o">=</span><span class="n">AiiDADumper</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">serialized</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">Dumper</span><span class="o">=</span><span class="n">AiiDADumper</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">serialized</span></div>
+
+
+<div class="viewcode-block" id="deserialize"><a class="viewcode-back" href="../../../../apidoc/aiida.orm.utils.html#aiida.orm.utils.serialize.deserialize">[docs]</a><span class="k">def</span> <span class="nf">deserialize</span><span class="p">(</span><span class="n">serialized</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Deserialize a yaml dump that represents a serialized data structure.</span>
+
+<span class="sd">    .. note:: no need to use `yaml.safe_load` here because the `Loader` will ensure that loading is safe.</span>
+
+<span class="sd">    :param serialized: a yaml serialized string representation</span>
+<span class="sd">    :return: the deserialized data structure</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">serialized</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">AiiDALoader</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

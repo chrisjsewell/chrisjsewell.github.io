@@ -1,0 +1,729 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.restapi.resources &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/togglebutton.js"></script>
+        <script src="../../../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../aiida.html">aiida</a> &raquo;</li>
+        
+      <li>aiida.restapi.resources</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for aiida.restapi.resources</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1">###########################################################################</span>
+<span class="c1"># Copyright (c), The AiiDA team. All rights reserved.                     #</span>
+<span class="c1"># This file is part of the AiiDA code.                                    #</span>
+<span class="c1">#                                                                         #</span>
+<span class="c1"># The code is hosted on GitHub at https://github.com/aiidateam/aiida-core #</span>
+<span class="c1"># For further information on the license, see the LICENSE.txt file        #</span>
+<span class="c1"># For further information please visit http://www.aiida.net               #</span>
+<span class="c1">###########################################################################</span>
+<span class="sd">&quot;&quot;&quot; Resources for REST API &quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">unquote</span>
+
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">request</span><span class="p">,</span> <span class="n">make_response</span>
+<span class="kn">from</span> <span class="nn">flask_restful</span> <span class="kn">import</span> <span class="n">Resource</span>
+
+<span class="kn">from</span> <span class="nn">aiida.common.lang</span> <span class="kn">import</span> <span class="n">classproperty</span>
+<span class="kn">from</span> <span class="nn">aiida.restapi.common.exceptions</span> <span class="kn">import</span> <span class="n">RestInputValidationError</span>
+<span class="kn">from</span> <span class="nn">aiida.restapi.common.utils</span> <span class="kn">import</span> <span class="n">Utils</span>
+
+
+<div class="viewcode-block" id="ServerInfo"><a class="viewcode-back" href="../../../apidoc/aiida.restapi.html#aiida.restapi.resources.ServerInfo">[docs]</a><span class="k">class</span> <span class="nc">ServerInfo</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+    <span class="c1"># pylint: disable=fixme</span>
+    <span class="sd">&quot;&quot;&quot;Endpointd to return general server info&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ServerInfo.__init__"><a class="viewcode-back" href="../../../apidoc/aiida.restapi.html#aiida.restapi.resources.ServerInfo.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># Configure utils</span>
+        <span class="n">utils_conf_keys</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;PREFIX&#39;</span><span class="p">,</span> <span class="s1">&#39;PERPAGE_DEFAULT&#39;</span><span class="p">,</span> <span class="s1">&#39;LIMIT_DEFAULT&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">utils_confs</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">utils_conf_keys</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">utils</span> <span class="o">=</span> <span class="n">Utils</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">utils_confs</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ServerInfo.get"><a class="viewcode-back" href="../../../apidoc/aiida.restapi.html#aiida.restapi.resources.ServerInfo.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        It returns the general info about the REST API</span>
+<span class="sd">        :return: returns current AiiDA version defined in aiida/__init__.py</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1">## Decode url parts</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">unquote</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">unquote</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">url_root</span> <span class="o">=</span> <span class="n">unquote</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">url_root</span><span class="p">)</span>
+
+        <span class="n">pathlist</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">split_path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">strip_api_prefix</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pathlist</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">resource_type</span> <span class="o">=</span> <span class="n">pathlist</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">resource_type</span> <span class="o">=</span> <span class="s1">&#39;info&#39;</span>
+
+        <span class="n">response</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="kn">from</span> <span class="nn">aiida.restapi.common.config</span> <span class="kn">import</span> <span class="n">API_CONFIG</span>
+        <span class="kn">from</span> <span class="nn">aiida</span> <span class="kn">import</span> <span class="n">__version__</span>
+
+        <span class="k">if</span> <span class="n">resource_type</span> <span class="o">==</span> <span class="s1">&#39;info&#39;</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="p">{}</span>
+
+            <span class="c1"># Add Rest API version</span>
+            <span class="n">api_version</span> <span class="o">=</span> <span class="n">API_CONFIG</span><span class="p">[</span><span class="s1">&#39;VERSION&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+            <span class="n">response</span><span class="p">[</span><span class="s1">&#39;API_major_version&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">api_version</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">response</span><span class="p">[</span><span class="s1">&#39;API_minor_version&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">api_version</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">response</span><span class="p">[</span><span class="s1">&#39;API_revision_version&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">api_version</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+            <span class="c1"># Add Rest API prefix</span>
+            <span class="n">response</span><span class="p">[</span><span class="s1">&#39;API_prefix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">API_CONFIG</span><span class="p">[</span><span class="s1">&#39;PREFIX&#39;</span><span class="p">]</span>
+
+            <span class="c1"># Add AiiDA version</span>
+            <span class="n">response</span><span class="p">[</span><span class="s1">&#39;AiiDA_version&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">__version__</span>
+
+        <span class="k">elif</span> <span class="n">resource_type</span> <span class="o">==</span> <span class="s1">&#39;endpoints&#39;</span><span class="p">:</span>
+
+            <span class="kn">from</span> <span class="nn">aiida.restapi.common.utils</span> <span class="kn">import</span> <span class="n">list_routes</span>
+            <span class="n">response</span><span class="p">[</span><span class="s1">&#39;available_endpoints&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">list_routes</span><span class="p">()</span>
+
+        <span class="n">headers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">build_headers</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">total_count</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1">## Build response and return it</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">method</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
+            <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+            <span class="n">url_root</span><span class="o">=</span><span class="n">url_root</span><span class="p">,</span>
+            <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span>
+            <span class="n">query_string</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">query_string</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">),</span>
+            <span class="n">resource_type</span><span class="o">=</span><span class="s1">&#39;Info&#39;</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">response</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">build_response</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="BaseResource"><a class="viewcode-back" href="../../../apidoc/aiida.restapi.html#aiida.restapi.resources.BaseResource">[docs]</a><span class="k">class</span> <span class="nc">BaseResource</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+    <span class="c1"># pylint: disable=fixme</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Each derived class will instantiate a different type of translator.</span>
+<span class="sd">    This is the only difference in the classes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">aiida.restapi.translator.base</span> <span class="kn">import</span> <span class="n">BaseTranslator</span>
+
+    <span class="n">_translator_class</span> <span class="o">=</span> <span class="n">BaseTranslator</span>
+    <span class="n">_parse_pk_uuid</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Flag to tell the path parser whether to expect a pk or a uuid pattern</span>
+
+    <span class="c1">## TODO add the caching support. I cache total count, results, and possibly</span>
+
+<div class="viewcode-block" id="BaseResource.__init__"><a class="viewcode-back" href="../../../apidoc/aiida.restapi.html#aiida.restapi.resources.BaseResource.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">trans</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_translator_class</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c1"># Configure utils</span>
+        <span class="n">utils_conf_keys</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;PREFIX&#39;</span><span class="p">,</span> <span class="s1">&#39;PERPAGE_DEFAULT&#39;</span><span class="p">,</span> <span class="s1">&#39;LIMIT_DEFAULT&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">utils_confs</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">utils_conf_keys</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">utils</span> <span class="o">=</span> <span class="n">Utils</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">utils_confs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">method_decorators</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;get&#39;</span><span class="p">:</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;get_decorators&#39;</span><span class="p">,</span> <span class="p">[])}</span></div>
+
+    <span class="nd">@classproperty</span>
+    <span class="k">def</span> <span class="nf">parse_pk_uuid</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="c1"># pylint: disable=no-self-argument</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_parse_pk_uuid</span>
+
+<div class="viewcode-block" id="BaseResource._load_and_verify"><a class="viewcode-back" href="../../../apidoc/aiida.restapi.html#aiida.restapi.resources.BaseResource._load_and_verify">[docs]</a>    <span class="k">def</span> <span class="nf">_load_and_verify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node_id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Load node and verify it is of the required type&quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">aiida.orm</span> <span class="kn">import</span> <span class="n">load_node</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="n">load_node</span><span class="p">(</span><span class="n">node_id</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="o">.</span><span class="n">_aiida_class</span><span class="p">):</span>  <span class="c1"># pylint: disable=protected-access</span>
+            <span class="k">raise</span> <span class="n">RestInputValidationError</span><span class="p">(</span>
+                <span class="s1">&#39;node </span><span class="si">{}</span><span class="s1"> is not of the required type </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="o">.</span><span class="n">_aiida_class</span><span class="p">)</span>  <span class="c1"># pylint: disable=protected-access</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">node</span></div>
+
+<div class="viewcode-block" id="BaseResource.get"><a class="viewcode-back" href="../../../apidoc/aiida.restapi.html#aiida.restapi.resources.BaseResource.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">page</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1"># pylint: disable=redefined-builtin,invalid-name,unused-argument</span>
+        <span class="c1"># pylint: disable=too-many-locals</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get method for the resource</span>
+<span class="sd">        :param id: node identifier</span>
+<span class="sd">        :param page: page no, used for pagination</span>
+<span class="sd">        :return: http response</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1">## Decode url parts</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">unquote</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+        <span class="n">query_string</span> <span class="o">=</span> <span class="n">unquote</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">query_string</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">unquote</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">url_root</span> <span class="o">=</span> <span class="n">unquote</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">url_root</span><span class="p">)</span>
+
+        <span class="c1">## Parse request</span>
+        <span class="p">(</span><span class="n">resource_type</span><span class="p">,</span> <span class="n">page</span><span class="p">,</span> <span class="n">node_id</span><span class="p">,</span> <span class="n">query_type</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">parse_path</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">parse_pk_uuid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parse_pk_uuid</span><span class="p">)</span>
+
+        <span class="c1"># pylint: disable=unused-variable</span>
+        <span class="p">(</span>
+            <span class="n">limit</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">perpage</span><span class="p">,</span> <span class="n">orderby</span><span class="p">,</span> <span class="n">filters</span><span class="p">,</span> <span class="n">download_format</span><span class="p">,</span> <span class="n">download</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">tree_in_limit</span><span class="p">,</span>
+            <span class="n">tree_out_limit</span><span class="p">,</span> <span class="n">attributes</span><span class="p">,</span> <span class="n">attributes_filter</span><span class="p">,</span> <span class="n">extras</span><span class="p">,</span> <span class="n">extras_filter</span><span class="p">,</span> <span class="n">full_type</span>
+        <span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">parse_query_string</span><span class="p">(</span><span class="n">query_string</span><span class="p">)</span>
+
+        <span class="c1">## Validate request</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">validate_request</span><span class="p">(</span>
+            <span class="n">limit</span><span class="o">=</span><span class="n">limit</span><span class="p">,</span>
+            <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">,</span>
+            <span class="n">perpage</span><span class="o">=</span><span class="n">perpage</span><span class="p">,</span>
+            <span class="n">page</span><span class="o">=</span><span class="n">page</span><span class="p">,</span>
+            <span class="n">query_type</span><span class="o">=</span><span class="n">query_type</span><span class="p">,</span>
+            <span class="n">is_querystring_defined</span><span class="o">=</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">query_string</span><span class="p">))</span>
+        <span class="p">)</span>
+
+        <span class="c1">## Treat the projectable_properties case which does not imply access to the DataBase</span>
+        <span class="k">if</span> <span class="n">query_type</span> <span class="o">==</span> <span class="s1">&#39;projectable_properties&#39;</span><span class="p">:</span>
+
+            <span class="c1">## Retrieve the projectable properties</span>
+            <span class="n">projectable_properties</span><span class="p">,</span> <span class="n">ordering</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="o">.</span><span class="n">get_projectable_properties</span><span class="p">()</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="n">projectable_properties</span><span class="p">,</span> <span class="n">ordering</span><span class="o">=</span><span class="n">ordering</span><span class="p">)</span>
+            <span class="c1">## Build response and return it</span>
+            <span class="n">headers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">build_headers</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">total_count</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1">## Set the query, and initialize qb object</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="o">.</span><span class="n">set_query</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="n">filters</span><span class="p">,</span> <span class="n">orders</span><span class="o">=</span><span class="n">orderby</span><span class="p">,</span> <span class="n">node_id</span><span class="o">=</span><span class="n">node_id</span><span class="p">)</span>
+
+            <span class="c1">## Count results</span>
+            <span class="n">total_count</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="o">.</span><span class="n">get_total_count</span><span class="p">()</span>
+
+            <span class="c1">## Pagination (if required)</span>
+            <span class="k">if</span> <span class="n">page</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="p">(</span><span class="n">limit</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">rel_pages</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">paginate</span><span class="p">(</span><span class="n">page</span><span class="p">,</span> <span class="n">perpage</span><span class="p">,</span> <span class="n">total_count</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="o">.</span><span class="n">set_limit_offset</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="n">limit</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">)</span>
+                <span class="n">headers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">build_headers</span><span class="p">(</span><span class="n">rel_pages</span><span class="o">=</span><span class="n">rel_pages</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">total_count</span><span class="o">=</span><span class="n">total_count</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="o">.</span><span class="n">set_limit_offset</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="n">limit</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">)</span>
+                <span class="n">headers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">build_headers</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">total_count</span><span class="o">=</span><span class="n">total_count</span><span class="p">)</span>
+
+            <span class="c1">## Retrieve results</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
+
+        <span class="c1">## Build response and return it</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">method</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
+            <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+            <span class="n">url_root</span><span class="o">=</span><span class="n">url_root</span><span class="p">,</span>
+            <span class="n">path</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">path</span><span class="p">,</span>
+            <span class="nb">id</span><span class="o">=</span><span class="n">node_id</span><span class="p">,</span>
+            <span class="n">query_string</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">query_string</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">),</span>
+            <span class="n">resource_type</span><span class="o">=</span><span class="n">resource_type</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">results</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">build_response</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="Node"><a class="viewcode-back" href="../../../apidoc/aiida.restapi.html#aiida.restapi.resources.Node">[docs]</a><span class="k">class</span> <span class="nc">Node</span><span class="p">(</span><span class="n">BaseResource</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Differs from BaseResource in trans.set_query() mostly because it takes</span>
+<span class="sd">    query_type as an input and the presence of additional result types like &quot;tree&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">aiida.restapi.translator.nodes.node</span> <span class="kn">import</span> <span class="n">NodeTranslator</span>
+
+    <span class="n">_translator_class</span> <span class="o">=</span> <span class="n">NodeTranslator</span>
+    <span class="n">_parse_pk_uuid</span> <span class="o">=</span> <span class="s1">&#39;uuid&#39;</span>  <span class="c1"># Parse a uuid pattern in the URL path (not a pk)</span>
+
+<div class="viewcode-block" id="Node.__init__"><a class="viewcode-back" href="../../../apidoc/aiida.restapi.html#aiida.restapi.resources.Node.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="kn">from</span> <span class="nn">aiida.orm</span> <span class="kn">import</span> <span class="n">Node</span> <span class="k">as</span> <span class="n">tNode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tclass</span> <span class="o">=</span> <span class="n">tNode</span>
+
+        <span class="c1"># Configure utils</span>
+        <span class="n">utils_conf_keys</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;PREFIX&#39;</span><span class="p">,</span> <span class="s1">&#39;PERPAGE_DEFAULT&#39;</span><span class="p">,</span> <span class="s1">&#39;LIMIT_DEFAULT&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">utils_confs</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">utils_conf_keys</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">utils</span> <span class="o">=</span> <span class="n">Utils</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">utils_confs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">method_decorators</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;get&#39;</span><span class="p">:</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;get_decorators&#39;</span><span class="p">,</span> <span class="p">[])}</span></div>
+
+<div class="viewcode-block" id="Node.get"><a class="viewcode-back" href="../../../apidoc/aiida.restapi.html#aiida.restapi.resources.Node.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">page</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1"># pylint: disable=redefined-builtin,invalid-name,unused-argument</span>
+        <span class="c1"># pylint: disable=too-many-locals,too-many-statements,too-many-branches,fixme,unused-variable</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get method for the Node resource.</span>
+
+<span class="sd">        :param id: node identifier</span>
+<span class="sd">        :param page: page no, used for pagination</span>
+<span class="sd">        :return: http response</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1">## Decode url parts</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">unquote</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+        <span class="n">query_string</span> <span class="o">=</span> <span class="n">unquote</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">query_string</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">unquote</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">url_root</span> <span class="o">=</span> <span class="n">unquote</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">url_root</span><span class="p">)</span>
+
+        <span class="c1">## Parse request</span>
+        <span class="p">(</span><span class="n">resource_type</span><span class="p">,</span> <span class="n">page</span><span class="p">,</span> <span class="n">node_id</span><span class="p">,</span> <span class="n">query_type</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">parse_path</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">parse_pk_uuid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parse_pk_uuid</span><span class="p">)</span>
+
+        <span class="p">(</span>
+            <span class="n">limit</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">perpage</span><span class="p">,</span> <span class="n">orderby</span><span class="p">,</span> <span class="n">filters</span><span class="p">,</span> <span class="n">download_format</span><span class="p">,</span> <span class="n">download</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">tree_in_limit</span><span class="p">,</span>
+            <span class="n">tree_out_limit</span><span class="p">,</span> <span class="n">attributes</span><span class="p">,</span> <span class="n">attributes_filter</span><span class="p">,</span> <span class="n">extras</span><span class="p">,</span> <span class="n">extras_filter</span><span class="p">,</span> <span class="n">full_type</span>
+        <span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">parse_query_string</span><span class="p">(</span><span class="n">query_string</span><span class="p">)</span>
+
+        <span class="c1">## Validate request</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">validate_request</span><span class="p">(</span>
+            <span class="n">limit</span><span class="o">=</span><span class="n">limit</span><span class="p">,</span>
+            <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">,</span>
+            <span class="n">perpage</span><span class="o">=</span><span class="n">perpage</span><span class="p">,</span>
+            <span class="n">page</span><span class="o">=</span><span class="n">page</span><span class="p">,</span>
+            <span class="n">query_type</span><span class="o">=</span><span class="n">query_type</span><span class="p">,</span>
+            <span class="n">is_querystring_defined</span><span class="o">=</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">query_string</span><span class="p">))</span>
+        <span class="p">)</span>
+
+        <span class="c1">## Treat the projectable properties case which does not imply access to the DataBase</span>
+        <span class="k">if</span> <span class="n">query_type</span> <span class="o">==</span> <span class="s1">&#39;projectable_properties&#39;</span><span class="p">:</span>
+
+            <span class="c1">## Retrieve the projectable properties</span>
+            <span class="n">projectable_properties</span><span class="p">,</span> <span class="n">ordering</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="o">.</span><span class="n">get_projectable_properties</span><span class="p">()</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="n">projectable_properties</span><span class="p">,</span> <span class="n">ordering</span><span class="o">=</span><span class="n">ordering</span><span class="p">)</span>
+            <span class="c1">## Build response and return it</span>
+            <span class="n">headers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">build_headers</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">total_count</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1">## Treat the statistics</span>
+        <span class="k">elif</span> <span class="n">query_type</span> <span class="o">==</span> <span class="s1">&#39;statistics&#39;</span><span class="p">:</span>
+            <span class="n">headers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">build_headers</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">total_count</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">filters</span><span class="p">:</span>
+                <span class="n">usr</span> <span class="o">=</span> <span class="n">filters</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">][</span><span class="s1">&#39;==&#39;</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">usr</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="o">.</span><span class="n">get_statistics</span><span class="p">(</span><span class="n">usr</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">query_type</span> <span class="o">==</span> <span class="s1">&#39;full_types&#39;</span><span class="p">:</span>
+            <span class="n">headers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">build_headers</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">total_count</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="o">.</span><span class="n">get_namespace</span><span class="p">()</span>
+
+        <span class="c1"># TODO improve the performance of tree endpoint by getting the data from database faster</span>
+        <span class="c1"># TODO add pagination for this endpoint (add default max limit)</span>
+        <span class="k">elif</span> <span class="n">query_type</span> <span class="o">==</span> <span class="s1">&#39;tree&#39;</span><span class="p">:</span>
+            <span class="n">headers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">build_headers</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">total_count</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="o">.</span><span class="n">get_io_tree</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="n">tree_in_limit</span><span class="p">,</span> <span class="n">tree_out_limit</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">node_id</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">query_type</span> <span class="o">==</span> <span class="s1">&#39;download_formats&#39;</span><span class="p">:</span>
+            <span class="n">headers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">build_headers</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">total_count</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="o">.</span><span class="n">get_all_download_formats</span><span class="p">(</span><span class="n">full_type</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1">## Initialize the translator</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="o">.</span><span class="n">set_query</span><span class="p">(</span>
+                <span class="n">filters</span><span class="o">=</span><span class="n">filters</span><span class="p">,</span>
+                <span class="n">orders</span><span class="o">=</span><span class="n">orderby</span><span class="p">,</span>
+                <span class="n">query_type</span><span class="o">=</span><span class="n">query_type</span><span class="p">,</span>
+                <span class="n">node_id</span><span class="o">=</span><span class="n">node_id</span><span class="p">,</span>
+                <span class="n">download_format</span><span class="o">=</span><span class="n">download_format</span><span class="p">,</span>
+                <span class="n">download</span><span class="o">=</span><span class="n">download</span><span class="p">,</span>
+                <span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span>
+                <span class="n">attributes</span><span class="o">=</span><span class="n">attributes</span><span class="p">,</span>
+                <span class="n">attributes_filter</span><span class="o">=</span><span class="n">attributes_filter</span><span class="p">,</span>
+                <span class="n">extras</span><span class="o">=</span><span class="n">extras</span><span class="p">,</span>
+                <span class="n">extras_filter</span><span class="o">=</span><span class="n">extras_filter</span><span class="p">,</span>
+                <span class="n">full_type</span><span class="o">=</span><span class="n">full_type</span>
+            <span class="p">)</span>
+
+            <span class="c1">## Count results</span>
+            <span class="n">total_count</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="o">.</span><span class="n">get_total_count</span><span class="p">()</span>
+
+            <span class="c1">## Pagination (if required)</span>
+            <span class="k">if</span> <span class="n">page</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="p">(</span><span class="n">limit</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">rel_pages</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">paginate</span><span class="p">(</span><span class="n">page</span><span class="p">,</span> <span class="n">perpage</span><span class="p">,</span> <span class="n">total_count</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="o">.</span><span class="n">set_limit_offset</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="n">limit</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">)</span>
+
+                <span class="c1">## Retrieve results</span>
+                <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
+
+                <span class="n">headers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">build_headers</span><span class="p">(</span><span class="n">rel_pages</span><span class="o">=</span><span class="n">rel_pages</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">total_count</span><span class="o">=</span><span class="n">total_count</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="o">.</span><span class="n">set_limit_offset</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="n">limit</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">)</span>
+                <span class="c1">## Retrieve results</span>
+                <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
+
+                <span class="k">if</span> <span class="n">query_type</span> <span class="o">==</span> <span class="s1">&#39;repo_contents&#39;</span> <span class="ow">and</span> <span class="n">results</span><span class="p">:</span>
+                    <span class="n">response</span> <span class="o">=</span> <span class="n">make_response</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+                    <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;content-type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/octet-stream&#39;</span>
+                    <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;Content-Disposition&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;attachment; filename=&quot;</span><span class="si">{}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+                    <span class="k">return</span> <span class="n">response</span>
+
+                <span class="k">if</span> <span class="n">query_type</span> <span class="o">==</span> <span class="s1">&#39;download&#39;</span> <span class="ow">and</span> <span class="n">download</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;false&#39;</span><span class="p">,</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span> <span class="ow">and</span> <span class="n">results</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;download&#39;</span><span class="p">][</span><span class="s1">&#39;status&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+                        <span class="n">data</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;download&#39;</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+                        <span class="n">response</span> <span class="o">=</span> <span class="n">make_response</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+                        <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;content-type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/octet-stream&#39;</span>
+                        <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;Content-Disposition&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;attachment; filename=&quot;</span><span class="si">{}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                            <span class="n">results</span><span class="p">[</span><span class="s1">&#39;download&#39;</span><span class="p">][</span><span class="s1">&#39;filename&#39;</span><span class="p">]</span>
+                        <span class="p">)</span>
+                        <span class="k">return</span> <span class="n">response</span>
+
+                    <span class="n">results</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;download&#39;</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+
+                <span class="n">headers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">build_headers</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">total_count</span><span class="o">=</span><span class="n">total_count</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">attributes_filter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">attributes</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;nodes&#39;</span><span class="p">]:</span>
+                    <span class="n">node</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">attributes_filter</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                        <span class="n">attributes_filter</span> <span class="o">=</span> <span class="p">[</span><span class="n">attributes_filter</span><span class="p">]</span>
+                    <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">attributes_filter</span><span class="p">:</span>
+                        <span class="n">node</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="nb">str</span><span class="p">(</span><span class="n">attr</span><span class="p">)]</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="s1">&#39;attributes.&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">attr</span><span class="p">)]</span>
+                        <span class="k">del</span> <span class="n">node</span><span class="p">[</span><span class="s1">&#39;attributes.&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">attr</span><span class="p">)]</span>
+
+            <span class="k">if</span> <span class="n">extras_filter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">extras</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;nodes&#39;</span><span class="p">]:</span>
+                    <span class="n">node</span><span class="p">[</span><span class="s1">&#39;extras&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">extras_filter</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                        <span class="n">extras_filter</span> <span class="o">=</span> <span class="p">[</span><span class="n">extras_filter</span><span class="p">]</span>
+                    <span class="k">for</span> <span class="n">extra</span> <span class="ow">in</span> <span class="n">extras_filter</span><span class="p">:</span>
+                        <span class="n">node</span><span class="p">[</span><span class="s1">&#39;extras&#39;</span><span class="p">][</span><span class="nb">str</span><span class="p">(</span><span class="n">extra</span><span class="p">)]</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="s1">&#39;extras.&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">extra</span><span class="p">)]</span>
+                        <span class="k">del</span> <span class="n">node</span><span class="p">[</span><span class="s1">&#39;extras.&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">extra</span><span class="p">)]</span>
+
+        <span class="c1">## Build response</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">method</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
+            <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+            <span class="n">url_root</span><span class="o">=</span><span class="n">url_root</span><span class="p">,</span>
+            <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span>
+            <span class="nb">id</span><span class="o">=</span><span class="n">node_id</span><span class="p">,</span>
+            <span class="n">query_string</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">query_string</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">),</span>
+            <span class="n">resource_type</span><span class="o">=</span><span class="n">resource_type</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">results</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">build_response</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="Computer"><a class="viewcode-back" href="../../../apidoc/aiida.restapi.html#aiida.restapi.resources.Computer">[docs]</a><span class="k">class</span> <span class="nc">Computer</span><span class="p">(</span><span class="n">BaseResource</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Resource for Computer &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">aiida.restapi.translator.computer</span> <span class="kn">import</span> <span class="n">ComputerTranslator</span>
+
+    <span class="n">_translator_class</span> <span class="o">=</span> <span class="n">ComputerTranslator</span>
+    <span class="n">_parse_pk_uuid</span> <span class="o">=</span> <span class="s1">&#39;uuid&#39;</span></div>
+
+
+<div class="viewcode-block" id="Group"><a class="viewcode-back" href="../../../apidoc/aiida.restapi.html#aiida.restapi.resources.Group">[docs]</a><span class="k">class</span> <span class="nc">Group</span><span class="p">(</span><span class="n">BaseResource</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Resource for Group &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">aiida.restapi.translator.group</span> <span class="kn">import</span> <span class="n">GroupTranslator</span>
+
+    <span class="n">_translator_class</span> <span class="o">=</span> <span class="n">GroupTranslator</span>
+    <span class="n">_parse_pk_uuid</span> <span class="o">=</span> <span class="s1">&#39;uuid&#39;</span></div>
+
+
+<div class="viewcode-block" id="User"><a class="viewcode-back" href="../../../apidoc/aiida.restapi.html#aiida.restapi.resources.User">[docs]</a><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">BaseResource</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Resource for User &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">aiida.restapi.translator.user</span> <span class="kn">import</span> <span class="n">UserTranslator</span>
+
+    <span class="n">_translator_class</span> <span class="o">=</span> <span class="n">UserTranslator</span>
+    <span class="n">_parse_pk_uuid</span> <span class="o">=</span> <span class="s1">&#39;pk&#39;</span></div>
+
+
+<div class="viewcode-block" id="ProcessNode"><a class="viewcode-back" href="../../../apidoc/aiida.restapi.html#aiida.restapi.resources.ProcessNode">[docs]</a><span class="k">class</span> <span class="nc">ProcessNode</span><span class="p">(</span><span class="n">Node</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Resource for ProcessNode &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">aiida.restapi.translator.nodes.process.process</span> <span class="kn">import</span> <span class="n">ProcessTranslator</span>
+
+    <span class="n">_translator_class</span> <span class="o">=</span> <span class="n">ProcessTranslator</span>
+
+<div class="viewcode-block" id="ProcessNode.get"><a class="viewcode-back" href="../../../apidoc/aiida.restapi.html#aiida.restapi.resources.ProcessNode.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">page</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1"># pylint: disable=redefined-builtin</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get method for the Process resource.</span>
+
+<span class="sd">        :param id: node identifier</span>
+<span class="sd">        :return: http response</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1">## Decode url parts</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">unquote</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">unquote</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">url_root</span> <span class="o">=</span> <span class="n">unquote</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">url_root</span><span class="p">)</span>
+
+        <span class="c1">## Parse request</span>
+        <span class="p">(</span><span class="n">resource_type</span><span class="p">,</span> <span class="n">page</span><span class="p">,</span> <span class="n">node_id</span><span class="p">,</span> <span class="n">query_type</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">parse_path</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">parse_pk_uuid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parse_pk_uuid</span><span class="p">)</span>
+
+        <span class="n">results</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">query_type</span> <span class="o">==</span> <span class="s1">&#39;report&#39;</span><span class="p">:</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_and_verify</span><span class="p">(</span><span class="n">node_id</span><span class="p">)</span>
+            <span class="n">report</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="o">.</span><span class="n">get_report</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="n">report</span>
+
+        <span class="k">elif</span> <span class="n">query_type</span> <span class="o">==</span> <span class="s1">&#39;projectable_properties&#39;</span><span class="p">:</span>
+            <span class="c1">## Retrieve the projectable properties</span>
+            <span class="n">projectable_properties</span><span class="p">,</span> <span class="n">ordering</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="o">.</span><span class="n">get_projectable_properties</span><span class="p">()</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="n">projectable_properties</span><span class="p">,</span> <span class="n">ordering</span><span class="o">=</span><span class="n">ordering</span><span class="p">)</span>
+
+        <span class="c1">## Build response and return it</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">build_headers</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">total_count</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1">## Build response</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">method</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
+            <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+            <span class="n">url_root</span><span class="o">=</span><span class="n">url_root</span><span class="p">,</span>
+            <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span>
+            <span class="nb">id</span><span class="o">=</span><span class="n">node_id</span><span class="p">,</span>
+            <span class="n">query_string</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">query_string</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">),</span>
+            <span class="n">resource_type</span><span class="o">=</span><span class="n">resource_type</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">results</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">build_response</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="CalcJobNode"><a class="viewcode-back" href="../../../apidoc/aiida.restapi.html#aiida.restapi.resources.CalcJobNode">[docs]</a><span class="k">class</span> <span class="nc">CalcJobNode</span><span class="p">(</span><span class="n">ProcessNode</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Resource for CalcJobNode &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">aiida.restapi.translator.nodes.process.calculation.calcjob</span> <span class="kn">import</span> <span class="n">CalcJobTranslator</span>
+
+    <span class="n">_translator_class</span> <span class="o">=</span> <span class="n">CalcJobTranslator</span>
+
+<div class="viewcode-block" id="CalcJobNode.get"><a class="viewcode-back" href="../../../apidoc/aiida.restapi.html#aiida.restapi.resources.CalcJobNode.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">page</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1"># pylint: disable=redefined-builtin</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get method for the Process resource.</span>
+
+<span class="sd">        :param id: node identifier</span>
+<span class="sd">        :return: http response</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1">## Decode url parts</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">unquote</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">unquote</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">url_root</span> <span class="o">=</span> <span class="n">unquote</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">url_root</span><span class="p">)</span>
+
+        <span class="c1">## Parse request</span>
+        <span class="p">(</span><span class="n">resource_type</span><span class="p">,</span> <span class="n">page</span><span class="p">,</span> <span class="n">node_id</span><span class="p">,</span> <span class="n">query_type</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">parse_path</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">parse_pk_uuid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parse_pk_uuid</span><span class="p">)</span>
+
+        <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_and_verify</span><span class="p">(</span><span class="n">node_id</span><span class="p">)</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;filename&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">query_type</span> <span class="o">==</span> <span class="s1">&#39;input_files&#39;</span><span class="p">:</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="o">.</span><span class="n">get_input_files</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">query_type</span> <span class="o">==</span> <span class="s1">&#39;output_files&#39;</span><span class="p">:</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="o">.</span><span class="n">get_output_files</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+
+        <span class="c1">## Build response and return it</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">build_headers</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">total_count</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1">## Build response</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">method</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
+            <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+            <span class="n">url_root</span><span class="o">=</span><span class="n">url_root</span><span class="p">,</span>
+            <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span>
+            <span class="nb">id</span><span class="o">=</span><span class="n">node_id</span><span class="p">,</span>
+            <span class="n">query_string</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">query_string</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">),</span>
+            <span class="n">resource_type</span><span class="o">=</span><span class="n">resource_type</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">results</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">build_response</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

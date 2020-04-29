@@ -1,0 +1,619 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.restapi.translator.nodes.data.array package &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>aiida.restapi.translator.nodes.data.array package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/aiida.restapi.translator.nodes.data.array.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-aiida.restapi.translator.nodes.data.array">
+<span id="aiida-restapi-translator-nodes-data-array-package"></span><h1>aiida.restapi.translator.nodes.data.array package<a class="headerlink" href="#module-aiida.restapi.translator.nodes.data.array" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-aiida.restapi.translator.nodes.data.array.bands">
+<span id="submodules"></span><h2>Submodules<a class="headerlink" href="#module-aiida.restapi.translator.nodes.data.array.bands" title="Permalink to this headline">¶</a></h2>
+<p>Translator for bands data</p>
+<dl class="class">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.restapi.translator.nodes.data.array.bands.</code><code class="sig-name descname">BandsDataTranslator</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/restapi/translator/nodes/data/array/bands.html#BandsDataTranslator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="aiida.restapi.translator.nodes.data.html#aiida.restapi.translator.nodes.data.DataTranslator" title="aiida.restapi.translator.nodes.data.DataTranslator"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.restapi.translator.nodes.data.DataTranslator</span></code></a></p>
+<p>Translator relative to resource ‘bands’ and aiida class BandsData</p>
+<dl class="class">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData">
+<em class="property">class </em><code class="sig-name descname">BandsData</code><span class="sig-paren">(</span><em class="sig-param">backend=None</em>, <em class="sig-param">user=None</em>, <em class="sig-param">computer=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="aiida.orm.nodes.data.array.html#aiida.orm.nodes.data.array.kpoints.KpointsData" title="aiida.orm.nodes.data.array.kpoints.KpointsData"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.orm.nodes.data.array.kpoints.KpointsData</span></code></a></p>
+<p>Class to handle bands data</p>
+<dl class="attribute">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData.__abstractmethods__">
+<code class="sig-name descname">__abstractmethods__</code><em class="property"> = frozenset({})</em><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData.__abstractmethods__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.orm.nodes.data.array.bands'</em><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._abc_impl">
+<code class="sig-name descname">_abc_impl</code><em class="property"> = &lt;_abc_data object&gt;</em><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._abc_impl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._custom_export_format_replacements">
+<code class="sig-name descname">_custom_export_format_replacements</code><em class="property"> = {'dat': 'dat_multicolumn', 'gnu': 'gnuplot', 'pdf': 'mpl_pdf', 'png': 'mpl_png', 'py': 'mpl_singlefile'}</em><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._custom_export_format_replacements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._get_band_segments">
+<code class="sig-name descname">_get_band_segments</code><span class="sig-paren">(</span><em class="sig-param">cartesian</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._get_band_segments" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._get_bandplot_data">
+<code class="sig-name descname">_get_bandplot_data</code><span class="sig-paren">(</span><em class="sig-param">cartesian</em>, <em class="sig-param">prettify_format=None</em>, <em class="sig-param">join_symbol=None</em>, <em class="sig-param">get_segments=False</em>, <em class="sig-param">y_origin=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._get_bandplot_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get data to plot a band structure</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cartesian</strong> – if True, distances (for the x-axis) are computed in
+cartesian coordinates, otherwise they are computed in reciprocal
+coordinates. cartesian=True will fail if no cell has been set.</p></li>
+<li><p><strong>prettify_format</strong> – by default, strings are not prettified. If you want
+to prettify them, pass a valid prettify_format string (see valid options
+in the docstring of :py:func:prettify_labels).</p></li>
+<li><p><strong>join_symbols</strong> – by default, strings are not joined. If you pass a string,
+this is used to join strings that are much closer than a given threshold.
+The most typical string is the pipe symbol: <code class="docutils literal notranslate"><span class="pre">|</span></code>.</p></li>
+<li><p><strong>get_segments</strong> – if True, also computes the band split into segments</p></li>
+<li><p><strong>y_origin</strong> – if present, shift bands so to set the value specified at <code class="docutils literal notranslate"><span class="pre">y=0</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a plot_info dictiorary, whose keys are <code class="docutils literal notranslate"><span class="pre">x</span></code> (array of distances
+for the x axis of the plot); <code class="docutils literal notranslate"><span class="pre">y</span></code> (array of bands), <code class="docutils literal notranslate"><span class="pre">labels</span></code> (list
+of tuples in the format (float x value of the label, label string),
+<code class="docutils literal notranslate"><span class="pre">band_type_idx</span></code> (array containing an index for each band: if there is only
+one spin, then it’s an array of zeros, of length equal to the number of bands
+at each point; if there are two spins, then it’s an array of zeros or ones
+depending on the type of spin; the length is always equalt to the total
+number of bands per kpoint).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._get_mpl_body_template">
+<em class="property">static </em><code class="sig-name descname">_get_mpl_body_template</code><span class="sig-paren">(</span><em class="sig-param">paths</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._get_mpl_body_template" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>paths</strong> – paths of k-points</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._logger">
+<code class="sig-name descname">_logger</code><em class="property"> = &lt;Logger aiida.orm.nodes.data.array.bands.BandsData (REPORT)&gt;</em><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._logger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._matplotlib_get_dict">
+<code class="sig-name descname">_matplotlib_get_dict</code><span class="sig-paren">(</span><em class="sig-param">main_file_name=''</em>, <em class="sig-param">comments=True</em>, <em class="sig-param">title=''</em>, <em class="sig-param">legend=None</em>, <em class="sig-param">legend2=None</em>, <em class="sig-param">y_max_lim=None</em>, <em class="sig-param">y_min_lim=None</em>, <em class="sig-param">y_origin=0.0</em>, <em class="sig-param">prettify_format=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._matplotlib_get_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare the data to send to the python-matplotlib plotting script.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>comments</strong> – if True, print comments (if it makes sense for the given
+format)</p></li>
+<li><p><strong>plot_info</strong> – a dictionary</p></li>
+<li><p><strong>setnumber_offset</strong> – an offset to be applied to all set numbers
+(i.e. s0 is replaced by s[offset], s1 by s[offset+1], etc.)</p></li>
+<li><p><strong>color_number</strong> – the color number for lines, symbols, error bars
+and filling (should be less than the parameter max_num_agr_colors
+defined below)</p></li>
+<li><p><strong>title</strong> – the title</p></li>
+<li><p><strong>legend</strong> – the legend (applied only to the first of the set)</p></li>
+<li><p><strong>legend2</strong> – the legend for second-type spins
+(applied only to the first of the set)</p></li>
+<li><p><strong>y_max_lim</strong> – the maximum on the y axis (if None, put the
+maximum of the bands)</p></li>
+<li><p><strong>y_min_lim</strong> – the minimum on the y axis (if None, put the
+minimum of the bands)</p></li>
+<li><p><strong>y_origin</strong> – the new origin of the y axis -&gt; all bands are replaced
+by bands-y_origin</p></li>
+<li><p><strong>prettify_format</strong> – if None, use the default prettify format. Otherwise
+specify a string with the prettifier to use.</p></li>
+<li><p><strong>kwargs</strong> – additional customization variables; only a subset is
+accepted, see internal variable ‘valid_additional_keywords</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._plugin_type_string">
+<code class="sig-name descname">_plugin_type_string</code><em class="property"> = 'data.array.bands.BandsData.'</em><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._plugin_type_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._prepare_agr">
+<code class="sig-name descname">_prepare_agr</code><span class="sig-paren">(</span><em class="sig-param">main_file_name=''</em>, <em class="sig-param">comments=True</em>, <em class="sig-param">setnumber_offset=0</em>, <em class="sig-param">color_number=1</em>, <em class="sig-param">color_number2=2</em>, <em class="sig-param">legend=''</em>, <em class="sig-param">title=''</em>, <em class="sig-param">y_max_lim=None</em>, <em class="sig-param">y_min_lim=None</em>, <em class="sig-param">y_origin=0.0</em>, <em class="sig-param">prettify_format=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._prepare_agr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare an xmgrace agr file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>comments</strong> – if True, print comments
+(if it makes sense for the given format)</p></li>
+<li><p><strong>plot_info</strong> – a dictionary</p></li>
+<li><p><strong>setnumber_offset</strong> – an offset to be applied to all set numbers
+(i.e. s0 is replaced by s[offset], s1 by s[offset+1], etc.)</p></li>
+<li><p><strong>color_number</strong> – the color number for lines, symbols, error bars
+and filling (should be less than the parameter max_num_agr_colors
+defined below)</p></li>
+<li><p><strong>color_number2</strong> – the color number for lines, symbols, error bars
+and filling for the second-type spins (should be less than the
+parameter max_num_agr_colors defined below)</p></li>
+<li><p><strong>legend</strong> – the legend (applied only to the first set)</p></li>
+<li><p><strong>title</strong> – the title</p></li>
+<li><p><strong>y_max_lim</strong> – the maximum on the y axis (if None, put the
+maximum of the bands); applied <em>after</em> shifting the origin
+by <code class="docutils literal notranslate"><span class="pre">y_origin</span></code></p></li>
+<li><p><strong>y_min_lim</strong> – the minimum on the y axis (if None, put the
+minimum of the bands); applied <em>after</em> shifting the origin
+by <code class="docutils literal notranslate"><span class="pre">y_origin</span></code></p></li>
+<li><p><strong>y_origin</strong> – the new origin of the y axis -&gt; all bands are replaced
+by bands-y_origin</p></li>
+<li><p><strong>prettify_format</strong> – if None, use the default prettify format. Otherwise
+specify a string with the prettifier to use.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._prepare_agr_batch">
+<code class="sig-name descname">_prepare_agr_batch</code><span class="sig-paren">(</span><em class="sig-param">main_file_name=''</em>, <em class="sig-param">comments=True</em>, <em class="sig-param">prettify_format=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._prepare_agr_batch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare two files, data and batch, to be plot with xmgrace as:
+xmgrace -batch file.dat</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>main_file_name</strong> – if the user asks to write the main content on a
+file, this contains the filename. This should be used to infer a
+good filename for the additional files.
+In this case, we remove the extension, and add ‘_data.dat’</p></li>
+<li><p><strong>comments</strong> – if True, print comments (if it makes sense for the given
+format)</p></li>
+<li><p><strong>prettify_format</strong> – if None, use the default prettify format. Otherwise
+specify a string with the prettifier to use.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._prepare_dat_blocks">
+<code class="sig-name descname">_prepare_dat_blocks</code><span class="sig-paren">(</span><em class="sig-param">main_file_name=''</em>, <em class="sig-param">comments=True</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._prepare_dat_blocks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format suitable for gnuplot using blocks.
+Columns with x and y (path and band energy). Several blocks, separated
+by two empty lines, one per energy band.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>comments</strong> – if True, print comments (if it makes sense for the given
+format)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._prepare_dat_multicolumn">
+<code class="sig-name descname">_prepare_dat_multicolumn</code><span class="sig-paren">(</span><em class="sig-param">main_file_name=''</em>, <em class="sig-param">comments=True</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._prepare_dat_multicolumn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an N x M matrix. First column is the distance between kpoints,
+The other columns are the bands. Header contains number of kpoints and
+the number of bands (commented).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>comments</strong> – if True, print comments (if it makes sense for the given
+format)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._prepare_gnuplot">
+<code class="sig-name descname">_prepare_gnuplot</code><span class="sig-paren">(</span><em class="sig-param">main_file_name=None</em>, <em class="sig-param">title=''</em>, <em class="sig-param">comments=True</em>, <em class="sig-param">prettify_format=None</em>, <em class="sig-param">y_max_lim=None</em>, <em class="sig-param">y_min_lim=None</em>, <em class="sig-param">y_origin=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._prepare_gnuplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare an gnuplot script to plot the bands, with the .dat file
+returned as an independent file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>main_file_name</strong> – if the user asks to write the main content on a
+file, this contains the filename. This should be used to infer a
+good filename for the additional files.
+In this case, we remove the extension, and add ‘_data.dat’</p></li>
+<li><p><strong>title</strong> – if specified, add a title to the plot</p></li>
+<li><p><strong>comments</strong> – if True, print comments (if it makes sense for the given
+format)</p></li>
+<li><p><strong>prettify_format</strong> – if None, use the default prettify format. Otherwise
+specify a string with the prettifier to use.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._prepare_json">
+<code class="sig-name descname">_prepare_json</code><span class="sig-paren">(</span><em class="sig-param">main_file_name=''</em>, <em class="sig-param">comments=True</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._prepare_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare a json file in a format compatible with the AiiDA band visualizer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>comments</strong> – if True, print comments (if it makes sense for the given
+format)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._prepare_mpl_pdf">
+<code class="sig-name descname">_prepare_mpl_pdf</code><span class="sig-paren">(</span><em class="sig-param">main_file_name=''</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._prepare_mpl_pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare a python script using matplotlib to plot the bands, with the JSON
+returned as an independent file.</p>
+<p>For the possible parameters, see documentation of
+<a class="reference internal" href="aiida.orm.nodes.data.array.html#aiida.orm.nodes.data.array.bands.BandsData._matplotlib_get_dict" title="aiida.orm.nodes.data.array.bands.BandsData._matplotlib_get_dict"><code class="xref py py-meth docutils literal notranslate"><span class="pre">_matplotlib_get_dict()</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._prepare_mpl_png">
+<code class="sig-name descname">_prepare_mpl_png</code><span class="sig-paren">(</span><em class="sig-param">main_file_name=''</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._prepare_mpl_png" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare a python script using matplotlib to plot the bands, with the JSON
+returned as an independent file.</p>
+<p>For the possible parameters, see documentation of
+<a class="reference internal" href="aiida.orm.nodes.data.array.html#aiida.orm.nodes.data.array.bands.BandsData._matplotlib_get_dict" title="aiida.orm.nodes.data.array.bands.BandsData._matplotlib_get_dict"><code class="xref py py-meth docutils literal notranslate"><span class="pre">_matplotlib_get_dict()</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._prepare_mpl_singlefile">
+<code class="sig-name descname">_prepare_mpl_singlefile</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._prepare_mpl_singlefile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare a python script using matplotlib to plot the bands</p>
+<p>For the possible parameters, see documentation of
+<a class="reference internal" href="aiida.orm.nodes.data.array.html#aiida.orm.nodes.data.array.bands.BandsData._matplotlib_get_dict" title="aiida.orm.nodes.data.array.bands.BandsData._matplotlib_get_dict"><code class="xref py py-meth docutils literal notranslate"><span class="pre">_matplotlib_get_dict()</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._prepare_mpl_withjson">
+<code class="sig-name descname">_prepare_mpl_withjson</code><span class="sig-paren">(</span><em class="sig-param">main_file_name=''</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._prepare_mpl_withjson" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare a python script using matplotlib to plot the bands, with the JSON
+returned as an independent file.</p>
+<p>For the possible parameters, see documentation of
+<a class="reference internal" href="aiida.orm.nodes.data.array.html#aiida.orm.nodes.data.array.bands.BandsData._matplotlib_get_dict" title="aiida.orm.nodes.data.array.bands.BandsData._matplotlib_get_dict"><code class="xref py py-meth docutils literal notranslate"><span class="pre">_matplotlib_get_dict()</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._query_type_string">
+<code class="sig-name descname">_query_type_string</code><em class="property"> = 'data.array.bands.'</em><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._query_type_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._set_pbc">
+<code class="sig-name descname">_set_pbc</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._set_pbc" title="Permalink to this definition">¶</a></dt>
+<dd><p>validate the pbc, then store them</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._validate_bands_occupations">
+<code class="sig-name descname">_validate_bands_occupations</code><span class="sig-paren">(</span><em class="sig-param">bands</em>, <em class="sig-param">occupations=None</em>, <em class="sig-param">labels=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData._validate_bands_occupations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validate the list of bands and of occupations before storage.
+Kpoints must be set in advance.
+Bands and occupations must be convertible into arrays of
+Nkpoints x Nbands floats or Nspins x Nkpoints x Nbands; Nkpoints must
+correspond to the number of kpoints.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData.array_labels">
+<em class="property">property </em><code class="sig-name descname">array_labels</code><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData.array_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the labels associated with the band arrays</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData.get_bands">
+<code class="sig-name descname">get_bands</code><span class="sig-paren">(</span><em class="sig-param">also_occupations=False</em>, <em class="sig-param">also_labels=False</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData.get_bands" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an array (nkpoints x num_bands or nspins x nkpoints x num_bands)
+of energies.
+:param also_occupations: if True, returns also the occupations array.
+Default = False</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData.set_bands">
+<code class="sig-name descname">set_bands</code><span class="sig-paren">(</span><em class="sig-param">bands</em>, <em class="sig-param">units=None</em>, <em class="sig-param">occupations=None</em>, <em class="sig-param">labels=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData.set_bands" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set an array of band energies of dimension (nkpoints x nbands).
+Kpoints must be set in advance. Can contain floats or None.
+:param bands: a list of nkpoints lists of nbands bands, or a 2D array
+of shape (nkpoints x nbands), with band energies for each kpoint
+:param units: optional, energy units
+:param occupations: optional, a 2D list or array of floats of same
+shape as bands, with the occupation associated to each band</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData.set_kpointsdata">
+<code class="sig-name descname">set_kpointsdata</code><span class="sig-paren">(</span><em class="sig-param">kpointsdata</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData.set_kpointsdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the kpoints from a kpoint object.
+:param kpointsdata: an instance of KpointsData class</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData.show_mpl">
+<code class="sig-name descname">show_mpl</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData.show_mpl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call a show() command for the band structure using matplotlib.
+This uses internally the ‘mpl_singlefile’ format, with empty
+main_file_name.</p>
+<p>Other kwargs are passed to self._exportcontent.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData.units">
+<em class="property">property </em><code class="sig-name descname">units</code><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.BandsData.units" title="Permalink to this definition">¶</a></dt>
+<dd><p>Units in which the data in bands were stored. A string</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.__label__">
+<code class="sig-name descname">__label__</code><em class="property"> = 'bands'</em><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.__label__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.restapi.translator.nodes.data.array.bands'</em><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator._aiida_class">
+<code class="sig-name descname">_aiida_class</code><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator._aiida_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="aiida.orm.nodes.data.array.html#aiida.orm.nodes.data.array.bands.BandsData" title="aiida.orm.nodes.data.array.bands.BandsData"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.orm.nodes.data.array.bands.BandsData</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator._aiida_type">
+<code class="sig-name descname">_aiida_type</code><em class="property"> = 'data.array.bands.BandsData'</em><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator._aiida_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator._result_type">
+<code class="sig-name descname">_result_type</code><em class="property"> = 'bands'</em><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator._result_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.get_derived_properties">
+<em class="property">static </em><code class="sig-name descname">get_derived_properties</code><span class="sig-paren">(</span><em class="sig-param">node</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/restapi/translator/nodes/data/array/bands.html#BandsDataTranslator.get_derived_properties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.restapi.translator.nodes.data.array.bands.BandsDataTranslator.get_derived_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns: data in a format required by dr.js to visualize a 2D plot
+with multiple data series.</p>
+<p>Strategy: I take advantage of the export functionality of BandsData
+objects. The raw export has to be filtered for string escape characters.
+this is done by decoding the string returned by node._exportcontent.</p>
+<p>TODO: modify the function exportstring (or add another function in
+BandsData) so that it returns a python object rather than a string.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

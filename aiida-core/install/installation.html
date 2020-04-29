@@ -1,0 +1,500 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Installation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/install/installation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installation">
+<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>With all prerequisites in place, we can now install AiiDA and its python dependencies.</p>
+<div class="section" id="virtual-python-environment">
+<span id="virtual-environment"></span><h2>Virtual python environment<a class="headerlink" href="#virtual-python-environment" title="Permalink to this headline">¶</a></h2>
+<p>AiiDA depends on a number of third party python packages, and usually on specific versions of those packages.
+In order not to interfere with third party packages needed by
+other software on your system, we <em>strongly</em> recommend
+isolating AiiDA in a <a class="reference external" href="https://docs.python.org/tutorial/venv.html">virtual python environment</a>.
+In the following, we describe how to create a virtual python environment using the <a class="reference external" href="https://virtualenv.pypa.io/en/latest/">virtualenv</a> tool, but feel free to use your preferred environment manager (e.g. <a class="reference external" href="https://conda.io/docs/">conda</a>).</p>
+<div class="section" id="creating-the-virtual-environment">
+<h3>Creating the virtual environment<a class="headerlink" href="#creating-the-virtual-environment" title="Permalink to this headline">¶</a></h3>
+<p>To create and activate a new virtual environment, run the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">user</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">virtualenv</span>      <span class="c1"># install virtualenv tool</span>
+<span class="n">virtualenv</span> <span class="o">~/.</span><span class="n">virtualenvs</span><span class="o">/</span><span class="n">aiida</span>              <span class="c1"># create &quot;aiida&quot; environment</span>
+<span class="n">source</span> <span class="o">~/.</span><span class="n">virtualenvs</span><span class="o">/</span><span class="n">aiida</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>     <span class="c1"># activate &quot;aiida&quot; environment</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>AiiDA requires a <strong>python 3</strong> virtual environment.
+If your system runs python 2 by default but has a <code class="docutils literal notranslate"><span class="pre">python3</span></code> executable, you can still set up a python 3 virtual environment using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">virtualenv</span> <span class="o">--</span><span class="n">python</span> <span class="n">python3</span> <span class="o">~/.</span><span class="n">virtualenvs</span><span class="o">/</span><span class="n">aiida</span>
+</pre></div>
+</div>
+</div>
+<p>This will create a directory in your home directory named <code class="docutils literal notranslate"><span class="pre">.virtualenvs</span></code>, and a directory <code class="docutils literal notranslate"><span class="pre">aiida</span></code> inside of it where all the packages will be installed.
+After activation, your prompt should have <code class="docutils literal notranslate"><span class="pre">(aiida)</span></code> in front of it, indicating that you are working inside the virtual environment.
+The activation script ensures that the python executable of the virtualenv is the first in <code class="docutils literal notranslate"><span class="pre">PATH</span></code>, and that python programs have access only to packages installed inside the virtualenv.</p>
+<p>To leave or deactivate the environment, simply run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(aiida) $ deactivate
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may need to install <code class="docutils literal notranslate"><span class="pre">pip</span></code> and <code class="docutils literal notranslate"><span class="pre">setuptools</span></code> in your virtual environment in case the system or user version of these tools is old:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(aiida) $ pip install -U setuptools pip
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="aiida-python-package">
+<h2>Aiida python package<a class="headerlink" href="#aiida-python-package" title="Permalink to this headline">¶</a></h2>
+<p>AiiDA can be installed either from the python package index <a class="reference external" href="https://pypi.python.org/pypi/aiida-core">PyPI</a> (good for general use) or directly from the aiida-core <a class="reference external" href="https://github.com/aiidateam/aiida-core">github repository</a> (good for developers).</p>
+<p>Install the <code class="docutils literal notranslate"><span class="pre">aiida-core</span></code> python package from <a class="reference external" href="https://pypi.python.org/pypi/aiida-core">PyPI</a> using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>aiida<span class="o">)</span> $ pip install aiida-core
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are installing AiiDA in your system environment,
+consider adding the <code class="docutils literal notranslate"><span class="pre">--user</span></code> flag to avoid the need for
+administrator privileges.</p>
+</div>
+<p>Alternatively, you can create a directory where to clone the AiiDA source code and install AiiDA from source:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir &lt;your_directory&gt;
+$ cd &lt;your_directory&gt;
+$ git clone https://github.com/aiidateam/aiida-core
+(aiida) $ pip install -e aiida-core
+</pre></div>
+</div>
+<p id="install-optional-dependencies">There are additional optional packages that you may want to install, which are grouped in the following categories:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">atomic_tools</span></code>: packages that allow importing and manipulating crystal structure from various formats</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ssh_kerberos</span></code>: adds support for ssh transport authentication through Kerberos</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REST</span></code>: allows a REST server to be ran locally to serve AiiDA data</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docs</span></code>: tools to build the documentation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">notebook</span></code>: jupyter notebook - to allow it to import AiiDA modules</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">testing</span></code>: python modules required to run the automatic unit tests</p></li>
+</ul>
+</div></blockquote>
+<p>In order to install any of these package groups, simply append them as a comma separated list in the <code class="docutils literal notranslate"><span class="pre">pip</span></code> install command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(aiida) $ pip install -e aiida-core[atomic_tools,docs]
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are installing the optional <code class="docutils literal notranslate"><span class="pre">ssh_kerberos</span></code> and you are on Ubuntu you might encounter an error related to the <code class="docutils literal notranslate"><span class="pre">gss</span></code> package.
+To fix this you need to install the <code class="docutils literal notranslate"><span class="pre">libffi-dev</span></code> and <code class="docutils literal notranslate"><span class="pre">libkrb5-dev</span></code> packages:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libffi</span><span class="o">-</span><span class="n">dev</span> <span class="n">libkrb5</span><span class="o">-</span><span class="n">dev</span>
+</pre></div>
+</div>
+</div>
+<p>AiiDA uses the <a class="reference external" href="https://pypi.org/project/reentry/">reentry</a> package to keep a fast cache of entry points for a snappy <code class="docutils literal notranslate"><span class="pre">verdi</span></code> cli.
+After installing AiiDA packages, always remember to update the reentry cache using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">reentry</span> <span class="n">scan</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="aiida-profile-setup">
+<span id="setup-aiida"></span><h2>AiiDA profile setup<a class="headerlink" href="#aiida-profile-setup" title="Permalink to this headline">¶</a></h2>
+<p>After successful installation, you need to create an AiiDA profile via AiiDA’s command line interface <code class="docutils literal notranslate"><span class="pre">verdi</span></code>.</p>
+<p>Most users should use the interactive quicksetup:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>verdi quicksetup &lt;profile_name&gt;
+</pre></div>
+</div>
+<p>which leads through the installation process and takes care of creating the corresponding AiiDA database.</p>
+<p>For maximum control and customizability, one can use <code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">setup</span></code>
+and set up the database manually as explained below.</p>
+<div class="section" id="database-setup">
+<span id="database"></span><h3>Database setup<a class="headerlink" href="#database-setup" title="Permalink to this headline">¶</a></h3>
+<p>AiiDA uses a database to store the nodes, node attributes and other information, allowing the end user to perform fast queries of the results.
+Currently, the highly performant <a class="reference external" href="https://www.postgresql.org/downloads">PostgreSQL</a> database is supported as a database backend.</p>
+<p>To manually create the database for AiiDA, you need to run the program <code class="docutils literal notranslate"><span class="pre">psql</span></code> to interact with postgres.
+On most operating systems, you need to do so as the <code class="docutils literal notranslate"><span class="pre">postgres</span></code> user that was created upon installing the software.
+To assume the role of <code class="docutils literal notranslate"><span class="pre">postgres</span></code> run as root:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">su</span> <span class="o">-</span> <span class="n">postgres</span>
+</pre></div>
+</div>
+<p>(or, equivalently, type <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">su</span> <span class="pre">-</span> <span class="pre">postgres</span></code>, depending on your distribution) and launch the postgres program:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psql</span>
+</pre></div>
+</div>
+<p>Create a new database user account for AiiDA by running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">USER</span> <span class="n">aiida</span> <span class="n">WITH</span> <span class="n">PASSWORD</span> <span class="s1">&#39;&lt;password&gt;&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>replacing <code class="docutils literal notranslate"><span class="pre">&lt;password&gt;</span></code> with a password of your choice.</p>
+<p>You will need to provide the password again when you configure AiiDA to use this database through <code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">setup</span></code>.
+If you want to change the password you just created use the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">USER</span> <span class="n">aiida</span> <span class="n">PASSWORD</span> <span class="s1">&#39;&lt;password&gt;&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Next, we create the database itself. We enforce the UTF-8 encoding and specific locales:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">DATABASE</span> <span class="n">aiidadb</span> <span class="n">OWNER</span> <span class="n">aiida</span> <span class="n">ENCODING</span> <span class="s1">&#39;UTF8&#39;</span> <span class="n">LC_COLLATE</span><span class="o">=</span><span class="s1">&#39;en_US.UTF-8&#39;</span> <span class="n">LC_CTYPE</span><span class="o">=</span><span class="s1">&#39;en_US.UTF-8&#39;</span> <span class="n">TEMPLATE</span><span class="o">=</span><span class="n">template0</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>and grant all privileges on this DB to the previously-created <code class="docutils literal notranslate"><span class="pre">aiida</span></code> user:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GRANT</span> <span class="n">ALL</span> <span class="n">PRIVILEGES</span> <span class="n">ON</span> <span class="n">DATABASE</span> <span class="n">aiidadb</span> <span class="n">to</span> <span class="n">aiida</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>You have now created a database for AiiDA and you can close the postgres shell by typing <code class="docutils literal notranslate"><span class="pre">\q</span></code>.
+To test if the database was created successfully, you can run the following command as a regular user in a bash terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="o">-</span><span class="n">h</span> <span class="n">localhost</span> <span class="o">-</span><span class="n">d</span> <span class="n">aiidadb</span> <span class="o">-</span><span class="n">U</span> <span class="n">aiida</span> <span class="o">-</span><span class="n">W</span>
+</pre></div>
+</div>
+<p>and type the password you inserted before, when prompted.
+If everything worked well, you should get no error and see the prompt of the <code class="docutils literal notranslate"><span class="pre">psql</span></code> shell.</p>
+<p>If you use the same names as in the example commands above, then during the <code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">setup</span></code> phase the following parameters will apply to the newly created database:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Database</span> <span class="n">engine</span><span class="p">:</span> <span class="n">postgresql_psycopg2</span>
+<span class="n">Database</span> <span class="n">host</span><span class="p">:</span> <span class="n">localhost</span>
+<span class="n">Database</span> <span class="n">port</span><span class="p">:</span> <span class="mi">5432</span>
+<span class="n">AiiDA</span> <span class="n">Database</span> <span class="n">name</span><span class="p">:</span> <span class="n">aiidadb</span>
+<span class="n">AiiDA</span> <span class="n">Database</span> <span class="n">user</span><span class="p">:</span> <span class="n">aiida</span>
+<span class="n">AiiDA</span> <span class="n">Database</span> <span class="n">password</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">password</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do not forget to backup your database (instructions <a class="reference internal" href="../backup/index.html#backup-postgresql"><span class="std std-ref">here</span></a>).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to move the physical location of the data files
+on your hard drive AFTER it has been created and filled, look at the
+instructions <a class="reference internal" href="../working_with_aiida/tips/move_db.html#move-postgresql"><span class="std std-ref">here</span></a>.</p>
+</div>
+<div class="section" id="database-setup-using-peer-authentication">
+<h4>Database setup using ‘peer’ authentication<a class="headerlink" href="#database-setup-using-peer-authentication" title="Permalink to this headline">¶</a></h4>
+<p>On Ubuntu Linux, the default PostgreSQL setup is configured to use <code class="docutils literal notranslate"><span class="pre">peer</span></code> authentication, which allows password-less login via local Unix sockets.
+In this mode, PostgreSQL compares the Unix user connecting to the socket with its own database of users and allows a connection if a matching user exists.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is an alternative route to set up your database - the standard approach will work on Ubuntu just as well.</p>
+</div>
+<p>Below we are going to take advantage of the command-line utilities shipped on Ubuntu to simplify creating users and databases compared to issuing the SQL commands directly.</p>
+<p>Assume the role of <code class="docutils literal notranslate"><span class="pre">postgres</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">su</span> <span class="n">postgres</span>
+</pre></div>
+</div>
+<p>Create a database user with the <strong>same name</strong> as the UNIX user who will be running AiiDA (usually your login name):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">createuser</span> <span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>replacing <code class="docutils literal notranslate"><span class="pre">&lt;username&gt;</span></code> with your username.</p>
+<p>Next, create the database itself with your user as the owner:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">createdb</span> <span class="o">-</span><span class="n">O</span> <span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span> <span class="n">aiidadb</span>
+</pre></div>
+</div>
+<p>Exit the shell to go back to your login user.
+To test if the database was created successfully, try:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="n">aiidadb</span>
+</pre></div>
+</div>
+<p>During the <code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">setup</span></code> phase, use <code class="docutils literal notranslate"><span class="pre">!</span></code> to leave host empty and specify your Unix user name as the <em>AiiDA Database user</em>.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Database engine: postgresql_psycopg2
+Database host: !
+Database port: 5432
+AiiDA Database name: aiidadb
+AiiDA Database user: &lt;username&gt;
+AiiDA Database password: &quot;&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="setup-instructions">
+<h3>Setup instructions<a class="headerlink" href="#setup-instructions" title="Permalink to this headline">¶</a></h3>
+<p>After the database has been created, do</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>verdi setup &lt;profile_name&gt;
+</pre></div>
+</div>
+<p>where <cite>&lt;profile_name&gt;</cite> is a profile name of your choosing.
+The <code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">setup</span></code> command will guide you through the setup process through a series of prompts.</p>
+<p>The first information asked is your email, which will be used to associate the calculations to you.
+In AiiDA, the email is your username, and acts as a unique identifier when importing/exporting data from AiiDA.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The password, in the current version of AiiDA, is not used (it will
+be used only in the REST API and in the web interface). If you leave the
+field empty, no password will be set and no access will be granted to the
+user via the REST API and the web interface.</p>
+</div>
+<p>Then, the following prompts will help you configure the database. Typical settings are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Default user email: richard.wagner@leipzig.de
+Database engine: postgresql_psycopg2
+PostgreSQL host: localhost
+PostgreSQL port: 5432
+AiiDA Database name: aiida_dev
+AiiDA Database user: aiida
+AiiDA Database password: &lt;password&gt;
+AiiDA repository directory: /home/wagner/.aiida/repository/
+[...]
+Configuring a new user with email &#39;richard.wagner@leipzig.de&#39;
+First name: Richard
+Last name: Wagner
+Institution: BRUHL, LEIPZIG
+The user has no password, do you want to set one? [y/N] y
+Insert the new password:
+Insert the new password (again):
+</pre></div>
+</div>
+<p>Remember that in order to work with AiiDA through for example the <code class="docutils literal notranslate"><span class="pre">verdi</span></code>
+command, you need to be in your virtual environment.
+If you open a new terminal for example, be sure to activate it first with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">~/.</span><span class="n">virtualenvs</span><span class="o">/</span><span class="n">aiida</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="start-the-daemon">
+<span id="start-daemon"></span><h2>Start the daemon<a class="headerlink" href="#start-the-daemon" title="Permalink to this headline">¶</a></h2>
+<p>The AiiDA daemon process runs in the background and takes care of processing your submitted calculations and workflows, checking their status, retrieving their results once they are finished and storing them in the AiiDA database.</p>
+<p>The AiiDA daemon is controlled using three simple commands:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">daemon</span> <span class="pre">start</span></code>: start the daemon</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">daemon</span> <span class="pre">status</span></code>: check the status of the daemon</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">daemon</span> <span class="pre">stop</span></code>: stop the daemon</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While operational, the daemon logs its activity to a file in <code class="docutils literal notranslate"><span class="pre">~/.aiida/daemon/log/</span></code> (or, more generally, <code class="docutils literal notranslate"><span class="pre">$AIIDA_PATH/.aiida/daemon/log</span></code>).
+Get the latest log messages via <code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">daemon</span> <span class="pre">logshow</span></code>.</p>
+</div>
+</div>
+<div class="section" id="final-checks">
+<h2>Final checks<a class="headerlink" href="#final-checks" title="Permalink to this headline">¶</a></h2>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">status</span></code> command to check that all services are up and running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>verdi status
+
+ ✓ profile:     On profile quicksetup
+ ✓ repository:  /repo/aiida_dev/quicksetup
+ ✓ postgres:    Connected to aiida@localhost:5432
+ ✓ rabbitmq:    Connected to amqp://127.0.0.1?heartbeat<span class="o">=</span><span class="m">600</span>
+ ✓ daemon:      Daemon is running as PID <span class="m">2809</span> since <span class="m">2019</span>-03-15 <span class="m">16</span>:27:52
+</pre></div>
+</div>
+<p>In the example output, all service have a green check mark and so should be running as expected.</p>
+<p>At this point, you’re ready to <a class="reference internal" href="../working_with_aiida/index.html#get-started"><span class="std std-ref">get started</span></a>.</p>
+<p>For configuration of tab completion , using AiiDA in jupyter &amp; more, see the <a class="reference internal" href="configuration.html#configure-aiida"><span class="std std-ref">configuration instructions</span></a> before moving on.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

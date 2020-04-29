@@ -1,0 +1,324 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.cmdline.commands.cmd_verdi &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/togglebutton.js"></script>
+        <script src="../../../../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../aiida.html">aiida</a> &raquo;</li>
+        
+      <li>aiida.cmdline.commands.cmd_verdi</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for aiida.cmdline.commands.cmd_verdi</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1">###########################################################################</span>
+<span class="c1"># Copyright (c), The AiiDA team. All rights reserved.                     #</span>
+<span class="c1"># This file is part of the AiiDA code.                                    #</span>
+<span class="c1">#                                                                         #</span>
+<span class="c1"># The code is hosted on GitHub at https://github.com/aiidateam/aiida-core #</span>
+<span class="c1"># For further information on the license, see the LICENSE.txt file        #</span>
+<span class="c1"># For further information please visit http://www.aiida.net               #</span>
+<span class="c1">###########################################################################</span>
+<span class="sd">&quot;&quot;&quot;The main `verdi` click group.&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">difflib</span>
+<span class="kn">import</span> <span class="nn">click</span>
+
+<span class="kn">from</span> <span class="nn">aiida.cmdline.params</span> <span class="kn">import</span> <span class="n">options</span><span class="p">,</span> <span class="n">types</span>
+
+<span class="n">GIU</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s1">&#39;ABzY8%U8Kw0{@klyK?I~3`Ki?#qHQ&amp;IIM|J;6yB`9_+{&amp;w)p(JK}vokj-11jhve8xcx?dZ&gt;+9nwrEF!x&#39;</span>
+    <span class="s1">&#39;*S&gt;9A+EWYrR?6GA-u?jFa+et65GF@1+D{%8{C~xjt%&gt;uVM4RTSS?j2M)XH%T#&gt;M{K$lE2XGD`&lt;aYaOFU&#39;</span>
+    <span class="s1">&#39;it|Wh*Q?-n)Bs}n0}hc2!oAkoBQyEOaSkqfd=oq;sTs(x@(H&amp;qOKnXDFA52~gq4CvNbk%p9&amp;pE+KH!2l&#39;</span>
+    <span class="s1">&#39;m^MThvE$xC2x*&gt;RS0T67213wbAs!SZmn+;(-m!&gt;f(T@e%@oxd`yRBp9nu+9N`4xv8AS@O$CaQ;7FXzM=&#39;</span>
+    <span class="s1">&#39;ug^$?3ta2551EDL`wK4|Cm%RnJdS#0UF&lt;by)B&lt;XQ+8vZ}j$b$@4Q1#kj{G|g6{1#bLd+w)SZ16_wTnfo&#39;</span>
+    <span class="s1">&#39;&lt;QXMd-s4ImikcvSj#7~2Yq-1l@K)y|aS%KqzrV$m)VgR$xs8bGr7%$lJ_ObpObgS_mhZ7M97P}ATen9Z&#39;</span>
+    <span class="s1">&#39;il^7;P;&lt;I08Mv_;!$Eb2P)F|&amp;t+wT?&gt;wVwe&lt;Fez}g$`Zi&gt;DkcfdNjtUv1N^iSQui#TL(q!FmIeKb!yW4&#39;</span>
+    <span class="s1">&#39;|L`@!@-4x6B6I^ptRdH+4o0ODM;1_f^}4@LMe@#_YHz0wQdq@d)@n)uYNtAb2OLo&amp;fpBkct5{~3kbRag&#39;</span>
+    <span class="s1">&#39;^_5QG%qrTksHMXAYAQoz1#2wtHCy0}h?CJtzv&amp;@Q?^9rd&amp;02;isB7NJMMr7F@&gt;$!ELj(sbwzIR4)rnch&#39;</span>
+    <span class="s1">&#39;=oVZrG;8)%R6}FUk*fv2O&amp;!#ZA)$HloK9!es&amp;4Eb+h=OIyWFha(8PPy9u?NqfkuPYg;GO1RVzBLX)7OR&#39;</span>
+    <span class="s1">&#39;MM&gt;1hEM`-96mGjJ+A!e-_}4X{M|4CkKE~uF4j+LW#6IsFa*_da_mLqzr)E&lt;`</span><span class="si">%i</span><span class="s1">kthkMO2&lt;vdLNlWMLBr&#39;</span>
+    <span class="s1">&#39;ceLb&amp;%p&lt;SlbT6NAh+Tz~72^U2(&amp;}V&amp;4Hd8r#{;M;(*9swiCZ2RIx2&amp;yLd0wV^AQs5$V63{q89vFwvV_?&#39;</span>
+    <span class="s1">&#39;Vk!HuDTPr83yG~Wm}YG_*0gIL7B~{&gt;&gt;65cNMtpDE*VejqZV^MyewPJJAS*VM6jY;QY#g7gOKgPbFg{@;&#39;</span>
+    <span class="s1">&#39;YDL6Gbxxr|2T&amp;BQunB?PBetq?X&lt;bp0b)qASa|!TspwLp%9CE7Y#XI@}Wa3E6#mZC62W0F#k&gt;&gt;jW1hFF7&#39;</span>
+    <span class="s1">&#39;&amp;&gt;EaYkKYqIa_ld(Z@AJT+lJ(Pd;+?&lt;&amp;&amp;M&gt;A0agti19^z3n4Z6_WG}c~_+XHyJI_iau7+V$#YA$pJ~H)y&#39;</span>
+    <span class="s1">&#39;HEVy1D?5^Sw`tb@{nnNNo=eSMZLf0&gt;m^A@7f{y$nb_HJWgLRtZ?&lt;VqGlx*4Tkeba)%-_D&amp;vG1uUL0(DE&#39;</span>
+    <span class="s1">&#39;K)&amp;;4yGQ@C_0d4x%#)?G?XfN*{PN40X3QeC3@;*9uMwABesu!8?(0#&gt;x2?*&gt;SwM?JoQ&gt;p|-1ZRU0#+{^&#39;</span>
+    <span class="s1">&#39;UhK22+~oR9k7rh&lt;eeM8~?e5)U+OloQYk-ebZsXE8KFmR5;uE)C;wlw}@dIbx-{${l+HbC|PrK*6{Q(q6&#39;</span>
+    <span class="s1">&#39;jMpni4Be``)PJJRU&gt;(GH9y|jm){jY9_xAI4N_EfU#4taTUXFY4a4l$v=N-+f+w&amp;wuH;Z(6p6#=n8XwlZ&#39;</span>
+    <span class="s1">&#39;;*L&amp;-rcL~T_vEm@#-Xi8&amp;g06!MO+R(&lt;NRBkE$(0Y_~^2C_k&lt;o~_a3*HAHukZKXCs8^y%UZZVvze&#39;</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="MostSimilarCommandGroup"><a class="viewcode-back" href="../../../../apidoc/aiida.cmdline.commands.html#aiida.cmdline.commands.cmd_verdi.MostSimilarCommandGroup">[docs]</a><span class="k">class</span> <span class="nc">MostSimilarCommandGroup</span><span class="p">(</span><span class="n">click</span><span class="o">.</span><span class="n">Group</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Overloads the get_command to display a list of possible command</span>
+<span class="sd">    candidates if the command could not be found with an exact match.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="MostSimilarCommandGroup.get_command"><a class="viewcode-back" href="../../../../apidoc/aiida.cmdline.commands.html#aiida.cmdline.commands.cmd_verdi.MostSimilarCommandGroup.get_command">[docs]</a>    <span class="k">def</span> <span class="nf">get_command</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">cmd_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Override the default click.Group get_command with one giving the user</span>
+<span class="sd">        a selection of possible commands if the exact command name could not be found.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cmd</span> <span class="o">=</span> <span class="n">click</span><span class="o">.</span><span class="n">Group</span><span class="o">.</span><span class="n">get_command</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">cmd_name</span><span class="p">)</span>
+
+        <span class="c1"># return the exact match</span>
+        <span class="k">if</span> <span class="n">cmd</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cmd</span>
+
+        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">cmd_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">hex</span><span class="p">(),</span> <span class="mi">16</span><span class="p">)</span> <span class="o">==</span> <span class="mh">0x6769757365707065</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">base64</span>
+            <span class="kn">import</span> <span class="nn">gzip</span>
+            <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="n">gzip</span><span class="o">.</span><span class="n">decompress</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b85decode</span><span class="p">(</span><span class="n">GIU</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)))</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="c1"># we might get better results with the Levenshtein distance</span>
+        <span class="c1"># or more advanced methods implemented in FuzzyWuzzy or similar libs,</span>
+        <span class="c1"># but this is an easy win for now</span>
+        <span class="n">matches</span> <span class="o">=</span> <span class="n">difflib</span><span class="o">.</span><span class="n">get_close_matches</span><span class="p">(</span><span class="n">cmd_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_commands</span><span class="p">(</span><span class="n">ctx</span><span class="p">),</span> <span class="n">cutoff</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">matches</span><span class="p">:</span>
+            <span class="c1"># single letters are sometimes not matched, try with a simple startswith</span>
+            <span class="n">matches</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">list_commands</span><span class="p">(</span><span class="n">ctx</span><span class="p">))</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">cmd_name</span><span class="p">)][:</span><span class="mi">3</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">matches</span><span class="p">:</span>
+            <span class="n">ctx</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span>
+                <span class="s2">&quot;&#39;</span><span class="si">{cmd}</span><span class="s2">&#39; is not a verdi command.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+                <span class="s1">&#39;The most similar commands are: </span><span class="se">\n</span><span class="s1">&#39;</span>
+                <span class="s1">&#39;</span><span class="si">{matches}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cmd</span><span class="o">=</span><span class="n">cmd_name</span><span class="p">,</span> <span class="n">matches</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">matches</span><span class="p">)))</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ctx</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="s2">&quot;&#39;</span><span class="si">{cmd}</span><span class="s2">&#39; is not a verdi command.</span><span class="se">\n\n</span><span class="s2">No similar commands found.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cmd</span><span class="o">=</span><span class="n">cmd_name</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="kc">None</span></div></div>
+
+
+<span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="bp">cls</span><span class="o">=</span><span class="n">MostSimilarCommandGroup</span><span class="p">,</span> <span class="n">context_settings</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;help_option_names&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;-h&#39;</span><span class="p">,</span> <span class="s1">&#39;--help&#39;</span><span class="p">]})</span>
+<span class="nd">@options</span><span class="o">.</span><span class="n">PROFILE</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">types</span><span class="o">.</span><span class="n">ProfileParamType</span><span class="p">(</span><span class="n">load_profile</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">version_option</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;-v&#39;</span><span class="p">,</span> <span class="s1">&#39;--version&#39;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s1">&#39;AiiDA version </span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">pass_context</span>
+<span class="k">def</span> <span class="nf">verdi</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">profile</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;The command line interface of AiiDA.&quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">aiida.common</span> <span class="kn">import</span> <span class="n">extendeddicts</span>
+    <span class="kn">from</span> <span class="nn">aiida.manage.configuration</span> <span class="kn">import</span> <span class="n">get_config</span>
+
+    <span class="k">if</span> <span class="n">ctx</span><span class="o">.</span><span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">ctx</span><span class="o">.</span><span class="n">obj</span> <span class="o">=</span> <span class="n">extendeddicts</span><span class="o">.</span><span class="n">AttributeDict</span><span class="p">()</span>
+
+    <span class="n">ctx</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
+    <span class="n">ctx</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">profile</span> <span class="o">=</span> <span class="n">profile</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

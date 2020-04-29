@@ -1,0 +1,1138 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.tools.visualization.graph &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/togglebutton.js"></script>
+        <script src="../../../../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../aiida.html">aiida</a> &raquo;</li>
+        
+      <li>aiida.tools.visualization.graph</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for aiida.tools.visualization.graph</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1">###########################################################################</span>
+<span class="c1"># Copyright (c), The AiiDA team. All rights reserved.                     #</span>
+<span class="c1"># This file is part of the AiiDA code.                                    #</span>
+<span class="c1">#                                                                         #</span>
+<span class="c1"># The code is hosted on GitHub at https://github.com/aiidateam/aiida-core #</span>
+<span class="c1"># For further information on the license, see the LICENSE.txt file        #</span>
+<span class="c1"># For further information please visit http://www.aiida.net               #</span>
+<span class="c1">###########################################################################</span>
+<span class="sd">&quot;&quot;&quot; provides functionality to create graphs of the AiiDa data providence,</span>
+<span class="sd">*via* graphviz.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">graphviz</span> <span class="kn">import</span> <span class="n">Digraph</span>
+
+<span class="kn">from</span> <span class="nn">aiida</span> <span class="kn">import</span> <span class="n">orm</span>
+<span class="kn">from</span> <span class="nn">aiida.common</span> <span class="kn">import</span> <span class="n">LinkType</span>
+<span class="kn">from</span> <span class="nn">aiida.orm.utils.links</span> <span class="kn">import</span> <span class="n">LinkPair</span>
+<span class="kn">from</span> <span class="nn">aiida.tools.graph.graph_traversers</span> <span class="kn">import</span> <span class="n">traverse_graph</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Graph&#39;</span><span class="p">,</span> <span class="s1">&#39;default_link_styles&#39;</span><span class="p">,</span> <span class="s1">&#39;default_node_styles&#39;</span><span class="p">,</span> <span class="s1">&#39;pstate_node_styles&#39;</span><span class="p">,</span> <span class="s1">&#39;default_node_sublabels&#39;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="default_link_styles"><a class="viewcode-back" href="../../../../apidoc/aiida.tools.visualization.html#aiida.tools.visualization.default_link_styles">[docs]</a><span class="k">def</span> <span class="nf">default_link_styles</span><span class="p">(</span><span class="n">link_pair</span><span class="p">,</span> <span class="n">add_label</span><span class="p">,</span> <span class="n">add_type</span><span class="p">):</span>
+    <span class="c1"># type: (LinkPair, bool, bool) -&gt; dict</span>
+    <span class="sd">&quot;&quot;&quot;map link_pair to a graphviz edge style</span>
+
+<span class="sd">    :param link_type: a LinkPair attribute</span>
+<span class="sd">    :type link_type: aiida.orm.utils.links.LinkPair</span>
+<span class="sd">    :param add_label: include link label</span>
+<span class="sd">    :type add_label: bool</span>
+<span class="sd">    :param add_type: include link type</span>
+<span class="sd">    :type add_type: bool</span>
+<span class="sd">    :rtype: dict</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">style</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">LinkType</span><span class="o">.</span><span class="n">INPUT_CALC</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;style&#39;</span><span class="p">:</span> <span class="s1">&#39;solid&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;#000000&#39;</span>  <span class="c1"># black</span>
+        <span class="p">},</span>
+        <span class="n">LinkType</span><span class="o">.</span><span class="n">INPUT_WORK</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;style&#39;</span><span class="p">:</span> <span class="s1">&#39;dashed&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;#000000&#39;</span>  <span class="c1"># black</span>
+        <span class="p">},</span>
+        <span class="n">LinkType</span><span class="o">.</span><span class="n">CALL_CALC</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;style&#39;</span><span class="p">:</span> <span class="s1">&#39;dotted&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;#000000&#39;</span>  <span class="c1"># black</span>
+        <span class="p">},</span>
+        <span class="n">LinkType</span><span class="o">.</span><span class="n">CALL_WORK</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;style&#39;</span><span class="p">:</span> <span class="s1">&#39;dotted&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;#000000&#39;</span>  <span class="c1"># black</span>
+        <span class="p">},</span>
+        <span class="n">LinkType</span><span class="o">.</span><span class="n">CREATE</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;style&#39;</span><span class="p">:</span> <span class="s1">&#39;solid&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;#000000&#39;</span>  <span class="c1"># black</span>
+        <span class="p">},</span>
+        <span class="n">LinkType</span><span class="o">.</span><span class="n">RETURN</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;style&#39;</span><span class="p">:</span> <span class="s1">&#39;dashed&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;#000000&#39;</span>  <span class="c1"># black</span>
+        <span class="p">}</span>
+    <span class="p">}[</span><span class="n">link_pair</span><span class="o">.</span><span class="n">link_type</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">add_label</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">add_type</span><span class="p">:</span>
+        <span class="n">style</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">link_pair</span><span class="o">.</span><span class="n">link_label</span>
+    <span class="k">elif</span> <span class="n">add_type</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">add_label</span><span class="p">:</span>
+        <span class="n">style</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">link_pair</span><span class="o">.</span><span class="n">link_type</span><span class="o">.</span><span class="n">name</span>
+    <span class="k">elif</span> <span class="n">add_label</span> <span class="ow">and</span> <span class="n">add_type</span><span class="p">:</span>
+        <span class="n">style</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">link_pair</span><span class="o">.</span><span class="n">link_type</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">link_pair</span><span class="o">.</span><span class="n">link_label</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">style</span></div>
+
+
+<div class="viewcode-block" id="default_node_styles"><a class="viewcode-back" href="../../../../apidoc/aiida.tools.visualization.html#aiida.tools.visualization.default_node_styles">[docs]</a><span class="k">def</span> <span class="nf">default_node_styles</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;map a node to a graphviz node style</span>
+
+<span class="sd">    :param node: the node to map</span>
+<span class="sd">    :type node: aiida.orm.nodes.node.Node</span>
+<span class="sd">    :rtype: dict</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">class_node_type</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">class_node_type</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">default</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">get_style_default</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="n">default</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;shape&#39;</span><span class="p">:</span> <span class="s1">&#39;ellipse&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;style&#39;</span><span class="p">:</span> <span class="s1">&#39;filled&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;fillcolor&#39;</span><span class="p">:</span> <span class="s1">&#39;#8cd499ff&#39;</span><span class="p">,</span>  <span class="c1"># green,</span>
+            <span class="s1">&#39;penwidth&#39;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">}</span>
+
+    <span class="n">node_type_map</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;data.code.Code.&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;shape&#39;</span><span class="p">:</span> <span class="s1">&#39;ellipse&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;style&#39;</span><span class="p">:</span> <span class="s1">&#39;filled&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;fillcolor&#39;</span><span class="p">:</span> <span class="s1">&#39;#4ca4b9aa&#39;</span><span class="p">,</span>  <span class="c1"># blue</span>
+            <span class="s1">&#39;penwidth&#39;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;process.calculation.calcjob.CalcJobNode.&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;shape&#39;</span><span class="p">:</span> <span class="s1">&#39;rectangle&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;style&#39;</span><span class="p">:</span> <span class="s1">&#39;filled&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;fillcolor&#39;</span><span class="p">:</span> <span class="s1">&#39;#de707fff&#39;</span><span class="p">,</span>  <span class="c1"># red</span>
+            <span class="s1">&#39;penwidth&#39;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;process.calculation.calcfunction.CalcFunctionNode.&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;shape&#39;</span><span class="p">:</span> <span class="s1">&#39;rectangle&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;style&#39;</span><span class="p">:</span> <span class="s1">&#39;filled&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;fillcolor&#39;</span><span class="p">:</span> <span class="s1">&#39;#de707f77&#39;</span><span class="p">,</span>  <span class="c1"># red</span>
+            <span class="s1">&#39;penwidth&#39;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;process.workflow.workchain.WorkChainNode.&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;shape&#39;</span><span class="p">:</span> <span class="s1">&#39;rectangle&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;style&#39;</span><span class="p">:</span> <span class="s1">&#39;filled&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;fillcolor&#39;</span><span class="p">:</span> <span class="s1">&#39;#e38851ff&#39;</span><span class="p">,</span>  <span class="c1"># orange</span>
+            <span class="s1">&#39;penwidth&#39;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;process.workflow.workfunction.WorkFunctionNode.&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;shape&#39;</span><span class="p">:</span> <span class="s1">&#39;rectangle&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;style&#39;</span><span class="p">:</span> <span class="s1">&#39;filled&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;fillcolor&#39;</span><span class="p">:</span> <span class="s1">&#39;#e38851ff&#39;</span><span class="p">,</span>  <span class="c1"># orange</span>
+            <span class="s1">&#39;penwidth&#39;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">node_style</span> <span class="o">=</span> <span class="n">node_type_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">class_node_type</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">node_style</span></div>
+
+
+<div class="viewcode-block" id="pstate_node_styles"><a class="viewcode-back" href="../../../../apidoc/aiida.tools.visualization.html#aiida.tools.visualization.pstate_node_styles">[docs]</a><span class="k">def</span> <span class="nf">pstate_node_styles</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;map a process node to a graphviz node style</span>
+
+<span class="sd">    :param node: the node to map</span>
+<span class="sd">    :type node: aiida.orm.nodes.node.Node</span>
+<span class="sd">    :rtype: dict</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">class_node_type</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">class_node_type</span>
+
+    <span class="n">default</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;shape&#39;</span><span class="p">:</span> <span class="s1">&#39;rectangle&#39;</span><span class="p">,</span> <span class="s1">&#39;pencolor&#39;</span><span class="p">:</span> <span class="s1">&#39;black&#39;</span><span class="p">}</span>
+
+    <span class="n">process_map</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;process.calculation.calcjob.CalcJobNode.&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;shape&#39;</span><span class="p">:</span> <span class="s1">&#39;ellipse&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;style&#39;</span><span class="p">:</span> <span class="s1">&#39;filled&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;penwidth&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s1">&#39;fillcolor&#39;</span><span class="p">:</span> <span class="s1">&#39;#ffffffff&#39;</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;process.calculation.calcfunction.CalcFunctionNode.&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;shape&#39;</span><span class="p">:</span> <span class="s1">&#39;ellipse&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;style&#39;</span><span class="p">:</span> <span class="s1">&#39;filled&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;penwidth&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s1">&#39;fillcolor&#39;</span><span class="p">:</span> <span class="s1">&#39;#ffffffff&#39;</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;process.workflow.workchain.WorkChainNode.&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;shape&#39;</span><span class="p">:</span> <span class="s1">&#39;polygon&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;sides&#39;</span><span class="p">:</span> <span class="s1">&#39;6&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;style&#39;</span><span class="p">:</span> <span class="s1">&#39;filled&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;penwidth&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s1">&#39;fillcolor&#39;</span><span class="p">:</span> <span class="s1">&#39;#ffffffff&#39;</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;process.workflow.workfunction.WorkFunctionNode.&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;shape&#39;</span><span class="p">:</span> <span class="s1">&#39;polygon&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;sides&#39;</span><span class="p">:</span> <span class="s1">&#39;6&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;style&#39;</span><span class="p">:</span> <span class="s1">&#39;filled&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;penwidth&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s1">&#39;fillcolor&#39;</span><span class="p">:</span> <span class="s1">&#39;#ffffffff&#39;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">node_style</span> <span class="o">=</span> <span class="n">process_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">class_node_type</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">orm</span><span class="o">.</span><span class="n">ProcessNode</span><span class="p">):</span>
+        <span class="c1"># style process node, based on success/failure of process</span>
+        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">is_failed</span> <span class="ow">or</span> <span class="n">node</span><span class="o">.</span><span class="n">is_excepted</span> <span class="ow">or</span> <span class="n">node</span><span class="o">.</span><span class="n">is_killed</span><span class="p">:</span>
+            <span class="n">node_style</span><span class="p">[</span><span class="s1">&#39;fillcolor&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;#de707fff&#39;</span>  <span class="c1"># red</span>
+        <span class="k">elif</span> <span class="n">node</span><span class="o">.</span><span class="n">is_finished_ok</span><span class="p">:</span>
+            <span class="n">node_style</span><span class="p">[</span><span class="s1">&#39;fillcolor&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;#8cd499ff&#39;</span>  <span class="c1"># green</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Note: this conditional will hit the states CREATED, WAITING and RUNNING</span>
+            <span class="n">node_style</span><span class="p">[</span><span class="s1">&#39;fillcolor&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;#e38851ff&#39;</span>  <span class="c1"># orange</span>
+
+    <span class="k">return</span> <span class="n">node_style</span></div>
+
+
+<div class="viewcode-block" id="default_node_sublabels"><a class="viewcode-back" href="../../../../apidoc/aiida.tools.visualization.html#aiida.tools.visualization.default_node_sublabels">[docs]</a><span class="k">def</span> <span class="nf">default_node_sublabels</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;function mapping nodes to a sublabel</span>
+<span class="sd">    (e.g. specifying some attribute values)</span>
+
+<span class="sd">    :param node: the node to map</span>
+<span class="sd">    :type node: aiida.orm.nodes.node.Node</span>
+<span class="sd">    :rtype: str</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># pylint: disable=too-many-branches</span>
+
+    <span class="n">class_node_type</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">class_node_type</span>
+    <span class="k">if</span> <span class="n">class_node_type</span> <span class="o">==</span> <span class="s1">&#39;data.int.Int.&#39;</span><span class="p">:</span>
+        <span class="n">sublabel</span> <span class="o">=</span> <span class="s1">&#39;value: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">class_node_type</span> <span class="o">==</span> <span class="s1">&#39;data.float.Float.&#39;</span><span class="p">:</span>
+        <span class="n">sublabel</span> <span class="o">=</span> <span class="s1">&#39;value: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">class_node_type</span> <span class="o">==</span> <span class="s1">&#39;data.str.Str.&#39;</span><span class="p">:</span>
+        <span class="n">sublabel</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">class_node_type</span> <span class="o">==</span> <span class="s1">&#39;data.bool.Bool.&#39;</span><span class="p">:</span>
+        <span class="n">sublabel</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">class_node_type</span> <span class="o">==</span> <span class="s1">&#39;data.code.Code.&#39;</span><span class="p">:</span>
+        <span class="n">sublabel</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">@</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">get_execname</span><span class="p">()),</span> <span class="n">node</span><span class="o">.</span><span class="n">get_computer_name</span><span class="p">())</span>
+    <span class="k">elif</span> <span class="n">class_node_type</span> <span class="o">==</span> <span class="s1">&#39;data.singlefile.SinglefileData.&#39;</span><span class="p">:</span>
+        <span class="n">sublabel</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">filename</span>
+    <span class="k">elif</span> <span class="n">class_node_type</span> <span class="o">==</span> <span class="s1">&#39;data.remote.RemoteData.&#39;</span><span class="p">:</span>
+        <span class="n">sublabel</span> <span class="o">=</span> <span class="s1">&#39;@</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">get_computer_name</span><span class="p">())</span>
+    <span class="k">elif</span> <span class="n">class_node_type</span> <span class="o">==</span> <span class="s1">&#39;data.structure.StructureData.&#39;</span><span class="p">:</span>
+        <span class="n">sublabel</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">get_formula</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">class_node_type</span> <span class="o">==</span> <span class="s1">&#39;data.cif.CifData.&#39;</span><span class="p">:</span>
+        <span class="n">formulae</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">get_formulae</span><span class="p">()</span> <span class="ow">or</span> <span class="p">[]]</span>
+        <span class="n">sg_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">get_spacegroup_numbers</span><span class="p">()</span> <span class="ow">or</span> <span class="p">[]]</span>
+        <span class="n">sublabel_lines</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">formulae</span><span class="p">:</span>
+            <span class="n">sublabel_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">formulae</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">sg_numbers</span><span class="p">:</span>
+            <span class="n">sublabel_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sg_numbers</span><span class="p">))</span>
+        <span class="n">sublabel</span> <span class="o">=</span> <span class="s1">&#39;; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sublabel_lines</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">class_node_type</span> <span class="o">==</span> <span class="s1">&#39;data.upf.UpfData.&#39;</span><span class="p">:</span>
+        <span class="n">sublabel</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s1">&#39;element&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">orm</span><span class="o">.</span><span class="n">ProcessNode</span><span class="p">):</span>
+        <span class="n">sublabel</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">process_state</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">sublabel</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;State: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">process_state</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">exit_status</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">sublabel</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Exit Code: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">exit_status</span><span class="p">))</span>
+        <span class="n">sublabel</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sublabel</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">sublabel</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">get_description</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">sublabel</span></div>
+
+
+<span class="k">def</span> <span class="nf">get_node_id_label</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">id_type</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;return an identifier str for the node &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">id_type</span> <span class="o">==</span> <span class="s1">&#39;pk&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">node</span><span class="o">.</span><span class="n">pk</span>
+    <span class="k">if</span> <span class="n">id_type</span> <span class="o">==</span> <span class="s1">&#39;uuid&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">node</span><span class="o">.</span><span class="n">uuid</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">id_type</span> <span class="o">==</span> <span class="s1">&#39;label&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">node</span><span class="o">.</span><span class="n">label</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;node_id_type not recognised: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">id_type</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">_add_graphviz_node</span><span class="p">(</span>
+    <span class="n">graph</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">node_style_func</span><span class="p">,</span> <span class="n">node_sublabel_func</span><span class="p">,</span> <span class="n">style_override</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_sublabels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">id_type</span><span class="o">=</span><span class="s1">&#39;pk&#39;</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;create a node in the graph</span>
+
+<span class="sd">    The first line of the node text is always &#39;&lt;node.name&gt; (&lt;node.pk&gt;)&#39;.</span>
+<span class="sd">    Then, if ``include_sublabels=True``, subsequent lines are added,</span>
+<span class="sd">    which are node type dependant.</span>
+
+<span class="sd">    :param graph: the graphviz.Digraph to add the node to</span>
+<span class="sd">    :param node: the node to add</span>
+<span class="sd">    :type node: aiida.orm.nodes.node.Node</span>
+<span class="sd">    :param node_style_func: callable mapping a node instance to a dictionary defining the graphviz node style</span>
+<span class="sd">    :param node_sublabel_func: callable mapping a node instance to a sub-label for the node text</span>
+<span class="sd">    :param style_override: style dictionary, whose keys will override the final computed style</span>
+<span class="sd">    :type style_override: None or dict</span>
+<span class="sd">    :param include_sublabels: whether to include the sublabels for nodes</span>
+<span class="sd">    :type include_sublabels: bool</span>
+<span class="sd">    :param id_type: the type of identifier to use for node labels (&#39;pk&#39; or &#39;uuid&#39;)</span>
+<span class="sd">    :type id_type: str</span>
+
+<span class="sd">    nodes are styled based on the node type</span>
+
+<span class="sd">    For subclasses of Data, the ``class_node_type`` attribute is used</span>
+<span class="sd">    for mapping to type specific styles</span>
+
+<span class="sd">    For subclasses of ProcessNode, we choose styles to distinguish between</span>
+<span class="sd">    types, and also color the nodes for successful/failed processes</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># pylint: disable=too-many-arguments</span>
+    <span class="n">node_style</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">orm</span><span class="o">.</span><span class="n">Data</span><span class="p">):</span>
+        <span class="n">node_style</span> <span class="o">=</span> <span class="n">node_style_func</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> (</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">get_node_id_label</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">id_type</span><span class="p">))]</span>
+
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">orm</span><span class="o">.</span><span class="n">ProcessNode</span><span class="p">):</span>
+        <span class="n">node_style</span> <span class="o">=</span> <span class="n">node_style_func</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+
+        <span class="n">label</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> (</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">node</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">process_label</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">node</span><span class="o">.</span><span class="n">process_label</span><span class="p">,</span>
+                <span class="n">get_node_id_label</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">id_type</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">include_sublabels</span><span class="p">:</span>
+        <span class="n">sublabel</span> <span class="o">=</span> <span class="n">node_sublabel_func</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">sublabel</span><span class="p">:</span>
+            <span class="n">label</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sublabel</span><span class="p">)</span>
+
+    <span class="n">node_style</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">style_override</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">node_style</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">style_override</span><span class="p">)</span>
+
+    <span class="c1"># coerce node style values to strings, required by graphviz</span>
+    <span class="n">node_style</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">node_style</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+    <span class="k">return</span> <span class="n">graph</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">&#39;N</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">pk</span><span class="p">),</span> <span class="o">**</span><span class="n">node_style</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_add_graphviz_edge</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">in_node</span><span class="p">,</span> <span class="n">out_node</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;add graphviz edge between two nodes</span>
+
+<span class="sd">    :param graph: the graphviz.DiGraph to add the edge to</span>
+<span class="sd">    :param in_node: the head node</span>
+<span class="sd">    :param out_node: the tail node</span>
+<span class="sd">    :param style: the graphviz style (Default value = None)</span>
+<span class="sd">    :type style: dict or None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">style</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">style</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c1"># coerce node style values to strings</span>
+    <span class="n">style</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">style</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+    <span class="k">return</span> <span class="n">graph</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">&#39;N</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">in_node</span><span class="o">.</span><span class="n">pk</span><span class="p">),</span> <span class="s1">&#39;N</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">out_node</span><span class="o">.</span><span class="n">pk</span><span class="p">),</span> <span class="o">**</span><span class="n">style</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Graph"><a class="viewcode-back" href="../../../../apidoc/aiida.tools.visualization.html#aiida.tools.visualization.Graph">[docs]</a><span class="k">class</span> <span class="nc">Graph</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;a class to create graphviz graphs of the AiiDA node provenance&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Graph.__init__"><a class="viewcode-back" href="../../../../apidoc/aiida.tools.visualization.html#aiida.tools.visualization.Graph.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">engine</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">graph_attr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">global_node_style</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">global_edge_style</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">include_sublabels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">link_style_fn</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">node_style_fn</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">node_sublabel_fn</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">node_id_type</span><span class="o">=</span><span class="s1">&#39;pk&#39;</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;a class to create graphviz graphs of the AiiDA node provenance</span>
+
+<span class="sd">        Nodes and edges, are cached, so that they are only created once</span>
+
+<span class="sd">        :param engine: the graphviz engine, e.g. dot, circo (Default value = None)</span>
+<span class="sd">        :type engine: str or None</span>
+<span class="sd">        :param graph_attr: attributes for the graphviz graph (Default value = None)</span>
+<span class="sd">        :type graph_attr: dict or None</span>
+<span class="sd">        :param global_node_style: styles which will be added to all nodes.</span>
+<span class="sd">            Note this will override any builtin attributes (Default value = None)</span>
+<span class="sd">        :type global_node_style: dict or None</span>
+<span class="sd">        :param global_edge_style: styles which will be added to all edges.</span>
+<span class="sd">            Note this will override any builtin attributes (Default value = None)</span>
+<span class="sd">        :type global_edge_style: dict or None</span>
+<span class="sd">        :param include_sublabels: if True, the note text will include node dependant sub-labels (Default value = True)</span>
+<span class="sd">        :type include_sublabels: bool</span>
+<span class="sd">        :param link_style_fn: callable mapping LinkType to graphviz style dict;</span>
+<span class="sd">            link_style_fn(link_type) -&gt; dict (Default value = None)</span>
+<span class="sd">        :param node_sublabel_fn: callable mapping nodes to a graphviz style dict;</span>
+<span class="sd">            node_sublabel_fn(node) -&gt; dict (Default value = None)</span>
+<span class="sd">        :param node_sublabel_fn: callable mapping data node to a sublabel (e.g. specifying some attribute values)</span>
+<span class="sd">            node_sublabel_fn(node) -&gt; str (Default value = None)</span>
+<span class="sd">        :param node_id_type: the type of identifier to within the node text (&#39;pk&#39;, &#39;uuid&#39; or &#39;label&#39;)</span>
+<span class="sd">        :type node_id_type: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=too-many-arguments</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span> <span class="o">=</span> <span class="n">Digraph</span><span class="p">(</span><span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">graph_attr</span><span class="o">=</span><span class="n">graph_attr</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_edges</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_global_node_style</span> <span class="o">=</span> <span class="n">global_node_style</span> <span class="ow">or</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_global_edge_style</span> <span class="o">=</span> <span class="n">global_edge_style</span> <span class="ow">or</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_include_sublabels</span> <span class="o">=</span> <span class="n">include_sublabels</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_link_styles</span> <span class="o">=</span> <span class="n">link_style_fn</span> <span class="ow">or</span> <span class="n">default_link_styles</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_node_styles</span> <span class="o">=</span> <span class="n">node_style_fn</span> <span class="ow">or</span> <span class="n">default_node_styles</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_node_sublabels</span> <span class="o">=</span> <span class="n">node_sublabel_fn</span> <span class="ow">or</span> <span class="n">default_node_sublabels</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_node_id_type</span> <span class="o">=</span> <span class="n">node_id_type</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">graphviz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;return a copy of the graphviz.Digraph&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;return a copy of the nodes&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">edges</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;return a copy of the edges&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_edges</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Graph._load_node"><a class="viewcode-back" href="../../../../apidoc/aiida.tools.visualization.html#aiida.tools.visualization.Graph._load_node">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_load_node</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; load a node (if not already loaded)</span>
+
+<span class="sd">        :param node: node or node pk/uuid</span>
+<span class="sd">        :type node: int or str or aiida.orm.nodes.node.Node</span>
+<span class="sd">        :returns: aiida.orm.nodes.node.Node</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="n">orm</span><span class="o">.</span><span class="n">load_node</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">node</span></div>
+
+<div class="viewcode-block" id="Graph._default_link_types"><a class="viewcode-back" href="../../../../apidoc/aiida.tools.visualization.html#aiida.tools.visualization.Graph._default_link_types">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_default_link_types</span><span class="p">(</span><span class="n">link_types</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;If link_types is empty, it will return all the links_types</span>
+
+<span class="sd">        :param links: iterable with the link_types ()</span>
+<span class="sd">        :returns: list of :py:class:`aiida.common.links.LinkType`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">link_types</span><span class="p">:</span>
+            <span class="n">all_link_types</span> <span class="o">=</span> <span class="p">[</span><span class="n">LinkType</span><span class="o">.</span><span class="n">CREATE</span><span class="p">]</span>
+            <span class="n">all_link_types</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">LinkType</span><span class="o">.</span><span class="n">RETURN</span><span class="p">)</span>
+            <span class="n">all_link_types</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">LinkType</span><span class="o">.</span><span class="n">INPUT_CALC</span><span class="p">)</span>
+            <span class="n">all_link_types</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">LinkType</span><span class="o">.</span><span class="n">INPUT_WORK</span><span class="p">)</span>
+            <span class="n">all_link_types</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">LinkType</span><span class="o">.</span><span class="n">CALL_CALC</span><span class="p">)</span>
+            <span class="n">all_link_types</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">LinkType</span><span class="o">.</span><span class="n">CALL_WORK</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">all_link_types</span>
+
+        <span class="k">return</span> <span class="n">link_types</span></div>
+
+<div class="viewcode-block" id="Graph.add_node"><a class="viewcode-back" href="../../../../apidoc/aiida.tools.visualization.html#aiida.tools.visualization.Graph.add_node">[docs]</a>    <span class="k">def</span> <span class="nf">add_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">style_override</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;add single node to the graph</span>
+
+<span class="sd">        :param node: node or node pk/uuid</span>
+<span class="sd">        :type node: int or str or aiida.orm.nodes.node.Node</span>
+<span class="sd">        :param style_override: graphviz style parameters that will override default values</span>
+<span class="sd">        :type style_override: dict or None</span>
+<span class="sd">        :param overwrite: whether to overrite an existing node (Default value = False)</span>
+<span class="sd">        :type overwrite: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_node</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        <span class="n">style</span> <span class="o">=</span> <span class="p">{}</span> <span class="k">if</span> <span class="n">style_override</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">style_override</span>
+        <span class="n">style</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_global_node_style</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">pk</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span> <span class="ow">or</span> <span class="n">overwrite</span><span class="p">:</span>
+            <span class="n">_add_graphviz_node</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="p">,</span>
+                <span class="n">node</span><span class="p">,</span>
+                <span class="n">node_style_func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_node_styles</span><span class="p">,</span>
+                <span class="n">node_sublabel_func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_node_sublabels</span><span class="p">,</span>
+                <span class="n">style_override</span><span class="o">=</span><span class="n">style</span><span class="p">,</span>
+                <span class="n">include_sublabels</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_include_sublabels</span><span class="p">,</span>
+                <span class="n">id_type</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_node_id_type</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">pk</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">node</span></div>
+
+<div class="viewcode-block" id="Graph.add_edge"><a class="viewcode-back" href="../../../../apidoc/aiida.tools.visualization.html#aiida.tools.visualization.Graph.add_edge">[docs]</a>    <span class="k">def</span> <span class="nf">add_edge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_node</span><span class="p">,</span> <span class="n">out_node</span><span class="p">,</span> <span class="n">link_pair</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;add single node to the graph</span>
+
+<span class="sd">        :param in_node: node or node pk/uuid</span>
+<span class="sd">        :type in_node: int or aiida.orm.nodes.node.Node</span>
+<span class="sd">        :param out_node: node or node pk/uuid</span>
+<span class="sd">        :type out_node: int or str or aiida.orm.nodes.node.Node</span>
+<span class="sd">        :param link_pair: defining the relationship between the nodes</span>
+<span class="sd">        :type link_pair: None or aiida.orm.utils.links.LinkPair</span>
+<span class="sd">        :param style: graphviz style parameters (Default value = None)</span>
+<span class="sd">        :type style: dict or None</span>
+<span class="sd">        :param overwrite: whether to overrite existing edge (Default value = False)</span>
+<span class="sd">        :type overwrite: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">in_node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_node</span><span class="p">(</span><span class="n">in_node</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">in_node</span><span class="o">.</span><span class="n">pk</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s1">&#39;in_node pk=</span><span class="si">{}</span><span class="s1"> must have already been added to the graph&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">in_node</span><span class="o">.</span><span class="n">pk</span><span class="p">))</span>
+        <span class="n">out_node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_node</span><span class="p">(</span><span class="n">out_node</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">out_node</span><span class="o">.</span><span class="n">pk</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s1">&#39;out_node pk=</span><span class="si">{}</span><span class="s1"> must have already been added to the graph&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">out_node</span><span class="o">.</span><span class="n">pk</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">in_node</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span> <span class="n">out_node</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span> <span class="n">link_pair</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_edges</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">overwrite</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="n">style</span> <span class="o">=</span> <span class="p">{}</span> <span class="k">if</span> <span class="n">style</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">style</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_edges</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">in_node</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span> <span class="n">out_node</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span> <span class="n">link_pair</span><span class="p">))</span>
+        <span class="n">style</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_global_edge_style</span><span class="p">)</span>
+
+        <span class="n">_add_graphviz_edge</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="p">,</span> <span class="n">in_node</span><span class="p">,</span> <span class="n">out_node</span><span class="p">,</span> <span class="n">style</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Graph._convert_link_types"><a class="viewcode-back" href="../../../../apidoc/aiida.tools.visualization.html#aiida.tools.visualization.Graph._convert_link_types">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_convert_link_types</span><span class="p">(</span><span class="n">link_types</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;convert link types, which may be strings, to a member of LinkType&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">link_types</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">link_types</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">link_types</span> <span class="o">=</span> <span class="p">[</span><span class="n">link_types</span><span class="p">]</span>
+        <span class="n">link_types</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">([</span><span class="nb">getattr</span><span class="p">(</span><span class="n">LinkType</span><span class="p">,</span> <span class="n">l</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">l</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">link_types</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">link_types</span></div>
+
+<div class="viewcode-block" id="Graph.add_incoming"><a class="viewcode-back" href="../../../../apidoc/aiida.tools.visualization.html#aiida.tools.visualization.Graph.add_incoming">[docs]</a>    <span class="k">def</span> <span class="nf">add_incoming</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">link_types</span><span class="o">=</span><span class="p">(),</span> <span class="n">annotate_links</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_pks</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;add nodes and edges for incoming links to a node</span>
+
+<span class="sd">        :param node: node or node pk/uuid</span>
+<span class="sd">        :type node: aiida.orm.nodes.node.Node or int</span>
+<span class="sd">        :param link_types: filter by link types (Default value = ())</span>
+<span class="sd">        :type link_types: str or tuple[str] or aiida.common.links.LinkType or tuple[aiida.common.links.LinkType]</span>
+<span class="sd">        :param annotate_links: label edges with the link &#39;label&#39;, &#39;type&#39; or &#39;both&#39; (Default value = None)</span>
+<span class="sd">        :type annotate_links: bool or str</span>
+<span class="sd">        :param return_pks: whether to return a list of nodes, or list of node pks (Default value = True)</span>
+<span class="sd">        :type return_pks: bool</span>
+<span class="sd">        :returns: list of nodes or node pks</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">annotate_links</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;both&#39;</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s1">&#39;annotate_links must be one of False, &quot;label&quot;, &quot;type&quot; or &quot;both&quot;</span><span class="se">\n</span><span class="s1">instead, it is: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span>
+                <span class="nb">format</span><span class="p">(</span><span class="n">annotate_links</span><span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="c1"># incoming nodes are found traversing backwards</span>
+        <span class="n">node_pk</span> <span class="o">=</span> <span class="n">node</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="k">else</span> <span class="n">node</span><span class="o">.</span><span class="n">pk</span>
+        <span class="n">valid_link_types</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_link_types</span><span class="p">(</span><span class="n">link_types</span><span class="p">)</span>
+        <span class="n">valid_link_types</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convert_link_types</span><span class="p">(</span><span class="n">valid_link_types</span><span class="p">)</span>
+        <span class="n">traversed_graph</span> <span class="o">=</span> <span class="n">traverse_graph</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">node_pk</span><span class="p">,),</span>
+            <span class="n">max_iterations</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">get_links</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">links_backward</span><span class="o">=</span><span class="n">valid_link_types</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">traversed_nodes</span> <span class="o">=</span> <span class="n">orm</span><span class="o">.</span><span class="n">QueryBuilder</span><span class="p">()</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">orm</span><span class="o">.</span><span class="n">Node</span><span class="p">,</span>
+            <span class="n">filters</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;in&#39;</span><span class="p">:</span> <span class="n">traversed_graph</span><span class="p">[</span><span class="s1">&#39;nodes&#39;</span><span class="p">]</span>
+            <span class="p">}},</span>
+            <span class="n">project</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">],</span>
+            <span class="n">tag</span><span class="o">=</span><span class="s1">&#39;node&#39;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">traversed_nodes</span> <span class="o">=</span> <span class="p">{</span><span class="n">query_result</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">query_result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">query_result</span> <span class="ow">in</span> <span class="n">traversed_nodes</span><span class="o">.</span><span class="n">all</span><span class="p">()}</span>
+
+        <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">traversed_node</span> <span class="ow">in</span> <span class="n">traversed_nodes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">traversed_node</span><span class="p">,</span> <span class="n">style_override</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">traversed_graph</span><span class="p">[</span><span class="s1">&#39;links&#39;</span><span class="p">]:</span>
+            <span class="n">source_node</span> <span class="o">=</span> <span class="n">traversed_nodes</span><span class="p">[</span><span class="n">link</span><span class="o">.</span><span class="n">source_id</span><span class="p">]</span>
+            <span class="n">target_node</span> <span class="o">=</span> <span class="n">traversed_nodes</span><span class="p">[</span><span class="n">link</span><span class="o">.</span><span class="n">target_id</span><span class="p">]</span>
+            <span class="n">link_pair</span> <span class="o">=</span> <span class="n">LinkPair</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_convert_link_types</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">link_type</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">link</span><span class="o">.</span><span class="n">link_label</span><span class="p">)</span>
+            <span class="n">link_style</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_link_styles</span><span class="p">(</span>
+                <span class="n">link_pair</span><span class="p">,</span> <span class="n">add_label</span><span class="o">=</span><span class="n">annotate_links</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="s1">&#39;both&#39;</span><span class="p">],</span> <span class="n">add_type</span><span class="o">=</span><span class="n">annotate_links</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;both&#39;</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">source_node</span><span class="p">,</span> <span class="n">target_node</span><span class="p">,</span> <span class="n">link_pair</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">link_style</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">return_pks</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">traversed_nodes</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="c1"># else:</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">traversed_nodes</span><span class="o">.</span><span class="n">values</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="Graph.add_outgoing"><a class="viewcode-back" href="../../../../apidoc/aiida.tools.visualization.html#aiida.tools.visualization.Graph.add_outgoing">[docs]</a>    <span class="k">def</span> <span class="nf">add_outgoing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">link_types</span><span class="o">=</span><span class="p">(),</span> <span class="n">annotate_links</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_pks</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;add nodes and edges for outgoing links to a node</span>
+
+<span class="sd">        :param node: node or node pk</span>
+<span class="sd">        :type node: aiida.orm.nodes.node.Node or int</span>
+<span class="sd">        :param link_types: filter by link types (Default value = ())</span>
+<span class="sd">        :type link_types: str or tuple[str] or aiida.common.links.LinkType or tuple[aiida.common.links.LinkType]</span>
+<span class="sd">        :param annotate_links: label edges with the link &#39;label&#39;, &#39;type&#39; or &#39;both&#39; (Default value = None)</span>
+<span class="sd">        :type annotate_links: bool or str</span>
+<span class="sd">        :param return_pks: whether to return a list of nodes, or list of node pks (Default value = True)</span>
+<span class="sd">        :type return_pks: bool</span>
+<span class="sd">        :returns: list of nodes or node pks</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">annotate_links</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;both&#39;</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s1">&#39;annotate_links must be one of False, &quot;label&quot;, &quot;type&quot; or &quot;both&quot;</span><span class="se">\n</span><span class="s1">instead, it is: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span>
+                <span class="nb">format</span><span class="p">(</span><span class="n">annotate_links</span><span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="c1"># outgoing nodes are found traversing forwards</span>
+        <span class="n">node_pk</span> <span class="o">=</span> <span class="n">node</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="k">else</span> <span class="n">node</span><span class="o">.</span><span class="n">pk</span>
+        <span class="n">valid_link_types</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_link_types</span><span class="p">(</span><span class="n">link_types</span><span class="p">)</span>
+        <span class="n">valid_link_types</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convert_link_types</span><span class="p">(</span><span class="n">valid_link_types</span><span class="p">)</span>
+        <span class="n">traversed_graph</span> <span class="o">=</span> <span class="n">traverse_graph</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">node_pk</span><span class="p">,),</span>
+            <span class="n">max_iterations</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">get_links</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">links_forward</span><span class="o">=</span><span class="n">valid_link_types</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">traversed_nodes</span> <span class="o">=</span> <span class="n">orm</span><span class="o">.</span><span class="n">QueryBuilder</span><span class="p">()</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">orm</span><span class="o">.</span><span class="n">Node</span><span class="p">,</span>
+            <span class="n">filters</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;in&#39;</span><span class="p">:</span> <span class="n">traversed_graph</span><span class="p">[</span><span class="s1">&#39;nodes&#39;</span><span class="p">]</span>
+            <span class="p">}},</span>
+            <span class="n">project</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">],</span>
+            <span class="n">tag</span><span class="o">=</span><span class="s1">&#39;node&#39;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">traversed_nodes</span> <span class="o">=</span> <span class="p">{</span><span class="n">query_result</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">query_result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">query_result</span> <span class="ow">in</span> <span class="n">traversed_nodes</span><span class="o">.</span><span class="n">all</span><span class="p">()}</span>
+
+        <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">traversed_node</span> <span class="ow">in</span> <span class="n">traversed_nodes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">traversed_node</span><span class="p">,</span> <span class="n">style_override</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">traversed_graph</span><span class="p">[</span><span class="s1">&#39;links&#39;</span><span class="p">]:</span>
+            <span class="n">source_node</span> <span class="o">=</span> <span class="n">traversed_nodes</span><span class="p">[</span><span class="n">link</span><span class="o">.</span><span class="n">source_id</span><span class="p">]</span>
+            <span class="n">target_node</span> <span class="o">=</span> <span class="n">traversed_nodes</span><span class="p">[</span><span class="n">link</span><span class="o">.</span><span class="n">target_id</span><span class="p">]</span>
+            <span class="n">link_pair</span> <span class="o">=</span> <span class="n">LinkPair</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_convert_link_types</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">link_type</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">link</span><span class="o">.</span><span class="n">link_label</span><span class="p">)</span>
+            <span class="n">link_style</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_link_styles</span><span class="p">(</span>
+                <span class="n">link_pair</span><span class="p">,</span> <span class="n">add_label</span><span class="o">=</span><span class="n">annotate_links</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="s1">&#39;both&#39;</span><span class="p">],</span> <span class="n">add_type</span><span class="o">=</span><span class="n">annotate_links</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;both&#39;</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">source_node</span><span class="p">,</span> <span class="n">target_node</span><span class="p">,</span> <span class="n">link_pair</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">link_style</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">return_pks</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">traversed_nodes</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="c1"># else:</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">traversed_nodes</span><span class="o">.</span><span class="n">values</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="Graph.recurse_descendants"><a class="viewcode-back" href="../../../../apidoc/aiida.tools.visualization.html#aiida.tools.visualization.Graph.recurse_descendants">[docs]</a>    <span class="k">def</span> <span class="nf">recurse_descendants</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">origin</span><span class="p">,</span>
+        <span class="n">depth</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">link_types</span><span class="o">=</span><span class="p">(),</span>
+        <span class="n">annotate_links</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">origin_style</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">include_process_inputs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">print_func</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;add nodes and edges from an origin recursively,</span>
+<span class="sd">        following outgoing links</span>
+
+<span class="sd">        :param origin: node or node pk/uuid</span>
+<span class="sd">        :type origin: aiida.orm.nodes.node.Node or int</span>
+<span class="sd">        :param depth: if not None, stop after travelling a certain depth into the graph (Default value = None)</span>
+<span class="sd">        :type depth: None or int</span>
+<span class="sd">        :param link_types: filter by subset of link types (Default value = ())</span>
+<span class="sd">        :type link_types: tuple or str</span>
+<span class="sd">        :param annotate_links: label edges with the link &#39;label&#39;, &#39;type&#39; or &#39;both&#39; (Default value = False)</span>
+<span class="sd">        :type annotate_links: bool or str</span>
+<span class="sd">        :param origin_style: node style map for origin node (Default value = None)</span>
+<span class="sd">        :type origin_style: None or dict</span>
+<span class="sd">        :param include_calculation_inputs: include incoming links for all processes (Default value = False)</span>
+<span class="sd">        :type include_calculation_inputs: bool</span>
+<span class="sd">        :param print_func:</span>
+<span class="sd">            a function to stream information to, i.e. print_func(str)</span>
+<span class="sd">            (this feature is deprecated since `v1.1.0` and will be removed in `v2.0.0`)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=too-many-arguments,too-many-locals</span>
+        <span class="kn">import</span> <span class="nn">warnings</span>
+        <span class="kn">from</span> <span class="nn">aiida.common.warnings</span> <span class="kn">import</span> <span class="n">AiidaDeprecationWarning</span>
+        <span class="k">if</span> <span class="n">print_func</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span> <span class="c1"># pylint: disable=no-member</span>
+                <span class="s1">&#39;`print_func` is deprecated because graph traversal has been refactored&#39;</span><span class="p">,</span> <span class="n">AiidaDeprecationWarning</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Get graph traversal rules where the given link types and direction are all set to True,</span>
+        <span class="c1"># and all others are set to False</span>
+        <span class="n">origin_pk</span> <span class="o">=</span> <span class="n">origin</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">origin</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="k">else</span> <span class="n">origin</span><span class="o">.</span><span class="n">pk</span>
+        <span class="n">valid_link_types</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_link_types</span><span class="p">(</span><span class="n">link_types</span><span class="p">)</span>
+        <span class="n">valid_link_types</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convert_link_types</span><span class="p">(</span><span class="n">valid_link_types</span><span class="p">)</span>
+        <span class="n">traversed_graph</span> <span class="o">=</span> <span class="n">traverse_graph</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">origin_pk</span><span class="p">,),</span>
+            <span class="n">max_iterations</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span>
+            <span class="n">get_links</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">links_forward</span><span class="o">=</span><span class="n">valid_link_types</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Traverse backward along input_work and input_calc links from all nodes traversed in the previous step</span>
+        <span class="c1"># and join the result with the original traversed graph. This includes calculation inputs in the Graph</span>
+        <span class="k">if</span> <span class="n">include_process_inputs</span><span class="p">:</span>
+            <span class="n">traversed_outputs</span> <span class="o">=</span> <span class="n">traverse_graph</span><span class="p">(</span>
+                <span class="n">traversed_graph</span><span class="p">[</span><span class="s1">&#39;nodes&#39;</span><span class="p">],</span>
+                <span class="n">max_iterations</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                <span class="n">get_links</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">links_backward</span><span class="o">=</span><span class="p">[</span><span class="n">LinkType</span><span class="o">.</span><span class="n">INPUT_WORK</span><span class="p">,</span> <span class="n">LinkType</span><span class="o">.</span><span class="n">INPUT_CALC</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="n">traversed_graph</span><span class="p">[</span><span class="s1">&#39;nodes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">traversed_graph</span><span class="p">[</span><span class="s1">&#39;nodes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">traversed_outputs</span><span class="p">[</span><span class="s1">&#39;nodes&#39;</span><span class="p">])</span>
+            <span class="n">traversed_graph</span><span class="p">[</span><span class="s1">&#39;links&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">traversed_graph</span><span class="p">[</span><span class="s1">&#39;links&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">traversed_outputs</span><span class="p">[</span><span class="s1">&#39;links&#39;</span><span class="p">])</span>
+
+        <span class="c1"># Do one central query for all nodes in the Graph and generate a {id: Node} dictionary</span>
+        <span class="n">traversed_nodes</span> <span class="o">=</span> <span class="n">orm</span><span class="o">.</span><span class="n">QueryBuilder</span><span class="p">()</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">orm</span><span class="o">.</span><span class="n">Node</span><span class="p">,</span>
+            <span class="n">filters</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;in&#39;</span><span class="p">:</span> <span class="n">traversed_graph</span><span class="p">[</span><span class="s1">&#39;nodes&#39;</span><span class="p">]</span>
+            <span class="p">}},</span>
+            <span class="n">project</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">],</span>
+            <span class="n">tag</span><span class="o">=</span><span class="s1">&#39;node&#39;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">traversed_nodes</span> <span class="o">=</span> <span class="p">{</span><span class="n">query_result</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">query_result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">query_result</span> <span class="ow">in</span> <span class="n">traversed_nodes</span><span class="o">.</span><span class="n">all</span><span class="p">()}</span>
+
+        <span class="c1"># Pop the origin node and add it to the graph, applying custom styling</span>
+        <span class="n">origin_node</span> <span class="o">=</span> <span class="n">traversed_nodes</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">origin_pk</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">origin_node</span><span class="p">,</span> <span class="n">style_override</span><span class="o">=</span><span class="n">origin_style</span><span class="p">)</span>
+
+        <span class="c1"># Add all traversed nodes to the graph with default styling</span>
+        <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">traversed_node</span> <span class="ow">in</span> <span class="n">traversed_nodes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">traversed_node</span><span class="p">,</span> <span class="n">style_override</span><span class="o">=</span><span class="p">{})</span>
+
+        <span class="c1"># Add the origin node back into traversed nodes so it can be found for adding edges</span>
+        <span class="n">traversed_nodes</span><span class="p">[</span><span class="n">origin_pk</span><span class="p">]</span> <span class="o">=</span> <span class="n">origin_node</span>
+
+        <span class="c1"># Add all links to the Graph, using the {id: Node} dictionary for queryless Node retrieval, applying</span>
+        <span class="c1"># appropriate styling</span>
+        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">traversed_graph</span><span class="p">[</span><span class="s1">&#39;links&#39;</span><span class="p">]:</span>
+            <span class="n">source_node</span> <span class="o">=</span> <span class="n">traversed_nodes</span><span class="p">[</span><span class="n">link</span><span class="o">.</span><span class="n">source_id</span><span class="p">]</span>
+            <span class="n">target_node</span> <span class="o">=</span> <span class="n">traversed_nodes</span><span class="p">[</span><span class="n">link</span><span class="o">.</span><span class="n">target_id</span><span class="p">]</span>
+            <span class="n">link_pair</span> <span class="o">=</span> <span class="n">LinkPair</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_convert_link_types</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">link_type</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">link</span><span class="o">.</span><span class="n">link_label</span><span class="p">)</span>
+            <span class="n">link_style</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_link_styles</span><span class="p">(</span>
+                <span class="n">link_pair</span><span class="p">,</span> <span class="n">add_label</span><span class="o">=</span><span class="n">annotate_links</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="s1">&#39;both&#39;</span><span class="p">],</span> <span class="n">add_type</span><span class="o">=</span><span class="n">annotate_links</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;both&#39;</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">source_node</span><span class="p">,</span> <span class="n">target_node</span><span class="p">,</span> <span class="n">link_pair</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">link_style</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Graph.recurse_ancestors"><a class="viewcode-back" href="../../../../apidoc/aiida.tools.visualization.html#aiida.tools.visualization.Graph.recurse_ancestors">[docs]</a>    <span class="k">def</span> <span class="nf">recurse_ancestors</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">origin</span><span class="p">,</span>
+        <span class="n">depth</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">link_types</span><span class="o">=</span><span class="p">(),</span>
+        <span class="n">annotate_links</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">origin_style</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">include_process_outputs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">print_func</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;add nodes and edges from an origin recursively,</span>
+<span class="sd">        following incoming links</span>
+
+<span class="sd">        :param origin: node or node pk/uuid</span>
+<span class="sd">        :type origin: aiida.orm.nodes.node.Node or int</span>
+<span class="sd">        :param depth: if not None, stop after travelling a certain depth into the graph (Default value = None)</span>
+<span class="sd">        :type depth: None or int</span>
+<span class="sd">        :param link_types: filter by subset of link types (Default value = ())</span>
+<span class="sd">        :type link_types: tuple or str</span>
+<span class="sd">        :param annotate_links: label edges with the link &#39;label&#39;, &#39;type&#39; or &#39;both&#39; (Default value = False)</span>
+<span class="sd">        :type annotate_links: bool</span>
+<span class="sd">        :param origin_style: node style map for origin node (Default value = None)</span>
+<span class="sd">        :type origin_style: None or dict</span>
+<span class="sd">        :param include_process_outputs:  include outgoing links for all processes (Default value = False)</span>
+<span class="sd">        :type include_process_outputs: bool</span>
+<span class="sd">        :param print_func: a function to stream information to, i.e. print_func(str)</span>
+
+<span class="sd">        .. deprecated:: 1.1.0</span>
+<span class="sd">            `print_func` will be removed in `v2.0.0`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=too-many-arguments,too-many-locals</span>
+        <span class="kn">import</span> <span class="nn">warnings</span>
+        <span class="kn">from</span> <span class="nn">aiida.common.warnings</span> <span class="kn">import</span> <span class="n">AiidaDeprecationWarning</span>
+        <span class="k">if</span> <span class="n">print_func</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span> <span class="c1"># pylint: disable=no-member</span>
+                <span class="s1">&#39;`print_func` is deprecated because graph traversal has been refactored&#39;</span><span class="p">,</span> <span class="n">AiidaDeprecationWarning</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Get graph traversal rules where the given link types and direction are all set to True,</span>
+        <span class="c1"># and all others are set to False</span>
+        <span class="n">origin_pk</span> <span class="o">=</span> <span class="n">origin</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">origin</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="k">else</span> <span class="n">origin</span><span class="o">.</span><span class="n">pk</span>
+        <span class="n">valid_link_types</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_link_types</span><span class="p">(</span><span class="n">link_types</span><span class="p">)</span>
+        <span class="n">valid_link_types</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convert_link_types</span><span class="p">(</span><span class="n">valid_link_types</span><span class="p">)</span>
+        <span class="n">traversed_graph</span> <span class="o">=</span> <span class="n">traverse_graph</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">origin_pk</span><span class="p">,),</span>
+            <span class="n">max_iterations</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span>
+            <span class="n">get_links</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">links_backward</span><span class="o">=</span><span class="n">valid_link_types</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Traverse forward along input_work and input_calc links from all nodes traversed in the previous step</span>
+        <span class="c1"># and join the result with the original traversed graph. This includes calculation outputs in the Graph</span>
+        <span class="k">if</span> <span class="n">include_process_outputs</span><span class="p">:</span>
+            <span class="n">traversed_outputs</span> <span class="o">=</span> <span class="n">traverse_graph</span><span class="p">(</span>
+                <span class="n">traversed_graph</span><span class="p">[</span><span class="s1">&#39;nodes&#39;</span><span class="p">],</span>
+                <span class="n">max_iterations</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                <span class="n">get_links</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">links_forward</span><span class="o">=</span><span class="p">[</span><span class="n">LinkType</span><span class="o">.</span><span class="n">CREATE</span><span class="p">,</span> <span class="n">LinkType</span><span class="o">.</span><span class="n">RETURN</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="n">traversed_graph</span><span class="p">[</span><span class="s1">&#39;nodes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">traversed_graph</span><span class="p">[</span><span class="s1">&#39;nodes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">traversed_outputs</span><span class="p">[</span><span class="s1">&#39;nodes&#39;</span><span class="p">])</span>
+            <span class="n">traversed_graph</span><span class="p">[</span><span class="s1">&#39;links&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">traversed_graph</span><span class="p">[</span><span class="s1">&#39;links&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">traversed_outputs</span><span class="p">[</span><span class="s1">&#39;links&#39;</span><span class="p">])</span>
+
+        <span class="c1"># Do one central query for all nodes in the Graph and generate a {id: Node} dictionary</span>
+        <span class="n">traversed_nodes</span> <span class="o">=</span> <span class="n">orm</span><span class="o">.</span><span class="n">QueryBuilder</span><span class="p">()</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">orm</span><span class="o">.</span><span class="n">Node</span><span class="p">,</span>
+            <span class="n">filters</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;in&#39;</span><span class="p">:</span> <span class="n">traversed_graph</span><span class="p">[</span><span class="s1">&#39;nodes&#39;</span><span class="p">]</span>
+            <span class="p">}},</span>
+            <span class="n">project</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">],</span>
+            <span class="n">tag</span><span class="o">=</span><span class="s1">&#39;node&#39;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">traversed_nodes</span> <span class="o">=</span> <span class="p">{</span><span class="n">query_result</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">query_result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">query_result</span> <span class="ow">in</span> <span class="n">traversed_nodes</span><span class="o">.</span><span class="n">all</span><span class="p">()}</span>
+
+        <span class="c1"># Pop the origin node and add it to the graph, applying custom styling</span>
+        <span class="n">origin_node</span> <span class="o">=</span> <span class="n">traversed_nodes</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">origin_pk</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">origin_node</span><span class="p">,</span> <span class="n">style_override</span><span class="o">=</span><span class="n">origin_style</span><span class="p">)</span>
+
+        <span class="c1"># Add all traversed nodes to the graph with default styling</span>
+        <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">traversed_node</span> <span class="ow">in</span> <span class="n">traversed_nodes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">traversed_node</span><span class="p">,</span> <span class="n">style_override</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+        <span class="c1"># Add the origin node back into traversed nodes so it can be found for adding edges</span>
+        <span class="n">traversed_nodes</span><span class="p">[</span><span class="n">origin_pk</span><span class="p">]</span> <span class="o">=</span> <span class="n">origin_node</span>
+
+        <span class="c1"># Add all links to the Graph, using the {id: Node} dictionary for queryless Node retrieval, applying</span>
+        <span class="c1"># appropriate styling</span>
+        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">traversed_graph</span><span class="p">[</span><span class="s1">&#39;links&#39;</span><span class="p">]:</span>
+            <span class="n">source_node</span> <span class="o">=</span> <span class="n">traversed_nodes</span><span class="p">[</span><span class="n">link</span><span class="o">.</span><span class="n">source_id</span><span class="p">]</span>
+            <span class="n">target_node</span> <span class="o">=</span> <span class="n">traversed_nodes</span><span class="p">[</span><span class="n">link</span><span class="o">.</span><span class="n">target_id</span><span class="p">]</span>
+            <span class="n">link_pair</span> <span class="o">=</span> <span class="n">LinkPair</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_convert_link_types</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">link_type</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">link</span><span class="o">.</span><span class="n">link_label</span><span class="p">)</span>
+            <span class="n">link_style</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_link_styles</span><span class="p">(</span>
+                <span class="n">link_pair</span><span class="p">,</span> <span class="n">add_label</span><span class="o">=</span><span class="n">annotate_links</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="s1">&#39;both&#39;</span><span class="p">],</span> <span class="n">add_type</span><span class="o">=</span><span class="n">annotate_links</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;both&#39;</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">source_node</span><span class="p">,</span> <span class="n">target_node</span><span class="p">,</span> <span class="n">link_pair</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">link_style</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Graph.add_origin_to_targets"><a class="viewcode-back" href="../../../../apidoc/aiida.tools.visualization.html#aiida.tools.visualization.Graph.add_origin_to_targets">[docs]</a>    <span class="k">def</span> <span class="nf">add_origin_to_targets</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">origin</span><span class="p">,</span>
+        <span class="n">target_cls</span><span class="p">,</span>
+        <span class="n">target_filters</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">include_target_inputs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">include_target_outputs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">origin_style</span><span class="o">=</span><span class="p">(),</span>
+        <span class="n">annotate_links</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add nodes and edges from an origin node to all nodes of a target node class.</span>
+
+<span class="sd">        :param origin: node or node pk/uuid</span>
+<span class="sd">        :type origin: aiida.orm.nodes.node.Node or int</span>
+<span class="sd">        :param target_cls: target node class</span>
+<span class="sd">        :param target_filters:  (Default value = None)</span>
+<span class="sd">        :type target_filters: dict or None</span>
+<span class="sd">        :param include_target_inputs:  (Default value = False)</span>
+<span class="sd">        :type include_target_inputs: bool</span>
+<span class="sd">        :param include_target_outputs:  (Default value = False)</span>
+<span class="sd">        :type include_target_outputs: bool</span>
+<span class="sd">        :param origin_style: node style map for origin node (Default value = ())</span>
+<span class="sd">        :type origin_style: dict or tuple</span>
+<span class="sd">        :param annotate_links: label edges with the link &#39;label&#39;, &#39;type&#39; or &#39;both&#39; (Default value = False)</span>
+<span class="sd">        :type annotate_links: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=too-many-arguments</span>
+        <span class="n">origin_node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_node</span><span class="p">(</span><span class="n">origin</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">target_filters</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">target_filters</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">origin_node</span><span class="p">,</span> <span class="n">style_override</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">origin_style</span><span class="p">))</span>
+
+        <span class="n">query</span> <span class="o">=</span> <span class="n">orm</span><span class="o">.</span><span class="n">QueryBuilder</span><span class="p">(</span>
+            <span class="o">**</span><span class="p">{</span>
+                <span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="p">[{</span>
+                    <span class="s1">&#39;cls&#39;</span><span class="p">:</span> <span class="n">origin_node</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span>
+                    <span class="s1">&#39;filters&#39;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">origin_node</span><span class="o">.</span><span class="n">pk</span>
+                    <span class="p">},</span>
+                    <span class="s1">&#39;tag&#39;</span><span class="p">:</span> <span class="s1">&#39;origin&#39;</span>
+                <span class="p">},</span> <span class="p">{</span>
+                    <span class="s1">&#39;cls&#39;</span><span class="p">:</span> <span class="n">target_cls</span><span class="p">,</span>
+                    <span class="s1">&#39;filters&#39;</span><span class="p">:</span> <span class="n">target_filters</span><span class="p">,</span>
+                    <span class="s1">&#39;with_ancestors&#39;</span><span class="p">:</span> <span class="s1">&#39;origin&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;tag&#39;</span><span class="p">:</span> <span class="s1">&#39;target&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;project&#39;</span><span class="p">:</span> <span class="s1">&#39;*&#39;</span>
+                <span class="p">}]</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="n">target_node</span><span class="p">,)</span> <span class="ow">in</span> <span class="n">query</span><span class="o">.</span><span class="n">iterall</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">target_node</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">origin_node</span><span class="p">,</span> <span class="n">target_node</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;style&#39;</span><span class="p">:</span> <span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;grey&#39;</span><span class="p">})</span>
+
+            <span class="k">if</span> <span class="n">include_target_inputs</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add_incoming</span><span class="p">(</span><span class="n">target_node</span><span class="p">,</span> <span class="n">annotate_links</span><span class="o">=</span><span class="n">annotate_links</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">include_target_outputs</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add_outgoing</span><span class="p">(</span><span class="n">target_node</span><span class="p">,</span> <span class="n">annotate_links</span><span class="o">=</span><span class="n">annotate_links</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Graph.add_origins_to_targets"><a class="viewcode-back" href="../../../../apidoc/aiida.tools.visualization.html#aiida.tools.visualization.Graph.add_origins_to_targets">[docs]</a>    <span class="k">def</span> <span class="nf">add_origins_to_targets</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">origin_cls</span><span class="p">,</span>
+        <span class="n">target_cls</span><span class="p">,</span>
+        <span class="n">origin_filters</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">target_filters</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">include_target_inputs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">include_target_outputs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">origin_style</span><span class="o">=</span><span class="p">(),</span>
+        <span class="n">annotate_links</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add nodes and edges from all nodes of an origin class to all node of a target node class.</span>
+
+<span class="sd">        :param origin_cls: origin node class</span>
+<span class="sd">        :param target_cls: target node class</span>
+<span class="sd">        :param origin_filters:  (Default value = None)</span>
+<span class="sd">        :type origin_filters: dict or None</span>
+<span class="sd">        :param target_filters:  (Default value = None)</span>
+<span class="sd">        :type target_filters: dict or None</span>
+<span class="sd">        :param include_target_inputs:  (Default value = False)</span>
+<span class="sd">        :type include_target_inputs: bool</span>
+<span class="sd">        :param include_target_outputs:  (Default value = False)</span>
+<span class="sd">        :type include_target_outputs: bool</span>
+<span class="sd">        :param origin_style: node style map for origin node (Default value = ())</span>
+<span class="sd">        :type origin_style: dict or tuple</span>
+<span class="sd">        :param annotate_links: label edges with the link &#39;label&#39;, &#39;type&#39; or &#39;both&#39; (Default value = False)</span>
+<span class="sd">        :type annotate_links: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=too-many-arguments</span>
+        <span class="k">if</span> <span class="n">origin_filters</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">origin_filters</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">query</span> <span class="o">=</span> <span class="n">orm</span><span class="o">.</span><span class="n">QueryBuilder</span><span class="p">(</span>
+            <span class="o">**</span><span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="p">[{</span>
+                <span class="s1">&#39;cls&#39;</span><span class="p">:</span> <span class="n">origin_cls</span><span class="p">,</span>
+                <span class="s1">&#39;filters&#39;</span><span class="p">:</span> <span class="n">origin_filters</span><span class="p">,</span>
+                <span class="s1">&#39;tag&#39;</span><span class="p">:</span> <span class="s1">&#39;origin&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;project&#39;</span><span class="p">:</span> <span class="s1">&#39;*&#39;</span>
+            <span class="p">}]}</span>
+        <span class="p">)</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="n">node</span><span class="p">,)</span> <span class="ow">in</span> <span class="n">query</span><span class="o">.</span><span class="n">iterall</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_origin_to_targets</span><span class="p">(</span>
+                <span class="n">node</span><span class="p">,</span>
+                <span class="n">target_cls</span><span class="p">,</span>
+                <span class="n">target_filters</span><span class="o">=</span><span class="n">target_filters</span><span class="p">,</span>
+                <span class="n">include_target_inputs</span><span class="o">=</span><span class="n">include_target_inputs</span><span class="p">,</span>
+                <span class="n">include_target_outputs</span><span class="o">=</span><span class="n">include_target_outputs</span><span class="p">,</span>
+                <span class="n">origin_style</span><span class="o">=</span><span class="n">origin_style</span><span class="p">,</span>
+                <span class="n">annotate_links</span><span class="o">=</span><span class="n">annotate_links</span>
+            <span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

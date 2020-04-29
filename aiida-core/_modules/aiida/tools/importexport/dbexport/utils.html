@@ -1,0 +1,500 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.tools.importexport.dbexport.utils &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/language_data.js"></script>
+        <script src="../../../../../_static/togglebutton.js"></script>
+        <script src="../../../../../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../../aiida.html">aiida</a> &raquo;</li>
+        
+          <li><a href="../dbexport.html">aiida.tools.importexport.dbexport</a> &raquo;</li>
+        
+      <li>aiida.tools.importexport.dbexport.utils</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for aiida.tools.importexport.dbexport.utils</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1">###########################################################################</span>
+<span class="c1"># Copyright (c), The AiiDA team. All rights reserved.                     #</span>
+<span class="c1"># This file is part of the AiiDA code.                                    #</span>
+<span class="c1">#                                                                         #</span>
+<span class="c1"># The code is hosted on GitHub at https://github.com/aiidateam/aiida-core #</span>
+<span class="c1"># For further information on the license, see the LICENSE.txt file        #</span>
+<span class="c1"># For further information please visit http://www.aiida.net               #</span>
+<span class="c1">###########################################################################</span>
+<span class="sd">&quot;&quot;&quot; Utility functions for export of AiiDA entities &quot;&quot;&quot;</span>
+<span class="c1"># pylint: disable=too-many-locals,too-many-branches,too-many-nested-blocks</span>
+
+<span class="kn">from</span> <span class="nn">aiida.orm</span> <span class="kn">import</span> <span class="n">QueryBuilder</span><span class="p">,</span> <span class="n">ProcessNode</span>
+<span class="kn">from</span> <span class="nn">aiida.tools.importexport.common</span> <span class="kn">import</span> <span class="n">exceptions</span>
+<span class="kn">from</span> <span class="nn">aiida.tools.importexport.common.config</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">file_fields_to_model_fields</span><span class="p">,</span> <span class="n">entity_names_to_entities</span><span class="p">,</span> <span class="n">get_all_fields_info</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="fill_in_query"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.dbexport.html#aiida.tools.importexport.dbexport.utils.fill_in_query">[docs]</a><span class="k">def</span> <span class="nf">fill_in_query</span><span class="p">(</span><span class="n">partial_query</span><span class="p">,</span> <span class="n">originating_entity_str</span><span class="p">,</span> <span class="n">current_entity_str</span><span class="p">,</span> <span class="n">tag_suffixes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">entity_separator</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function recursively constructs QueryBuilder queries that are needed</span>
+<span class="sd">    for the SQLA export function. To manage to construct such queries, the</span>
+<span class="sd">    relationship dictionary is consulted (which shows how to reference</span>
+<span class="sd">    different AiiDA entities in QueryBuilder.</span>
+<span class="sd">    To find the dependencies of the relationships of the exported data, the</span>
+<span class="sd">    get_all_fields_info (which described the exported schema and its</span>
+<span class="sd">    dependencies) is consulted.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">tag_suffixes</span><span class="p">:</span>
+        <span class="n">tag_suffixes</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">relationship_dic</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;Node&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;Computer&#39;</span><span class="p">:</span> <span class="s1">&#39;with_computer&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Group&#39;</span><span class="p">:</span> <span class="s1">&#39;with_group&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;User&#39;</span><span class="p">:</span> <span class="s1">&#39;with_user&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Log&#39;</span><span class="p">:</span> <span class="s1">&#39;with_log&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;with_comment&#39;</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;Group&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;Node&#39;</span><span class="p">:</span> <span class="s1">&#39;with_node&#39;</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;Computer&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;Node&#39;</span><span class="p">:</span> <span class="s1">&#39;with_node&#39;</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;User&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;Node&#39;</span><span class="p">:</span> <span class="s1">&#39;with_node&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Group&#39;</span><span class="p">:</span> <span class="s1">&#39;with_group&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;with_comment&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;Log&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;Node&#39;</span><span class="p">:</span> <span class="s1">&#39;with_node&#39;</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;Node&#39;</span><span class="p">:</span> <span class="s1">&#39;with_node&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;User&#39;</span><span class="p">:</span> <span class="s1">&#39;with_user&#39;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">all_fields_info</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">get_all_fields_info</span><span class="p">()</span>
+
+    <span class="n">entity_prop</span> <span class="o">=</span> <span class="n">all_fields_info</span><span class="p">[</span><span class="n">current_entity_str</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+
+    <span class="n">project_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">entity_prop</span><span class="p">:</span>
+        <span class="n">nprop</span> <span class="o">=</span> <span class="n">prop</span>
+        <span class="k">if</span> <span class="n">current_entity_str</span> <span class="ow">in</span> <span class="n">file_fields_to_model_fields</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">file_fields_to_model_fields</span><span class="p">[</span><span class="n">current_entity_str</span><span class="p">]:</span>
+                <span class="n">nprop</span> <span class="o">=</span> <span class="n">file_fields_to_model_fields</span><span class="p">[</span><span class="n">current_entity_str</span><span class="p">][</span><span class="n">prop</span><span class="p">]</span>
+
+        <span class="n">project_cols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nprop</span><span class="p">)</span>
+
+    <span class="c1"># Here we should reference the entity of the main query</span>
+    <span class="n">current_entity_mod</span> <span class="o">=</span> <span class="n">entity_names_to_entities</span><span class="p">[</span><span class="n">current_entity_str</span><span class="p">]</span>
+
+    <span class="n">rel_string</span> <span class="o">=</span> <span class="n">relationship_dic</span><span class="p">[</span><span class="n">current_entity_str</span><span class="p">][</span><span class="n">originating_entity_str</span><span class="p">]</span>
+    <span class="n">mydict</span> <span class="o">=</span> <span class="p">{</span><span class="n">rel_string</span><span class="p">:</span> <span class="n">entity_separator</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tag_suffixes</span><span class="p">)}</span>
+
+    <span class="n">partial_query</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="n">current_entity_mod</span><span class="p">,</span>
+        <span class="n">tag</span><span class="o">=</span><span class="n">entity_separator</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tag_suffixes</span><span class="p">)</span> <span class="o">+</span> <span class="n">entity_separator</span> <span class="o">+</span> <span class="n">current_entity_str</span><span class="p">,</span>
+        <span class="n">project</span><span class="o">=</span><span class="n">project_cols</span><span class="p">,</span>
+        <span class="n">outerjoin</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">mydict</span>
+    <span class="p">)</span>
+
+    <span class="c1"># prepare the recursion for the referenced entities</span>
+    <span class="n">foreign_fields</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">k</span><span class="p">:</span> <span class="n">v</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">all_fields_info</span><span class="p">[</span><span class="n">current_entity_str</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+        <span class="c1"># all_fields_info[model_name].items()</span>
+        <span class="k">if</span> <span class="s1">&#39;requires&#39;</span> <span class="ow">in</span> <span class="n">v</span>
+    <span class="p">}</span>
+
+    <span class="n">new_tag_suffixes</span> <span class="o">=</span> <span class="n">tag_suffixes</span> <span class="o">+</span> <span class="p">[</span><span class="n">current_entity_str</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">foreign_fields</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="n">ref_model_name</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="s1">&#39;requires&#39;</span><span class="p">]</span>
+        <span class="n">fill_in_query</span><span class="p">(</span><span class="n">partial_query</span><span class="p">,</span> <span class="n">current_entity_str</span><span class="p">,</span> <span class="n">ref_model_name</span><span class="p">,</span> <span class="n">new_tag_suffixes</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="check_licenses"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.dbexport.html#aiida.tools.importexport.dbexport.utils.check_licenses">[docs]</a><span class="k">def</span> <span class="nf">check_licenses</span><span class="p">(</span><span class="n">node_licenses</span><span class="p">,</span> <span class="n">allowed_licenses</span><span class="p">,</span> <span class="n">forbidden_licenses</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Check licenses&quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">aiida.common.exceptions</span> <span class="kn">import</span> <span class="n">LicensingException</span>
+    <span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">isfunction</span>
+
+    <span class="k">for</span> <span class="n">pk</span><span class="p">,</span> <span class="n">license_</span> <span class="ow">in</span> <span class="n">node_licenses</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">allowed_licenses</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">isfunction</span><span class="p">(</span><span class="n">allowed_licenses</span><span class="p">):</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="ow">not</span> <span class="n">allowed_licenses</span><span class="p">(</span><span class="n">license_</span><span class="p">):</span>
+                            <span class="k">raise</span> <span class="n">LicensingException</span>
+                    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="n">LicensingException</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">license_</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">allowed_licenses</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="n">LicensingException</span>
+            <span class="k">except</span> <span class="n">LicensingException</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">LicensingException</span><span class="p">(</span>
+                    <span class="s1">&#39;Node </span><span class="si">{}</span><span class="s1"> is licensed &#39;</span>
+                    <span class="s1">&#39;under </span><span class="si">{}</span><span class="s1"> license, which &#39;</span>
+                    <span class="s1">&#39;is not in the list of &#39;</span>
+                    <span class="s1">&#39;allowed licenses&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pk</span><span class="p">,</span> <span class="n">license_</span><span class="p">)</span>
+                <span class="p">)</span>
+        <span class="k">if</span> <span class="n">forbidden_licenses</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">isfunction</span><span class="p">(</span><span class="n">forbidden_licenses</span><span class="p">):</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">forbidden_licenses</span><span class="p">(</span><span class="n">license_</span><span class="p">):</span>
+                            <span class="k">raise</span> <span class="n">LicensingException</span>
+                    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="n">LicensingException</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">license_</span> <span class="ow">in</span> <span class="n">forbidden_licenses</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="n">LicensingException</span>
+            <span class="k">except</span> <span class="n">LicensingException</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">LicensingException</span><span class="p">(</span>
+                    <span class="s1">&#39;Node </span><span class="si">{}</span><span class="s1"> is licensed &#39;</span>
+                    <span class="s1">&#39;under </span><span class="si">{}</span><span class="s1"> license, which &#39;</span>
+                    <span class="s1">&#39;is in the list of &#39;</span>
+                    <span class="s1">&#39;forbidden licenses&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pk</span><span class="p">,</span> <span class="n">license_</span><span class="p">)</span>
+                <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="serialize_field"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.dbexport.html#aiida.tools.importexport.dbexport.utils.serialize_field">[docs]</a><span class="k">def</span> <span class="nf">serialize_field</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">track_conversion</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Serialize a single field.</span>
+
+<span class="sd">    :todo: Generalize such that it the proper function is selected also during</span>
+<span class="sd">        import</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">datetime</span>
+    <span class="kn">import</span> <span class="nn">pytz</span>
+    <span class="kn">from</span> <span class="nn">uuid</span> <span class="kn">import</span> <span class="n">UUID</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="n">ret_data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="n">track_conversion</span><span class="p">:</span>
+            <span class="n">ret_conversion</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">ret_data</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">ret_conversion</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">serialize_field</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">value</span><span class="p">,</span> <span class="n">track_conversion</span><span class="o">=</span><span class="n">track_conversion</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">ret_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">serialize_field</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">value</span><span class="p">,</span> <span class="n">track_conversion</span><span class="o">=</span><span class="n">track_conversion</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+        <span class="n">ret_data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">track_conversion</span><span class="p">:</span>
+            <span class="n">ret_conversion</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                <span class="n">this_data</span><span class="p">,</span> <span class="n">this_conversion</span> <span class="o">=</span> <span class="n">serialize_field</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">value</span><span class="p">,</span> <span class="n">track_conversion</span><span class="o">=</span><span class="n">track_conversion</span><span class="p">)</span>
+                <span class="n">ret_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">this_data</span><span class="p">)</span>
+                <span class="n">ret_conversion</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">this_conversion</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                <span class="n">ret_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">serialize_field</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">value</span><span class="p">,</span> <span class="n">track_conversion</span><span class="o">=</span><span class="n">track_conversion</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">):</span>
+        <span class="c1"># Note: requires timezone-aware objects!</span>
+        <span class="n">ret_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">pytz</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">T%H:%M:%S.</span><span class="si">%f</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">ret_conversion</span> <span class="o">=</span> <span class="s1">&#39;date&#39;</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">UUID</span><span class="p">):</span>
+        <span class="n">ret_data</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">ret_conversion</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ret_data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="n">ret_conversion</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">if</span> <span class="n">track_conversion</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">ret_data</span><span class="p">,</span> <span class="n">ret_conversion</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ret_data</span></div>
+
+
+<div class="viewcode-block" id="serialize_dict"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.dbexport.html#aiida.tools.importexport.dbexport.utils.serialize_dict">[docs]</a><span class="k">def</span> <span class="nf">serialize_dict</span><span class="p">(</span><span class="n">datadict</span><span class="p">,</span> <span class="n">remove_fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rename_fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">track_conversion</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Serialize the dict using the serialize_field function to serialize</span>
+<span class="sd">    each field.</span>
+
+<span class="sd">    :param remove_fields: a list of strings.</span>
+<span class="sd">      If a field with key inside the remove_fields list is found,</span>
+<span class="sd">      it is removed from the dict.</span>
+
+<span class="sd">      This is only used at level-0, no removal</span>
+<span class="sd">      is possible at deeper levels.</span>
+
+<span class="sd">    :param rename_fields: a dictionary in the format</span>
+<span class="sd">      ``{&quot;oldname&quot;: &quot;newname&quot;}``.</span>
+
+<span class="sd">      If the &quot;oldname&quot; key is found, it is replaced with the</span>
+<span class="sd">      &quot;newname&quot; string in the output dictionary.</span>
+
+<span class="sd">      This is only used at level-0, no renaming</span>
+<span class="sd">      is possible at deeper levels.</span>
+<span class="sd">    :param track_conversion: if True, a tuple is returned, where the first</span>
+<span class="sd">      element is the serialized dictionary, and the second element is a</span>
+<span class="sd">      dictionary with the information on the serialized fields.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ret_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">conversions</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">remove_fields</span><span class="p">:</span>
+        <span class="n">remove_fields</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">rename_fields</span><span class="p">:</span>
+        <span class="n">rename_fields</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">datadict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">remove_fields</span><span class="p">:</span>
+            <span class="c1"># rename_fields.get(key,key): use the replacement if found in rename_fields,</span>
+            <span class="c1"># otherwise use &#39;key&#39; as the default value.</span>
+            <span class="k">if</span> <span class="n">track_conversion</span><span class="p">:</span>
+                <span class="p">(</span><span class="n">ret_dict</span><span class="p">[</span><span class="n">rename_fields</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">key</span><span class="p">)],</span>
+                 <span class="n">conversions</span><span class="p">[</span><span class="n">rename_fields</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span>
+                                               <span class="n">key</span><span class="p">)])</span> <span class="o">=</span> <span class="n">serialize_field</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">value</span><span class="p">,</span> <span class="n">track_conversion</span><span class="o">=</span><span class="n">track_conversion</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ret_dict</span><span class="p">[</span><span class="n">rename_fields</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">key</span><span class="p">)]</span> <span class="o">=</span> <span class="n">serialize_field</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">value</span><span class="p">,</span> <span class="n">track_conversion</span><span class="o">=</span><span class="n">track_conversion</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">track_conversion</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">ret_dict</span><span class="p">,</span> <span class="n">conversions</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ret_dict</span></div>
+
+
+<div class="viewcode-block" id="check_process_nodes_sealed"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.dbexport.html#aiida.tools.importexport.dbexport.utils.check_process_nodes_sealed">[docs]</a><span class="k">def</span> <span class="nf">check_process_nodes_sealed</span><span class="p">(</span><span class="n">nodes</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Check ``ProcessNode`` s are sealed</span>
+<span class="sd">    Only sealed ``ProcessNode`` s may be exported.</span>
+
+<span class="sd">    :param nodes: :py:class:`~aiida.orm.nodes.process.process.ProcessNode` s to be checked. Should be their PK(s).</span>
+<span class="sd">    :type nodes: list, int</span>
+
+<span class="sd">    :raises `~aiida.tools.importexport.common.exceptions.ExportValidationError`:</span>
+<span class="sd">        if a ``ProcessNode`` is not sealed or `nodes` is not a `list`, `set`, or `int`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">nodes</span><span class="p">:</span>
+        <span class="k">return</span>
+
+    <span class="c1"># Check `nodes` type, and if necessary change to set</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="nb">set</span><span class="p">):</span>
+        <span class="k">pass</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">nodes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="n">nodes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">nodes</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">ExportValidationError</span><span class="p">(</span><span class="s1">&#39;nodes must be either an int or set/list of ints&#39;</span><span class="p">)</span>
+
+    <span class="n">filters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;in&#39;</span><span class="p">:</span> <span class="n">nodes</span><span class="p">},</span> <span class="s1">&#39;attributes.sealed&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+    <span class="n">sealed_nodes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">QueryBuilder</span><span class="p">()</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ProcessNode</span><span class="p">,</span> <span class="n">filters</span><span class="o">=</span><span class="n">filters</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">flat</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">sealed_nodes</span> <span class="o">!=</span> <span class="n">nodes</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">ExportValidationError</span><span class="p">(</span>
+            <span class="s1">&#39;All ProcessNodes must be sealed before they can be exported. &#39;</span>
+            <span class="s1">&#39;Node(s) with PK(s): </span><span class="si">{}</span><span class="s1"> is/are not sealed.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">pk</span><span class="p">)</span> <span class="k">for</span> <span class="n">pk</span> <span class="ow">in</span> <span class="n">nodes</span> <span class="o">-</span> <span class="n">sealed_nodes</span><span class="p">))</span>
+        <span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

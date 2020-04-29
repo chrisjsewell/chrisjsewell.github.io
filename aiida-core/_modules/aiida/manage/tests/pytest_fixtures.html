@@ -1,0 +1,406 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.manage.tests.pytest_fixtures &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/togglebutton.js"></script>
+        <script src="../../../../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../aiida.html">aiida</a> &raquo;</li>
+        
+          <li><a href="../tests.html">aiida.manage.tests</a> &raquo;</li>
+        
+      <li>aiida.manage.tests.pytest_fixtures</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for aiida.manage.tests.pytest_fixtures</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1">###########################################################################</span>
+<span class="c1"># Copyright (c), The AiiDA team. All rights reserved.                     #</span>
+<span class="c1"># This file is part of the AiiDA code.                                    #</span>
+<span class="c1">#                                                                         #</span>
+<span class="c1"># The code is hosted on GitHub at https://github.com/aiidateam/aiida-core #</span>
+<span class="c1"># For further information on the license, see the LICENSE.txt file        #</span>
+<span class="c1"># For further information please visit http://www.aiida.net               #</span>
+<span class="c1">###########################################################################</span>
+<span class="c1"># pylint: disable=redefined-outer-name,unused-argument</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Collection of pytest fixtures using the TestManager for easy testing of AiiDA plugins.</span>
+
+<span class="sd"> * aiida_profile</span>
+<span class="sd"> * clear_database</span>
+<span class="sd"> * aiida_localhost</span>
+<span class="sd"> * aiida_local_code_factory</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="kn">import</span> <span class="nn">pytest</span>
+
+<span class="kn">from</span> <span class="nn">aiida.manage.tests</span> <span class="kn">import</span> <span class="n">test_manager</span><span class="p">,</span> <span class="n">get_test_backend_name</span><span class="p">,</span> <span class="n">get_test_profile_name</span>
+
+
+<div class="viewcode-block" id="aiida_profile"><a class="viewcode-back" href="../../../../apidoc/aiida.manage.tests.html#aiida.manage.tests.pytest_fixtures.aiida_profile">[docs]</a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s1">&#39;session&#39;</span><span class="p">,</span> <span class="n">autouse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">aiida_profile</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Set up AiiDA test profile for the duration of the tests.</span>
+
+<span class="sd">    Note: scope=&#39;session&#39; limits this fixture to run once per session. Thanks to ``autouse=True``, you don&#39;t actually</span>
+<span class="sd">     need to depend on it explicitly - it will activate as soon as you import it in your ``conftest.py``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="n">test_manager</span><span class="p">(</span><span class="n">backend</span><span class="o">=</span><span class="n">get_test_backend_name</span><span class="p">(),</span> <span class="n">profile_name</span><span class="o">=</span><span class="n">get_test_profile_name</span><span class="p">())</span> <span class="k">as</span> <span class="n">manager</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">manager</span></div>
+    <span class="c1"># Leaving the context manager will automatically cause the `TestManager` instance to be destroyed</span>
+
+
+<div class="viewcode-block" id="clear_database"><a class="viewcode-back" href="../../../../apidoc/aiida.manage.tests.html#aiida.manage.tests.pytest_fixtures.clear_database">[docs]</a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s1">&#39;function&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">clear_database</span><span class="p">(</span><span class="n">clear_database_after_test</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Alias for &#39;clear_database_after_test&#39;.</span>
+
+<span class="sd">    Clears the database after each test. Use of the explicit</span>
+<span class="sd">    &#39;clear_database_after_test&#39; is preferred.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="clear_database_after_test"><a class="viewcode-back" href="../../../../apidoc/aiida.manage.tests.html#aiida.manage.tests.pytest_fixtures.clear_database_after_test">[docs]</a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s1">&#39;function&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">clear_database_after_test</span><span class="p">(</span><span class="n">aiida_profile</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Clear the database after the test.&quot;&quot;&quot;</span>
+    <span class="k">yield</span>
+    <span class="n">aiida_profile</span><span class="o">.</span><span class="n">reset_db</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="clear_database_before_test"><a class="viewcode-back" href="../../../../apidoc/aiida.manage.tests.html#aiida.manage.tests.pytest_fixtures.clear_database_before_test">[docs]</a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s1">&#39;function&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">clear_database_before_test</span><span class="p">(</span><span class="n">aiida_profile</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Clear the database before the test.&quot;&quot;&quot;</span>
+    <span class="n">aiida_profile</span><span class="o">.</span><span class="n">reset_db</span><span class="p">()</span>
+    <span class="k">yield</span></div>
+
+
+<div class="viewcode-block" id="temp_dir"><a class="viewcode-back" href="../../../../apidoc/aiida.manage.tests.html#aiida.manage.tests.pytest_fixtures.temp_dir">[docs]</a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s1">&#39;function&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">temp_dir</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Get a temporary directory.</span>
+
+<span class="sd">    E.g. to use as the working directory of an AiiDA computer.</span>
+
+<span class="sd">    :return: The path to the directory</span>
+<span class="sd">    :rtype: str</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">dirpath</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">mkdtemp</span><span class="p">()</span>
+        <span class="k">yield</span> <span class="n">dirpath</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="c1"># after the test function has completed, remove the directory again</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">dirpath</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="aiida_localhost"><a class="viewcode-back" href="../../../../apidoc/aiida.manage.tests.html#aiida.manage.tests.pytest_fixtures.aiida_localhost">[docs]</a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s1">&#39;function&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">aiida_localhost</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get an AiiDA computer for localhost.</span>
+
+<span class="sd">    Usage::</span>
+
+<span class="sd">      def test_1(aiida_localhost):</span>
+<span class="sd">          name = aiida_localhost.get_name()</span>
+<span class="sd">          # proceed to set up code or use &#39;aiida_local_code_factory&#39; instead</span>
+
+
+<span class="sd">    :return: The computer node</span>
+<span class="sd">    :rtype: :py:class:`aiida.orm.Computer`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">aiida.orm</span> <span class="kn">import</span> <span class="n">Computer</span>
+    <span class="kn">from</span> <span class="nn">aiida.common.exceptions</span> <span class="kn">import</span> <span class="n">NotExistent</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;localhost-test&#39;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">computer</span> <span class="o">=</span> <span class="n">Computer</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">NotExistent</span><span class="p">:</span>
+        <span class="n">computer</span> <span class="o">=</span> <span class="n">Computer</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="s1">&#39;localhost computer set up by test manager&#39;</span><span class="p">,</span>
+            <span class="n">hostname</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+            <span class="n">workdir</span><span class="o">=</span><span class="n">temp_dir</span><span class="p">,</span>
+            <span class="n">transport_type</span><span class="o">=</span><span class="s1">&#39;local&#39;</span><span class="p">,</span>
+            <span class="n">scheduler_type</span><span class="o">=</span><span class="s1">&#39;direct&#39;</span>
+        <span class="p">)</span>
+        <span class="n">computer</span><span class="o">.</span><span class="n">store</span><span class="p">()</span>
+        <span class="n">computer</span><span class="o">.</span><span class="n">set_minimum_job_poll_interval</span><span class="p">(</span><span class="mf">0.</span><span class="p">)</span>
+        <span class="n">computer</span><span class="o">.</span><span class="n">configure</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">computer</span></div>
+
+
+<div class="viewcode-block" id="aiida_local_code_factory"><a class="viewcode-back" href="../../../../apidoc/aiida.manage.tests.html#aiida.manage.tests.pytest_fixtures.aiida_local_code_factory">[docs]</a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s1">&#39;function&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">aiida_local_code_factory</span><span class="p">(</span><span class="n">aiida_localhost</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get an AiiDA code on localhost.</span>
+
+<span class="sd">    Searches in the PATH for a given executable and creates an AiiDA code with provided entry point.</span>
+
+<span class="sd">    Usage::</span>
+
+<span class="sd">      def test_1(aiida_local_code_factory):</span>
+<span class="sd">          code = aiida_local_code_factory(&#39;quantumespresso.pw&#39;, &#39;/usr/bin/pw.x&#39;)</span>
+<span class="sd">          # use code for testing ...</span>
+
+<span class="sd">    :return: A function get_code(entry_point, executable) that returns the `Code` node.</span>
+<span class="sd">    :rtype: object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">get_code</span><span class="p">(</span><span class="n">entry_point</span><span class="p">,</span> <span class="n">executable</span><span class="p">,</span> <span class="n">computer</span><span class="o">=</span><span class="n">aiida_localhost</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">prepend_text</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append_text</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get local code.</span>
+
+<span class="sd">        Sets up code for given entry point on given computer.</span>
+
+<span class="sd">        :param entry_point: Entry point of calculation plugin</span>
+<span class="sd">        :param executable: name of executable; will be searched for in local system PATH.</span>
+<span class="sd">        :param computer: (local) AiiDA computer</span>
+<span class="sd">        :param prepend_text: a string of code that will be put in the scheduler script before the execution of the code.</span>
+<span class="sd">        :param append_text: a string of code that will be put in the scheduler script after the execution of the code.</span>
+<span class="sd">        :return: the `Code` either retrieved from the database or created if it did not yet exist.</span>
+<span class="sd">        :rtype: :py:class:`aiida.orm.Code`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">aiida.common</span> <span class="kn">import</span> <span class="n">exceptions</span>
+        <span class="kn">from</span> <span class="nn">aiida.orm</span> <span class="kn">import</span> <span class="n">Code</span><span class="p">,</span> <span class="n">Computer</span><span class="p">,</span> <span class="n">QueryBuilder</span>
+
+        <span class="k">if</span> <span class="n">label</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">label</span> <span class="o">=</span> <span class="n">executable</span>
+
+        <span class="n">builder</span> <span class="o">=</span> <span class="n">QueryBuilder</span><span class="p">()</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Computer</span><span class="p">,</span> <span class="n">filters</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;uuid&#39;</span><span class="p">:</span> <span class="n">computer</span><span class="o">.</span><span class="n">uuid</span><span class="p">},</span> <span class="n">tag</span><span class="o">=</span><span class="s1">&#39;computer&#39;</span><span class="p">)</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Code</span><span class="p">,</span> <span class="n">filters</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="n">label</span><span class="p">,</span> <span class="s1">&#39;attributes.input_plugin&#39;</span><span class="p">:</span> <span class="n">entry_point</span><span class="p">},</span> <span class="n">with_computer</span><span class="o">=</span><span class="s1">&#39;computer&#39;</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">code</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">one</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">except</span> <span class="p">(</span><span class="n">exceptions</span><span class="o">.</span><span class="n">MultipleObjectsError</span><span class="p">,</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">NotExistent</span><span class="p">):</span>
+            <span class="n">code</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">code</span>
+
+        <span class="n">executable_path</span> <span class="o">=</span> <span class="n">shutil</span><span class="o">.</span><span class="n">which</span><span class="p">(</span><span class="n">executable</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">executable_path</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;The executable &quot;</span><span class="si">{}</span><span class="s1">&quot; was not found in the $PATH.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">executable</span><span class="p">))</span>
+
+        <span class="n">code</span> <span class="o">=</span> <span class="n">Code</span><span class="p">(</span><span class="n">input_plugin_name</span><span class="o">=</span><span class="n">entry_point</span><span class="p">,</span> <span class="n">remote_computer_exec</span><span class="o">=</span><span class="p">[</span><span class="n">computer</span><span class="p">,</span> <span class="n">executable_path</span><span class="p">])</span>
+        <span class="n">code</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">label</span>
+        <span class="n">code</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">label</span>
+
+        <span class="k">if</span> <span class="n">prepend_text</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">code</span><span class="o">.</span><span class="n">set_prepend_text</span><span class="p">(</span><span class="n">prepend_text</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">append_text</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">code</span><span class="o">.</span><span class="n">set_append_text</span><span class="p">(</span><span class="n">append_text</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">code</span><span class="o">.</span><span class="n">store</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">get_code</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

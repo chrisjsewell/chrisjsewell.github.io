@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.tools.importexport.migration.v05_to_v06 &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/language_data.js"></script>
+        <script src="../../../../../_static/togglebutton.js"></script>
+        <script src="../../../../../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../../aiida.html">aiida</a> &raquo;</li>
+        
+          <li><a href="../migration.html">aiida.tools.importexport.migration</a> &raquo;</li>
+        
+      <li>aiida.tools.importexport.migration.v05_to_v06</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for aiida.tools.importexport.migration.v05_to_v06</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1">###########################################################################</span>
+<span class="c1"># Copyright (c), The AiiDA team. All rights reserved.                     #</span>
+<span class="c1"># This file is part of the AiiDA code.                                    #</span>
+<span class="c1">#                                                                         #</span>
+<span class="c1"># The code is hosted on GitHub at https://github.com/aiidateam/aiida-core #</span>
+<span class="c1"># For further information on the license, see the LICENSE.txt file        #</span>
+<span class="c1"># For further information please visit http://www.aiida.net               #</span>
+<span class="c1">###########################################################################</span>
+<span class="sd">&quot;&quot;&quot;Migration from v0.5 to v0.6, used by `verdi export migrate` command.</span>
+
+<span class="sd">The migration steps are named similarly to the database migrations for Django and SQLAlchemy.</span>
+<span class="sd">In the description of each migration, a revision number is given, which refers to the Django migrations.</span>
+<span class="sd">The individual Django database migrations may be found at:</span>
+
+<span class="sd">    `aiida.backends.djsite.db.migrations.00XX_&lt;migration-name&gt;.py`</span>
+
+<span class="sd">Where XX are the numbers in the migrations&#39; documentation: REV. 1.0.XX</span>
+<span class="sd">And migration-name is the name of the particular migration.</span>
+<span class="sd">The individual SQLAlchemy database migrations may be found at:</span>
+
+<span class="sd">    `aiida.backends.sqlalchemy.migrations.versions.&lt;id&gt;_&lt;migration-name&gt;.py`</span>
+
+<span class="sd">Where id is a SQLA id and migration-name is the name of the particular migration.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="c1"># pylint: disable=invalid-name</span>
+
+<span class="kn">from</span> <span class="nn">aiida.tools.importexport.migration.utils</span> <span class="kn">import</span> <span class="n">verify_metadata_version</span><span class="p">,</span> <span class="n">update_metadata</span>
+
+
+<div class="viewcode-block" id="migrate_deserialized_datetime"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.migration.html#aiida.tools.importexport.migration.v05_to_v06.migrate_deserialized_datetime">[docs]</a><span class="k">def</span> <span class="nf">migrate_deserialized_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">conversion</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Deserialize datetime strings from export archives, meaning to reattach the UTC timezone information.&quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">aiida.tools.importexport.common.exceptions</span> <span class="kn">import</span> <span class="n">ArchiveMigrationError</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="n">ret_data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">conversion</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">ret_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">migrate_deserialized_datetime</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">conversion</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ret_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">migrate_deserialized_datetime</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+        <span class="n">ret_data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">conversion</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">value</span><span class="p">,</span> <span class="n">sub_conversion</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">conversion</span><span class="p">):</span>
+                <span class="n">ret_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">migrate_deserialized_datetime</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">sub_conversion</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                <span class="n">ret_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">migrate_deserialized_datetime</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">conversion</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">ret_data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">conversion</span> <span class="o">==</span> <span class="s1">&#39;date&#39;</span><span class="p">:</span>
+                <span class="c1"># Node attributes that were datetime objects were converted to a string since datetimes cannot be stored</span>
+                <span class="c1"># in JSON. The function used to serialize was:</span>
+                <span class="c1"># `data.astimezone(pytz.utc).strftime(&#39;%Y-%m-%dT%H:%M:%S.%f&#39;)</span>
+                <span class="c1"># Note that this first converted the datetime to UTC but then dropped the information from the string.</span>
+                <span class="c1"># Since we know that all strings will be UTC, here we are simply reattaching that information.</span>
+                <span class="n">ret_data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">+</span> <span class="s1">&#39;+00:00&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ArchiveMigrationError</span><span class="p">(</span><span class="s2">&quot;Unknown convert_type &#39;</span><span class="si">{}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">conversion</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">ret_data</span></div>
+
+
+<div class="viewcode-block" id="migration_serialize_datetime_objects"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.migration.html#aiida.tools.importexport.migration.v05_to_v06.migration_serialize_datetime_objects">[docs]</a><span class="k">def</span> <span class="nf">migration_serialize_datetime_objects</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Apply migration 0037 - REV. 1.0.37</span>
+
+<span class="sd">    Migrates the node `attributes` and `extras` from the EAV schema to JSONB columns. Since JSON does not support</span>
+<span class="sd">    datetime objects, and the EAV did, existing datetime objects have to be serialized to strings. Just like the</span>
+<span class="sd">    database migration they were serialized to the standard ISO format, except that they were first converted to UTC</span>
+<span class="sd">    timezone and then the stored without a timezone reference. Since existing datetimes in the attributes and extras in</span>
+<span class="sd">    the database were timezone aware and have been migrated to an ISO format string *including* the timezone information</span>
+<span class="sd">    we should now add the same timezone information to datetime attributes and extras in existing export archives. All</span>
+<span class="sd">    that one needs to do for this is to append the `+00:00` suffix, which signifies the UTC timezone.</span>
+
+<span class="sd">    Since the datetime objects were the only types being serialized in the attributes and extras, after the reinstating</span>
+<span class="sd">    of the timeonze information, there is no longer a need for the de/serialization dictionaries for each node, stored</span>
+<span class="sd">    in `node_attributes_conversion` and `node_extras_conversion`, respectively. They are no longer added to new archives</span>
+<span class="sd">    and so they can and should be removed from existing archives, reducing the size enormously.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">data</span><span class="p">[</span><span class="s1">&#39;node_attributes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">migrate_deserialized_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;node_attributes&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;node_attributes_conversion&#39;</span><span class="p">])</span>
+    <span class="n">data</span><span class="p">[</span><span class="s1">&#39;node_extras&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">migrate_deserialized_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;node_extras&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;node_extras_conversion&#39;</span><span class="p">])</span>
+
+    <span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;node_attributes_conversion&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;node_extras_conversion&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="migration_migrate_legacy_job_calculation_data"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.migration.html#aiida.tools.importexport.migration.v05_to_v06.migration_migrate_legacy_job_calculation_data">[docs]</a><span class="k">def</span> <span class="nf">migration_migrate_legacy_job_calculation_data</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Apply migration 0038 - REV. 1.0.38</span>
+
+<span class="sd">    Migrates legacy `JobCalculation` data to the new process system. Essentially old `JobCalculation` nodes, which</span>
+<span class="sd">    have already been migrated to `CalcJobNodes`, are missing important attributes `process_state`, `exit_status` and</span>
+<span class="sd">    `process_status`. These are inferred from the old `state` attribute, which is then discarded as its values have</span>
+<span class="sd">    been deprecated.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">aiida.backends.general.migrations.calc_state</span> <span class="kn">import</span> <span class="n">STATE_MAPPING</span>
+
+    <span class="n">calc_job_node_type</span> <span class="o">=</span> <span class="s1">&#39;process.calculation.calcjob.CalcJobNode.&#39;</span>
+    <span class="n">node_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;export_data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Node&#39;</span><span class="p">,</span> <span class="p">{})</span>
+    <span class="n">calc_jobs</span> <span class="o">=</span> <span class="p">{</span><span class="n">pk</span> <span class="k">for</span> <span class="n">pk</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">node_data</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">values</span><span class="p">[</span><span class="s1">&#39;node_type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">calc_job_node_type</span><span class="p">}</span>
+
+    <span class="k">for</span> <span class="n">pk</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;node_attributes&#39;</span><span class="p">]:</span>
+
+        <span class="c1"># Get a reference to the attributes, so later we update the attribute dictionary in place</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;node_attributes&#39;</span><span class="p">][</span><span class="n">pk</span><span class="p">]</span>
+
+        <span class="n">state</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;state&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="c1"># Only continue if the pk corresponds to a `CalcJobNode` *and* the `state` is one in the `STATE_MAPPING`</span>
+        <span class="k">if</span> <span class="n">pk</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">calc_jobs</span> <span class="ow">or</span> <span class="n">state</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">STATE_MAPPING</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="c1"># Pop the `state` attribute if it exists, since in any case it will have to be discarded since it is invalid</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;state&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">mapped</span> <span class="o">=</span> <span class="n">STATE_MAPPING</span><span class="p">[</span><span class="n">state</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Add the mapped process attributes to the export dictionary if not `None` even if it already exists</span>
+            <span class="k">if</span> <span class="n">mapped</span><span class="o">.</span><span class="n">exit_status</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">values</span><span class="p">[</span><span class="s1">&#39;exit_status&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mapped</span><span class="o">.</span><span class="n">exit_status</span>
+            <span class="k">if</span> <span class="n">mapped</span><span class="o">.</span><span class="n">process_state</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">values</span><span class="p">[</span><span class="s1">&#39;process_state&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mapped</span><span class="o">.</span><span class="n">process_state</span>
+            <span class="k">if</span> <span class="n">mapped</span><span class="o">.</span><span class="n">process_status</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">values</span><span class="p">[</span><span class="s1">&#39;process_status&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mapped</span><span class="o">.</span><span class="n">process_status</span>
+
+            <span class="n">values</span><span class="p">[</span><span class="s1">&#39;process_label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Legacy JobCalculation&#39;</span></div>
+
+
+<div class="viewcode-block" id="migrate_v5_to_v6"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.migration.html#aiida.tools.importexport.migration.v05_to_v06.migrate_v5_to_v6">[docs]</a><span class="k">def</span> <span class="nf">migrate_v5_to_v6</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>  <span class="c1"># pylint: disable=unused-argument</span>
+    <span class="sd">&quot;&quot;&quot;Migration of export files from v0.5 to v0.6&quot;&quot;&quot;</span>
+    <span class="n">old_version</span> <span class="o">=</span> <span class="s1">&#39;0.5&#39;</span>
+    <span class="n">new_version</span> <span class="o">=</span> <span class="s1">&#39;0.6&#39;</span>
+
+    <span class="n">verify_metadata_version</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">old_version</span><span class="p">)</span>
+    <span class="n">update_metadata</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">new_version</span><span class="p">)</span>
+
+    <span class="c1"># Apply migrations</span>
+    <span class="n">migration_serialize_datetime_objects</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">migration_migrate_legacy_job_calculation_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

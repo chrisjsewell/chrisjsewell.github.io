@@ -1,0 +1,589 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.engine.processes.workchains.restart &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/language_data.js"></script>
+        <script src="../../../../../_static/togglebutton.js"></script>
+        <script src="../../../../../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../../aiida.html">aiida</a> &raquo;</li>
+        
+      <li>aiida.engine.processes.workchains.restart</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for aiida.engine.processes.workchains.restart</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1">###########################################################################</span>
+<span class="c1"># Copyright (c), The AiiDA team. All rights reserved.                     #</span>
+<span class="c1"># This file is part of the AiiDA code.                                    #</span>
+<span class="c1">#                                                                         #</span>
+<span class="c1"># The code is hosted on GitHub at https://github.com/aiidateam/aiida-core #</span>
+<span class="c1"># For further information on the license, see the LICENSE.txt file        #</span>
+<span class="c1"># For further information please visit http://www.aiida.net               #</span>
+<span class="c1">###########################################################################</span>
+<span class="sd">&quot;&quot;&quot;Base implementation of `WorkChain` class that implements a simple automated restart mechanism for sub processes.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">functools</span>
+
+<span class="kn">from</span> <span class="nn">aiida</span> <span class="kn">import</span> <span class="n">orm</span>
+<span class="kn">from</span> <span class="nn">aiida.common</span> <span class="kn">import</span> <span class="n">AttributeDict</span>
+
+<span class="kn">from</span> <span class="nn">.context</span> <span class="kn">import</span> <span class="n">ToContext</span><span class="p">,</span> <span class="n">append_</span>
+<span class="kn">from</span> <span class="nn">.workchain</span> <span class="kn">import</span> <span class="n">WorkChain</span>
+<span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">ProcessHandlerReport</span><span class="p">,</span> <span class="n">process_handler</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;BaseRestartWorkChain&#39;</span><span class="p">,)</span>
+
+
+<span class="k">def</span> <span class="nf">validate_handler_overrides</span><span class="p">(</span><span class="n">process_class</span><span class="p">,</span> <span class="n">handler_overrides</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>  <span class="c1"># pylint: disable=inconsistent-return-statements,unused-argument</span>
+    <span class="sd">&quot;&quot;&quot;Validator for the `handler_overrides` input port of the `BaseRestartWorkChain.</span>
+
+<span class="sd">    The `handler_overrides` should be a dictionary where keys are strings that are the name of a process handler, i.e. a</span>
+<span class="sd">    instance method of the `process_class` that has been decorated with the `process_handler` decorator. The values</span>
+<span class="sd">    should be boolean.</span>
+
+<span class="sd">    .. note:: the normal signature of a port validator is `(value, ctx)` but since for the validation here we need a</span>
+<span class="sd">        reference to the process class, we add it and the class is bound to the method in the port declaration in the</span>
+<span class="sd">        `define` method.</span>
+
+<span class="sd">    :param process_class: the `BaseRestartWorkChain` (sub) class</span>
+<span class="sd">    :param handler_overrides: the input `Dict` node</span>
+<span class="sd">    :param ctx: the `PortNamespace` in which the port is embedded</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">handler_overrides</span><span class="p">:</span>
+        <span class="k">return</span>
+
+    <span class="k">for</span> <span class="n">handler</span><span class="p">,</span> <span class="n">override</span> <span class="ow">in</span> <span class="n">handler_overrides</span><span class="o">.</span><span class="n">get_dict</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s1">&#39;The key `</span><span class="si">{}</span><span class="s1">` is not a string.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">process_class</span><span class="o">.</span><span class="n">is_process_handler</span><span class="p">(</span><span class="n">handler</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s1">&#39;The key `</span><span class="si">{}</span><span class="s1">` is not a process handler of </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">process_class</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">override</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s1">&#39;The value of key `</span><span class="si">{}</span><span class="s1">` is not a boolean.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="BaseRestartWorkChain"><a class="viewcode-back" href="../../../../../apidoc/aiida.engine.processes.workchains.html#aiida.engine.BaseRestartWorkChain">[docs]</a><span class="k">class</span> <span class="nc">BaseRestartWorkChain</span><span class="p">(</span><span class="n">WorkChain</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Base restart work chain.</span>
+
+<span class="sd">    This work chain serves as the starting point for more complex work chains that will be designed to run a sub process</span>
+<span class="sd">    that might need multiple restarts to come to a successful end. These restarts may be necessary because a single</span>
+<span class="sd">    process run is not sufficient to achieve a fully converged result, or certain errors maybe encountered which</span>
+<span class="sd">    are recoverable.</span>
+
+<span class="sd">    This work chain implements the most basic functionality to achieve this goal. It will launch the sub process,</span>
+<span class="sd">    restarting until it is completed successfully or the maximum number of iterations is reached. After completion of</span>
+<span class="sd">    the sub process it will be inspected, and a list of process handlers are called successively. These process handlers</span>
+<span class="sd">    are defined as class methods that are decorated with :meth:`~aiida.engine.process_handler`.</span>
+
+<span class="sd">    The idea is to sub class this work chain and leverage the generic error handling that is implemented in the few</span>
+<span class="sd">    outline methods. The minimally required outline would look something like the following::</span>
+
+<span class="sd">        cls.setup</span>
+<span class="sd">        while_(cls.should_run_process)(</span>
+<span class="sd">            cls.run_process,</span>
+<span class="sd">            cls.inspect_process,</span>
+<span class="sd">        )</span>
+
+<span class="sd">    Each of these methods can of course be overriden but they should be general enough to fit most process cycles. The</span>
+<span class="sd">    `run_process` method will take the inputs for the process from the context under the key `inputs`. The user should,</span>
+<span class="sd">    therefore, make sure that before the `run_process` method is called, that the to be used inputs are stored under</span>
+<span class="sd">    `self.ctx.inputs`. One can update the inputs based on the results from a prior process by calling an outline method</span>
+<span class="sd">    just before the `run_process` step, for example::</span>
+
+<span class="sd">        cls.setup</span>
+<span class="sd">        while_(cls.should_run_process)(</span>
+<span class="sd">            cls.prepare_inputs,</span>
+<span class="sd">            cls.run_process,</span>
+<span class="sd">            cls.inspect_process,</span>
+<span class="sd">        )</span>
+
+<span class="sd">    Where in the `prepare_calculation` method, the inputs dictionary at `self.ctx.inputs` is updated before the next</span>
+<span class="sd">    process will be run with those inputs.</span>
+
+<span class="sd">    The `_process_class` attribute should be set to the `Process` class that should be run in the loop.</span>
+<span class="sd">    Finally, to define handlers that will be called during the `inspect_process` simply define a class method with the</span>
+<span class="sd">    signature `(self, node)` and decorate it with the `process_handler` decorator, for example::</span>
+
+<span class="sd">        @process_handler</span>
+<span class="sd">        def handle_problem(self, node):</span>
+<span class="sd">            if some_problem:</span>
+<span class="sd">                self.ctx.inputs = improved_inputs</span>
+<span class="sd">                return ProcessHandlerReport()</span>
+
+<span class="sd">    The `process_handler` and `ProcessHandlerReport` support various arguments to control the flow of the logic of the</span>
+<span class="sd">    `inspect_process`. Refer to their respective documentation for details.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_process_class</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_considered_handlers_extra</span> <span class="o">=</span> <span class="s1">&#39;considered_handlers&#39;</span>
+
+<div class="viewcode-block" id="BaseRestartWorkChain.define"><a class="viewcode-back" href="../../../../../apidoc/aiida.engine.processes.workchains.html#aiida.engine.BaseRestartWorkChain.define">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">define</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">spec</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Define the process specification.&quot;&quot;&quot;</span>
+        <span class="c1"># yapf: disable</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">define</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span>
+        <span class="n">spec</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s1">&#39;max_iterations&#39;</span><span class="p">,</span> <span class="n">valid_type</span><span class="o">=</span><span class="n">orm</span><span class="o">.</span><span class="n">Int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="n">orm</span><span class="o">.</span><span class="n">Int</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
+            <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Maximum number of iterations the work chain will restart the process to finish successfully.&#39;</span><span class="p">)</span>
+        <span class="n">spec</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s1">&#39;clean_workdir&#39;</span><span class="p">,</span> <span class="n">valid_type</span><span class="o">=</span><span class="n">orm</span><span class="o">.</span><span class="n">Bool</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="n">orm</span><span class="o">.</span><span class="n">Bool</span><span class="p">(</span><span class="kc">False</span><span class="p">),</span>
+            <span class="n">help</span><span class="o">=</span><span class="s1">&#39;If `True`, work directories of all called calculation jobs will be cleaned at the end of execution.&#39;</span><span class="p">)</span>
+        <span class="n">spec</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s1">&#39;handler_overrides&#39;</span><span class="p">,</span>
+            <span class="n">valid_type</span><span class="o">=</span><span class="n">orm</span><span class="o">.</span><span class="n">Dict</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">validator</span><span class="o">=</span><span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">validate_handler_overrides</span><span class="p">,</span> <span class="bp">cls</span><span class="p">),</span>
+            <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Mapping where keys are process handler names and the values are a boolean, where `True` will enable &#39;</span>
+                 <span class="s1">&#39;the corresponding handler and `False` will disable it. This overrides the default value set by the &#39;</span>
+                 <span class="s1">&#39;`enabled` keyword of the `process_handler` decorator with which the method is decorated.&#39;</span><span class="p">)</span>
+        <span class="n">spec</span><span class="o">.</span><span class="n">exit_code</span><span class="p">(</span><span class="mi">301</span><span class="p">,</span> <span class="s1">&#39;ERROR_SUB_PROCESS_EXCEPTED&#39;</span><span class="p">,</span>
+            <span class="n">message</span><span class="o">=</span><span class="s1">&#39;The sub process excepted.&#39;</span><span class="p">)</span>
+        <span class="n">spec</span><span class="o">.</span><span class="n">exit_code</span><span class="p">(</span><span class="mi">302</span><span class="p">,</span> <span class="s1">&#39;ERROR_SUB_PROCESS_KILLED&#39;</span><span class="p">,</span>
+            <span class="n">message</span><span class="o">=</span><span class="s1">&#39;The sub process was killed.&#39;</span><span class="p">)</span>
+        <span class="n">spec</span><span class="o">.</span><span class="n">exit_code</span><span class="p">(</span><span class="mi">401</span><span class="p">,</span> <span class="s1">&#39;ERROR_MAXIMUM_ITERATIONS_EXCEEDED&#39;</span><span class="p">,</span>
+            <span class="n">message</span><span class="o">=</span><span class="s1">&#39;The maximum number of iterations was exceeded.&#39;</span><span class="p">)</span>
+        <span class="n">spec</span><span class="o">.</span><span class="n">exit_code</span><span class="p">(</span><span class="mi">402</span><span class="p">,</span> <span class="s1">&#39;ERROR_SECOND_CONSECUTIVE_UNHANDLED_FAILURE&#39;</span><span class="p">,</span>
+            <span class="n">message</span><span class="o">=</span><span class="s1">&#39;The process failed for an unknown reason, twice in a row.&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BaseRestartWorkChain.setup"><a class="viewcode-back" href="../../../../../apidoc/aiida.engine.processes.workchains.html#aiida.engine.BaseRestartWorkChain.setup">[docs]</a>    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Initialize context variables that are used during the logical flow of the `BaseRestartWorkChain`.&quot;&quot;&quot;</span>
+        <span class="n">overrides</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">handler_overrides</span><span class="o">.</span><span class="n">get_dict</span><span class="p">()</span> <span class="k">if</span> <span class="s1">&#39;handler_overrides&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">inputs</span> <span class="k">else</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">handler_overrides</span> <span class="o">=</span> <span class="n">overrides</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">process_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_class</span><span class="o">.</span><span class="vm">__name__</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">unhandled_failure</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">is_finished</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">iteration</span> <span class="o">=</span> <span class="mi">0</span></div>
+
+<div class="viewcode-block" id="BaseRestartWorkChain.should_run_process"><a class="viewcode-back" href="../../../../../apidoc/aiida.engine.processes.workchains.html#aiida.engine.BaseRestartWorkChain.should_run_process">[docs]</a>    <span class="k">def</span> <span class="nf">should_run_process</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return whether a new process should be run.</span>
+
+<span class="sd">        This is the case as long as the last process has not finished successfully and the maximum number of restarts</span>
+<span class="sd">        has not yet been exceeded.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">is_finished</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">iteration</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">max_iterations</span><span class="o">.</span><span class="n">value</span></div>
+
+<div class="viewcode-block" id="BaseRestartWorkChain.run_process"><a class="viewcode-back" href="../../../../../apidoc/aiida.engine.processes.workchains.html#aiida.engine.BaseRestartWorkChain.run_process">[docs]</a>    <span class="k">def</span> <span class="nf">run_process</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Run the next process, taking the input dictionary from the context at `self.ctx.inputs`.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">iteration</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">unwrapped_inputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">inputs</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s1">&#39;no process input dictionary was defined in `self.ctx.inputs`&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Set the `CALL` link label</span>
+        <span class="n">unwrapped_inputs</span><span class="p">[</span><span class="s1">&#39;metadata&#39;</span><span class="p">][</span><span class="s1">&#39;call_link_label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;iteration_</span><span class="si">{:02d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">iteration</span><span class="p">)</span>
+
+        <span class="n">inputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wrap_bare_dict_inputs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_process_class</span><span class="o">.</span><span class="n">spec</span><span class="p">()</span><span class="o">.</span><span class="n">inputs</span><span class="p">,</span> <span class="n">unwrapped_inputs</span><span class="p">)</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_process_class</span><span class="p">,</span> <span class="o">**</span><span class="n">inputs</span><span class="p">)</span>
+
+        <span class="c1"># Add a new empty list to the `BaseRestartWorkChain._considered_handlers_extra` extra. This will contain the</span>
+        <span class="c1"># name and return value of all class methods, decorated with `process_handler`, that are called during</span>
+        <span class="c1"># the `inspect_process` outline step.</span>
+        <span class="n">considered_handlers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">get_extra</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_considered_handlers_extra</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="n">considered_handlers</span><span class="o">.</span><span class="n">append</span><span class="p">([])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">set_extra</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_considered_handlers_extra</span><span class="p">,</span> <span class="n">considered_handlers</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="s1">&#39;launching </span><span class="si">{}</span><span class="s1">&lt;</span><span class="si">{}</span><span class="s1">&gt; iteration #</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">process_name</span><span class="p">,</span> <span class="n">node</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">iteration</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">ToContext</span><span class="p">(</span><span class="n">children</span><span class="o">=</span><span class="n">append_</span><span class="p">(</span><span class="n">node</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="BaseRestartWorkChain.inspect_process"><a class="viewcode-back" href="../../../../../apidoc/aiida.engine.processes.workchains.html#aiida.engine.BaseRestartWorkChain.inspect_process">[docs]</a>    <span class="k">def</span> <span class="nf">inspect_process</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># pylint: disable=inconsistent-return-statements,too-many-branches</span>
+        <span class="sd">&quot;&quot;&quot;Analyse the results of the previous process and call the handlers when necessary.</span>
+
+<span class="sd">        If the process is excepted or killed, the work chain will abort. Otherwise any attached handlers will be called</span>
+<span class="sd">        in order of their specified priority. If the process was failed and no handler returns a report indicating that</span>
+<span class="sd">        the error was handled, it is considered an unhandled process failure and the process is relaunched. If this</span>
+<span class="sd">        happens twice in a row, the work chain is aborted. In the case that at least one handler returned a report the</span>
+<span class="sd">        following matrix determines the logic that is followed:</span>
+
+<span class="sd">            Process  Handler    Handler     Action</span>
+<span class="sd">            result   report?    exit code</span>
+<span class="sd">            -----------------------------------------</span>
+<span class="sd">            Success      yes        == 0     Restart</span>
+<span class="sd">            Success      yes        != 0     Abort</span>
+<span class="sd">            Failed       yes        == 0     Restart</span>
+<span class="sd">            Failed       yes        != 0     Abort</span>
+
+<span class="sd">        If no handler returned a report and the process finished successfully, the work chain&#39;s work is considered done</span>
+<span class="sd">        and it will move on to the next step that directly follows the `while` conditional, if there is one defined in</span>
+<span class="sd">        the outline.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">iteration</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">is_excepted</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">exit_codes</span><span class="o">.</span><span class="n">ERROR_SUB_PROCESS_EXCEPTED</span>  <span class="c1"># pylint: disable=no-member</span>
+
+        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">is_killed</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">exit_codes</span><span class="o">.</span><span class="n">ERROR_SUB_PROCESS_KILLED</span>  <span class="c1"># pylint: disable=no-member</span>
+
+        <span class="n">last_report</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># Sort the handlers with a priority defined, based on their priority in reverse order</span>
+        <span class="k">for</span> <span class="n">handler</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_process_handlers</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">handler</span><span class="p">:</span> <span class="n">handler</span><span class="o">.</span><span class="n">priority</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+            <span class="c1"># Skip if the handler is enabled, either explicitly through `handler_overrides` or by default</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">handler_overrides</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">handler</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">handler</span><span class="o">.</span><span class="n">enabled</span><span class="p">):</span>
+                <span class="k">continue</span>
+
+            <span class="c1"># Even though the `handler` is an instance method, the `get_process_handlers` method returns unbound methods</span>
+            <span class="c1"># so we have to pass in `self` manually. Also, always pass the `node` as an argument because the</span>
+            <span class="c1"># `process_handler` decorator with which the handler is decorated relies on this behavior.</span>
+            <span class="n">report</span> <span class="o">=</span> <span class="n">handler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">report</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="n">ProcessHandlerReport</span><span class="p">):</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">handler</span><span class="o">.</span><span class="vm">__name__</span>
+                <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;handler `</span><span class="si">{}</span><span class="s1">` returned a value that is not a ProcessHandlerReport&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+
+            <span class="c1"># If an actual report was returned, save it so it is not overridden by next handler returning `None`</span>
+            <span class="k">if</span> <span class="n">report</span><span class="p">:</span>
+                <span class="n">last_report</span> <span class="o">=</span> <span class="n">report</span>
+
+            <span class="c1"># After certain handlers, we may want to skip all other handlers</span>
+            <span class="k">if</span> <span class="n">report</span> <span class="ow">and</span> <span class="n">report</span><span class="o">.</span><span class="n">do_break</span><span class="p">:</span>
+                <span class="k">break</span>
+
+        <span class="n">report_args</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">process_name</span><span class="p">,</span> <span class="n">node</span><span class="o">.</span><span class="n">pk</span><span class="p">)</span>
+
+        <span class="c1"># If the process failed and no handler returned a report we consider it an unhandled failure</span>
+        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">is_failed</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">last_report</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">unhandled_failure</span><span class="p">:</span>
+                <span class="n">template</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&lt;</span><span class="si">{}</span><span class="s1">&gt; failed and error was not handled for the second consecutive time, aborting&#39;</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">report_args</span><span class="p">))</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">exit_codes</span><span class="o">.</span><span class="n">ERROR_SECOND_CONSECUTIVE_UNHANDLED_FAILURE</span>  <span class="c1"># pylint: disable=no-member</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">unhandled_failure</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&lt;</span><span class="si">{}</span><span class="s1">&gt; failed and error was not handled, restarting once more&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">report_args</span><span class="p">))</span>
+            <span class="k">return</span>
+
+        <span class="c1"># Here either the process finished successful or at least one handler returned a report so it can no longer be</span>
+        <span class="c1"># considered to be an unhandled failed process and therefore we reset the flag</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">unhandled_failure</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="c1"># If at least one handler returned a report, the action depends on its exit code and that of the process itself</span>
+        <span class="k">if</span> <span class="n">last_report</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">is_finished_ok</span> <span class="ow">and</span> <span class="n">last_report</span><span class="o">.</span><span class="n">exit_code</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">template</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&lt;</span><span class="si">{}</span><span class="s1">&gt; finished successfully but a handler was triggered, restarting&#39;</span>
+            <span class="k">elif</span> <span class="n">node</span><span class="o">.</span><span class="n">is_failed</span> <span class="ow">and</span> <span class="n">last_report</span><span class="o">.</span><span class="n">exit_code</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">template</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&lt;</span><span class="si">{}</span><span class="s1">&gt; failed but a handler dealt with the problem, restarting&#39;</span>
+            <span class="k">elif</span> <span class="n">node</span><span class="o">.</span><span class="n">is_finished_ok</span> <span class="ow">and</span> <span class="n">last_report</span><span class="o">.</span><span class="n">exit_code</span><span class="o">.</span><span class="n">status</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">template</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&lt;</span><span class="si">{}</span><span class="s1">&gt; finished successfully but a handler detected an unrecoverable problem, aborting&#39;</span>
+            <span class="k">elif</span> <span class="n">node</span><span class="o">.</span><span class="n">is_failed</span> <span class="ow">and</span> <span class="n">last_report</span><span class="o">.</span><span class="n">exit_code</span><span class="o">.</span><span class="n">status</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">template</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&lt;</span><span class="si">{}</span><span class="s1">&gt; failed but a handler detected an unrecoverable problem, aborting&#39;</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">report_args</span><span class="p">))</span>
+
+            <span class="k">return</span> <span class="n">report</span><span class="o">.</span><span class="n">exit_code</span>
+
+        <span class="c1"># Otherwise the process was successful and no handler returned anything so we consider the work done</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">is_finished</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="BaseRestartWorkChain.results"><a class="viewcode-back" href="../../../../../apidoc/aiida.engine.processes.workchains.html#aiida.engine.BaseRestartWorkChain.results">[docs]</a>    <span class="k">def</span> <span class="nf">results</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># pylint: disable=inconsistent-return-statements</span>
+        <span class="sd">&quot;&quot;&quot;Attach the outputs specified in the output specification from the last completed process.&quot;&quot;&quot;</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">iteration</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+
+        <span class="c1"># We check the `is_finished` attribute of the work chain and not the successfulness of the last process</span>
+        <span class="c1"># because the error handlers in the last iteration can have qualified a &quot;failed&quot; process as satisfactory</span>
+        <span class="c1"># for the outcome of the work chain and so have marked it as `is_finished=True`.</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">is_finished</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">iteration</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">max_iterations</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="s1">&#39;reached the maximum number of iterations </span><span class="si">{}</span><span class="s1">: last ran </span><span class="si">{}</span><span class="s1">&lt;</span><span class="si">{}</span><span class="s1">&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">max_iterations</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">process_name</span><span class="p">,</span> <span class="n">node</span><span class="o">.</span><span class="n">pk</span><span class="p">))</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">exit_codes</span><span class="o">.</span><span class="n">ERROR_MAXIMUM_ITERATIONS_EXCEEDED</span>  <span class="c1"># pylint: disable=no-member</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="s1">&#39;work chain completed after </span><span class="si">{}</span><span class="s1"> iterations&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">iteration</span><span class="p">))</span>
+
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">port</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">spec</span><span class="p">()</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">output</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">get_outgoing</span><span class="p">(</span><span class="n">link_label_filter</span><span class="o">=</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">one</span><span class="p">()</span><span class="o">.</span><span class="n">node</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">port</span><span class="o">.</span><span class="n">required</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="s2">&quot;required output &#39;</span><span class="si">{}</span><span class="s2">&#39; was not an output of </span><span class="si">{}</span><span class="s2">&lt;</span><span class="si">{}</span><span class="s2">&gt;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">process_name</span><span class="p">,</span> <span class="n">node</span><span class="o">.</span><span class="n">pk</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">out</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BaseRestartWorkChain.__init__"><a class="viewcode-back" href="../../../../../apidoc/aiida.engine.processes.workchains.html#aiida.engine.BaseRestartWorkChain.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Construct the instance.&quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">..process</span> <span class="kn">import</span> <span class="n">Process</span>  <span class="c1"># pylint: disable=cyclic-import</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_class</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_process_class</span><span class="p">,</span> <span class="n">Process</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;no valid Process class defined for `_process_class` attribute&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BaseRestartWorkChain.is_process_handler"><a class="viewcode-back" href="../../../../../apidoc/aiida.engine.processes.workchains.html#aiida.engine.BaseRestartWorkChain.is_process_handler">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">is_process_handler</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">process_handler_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return whether the given method name corresponds to a process handler of this class.</span>
+
+<span class="sd">        :param process_handler_name: string name of the instance method</span>
+<span class="sd">        :return: boolean, True if corresponds to process handler, False otherwise</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=comparison-with-callable</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">process_handler_name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">handler</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">process_handler_name</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">handler</span> <span class="o">=</span> <span class="n">process_handler_name</span>
+
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="s1">&#39;decorator&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">==</span> <span class="n">process_handler</span></div>
+
+<div class="viewcode-block" id="BaseRestartWorkChain.get_process_handlers"><a class="viewcode-back" href="../../../../../apidoc/aiida.engine.processes.workchains.html#aiida.engine.BaseRestartWorkChain.get_process_handlers">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_process_handlers</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">getmembers</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">method</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">method</span> <span class="ow">in</span> <span class="n">getmembers</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">is_process_handler</span><span class="p">(</span><span class="n">method</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span></div>
+
+<div class="viewcode-block" id="BaseRestartWorkChain.on_terminated"><a class="viewcode-back" href="../../../../../apidoc/aiida.engine.processes.workchains.html#aiida.engine.BaseRestartWorkChain.on_terminated">[docs]</a>    <span class="k">def</span> <span class="nf">on_terminated</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Clean the working directories of all child calculation jobs if `clean_workdir=True` in the inputs.&quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">on_terminated</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">clean_workdir</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="s1">&#39;remote folders will not be cleaned&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="n">cleaned_calcs</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">called_descendant</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">called_descendants</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">called_descendant</span><span class="p">,</span> <span class="n">orm</span><span class="o">.</span><span class="n">CalcJobNode</span><span class="p">):</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">called_descendant</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">remote_folder</span><span class="o">.</span><span class="n">_clean</span><span class="p">()</span>  <span class="c1"># pylint: disable=protected-access</span>
+                    <span class="n">cleaned_calcs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">called_descendant</span><span class="o">.</span><span class="n">pk</span><span class="p">))</span>
+                <span class="k">except</span> <span class="p">(</span><span class="ne">IOError</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">):</span>
+                    <span class="k">pass</span>
+
+        <span class="k">if</span> <span class="n">cleaned_calcs</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="s1">&#39;cleaned remote folders of calculations: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cleaned_calcs</span><span class="p">)))</span></div>
+
+<div class="viewcode-block" id="BaseRestartWorkChain._wrap_bare_dict_inputs"><a class="viewcode-back" href="../../../../../apidoc/aiida.engine.processes.workchains.html#aiida.engine.BaseRestartWorkChain._wrap_bare_dict_inputs">[docs]</a>    <span class="k">def</span> <span class="nf">_wrap_bare_dict_inputs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">port_namespace</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Wrap bare dictionaries in `inputs` in a `Dict` node if dictated by the corresponding inputs portnamespace.</span>
+
+<span class="sd">        :param port_namespace: a `PortNamespace`</span>
+<span class="sd">        :param inputs: a dictionary of inputs intended for submission of the process</span>
+<span class="sd">        :return: an attribute dictionary with all bare dictionaries wrapped in `Dict` if dictated by the port namespace</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">aiida.engine.processes</span> <span class="kn">import</span> <span class="n">PortNamespace</span>
+
+        <span class="n">wrapped</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">inputs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">port_namespace</span><span class="p">:</span>
+                <span class="n">wrapped</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+                <span class="k">continue</span>
+
+            <span class="n">port</span> <span class="o">=</span> <span class="n">port_namespace</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">PortNamespace</span><span class="p">):</span>
+                <span class="n">wrapped</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wrap_bare_dict_inputs</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">port</span><span class="o">.</span><span class="n">valid_type</span> <span class="o">==</span> <span class="n">orm</span><span class="o">.</span><span class="n">Dict</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="n">wrapped</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">orm</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="nb">dict</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">wrapped</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+        <span class="k">return</span> <span class="n">AttributeDict</span><span class="p">(</span><span class="n">wrapped</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,1824 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>AiiDA REST API &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>AiiDA REST API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/restapi/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="aiida-rest-api">
+<span id="rest-api"></span><h1>AiiDA REST API<a class="headerlink" href="#aiida-rest-api" title="Permalink to this headline">¶</a></h1>
+<p>AiiDA provides a
+<a class="reference external" href="https://en.wikipedia.org/wiki/Representational_state_transfer">RESTful</a>
+<a class="reference external" href="https://en.wikipedia.org/wiki/Application_programming_interface">API</a>
+that provides access to the AiiDA objects stored in the database.</p>
+<p>The AiiDA REST API is implemented using the <code class="docutils literal notranslate"><span class="pre">Flask</span> <span class="pre">RESTFul</span></code> framework
+and supports only GET methods (reading) for the time being.
+The response contains the data in <code class="docutils literal notranslate"><span class="pre">JSON</span></code> format.</p>
+<p>In this document, file paths are given relative to the AiiDA installation folder.
+The source files of the API are contained in the folder <code class="docutils literal notranslate"><span class="pre">aiida/restapi</span></code>.</p>
+<div class="section" id="running-the-rest-api">
+<h2>Running the REST API<a class="headerlink" href="#running-the-rest-api" title="Permalink to this headline">¶</a></h2>
+<p>To start the REST server open a terminal and type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>verdi restapi
+</pre></div>
+</div>
+<p>This command will hook up a REST API with the default parameters, namely on port <code class="docutils literal notranslate"><span class="pre">5000</span></code> of <code class="docutils literal notranslate"><span class="pre">localhost</span></code>, connecting
+to the default AiiDA profile and assuming the default folder for the REST configuration files, namely <code class="docutils literal notranslate"><span class="pre">common</span></code>.</p>
+<p>For an overview of options accepted by <code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">restapi</span></code> you can type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>verdi restapi --help
+</pre></div>
+</div>
+<p>Like all <code class="docutils literal notranslate"><span class="pre">verdi</span></code> commands, the AiiDA profile can be changed by putting <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">PROFILE</span></code> right after <code class="docutils literal notranslate"><span class="pre">verdi</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>verdi -p &lt;another_profile&gt; restapi
+</pre></div>
+</div>
+<p>The base URL for your REST API is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v4</span>
+</pre></div>
+</div>
+<p>where the last field identifies the version of the API (currently <code class="docutils literal notranslate"><span class="pre">v4</span></code>).
+Simply type this URL in your browser or use command-line tools such as <code class="docutils literal notranslate"><span class="pre">curl</span></code> or <code class="docutils literal notranslate"><span class="pre">wget</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">v3</span></code> version of the API was used for versions of AiiDA previous to 1.0.0b6.</p>
+</div>
+<p>For the full list of configuration options, see the file <code class="docutils literal notranslate"><span class="pre">aiida/restapi/common/config.py</span></code>.</p>
+</div>
+<div class="section" id="general-form-of-the-urls">
+<h2>General form of the URLs<a class="headerlink" href="#general-form-of-the-urls" title="Permalink to this headline">¶</a></h2>
+<p>A generic URL to send requests to the REST API is formed by:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>The base URL. It specifies the host and the version of the API. Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v4</span>
+</pre></div>
+</div>
+</li>
+<li><p>The path. It defines the kind of resource requested by the client and the type of query. Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">../</span><span class="n">nodes</span><span class="o">/..</span>
+</pre></div>
+</div>
+</li>
+<li><p>The query string (not mandatory). It can be used for any further specification of the request, e.g. to introduce
+query filters, to give instructions for ordering, to set how results have to be paginated, etc. Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>?id=200
+</pre></div>
+</div>
+</li>
+</ol>
+</div></blockquote>
+<p>The query string is introduced by the question mark character <code class="docutils literal notranslate"><span class="pre">?</span></code>. Here are some examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:5000/api/v4/users/
+http://localhost:5000/api/v4/computers?scheduler_type=&quot;slurm&quot;
+http://localhost:5000/api/v4/nodes/?id&gt;45&amp;node_type=like=&quot;data%&quot;
+</pre></div>
+</div>
+<p>The trailing slash at the end of the path is not mandatory.</p>
+<div class="section" id="how-to-set-the-number-of-results">
+<h3>How to set the number of results<a class="headerlink" href="#how-to-set-the-number-of-results" title="Permalink to this headline">¶</a></h3>
+<p>Before exploring in details the functionalities of the API it is important to know that the AiiDA REST API provides two
+different ways to limit the number of results returned by the server:
+using pagination, or specifying explicitly <em>limit</em> and <em>offset</em>.</p>
+<div class="section" id="pagination">
+<h4>Pagination<a class="headerlink" href="#pagination" title="Permalink to this headline">¶</a></h4>
+<p>The complete set of results is divided in <em>pages</em> containing by default 20 results each.
+Individual pages are accessed by appending <code class="docutils literal notranslate"><span class="pre">/page/(PAGE)</span></code> to the end of the path, where <code class="docutils literal notranslate"><span class="pre">(PAGE)</span></code> has to be replaced
+by the number of the required page.
+The number of results contained in each page can be altered by specifying the <code class="docutils literal notranslate"><span class="pre">perpage=(PERPAGE)</span></code> field in the
+query string. Note that <code class="docutils literal notranslate"><span class="pre">(PERPAGE)</span></code> values larger than 400 are not allowed. Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:5000/api/v4/computers/page/1?
+http://localhost:5000/api/v4/computers/page/1?perpage=5
+http://localhost:5000/api/v4/computers/page
+</pre></div>
+</div>
+<p>If no page number is specified, as in the last example, the system redirects the request to page 1.
+When pagination is used the <strong>header</strong> of the response contains two more non-empty fields:</p>
+<blockquote>
+<div><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">X-Total-Counts</span></code> (custom field): the total number of results returned by the query, i.e. the sum of the results
+of all pages</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Links</span></code>: links to the first, previous, next, and last page. Suppose that you send a request whose results  fill
+8 pages. Then the value of the <code class="docutils literal notranslate"><span class="pre">Links</span></code> field would look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;\http://localhost:5000/.../page/1?... &gt;; rel=first,
+&lt;\http://localhost:5000/.../page/3?... &gt;; rel=prev,
+&lt;\http://localhost:5000/.../page/5?... &gt;; rel=next,
+&lt;\http://localhost:5000/.../page/8?... &gt;; rel=last
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="setting-limit-and-offset">
+<h4>Setting <em>limit</em> and <em>offset</em><a class="headerlink" href="#setting-limit-and-offset" title="Permalink to this headline">¶</a></h4>
+<p>You can specify two special fields in the query string:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">limit=(LIMIT)</span></code>: field that specifies the largest number of results that will be returned, ex: “limit=20”.
+The default and highest allowed <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> is 400.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">offset=(OFFSET)</span></code>: field that specifies how many entries are skipped before returning results, ex:
+<code class="docutils literal notranslate"><span class="pre">offset=20</span></code>. By default no offset applies.</p></li>
+</ul>
+</div></blockquote>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:5000/api/v4/computers/?limit=3&amp;offset=2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="how-to-build-the-path">
+<h3>How to build the path<a class="headerlink" href="#how-to-build-the-path" title="Permalink to this headline">¶</a></h3>
+<p>The first element of the path is the <em>Resource</em> corresponding to the
+AiiDA object(s) you want to request. The following resources are available:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 79%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Class</p></th>
+<th class="head"><p>Resource</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../apidoc/aiida.orm.html#aiida.orm.Computer" title="aiida.orm.Computer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Computer</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/computers</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../apidoc/aiida.orm.html#aiida.orm.groups.Group" title="aiida.orm.groups.Group"><code class="xref py py-class docutils literal notranslate"><span class="pre">Group</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/groups</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../apidoc/aiida.orm.html#aiida.orm.User" title="aiida.orm.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/users</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../apidoc/aiida.orm.nodes.html#aiida.orm.nodes.Node" title="aiida.orm.nodes.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/nodes</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../apidoc/aiida.orm.nodes.process.html#aiida.orm.nodes.process.ProcessNode" title="aiida.orm.nodes.process.ProcessNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessNode</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/processes</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../apidoc/aiida.orm.nodes.process.calculation.html#aiida.orm.nodes.process.calculation.calcjob.CalcJobNode" title="aiida.orm.nodes.process.calculation.calcjob.CalcJobNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">CalcJobNode</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/calcjobs</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>For a <strong>full list</strong> of available endpoints for each resource, simply query the base URL of the REST API (e.g. <code class="docutils literal notranslate"><span class="pre">http://localhost:5000</span></code>).</p>
+<p>There are two types of paths: you may either request a list of objects
+or one specific object of a resource.</p>
+<p>If no specific endpoint is appended to the name of the resource, the API
+returns the full list of objects of that resource (default limits apply).</p>
+<p>Appending the endpoint <code class="docutils literal notranslate"><span class="pre">projectable_properties</span></code> to a
+resources like nodes, processes, users, groups and computers will give the list of projectable fields
+that are normally returned by the API for
+an object of a specific resource, whereas the endpoint <code class="docutils literal notranslate"><span class="pre">statistics</span></code> returns a
+list of statistical facts concerning a resource.
+Here are few examples of valid URIs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v4</span><span class="o">/</span><span class="n">nodes</span><span class="o">/</span><span class="n">statistics</span>
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v4</span><span class="o">/</span><span class="n">users</span><span class="o">/</span>
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v4</span><span class="o">/</span><span class="n">groups</span><span class="o">/</span><span class="n">projectable_properties</span>
+</pre></div>
+</div>
+<dl>
+<dt>If you request informations of a specific object, in general you have to append its entire <em>uuid</em> or the starting pattern of its <em>uuid</em> to the path.</dt><dd><p>Here are two examples that should return the same object:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v4</span><span class="o">/</span><span class="n">nodes</span><span class="o">/</span><span class="mi">338357</span><span class="n">f4</span><span class="o">-</span><span class="n">f236</span><span class="o">-</span><span class="mi">4</span><span class="n">f9c</span><span class="o">-</span><span class="mi">8</span><span class="n">fbe</span><span class="o">-</span><span class="n">cd550dc6b858</span>
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v4</span><span class="o">/</span><span class="n">nodes</span><span class="o">/</span><span class="mi">338357</span><span class="n">f4</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>In the first URL, we have specified the full <em>uuid</em>, whereas in the second only a chunk of its first characters that is
+sufficiently long to match only one <em>uuid</em> in the database.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Using <em>id</em> in place of <em>uuid</em> is not allowed anylonger, e.g.  <code class="docutils literal notranslate"><span class="pre">http://localhost:5000/api/v4/nodes/201</span></code> does not work.
+Use <code class="docutils literal notranslate"><span class="pre">http://localhost:5000/api/v4/nodes?id=201</span></code> instead.</p>
+</div>
+<p>If the <em>uuid</em> pattern is not long enough to identify a unique object, the API will raise an exception.
+The only exception to this rule is the resource <em>users</em> since the corresponding AiiDA``User`` class has no <em>uuid</em>
+attribute. In this case, you have to specify the <em>id</em> (integer) of the object. Here is an example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:5000/api/v4/users?id=2
+</pre></div>
+</div>
+<p>When you ask for a single object (and only in that case) you can construct more complex requests, namely, you can ask
+for its incoming/outgoing or for its attributes/extras.
+In the first case you have to append to the path the string <code class="docutils literal notranslate"><span class="pre">/links/incoming</span></code> or <code class="docutils literal notranslate"><span class="pre">/links/outgoing</span></code> depending on the desired
+relation between the nodes, whereas in the second case you have to append <code class="docutils literal notranslate"><span class="pre">contents/attributes</span></code> or <code class="docutils literal notranslate"><span class="pre">contents/extras</span></code>
+depending on the kind of content you want to access. Here are some examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v4</span><span class="o">/</span><span class="n">nodes</span><span class="o">/</span><span class="mi">338357</span><span class="n">f4</span><span class="o">/</span><span class="n">links</span><span class="o">/</span><span class="n">incoming</span>
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v4</span><span class="o">/</span><span class="n">nodes</span><span class="o">/</span><span class="mi">338357</span><span class="n">f4</span><span class="o">/</span><span class="n">links</span><span class="o">/</span><span class="n">outgoing</span>
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v4</span><span class="o">/</span><span class="n">nodes</span><span class="o">/</span><span class="mi">338357</span><span class="n">f4</span><span class="o">/</span><span class="n">contents</span><span class="o">/</span><span class="n">attributes</span>
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v4</span><span class="o">/</span><span class="n">nodes</span><span class="o">/</span><span class="mi">338357</span><span class="n">f4</span><span class="o">/</span><span class="n">contents</span><span class="o">/</span><span class="n">extras</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-build-the-query-string">
+<h3>How to build the query string<a class="headerlink" href="#how-to-build-the-query-string" title="Permalink to this headline">¶</a></h3>
+<p>The query string is formed by one or more fields separated by the special character <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>.
+Each field has the form (<code class="docutils literal notranslate"><span class="pre">key</span></code>)(<code class="docutils literal notranslate"><span class="pre">operator</span></code>)(<code class="docutils literal notranslate"><span class="pre">value</span></code>).
+The same constraints that apply to the names of python variables determine what are the valid keys, namely,
+only alphanumeric characters plus <code class="docutils literal notranslate"><span class="pre">_</span></code> are allowed and the first character cannot be a number.</p>
+<div class="section" id="special-keys">
+<h4>Special keys<a class="headerlink" href="#special-keys" title="Permalink to this headline">¶</a></h4>
+<p>There are several special keys that can be specified only once in a query string.
+All of them must be followed by the operator <code class="docutils literal notranslate"><span class="pre">=</span></code>. Here is the complete list:</p>
+<blockquote>
+<div><dl class="field-list">
+<dt class="field-odd">limit</dt>
+<dd class="field-odd"><p>This key only supports integer values.</p>
+</dd>
+<dt class="field-even">offset</dt>
+<dd class="field-even"><p>Same format as <code class="docutils literal notranslate"><span class="pre">limit</span></code>.</p>
+</dd>
+<dt class="field-odd">perpage</dt>
+<dd class="field-odd"><p>Same format as <code class="docutils literal notranslate"><span class="pre">limit</span></code>.</p>
+</dd>
+<dt class="field-even">orderby</dt>
+<dd class="field-even"><p>This key is used to impose a specific ordering to the results. Two orderings are supported, ascending or
+descending.
+The value for the <code class="docutils literal notranslate"><span class="pre">orderby</span></code> key must be the name of the property with respect to which to order the results.
+Additionally, <code class="docutils literal notranslate"><span class="pre">+</span></code> or <code class="docutils literal notranslate"><span class="pre">-</span></code> can be pre-pended to the value in order to select, respectively, ascending or
+descending order.
+Specifying no leading character is equivalent to select ascending order.
+Ascending (descending) order for strings corresponds to alphabetical (reverse-alphabetical) order, whereas for
+datetime objects it corresponds to chronological (reverse-chronological order). Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:5000/api/v4/computers?orderby=+id
+http://localhost:5000/api/v4/computers?orderby=+name
+http://localhost:5000/api/v4/computers?orderby=-uuid
+</pre></div>
+</div>
+</dd>
+<dt class="field-odd">attributes_filter</dt>
+<dd class="field-odd"><p>This key is used to specify which attributes of a specific object have to be returned.
+The desired attributes have to be provided as a comma-separated list of values.
+It is used in the endpoints <code class="docutils literal notranslate"><span class="pre">/contents/attributes</span></code> and <code class="docutils literal notranslate"><span class="pre">/nodes</span></code>. Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:5000/api/v4/nodes/4fb10ef1/contents/attributes?attributes_filter=append_text,prepend_text
+</pre></div>
+</div>
+</dd>
+<dt class="field-even">extras_filter</dt>
+<dd class="field-even"><p>Similar to <code class="docutils literal notranslate"><span class="pre">attributes_filter</span></code> but for extras. It is used in the endpoints <code class="docutils literal notranslate"><span class="pre">/contents/extras</span></code>
+and <code class="docutils literal notranslate"><span class="pre">/nodes</span></code>.</p>
+</dd>
+<dt class="field-odd">attributes</dt>
+<dd class="field-odd"><p>by default <code class="docutils literal notranslate"><span class="pre">attributes</span></code> are not returned in <code class="docutils literal notranslate"><span class="pre">/nodes</span></code> endpoint. To get the
+list of all <code class="docutils literal notranslate"><span class="pre">attributes</span></code> specify <code class="docutils literal notranslate"><span class="pre">attributes=true</span></code> and to get selected <code class="docutils literal notranslate"><span class="pre">attribute(s)</span></code> list, use
+<code class="docutils literal notranslate"><span class="pre">attributes=true&amp;attributes_filters=&lt;comma</span> <span class="pre">separated</span> <span class="pre">list</span> <span class="pre">of</span> <span class="pre">attributes</span> <span class="pre">you</span> <span class="pre">want</span> <span class="pre">to</span> <span class="pre">request&gt;</span></code>.</p>
+</dd>
+<dt class="field-even">extras</dt>
+<dd class="field-even"><p>by default <code class="docutils literal notranslate"><span class="pre">extras</span></code> are not returned in <code class="docutils literal notranslate"><span class="pre">/nodes</span></code> endpoint. To get the list of all
+<code class="docutils literal notranslate"><span class="pre">extras</span></code> specify <code class="docutils literal notranslate"><span class="pre">extras=true</span></code> and to get selected <code class="docutils literal notranslate"><span class="pre">extras</span></code> list, use
+<code class="docutils literal notranslate"><span class="pre">extras=true&amp;extras_filters=&lt;comma</span> <span class="pre">separated</span> <span class="pre">list</span> <span class="pre">of</span> <span class="pre">extras</span> <span class="pre">you</span> <span class="pre">want</span> <span class="pre">to</span> <span class="pre">request&gt;</span></code>.</p>
+</dd>
+<dt class="field-odd">download_format</dt>
+<dd class="field-odd"><p>to specify download format in <code class="docutils literal notranslate"><span class="pre">/download</span></code> endpoint.</p>
+</dd>
+<dt class="field-even">download</dt>
+<dd class="field-even"><p>in <code class="docutils literal notranslate"><span class="pre">/download</span></code> endpoint, if <code class="docutils literal notranslate"><span class="pre">download=false</span></code> it displays the content in the browser instead of downloading a file.</p>
+</dd>
+<dt class="field-odd">filename</dt>
+<dd class="field-odd"><p>this filter is used to pass file name in <code class="docutils literal notranslate"><span class="pre">/repo/list</span></code> and <code class="docutils literal notranslate"><span class="pre">/repo/contents</span></code> endpoint.</p>
+</dd>
+<dt class="field-even">tree_in_limit</dt>
+<dd class="field-even"><p>specifies the limit on tree incoming nodes.</p>
+</dd>
+<dt class="field-odd">tree_out_limit</dt>
+<dd class="field-odd"><p>specifies the limit on tree outgoing nodes.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="filters">
+<h4>Filters<a class="headerlink" href="#filters" title="Permalink to this headline">¶</a></h4>
+<p>All the other fields composing a query string are filters, that is, conditions that have to be fulfilled by the
+retrieved objects. When a query string contains multiple filters, those are applied as if they were related by the AND
+logical clause, that is, the results have to fulfill all the conditions set by the filters (and not any of them).
+Each filter key is associated to a unique value type. The possible types are:</p>
+<blockquote>
+<div><dl class="field-list">
+<dt class="field-odd">string</dt>
+<dd class="field-odd"><p>Text enclosed in double quotes.
+If the string contains double quotes those have to be escaped as <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> (two double quotes).
+Note that in the unlikely occurrence of a sequence of double quotes you will have to escape it by writing twice
+as many double quotes.</p>
+</dd>
+<dt class="field-even">integer</dt>
+<dd class="field-even"><p>Positive integer numbers.</p>
+</dd>
+<dt class="field-odd">datetime</dt>
+<dd class="field-odd"><p>Datetime objects expressed in the format <code class="docutils literal notranslate"><span class="pre">(DATE)T(TIME)(SHIFT)</span></code> where <code class="docutils literal notranslate"><span class="pre">(SHIFT)</span></code> is the time
+difference with respect to the UTC time.
+This is required to avoid any problem arising from comparing datetime values expressed in different time zones.
+The formats of each field are:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">YYYY-MM-DD</span></code> for <code class="docutils literal notranslate"><span class="pre">(DATE)</span></code> (mandatory).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HH:MM:SS</span></code> for <code class="docutils literal notranslate"><span class="pre">(TIME)</span></code> (optional). The formats <code class="docutils literal notranslate"><span class="pre">HH</span></code> and <code class="docutils literal notranslate"><span class="pre">HH:MM</span></code> are supported too.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+/-HH:MM</span></code> for <code class="docutils literal notranslate"><span class="pre">(SHIFT)</span></code> (optional, if present requires <code class="docutils literal notranslate"><span class="pre">(TIME)</span></code> to be specified). The format
+<code class="docutils literal notranslate"><span class="pre">+/-HH</span></code> is allowed too. If no shift is specified UTC time is assumed.
+The shift format follows the general convention that eastern (western) shifts are positive (negative).
+The API is unaware of daylight saving times so the user is required to adjust the shift to take them into
+account.</p></li>
+</ol>
+<p>This format is <code class="docutils literal notranslate"><span class="pre">ISO-8601</span></code> compliant. Note that date and time fields have to be separated by the character
+<code class="docutils literal notranslate"><span class="pre">T</span></code>. Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:5000/api/v4/nodes?ctime&gt;2019-04-23T05:45+03:45
+http://localhost:5000/api/v4/nodes?ctime&lt;2019-04-23T05:45
+http://localhost:5000/api/v4/nodes?mtime&gt;=2019-04-23
+</pre></div>
+</div>
+</dd>
+<dt class="field-even">bool</dt>
+<dd class="field-even"><p>It can be either true or false (lower case).</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>The following table reports what is the value type and the supported resources associated to each key.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the following <em>id</em> is a synonym for <em>pk</em> (often used in other sections of the documentation).</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 13%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>key</p></th>
+<th class="head"><p>value type</p></th>
+<th class="head"><p>resources</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>integer</p></td>
+<td><p>users, computers, groups, nodes</p></td>
+</tr>
+<tr class="row-odd"><td><p>user_id</p></td>
+<td><p>integer</p></td>
+<td><p>groups</p></td>
+</tr>
+<tr class="row-even"><td><p>uuid</p></td>
+<td><p>string</p></td>
+<td><p>computers, groups, nodes</p></td>
+</tr>
+<tr class="row-odd"><td><p>name</p></td>
+<td><p>string</p></td>
+<td><p>computers</p></td>
+</tr>
+<tr class="row-even"><td><p>first_name</p></td>
+<td><p>string</p></td>
+<td><p>users</p></td>
+</tr>
+<tr class="row-odd"><td><p>last_name</p></td>
+<td><p>string</p></td>
+<td><p>users</p></td>
+</tr>
+<tr class="row-even"><td><p>institution</p></td>
+<td><p>string</p></td>
+<td><p>users</p></td>
+</tr>
+<tr class="row-odd"><td><p>label</p></td>
+<td><p>string</p></td>
+<td><p>groups, nodes,</p></td>
+</tr>
+<tr class="row-even"><td><p>description</p></td>
+<td><p>string</p></td>
+<td><p>computers, groups</p></td>
+</tr>
+<tr class="row-odd"><td><p>transport_type</p></td>
+<td><p>string</p></td>
+<td><p>computers</p></td>
+</tr>
+<tr class="row-even"><td><p>scheduler_type</p></td>
+<td><p>string</p></td>
+<td><p>computers</p></td>
+</tr>
+<tr class="row-odd"><td><p>attributes</p></td>
+<td><p>string</p></td>
+<td><p>nodes</p></td>
+</tr>
+<tr class="row-even"><td><p>ctime</p></td>
+<td><p>datetime</p></td>
+<td><p>nodes</p></td>
+</tr>
+<tr class="row-odd"><td><p>mtime</p></td>
+<td><p>datetime</p></td>
+<td><p>nodes</p></td>
+</tr>
+<tr class="row-even"><td><p>node_type</p></td>
+<td><p>string</p></td>
+<td><p>nodes</p></td>
+</tr>
+<tr class="row-odd"><td><p>full_type</p></td>
+<td><p>string</p></td>
+<td><p>nodes</p></td>
+</tr>
+<tr class="row-even"><td><p>type_string</p></td>
+<td><p>string</p></td>
+<td><p>groups</p></td>
+</tr>
+<tr class="row-odd"><td><p>hostname</p></td>
+<td><p>string</p></td>
+<td><p>computers</p></td>
+</tr>
+</tbody>
+</table>
+<p>* Key not available via the <code class="docutils literal notranslate"><span class="pre">/users/</span></code> endpoint for reasons of privacy.</p>
+<p>The operators supported by a specific key are uniquely determined by the value type associated to that key.
+For example, a key that requires a boolean value admits only the identity operator <code class="docutils literal notranslate"><span class="pre">=</span></code>, whereas an integer value
+enables the usage of the relational operators <code class="docutils literal notranslate"><span class="pre">=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> plus the membership operator <code class="docutils literal notranslate"><span class="pre">=in=</span></code>.
+Please refer to the following table for a comprehensive list.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 35%" />
+<col style="width: 49%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>operator</p></th>
+<th class="head"><p>meaning</p></th>
+<th class="head"><p>accepted value types</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">=</span></code></p></td>
+<td><p>identity</p></td>
+<td><p>integers, strings, bool, datetime</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
+<td><p>greater than</p></td>
+<td><p>integers, strings, datetime</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></td>
+<td><p>lower than</p></td>
+<td><p>integers, strings, datetime</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></td>
+<td><p>greater than or equal to</p></td>
+<td><p>integers, strings, datetime</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></td>
+<td><p>lower than or equal to</p></td>
+<td><p>integers, strings, datetime</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">=like=</span></code></p></td>
+<td><p>pattern matching</p></td>
+<td><p>strings</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">=ilike=</span></code></p></td>
+<td><p>case-insensitive
+pattern matching</p></td>
+<td><p>strings</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">=in=</span></code></p></td>
+<td><p>identity with one
+element of a list</p></td>
+<td><p>integers, strings, datetime</p></td>
+</tr>
+</tbody>
+</table>
+<p>The pattern matching operators <code class="docutils literal notranslate"><span class="pre">=like=</span></code> and <code class="docutils literal notranslate"><span class="pre">=ilike=</span></code> must be followed by the pattern definition, namely, a string
+where two characters assume special meaning:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">%</span></code> is used to replace an arbitrary sequence of characters, including no characters.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_</span></code> is used to replace one or zero characters.</p></li>
+</ol>
+</div></blockquote>
+<p>Differently from <code class="docutils literal notranslate"><span class="pre">=like=</span></code>, <code class="docutils literal notranslate"><span class="pre">=ilike=</span></code> assumes that two characters that only differ in the case are equal.</p>
+<p>To prevent interpreting special characters as wildcards, these have to be escaped by pre-pending the character <code class="docutils literal notranslate"><span class="pre">\</span></code>.</p>
+<p>Examples:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 49%" />
+<col style="width: 34%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Filter</p></th>
+<th class="head"><p>Matched string</p></th>
+<th class="head"><p>Non-matched string</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">name=like=&quot;a%d_&quot;</span></code></p></td>
+<td><p>“aiida”</p></td>
+<td><p>“AiiDA”</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">name=ilike=&quot;a%d_&quot;</span></code></p></td>
+<td><p>“aiida”, “AiiDA”</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">name=like=&quot;a_d_&quot;</span></code></p></td>
+<td></td>
+<td><p>“aiida”</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">name=like=&quot;aii%d_a&quot;</span></code></p></td>
+<td><p>“aiida”</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">uuid=like=&quot;cdfd48%&quot;</span></code></p></td>
+<td><p>“cdfd48f9-7ed2-4969-ba06-09c752b83d2”</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">description=like=&quot;This</span> <span class="pre">calculation</span> <span class="pre">is</span> <span class="pre">%\%</span> <span class="pre">useful&quot;</span></code></p></td>
+<td><p>“This calculation is 100% useful”</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The membership operator <code class="docutils literal notranslate"><span class="pre">=in=</span></code> has to be followed by a comma-separated list of values of the same type.
+The condition is fulfilled if the column value of an object is an element of the list.</p>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:5000/api/v4/nodes?id=in=45,56,78
+http://localhost:5000/api/v4/computers/?scheduler_type=in=&quot;slurm&quot;,&quot;pbs&quot;
+</pre></div>
+</div>
+<p>The relational operators ‘&lt;’, ‘&gt;’, ‘&lt;=’, ‘&gt;=’ assume natural ordering for integers, (case-insensitive) alphabetical
+ordering for strings, and chronological ordering for datetime values.</p>
+<p>Examples:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">http://localhost:5000/api/v4/nodes?id&gt;578</span></code> selects the nodes having an id larger than 578.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">http://localhost:5000/api/v4/users/?last_name&lt;=&quot;m&quot;</span></code> selects only the users whose last name begins with a
+character in the range [a-m].</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Node types have to be specified by a string that defines their position in the AiiDA source tree ending
+with a dot. Examples:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">node_type=&quot;data.code.Code.&quot;</span></code> selects only objects of <em>Code</em> type</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">node_type=&quot;data.remote.RemoteData.&quot;</span></code> selects only objects of <em>RemoteData</em> type</p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you use in your request the endpoint <em>links/incoming</em> (<em>links/outgoing</em>) together with one or more filters, the
+latter are applied to the incoming (outgoing) nodes of the selected <em>id</em>. For example, the request:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:5000/api/v4/nodes/a67fba41/links/outgoing?full_type=&quot;data.dict.Dict.|&quot;
+</pre></div>
+</div>
+</div></blockquote>
+<p>would first search for the outgoing of the node with <em>uuid</em> starting with “a67fba41” and then select only those
+nodes of full_type <em>data.dict.Dict.|</em>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-http-response">
+<h2>The HTTP response<a class="headerlink" href="#the-http-response" title="Permalink to this headline">¶</a></h2>
+<p>The HTTP response of the REST API consists in a JSON object, a header, and a status code. Possible status are:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>200 for successful requests.</p></li>
+<li><p>400 for bad requests. In this case, the JSON object contains only an error message describing the problem.</p></li>
+<li><p>500 for a generic internal server error. The JSON object contains only a generic error message.</p></li>
+<li><p>404 for invalid URL.
+Differently from the 400 status, it is returned when the REST API does not succeed in directing the request
+to a specific resource.
+This typically happens when the path does not match any of the supported format. No JSON is returned.</p></li>
+</ol>
+</div></blockquote>
+<p>The header is a standard HTTP response header with the additional custom field <code class="docutils literal notranslate"><span class="pre">X-Total-Counts</span></code> and, only if
+paginated results are required, a non-empty <code class="docutils literal notranslate"><span class="pre">Link</span></code> field, as described in the Pagination section.</p>
+<p>The JSON object mainly contains the list of the results returned by the API.
+This list is assigned to the key <code class="docutils literal notranslate"><span class="pre">data</span></code>.
+Additionally, the JSON object contains several informations about the request (keys <code class="docutils literal notranslate"><span class="pre">method</span></code>, <code class="docutils literal notranslate"><span class="pre">url</span></code>, <code class="docutils literal notranslate"><span class="pre">url_root</span></code>,
+<code class="docutils literal notranslate"><span class="pre">path</span></code>, <code class="docutils literal notranslate"><span class="pre">query_string</span></code>, and <code class="docutils literal notranslate"><span class="pre">resource_type</span></code>).</p>
+</div>
+<div class="section" id="how-to-run-the-rest-api-through-apache">
+<span id="restapi-apache"></span><h2>How to run the REST API through Apache<a class="headerlink" href="#how-to-run-the-rest-api-through-apache" title="Permalink to this headline">¶</a></h2>
+<p>By default <code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">restapi</span></code> hooks up the REST API through the HTTP server (Werkzeug) that is  usually bundled with
+Python distributions.
+However, to deploy real web applications the server of choice is in most cases <a class="reference external" href="https://httpd.apache.org/">Apache</a>.
+In fact, you can instruct Apache to run Python applications by employing the <a class="reference external" href="modwsgi.readthedocs.io/">WSGI</a> module
+and the AiiDA REST API is inherently structured so that you can easily realize the pipeline <code class="docutils literal notranslate"><span class="pre">AiiDA-&gt;</span> <span class="pre">WSGI-&gt;</span> <span class="pre">Apache</span></code>.
+Moreover, one single Apache service can support multiple apps so that you can, for instance, hook up multiple APIs
+using as many different sets of configurations.
+For example, one might have several apps connecting to different AiiDA profiles.
+We’ll go through an example to explain how to achieve this result.</p>
+<p>We assume you have a working installation of Apache that includes <code class="docutils literal notranslate"><span class="pre">mod_wsgi</span></code>.</p>
+<p>The goal of the example is to hookup the APIs <code class="docutils literal notranslate"><span class="pre">django</span></code> and <code class="docutils literal notranslate"><span class="pre">sqlalchemy</span></code> pointing to two AiiDA profiles, called for
+simplicity <code class="docutils literal notranslate"><span class="pre">django</span></code> and <code class="docutils literal notranslate"><span class="pre">sqlalchemy</span></code>.</p>
+<p>All the relevant files are enclosed under the path <code class="docutils literal notranslate"><span class="pre">/docs/wsgi/</span></code> starting from the AiiDA source code path.
+In each of the folders <code class="docutils literal notranslate"><span class="pre">app1/</span></code> and <code class="docutils literal notranslate"><span class="pre">app2/</span></code>, there is a file named <code class="docutils literal notranslate"><span class="pre">rest.wsgi</span></code> containing a python script that
+instantiates and configures a python web app called <code class="docutils literal notranslate"><span class="pre">application</span></code>, according to the rules of <code class="docutils literal notranslate"><span class="pre">mod_wsgi</span></code>.
+For how the script is written, the object <code class="docutils literal notranslate"><span class="pre">application</span></code> is configured through the file <code class="docutils literal notranslate"><span class="pre">config.py</span></code> contained in the
+same folder. Indeed, in <code class="docutils literal notranslate"><span class="pre">app1/config.py</span></code> the variable <code class="docutils literal notranslate"><span class="pre">aiida-profile</span></code> is set to <code class="docutils literal notranslate"><span class="pre">&quot;django&quot;</span></code>, whereas in
+<code class="docutils literal notranslate"><span class="pre">app2/config.py</span></code> its value is <code class="docutils literal notranslate"><span class="pre">&quot;sqlalchemy&quot;</span></code>.</p>
+<p>Anyway, the path where you put the <code class="docutils literal notranslate"><span class="pre">.wsgi</span></code> file as well as its name are irrelevant as long as they are correctly
+referred to in the Apache configuration file, as shown later on.
+Similarly, you can place <code class="docutils literal notranslate"><span class="pre">config.py</span></code> in a custom path, provided you change the variable <code class="docutils literal notranslate"><span class="pre">config_file_path</span></code> in
+the <code class="docutils literal notranslate"><span class="pre">wsgi</span> <span class="pre">file</span></code> accordingly.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">rest.wsgi</span></code> probably the only options you might want to change is <code class="docutils literal notranslate"><span class="pre">catch_internal_server</span></code>.
+When set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, it lets the exceptions thrown during the execution of the app propagate all the way through until
+they reach the logger of Apache.
+Especially when the app is not entirely stable yet, one would like to read the full python error traceback in the
+Apache error log.</p>
+<p>Finally, you need to setup the Apache site through a proper configuration file.
+We provide two template files: <code class="docutils literal notranslate"><span class="pre">one.conf</span></code> or <code class="docutils literal notranslate"><span class="pre">many.conf</span></code>.
+The first file tells Apache to bundle both apps in a unique Apache daemon process.
+Apache usually creates multiple process dynamically and with this configuration each process will handle both apps.</p>
+<p>The script <code class="docutils literal notranslate"><span class="pre">many.conf</span></code>, instead, defines two different process groups, one for each app.
+So the processes created dynamically by Apache will always be handling one app each.
+The minimal number of Apache daemon processes equals the number of apps, contrarily to the first architecture, where
+one process is enough to handle two or even a larger number of apps.</p>
+<p>Let us call the two apps for this example <code class="docutils literal notranslate"><span class="pre">django</span></code> and <code class="docutils literal notranslate"><span class="pre">sqlalchemy</span></code>.
+In both <code class="docutils literal notranslate"><span class="pre">one.conf</span></code> and <code class="docutils literal notranslate"><span class="pre">many.conf</span></code>, the important directives that should be updated if one changes the paths or
+names of the apps are:</p>
+<blockquote>
+<div><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">WSGIProcessGroup</span></code> to define the process groups for later reference.
+In <code class="docutils literal notranslate"><span class="pre">one.conf</span></code> this directive appears only once to define the generic group <code class="docutils literal notranslate"><span class="pre">profiles</span></code>, as there is only one
+kind of process handling both apps.
+In <code class="docutils literal notranslate"><span class="pre">many.conf</span></code> this directive appears once per app and is embedded into a “Location” tag, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">Location</span> <span class="o">/</span><span class="n">django</span><span class="o">&gt;</span>
+    <span class="n">WSGIProcessGroup</span> <span class="n">sqlalchemy</span>
+<span class="o">&lt;</span><span class="n">Location</span><span class="o">/&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WSGIDaemonProcess</span></code> to define the path to the AiiDA virtual environment.
+This appears once per app in both configurations.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WSGIScriptAlias</span></code> to define the absolute path of the <code class="docutils literal notranslate"><span class="pre">.wsgi</span></code> file of each app.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">&lt;Directory&gt;</span></code> tag mainly used to grant Apache access to the files used by each app, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">Directory</span> <span class="s2">&quot;&lt;aiida.source.code.path&gt;/aiida/restapi/wsgi/app1&quot;</span><span class="o">&gt;</span>
+        <span class="n">Require</span> <span class="nb">all</span> <span class="n">granted</span>
+<span class="o">&lt;/</span><span class="n">Directory</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+<p>The latest step is to move either <code class="docutils literal notranslate"><span class="pre">one.conf</span></code> or <code class="docutils literal notranslate"><span class="pre">many.conf</span></code> into the Apache configuration folder and restart
+the Apache server. In Ubuntu, this is usually done with the commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp &lt;conf_file&gt;.conf /etc/apache2/sites-enabled/000-default.conf
+sudo service apache2 restart
+</pre></div>
+</div>
+<p>We believe the two basic architectures we have just explained can be successfully applied in many different deployment
+scenarios.
+Nevertheless, we suggest users who need finer tuning of the deployment setup to look into to the official documentation
+of <a class="reference external" href="https://httpd.apache.org/">Apache</a> and, more importantly, <a class="reference external" href="wsgi.readthedocs.io/">WSGI</a>.</p>
+<p>The URLs of the requests handled by Apache must start with one of the paths specified in the directives
+<code class="docutils literal notranslate"><span class="pre">WSGIScriptAlias</span></code>.
+These paths identify uniquely each app and allow Apache to route the requests to their correct apps.
+Examples of well-formed URLs are:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl http://localhost/django/api/v4/computers -X GET
+curl http://localhost/sqlalchemy/api/v4/computers -X GET
+</pre></div>
+</div>
+<p>The first (second) request will be handled by the app <code class="docutils literal notranslate"><span class="pre">django</span></code> (<code class="docutils literal notranslate"><span class="pre">sqlalchemy</span></code>), namely will serve results fetched
+from the profile <code class="docutils literal notranslate"><span class="pre">django</span></code> (<code class="docutils literal notranslate"><span class="pre">sqlalchemy</span></code>).
+Notice that we haven’t specified any port in the URLs since Apache listens conventionally to port 80, where any request
+lacking the port is automatically redirected.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="computers">
+<h3>Computers<a class="headerlink" href="#computers" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Get a list of the <em>Computers</em> objects.</p>
+<blockquote>
+<div><p>REST URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:5000/api/v4/computers?limit=3&amp;offset=2&amp;orderby=id
+</pre></div>
+</div>
+<p>Description:</p>
+<blockquote>
+<div><p>returns the list of three <em>Computer</em> objects (<code class="docutils literal notranslate"><span class="pre">limit=3</span></code>) starting from the 3rd
+row (<code class="docutils literal notranslate"><span class="pre">offset=2</span></code>) of the database table and the list will be ordered
+by ascending values of <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
+</div></blockquote>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;computers&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Alpha Computer&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;hostname&quot;</span><span class="p">:</span> <span class="s2">&quot;alpha.aiida.net&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Alpha&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;scheduler_type&quot;</span><span class="p">:</span> <span class="s2">&quot;slurm&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;transport_type&quot;</span><span class="p">:</span> <span class="s2">&quot;ssh&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;9b5c84bb-4575-4fbe-b18c-b23fc30ec55e&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Beta Computer&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;hostname&quot;</span><span class="p">:</span> <span class="s2">&quot;beta.aiida.net&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Beta&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;scheduler_type&quot;</span><span class="p">:</span> <span class="s2">&quot;slurm&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;transport_type&quot;</span><span class="p">:</span> <span class="s2">&quot;ssh&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;5d490d77-638d-4d4b-8288-722f930783c8&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Gamma Computer&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;hostname&quot;</span><span class="p">:</span> <span class="s2">&quot;gamma.aiida.net&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Gamma&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;scheduler_type&quot;</span><span class="p">:</span> <span class="s2">&quot;slurm&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;transport_type&quot;</span><span class="p">:</span> <span class="s2">&quot;ssh&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;7a0c3ff9-1caf-405c-8e89-2369cf91b634&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/api/v4/computers&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;query_string&quot;</span><span class="p">:</span> <span class="s2">&quot;limit=3&amp;offset=2&amp;orderby=id&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;resource_type&quot;</span><span class="p">:</span> <span class="s2">&quot;computers&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/api/v4/computers?limit=3&amp;offset=2&amp;orderby=id&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url_root&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Get details of a single <em>Computer</em> object:</p>
+<blockquote>
+<div><p>REST URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v4</span><span class="o">/</span><span class="n">computers</span><span class="o">/</span><span class="mi">5</span><span class="n">d490d77</span>
+</pre></div>
+</div>
+<p>Description:</p>
+<blockquote>
+<div><p>returns the details of the <em>Computer</em> object <code class="docutils literal notranslate"><span class="pre">uuid=&quot;5d490d77-638d...&quot;</span></code>.</p>
+</div></blockquote>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;computers&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Beta Computer&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;hostname&quot;</span><span class="p">:</span> <span class="s2">&quot;beta.aiida.net&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Beta&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;scheduler_type&quot;</span><span class="p">:</span> <span class="s2">&quot;slurm&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;transport_type&quot;</span><span class="p">:</span> <span class="s2">&quot;ssh&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;5d490d77-638d-4d4b-8288-722f930783c8&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/api/v4/computers/5d490d77&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;query_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;resource_type&quot;</span><span class="p">:</span> <span class="s2">&quot;computers&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/api/v4/computers/5d490d77&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url_root&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="nodes">
+<h3>Nodes<a class="headerlink" href="#nodes" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Get a list of <em>Node</em> objects.</p>
+<p>REST URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:5000/api/v4/nodes?limit=2&amp;offset=8&amp;orderby=-id
+</pre></div>
+</div>
+<p>Description:</p>
+<blockquote>
+<div><p>returns the list of two <em>Node</em> objects (<code class="docutils literal notranslate"><span class="pre">limit=2</span></code>) starting from 9th
+row (<code class="docutils literal notranslate"><span class="pre">offset=8</span></code>) of the database table and the list will be ordered
+by <code class="docutils literal notranslate"><span class="pre">id</span></code> in descending order.</p>
+</div></blockquote>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;nodes  &quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;ctime&quot;</span><span class="p">:</span> <span class="s2">&quot;Sun, 21 Jul 2019 11:45:52 GMT&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;full_type&quot;</span><span class="p">:</span> <span class="s2">&quot;data.dict.Dict.|&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">102618</span><span class="p">,</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;mtime&quot;</span><span class="p">:</span> <span class="s2">&quot;Sun, 21 Jul 2019 11:45:52 GMT&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;node_type&quot;</span><span class="p">:</span> <span class="s2">&quot;data.dict.Dict.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;process_type&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s2">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;a43596fe-3d95-4d9b-b34a-acabc21d7a1e&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;ctime&quot;</span><span class="p">:</span> <span class="s2">&quot;Sun, 21 Jul 2019 18:18:26 GMT&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;full_type&quot;</span><span class="p">:</span> <span class="s2">&quot;data.remote.RemoteData.|&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">102617</span><span class="p">,</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;mtime&quot;</span><span class="p">:</span> <span class="s2">&quot;Sun, 21 Jul 2019 18:18:26 GMT&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;node_type&quot;</span><span class="p">:</span> <span class="s2">&quot;data.remote.RemoteData.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;process_type&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s2">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;12f95e1c-69df-4a4b-9b06-8e69072e6108&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/api/v4/nodes&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;query_string&quot;</span><span class="p">:</span> <span class="s2">&quot;limit=2&amp;offset=8&amp;orderby=-id&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;resource_type&quot;</span><span class="p">:</span> <span class="s2">&quot;nodes&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/api/v4/nodes?limit=2&amp;offset=8&amp;orderby=-id&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url_root&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Get list of all nodes with attribute called <code class="docutils literal notranslate"><span class="pre">pbc1</span></code>:</p>
+<p>REST URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:5000/api/v4/nodes?attributes=true&amp;attributes_filter=pbc1
+</pre></div>
+</div>
+<p>Description:</p>
+<blockquote>
+<div><p>returns the list of <em>Node</em> objects. Every node object contains value of attribute called <code class="docutils literal notranslate"><span class="pre">pbc1</span></code> if present otherwise null.</p>
+</div></blockquote>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;nodes  &quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;attributes.pbc1&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;ctime&quot;</span><span class="p">:</span> <span class="s2">&quot;Sun, 21 Jul 2019 15:36:30 GMT&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;full_type&quot;</span><span class="p">:</span> <span class="s2">&quot;data.structure.StructureData.|&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">51310</span><span class="p">,</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;mtime&quot;</span><span class="p">:</span> <span class="s2">&quot;Sun, 21 Jul 2019 15:36:30 GMT&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;node_type&quot;</span><span class="p">:</span> <span class="s2">&quot;data.structure.StructureData.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;process_type&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s2">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;98de8d6d-f533-4f97-a8ad-7720cc5ca8f6&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;attributes.pbc1&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;ctime&quot;</span><span class="p">:</span> <span class="s2">&quot;Sun, 21 Jul 2019 15:44:14 GMT&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;full_type&quot;</span><span class="p">:</span> <span class="s2">&quot;data.dict.Dict.|&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">51311</span><span class="p">,</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;mtime&quot;</span><span class="p">:</span> <span class="s2">&quot;Sun, 21 Jul 2019 15:44:14 GMT&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;node_type&quot;</span><span class="p">:</span> <span class="s2">&quot;data.dict.Dict.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;process_type&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s2">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;321795fa-338e-4852-ae72-2eb30e33386e&quot;</span>
+      <span class="p">}</span>
+      <span class="o">...</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/api/v4/nodes&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;query_string&quot;</span><span class="p">:</span> <span class="s2">&quot;limit=2&amp;offset=8&amp;orderby=-id&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;resource_type&quot;</span><span class="p">:</span> <span class="s2">&quot;nodes&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/api/v4/nodes?limit=2&amp;offset=8&amp;orderby=-id&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url_root&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Get a list of all available node types from database.</p>
+<blockquote>
+<div><p>REST URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v4</span><span class="o">/</span><span class="n">nodes</span><span class="o">/</span><span class="n">full_types</span>
+</pre></div>
+</div>
+<p>Description:</p>
+<blockquote>
+<div><p>returns the list of full_types from database.</p>
+</div></blockquote>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;full_type&quot;</span><span class="p">:</span> <span class="s2">&quot;node.%|%&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="n">node</span><span class="p">,</span>
+        <span class="s2">&quot;namespace&quot;</span><span class="p">:</span> <span class="s2">&quot;node&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;node&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;subspaces&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/api/v4/nodes/full_types&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;query_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;resource_type&quot;</span><span class="p">:</span> <span class="s2">&quot;nodes&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/api/v4/nodes/full_types&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;url_root&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Get a list of all available download formats.</p>
+<blockquote>
+<div><p>REST URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v4</span><span class="o">/</span><span class="n">nodes</span><span class="o">/</span><span class="n">download_formats</span>
+</pre></div>
+</div>
+<p>Description:</p>
+<blockquote>
+<div><p>returns the list of available download formats.</p>
+</div></blockquote>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;data.array.bands.BandsData.|&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;agr&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;agr_batch&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;dat_blocks&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;dat_multicolumn&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;gnuplot&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;json&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;mpl_pdf&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;mpl_png&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;mpl_singlefile&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;mpl_withjson&quot;</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;data.array.trajectory.TrajectoryData.|&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;cif&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;xsf&quot;</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;data.cif.CifData.|&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;cif&quot;</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;data.structure.StructureData.|&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;chemdoodle&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;cif&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;xsf&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;xyz&quot;</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;data.upf.UpfData.|&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;upf&quot;</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/api/v4/nodes/download_formats&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;query_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;resource_type&quot;</span><span class="p">:</span> <span class="s2">&quot;nodes&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/api/v4/nodes/download_formats&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;url_root&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Get the details of a single <em>Node</em> object.</p>
+<blockquote>
+<div><p>REST URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v4</span><span class="o">/</span><span class="n">nodes</span><span class="o">/</span><span class="mi">12</span><span class="n">f95e1c</span>
+</pre></div>
+</div>
+<p>Description:</p>
+<blockquote>
+<div><p>returns the details of the <em>Node</em> object with <code class="docutils literal notranslate"><span class="pre">uuid=&quot;12f95e1c...&quot;</span></code>.</p>
+</div></blockquote>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;nodes  &quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;ctime&quot;</span><span class="p">:</span> <span class="s2">&quot;Sun, 21 Jul 2019 18:18:26 GMT&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;full_type&quot;</span><span class="p">:</span> <span class="s2">&quot;data.remote.RemoteData.|&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">102617</span><span class="p">,</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;mtime&quot;</span><span class="p">:</span> <span class="s2">&quot;Sun, 21 Jul 2019 18:18:26 GMT&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;node_type&quot;</span><span class="p">:</span> <span class="s2">&quot;data.remote.RemoteData.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;process_type&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s2">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;12f95e1c-69df-4a4b-9b06-8e69072e6108&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;12f95e1c&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/api/v4/nodes/12f95e1c&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;query_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;resource_type&quot;</span><span class="p">:</span> <span class="s2">&quot;nodes&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/api/v4/nodes/12f95e1c&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url_root&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Get the list of incoming of a specific node.</p>
+<blockquote>
+<div><p>REST URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:5000/api/v4/nodes/de83b1/links/incoming?limit=2
+</pre></div>
+</div>
+<p>Description:</p>
+<blockquote>
+<div><p>returns the list of the first two input nodes (<code class="docutils literal notranslate"><span class="pre">limit=2</span></code>) of the <em>Node</em> object with <code class="docutils literal notranslate"><span class="pre">uuid=&quot;de83b1...&quot;</span></code>.</p>
+</div></blockquote>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;incoming&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;ctime&quot;</span><span class="p">:</span> <span class="s2">&quot;Sun, 21 Jul 2019 08:02:23 GMT&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;full_type&quot;</span><span class="p">:</span> <span class="s2">&quot;data.dict.Dict.|&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">53770</span><span class="p">,</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;link_label&quot;</span><span class="p">:</span> <span class="s2">&quot;settings&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;link_type&quot;</span><span class="p">:</span> <span class="s2">&quot;input_calc&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;mtime&quot;</span><span class="p">:</span> <span class="s2">&quot;Sun, 21 Jul 2019 08:02:23 GMT&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;node_type&quot;</span><span class="p">:</span> <span class="s2">&quot;data.dict.Dict.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;process_type&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s2">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;31993382-c1ab-4822-a116-bd88697f2796&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;ctime&quot;</span><span class="p">:</span> <span class="s2">&quot;Fri, 28 Jun 2019 10:54:25 GMT&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;full_type&quot;</span><span class="p">:</span> <span class="s2">&quot;data.upf.UpfData.|&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">54502</span><span class="p">,</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;link_label&quot;</span><span class="p">:</span> <span class="s2">&quot;pseudos__N&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;link_type&quot;</span><span class="p">:</span> <span class="s2">&quot;input_calc&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;mtime&quot;</span><span class="p">:</span> <span class="s2">&quot;Fri, 28 Jun 2019 10:54:28 GMT&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;node_type&quot;</span><span class="p">:</span> <span class="s2">&quot;data.upf.UpfData.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;process_type&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s2">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;2e2df55d-27a5-4b34-bf7f-911b16da95f0&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;de83b1&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/api/v4/nodes/de83b1/links/incoming&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;query_string&quot;</span><span class="p">:</span> <span class="s2">&quot;limit=2&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;resource_type&quot;</span><span class="p">:</span> <span class="s2">&quot;nodes&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/api/v4/nodes/de83b1/links/incoming?limit=2&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url_root&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Filter the incoming/outgoing of a node by their full type.</p>
+<blockquote>
+<div><p>REST URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:5000/api/v4/nodes/de83b1/links/incoming?full_type=&quot;data.dict.Dict.|&quot;
+</pre></div>
+</div>
+<p>Description:</p>
+<blockquote>
+<div><p>returns the list of the <cite>*dict* incoming nodes of
+the *Node* object with ``uuid=”de83b1…”`</cite>.</p>
+</div></blockquote>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;incoming&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;ctime&quot;</span><span class="p">:</span> <span class="s2">&quot;Sun, 21 Jul 2019 08:02:23 GMT&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;full_type&quot;</span><span class="p">:</span> <span class="s2">&quot;data.dict.Dict.|&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">53770</span><span class="p">,</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;link_label&quot;</span><span class="p">:</span> <span class="s2">&quot;settings&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;link_type&quot;</span><span class="p">:</span> <span class="s2">&quot;input_calc&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;mtime&quot;</span><span class="p">:</span> <span class="s2">&quot;Sun, 21 Jul 2019 08:02:23 GMT&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;node_type&quot;</span><span class="p">:</span> <span class="s2">&quot;data.dict.Dict.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;process_type&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s2">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;31993382-c1ab-4822-a116-bd88697f2796&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;de83b1&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/api/v4/nodes/de83b1/links/incoming&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;query_string&quot;</span><span class="p">:</span> <span class="s2">&quot;full_type=</span><span class="si">%22d</span><span class="s2">ata.dict.Dict.|%22&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;resource_type&quot;</span><span class="p">:</span> <span class="s2">&quot;nodes&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/api/v4/nodes/de83b1/links/incoming?full_type=</span><span class="se">\&quot;</span><span class="s2">data.dict.Dict.|</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url_root&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>REST URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:5000/api/v4/nodes/de83b1/links/outgoing?full_type=&quot;data.dict.Dict.|&quot;
+</pre></div>
+</div>
+<p>Description:</p>
+<blockquote>
+<div><p>returns the list of the <em>dict</em> outgoing nodes of the <em>Node</em> object with <code class="docutils literal notranslate"><span class="pre">uuid=&quot;de83b1...&quot;</span></code>.</p>
+</div></blockquote>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;outgoing&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;ctime&quot;</span><span class="p">:</span> <span class="s2">&quot;Sun, 21 Jul 2019 09:08:05 GMT&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;full_type&quot;</span><span class="p">:</span> <span class="s2">&quot;data.dict.Dict.|&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">67440</span><span class="p">,</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;link_label&quot;</span><span class="p">:</span> <span class="s2">&quot;output_parameters&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;link_type&quot;</span><span class="p">:</span> <span class="s2">&quot;create&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;mtime&quot;</span><span class="p">:</span> <span class="s2">&quot;Sun, 21 Jul 2019 09:08:05 GMT&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;node_type&quot;</span><span class="p">:</span> <span class="s2">&quot;data.dict.Dict.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;process_type&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s2">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;861e1108-33a1-4495-807b-8c5189ad74e3&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;de83b1&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/api/v4/nodes/de83b1/links/outgoing&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;query_string&quot;</span><span class="p">:</span> <span class="s2">&quot;full_type=</span><span class="si">%22d</span><span class="s2">ata.dict.Dict.|%22&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;resource_type&quot;</span><span class="p">:</span> <span class="s2">&quot;nodes&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/api/v4/nodes/de83b1/links/outgoing?full_type=</span><span class="se">\&quot;</span><span class="s2">data.dict.Dict.|</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url_root&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Getting the list of the attributes/extras of a specific node.</p>
+<blockquote>
+<div><p>REST URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v4</span><span class="o">/</span><span class="n">nodes</span><span class="o">/</span><span class="n">ffe11</span><span class="o">/</span><span class="n">contents</span><span class="o">/</span><span class="n">attributes</span>
+</pre></div>
+</div>
+<p>Description:</p>
+<blockquote>
+<div><p>returns the list of all attributes of the <em>Node</em> object with <code class="docutils literal notranslate"><span class="pre">uuid=&quot;ffe11...&quot;</span></code>.</p>
+</div></blockquote>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;append_text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;input_plugin&quot;</span><span class="p">:</span> <span class="s2">&quot;quantumespresso.pw&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;is_local&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+      <span class="s2">&quot;prepend_text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;remote_exec_path&quot;</span><span class="p">:</span> <span class="s2">&quot;/project/espresso-5.1-intel/bin/pw.x&quot;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;ffe11&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/api/v4/nodes/ffe11/contents/attributes&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;query_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;resource_type&quot;</span><span class="p">:</span> <span class="s2">&quot;nodes&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/api/v4/nodes/ffe11/contents/attributes&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url_root&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>REST URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v4</span><span class="o">/</span><span class="n">nodes</span><span class="o">/</span><span class="n">ffe11</span><span class="o">/</span><span class="n">contents</span><span class="o">/</span><span class="n">extras</span>
+</pre></div>
+</div>
+<p>Description:</p>
+<blockquote>
+<div><p>returns the list of all the extras of the <em>Node</em> object with <code class="docutils literal notranslate"><span class="pre">uuid=&quot;ffe11...&quot;</span></code>.</p>
+</div></blockquote>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;extras&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;trialBool&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">&quot;trialFloat&quot;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+      <span class="s2">&quot;trialInt&quot;</span><span class="p">:</span> <span class="mi">34</span><span class="p">,</span>
+      <span class="s2">&quot;trialStr&quot;</span><span class="p">:</span> <span class="s2">&quot;trial&quot;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;ffe11&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/api/v4/nodes/ffe11/contents/extras&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;query_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;resource_type&quot;</span><span class="p">:</span> <span class="s2">&quot;nodes&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/api/v4/nodes/ffe11/contents/extras&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url_root&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Getting a user-defined list of attributes/extras of a specific node.</p>
+<blockquote>
+<div><p>REST URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:5000/api/v4/nodes/ffe11/contents/attributes?attributes_filter=append_text,is_local
+</pre></div>
+</div>
+<p>Description:</p>
+<blockquote>
+<div><p>returns a list of the attributes <code class="docutils literal notranslate"><span class="pre">append_text</span></code> and <code class="docutils literal notranslate"><span class="pre">is_local</span></code> of the <em>Node</em> object with <code class="docutils literal notranslate"><span class="pre">uuid=&quot;ffe11...&quot;</span></code>.</p>
+</div></blockquote>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;append_text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;is_local&quot;</span><span class="p">:</span> <span class="n">false</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;ffe11&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/api/v4/nodes/ffe11/contents/attributes&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;query_string&quot;</span><span class="p">:</span> <span class="s2">&quot;attributes_filter=append_text,is_local&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;resource_type&quot;</span><span class="p">:</span> <span class="s2">&quot;nodes&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/api/v4/nodes/ffe11/contents/attributes?attributes_filter=append_text,is_local&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url_root&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>REST URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:5000/api/v4/nodes/ffe11/contents/extras?extras_filter=trialBool,trialInt
+</pre></div>
+</div>
+<p>Description:</p>
+<blockquote>
+<div><p>returns a list of the extras <code class="docutils literal notranslate"><span class="pre">trialBool</span></code> and <code class="docutils literal notranslate"><span class="pre">trialInt</span></code> of the <em>Node</em> object with <code class="docutils literal notranslate"><span class="pre">uuid=&quot;ffe11...&quot;</span></code>.</p>
+</div></blockquote>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;extras&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;trialBool&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">&quot;trialInt&quot;</span><span class="p">:</span> <span class="mi">34</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;ffe11&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/api/v4/nodes/ffe11/contents/extras&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;query_string&quot;</span><span class="p">:</span> <span class="s2">&quot;extras_filter=trialBool,trialInt&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;resource_type&quot;</span><span class="p">:</span> <span class="s2">&quot;nodes&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/api/v4/nodes/ffe11/contents/extras?extras_filter=trialBool,trialInt&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url_root&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Get comments of specific node.</p>
+<blockquote>
+<div><p>REST URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v4</span><span class="o">/</span><span class="n">nodes</span><span class="o">/</span><span class="n">ffe11</span><span class="o">/</span><span class="n">contents</span><span class="o">/</span><span class="n">comments</span>
+</pre></div>
+</div>
+<p>Description:</p>
+<blockquote>
+<div><p>returns comments of the given node</p>
+</div></blockquote>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;comments&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;This is test comment.&quot;</span><span class="p">,</span> <span class="s2">&quot;Add another comment.&quot;</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;ffe11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/api/v4/nodes/ffe11/contents/comments/&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;query_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;resource_type&quot;</span><span class="p">:</span> <span class="s2">&quot;nodes&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/api/v4/nodes/ffe11/contents/comments/&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;url_root&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Get list of all the files/directories from node repository</p>
+<p>REST URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v4</span><span class="o">/</span><span class="n">nodes</span><span class="o">/</span><span class="n">ffe11</span><span class="o">/</span><span class="n">repo</span><span class="o">/</span><span class="nb">list</span>
+</pre></div>
+</div>
+<p>Description:</p>
+<blockquote>
+<div><p>returns list of all the files/directories from node repository</p>
+</div></blockquote>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;repo_list&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;.aiida&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;DIRECTORY&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;_aiidasubmit.sh&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;FILE&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;aiida.in&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;FILE&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;out&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;DIRECTORY&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;pseudo&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;DIRECTORY&quot;</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;ffe11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/api/v4/nodes/ffe11/repo/list/&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;query_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;resource_type&quot;</span><span class="p">:</span> <span class="s2">&quot;nodes&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/api/v4/nodes/ffe11/repo/list/&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;url_root&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Download a file from node repository</p>
+<p>REST URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:5000/api/v4/nodes/ffe11/repo/contents?filename=&quot;aiida.in&quot;
+</pre></div>
+</div>
+<p>Description:</p>
+<blockquote>
+<div><p>downloads the file <code class="docutils literal notranslate"><span class="pre">aiida.in</span></code> from node repository</p>
+</div></blockquote>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">It</span> <span class="n">downloads</span> <span class="n">the</span> <span class="n">file</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+<li><p>There are specific download formats (check <code class="docutils literal notranslate"><span class="pre">nodes/download_formats</span></code> endpoint) available to download different
+types of nodes. This endpoint is used to download file in given format.</p>
+<p>REST URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:5000/api/v4/nodes/fafdsf/download?download_format=xsf
+</pre></div>
+</div>
+<p>Description:</p>
+<blockquote>
+<div><p>downloads structure node of uuid=fafdsf in <code class="docutils literal notranslate"><span class="pre">xsf</span></code> format</p>
+</div></blockquote>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">It</span> <span class="n">downloads</span> <span class="n">the</span> <span class="n">file</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="processes">
+<h3>Processes<a class="headerlink" href="#processes" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Get a process report.</p>
+<p>REST URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v4</span><span class="o">/</span><span class="n">processes</span><span class="o">/</span><span class="mi">8</span><span class="n">b95cd85</span><span class="o">/</span><span class="n">report</span>
+</pre></div>
+</div>
+<p>Description:</p>
+<blockquote>
+<div><p>returns report of process of <code class="docutils literal notranslate"><span class="pre">uuid=&quot;8b95cd85-....&quot;</span></code></p>
+</div></blockquote>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;logs&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;8b95cd85&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/api/v4/processes/8b95cd85/report&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;query_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;resource_type&quot;</span><span class="p">:</span> <span class="s2">&quot;processes&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/api/v4/processes/8b95cd85/report&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;url_root&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="calcjobs">
+<h3>CalcJobs<a class="headerlink" href="#calcjobs" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Get a list of input or output files of given calcjob node.</p>
+<p>REST URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v4</span><span class="o">/</span><span class="n">calcjobs</span><span class="o">/</span><span class="n">sffs241j</span><span class="o">/</span><span class="n">input_files</span>
+</pre></div>
+</div>
+<p>Description:</p>
+<blockquote>
+<div><p>returns list of all input files of given calcjob node of <code class="docutils literal notranslate"><span class="pre">uuid=&quot;sffs241j-....&quot;</span></code></p>
+</div></blockquote>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;.aiida&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;DIRECTORY&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;_aiidasubmit.sh&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;FILE&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;aiida.in&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;FILE&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;out&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;DIRECTORY&quot;</span>
+        <span class="p">},</span>
+        <span class="o">...</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;sffs241j&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/api/v4/calcjobs/sffs241j/input_files&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;query_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;resource_type&quot;</span><span class="p">:</span> <span class="s2">&quot;calcjobs&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/api/v4/calcjobs/sffs241j/input_files&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;url_root&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="users">
+<h3>Users<a class="headerlink" href="#users" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Getting a list of the users</p>
+<blockquote>
+<div><p>REST URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v4</span><span class="o">/</span><span class="n">users</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>Description:</p>
+<blockquote>
+<div><p>returns a list of all the <em>User</em> objects.</p>
+</div></blockquote>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;users&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;AiiDA&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;institution&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Daemon&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Gengis&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&quot;institution&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Khan&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/api/v4/users/&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;query_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;resource_type&quot;</span><span class="p">:</span> <span class="s2">&quot;users&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/api/v4/users/&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url_root&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Getting a list of users whose first name starts with a given string</p>
+<blockquote>
+<div><p>REST URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:5000/api/v4/users/?first_name=ilike=&quot;aii%&quot;
+</pre></div>
+</div>
+<p>Description:</p>
+<blockquote>
+<div><p>returns a lists of the <em>User</em> objects whose first name starts with <code class="docutils literal notranslate"><span class="pre">&quot;aii&quot;</span></code>, regardless the case of the characters.</p>
+</div></blockquote>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;users&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;AiiDA&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;institution&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Daemon&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/api/v4/users/&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;query_string&quot;</span><span class="p">:</span> <span class="s2">&quot;first_name=ilike=</span><span class="si">%22a</span><span class="s2">ii</span><span class="si">%%</span><span class="s2">22&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;resource_type&quot;</span><span class="p">:</span> <span class="s2">&quot;users&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/api/v4/users/?first_name=ilike=</span><span class="se">\&quot;</span><span class="s2">aii%</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url_root&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="groups">
+<h3>Groups<a class="headerlink" href="#groups" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Getting a list of groups</p>
+<blockquote>
+<div><p>REST URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:5000/api/v4/groups/?limit=10&amp;orderby=-user_id
+</pre></div>
+</div>
+<p>Description:</p>
+<blockquote>
+<div><p>returns the list of ten <em>Group</em> objects (<code class="docutils literal notranslate"><span class="pre">limit=10</span></code>) starting from the 1st
+row of the database table (<code class="docutils literal notranslate"><span class="pre">offset=0</span></code>) and the list will be ordered
+by <code class="docutils literal notranslate"><span class="pre">user_id</span></code> in descending order.</p>
+</div></blockquote>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;groups&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">104</span><span class="p">,</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;SSSP_new_phonons_0p002&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;7c0e0744-8549-4eea-b1b8-e7207c18de32&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">102</span><span class="p">,</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;SSSP_cubic_old_phonons_0p025&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;c4e22134-495d-4779-9259-6192fcaec510&quot;</span>
+      <span class="p">},</span>
+      <span class="o">...</span>
+
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/api/v4/groups/&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;query_string&quot;</span><span class="p">:</span> <span class="s2">&quot;limit=10&amp;orderby=-user_id&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;resource_type&quot;</span><span class="p">:</span> <span class="s2">&quot;groups&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/api/v4/groups/?limit=10&amp;orderby=-user_id&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url_root&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Getting the details of a specific group</p>
+<blockquote>
+<div><p>REST URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v4</span><span class="o">/</span><span class="n">groups</span><span class="o">/</span><span class="n">a6e5b</span>
+</pre></div>
+</div>
+<p>Description:</p>
+<blockquote>
+<div><p>returns the details of the <em>Group</em> object with <code class="docutils literal notranslate"><span class="pre">uuid=&quot;a6e5b...&quot;</span></code>.</p>
+</div></blockquote>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;groups&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;GBRV US pseudos, version 1.2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;GBRV_1.2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type_string&quot;</span><span class="p">:</span> <span class="s2">&quot;data.upf.family&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;user_email&quot;</span><span class="p">:</span> <span class="s2">&quot;aiida@theossrv5.epfl.ch&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;a6e5b6c6-9d47-445b-bfea-024cf8333c55&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;a6e5b,</span>
+  <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/api/v4/groups/a6e5b&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;query_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;resource_type&quot;</span><span class="p">:</span> <span class="s2">&quot;groups&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/api/v4/groups/a6e5b&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url_root&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:5000/&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

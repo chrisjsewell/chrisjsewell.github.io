@@ -1,0 +1,604 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.orm.implementation.sqlalchemy.querybuilder &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/language_data.js"></script>
+        <script src="../../../../../_static/togglebutton.js"></script>
+        <script src="../../../../../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../../aiida.html">aiida</a> &raquo;</li>
+        
+      <li>aiida.orm.implementation.sqlalchemy.querybuilder</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for aiida.orm.implementation.sqlalchemy.querybuilder</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1">###########################################################################</span>
+<span class="c1"># Copyright (c), The AiiDA team. All rights reserved.                     #</span>
+<span class="c1"># This file is part of the AiiDA code.                                    #</span>
+<span class="c1">#                                                                         #</span>
+<span class="c1"># The code is hosted on GitHub at https://github.com/aiidateam/aiida-core #</span>
+<span class="c1"># For further information on the license, see the LICENSE.txt file        #</span>
+<span class="c1"># For further information please visit http://www.aiida.net               #</span>
+<span class="c1">###########################################################################</span>
+<span class="sd">&quot;&quot;&quot;Sqla query builder implementation&quot;&quot;&quot;</span>
+<span class="c1"># pylint: disable=no-name-in-module, import-error</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">and_</span><span class="p">,</span> <span class="n">or_</span><span class="p">,</span> <span class="n">not_</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy.types</span> <span class="kn">import</span> <span class="n">Float</span><span class="p">,</span> <span class="n">Boolean</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy.dialects.postgresql</span> <span class="kn">import</span> <span class="n">JSONB</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy.sql.expression</span> <span class="kn">import</span> <span class="n">case</span><span class="p">,</span> <span class="n">FunctionElement</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy.ext.compiler</span> <span class="kn">import</span> <span class="n">compiles</span>
+
+<span class="kn">from</span> <span class="nn">aiida.common.exceptions</span> <span class="kn">import</span> <span class="n">InputValidationError</span>
+<span class="kn">from</span> <span class="nn">aiida.common.exceptions</span> <span class="kn">import</span> <span class="n">NotExistent</span>
+<span class="kn">from</span> <span class="nn">aiida.orm.implementation.querybuilder</span> <span class="kn">import</span> <span class="n">BackendQueryBuilder</span>
+
+
+<div class="viewcode-block" id="jsonb_array_length"><a class="viewcode-back" href="../../../../../apidoc/aiida.orm.implementation.sqlalchemy.html#aiida.orm.implementation.sqlalchemy.querybuilder.jsonb_array_length">[docs]</a><span class="k">class</span> <span class="nc">jsonb_array_length</span><span class="p">(</span><span class="n">FunctionElement</span><span class="p">):</span>  <span class="c1"># pylint: disable=invalid-name</span>
+    <span class="c1"># pylint: disable=too-few-public-methods</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;jsonb_array_len&#39;</span></div>
+
+
+<span class="nd">@compiles</span><span class="p">(</span><span class="n">jsonb_array_length</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">compile</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">compiler</span><span class="p">,</span> <span class="o">**</span><span class="n">_kw</span><span class="p">):</span>  <span class="c1"># pylint: disable=function-redefined, redefined-builtin</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get length of array defined in a JSONB column</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="s1">&#39;jsonb_array_length(</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="n">compiler</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">clauses</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="array_length"><a class="viewcode-back" href="../../../../../apidoc/aiida.orm.implementation.sqlalchemy.html#aiida.orm.implementation.sqlalchemy.querybuilder.array_length">[docs]</a><span class="k">class</span> <span class="nc">array_length</span><span class="p">(</span><span class="n">FunctionElement</span><span class="p">):</span>  <span class="c1"># pylint: disable=invalid-name</span>
+    <span class="c1"># pylint: disable=too-few-public-methods</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;array_len&#39;</span></div>
+
+
+<span class="nd">@compiles</span><span class="p">(</span><span class="n">array_length</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">compile</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">compiler</span><span class="p">,</span> <span class="o">**</span><span class="n">_kw</span><span class="p">):</span>  <span class="c1"># pylint: disable=function-redefined</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get length of array defined in a JSONB column</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="s1">&#39;array_length(</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="n">compiler</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">clauses</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="jsonb_typeof"><a class="viewcode-back" href="../../../../../apidoc/aiida.orm.implementation.sqlalchemy.html#aiida.orm.implementation.sqlalchemy.querybuilder.jsonb_typeof">[docs]</a><span class="k">class</span> <span class="nc">jsonb_typeof</span><span class="p">(</span><span class="n">FunctionElement</span><span class="p">):</span>  <span class="c1"># pylint: disable=invalid-name</span>
+    <span class="c1"># pylint: disable=too-few-public-methods</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;jsonb_typeof&#39;</span></div>
+
+
+<div class="viewcode-block" id="compile"><a class="viewcode-back" href="../../../../../apidoc/aiida.orm.implementation.sqlalchemy.html#aiida.orm.implementation.sqlalchemy.querybuilder.compile">[docs]</a><span class="nd">@compiles</span><span class="p">(</span><span class="n">jsonb_typeof</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">compile</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">compiler</span><span class="p">,</span> <span class="o">**</span><span class="n">_kw</span><span class="p">):</span>  <span class="c1"># pylint: disable=function-redefined</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get length of array defined in a JSONB column</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="s1">&#39;jsonb_typeof(</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="n">compiler</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">clauses</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SqlaQueryBuilder"><a class="viewcode-back" href="../../../../../apidoc/aiida.orm.implementation.sqlalchemy.html#aiida.orm.implementation.sqlalchemy.querybuilder.SqlaQueryBuilder">[docs]</a><span class="k">class</span> <span class="nc">SqlaQueryBuilder</span><span class="p">(</span><span class="n">BackendQueryBuilder</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    QueryBuilder to use with SQLAlchemy-backend and</span>
+<span class="sd">    schema defined in backends.sqlalchemy.models</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># pylint: disable=redefined-outer-name, too-many-public-methods</span>
+
+<div class="viewcode-block" id="SqlaQueryBuilder.__init__"><a class="viewcode-back" href="../../../../../apidoc/aiida.orm.implementation.sqlalchemy.html#aiida.orm.implementation.sqlalchemy.querybuilder.SqlaQueryBuilder.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">backend</span><span class="p">):</span>
+        <span class="n">BackendQueryBuilder</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">backend</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">outer_to_inner_schema</span><span class="p">[</span><span class="s1">&#39;db_dbcomputer&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;metadata&#39;</span><span class="p">:</span> <span class="s1">&#39;_metadata&#39;</span><span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">outer_to_inner_schema</span><span class="p">[</span><span class="s1">&#39;db_dblog&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;metadata&#39;</span><span class="p">:</span> <span class="s1">&#39;_metadata&#39;</span><span class="p">}</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">inner_to_outer_schema</span><span class="p">[</span><span class="s1">&#39;db_dbcomputer&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;_metadata&#39;</span><span class="p">:</span> <span class="s1">&#39;metadata&#39;</span><span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">inner_to_outer_schema</span><span class="p">[</span><span class="s1">&#39;db_dblog&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;_metadata&#39;</span><span class="p">:</span> <span class="s1">&#39;metadata&#39;</span><span class="p">}</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">Node</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">aiida.backends.sqlalchemy.models.node</span>
+        <span class="k">return</span> <span class="n">aiida</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">sqlalchemy</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">DbNode</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">Link</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">aiida.backends.sqlalchemy.models.node</span>
+        <span class="k">return</span> <span class="n">aiida</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">sqlalchemy</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">DbLink</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">Computer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">aiida.backends.sqlalchemy.models.computer</span>
+        <span class="k">return</span> <span class="n">aiida</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">sqlalchemy</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">computer</span><span class="o">.</span><span class="n">DbComputer</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">User</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">aiida.backends.sqlalchemy.models.user</span>
+        <span class="k">return</span> <span class="n">aiida</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">sqlalchemy</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">DbUser</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">Group</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">aiida.backends.sqlalchemy.models.group</span>
+        <span class="k">return</span> <span class="n">aiida</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">sqlalchemy</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">group</span><span class="o">.</span><span class="n">DbGroup</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">AuthInfo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">aiida.backends.sqlalchemy.models.authinfo</span>
+        <span class="k">return</span> <span class="n">aiida</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">sqlalchemy</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">authinfo</span><span class="o">.</span><span class="n">DbAuthInfo</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">Comment</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">aiida.backends.sqlalchemy.models.comment</span>
+        <span class="k">return</span> <span class="n">aiida</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">sqlalchemy</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">comment</span><span class="o">.</span><span class="n">DbComment</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">Log</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">aiida.backends.sqlalchemy.models.log</span>
+        <span class="k">return</span> <span class="n">aiida</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">sqlalchemy</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">DbLog</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">table_groups_nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">aiida.backends.sqlalchemy.models.group</span>
+        <span class="k">return</span> <span class="n">aiida</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">sqlalchemy</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">group</span><span class="o">.</span><span class="n">table_groups_nodes</span>
+
+<div class="viewcode-block" id="SqlaQueryBuilder.modify_expansions"><a class="viewcode-back" href="../../../../../apidoc/aiida.orm.implementation.sqlalchemy.html#aiida.orm.implementation.sqlalchemy.querybuilder.SqlaQueryBuilder.modify_expansions">[docs]</a>    <span class="k">def</span> <span class="nf">modify_expansions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alias</span><span class="p">,</span> <span class="n">expansions</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        In SQLA, the metadata should be changed to _metadata to be in-line with the database schema</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=protected-access</span>
+        <span class="c1"># The following check is added to avoided unnecessary calls to get_inner_property for QB edge queries</span>
+        <span class="c1"># The update of expansions makes sense only when AliasedClass is provided</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">alias</span><span class="p">,</span> <span class="s1">&#39;_sa_class_manager&#39;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="s1">&#39;_metadata&#39;</span> <span class="ow">in</span> <span class="n">expansions</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotExistent</span><span class="p">(</span><span class="s2">&quot;_metadata doesn&#39;t exist for </span><span class="si">{}</span><span class="s2">. Please try metadata.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">alias</span><span class="p">))</span>
+
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_corresponding_properties</span><span class="p">(</span><span class="n">alias</span><span class="o">.</span><span class="n">__tablename__</span><span class="p">,</span> <span class="n">expansions</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">outer_to_inner_schema</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">expansions</span></div>
+
+<div class="viewcode-block" id="SqlaQueryBuilder.get_filter_expr"><a class="viewcode-back" href="../../../../../apidoc/aiida.orm.implementation.sqlalchemy.html#aiida.orm.implementation.sqlalchemy.querybuilder.SqlaQueryBuilder.get_filter_expr">[docs]</a>    <span class="k">def</span> <span class="nf">get_filter_expr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operator</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">attr_key</span><span class="p">,</span> <span class="n">is_attribute</span><span class="p">,</span> <span class="n">alias</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">column_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Applies a filter on the alias given.</span>
+<span class="sd">        Expects the alias of the ORM-class on which to filter, and filter_spec.</span>
+<span class="sd">        Filter_spec contains the specification on the filter.</span>
+<span class="sd">        Expects:</span>
+
+<span class="sd">        :param operator: The operator to apply, see below for further details</span>
+<span class="sd">        :param value:</span>
+<span class="sd">            The value for the right side of the expression,</span>
+<span class="sd">            the value you want to compare with.</span>
+
+<span class="sd">        :param path: The path leading to the value</span>
+
+<span class="sd">        :param attr_key: Boolean, whether the value is in a json-column,</span>
+<span class="sd">            or in an attribute like table.</span>
+
+
+<span class="sd">        Implemented and valid operators:</span>
+
+<span class="sd">        *   for any type:</span>
+<span class="sd">            *   ==  (compare single value, eg: &#39;==&#39;:5.0)</span>
+<span class="sd">            *   in    (compare whether in list, eg: &#39;in&#39;:[5, 6, 34]</span>
+<span class="sd">        *  for floats and integers:</span>
+<span class="sd">            *   &gt;</span>
+<span class="sd">            *   &lt;</span>
+<span class="sd">            *   &lt;=</span>
+<span class="sd">            *   &gt;=</span>
+<span class="sd">        *  for strings:</span>
+<span class="sd">            *   like  (case - sensitive), for example</span>
+<span class="sd">                &#39;like&#39;:&#39;node.calc.%&#39;  will match node.calc.relax and</span>
+<span class="sd">                node.calc.RELAX and node.calc. but</span>
+<span class="sd">                not node.CALC.relax</span>
+<span class="sd">            *   ilike (case - unsensitive)</span>
+<span class="sd">                will also match node.CaLc.relax in the above example</span>
+
+<span class="sd">            .. note::</span>
+<span class="sd">                The character % is a reserved special character in SQL,</span>
+<span class="sd">                and acts as a wildcard. If you specifically</span>
+<span class="sd">                want to capture a ``%`` in the string, use: ``_%``</span>
+
+<span class="sd">        *   for arrays and dictionaries (only for the</span>
+<span class="sd">            SQLAlchemy implementation):</span>
+
+<span class="sd">            *   contains: pass a list with all the items that</span>
+<span class="sd">                the array should contain, or that should be among</span>
+<span class="sd">                the keys, eg: &#39;contains&#39;: [&#39;N&#39;, &#39;H&#39;])</span>
+<span class="sd">            *   has_key: pass an element that the list has to contain</span>
+<span class="sd">                or that has to be a key, eg: &#39;has_key&#39;:&#39;N&#39;)</span>
+
+<span class="sd">        *  for arrays only (SQLAlchemy version):</span>
+<span class="sd">            *   of_length</span>
+<span class="sd">            *   longer</span>
+<span class="sd">            *   shorter</span>
+
+<span class="sd">        All the above filters invoke a negation of the</span>
+<span class="sd">        expression if preceded by **~**::</span>
+
+<span class="sd">            # first example:</span>
+<span class="sd">            filter_spec = {</span>
+<span class="sd">                &#39;name&#39; : {</span>
+<span class="sd">                    &#39;~in&#39;:[</span>
+<span class="sd">                        &#39;halle&#39;,</span>
+<span class="sd">                        &#39;lujah&#39;</span>
+<span class="sd">                    ]</span>
+<span class="sd">                } # Name not &#39;halle&#39; or &#39;lujah&#39;</span>
+<span class="sd">            }</span>
+
+<span class="sd">            # second example:</span>
+<span class="sd">            filter_spec =  {</span>
+<span class="sd">                &#39;id&#39; : {</span>
+<span class="sd">                    &#39;~==&#39;: 2</span>
+<span class="sd">                }</span>
+<span class="sd">            } # id is not 2</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=too-many-arguments, too-many-branches</span>
+        <span class="n">expr</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">operator</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;~&#39;</span><span class="p">):</span>
+            <span class="n">negation</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">operator</span> <span class="o">=</span> <span class="n">operator</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">&#39;~&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">operator</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">):</span>
+            <span class="n">negation</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">operator</span> <span class="o">=</span> <span class="n">operator</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">negation</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="n">operator</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;longer&#39;</span><span class="p">,</span> <span class="s1">&#39;shorter&#39;</span><span class="p">,</span> <span class="s1">&#39;of_length&#39;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="n">InputValidationError</span><span class="p">(</span><span class="s1">&#39;You have to give an integer when comparing to a length&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">operator</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;like&#39;</span><span class="p">,</span> <span class="s1">&#39;ilike&#39;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="n">InputValidationError</span><span class="p">(</span>
+                    <span class="s1">&#39;Value for operator </span><span class="si">{}</span><span class="s1"> has to be a string (you gave </span><span class="si">{}</span><span class="s1">)&#39;</span>
+                    <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">operator</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+                <span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;in&#39;</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">value_type_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">value</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;Value for operator `in` could not be iterated&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">value_type_set</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">InputValidationError</span><span class="p">(</span><span class="s1">&#39;Value for operator `in` is an empty list&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">value_type_set</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">InputValidationError</span><span class="p">(</span><span class="s1">&#39;Value for operator `in` contains more than one type: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">operator</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;and&#39;</span><span class="p">,</span> <span class="s1">&#39;or&#39;</span><span class="p">):</span>
+            <span class="n">expressions_for_this_path</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">filter_operation_dict</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">newoperator</span><span class="p">,</span> <span class="n">newvalue</span> <span class="ow">in</span> <span class="n">filter_operation_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="n">expressions_for_this_path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">get_filter_expr</span><span class="p">(</span>
+                            <span class="n">newoperator</span><span class="p">,</span>
+                            <span class="n">newvalue</span><span class="p">,</span>
+                            <span class="n">attr_key</span><span class="o">=</span><span class="n">attr_key</span><span class="p">,</span>
+                            <span class="n">is_attribute</span><span class="o">=</span><span class="n">is_attribute</span><span class="p">,</span>
+                            <span class="n">alias</span><span class="o">=</span><span class="n">alias</span><span class="p">,</span>
+                            <span class="n">column</span><span class="o">=</span><span class="n">column</span><span class="p">,</span>
+                            <span class="n">column_name</span><span class="o">=</span><span class="n">column_name</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+            <span class="k">if</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;and&#39;</span><span class="p">:</span>
+                <span class="n">expr</span> <span class="o">=</span> <span class="n">and_</span><span class="p">(</span><span class="o">*</span><span class="n">expressions_for_this_path</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;or&#39;</span><span class="p">:</span>
+                <span class="n">expr</span> <span class="o">=</span> <span class="n">or_</span><span class="p">(</span><span class="o">*</span><span class="n">expressions_for_this_path</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">expr</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">is_attribute</span><span class="p">:</span>
+                <span class="n">expr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_filter_expr_from_attributes</span><span class="p">(</span>
+                    <span class="n">operator</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">attr_key</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">column</span><span class="p">,</span> <span class="n">column_name</span><span class="o">=</span><span class="n">column_name</span><span class="p">,</span> <span class="n">alias</span><span class="o">=</span><span class="n">alias</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">column</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">alias</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">column_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+                        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;I need to get the column but do not know the alias and the column name&#39;</span><span class="p">)</span>
+                    <span class="n">column</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_column</span><span class="p">(</span><span class="n">column_name</span><span class="p">,</span> <span class="n">alias</span><span class="p">)</span>
+                <span class="n">expr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_filter_expr_from_column</span><span class="p">(</span><span class="n">operator</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">column</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">negation</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">not_</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">expr</span></div>
+
+<div class="viewcode-block" id="SqlaQueryBuilder.get_filter_expr_from_attributes"><a class="viewcode-back" href="../../../../../apidoc/aiida.orm.implementation.sqlalchemy.html#aiida.orm.implementation.sqlalchemy.querybuilder.SqlaQueryBuilder.get_filter_expr_from_attributes">[docs]</a>    <span class="k">def</span> <span class="nf">get_filter_expr_from_attributes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operator</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">attr_key</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">column_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">alias</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="c1"># Too many everything!</span>
+        <span class="c1"># pylint: disable=too-many-branches, too-many-arguments, too-many-statements</span>
+
+        <span class="k">def</span> <span class="nf">cast_according_to_type</span><span class="p">(</span><span class="n">path_in_json</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot;Cast the value according to the type&quot;&quot;&quot;</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+                <span class="n">type_filter</span> <span class="o">=</span> <span class="n">jsonb_typeof</span><span class="p">(</span><span class="n">path_in_json</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;boolean&#39;</span>
+                <span class="n">casted_entity</span> <span class="o">=</span> <span class="n">path_in_json</span><span class="o">.</span><span class="n">astext</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">Boolean</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+                <span class="n">type_filter</span> <span class="o">=</span> <span class="n">jsonb_typeof</span><span class="p">(</span><span class="n">path_in_json</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;number&#39;</span>
+                <span class="n">casted_entity</span> <span class="o">=</span> <span class="n">path_in_json</span><span class="o">.</span><span class="n">astext</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">Float</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">or</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">type_filter</span> <span class="o">=</span> <span class="n">jsonb_typeof</span><span class="p">(</span><span class="n">path_in_json</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;object&#39;</span>
+                <span class="n">casted_entity</span> <span class="o">=</span> <span class="n">path_in_json</span><span class="o">.</span><span class="n">astext</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">JSONB</span><span class="p">)</span>  <span class="c1"># BOOLEANS?</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="n">type_filter</span> <span class="o">=</span> <span class="n">jsonb_typeof</span><span class="p">(</span><span class="n">path_in_json</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;array&#39;</span>
+                <span class="n">casted_entity</span> <span class="o">=</span> <span class="n">path_in_json</span><span class="o">.</span><span class="n">astext</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">JSONB</span><span class="p">)</span>  <span class="c1"># BOOLEANS?</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">type_filter</span> <span class="o">=</span> <span class="n">jsonb_typeof</span><span class="p">(</span><span class="n">path_in_json</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;string&#39;</span>
+                <span class="n">casted_entity</span> <span class="o">=</span> <span class="n">path_in_json</span><span class="o">.</span><span class="n">astext</span>
+            <span class="k">elif</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">type_filter</span> <span class="o">=</span> <span class="n">jsonb_typeof</span><span class="p">(</span><span class="n">path_in_json</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;null&#39;</span>
+                <span class="n">casted_entity</span> <span class="o">=</span> <span class="n">path_in_json</span><span class="o">.</span><span class="n">astext</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">JSONB</span><span class="p">)</span>  <span class="c1"># BOOLEANS?</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;Unknown type </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)))</span>
+            <span class="k">return</span> <span class="n">type_filter</span><span class="p">,</span> <span class="n">casted_entity</span>
+
+        <span class="k">if</span> <span class="n">column</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">column</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_column</span><span class="p">(</span><span class="n">column_name</span><span class="p">,</span> <span class="n">alias</span><span class="p">)</span>
+
+        <span class="n">database_entity</span> <span class="o">=</span> <span class="n">column</span><span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">attr_key</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;==&#39;</span><span class="p">:</span>
+            <span class="n">type_filter</span><span class="p">,</span> <span class="n">casted_entity</span> <span class="o">=</span> <span class="n">cast_according_to_type</span><span class="p">(</span><span class="n">database_entity</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+            <span class="n">expr</span> <span class="o">=</span> <span class="n">case</span><span class="p">([(</span><span class="n">type_filter</span><span class="p">,</span> <span class="n">casted_entity</span> <span class="o">==</span> <span class="n">value</span><span class="p">)],</span> <span class="n">else_</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;&gt;&#39;</span><span class="p">:</span>
+            <span class="n">type_filter</span><span class="p">,</span> <span class="n">casted_entity</span> <span class="o">=</span> <span class="n">cast_according_to_type</span><span class="p">(</span><span class="n">database_entity</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+            <span class="n">expr</span> <span class="o">=</span> <span class="n">case</span><span class="p">([(</span><span class="n">type_filter</span><span class="p">,</span> <span class="n">casted_entity</span> <span class="o">&gt;</span> <span class="n">value</span><span class="p">)],</span> <span class="n">else_</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;&lt;&#39;</span><span class="p">:</span>
+            <span class="n">type_filter</span><span class="p">,</span> <span class="n">casted_entity</span> <span class="o">=</span> <span class="n">cast_according_to_type</span><span class="p">(</span><span class="n">database_entity</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+            <span class="n">expr</span> <span class="o">=</span> <span class="n">case</span><span class="p">([(</span><span class="n">type_filter</span><span class="p">,</span> <span class="n">casted_entity</span> <span class="o">&lt;</span> <span class="n">value</span><span class="p">)],</span> <span class="n">else_</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">operator</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;&gt;=&#39;</span><span class="p">,</span> <span class="s1">&#39;=&gt;&#39;</span><span class="p">):</span>
+            <span class="n">type_filter</span><span class="p">,</span> <span class="n">casted_entity</span> <span class="o">=</span> <span class="n">cast_according_to_type</span><span class="p">(</span><span class="n">database_entity</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+            <span class="n">expr</span> <span class="o">=</span> <span class="n">case</span><span class="p">([(</span><span class="n">type_filter</span><span class="p">,</span> <span class="n">casted_entity</span> <span class="o">&gt;=</span> <span class="n">value</span><span class="p">)],</span> <span class="n">else_</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">operator</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;&lt;=&#39;</span><span class="p">,</span> <span class="s1">&#39;=&lt;&#39;</span><span class="p">):</span>
+            <span class="n">type_filter</span><span class="p">,</span> <span class="n">casted_entity</span> <span class="o">=</span> <span class="n">cast_according_to_type</span><span class="p">(</span><span class="n">database_entity</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+            <span class="n">expr</span> <span class="o">=</span> <span class="n">case</span><span class="p">([(</span><span class="n">type_filter</span><span class="p">,</span> <span class="n">casted_entity</span> <span class="o">&lt;=</span> <span class="n">value</span><span class="p">)],</span> <span class="n">else_</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;of_type&#39;</span><span class="p">:</span>
+            <span class="c1"># http://www.postgresql.org/docs/9.5/static/functions-json.html</span>
+            <span class="c1">#  Possible types are object, array, string, number, boolean, and null.</span>
+            <span class="n">valid_types</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;object&#39;</span><span class="p">,</span> <span class="s1">&#39;array&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="s1">&#39;number&#39;</span><span class="p">,</span> <span class="s1">&#39;boolean&#39;</span><span class="p">,</span> <span class="s1">&#39;null&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">value</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">valid_types</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">InputValidationError</span><span class="p">(</span>
+                    <span class="s1">&#39;value </span><span class="si">{}</span><span class="s1"> for of_type is not among valid types</span><span class="se">\n</span><span class="s1">&#39;</span>
+                    <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">valid_types</span><span class="p">)</span>
+                <span class="p">)</span>
+            <span class="n">expr</span> <span class="o">=</span> <span class="n">jsonb_typeof</span><span class="p">(</span><span class="n">database_entity</span><span class="p">)</span> <span class="o">==</span> <span class="n">value</span>
+        <span class="k">elif</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;like&#39;</span><span class="p">:</span>
+            <span class="n">type_filter</span><span class="p">,</span> <span class="n">casted_entity</span> <span class="o">=</span> <span class="n">cast_according_to_type</span><span class="p">(</span><span class="n">database_entity</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+            <span class="n">expr</span> <span class="o">=</span> <span class="n">case</span><span class="p">([(</span><span class="n">type_filter</span><span class="p">,</span> <span class="n">casted_entity</span><span class="o">.</span><span class="n">like</span><span class="p">(</span><span class="n">value</span><span class="p">))],</span> <span class="n">else_</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;ilike&#39;</span><span class="p">:</span>
+            <span class="n">type_filter</span><span class="p">,</span> <span class="n">casted_entity</span> <span class="o">=</span> <span class="n">cast_according_to_type</span><span class="p">(</span><span class="n">database_entity</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+            <span class="n">expr</span> <span class="o">=</span> <span class="n">case</span><span class="p">([(</span><span class="n">type_filter</span><span class="p">,</span> <span class="n">casted_entity</span><span class="o">.</span><span class="n">ilike</span><span class="p">(</span><span class="n">value</span><span class="p">))],</span> <span class="n">else_</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;in&#39;</span><span class="p">:</span>
+            <span class="n">type_filter</span><span class="p">,</span> <span class="n">casted_entity</span> <span class="o">=</span> <span class="n">cast_according_to_type</span><span class="p">(</span><span class="n">database_entity</span><span class="p">,</span> <span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">expr</span> <span class="o">=</span> <span class="n">case</span><span class="p">([(</span><span class="n">type_filter</span><span class="p">,</span> <span class="n">casted_entity</span><span class="o">.</span><span class="n">in_</span><span class="p">(</span><span class="n">value</span><span class="p">))],</span> <span class="n">else_</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;contains&#39;</span><span class="p">:</span>
+            <span class="n">expr</span> <span class="o">=</span> <span class="n">database_entity</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">JSONB</span><span class="p">)</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;has_key&#39;</span><span class="p">:</span>
+            <span class="n">expr</span> <span class="o">=</span> <span class="n">database_entity</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">JSONB</span><span class="p">)</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>  <span class="c1"># noqa</span>
+        <span class="k">elif</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;of_length&#39;</span><span class="p">:</span>
+            <span class="n">expr</span> <span class="o">=</span> <span class="n">case</span><span class="p">([</span>
+                <span class="p">(</span><span class="n">jsonb_typeof</span><span class="p">(</span><span class="n">database_entity</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;array&#39;</span><span class="p">,</span> <span class="n">jsonb_array_length</span><span class="p">(</span><span class="n">database_entity</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">JSONB</span><span class="p">))</span> <span class="o">==</span> <span class="n">value</span><span class="p">)</span>
+            <span class="p">],</span>
+                        <span class="n">else_</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;longer&#39;</span><span class="p">:</span>
+            <span class="n">expr</span> <span class="o">=</span> <span class="n">case</span><span class="p">([</span>
+                <span class="p">(</span><span class="n">jsonb_typeof</span><span class="p">(</span><span class="n">database_entity</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;array&#39;</span><span class="p">,</span> <span class="n">jsonb_array_length</span><span class="p">(</span><span class="n">database_entity</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">JSONB</span><span class="p">))</span> <span class="o">&gt;</span> <span class="n">value</span><span class="p">)</span>
+            <span class="p">],</span>
+                        <span class="n">else_</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;shorter&#39;</span><span class="p">:</span>
+            <span class="n">expr</span> <span class="o">=</span> <span class="n">case</span><span class="p">([</span>
+                <span class="p">(</span><span class="n">jsonb_typeof</span><span class="p">(</span><span class="n">database_entity</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;array&#39;</span><span class="p">,</span> <span class="n">jsonb_array_length</span><span class="p">(</span><span class="n">database_entity</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">JSONB</span><span class="p">))</span> <span class="o">&lt;</span> <span class="n">value</span><span class="p">)</span>
+            <span class="p">],</span>
+                        <span class="n">else_</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">InputValidationError</span><span class="p">(</span><span class="s1">&#39;Unknown operator </span><span class="si">{}</span><span class="s1"> for filters in JSON field&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">operator</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">expr</span></div>
+
+<div class="viewcode-block" id="SqlaQueryBuilder.get_table_name"><a class="viewcode-back" href="../../../../../apidoc/aiida.orm.implementation.sqlalchemy.html#aiida.orm.implementation.sqlalchemy.querybuilder.SqlaQueryBuilder.get_table_name">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">get_table_name</span><span class="p">(</span><span class="n">aliased_class</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Returns the table name given an Aliased class&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">aliased_class</span><span class="o">.</span><span class="n">__tablename__</span></div>
+
+<div class="viewcode-block" id="SqlaQueryBuilder.get_column_names"><a class="viewcode-back" href="../../../../../apidoc/aiida.orm.implementation.sqlalchemy.html#aiida.orm.implementation.sqlalchemy.querybuilder.SqlaQueryBuilder.get_column_names">[docs]</a>    <span class="k">def</span> <span class="nf">get_column_names</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alias</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Given the backend specific alias, return the column names that correspond to the aliased table.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">alias</span><span class="o">.</span><span class="n">__table__</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">alias</span><span class="o">.</span><span class="n">__table__</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

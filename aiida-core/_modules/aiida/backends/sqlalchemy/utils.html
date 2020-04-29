@@ -1,0 +1,490 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.backends.sqlalchemy.utils &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/togglebutton.js"></script>
+        <script src="../../../../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../aiida.html">aiida</a> &raquo;</li>
+        
+          <li><a href="../../backends.html">aiida.backends</a> &raquo;</li>
+        
+          <li><a href="../sqlalchemy.html">aiida.backends.sqlalchemy</a> &raquo;</li>
+        
+      <li>aiida.backends.sqlalchemy.utils</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for aiida.backends.sqlalchemy.utils</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1">###########################################################################</span>
+<span class="c1"># Copyright (c), The AiiDA team. All rights reserved.                     #</span>
+<span class="c1"># This file is part of the AiiDA code.                                    #</span>
+<span class="c1">#                                                                         #</span>
+<span class="c1"># The code is hosted on GitHub at https://github.com/aiidateam/aiida-core #</span>
+<span class="c1"># For further information on the license, see the LICENSE.txt file        #</span>
+<span class="c1"># For further information please visit http://www.aiida.net               #</span>
+<span class="c1">###########################################################################</span>
+<span class="c1"># pylint: disable=import-error,no-name-in-module</span>
+<span class="sd">&quot;&quot;&quot;Utility functions specific to the SqlAlchemy backend.&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="delete_nodes_and_connections_sqla"><a class="viewcode-back" href="../../../../apidoc/aiida.backends.sqlalchemy.html#aiida.backends.sqlalchemy.utils.delete_nodes_and_connections_sqla">[docs]</a><span class="k">def</span> <span class="nf">delete_nodes_and_connections_sqla</span><span class="p">(</span><span class="n">pks_to_delete</span><span class="p">):</span>  <span class="c1"># pylint: disable=invalid-name</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Delete all nodes corresponding to pks in the input.</span>
+<span class="sd">    :param pks_to_delete: A list, tuple or set of pks that should be deleted.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># pylint: disable=no-value-for-parameter</span>
+    <span class="kn">from</span> <span class="nn">aiida.backends.sqlalchemy.models.node</span> <span class="kn">import</span> <span class="n">DbNode</span><span class="p">,</span> <span class="n">DbLink</span>
+    <span class="kn">from</span> <span class="nn">aiida.backends.sqlalchemy.models.group</span> <span class="kn">import</span> <span class="n">table_groups_nodes</span>
+    <span class="kn">from</span> <span class="nn">aiida.manage.manager</span> <span class="kn">import</span> <span class="n">get_manager</span>
+
+    <span class="n">backend</span> <span class="o">=</span> <span class="n">get_manager</span><span class="p">()</span><span class="o">.</span><span class="n">get_backend</span><span class="p">()</span>
+
+    <span class="k">with</span> <span class="n">backend</span><span class="o">.</span><span class="n">transaction</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="c1"># I am first making a statement to delete the membership of these nodes to groups.</span>
+        <span class="c1"># Since table_groups_nodes is a sqlalchemy.schema.Table, I am using expression language to compile</span>
+        <span class="c1"># a stmt to be executed by the session. It works, but it&#39;s not nice that two different ways are used!</span>
+        <span class="c1"># Can this be changed?</span>
+        <span class="n">stmt</span> <span class="o">=</span> <span class="n">table_groups_nodes</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">table_groups_nodes</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">dbnode_id</span><span class="o">.</span><span class="n">in_</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">pks_to_delete</span><span class="p">)))</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">stmt</span><span class="p">)</span>
+        <span class="c1"># First delete links, then the Nodes, since we are not cascading deletions.</span>
+        <span class="c1"># Here I delete the links coming out of the nodes marked for deletion.</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">DbLink</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">DbLink</span><span class="o">.</span><span class="n">input_id</span><span class="o">.</span><span class="n">in_</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">pks_to_delete</span><span class="p">)))</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">synchronize_session</span><span class="o">=</span><span class="s1">&#39;fetch&#39;</span><span class="p">)</span>
+        <span class="c1"># Here I delete the links pointing to the nodes marked for deletion.</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">DbLink</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">DbLink</span><span class="o">.</span><span class="n">output_id</span><span class="o">.</span><span class="n">in_</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">pks_to_delete</span><span class="p">)))</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">synchronize_session</span><span class="o">=</span><span class="s1">&#39;fetch&#39;</span><span class="p">)</span>
+        <span class="c1"># Now I am deleting the nodes</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">DbNode</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">DbNode</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">in_</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">pks_to_delete</span><span class="p">)))</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">synchronize_session</span><span class="o">=</span><span class="s1">&#39;fetch&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="flag_modified"><a class="viewcode-back" href="../../../../apidoc/aiida.backends.sqlalchemy.html#aiida.backends.sqlalchemy.utils.flag_modified">[docs]</a><span class="k">def</span> <span class="nf">flag_modified</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Wrapper around `sqlalchemy.orm.attributes.flag_modified` to correctly dereference utils.ModelWrapper</span>
+
+<span class="sd">    Since SqlAlchemy 1.2.12 (and maybe earlier but not in 1.0.19) the flag_modified function will check that the</span>
+<span class="sd">    key is actually present in the instance or it will except. If we pass a model instance, wrapped in the ModelWrapper</span>
+<span class="sd">    the call will raise an InvalidRequestError. In this function that wraps the flag_modified of SqlAlchemy, we</span>
+<span class="sd">    derefence the model instance if the passed instance is actually wrapped in the ModelWrapper.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">sqlalchemy.orm.attributes</span> <span class="kn">import</span> <span class="n">flag_modified</span> <span class="k">as</span> <span class="n">flag_modified_sqla</span>
+    <span class="kn">from</span> <span class="nn">aiida.orm.implementation.sqlalchemy.utils</span> <span class="kn">import</span> <span class="n">ModelWrapper</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">ModelWrapper</span><span class="p">):</span>
+        <span class="n">instance</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">_model</span>  <span class="c1"># pylint: disable=protected-access</span>
+
+    <span class="n">flag_modified_sqla</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="install_tc"><a class="viewcode-back" href="../../../../apidoc/aiida.backends.sqlalchemy.html#aiida.backends.sqlalchemy.utils.install_tc">[docs]</a><span class="k">def</span> <span class="nf">install_tc</span><span class="p">(</span><span class="n">session</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Install the transitive closure table with SqlAlchemy.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">links_table_name</span> <span class="o">=</span> <span class="s1">&#39;db_dblink&#39;</span>
+    <span class="n">links_table_input_field</span> <span class="o">=</span> <span class="s1">&#39;input_id&#39;</span>
+    <span class="n">links_table_output_field</span> <span class="o">=</span> <span class="s1">&#39;output_id&#39;</span>
+    <span class="n">closure_table_name</span> <span class="o">=</span> <span class="s1">&#39;db_dbpath&#39;</span>
+    <span class="n">closure_table_parent_field</span> <span class="o">=</span> <span class="s1">&#39;parent_id&#39;</span>
+    <span class="n">closure_table_child_field</span> <span class="o">=</span> <span class="s1">&#39;child_id&#39;</span>
+
+    <span class="n">session</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">get_pg_tc</span><span class="p">(</span>
+            <span class="n">links_table_name</span><span class="p">,</span> <span class="n">links_table_input_field</span><span class="p">,</span> <span class="n">links_table_output_field</span><span class="p">,</span> <span class="n">closure_table_name</span><span class="p">,</span>
+            <span class="n">closure_table_parent_field</span><span class="p">,</span> <span class="n">closure_table_child_field</span>
+        <span class="p">)</span>
+    <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_pg_tc"><a class="viewcode-back" href="../../../../apidoc/aiida.backends.sqlalchemy.html#aiida.backends.sqlalchemy.utils.get_pg_tc">[docs]</a><span class="k">def</span> <span class="nf">get_pg_tc</span><span class="p">(</span>
+    <span class="n">links_table_name</span><span class="p">,</span> <span class="n">links_table_input_field</span><span class="p">,</span> <span class="n">links_table_output_field</span><span class="p">,</span> <span class="n">closure_table_name</span><span class="p">,</span> <span class="n">closure_table_parent_field</span><span class="p">,</span>
+    <span class="n">closure_table_child_field</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the transitive closure table template</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">Template</span>
+
+    <span class="n">pg_tc</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">DROP TRIGGER IF EXISTS autoupdate_tc ON $links_table_name;</span>
+<span class="sd">DROP FUNCTION IF EXISTS update_tc();</span>
+
+<span class="sd">CREATE OR REPLACE FUNCTION update_tc()</span>
+<span class="sd">  RETURNS trigger AS</span>
+<span class="sd">$$BODY$$</span>
+<span class="sd">DECLARE</span>
+
+<span class="sd">    new_id INTEGER;</span>
+<span class="sd">    old_id INTEGER;</span>
+<span class="sd">    num_rows INTEGER;</span>
+
+<span class="sd">BEGIN</span>
+
+<span class="sd">  IF tg_op = &#39;INSERT&#39; THEN</span>
+
+<span class="sd">    IF EXISTS (</span>
+<span class="sd">      SELECT Id FROM $closure_table_name</span>
+<span class="sd">      WHERE $closure_table_parent_field = new.$links_table_input_field</span>
+<span class="sd">         AND $closure_table_child_field = new.$links_table_output_field</span>
+<span class="sd">         AND depth = 0</span>
+<span class="sd">         )</span>
+<span class="sd">    THEN</span>
+<span class="sd">      RETURN null;</span>
+<span class="sd">    END IF;</span>
+
+<span class="sd">    IF new.$links_table_input_field = new.$links_table_output_field</span>
+<span class="sd">    OR EXISTS (</span>
+<span class="sd">      SELECT id FROM $closure_table_name</span>
+<span class="sd">        WHERE $closure_table_parent_field = new.$links_table_output_field</span>
+<span class="sd">        AND $closure_table_child_field = new.$links_table_input_field</span>
+<span class="sd">        )</span>
+<span class="sd">    THEN</span>
+<span class="sd">      RETURN null;</span>
+<span class="sd">    END IF;</span>
+
+<span class="sd">    INSERT INTO $closure_table_name (</span>
+<span class="sd">         $closure_table_parent_field,</span>
+<span class="sd">         $closure_table_child_field,</span>
+<span class="sd">         depth)</span>
+<span class="sd">      VALUES (</span>
+<span class="sd">         new.$links_table_input_field,</span>
+<span class="sd">         new.$links_table_output_field,</span>
+<span class="sd">         0);</span>
+
+<span class="sd">    new_id := lastval();</span>
+
+<span class="sd">    UPDATE $closure_table_name</span>
+<span class="sd">      SET entry_edge_id = new_id</span>
+<span class="sd">        , exit_edge_id = new_id</span>
+<span class="sd">        , direct_edge_id = new_id</span>
+<span class="sd">      WHERE id = new_id;</span>
+
+
+<span class="sd">    INSERT INTO $closure_table_name (</span>
+<span class="sd">      entry_edge_id,</span>
+<span class="sd">      direct_edge_id,</span>
+<span class="sd">      exit_edge_id,</span>
+<span class="sd">      $closure_table_parent_field,</span>
+<span class="sd">      $closure_table_child_field,</span>
+<span class="sd">      depth)</span>
+<span class="sd">      SELECT id</span>
+<span class="sd">         , new_id</span>
+<span class="sd">         , new_id</span>
+<span class="sd">         , $closure_table_parent_field</span>
+<span class="sd">         , new.$links_table_output_field</span>
+<span class="sd">         , depth + 1</span>
+<span class="sd">        FROM $closure_table_name</span>
+<span class="sd">        WHERE $closure_table_child_field = new.$links_table_input_field;</span>
+
+
+<span class="sd">    INSERT INTO $closure_table_name (</span>
+<span class="sd">      entry_edge_id,</span>
+<span class="sd">      direct_edge_id,</span>
+<span class="sd">      exit_edge_id,</span>
+<span class="sd">      $closure_table_parent_field,</span>
+<span class="sd">      $closure_table_child_field,</span>
+<span class="sd">      depth)</span>
+<span class="sd">      SELECT new_id</span>
+<span class="sd">        , new_id</span>
+<span class="sd">        , id</span>
+<span class="sd">        , new.$links_table_input_field</span>
+<span class="sd">        , $closure_table_child_field</span>
+<span class="sd">        , depth + 1</span>
+<span class="sd">        FROM $closure_table_name</span>
+<span class="sd">        WHERE $closure_table_parent_field = new.$links_table_output_field;</span>
+
+<span class="sd">    INSERT INTO $closure_table_name (</span>
+<span class="sd">      entry_edge_id,</span>
+<span class="sd">      direct_edge_id,</span>
+<span class="sd">      exit_edge_id,</span>
+<span class="sd">      $closure_table_parent_field,</span>
+<span class="sd">      $closure_table_child_field,</span>
+<span class="sd">      depth)</span>
+<span class="sd">      SELECT A.id</span>
+<span class="sd">        , new_id</span>
+<span class="sd">        , B.id</span>
+<span class="sd">        , A.$closure_table_parent_field</span>
+<span class="sd">        , B.$closure_table_child_field</span>
+<span class="sd">        , A.depth + B.depth + 2</span>
+<span class="sd">     FROM $closure_table_name A</span>
+<span class="sd">        CROSS JOIN $closure_table_name B</span>
+<span class="sd">     WHERE A.$closure_table_child_field = new.$links_table_input_field</span>
+<span class="sd">       AND B.$closure_table_parent_field = new.$links_table_output_field;</span>
+
+<span class="sd">  END IF;</span>
+
+<span class="sd">  IF tg_op = &#39;DELETE&#39; THEN</span>
+
+<span class="sd">    IF NOT EXISTS(</span>
+<span class="sd">        SELECT id FROM $closure_table_name</span>
+<span class="sd">        WHERE $closure_table_parent_field = old.$links_table_input_field</span>
+<span class="sd">        AND $closure_table_child_field = old.$links_table_output_field AND</span>
+<span class="sd">        depth = 0 )</span>
+<span class="sd">    THEN</span>
+<span class="sd">        RETURN NULL;</span>
+<span class="sd">    END IF;</span>
+
+<span class="sd">    CREATE TABLE PurgeList (Id int);</span>
+
+<span class="sd">    INSERT INTO PurgeList</span>
+<span class="sd">      SELECT id FROM $closure_table_name</span>
+<span class="sd">          WHERE $closure_table_parent_field = old.$links_table_input_field</span>
+<span class="sd">        AND $closure_table_child_field = old.$links_table_output_field AND</span>
+<span class="sd">        depth = 0;</span>
+
+<span class="sd">    WHILE (1 = 1)</span>
+<span class="sd">    loop</span>
+
+<span class="sd">      INSERT INTO PurgeList</span>
+<span class="sd">        SELECT id FROM $closure_table_name</span>
+<span class="sd">          WHERE depth &gt; 0</span>
+<span class="sd">          AND ( entry_edge_id IN ( SELECT Id FROM PurgeList )</span>
+<span class="sd">          OR direct_edge_id IN ( SELECT Id FROM PurgeList )</span>
+<span class="sd">          OR exit_edge_id IN ( SELECT Id FROM PurgeList ) )</span>
+<span class="sd">          AND Id NOT IN (SELECT Id FROM PurgeList );</span>
+
+<span class="sd">      GET DIAGNOSTICS num_rows = ROW_COUNT;</span>
+<span class="sd">      if (num_rows = 0) THEN</span>
+<span class="sd">        EXIT;</span>
+<span class="sd">      END IF;</span>
+<span class="sd">    end loop;</span>
+
+<span class="sd">    DELETE FROM $closure_table_name WHERE Id IN ( SELECT Id FROM PurgeList);</span>
+<span class="sd">    DROP TABLE PurgeList;</span>
+
+<span class="sd">  END IF;</span>
+
+<span class="sd">  RETURN NULL;</span>
+
+<span class="sd">END</span>
+<span class="sd">$$BODY$$</span>
+<span class="sd">  LANGUAGE plpgsql VOLATILE</span>
+<span class="sd">  COST 100;</span>
+
+
+<span class="sd">CREATE TRIGGER autoupdate_tc</span>
+<span class="sd">  AFTER INSERT OR DELETE OR UPDATE</span>
+<span class="sd">  ON $links_table_name FOR each ROW</span>
+<span class="sd">  EXECUTE PROCEDURE update_tc();</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">pg_tc</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span>
+        <span class="n">links_table_name</span><span class="o">=</span><span class="n">links_table_name</span><span class="p">,</span>
+        <span class="n">links_table_input_field</span><span class="o">=</span><span class="n">links_table_input_field</span><span class="p">,</span>
+        <span class="n">links_table_output_field</span><span class="o">=</span><span class="n">links_table_output_field</span><span class="p">,</span>
+        <span class="n">closure_table_name</span><span class="o">=</span><span class="n">closure_table_name</span><span class="p">,</span>
+        <span class="n">closure_table_parent_field</span><span class="o">=</span><span class="n">closure_table_parent_field</span><span class="p">,</span>
+        <span class="n">closure_table_child_field</span><span class="o">=</span><span class="n">closure_table_child_field</span>
+    <span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

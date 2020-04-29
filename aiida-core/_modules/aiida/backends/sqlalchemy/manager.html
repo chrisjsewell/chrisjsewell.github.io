@@ -1,0 +1,444 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.backends.sqlalchemy.manager &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/togglebutton.js"></script>
+        <script src="../../../../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../aiida.html">aiida</a> &raquo;</li>
+        
+          <li><a href="../../backends.html">aiida.backends</a> &raquo;</li>
+        
+          <li><a href="../sqlalchemy.html">aiida.backends.sqlalchemy</a> &raquo;</li>
+        
+      <li>aiida.backends.sqlalchemy.manager</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for aiida.backends.sqlalchemy.manager</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1">###########################################################################</span>
+<span class="c1"># Copyright (c), The AiiDA team. All rights reserved.                     #</span>
+<span class="c1"># This file is part of the AiiDA code.                                    #</span>
+<span class="c1">#                                                                         #</span>
+<span class="c1"># The code is hosted on GitHub at https://github.com/aiidateam/aiida-core #</span>
+<span class="c1"># For further information on the license, see the LICENSE.txt file        #</span>
+<span class="c1"># For further information please visit http://www.aiida.net               #</span>
+<span class="c1">###########################################################################</span>
+<span class="c1"># pylint: disable=import-error,no-name-in-module</span>
+<span class="sd">&quot;&quot;&quot;Utilities and configuration of the SqlAlchemy database schema.&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">contextlib</span>
+
+<span class="kn">from</span> <span class="nn">alembic</span> <span class="kn">import</span> <span class="n">command</span>
+<span class="kn">from</span> <span class="nn">alembic.config</span> <span class="kn">import</span> <span class="n">Config</span>
+<span class="kn">from</span> <span class="nn">alembic.runtime.environment</span> <span class="kn">import</span> <span class="n">EnvironmentContext</span>
+<span class="kn">from</span> <span class="nn">alembic.script</span> <span class="kn">import</span> <span class="n">ScriptDirectory</span>
+
+<span class="kn">from</span> <span class="nn">sqlalchemy.orm.exc</span> <span class="kn">import</span> <span class="n">NoResultFound</span>
+
+<span class="kn">from</span> <span class="nn">aiida.backends.sqlalchemy</span> <span class="kn">import</span> <span class="n">get_scoped_session</span>
+<span class="kn">from</span> <span class="nn">aiida.common</span> <span class="kn">import</span> <span class="n">NotExistent</span>
+<span class="kn">from</span> <span class="nn">..manager</span> <span class="kn">import</span> <span class="n">BackendManager</span><span class="p">,</span> <span class="n">SettingsManager</span><span class="p">,</span> <span class="n">Setting</span>
+
+<span class="n">ALEMBIC_FILENAME</span> <span class="o">=</span> <span class="s1">&#39;alembic.ini&#39;</span>
+<span class="n">ALEMBIC_REL_PATH</span> <span class="o">=</span> <span class="s1">&#39;migrations&#39;</span>
+
+<span class="c1"># The database schema version required to perform schema reset for a given code schema generation</span>
+<span class="n">SCHEMA_VERSION_RESET</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;1&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
+
+
+<div class="viewcode-block" id="SqlaBackendManager"><a class="viewcode-back" href="../../../../apidoc/aiida.backends.sqlalchemy.html#aiida.backends.sqlalchemy.manager.SqlaBackendManager">[docs]</a><span class="k">class</span> <span class="nc">SqlaBackendManager</span><span class="p">(</span><span class="n">BackendManager</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Class to manage the database schema.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="SqlaBackendManager.alembic_config"><a class="viewcode-back" href="../../../../apidoc/aiida.backends.sqlalchemy.html#aiida.backends.sqlalchemy.manager.SqlaBackendManager.alembic_config">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="nd">@contextlib</span><span class="o">.</span><span class="n">contextmanager</span>
+    <span class="k">def</span> <span class="nf">alembic_config</span><span class="p">():</span>
+        <span class="sd">&quot;&quot;&quot;Context manager to return an instance of an Alembic configuration with the current connection inserted.</span>
+
+<span class="sd">        :return: instance of :py:class:`alembic.config.Config`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">ENGINE</span>
+
+        <span class="k">with</span> <span class="n">ENGINE</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span> <span class="k">as</span> <span class="n">connection</span><span class="p">:</span>
+            <span class="n">dir_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+            <span class="n">config</span> <span class="o">=</span> <span class="n">Config</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="n">ALEMBIC_FILENAME</span><span class="p">))</span>
+            <span class="n">config</span><span class="o">.</span><span class="n">set_main_option</span><span class="p">(</span><span class="s1">&#39;script_location&#39;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="n">ALEMBIC_REL_PATH</span><span class="p">))</span>
+            <span class="n">config</span><span class="o">.</span><span class="n">attributes</span><span class="p">[</span><span class="s1">&#39;connection&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">connection</span>  <span class="c1"># pylint: disable=unsupported-assignment-operation</span>
+            <span class="k">yield</span> <span class="n">config</span></div>
+
+<div class="viewcode-block" id="SqlaBackendManager.get_settings_manager"><a class="viewcode-back" href="../../../../apidoc/aiida.backends.sqlalchemy.html#aiida.backends.sqlalchemy.manager.SqlaBackendManager.get_settings_manager">[docs]</a>    <span class="k">def</span> <span class="nf">get_settings_manager</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return an instance of the `SettingsManager`.</span>
+
+<span class="sd">        :return: `SettingsManager`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_settings_manager</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_settings_manager</span> <span class="o">=</span> <span class="n">SqlaSettingsManager</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_settings_manager</span></div>
+
+<div class="viewcode-block" id="SqlaBackendManager._load_backend_environment"><a class="viewcode-back" href="../../../../apidoc/aiida.backends.sqlalchemy.html#aiida.backends.sqlalchemy.manager.SqlaBackendManager._load_backend_environment">[docs]</a>    <span class="k">def</span> <span class="nf">_load_backend_environment</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Load the backend environment.&quot;&quot;&quot;</span>
+        <span class="n">get_scoped_session</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="SqlaBackendManager.reset_backend_environment"><a class="viewcode-back" href="../../../../apidoc/aiida.backends.sqlalchemy.html#aiida.backends.sqlalchemy.manager.SqlaBackendManager.reset_backend_environment">[docs]</a>    <span class="k">def</span> <span class="nf">reset_backend_environment</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Reset the backend environment.&quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">reset_session</span>
+        <span class="n">reset_session</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="SqlaBackendManager.is_database_schema_ahead"><a class="viewcode-back" href="../../../../apidoc/aiida.backends.sqlalchemy.html#aiida.backends.sqlalchemy.manager.SqlaBackendManager.is_database_schema_ahead">[docs]</a>    <span class="k">def</span> <span class="nf">is_database_schema_ahead</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Determine whether the database schema version is ahead of the code schema version.</span>
+
+<span class="sd">        .. warning:: this will not check whether the schema generations are equal</span>
+
+<span class="sd">        :return: boolean, True if the database schema version is ahead of the code schema version.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">alembic.util</span> <span class="kn">import</span> <span class="n">CommandError</span>
+
+        <span class="c1"># In the case of SqlAlchemy, if the database revision is ahead of the code, that means the revision stored in</span>
+        <span class="c1"># the database is not even present in the code base. Therefore we cannot locate it in the revision graph and</span>
+        <span class="c1"># determine whether it is ahead of the current code head. We simply try to get the revision and if it does not</span>
+        <span class="c1"># exist it means it is ahead.</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">alembic_config</span><span class="p">()</span> <span class="k">as</span> <span class="n">config</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">script</span> <span class="o">=</span> <span class="n">ScriptDirectory</span><span class="o">.</span><span class="n">from_config</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+                <span class="n">script</span><span class="o">.</span><span class="n">get_revision</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_schema_version_database</span><span class="p">())</span>
+            <span class="k">except</span> <span class="n">CommandError</span><span class="p">:</span>
+                <span class="c1"># Raised when the revision of the database is not present in the revision graph.</span>
+                <span class="k">return</span> <span class="kc">True</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span></div>
+
+<div class="viewcode-block" id="SqlaBackendManager.get_schema_version_code"><a class="viewcode-back" href="../../../../apidoc/aiida.backends.sqlalchemy.html#aiida.backends.sqlalchemy.manager.SqlaBackendManager.get_schema_version_code">[docs]</a>    <span class="k">def</span> <span class="nf">get_schema_version_code</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the code schema version.&quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">alembic_config</span><span class="p">()</span> <span class="k">as</span> <span class="n">config</span><span class="p">:</span>
+            <span class="n">script</span> <span class="o">=</span> <span class="n">ScriptDirectory</span><span class="o">.</span><span class="n">from_config</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+            <span class="n">schema_version_code</span> <span class="o">=</span> <span class="n">script</span><span class="o">.</span><span class="n">get_current_head</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">schema_version_code</span></div>
+
+<div class="viewcode-block" id="SqlaBackendManager.get_schema_version_reset"><a class="viewcode-back" href="../../../../apidoc/aiida.backends.sqlalchemy.html#aiida.backends.sqlalchemy.manager.SqlaBackendManager.get_schema_version_reset">[docs]</a>    <span class="k">def</span> <span class="nf">get_schema_version_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">schema_generation_code</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return schema version the database should have to be able to automatically reset to code schema generation.</span>
+
+<span class="sd">        :param schema_generation_code: the schema generation of the code.</span>
+<span class="sd">        :return: schema version</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">SCHEMA_VERSION_RESET</span><span class="p">[</span><span class="n">schema_generation_code</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="SqlaBackendManager.get_schema_version_database"><a class="viewcode-back" href="../../../../apidoc/aiida.backends.sqlalchemy.html#aiida.backends.sqlalchemy.manager.SqlaBackendManager.get_schema_version_database">[docs]</a>    <span class="k">def</span> <span class="nf">get_schema_version_database</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the database schema version.</span>
+
+<span class="sd">        :return: `distutils.version.StrictVersion` with schema version of the database</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">def</span> <span class="nf">get_database_version</span><span class="p">(</span><span class="n">revision</span><span class="p">,</span> <span class="n">_</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot;Get the current revision.&quot;&quot;&quot;</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">revision</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="n">revision</span><span class="p">:</span>
+                <span class="n">config</span><span class="o">.</span><span class="n">attributes</span><span class="p">[</span><span class="s1">&#39;rev&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">revision</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># pylint: disable=unsupported-assignment-operation</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">config</span><span class="o">.</span><span class="n">attributes</span><span class="p">[</span><span class="s1">&#39;rev&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># pylint: disable=unsupported-assignment-operation</span>
+            <span class="k">return</span> <span class="p">[]</span>
+
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">alembic_config</span><span class="p">()</span> <span class="k">as</span> <span class="n">config</span><span class="p">:</span>
+
+            <span class="n">script</span> <span class="o">=</span> <span class="n">ScriptDirectory</span><span class="o">.</span><span class="n">from_config</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+
+            <span class="k">with</span> <span class="n">EnvironmentContext</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">script</span><span class="p">,</span> <span class="n">fn</span><span class="o">=</span><span class="n">get_database_version</span><span class="p">):</span>
+                <span class="n">script</span><span class="o">.</span><span class="n">run_env</span><span class="p">()</span>
+                <span class="k">return</span> <span class="n">config</span><span class="o">.</span><span class="n">attributes</span><span class="p">[</span><span class="s1">&#39;rev&#39;</span><span class="p">]</span>  <span class="c1"># pylint: disable=unsubscriptable-object</span></div>
+
+<div class="viewcode-block" id="SqlaBackendManager.set_schema_version_database"><a class="viewcode-back" href="../../../../apidoc/aiida.backends.sqlalchemy.html#aiida.backends.sqlalchemy.manager.SqlaBackendManager.set_schema_version_database">[docs]</a>    <span class="k">def</span> <span class="nf">set_schema_version_database</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set the database schema version.</span>
+
+<span class="sd">        :param version: string with schema version to set</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=cyclic-import</span>
+        <span class="kn">from</span> <span class="nn">aiida.manage.manager</span> <span class="kn">import</span> <span class="n">get_manager</span>
+        <span class="n">backend</span> <span class="o">=</span> <span class="n">get_manager</span><span class="p">()</span><span class="o">.</span><span class="n">_load_backend</span><span class="p">(</span><span class="n">schema_check</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># pylint: disable=protected-access</span>
+        <span class="n">backend</span><span class="o">.</span><span class="n">execute_raw</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;UPDATE alembic_version SET version_num=&#39;</span><span class="si">{}</span><span class="s2">&#39;;&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">version</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="SqlaBackendManager._migrate_database_version"><a class="viewcode-back" href="../../../../apidoc/aiida.backends.sqlalchemy.html#aiida.backends.sqlalchemy.manager.SqlaBackendManager._migrate_database_version">[docs]</a>    <span class="k">def</span> <span class="nf">_migrate_database_version</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Migrate the database to the current schema version.&quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_migrate_database_version</span><span class="p">()</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">alembic_config</span><span class="p">()</span> <span class="k">as</span> <span class="n">config</span><span class="p">:</span>
+            <span class="n">command</span><span class="o">.</span><span class="n">upgrade</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="s1">&#39;head&#39;</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="SqlaSettingsManager"><a class="viewcode-back" href="../../../../apidoc/aiida.backends.sqlalchemy.html#aiida.backends.sqlalchemy.manager.SqlaSettingsManager">[docs]</a><span class="k">class</span> <span class="nc">SqlaSettingsManager</span><span class="p">(</span><span class="n">SettingsManager</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Class to get, set and delete settings from the `DbSettings` table.&quot;&quot;&quot;</span>
+
+    <span class="n">table_name</span> <span class="o">=</span> <span class="s1">&#39;db_dbsetting&#39;</span>
+
+<div class="viewcode-block" id="SqlaSettingsManager.validate_table_existence"><a class="viewcode-back" href="../../../../apidoc/aiida.backends.sqlalchemy.html#aiida.backends.sqlalchemy.manager.SqlaSettingsManager.validate_table_existence">[docs]</a>    <span class="k">def</span> <span class="nf">validate_table_existence</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Verify that the `DbSetting` table actually exists.</span>
+
+<span class="sd">        :raises: `~aiida.common.exceptions.NotExistent` if the settings table does not exist</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">sqlalchemy.engine</span> <span class="kn">import</span> <span class="n">reflection</span>
+        <span class="n">inspector</span> <span class="o">=</span> <span class="n">reflection</span><span class="o">.</span><span class="n">Inspector</span><span class="o">.</span><span class="n">from_engine</span><span class="p">(</span><span class="n">get_scoped_session</span><span class="p">()</span><span class="o">.</span><span class="n">bind</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">table_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">inspector</span><span class="o">.</span><span class="n">get_table_names</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="n">NotExistent</span><span class="p">(</span><span class="s1">&#39;the settings table does not exist&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SqlaSettingsManager.get"><a class="viewcode-back" href="../../../../apidoc/aiida.backends.sqlalchemy.html#aiida.backends.sqlalchemy.manager.SqlaSettingsManager.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the setting with the given key.</span>
+
+<span class="sd">        :param key: the key identifying the setting</span>
+<span class="sd">        :return: Setting</span>
+<span class="sd">        :raises: `~aiida.common.exceptions.NotExistent` if the settings does not exist</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">aiida.backends.sqlalchemy.models.settings</span> <span class="kn">import</span> <span class="n">DbSetting</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">validate_table_existence</span><span class="p">()</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">setting</span> <span class="o">=</span> <span class="n">get_scoped_session</span><span class="p">()</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">DbSetting</span><span class="p">)</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">one</span><span class="p">()</span>
+        <span class="k">except</span> <span class="n">NoResultFound</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotExistent</span><span class="p">(</span><span class="s1">&#39;setting `</span><span class="si">{}</span><span class="s1">` does not exist&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">Setting</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">setting</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(),</span> <span class="n">setting</span><span class="o">.</span><span class="n">description</span><span class="p">,</span> <span class="n">setting</span><span class="o">.</span><span class="n">time</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SqlaSettingsManager.set"><a class="viewcode-back" href="../../../../apidoc/aiida.backends.sqlalchemy.html#aiida.backends.sqlalchemy.manager.SqlaSettingsManager.set">[docs]</a>    <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the settings with the given key.</span>
+
+<span class="sd">        :param key: the key identifying the setting</span>
+<span class="sd">        :param value: the value for the setting</span>
+<span class="sd">        :param description: optional setting description</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">aiida.backends.sqlalchemy.models.settings</span> <span class="kn">import</span> <span class="n">DbSetting</span>
+        <span class="kn">from</span> <span class="nn">aiida.orm.utils.node</span> <span class="kn">import</span> <span class="n">validate_attribute_extra_key</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">validate_table_existence</span><span class="p">()</span>
+        <span class="n">validate_attribute_extra_key</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+        <span class="n">other_attribs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">description</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">other_attribs</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">description</span>
+
+        <span class="n">DbSetting</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">other_attribs</span><span class="o">=</span><span class="n">other_attribs</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SqlaSettingsManager.delete"><a class="viewcode-back" href="../../../../apidoc/aiida.backends.sqlalchemy.html#aiida.backends.sqlalchemy.manager.SqlaSettingsManager.delete">[docs]</a>    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Delete the setting with the given key.</span>
+
+<span class="sd">        :param key: the key identifying the setting</span>
+<span class="sd">        :raises: `~aiida.common.exceptions.NotExistent` if the settings does not exist</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">aiida.backends.sqlalchemy.models.settings</span> <span class="kn">import</span> <span class="n">DbSetting</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">validate_table_existence</span><span class="p">()</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">setting</span> <span class="o">=</span> <span class="n">get_scoped_session</span><span class="p">()</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">DbSetting</span><span class="p">)</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">one</span><span class="p">()</span>
+            <span class="n">setting</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+        <span class="k">except</span> <span class="n">NoResultFound</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotExistent</span><span class="p">(</span><span class="s1">&#39;setting `</span><span class="si">{}</span><span class="s1">` does not exist&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">))</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

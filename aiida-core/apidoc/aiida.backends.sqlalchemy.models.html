@@ -1,0 +1,1294 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.backends.sqlalchemy.models package &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>aiida.backends.sqlalchemy.models package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/aiida.backends.sqlalchemy.models.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-aiida.backends.sqlalchemy.models">
+<span id="aiida-backends-sqlalchemy-models-package"></span><h1>aiida.backends.sqlalchemy.models package<a class="headerlink" href="#module-aiida.backends.sqlalchemy.models" title="Permalink to this headline">¶</a></h1>
+<p>Module to define the database models for the SqlAlchemy backend.</p>
+<div class="section" id="module-aiida.backends.sqlalchemy.models.authinfo">
+<span id="submodules"></span><h2>Submodules<a class="headerlink" href="#module-aiida.backends.sqlalchemy.models.authinfo" title="Permalink to this headline">¶</a></h2>
+<p>Module to manage authentification information for the SQLA backend.</p>
+<dl class="class">
+<dt id="aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.backends.sqlalchemy.models.authinfo.</code><code class="sig-name descname">DbAuthInfo</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/authinfo.html#DbAuthInfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Model</span></code></p>
+<p>Class that keeps the authernification data.</p>
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.__mapper__">
+<code class="sig-name descname">__mapper__</code><em class="property"> = &lt;Mapper at 0x119002908; DbAuthInfo&gt;</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.__mapper__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.backends.sqlalchemy.models.authinfo'</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.__str__">
+<code class="sig-name descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/authinfo.html#DbAuthInfo.__str__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return str(self).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.__table__">
+<code class="sig-name descname">__table__</code><em class="property"> = Table('db_dbauthinfo', MetaData(bind=None), Column('id', Integer(), table=&lt;db_dbauthinfo&gt;, primary_key=True, nullable=False), Column('aiidauser_id', Integer(), ForeignKey('db_dbuser.id'), table=&lt;db_dbauthinfo&gt;), Column('dbcomputer_id', Integer(), ForeignKey('db_dbcomputer.id'), table=&lt;db_dbauthinfo&gt;), Column('metadata', JSONB(astext_type=Text()), table=&lt;db_dbauthinfo&gt;), Column('auth_params', JSONB(astext_type=Text()), table=&lt;db_dbauthinfo&gt;), Column('enabled', Boolean(), table=&lt;db_dbauthinfo&gt;, default=ColumnDefault(True)), schema=None)</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.__table__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.__table_args__">
+<code class="sig-name descname">__table_args__</code><em class="property"> = (UniqueConstraint(Column('aiidauser_id', Integer(), ForeignKey('db_dbuser.id'), table=&lt;db_dbauthinfo&gt;), Column('dbcomputer_id', Integer(), ForeignKey('db_dbcomputer.id'), table=&lt;db_dbauthinfo&gt;)),)</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.__table_args__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.__tablename__">
+<code class="sig-name descname">__tablename__</code><em class="property"> = 'db_dbauthinfo'</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.__tablename__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo._metadata">
+<code class="sig-name descname">_metadata</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo._metadata" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo._sa_class_manager">
+<code class="sig-name descname">_sa_class_manager</code><em class="property"> = {'_metadata': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'aiidauser': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'aiidauser_id': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'auth_params': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'dbcomputer': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'dbcomputer_id': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'enabled': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'id': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;}</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo._sa_class_manager" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.aiidauser">
+<code class="sig-name descname">aiidauser</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.aiidauser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.aiidauser_id">
+<code class="sig-name descname">aiidauser_id</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.aiidauser_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.auth_params">
+<code class="sig-name descname">auth_params</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.auth_params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.dbcomputer">
+<code class="sig-name descname">dbcomputer</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.dbcomputer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.dbcomputer_id">
+<code class="sig-name descname">dbcomputer_id</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.dbcomputer_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.enabled">
+<code class="sig-name descname">enabled</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.enabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.authinfo.DbAuthInfo.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.models.base"></span><p>Base SQLAlchemy models.</p>
+<dl class="class">
+<dt id="aiida.backends.sqlalchemy.models.base.Model">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.backends.sqlalchemy.models.base.</code><code class="sig-name descname">Model</code><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/base.html#Model"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.base.Model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Query model.</p>
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.base.Model.__dict__">
+<code class="sig-name descname">__dict__</code><em class="property"> = mappingproxy({'__module__': 'aiida.backends.sqlalchemy.models.base', '__doc__': 'Query model.', 'query': &lt;aiida.backends.sqlalchemy.models.base._QueryProperty object&gt;, 'session': &lt;aiida.backends.sqlalchemy.models.base._SessionProperty object&gt;, 'save': &lt;function Model.save&gt;, 'delete': &lt;function Model.delete&gt;, '__dict__': &lt;attribute '__dict__' of 'Model' objects&gt;, '__weakref__': &lt;attribute '__weakref__' of 'Model' objects&gt;})</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.base.Model.__dict__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.base.Model.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.backends.sqlalchemy.models.base'</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.base.Model.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.base.Model.__weakref__">
+<code class="sig-name descname">__weakref__</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.base.Model.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.base.Model.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param">commit=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/base.html#Model.delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.base.Model.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emulate the behavior of Django’s delete() method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>commit</strong> – whether to do a commit or just remover from the session</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.base.Model.query">
+<code class="sig-name descname">query</code><em class="property"> = None</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.base.Model.query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.base.Model.save">
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param">commit=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/base.html#Model.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.base.Model.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emulate the behavior of Django’s save() method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>commit</strong> – whether to do a commit or just add to the session</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the SQLAlchemy instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.base.Model.session">
+<code class="sig-name descname">session</code><em class="property"> = &lt;sqlalchemy.orm.session.Session object&gt;</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.base.Model.session" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aiida.backends.sqlalchemy.models.base._AiidaQuery">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.backends.sqlalchemy.models.base.</code><code class="sig-name descname">_AiidaQuery</code><span class="sig-paren">(</span><em class="sig-param">entities</em>, <em class="sig-param">session=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/base.html#_AiidaQuery"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.base._AiidaQuery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.query.Query</span></code></p>
+<p>AiiDA query.</p>
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.base._AiidaQuery.__iter__">
+<code class="sig-name descname">__iter__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/base.html#_AiidaQuery.__iter__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.base._AiidaQuery.__iter__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterator.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.base._AiidaQuery.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.backends.sqlalchemy.models.base'</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.base._AiidaQuery.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aiida.backends.sqlalchemy.models.base._QueryProperty">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.backends.sqlalchemy.models.base.</code><code class="sig-name descname">_QueryProperty</code><span class="sig-paren">(</span><em class="sig-param">query_class=&lt;class 'sqlalchemy.orm.query.Query'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/base.html#_QueryProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.base._QueryProperty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Query property.</p>
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.base._QueryProperty.__dict__">
+<code class="sig-name descname">__dict__</code><em class="property"> = mappingproxy({'__module__': 'aiida.backends.sqlalchemy.models.base', '__doc__': 'Query property.', '__init__': &lt;function _QueryProperty.__init__&gt;, '__get__': &lt;function _QueryProperty.__get__&gt;, '__dict__': &lt;attribute '__dict__' of '_QueryProperty' objects&gt;, '__weakref__': &lt;attribute '__weakref__' of '_QueryProperty' objects&gt;})</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.base._QueryProperty.__dict__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.base._QueryProperty.__get__">
+<code class="sig-name descname">__get__</code><span class="sig-paren">(</span><em class="sig-param">obj</em>, <em class="sig-param">_type</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/base.html#_QueryProperty.__get__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.base._QueryProperty.__get__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get property of a query.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.base._QueryProperty.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">query_class=&lt;class 'sqlalchemy.orm.query.Query'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/base.html#_QueryProperty.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.base._QueryProperty.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.base._QueryProperty.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.backends.sqlalchemy.models.base'</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.base._QueryProperty.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.base._QueryProperty.__weakref__">
+<code class="sig-name descname">__weakref__</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.base._QueryProperty.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aiida.backends.sqlalchemy.models.base._SessionProperty">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.backends.sqlalchemy.models.base.</code><code class="sig-name descname">_SessionProperty</code><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/base.html#_SessionProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.base._SessionProperty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Session Property</p>
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.base._SessionProperty.__dict__">
+<code class="sig-name descname">__dict__</code><em class="property"> = mappingproxy({'__module__': 'aiida.backends.sqlalchemy.models.base', '__doc__': 'Session Property', '__get__': &lt;function _SessionProperty.__get__&gt;, '__dict__': &lt;attribute '__dict__' of '_SessionProperty' objects&gt;, '__weakref__': &lt;attribute '__weakref__' of '_SessionProperty' objects&gt;})</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.base._SessionProperty.__dict__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.base._SessionProperty.__get__">
+<code class="sig-name descname">__get__</code><span class="sig-paren">(</span><em class="sig-param">obj</em>, <em class="sig-param">_type</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/base.html#_SessionProperty.__get__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.base._SessionProperty.__get__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.base._SessionProperty.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.backends.sqlalchemy.models.base'</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.base._SessionProperty.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.base._SessionProperty.__weakref__">
+<code class="sig-name descname">__weakref__</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.base._SessionProperty.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.models.comment"></span><p>Module to manage comments for the SQLA backend.</p>
+<dl class="class">
+<dt id="aiida.backends.sqlalchemy.models.comment.DbComment">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.backends.sqlalchemy.models.comment.</code><code class="sig-name descname">DbComment</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/comment.html#DbComment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.comment.DbComment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Model</span></code></p>
+<p>Class to store comments using SQLA backend.</p>
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.comment.DbComment.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.backends.sqlalchemy.models.comment.DbComment.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adding mtime attribute if not present.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.comment.DbComment.__mapper__">
+<code class="sig-name descname">__mapper__</code><em class="property"> = &lt;Mapper at 0x11903cd30; DbComment&gt;</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.comment.DbComment.__mapper__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.comment.DbComment.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.backends.sqlalchemy.models.comment'</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.comment.DbComment.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.comment.DbComment.__str__">
+<code class="sig-name descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/comment.html#DbComment.__str__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.comment.DbComment.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return str(self).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.comment.DbComment.__table__">
+<code class="sig-name descname">__table__</code><em class="property"> = Table('db_dbcomment', MetaData(bind=None), Column('id', Integer(), table=&lt;db_dbcomment&gt;, primary_key=True, nullable=False), Column('uuid', UUID(as_uuid=True), table=&lt;db_dbcomment&gt;, default=ColumnDefault(&lt;function get_new_uuid&gt;)), Column('dbnode_id', Integer(), ForeignKey('db_dbnode.id'), table=&lt;db_dbcomment&gt;), Column('ctime', DateTime(timezone=True), table=&lt;db_dbcomment&gt;, default=ColumnDefault(&lt;function now&gt;)), Column('mtime', DateTime(timezone=True), table=&lt;db_dbcomment&gt;, onupdate=ColumnDefault(&lt;function now&gt;), default=ColumnDefault(&lt;function now&gt;)), Column('user_id', Integer(), ForeignKey('db_dbuser.id'), table=&lt;db_dbcomment&gt;), Column('content', Text(), table=&lt;db_dbcomment&gt;), schema=None)</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.comment.DbComment.__table__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.comment.DbComment.__tablename__">
+<code class="sig-name descname">__tablename__</code><em class="property"> = 'db_dbcomment'</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.comment.DbComment.__tablename__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.comment.DbComment._sa_class_manager">
+<code class="sig-name descname">_sa_class_manager</code><em class="property"> = {'content': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'ctime': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'dbnode': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'dbnode_id': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'id': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'mtime': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'user': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'user_id': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'uuid': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;}</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.comment.DbComment._sa_class_manager" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.comment.DbComment.content">
+<code class="sig-name descname">content</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.comment.DbComment.content" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.comment.DbComment.ctime">
+<code class="sig-name descname">ctime</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.comment.DbComment.ctime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.comment.DbComment.dbnode">
+<code class="sig-name descname">dbnode</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.comment.DbComment.dbnode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.comment.DbComment.dbnode_id">
+<code class="sig-name descname">dbnode_id</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.comment.DbComment.dbnode_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.comment.DbComment.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.comment.DbComment.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.comment.DbComment.mtime">
+<code class="sig-name descname">mtime</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.comment.DbComment.mtime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.comment.DbComment.user">
+<code class="sig-name descname">user</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.comment.DbComment.user" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.comment.DbComment.user_id">
+<code class="sig-name descname">user_id</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.comment.DbComment.user_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.comment.DbComment.uuid">
+<code class="sig-name descname">uuid</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.comment.DbComment.uuid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.models.computer"></span><p>Module to manage computers for the SQLA backend.</p>
+<dl class="class">
+<dt id="aiida.backends.sqlalchemy.models.computer.DbComputer">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.backends.sqlalchemy.models.computer.</code><code class="sig-name descname">DbComputer</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/computer.html#DbComputer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.computer.DbComputer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Model</span></code></p>
+<p>Class to store computers using SQLA backend.</p>
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.computer.DbComputer.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.backends.sqlalchemy.models.computer.DbComputer.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provide _metadata and description attributes to the class.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.computer.DbComputer.__mapper__">
+<code class="sig-name descname">__mapper__</code><em class="property"> = &lt;Mapper at 0x11904d860; DbComputer&gt;</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.computer.DbComputer.__mapper__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.computer.DbComputer.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.backends.sqlalchemy.models.computer'</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.computer.DbComputer.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.computer.DbComputer.__str__">
+<code class="sig-name descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/computer.html#DbComputer.__str__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.computer.DbComputer.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return str(self).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.computer.DbComputer.__table__">
+<code class="sig-name descname">__table__</code><em class="property"> = Table('db_dbcomputer', MetaData(bind=None), Column('id', Integer(), table=&lt;db_dbcomputer&gt;, primary_key=True, nullable=False), Column('uuid', UUID(as_uuid=True), table=&lt;db_dbcomputer&gt;, default=ColumnDefault(&lt;function get_new_uuid&gt;)), Column('name', String(length=255), table=&lt;db_dbcomputer&gt;, nullable=False), Column('hostname', String(length=255), table=&lt;db_dbcomputer&gt;), Column('description', Text(), table=&lt;db_dbcomputer&gt;), Column('scheduler_type', String(length=255), table=&lt;db_dbcomputer&gt;), Column('transport_type', String(length=255), table=&lt;db_dbcomputer&gt;), Column('metadata', JSONB(astext_type=Text()), table=&lt;db_dbcomputer&gt;), schema=None)</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.computer.DbComputer.__table__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.computer.DbComputer.__tablename__">
+<code class="sig-name descname">__tablename__</code><em class="property"> = 'db_dbcomputer'</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.computer.DbComputer.__tablename__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.computer.DbComputer._metadata">
+<code class="sig-name descname">_metadata</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.computer.DbComputer._metadata" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.computer.DbComputer._sa_class_manager">
+<code class="sig-name descname">_sa_class_manager</code><em class="property"> = {'_metadata': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'authinfos': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'dbnodes': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'description': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'hostname': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'id': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'name': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'scheduler_type': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'transport_type': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'uuid': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;}</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.computer.DbComputer._sa_class_manager" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.computer.DbComputer.authinfos">
+<code class="sig-name descname">authinfos</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.computer.DbComputer.authinfos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.computer.DbComputer.dbnodes">
+<code class="sig-name descname">dbnodes</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.computer.DbComputer.dbnodes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.computer.DbComputer.description">
+<code class="sig-name descname">description</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.computer.DbComputer.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.computer.DbComputer.hostname">
+<code class="sig-name descname">hostname</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.computer.DbComputer.hostname" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.computer.DbComputer.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.computer.DbComputer.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.computer.DbComputer.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.computer.DbComputer.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.computer.DbComputer.pk">
+<em class="property">property </em><code class="sig-name descname">pk</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.computer.DbComputer.pk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.computer.DbComputer.scheduler_type">
+<code class="sig-name descname">scheduler_type</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.computer.DbComputer.scheduler_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.computer.DbComputer.transport_type">
+<code class="sig-name descname">transport_type</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.computer.DbComputer.transport_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.computer.DbComputer.uuid">
+<code class="sig-name descname">uuid</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.computer.DbComputer.uuid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.models.group"></span><p>Module to manage computers for the SQLA backend.</p>
+<dl class="class">
+<dt id="aiida.backends.sqlalchemy.models.group.DbGroup">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.backends.sqlalchemy.models.group.</code><code class="sig-name descname">DbGroup</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/group.html#DbGroup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.group.DbGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Model</span></code></p>
+<p>Class to store groups using SQLA backend.</p>
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.group.DbGroup.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.backends.sqlalchemy.models.group.DbGroup.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>A simple constructor that allows initialization from kwargs.</p>
+<p>Sets attributes on the constructed instance using the names and
+values in <code class="docutils literal notranslate"><span class="pre">kwargs</span></code>.</p>
+<p>Only keys that are present as
+attributes of the instance’s class are allowed. These could be,
+for example, any mapped columns or relationships.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.group.DbGroup.__mapper__">
+<code class="sig-name descname">__mapper__</code><em class="property"> = &lt;Mapper at 0x11906a898; DbGroup&gt;</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.group.DbGroup.__mapper__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.group.DbGroup.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.backends.sqlalchemy.models.group'</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.group.DbGroup.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.group.DbGroup.__str__">
+<code class="sig-name descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/group.html#DbGroup.__str__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.group.DbGroup.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return str(self).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.group.DbGroup.__table__">
+<code class="sig-name descname">__table__</code><em class="property"> = Table('db_dbgroup', MetaData(bind=None), Column('id', Integer(), table=&lt;db_dbgroup&gt;, primary_key=True, nullable=False), Column('uuid', UUID(as_uuid=True), table=&lt;db_dbgroup&gt;, default=ColumnDefault(&lt;function get_new_uuid&gt;)), Column('label', String(length=255), table=&lt;db_dbgroup&gt;), Column('type_string', String(length=255), table=&lt;db_dbgroup&gt;, default=ColumnDefault('')), Column('time', DateTime(timezone=True), table=&lt;db_dbgroup&gt;, default=ColumnDefault(&lt;function now&gt;)), Column('description', Text(), table=&lt;db_dbgroup&gt;), Column('user_id', Integer(), ForeignKey('db_dbuser.id'), table=&lt;db_dbgroup&gt;), schema=None)</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.group.DbGroup.__table__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.group.DbGroup.__table_args__">
+<code class="sig-name descname">__table_args__</code><em class="property"> = (UniqueConstraint(Column('label', String(length=255), table=&lt;db_dbgroup&gt;), Column('type_string', String(length=255), table=&lt;db_dbgroup&gt;, default=ColumnDefault(''))),)</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.group.DbGroup.__table_args__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.group.DbGroup.__tablename__">
+<code class="sig-name descname">__tablename__</code><em class="property"> = 'db_dbgroup'</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.group.DbGroup.__tablename__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.group.DbGroup._sa_class_manager">
+<code class="sig-name descname">_sa_class_manager</code><em class="property"> = {'dbnodes': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'description': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'id': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'label': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'time': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'type_string': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'user': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'user_id': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'uuid': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;}</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.group.DbGroup._sa_class_manager" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.group.DbGroup.dbnodes">
+<code class="sig-name descname">dbnodes</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.group.DbGroup.dbnodes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.group.DbGroup.description">
+<code class="sig-name descname">description</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.group.DbGroup.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.group.DbGroup.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.group.DbGroup.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.group.DbGroup.label">
+<code class="sig-name descname">label</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.group.DbGroup.label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.group.DbGroup.pk">
+<em class="property">property </em><code class="sig-name descname">pk</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.group.DbGroup.pk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.group.DbGroup.time">
+<code class="sig-name descname">time</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.group.DbGroup.time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.group.DbGroup.type_string">
+<code class="sig-name descname">type_string</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.group.DbGroup.type_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.group.DbGroup.user">
+<code class="sig-name descname">user</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.group.DbGroup.user" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.group.DbGroup.user_id">
+<code class="sig-name descname">user_id</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.group.DbGroup.user_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.group.DbGroup.uuid">
+<code class="sig-name descname">uuid</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.group.DbGroup.uuid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.models.log"></span><p>Module to manage logs for the SQLA backend.</p>
+<dl class="class">
+<dt id="aiida.backends.sqlalchemy.models.log.DbLog">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.backends.sqlalchemy.models.log.</code><code class="sig-name descname">DbLog</code><span class="sig-paren">(</span><em class="sig-param">time</em>, <em class="sig-param">loggername</em>, <em class="sig-param">levelname</em>, <em class="sig-param">dbnode_id</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/log.html#DbLog"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.log.DbLog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Model</span></code></p>
+<p>Class to store logs using SQLA backend.</p>
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.log.DbLog.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">time</em>, <em class="sig-param">loggername</em>, <em class="sig-param">levelname</em>, <em class="sig-param">dbnode_id</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.backends.sqlalchemy.models.log.DbLog.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setup initial value for the class attributes.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.log.DbLog.__mapper__">
+<code class="sig-name descname">__mapper__</code><em class="property"> = &lt;Mapper at 0x11905b9e8; DbLog&gt;</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.log.DbLog.__mapper__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.log.DbLog.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.backends.sqlalchemy.models.log'</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.log.DbLog.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.log.DbLog.__str__">
+<code class="sig-name descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/log.html#DbLog.__str__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.log.DbLog.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return str(self).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.log.DbLog.__table__">
+<code class="sig-name descname">__table__</code><em class="property"> = Table('db_dblog', MetaData(bind=None), Column('id', Integer(), table=&lt;db_dblog&gt;, primary_key=True, nullable=False), Column('uuid', UUID(as_uuid=True), table=&lt;db_dblog&gt;, default=ColumnDefault(&lt;function get_new_uuid&gt;)), Column('time', DateTime(timezone=True), table=&lt;db_dblog&gt;, default=ColumnDefault(&lt;function now&gt;)), Column('loggername', String(length=255), table=&lt;db_dblog&gt;), Column('levelname', String(length=255), table=&lt;db_dblog&gt;), Column('dbnode_id', Integer(), ForeignKey('db_dbnode.id'), table=&lt;db_dblog&gt;, nullable=False), Column('message', Text(), table=&lt;db_dblog&gt;), Column('metadata', JSONB(astext_type=Text()), table=&lt;db_dblog&gt;), schema=None)</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.log.DbLog.__table__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.log.DbLog.__tablename__">
+<code class="sig-name descname">__tablename__</code><em class="property"> = 'db_dblog'</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.log.DbLog.__tablename__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.log.DbLog._metadata">
+<code class="sig-name descname">_metadata</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.log.DbLog._metadata" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.log.DbLog._sa_class_manager">
+<code class="sig-name descname">_sa_class_manager</code><em class="property"> = {'_metadata': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'dbnode': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'dbnode_id': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'id': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'levelname': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'loggername': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'message': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'time': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'uuid': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;}</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.log.DbLog._sa_class_manager" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.log.DbLog.dbnode">
+<code class="sig-name descname">dbnode</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.log.DbLog.dbnode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.log.DbLog.dbnode_id">
+<code class="sig-name descname">dbnode_id</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.log.DbLog.dbnode_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.log.DbLog.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.log.DbLog.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.log.DbLog.levelname">
+<code class="sig-name descname">levelname</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.log.DbLog.levelname" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.log.DbLog.loggername">
+<code class="sig-name descname">loggername</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.log.DbLog.loggername" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.log.DbLog.message">
+<code class="sig-name descname">message</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.log.DbLog.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.log.DbLog.time">
+<code class="sig-name descname">time</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.log.DbLog.time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.log.DbLog.uuid">
+<code class="sig-name descname">uuid</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.log.DbLog.uuid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.models.node"></span><p>Module to manage nodes for the SQLA backend.</p>
+<dl class="class">
+<dt id="aiida.backends.sqlalchemy.models.node.DbLink">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.backends.sqlalchemy.models.node.</code><code class="sig-name descname">DbLink</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/node.html#DbLink"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbLink" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Model</span></code></p>
+<p>Class to store links between nodes using SQLA backend.</p>
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.node.DbLink.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbLink.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>A simple constructor that allows initialization from kwargs.</p>
+<p>Sets attributes on the constructed instance using the names and
+values in <code class="docutils literal notranslate"><span class="pre">kwargs</span></code>.</p>
+<p>Only keys that are present as
+attributes of the instance’s class are allowed. These could be,
+for example, any mapped columns or relationships.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbLink.__mapper__">
+<code class="sig-name descname">__mapper__</code><em class="property"> = &lt;Mapper at 0x1190ad278; DbLink&gt;</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbLink.__mapper__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbLink.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.backends.sqlalchemy.models.node'</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbLink.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.node.DbLink.__str__">
+<code class="sig-name descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/node.html#DbLink.__str__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbLink.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return str(self).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbLink.__table__">
+<code class="sig-name descname">__table__</code><em class="property"> = Table('db_dblink', MetaData(bind=None), Column('id', Integer(), table=&lt;db_dblink&gt;, primary_key=True, nullable=False), Column('input_id', Integer(), ForeignKey('db_dbnode.id'), table=&lt;db_dblink&gt;), Column('output_id', Integer(), ForeignKey('db_dbnode.id'), table=&lt;db_dblink&gt;), Column('label', String(length=255), table=&lt;db_dblink&gt;, nullable=False), Column('type', String(length=255), table=&lt;db_dblink&gt;), schema=None)</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbLink.__table__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbLink.__table_args__">
+<code class="sig-name descname">__table_args__</code><em class="property"> = ()</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbLink.__table_args__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbLink.__tablename__">
+<code class="sig-name descname">__tablename__</code><em class="property"> = 'db_dblink'</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbLink.__tablename__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbLink._sa_class_manager">
+<code class="sig-name descname">_sa_class_manager</code><em class="property"> = {'id': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'input': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'input_id': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'label': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'output': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'output_id': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'type': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;}</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbLink._sa_class_manager" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbLink.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbLink.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbLink.input">
+<code class="sig-name descname">input</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbLink.input" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbLink.input_id">
+<code class="sig-name descname">input_id</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbLink.input_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbLink.label">
+<code class="sig-name descname">label</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbLink.label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbLink.output">
+<code class="sig-name descname">output</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbLink.output" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbLink.output_id">
+<code class="sig-name descname">output_id</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbLink.output_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbLink.type">
+<code class="sig-name descname">type</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbLink.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.backends.sqlalchemy.models.node.</code><code class="sig-name descname">DbNode</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/node.html#DbNode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Model</span></code></p>
+<p>Class to store nodes using SQLA backend.</p>
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add three additional attributes to the base class: mtime, attributes and extras.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.__mapper__">
+<code class="sig-name descname">__mapper__</code><em class="property"> = &lt;Mapper at 0x1190932b0; DbNode&gt;</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.__mapper__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.backends.sqlalchemy.models.node'</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.__str__">
+<code class="sig-name descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/node.html#DbNode.__str__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get string object out of DbNode object.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.__table__">
+<code class="sig-name descname">__table__</code><em class="property"> = Table('db_dbnode', MetaData(bind=None), Column('id', Integer(), table=&lt;db_dbnode&gt;, primary_key=True, nullable=False), Column('uuid', UUID(as_uuid=True), table=&lt;db_dbnode&gt;, default=ColumnDefault(&lt;function get_new_uuid&gt;)), Column('node_type', String(length=255), table=&lt;db_dbnode&gt;), Column('process_type', String(length=255), table=&lt;db_dbnode&gt;), Column('label', String(length=255), table=&lt;db_dbnode&gt;, default=ColumnDefault('')), Column('description', Text(), table=&lt;db_dbnode&gt;, default=ColumnDefault('')), Column('ctime', DateTime(timezone=True), table=&lt;db_dbnode&gt;, default=ColumnDefault(&lt;function now&gt;)), Column('mtime', DateTime(timezone=True), table=&lt;db_dbnode&gt;, onupdate=ColumnDefault(&lt;function now&gt;), default=ColumnDefault(&lt;function now&gt;)), Column('attributes', JSONB(astext_type=Text()), table=&lt;db_dbnode&gt;), Column('extras', JSONB(astext_type=Text()), table=&lt;db_dbnode&gt;), Column('dbcomputer_id', Integer(), ForeignKey('db_dbcomputer.id'), table=&lt;db_dbnode&gt;), Column('user_id', Integer(), ForeignKey('db_dbuser.id'), table=&lt;db_dbnode&gt;, nullable=False), schema=None)</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.__table__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.__tablename__">
+<code class="sig-name descname">__tablename__</code><em class="property"> = 'db_dbnode'</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.__tablename__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode._sa_class_manager">
+<code class="sig-name descname">_sa_class_manager</code><em class="property"> = {'attributes': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'ctime': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'dbcomments': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'dbcomputer': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'dbcomputer_id': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'dbgroups': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'dblogs': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'description': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'extras': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'id': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'inputs_q': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'label': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'mtime': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'node_type': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'outputs_q': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'process_type': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'user': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'user_id': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'uuid': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;}</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode._sa_class_manager" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.attributes">
+<code class="sig-name descname">attributes</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.attributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.ctime">
+<code class="sig-name descname">ctime</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.ctime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.dbcomments">
+<code class="sig-name descname">dbcomments</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.dbcomments" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.dbcomputer">
+<code class="sig-name descname">dbcomputer</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.dbcomputer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.dbcomputer_id">
+<code class="sig-name descname">dbcomputer_id</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.dbcomputer_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.dbgroups">
+<code class="sig-name descname">dbgroups</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.dbgroups" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.dblogs">
+<code class="sig-name descname">dblogs</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.dblogs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.description">
+<code class="sig-name descname">description</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.extras">
+<code class="sig-name descname">extras</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.extras" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.get_simple_name">
+<code class="sig-name descname">get_simple_name</code><span class="sig-paren">(</span><em class="sig-param">invalid_result=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/node.html#DbNode.get_simple_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.get_simple_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a string with the last part of the type name.</p>
+<p>If the type is empty, use ‘Node’.
+If the type is invalid, return the content of the input variable
+<code class="docutils literal notranslate"><span class="pre">invalid_result</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>invalid_result</strong> – The value to be returned if the node type is
+not recognized.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.inputs">
+<em class="property">property </em><code class="sig-name descname">inputs</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.inputs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.inputs_q">
+<code class="sig-name descname">inputs_q</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.inputs_q" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.label">
+<code class="sig-name descname">label</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.mtime">
+<code class="sig-name descname">mtime</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.mtime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.node_type">
+<code class="sig-name descname">node_type</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.node_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.outputs">
+<em class="property">property </em><code class="sig-name descname">outputs</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.outputs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.outputs_q">
+<code class="sig-name descname">outputs_q</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.outputs_q" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.pk">
+<em class="property">property </em><code class="sig-name descname">pk</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.pk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.process_type">
+<code class="sig-name descname">process_type</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.process_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.user">
+<code class="sig-name descname">user</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.user" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.user_id">
+<code class="sig-name descname">user_id</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.user_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.node.DbNode.uuid">
+<code class="sig-name descname">uuid</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.node.DbNode.uuid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.models.settings"></span><p>Module to manage node settings for the SQLA backend.</p>
+<dl class="class">
+<dt id="aiida.backends.sqlalchemy.models.settings.DbSetting">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.backends.sqlalchemy.models.settings.</code><code class="sig-name descname">DbSetting</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/settings.html#DbSetting"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.settings.DbSetting" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Model</span></code></p>
+<p>Class to store node settings using the SQLA backend.</p>
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.settings.DbSetting.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.backends.sqlalchemy.models.settings.DbSetting.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>A simple constructor that allows initialization from kwargs.</p>
+<p>Sets attributes on the constructed instance using the names and
+values in <code class="docutils literal notranslate"><span class="pre">kwargs</span></code>.</p>
+<p>Only keys that are present as
+attributes of the instance’s class are allowed. These could be,
+for example, any mapped columns or relationships.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.settings.DbSetting.__mapper__">
+<code class="sig-name descname">__mapper__</code><em class="property"> = &lt;Mapper at 0x1190d8390; DbSetting&gt;</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.settings.DbSetting.__mapper__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.settings.DbSetting.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.backends.sqlalchemy.models.settings'</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.settings.DbSetting.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.settings.DbSetting.__str__">
+<code class="sig-name descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/settings.html#DbSetting.__str__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.settings.DbSetting.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return str(self).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.settings.DbSetting.__table__">
+<code class="sig-name descname">__table__</code><em class="property"> = Table('db_dbsetting', MetaData(bind=None), Column('id', Integer(), table=&lt;db_dbsetting&gt;, primary_key=True, nullable=False), Column('key', String(length=255), table=&lt;db_dbsetting&gt;, nullable=False), Column('val', JSONB(astext_type=Text()), table=&lt;db_dbsetting&gt;, default=ColumnDefault({})), Column('description', String(length=255), table=&lt;db_dbsetting&gt;, nullable=False, default=ColumnDefault('')), Column('time', DateTime(timezone=True), table=&lt;db_dbsetting&gt;, onupdate=ColumnDefault(&lt;function now&gt;), default=ColumnDefault(&lt;UTC&gt;)), schema=None)</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.settings.DbSetting.__table__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.settings.DbSetting.__table_args__">
+<code class="sig-name descname">__table_args__</code><em class="property"> = (UniqueConstraint(Column('key', String(length=255), table=&lt;db_dbsetting&gt;, nullable=False)),)</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.settings.DbSetting.__table_args__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.settings.DbSetting.__tablename__">
+<code class="sig-name descname">__tablename__</code><em class="property"> = 'db_dbsetting'</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.settings.DbSetting.__tablename__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.settings.DbSetting._sa_class_manager">
+<code class="sig-name descname">_sa_class_manager</code><em class="property"> = {'description': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'id': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'key': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'time': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'val': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;}</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.settings.DbSetting._sa_class_manager" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.settings.DbSetting.del_value">
+<em class="property">classmethod </em><code class="sig-name descname">del_value</code><span class="sig-paren">(</span><em class="sig-param">key</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/settings.html#DbSetting.del_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.settings.DbSetting.del_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a setting value.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.settings.DbSetting.description">
+<code class="sig-name descname">description</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.settings.DbSetting.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.settings.DbSetting.get_description">
+<code class="sig-name descname">get_description</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/settings.html#DbSetting.get_description"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.settings.DbSetting.get_description" title="Permalink to this definition">¶</a></dt>
+<dd><p>This can be called on a given row and will get the corresponding description.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.settings.DbSetting.getvalue">
+<code class="sig-name descname">getvalue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/settings.html#DbSetting.getvalue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.settings.DbSetting.getvalue" title="Permalink to this definition">¶</a></dt>
+<dd><p>This can be called on a given row and will get the corresponding value.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.settings.DbSetting.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.settings.DbSetting.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.settings.DbSetting.key">
+<code class="sig-name descname">key</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.settings.DbSetting.key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.settings.DbSetting.set_value">
+<em class="property">classmethod </em><code class="sig-name descname">set_value</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">value</em>, <em class="sig-param">with_transaction=True</em>, <em class="sig-param">subspecifier_value=None</em>, <em class="sig-param">other_attribs=None</em>, <em class="sig-param">stop_if_existing=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/settings.html#DbSetting.set_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.settings.DbSetting.set_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a setting value.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.settings.DbSetting.time">
+<code class="sig-name descname">time</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.settings.DbSetting.time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.settings.DbSetting.val">
+<code class="sig-name descname">val</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.settings.DbSetting.val" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.models.user"></span><p>Module to manage users for the SQLA backend.</p>
+<dl class="class">
+<dt id="aiida.backends.sqlalchemy.models.user.DbUser">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.backends.sqlalchemy.models.user.</code><code class="sig-name descname">DbUser</code><span class="sig-paren">(</span><em class="sig-param">email</em>, <em class="sig-param">first_name=''</em>, <em class="sig-param">last_name=''</em>, <em class="sig-param">institution=''</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/user.html#DbUser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.user.DbUser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Model</span></code></p>
+<p>Store users using the SQLA backend.</p>
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.user.DbUser.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">email</em>, <em class="sig-param">first_name=''</em>, <em class="sig-param">last_name=''</em>, <em class="sig-param">institution=''</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.backends.sqlalchemy.models.user.DbUser.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set additional class attributes with respect to the base class.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.user.DbUser.__mapper__">
+<code class="sig-name descname">__mapper__</code><em class="property"> = &lt;Mapper at 0x1190e8860; DbUser&gt;</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.user.DbUser.__mapper__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.user.DbUser.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.backends.sqlalchemy.models.user'</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.user.DbUser.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.sqlalchemy.models.user.DbUser.__str__">
+<code class="sig-name descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/models/user.html#DbUser.__str__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.models.user.DbUser.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return str(self).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.user.DbUser.__table__">
+<code class="sig-name descname">__table__</code><em class="property"> = Table('db_dbuser', MetaData(bind=None), Column('id', Integer(), table=&lt;db_dbuser&gt;, primary_key=True, nullable=False), Column('email', String(length=254), table=&lt;db_dbuser&gt;), Column('first_name', String(length=254), table=&lt;db_dbuser&gt;), Column('last_name', String(length=254), table=&lt;db_dbuser&gt;), Column('institution', String(length=254), table=&lt;db_dbuser&gt;), schema=None)</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.user.DbUser.__table__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.user.DbUser.__tablename__">
+<code class="sig-name descname">__tablename__</code><em class="property"> = 'db_dbuser'</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.user.DbUser.__tablename__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.user.DbUser._sa_class_manager">
+<code class="sig-name descname">_sa_class_manager</code><em class="property"> = {'authinfos': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'dbgroups': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'dbnodes': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'email': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'first_name': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'id': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'institution': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;, 'last_name': &lt;sqlalchemy.orm.attributes.InstrumentedAttribute object&gt;}</em><a class="headerlink" href="#aiida.backends.sqlalchemy.models.user.DbUser._sa_class_manager" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.user.DbUser.authinfos">
+<code class="sig-name descname">authinfos</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.user.DbUser.authinfos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.user.DbUser.dbgroups">
+<code class="sig-name descname">dbgroups</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.user.DbUser.dbgroups" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.user.DbUser.dbnodes">
+<code class="sig-name descname">dbnodes</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.user.DbUser.dbnodes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.user.DbUser.email">
+<code class="sig-name descname">email</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.user.DbUser.email" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.user.DbUser.first_name">
+<code class="sig-name descname">first_name</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.user.DbUser.first_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.user.DbUser.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.user.DbUser.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.user.DbUser.institution">
+<code class="sig-name descname">institution</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.user.DbUser.institution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.sqlalchemy.models.user.DbUser.last_name">
+<code class="sig-name descname">last_name</code><a class="headerlink" href="#aiida.backends.sqlalchemy.models.user.DbUser.last_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

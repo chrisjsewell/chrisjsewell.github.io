@@ -1,0 +1,637 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Setup a computer &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Setup a computer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/get_started/computers.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="setup-a-computer">
+<span id="setup-computer"></span><h1>Setup a computer<a class="headerlink" href="#setup-a-computer" title="Permalink to this headline">¶</a></h1>
+<p>A computer in AiiDA denotes any computational resource (with a batch job scheduler) on which you will run your calculations.
+Computers typically are clusters or supercomputers.</p>
+<div class="section" id="remote-computer-requirements">
+<h2>Remote computer requirements<a class="headerlink" href="#remote-computer-requirements" title="Permalink to this headline">¶</a></h2>
+<p>Requirements for a computer are:</p>
+<ul class="simple">
+<li><p>It must run a Unix-like operating system</p></li>
+<li><p>It must have <code class="docutils literal notranslate"><span class="pre">bash</span></code> installed</p></li>
+<li><p>It should have a batch scheduler installed (see <a class="reference internal" href="../scheduler/index.html"><span class="doc">here</span></a>
+for a list of supported batch schedulers)</p></li>
+<li><p>It must be accessible from the machine that runs AiiDA using one of the
+available transports (see below).</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>AiiDA will use <code class="docutils literal notranslate"><span class="pre">bash</span></code> on the remote computer, regardless of the default shell.
+Please ensure that your remote <code class="docutils literal notranslate"><span class="pre">bash</span></code> configuration does not load a different shell.</p>
+</div>
+<p>The first step is to choose the transport to connect to the computer. Typically,
+you will want to use the SSH transport, apart from a few special cases where
+SSH connection is not possible (e.g., because you cannot setup a password-less
+connection to the computer). In this case, you can install AiiDA directly on
+the remote cluster, and use the <code class="docutils literal notranslate"><span class="pre">local</span></code> transport (in this way, commands to
+submit the jobs are simply executed on the AiiDA machine, and files are simply
+copied on the disk instead of opening an SFTP connection).</p>
+<p>If you plan to use the <code class="docutils literal notranslate"><span class="pre">local</span></code> transport, you can skip to the next section.</p>
+<p>If you plan to use the <code class="docutils literal notranslate"><span class="pre">SSH</span></code> transport, you have to configure a password-less
+login from your user to the cluster. To do so type first (only if you do not
+already have some keys in your local <code class="docutils literal notranslate"><span class="pre">~/.ssh</span></code> directory - i.e. files like
+<code class="docutils literal notranslate"><span class="pre">id_rsa.pub</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span> <span class="o">-</span><span class="n">t</span> <span class="n">rsa</span> <span class="o">-</span><span class="n">b</span> <span class="mi">4096</span> <span class="o">-</span><span class="n">m</span> <span class="n">PEM</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">-m</span> <span class="pre">PEM</span></code> flag is necessary in newer versions of OpenSSL that switched to a different key format by default.
+As of 2019-08, the paramiko library used by AiiDA <a class="reference external" href="https://github.com/paramiko/paramiko/issues/340">only supports the PEM format</a>.</p>
+</div>
+<p>Then copy your keys to the remote computer (in ~/.ssh/authorized_keys) with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">copy</span><span class="o">-</span><span class="nb">id</span> <span class="n">YOURUSERNAME</span><span class="nd">@YOURCLUSTERADDRESS</span>
+</pre></div>
+</div>
+<p>replacing <code class="docutils literal notranslate"><span class="pre">YOURUSERNAME</span></code> and <code class="docutils literal notranslate"><span class="pre">YOURCLUSTERADDRESS</span></code> by respectively your username
+and cluster address. Finally add the following lines to ~/.ssh/config (leaving an empty
+line before and after):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Host</span> <span class="n">YOURCLUSTERADDRESS</span>
+  <span class="n">User</span> <span class="n">YOURUSERNAME</span>
+  <span class="n">IdentityFile</span> <span class="n">YOURRSAKEY</span>
+</pre></div>
+</div>
+<p>replacing <code class="docutils literal notranslate"><span class="pre">YOURRSAKEY</span></code> by the path to the rsa private key you want to use
+(it should look like <code class="docutils literal notranslate"><span class="pre">~/.ssh/id_rsa</span></code>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In principle you don’t have to put the <code class="docutils literal notranslate"><span class="pre">IdentityFile</span></code> line if you have
+only one rsa key in your <code class="docutils literal notranslate"><span class="pre">~/.ssh</span></code> folder.</p>
+</div>
+<p>Before proceeding to setup the computer, be sure that you are able to
+connect to your cluster using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">YOURCLUSTERADDRESS</span>
+</pre></div>
+</div>
+<p>without the need to type a password. Moreover, make also sure you can connect
+via <code class="docutils literal notranslate"><span class="pre">sftp</span></code> (needed to copy files). The following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sftp</span> <span class="n">YOURCLUSTERADDRESS</span>
+</pre></div>
+</div>
+<p>should show you a prompt without errors (possibly with a message saying
+<code class="docutils literal notranslate"><span class="pre">Connected</span> <span class="pre">to</span> <span class="pre">YOURCLUSTERADDRESS</span></code>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">ssh</span></code> command works, but the <code class="docutils literal notranslate"><span class="pre">sftp</span></code> command does not
+(e.g. it just prints <code class="docutils literal notranslate"><span class="pre">Connection</span> <span class="pre">closed</span></code>), a possible reason can be
+that there is a line in your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> (on the cluster) that either produces text output
+or an error. Remove/comment it until no output or error is produced: this
+should make <code class="docutils literal notranslate"><span class="pre">sftp</span></code> work again.</p>
+</div>
+<p>Finally, try also:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">YOURCLUSTERADDRESS</span> <span class="n">QUEUE_VISUALIZATION_COMMAND</span>
+</pre></div>
+</div>
+<p>replacing <code class="docutils literal notranslate"><span class="pre">QUEUE_VISUALIZATION_COMMAND</span></code> by the scheduler command that prints on screen the
+status of the queue on the cluster (i.e. <code class="docutils literal notranslate"><span class="pre">qstat</span></code> for PBSpro scheduler, <code class="docutils literal notranslate"><span class="pre">squeue</span></code> for SLURM, etc.).
+It should print a snapshot of the queue status, without any errors.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If there are errors with the previous command, then
+edit your ~/.bashrc file in the remote computer and add a line at the beginning
+that adds the path to the scheduler commands, typically (here for
+PBSpro):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export PATH=$PATH:/opt/pbs/default/bin
+</pre></div>
+</div>
+<p>Or, alternatively, find the path to the executables (like using <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">qsub</span></code>).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you need your remote .bashrc to be sourced before you execute the code
+(for instance to change the PATH), make sure the .bashrc file <strong>does not</strong> contain
+lines like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="o">-</span><span class="n">z</span> <span class="s2">&quot;$PS1&quot;</span> <span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="k">return</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>case $- in
+    *i*) ;;
+    *) return;;
+esac
+</pre></div>
+</div>
+<p>in the beginning (these would prevent the bashrc to be executed when you ssh
+to the remote computer). You can check that e.g. the PATH variable is correctly
+set upon ssh, by typing (in your local computer):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">YOURCLUSTERADDRESS</span> <span class="s1">&#39;echo $PATH&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you need to ssh to a computer <em>A</em> first, from which you can then
+connect to computer <em>B</em> you wanted to connect to, you can use the
+<code class="docutils literal notranslate"><span class="pre">proxy_command</span></code> feature of ssh, that we also support in
+AiiDA. For more information, see <a class="reference internal" href="../working_with_aiida/tips/ssh_proxycommand.html#ssh-proxycommand"><span class="std std-ref">Using the proxy_command option with ssh</span></a>.</p>
+</div>
+</div>
+<div class="section" id="computer-setup-and-configuration">
+<span id="computer-setup"></span><h2>Computer setup and configuration<a class="headerlink" href="#computer-setup-and-configuration" title="Permalink to this headline">¶</a></h2>
+<p>The configuration of computers happens in two steps.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The commands use some <code class="docutils literal notranslate"><span class="pre">readline</span></code> extensions to provide default
+answers, that require an advanced terminal. Therefore, run the commands from
+a standard terminal, and not from embedded terminals as the ones included in
+text editors, unless you know what you are doing. For instance, the
+terminal embedded in <code class="docutils literal notranslate"><span class="pre">emacs</span></code> is known to give problems.</p>
+</div>
+<ol class="arabic">
+<li><p><strong>Setup of the computer</strong>, using the:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">verdi</span> <span class="n">computer</span> <span class="n">setup</span>
+</pre></div>
+</div>
+<p>command. This command allows to create a new computer instance in the DB.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The code will ask you a few pieces of information. At every prompt, you can
+type the <code class="docutils literal notranslate"><span class="pre">?</span></code> character and press <code class="docutils literal notranslate"><span class="pre">&lt;enter&gt;</span></code> to get a more detailed
+explanation of what is being asked.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can press <code class="docutils literal notranslate"><span class="pre">&lt;CTRL&gt;+C</span></code> at any moment to abort the setup process.
+Nothing will be stored in the DB.</p>
+</div>
+<p>Here is a list of what is asked, together with an explanation.</p>
+<ul>
+<li><p><strong>Computer label</strong>: the (user-friendly) label of the new computer instance
+which is about to be created in the DB (the label is used for instance when
+you have to pick a computer to launch a calculation on it). Labels must
+be unique. This command should be thought as a AiiDA-wise configuration of
+computer, independent of the AiiDA user that will actually use it.</p></li>
+<li><p><strong>Fully-qualified hostname</strong>: the fully-qualified hostname of the computer
+to which you want to connect (i.e., with all the dots: <code class="docutils literal notranslate"><span class="pre">bellatrix.epfl.ch</span></code>,
+and not just <code class="docutils literal notranslate"><span class="pre">bellatrix</span></code>). Type <code class="docutils literal notranslate"><span class="pre">localhost</span></code> for the local transport.</p></li>
+<li><p><strong>Description</strong>:  A human-readable description of this computer; this is
+useful if you have a lot of computers and you want to add some text to
+distinguish them (e.g.: “cluster of computers at EPFL, installed in 2012,
+2 GB of RAM per CPU”)</p></li>
+<li><p><strong>Enabled</strong>: either True or False; if False, the computer is disabled
+and calculations associated with it will not be submitted. This allows to
+disable temporarily a computer if it is giving problems or it is down for
+maintenance, without the need to delete it from the DB.</p></li>
+<li><p><strong>Transport plugin</strong>: The type of the transport to be used. A list of valid
+transport types can be obtained typing <code class="docutils literal notranslate"><span class="pre">?</span></code></p></li>
+<li><p><strong>Scheduler plugin</strong>: The name of the plugin to be used to manage the
+job scheduler on the computer. A list of valid
+scheduler plugins can be obtained typing <code class="docutils literal notranslate"><span class="pre">?</span></code>. See
+<a class="reference internal" href="../scheduler/index.html"><span class="doc">here</span></a> for a documentation of scheduler plugins
+in AiiDA.</p></li>
+<li><p><strong>shebang line</strong> This is the first line in the beginning of the submission script.
+The default is <code class="docutils literal notranslate"><span class="pre">#!/bin/bash</span></code>. You can change this in order, for example, to add options,
+such as the <code class="docutils literal notranslate"><span class="pre">-l</span></code> flag. Note that AiiDA only supports bash at this point!</p></li>
+<li><p><strong>Work directory on the computer</strong>: The absolute path of the directory on the
+remote computer where AiiDA will run the calculations
+(often, it is the scratch of the computer). You can (should) use the
+<code class="docutils literal notranslate"><span class="pre">{username}</span></code> replacement, that will be replaced by your username on the
+remote computer automatically: this allows the same computer to be used
+by different users, without the need to setup a different computer for
+each one. Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="p">{</span><span class="n">username</span><span class="p">}</span><span class="o">/</span><span class="n">aiida_work</span><span class="o">/</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Mpirun command</strong>: The <code class="docutils literal notranslate"><span class="pre">mpirun</span></code> command needed on the cluster to run parallel MPI
+programs. You can (should) use the <code class="docutils literal notranslate"><span class="pre">{tot_num_mpiprocs}</span></code> replacement,
+that will be replaced by the total number of cpus, or the other
+scheduler-dependent fields (see the <a class="reference internal" href="../scheduler/index.html"><span class="doc">scheduler docs</span></a>
+for more information). Some examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mpirun</span> <span class="o">-</span><span class="n">np</span> <span class="p">{</span><span class="n">tot_num_mpiprocs</span><span class="p">}</span>
+<span class="n">aprun</span> <span class="o">-</span><span class="n">n</span> <span class="p">{</span><span class="n">tot_num_mpiprocs</span><span class="p">}</span>
+<span class="n">poe</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Default number of CPUs per machine</strong>: The number of MPI processes per machine that
+should be executed if it is not otherwise specified. Use <code class="docutils literal notranslate"><span class="pre">0</span></code> to specify no default value.</p></li>
+</ul>
+<p>At the end, the command will open your default editor on a file containing a summary
+of the configuration up to this point, and the possibility to add <code class="docutils literal notranslate"><span class="pre">bash</span></code>
+commands that will be executed either <em>before</em> the actual execution of the job
+(under ‘pre-execution script’) or <em>after</em> the script submission (under ‘Post execution script’).
+These additional lines need may set up the environment on the computer,
+for example loading modules or exporting environment variables, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">NEWVAR</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">source</span> <span class="n">some</span><span class="o">/</span><span class="n">file</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Don’t specify settings here that are specific to a code, calculation or scheduler –
+you can set further pre-execution commands at the <code class="docutils literal notranslate"><span class="pre">Code</span></code> and <code class="docutils literal notranslate"><span class="pre">CalcJob</span></code> level.</p>
+</div>
+<p>When you are done editing, save and quit (e.g. <code class="docutils literal notranslate"><span class="pre">&lt;ESC&gt;:wq&lt;ENTER&gt;</span></code> in <code class="docutils literal notranslate"><span class="pre">vim</span></code>).
+The computer has now been created in the database but you still need to <em>configure</em> access to it
+using your credentials.</p>
+<p>In order to avoid having to retype the setup information the next time round, it is also possible provide some (or all) of the information
+described above via a configuration file using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">verdi</span> <span class="n">computer</span> <span class="n">setup</span> <span class="o">--</span><span class="n">config</span> <span class="n">computer</span><span class="o">.</span><span class="n">yml</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">computer.yml</span></code> is a configuration file in the
+<a class="reference external" href="https://en.wikipedia.org/wiki/YAML#Syntax">YAML format</a>.
+This file contains the information in a series of key:value pairs:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="nt">label</span><span class="p">:</span> <span class="s">&quot;localhost&quot;</span>
+<span class="nt">hostname</span><span class="p">:</span> <span class="s">&quot;localhost&quot;</span>
+<span class="nt">transport</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="nt">scheduler</span><span class="p">:</span> <span class="s">&quot;direct&quot;</span>
+<span class="nt">work_dir</span><span class="p">:</span> <span class="s">&quot;/home/max/.aiida_run&quot;</span>
+<span class="nt">mpirun_command</span><span class="p">:</span> <span class="s">&quot;mpirun</span><span class="nv"> </span><span class="s">-np</span><span class="nv"> </span><span class="s">{tot_num_mpiprocs}&quot;</span>
+<span class="nt">mpiprocs_per_machine</span><span class="p">:</span> <span class="s">&quot;2&quot;</span>
+<span class="nt">prepend_text</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+  <span class="no">module load mymodule</span>
+  <span class="no">export NEWVAR=1</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The list of the keys that can be used is available from the options flags of the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">verdi</span> <span class="n">computer</span> <span class="n">setup</span> <span class="o">--</span><span class="n">help</span>
+</pre></div>
+</div>
+<p>Note the syntax differences: remove the <code class="docutils literal notranslate"><span class="pre">--</span></code> prefix
+and replace <code class="docutils literal notranslate"><span class="pre">-</span></code> within the keys by the underscore <code class="docutils literal notranslate"><span class="pre">_</span></code>.</p>
+</div>
+</div></blockquote>
+<ol class="arabic" start="2">
+<li><p><strong>Configuration of the computer</strong>, using the:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">verdi</span> <span class="n">computer</span> <span class="n">configure</span> <span class="n">TRANSPORTTYPE</span> <span class="n">COMPUTERNAME</span>
+</pre></div>
+</div>
+<p>command, with the appropriate transport type (<code class="docutils literal notranslate"><span class="pre">ssh</span></code> or <code class="docutils literal notranslate"><span class="pre">local</span></code>) and computer label.</p>
+<p>The configuration allows to access more detailed configurations, that are
+often user-dependent and  depend on the specific transport.</p>
+<p>The command will try to provide automatically default answers,
+that can be selected by pressing enter.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">local</span></code> transport, the only information required is the minimum
+time interval between conections to the computer.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">ssh</span></code> transport, the following will be asked:</p>
+<ul class="simple">
+<li><p><strong>User name</strong>: your username on the remote machine</p></li>
+<li><p><strong>port Nr</strong>: the port to connect to (the default SSH port is 22)</p></li>
+<li><p><strong>Look_for_keys</strong>: automatically look for the private key in <code class="docutils literal notranslate"><span class="pre">~/.ssh</span></code>.
+Default: False.</p></li>
+<li><p><strong>SSH key file</strong>: the absolute path to your private SSH key. You can leave
+it empty to use the default SSH key, if you set <code class="docutils literal notranslate"><span class="pre">look_for_keys</span></code> to True.</p></li>
+<li><p><strong>Connection timeout</strong>: A timeout in seconds if there is no response (e.g., the
+machine is down. You can leave it empty to use the default value.)</p></li>
+<li><p><strong>Allow_ssh agent</strong>: If True, it will try to use an SSH agent.</p></li>
+<li><p><strong>SSH proxy_command</strong>: Leave empty if you do not need a proxy command (i.e.,
+if you can directly connect to the machine). If you instead need to connect
+to an intermediate computer first, you need to provide here the
+command for the proxy: see documentation <a class="reference internal" href="../working_with_aiida/tips/ssh_proxycommand.html#ssh-proxycommand"><span class="std std-ref">here</span></a>
+for how to use this option, and in particular the notes
+<a class="reference internal" href="../working_with_aiida/tips/ssh_proxycommand.html#ssh-proxycommand-notes"><span class="std std-ref">here</span></a> for the format of this field.</p></li>
+<li><p><strong>Compress file transfer</strong>: True to compress the traffic (recommended)</p></li>
+<li><p><strong>GSS auth</strong>: yes when using Kerberos token to connect</p></li>
+<li><p><strong>GSS kex</strong>: yes when using Kerberos token to connect, in some cases
+(depending on your <code class="docutils literal notranslate"><span class="pre">.ssh/config</span></code> file)</p></li>
+<li><p><strong>GSS deleg_creds</strong>: yes when using Kerberos token to connect, in
+some cases (depending on your <code class="docutils literal notranslate"><span class="pre">.ssh/config</span></code> file)</p></li>
+<li><p><strong>GSS host</strong>: hostname when using Kerberos token to connect (defaults
+to the remote computer hostname)</p></li>
+<li><p><strong>Load system host keys</strong>: True to load the known hosts keys from the
+default SSH location (recommended)</p></li>
+<li><p><strong>key policy</strong>: What is the policy in case the host is not known.
+It is a string among the following:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">RejectPolicy</span></code> (default, recommended): reject the connection if the
+host is not known.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WarningPolicy</span></code> (<em>not</em> recommended): issue a warning if the
+host is not known.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AutoAddPolicy</span></code> (<em>not</em> recommended): automatically add the host key
+at the first connection to the host.</p></li>
+</ul>
+</li>
+<li><p><strong>Connection cooldown time (s)</strong>: The minimum time interval between consecutive
+connection openings to the remote machine.</p></li>
+</ul>
+</li>
+</ol>
+<p>After setup and configuration have been completed, your computer is ready to go!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the cluster you are using requires authentication through a Kerberos
+token (that you need to obtain before using ssh), you typically need to install
+<code class="docutils literal notranslate"><span class="pre">libffi</span></code> (<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">libffi-dev</span></code> under Ubuntu), and make sure you install
+the <code class="docutils literal notranslate"><span class="pre">ssh_kerberos</span></code> <a class="reference internal" href="../install/installation.html#install-optional-dependencies"><span class="std std-ref">optional dependencies</span></a> during the installation process of AiiDA.
+Then, if your <code class="docutils literal notranslate"><span class="pre">.ssh/config</span></code> file is configured properly (in particular includes
+all the necessary <code class="docutils literal notranslate"><span class="pre">GSSAPI</span></code> options), <code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">computer</span> <span class="pre">configure</span></code> will
+contain already the correct suggestions for all the gss options needed to support Kerberos.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To check if you set up the computer correctly,
+execute:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">verdi</span> <span class="n">computer</span> <span class="n">test</span> <span class="n">COMPUTERNAME</span>
+</pre></div>
+</div>
+<p>that will run a few tests (file copy, file retrieval, check of the jobs in
+the scheduler queue) to verify that everything works as expected.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are not sure if your computer is already set up, use the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">verdi</span> <span class="n">computer</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p>to get a list of existing computers, and:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">verdi</span> <span class="n">computer</span> <span class="n">show</span> <span class="n">COMPUTERNAME</span>
+</pre></div>
+</div>
+<p>to get detailed information on the specific computer named <code class="docutils literal notranslate"><span class="pre">COMPUTERNAME</span></code>.
+You have also the:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">verdi</span> <span class="n">computer</span> <span class="n">rename</span> <span class="n">OLDCOMPUTERNAME</span> <span class="n">NEWCOMPUTERNAME</span>
+</pre></div>
+</div>
+<p>and:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">verdi</span> <span class="n">computer</span> <span class="n">delete</span> <span class="n">COMPUTERNAME</span>
+</pre></div>
+</div>
+<p>commands, to rename a computer or remove it from the database.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can delete computers <strong>only if</strong> no entry in the database is linked to
+them (as for instance Calculations, or RemoteData objects). Otherwise, you
+will get an error message.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is possible to <strong>disable</strong> a computer.</p>
+<p>Doing so will prevent AiiDA
+from connecting to the given computer to check the state of calculations or
+to submit new calculations. This is particularly useful if, for instance,
+the computer is under maintenance but you still want to use AiiDA with
+other computers, or submit the calculations in the AiiDA database anyway.</p>
+<p>The relevant commands are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">verdi</span> <span class="n">computer</span> <span class="n">enable</span> <span class="n">COMPUTERNAME</span>
+<span class="n">verdi</span> <span class="n">computer</span> <span class="n">disable</span> <span class="n">COMPUTERNAME</span>
+</pre></div>
+</div>
+<p>Note that the above commands will disable the computer for all AiiDA users.</p>
+</div>
+<div class="section" id="on-not-bombarding-the-remote-computer-with-requests">
+<h3>On not bombarding the remote computer with requests<a class="headerlink" href="#on-not-bombarding-the-remote-computer-with-requests" title="Permalink to this headline">¶</a></h3>
+<p>Some machine (particularly at supercomputing centres) may not tolerate opening
+connections and executing scheduler commands with a high frequency.  To limit this
+AiiDA currently has two settings:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The transport safe open interval, and,</p></li>
+<li><p>the minimum job poll interval</p></li>
+</ul>
+</div></blockquote>
+<p>Neither of these can ever be violated.  AiiDA will not try to update the jobs list
+on a remote machine until the job poll interval has elapsed since the last update
+(the first update will be immediate) at which point it will request a transport.
+Because of this the maximum possible time before a job update could be the sum of
+the two intervals, however this is unlikely to happen in practice.</p>
+<p>The transport open interval is currently hardcoded by the transport plugin;
+typically for SSH it’s longer than for local transport.</p>
+<p>The job poll interval can be set programmatically on the corresponding <code class="docutils literal notranslate"><span class="pre">Computer</span></code>
+object in verdi shell:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">load_computer</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_minimum_job_poll_interval</span><span class="p">(</span><span class="mf">30.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>would set the transport interval on a computer called ‘localhost’ to 30 seconds.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All of these intervals apply <em>per worker</em>, meaning that a daemon with
+multiple workers will not necessarily, overall, respect these limits.
+For the time being there is no way around this and if these limits must be
+respected then do not run with more than one worker.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

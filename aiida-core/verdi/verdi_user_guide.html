@@ -1,0 +1,972 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Concepts &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Concepts</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/verdi/verdi_user_guide.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="concepts">
+<span id="cli-concepts"></span><h1>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h1>
+<p>This section explains basic concepts of the command line interface that apply to all <code class="docutils literal notranslate"><span class="pre">verdi</span></code> commands.</p>
+<div class="section" id="parameters">
+<span id="cli-parameters"></span><h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<p>Parameters to <code class="docutils literal notranslate"><span class="pre">verdi</span></code> commands come in two flavors:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Arguments: positional parameters, e.g. <code class="docutils literal notranslate"><span class="pre">123</span></code> in <code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">process</span> <span class="pre">kill</span> <span class="pre">123</span></code></p></li>
+<li><p>Options: announced by a flag (e.g. <code class="docutils literal notranslate"><span class="pre">-f</span></code> or <code class="docutils literal notranslate"><span class="pre">--flag</span></code>), potentially followed by a value. E.g. <code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">process</span> <span class="pre">list</span> <span class="pre">--limit</span> <span class="pre">10</span></code> or <code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">process</span> <span class="pre">-h</span></code>.</p></li>
+</ul>
+</div></blockquote>
+<div class="section" id="multi-value-options">
+<span id="cli-multi-value-options"></span><h3>Multi-value options<a class="headerlink" href="#multi-value-options" title="Permalink to this headline">¶</a></h3>
+<p>Some <code class="docutils literal notranslate"><span class="pre">verdi</span></code> commands provide <em>options</em> that can take multiple values.
+This allows to avoid repetition and e.g. write:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">verdi</span> <span class="n">export</span> <span class="n">create</span> <span class="o">-</span><span class="n">N</span> <span class="mi">10</span> <span class="mi">11</span> <span class="mi">12</span> <span class="o">--</span> <span class="n">archive</span><span class="o">.</span><span class="n">aiida</span>
+</pre></div>
+</div>
+<p>instead of the more lengthy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">verdi</span> <span class="n">export</span> <span class="n">create</span> <span class="o">-</span><span class="n">N</span> <span class="mi">10</span> <span class="o">-</span><span class="n">N</span> <span class="mi">11</span> <span class="o">-</span><span class="n">N</span> <span class="mi">12</span> <span class="n">archive</span><span class="o">.</span><span class="n">aiida</span>
+</pre></div>
+</div>
+<p>Note the use of the so-called ‘endopts’ marker <code class="docutils literal notranslate"><span class="pre">--</span></code> that is necessary to mark the end of the <code class="docutils literal notranslate"><span class="pre">-N</span></code> option and distinguish it from the <code class="docutils literal notranslate"><span class="pre">archive.aiida</span></code> argument.</p>
+</div>
+</div>
+<div class="section" id="help-strings">
+<span id="cli-help-strings"></span><h2>Help strings<a class="headerlink" href="#help-strings" title="Permalink to this headline">¶</a></h2>
+<p>Append the <code class="docutils literal notranslate"><span class="pre">--help</span></code> option to any verdi (sub-)command to get help on how to use it.
+For example, <code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">process</span> <span class="pre">kill</span> <span class="pre">--help</span></code> shows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span> <span class="n">verdi</span> <span class="n">process</span> <span class="n">kill</span> <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="p">[</span><span class="n">PROCESSES</span><span class="p">]</span><span class="o">...</span>
+
+  <span class="n">Kill</span> <span class="n">running</span> <span class="n">processes</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">t</span><span class="p">,</span> <span class="o">--</span><span class="n">timeout</span> <span class="n">FLOAT</span>  <span class="n">Time</span> <span class="ow">in</span> <span class="n">seconds</span> <span class="n">to</span> <span class="n">wait</span> <span class="k">for</span> <span class="n">a</span> <span class="n">response</span> <span class="n">before</span> <span class="n">timing</span>
+                       <span class="n">out</span><span class="o">.</span>  <span class="p">[</span><span class="n">default</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">]</span>
+  <span class="o">--</span><span class="n">wait</span> <span class="o">/</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">wait</span>   <span class="n">Wait</span> <span class="k">for</span> <span class="n">the</span> <span class="n">action</span> <span class="n">to</span> <span class="n">be</span> <span class="n">completed</span> <span class="n">otherwise</span> <span class="k">return</span> <span class="k">as</span>
+                       <span class="n">soon</span> <span class="k">as</span> <span class="n">it</span><span class="s1">&#39;s scheduled.</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>           <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>All help strings consist of three parts:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>A <code class="docutils literal notranslate"><span class="pre">Usage:</span></code> line describing how to invoke the command</p></li>
+<li><p>A description of the command’s functionality</p></li>
+<li><p>A list of the available options</p></li>
+</ul>
+</div></blockquote>
+<p>The <code class="docutils literal notranslate"><span class="pre">Usage:</span></code> line encodes information on the command’s parameters, e.g.:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[OPTIONS]</span></code>: this command takes one (or more) options</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PROCESSES</span></code>: this command <em>requires</em> a process as a positional argument</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[PROCESSES]</span></code>: this command takes a process as an <em>optional</em> positional argument</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[PROCESSES]...</span></code>: this command takes one or more processes as <em>optional</em> positional arguments</p></li>
+</ul>
+</div></blockquote>
+<p>Multi-value options are followed by <code class="docutils literal notranslate"><span class="pre">...</span></code> in the help string and the <code class="docutils literal notranslate"><span class="pre">Usage:</span></code> line of the corresponding command will contain the ‘endopts’ marker.
+For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span> <span class="n">verdi</span> <span class="n">export</span> <span class="n">create</span> <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="p">]</span> <span class="n">OUTPUT_FILE</span>
+
+  <span class="n">Export</span> <span class="n">various</span> <span class="n">entities</span><span class="p">,</span> <span class="n">such</span> <span class="k">as</span> <span class="n">Codes</span><span class="p">,</span> <span class="n">Computers</span><span class="p">,</span> <span class="n">Groups</span> <span class="ow">and</span> <span class="n">Nodes</span><span class="p">,</span> <span class="n">to</span> <span class="n">an</span>
+  <span class="n">archive</span> <span class="n">file</span> <span class="k">for</span> <span class="n">backup</span> <span class="ow">or</span> <span class="n">sharing</span> <span class="n">purposes</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">X</span><span class="p">,</span> <span class="o">--</span><span class="n">codes</span> <span class="n">CODE</span><span class="o">...</span>             <span class="n">one</span> <span class="ow">or</span> <span class="n">multiple</span> <span class="n">codes</span> <span class="n">identified</span> <span class="n">by</span> <span class="n">their</span>
+                                  <span class="n">ID</span><span class="p">,</span> <span class="n">UUID</span> <span class="ow">or</span> <span class="n">label</span>
+  <span class="o">-</span><span class="n">Y</span><span class="p">,</span> <span class="o">--</span><span class="n">computers</span> <span class="n">COMPUTER</span><span class="o">...</span>     <span class="n">one</span> <span class="ow">or</span> <span class="n">multiple</span> <span class="n">computers</span> <span class="n">identified</span> <span class="n">by</span>
+                                  <span class="n">their</span> <span class="n">ID</span><span class="p">,</span> <span class="n">UUID</span> <span class="ow">or</span> <span class="n">label</span>
+  <span class="o">-</span><span class="n">G</span><span class="p">,</span> <span class="o">--</span><span class="n">groups</span> <span class="n">GROUP</span><span class="o">...</span>           <span class="n">one</span> <span class="ow">or</span> <span class="n">multiple</span> <span class="n">groups</span> <span class="n">identified</span> <span class="n">by</span> <span class="n">their</span>
+                                  <span class="n">ID</span><span class="p">,</span> <span class="n">UUID</span> <span class="ow">or</span> <span class="n">name</span>
+  <span class="o">-</span><span class="n">N</span><span class="p">,</span> <span class="o">--</span><span class="n">nodes</span> <span class="n">NODE</span><span class="o">...</span>             <span class="n">one</span> <span class="ow">or</span> <span class="n">multiple</span> <span class="n">nodes</span> <span class="n">identified</span> <span class="n">by</span> <span class="n">their</span> <span class="n">ID</span>
+                                  <span class="ow">or</span> <span class="n">UUID</span>
+  <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="profile">
+<span id="cli-profile"></span><h2>Profile<a class="headerlink" href="#profile" title="Permalink to this headline">¶</a></h2>
+<p>AiiDA supports multiple profiles per installation, one of which is marked as the default and used unless another profile is requested.
+Show the current default profile using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">verdi</span> <span class="n">profile</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p>In order to use a different profile, pass the <code class="docutils literal notranslate"><span class="pre">-p/--profile</span></code> option to any <code class="docutils literal notranslate"><span class="pre">verdi</span></code> command, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">verdi</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">profile</span><span class="o">&gt;</span> <span class="n">process</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p>Note that the specified profile will be used for this and <em>only</em> this command.
+Use <code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">profile</span> <span class="pre">setdefault</span></code> in order to permanently change the default profile.</p>
+</div>
+<div class="section" id="cli-identifiers">
+<span id="identifiers"></span><h2>Identifiers<a class="headerlink" href="#cli-identifiers" title="Permalink to this headline">¶</a></h2>
+<p>When working with AiiDA entities, you need a way to <em>refer</em> to them on the command line.
+Any entity in AiiDA can be addressed via three identifiers:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>“Primary Key” (PK): An integer, e.g. <code class="docutils literal notranslate"><span class="pre">723</span></code>, identifying your entity within your database (automatically assigned)</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_(random)">Universally Unique Identifier</a> (UUID): A string, e.g. <code class="docutils literal notranslate"><span class="pre">ce81c420-7751-48f6-af8e-eb7c6a30cec3</span></code> identifying your entity globally (automatically assigned)</p></li>
+<li><p>Label: A human-readable string, e.g. <code class="docutils literal notranslate"><span class="pre">test_calculation</span></code> (manually assigned)</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>PKs are easy to type and work as long as you stay within your database.
+<strong>When sharing data with others, however, always use UUIDs.</strong></p>
+</div>
+<p>Any <code class="docutils literal notranslate"><span class="pre">verdi</span></code> command that expects an identifier as a paramter will accept PKs, UUIDs and labels.</p>
+<p>In almost all cases, this will work out of the box.
+Since command line parameters are passed as strings, AiiDA needs to deduce the type of identifier from its content, which can fail in edge cases (see <a class="reference internal" href="#cli-identifier-resolution"><span class="std std-ref">Implementation of identifier resolution</span></a> for details).
+You can take the following precautions in order to avoid such edge cases:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>PK: no precautions needed</p></li>
+<li><p>UUID: no precautions needed for full UUIDs. Partial UUIDs should include at least one non-numeric character or dash</p></li>
+<li><p>Label: add an exclamation mark <code class="docutils literal notranslate"><span class="pre">!</span></code> at the end of the identifier in order to force interpretation as a label</p></li>
+</ul>
+</div></blockquote>
+<div class="section" id="implementation-of-identifier-resolution">
+<span id="cli-identifier-resolution"></span><h3>Implementation of identifier resolution<a class="headerlink" href="#implementation-of-identifier-resolution" title="Permalink to this headline">¶</a></h3>
+<p>The logic for deducing the identifier type is as follows:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Try interpreting the identifier as a PK (integer)</p></li>
+<li><p>If this fails, try interpreting the identifier as a UUID (full or partial)</p></li>
+<li><p>If this fails, interpret the identifier as a label</p></li>
+</ol>
+</div></blockquote>
+<p>The following example illustrates edge cases that can arise in this logic:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 77%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>PK</p></th>
+<th class="head"><p>UUID</p></th>
+<th class="head"><p>LABEL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>12dfb104-7b2b-4bca-adc0-1e4fd4ffcc88</p></td>
+<td><p>group</p></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td><p>deadbeef-62ba-444f-976d-31d925dac557</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>12</p></td>
+<td><p>3df34a1e-5215-4e1a-b626-7f75b9586ef5</p></td>
+<td><p>deadbeef</p></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><ul class="simple">
+<li><p>trying to identify the first entity by its partial UUID <code class="docutils literal notranslate"><span class="pre">12</span></code> would match the third entity by its PK instead</p></li>
+<li><p>trying to identify the second entity by its label <code class="docutils literal notranslate"><span class="pre">10</span></code> would match the first entity by its PK instead</p></li>
+<li><p>trying to identify the third entity by its label <code class="docutils literal notranslate"><span class="pre">deadbeef</span></code> would match the second entity on its partial UUID <code class="docutils literal notranslate"><span class="pre">deadbeef</span></code> instead</p></li>
+</ul>
+</div></blockquote>
+<p>The ambiguity between a partial UUID and a PK can always be resolved by including a longer substring of the UUID, eventually rendering the identifier no longer a valid PK.</p>
+<p>The case of a label being also a valid PK or (partial) UUID requires a different solution.
+For this case, <code class="docutils literal notranslate"><span class="pre">verdi</span></code> reserves a special character, the exclamation mark <code class="docutils literal notranslate"><span class="pre">!</span></code>, that can be appended to the identifier.
+Before any type guessing is done, AiiDA checks for the presence of this marker and, if found, will interpret the identifier as a label.
+I.e. to solve ambiguity examples mentioned above, one would pass <code class="docutils literal notranslate"><span class="pre">10!</span></code> and <code class="docutils literal notranslate"><span class="pre">deadbeef!</span></code>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="commands">
+<span id="verdi-commands"></span><h1>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h1>
+<p>Below is a list with all available subcommands.</p>
+<div class="section" id="verdi-calcjob">
+<span id="id1"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">calcjob</span></code><a class="headerlink" href="#verdi-calcjob" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>  <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="n">COMMAND</span> <span class="p">[</span><span class="n">ARGS</span><span class="p">]</span><span class="o">...</span>
+
+  <span class="n">Inspect</span> <span class="ow">and</span> <span class="n">manage</span> <span class="n">calcjobs</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">help</span>  <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+
+<span class="n">Commands</span><span class="p">:</span>
+  <span class="n">cleanworkdir</span>  <span class="n">Clean</span> <span class="nb">all</span> <span class="n">content</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">output</span> <span class="n">remote</span> <span class="n">folders</span> <span class="n">of</span> <span class="n">calcjobs</span><span class="o">.</span>
+  <span class="n">gotocomputer</span>  <span class="n">Open</span> <span class="n">a</span> <span class="n">shell</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">remote</span> <span class="n">folder</span> <span class="n">on</span> <span class="n">the</span> <span class="n">calcjob</span><span class="o">.</span>
+  <span class="n">inputcat</span>      <span class="n">Show</span> <span class="n">the</span> <span class="n">contents</span> <span class="n">of</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">calcjob</span> <span class="nb">input</span> <span class="n">files</span><span class="o">.</span>
+  <span class="n">inputls</span>       <span class="n">Show</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">the</span> <span class="n">generated</span> <span class="n">calcjob</span> <span class="nb">input</span> <span class="n">files</span><span class="o">.</span>
+  <span class="n">outputcat</span>     <span class="n">Show</span> <span class="n">the</span> <span class="n">contents</span> <span class="n">of</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">calcjob</span> <span class="n">retrieved</span> <span class="n">outputs</span><span class="o">.</span>
+  <span class="n">outputls</span>      <span class="n">Show</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">the</span> <span class="n">retrieved</span> <span class="n">calcjob</span> <span class="n">output</span> <span class="n">files</span><span class="o">.</span>
+  <span class="n">res</span>           <span class="n">Print</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">result</span> <span class="n">output</span> <span class="n">Dict</span> <span class="n">node</span> <span class="n">of</span> <span class="n">a</span> <span class="n">calcjob</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-code">
+<span id="id2"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">code</span></code><a class="headerlink" href="#verdi-code" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Usage:  [OPTIONS] COMMAND [ARGS]...
+
+  Setup and manage codes.
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  delete     Delete a code.
+  duplicate  Duplicate a code allowing to change some parameters.
+  hide       Hide one or more codes from `verdi code list`.
+  list       List the available codes.
+  relabel    Relabel a code.
+  reveal     Reveal one or more hidden codes in `verdi code list`.
+  setup      Setup a new code.
+  show       Display detailed information for a code.
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-comment">
+<span id="id3"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">comment</span></code><a class="headerlink" href="#verdi-comment" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>  <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="n">COMMAND</span> <span class="p">[</span><span class="n">ARGS</span><span class="p">]</span><span class="o">...</span>
+
+  <span class="n">Inspect</span><span class="p">,</span> <span class="n">create</span> <span class="ow">and</span> <span class="n">manage</span> <span class="n">node</span> <span class="n">comments</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">help</span>  <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+
+<span class="n">Commands</span><span class="p">:</span>
+  <span class="n">add</span>     <span class="n">Add</span> <span class="n">a</span> <span class="n">comment</span> <span class="n">to</span> <span class="n">one</span> <span class="ow">or</span> <span class="n">more</span> <span class="n">nodes</span><span class="o">.</span>
+  <span class="n">remove</span>  <span class="n">Remove</span> <span class="n">a</span> <span class="n">comment</span> <span class="n">of</span> <span class="n">a</span> <span class="n">node</span><span class="o">.</span>
+  <span class="n">show</span>    <span class="n">Show</span> <span class="n">the</span> <span class="n">comments</span> <span class="n">of</span> <span class="n">one</span> <span class="ow">or</span> <span class="n">multiple</span> <span class="n">nodes</span><span class="o">.</span>
+  <span class="n">update</span>  <span class="n">Update</span> <span class="n">a</span> <span class="n">comment</span> <span class="n">of</span> <span class="n">a</span> <span class="n">node</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-completioncommand">
+<span id="id4"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">completioncommand</span></code><a class="headerlink" href="#verdi-completioncommand" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>  <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span>
+
+  <span class="n">Return</span> <span class="n">the</span> <span class="n">code</span> <span class="n">to</span> <span class="n">activate</span> <span class="n">bash</span> <span class="n">completion</span><span class="o">.</span>
+
+  <span class="p">:</span><span class="n">note</span><span class="p">:</span> <span class="n">this</span> <span class="n">command</span> <span class="ow">is</span> <span class="n">mainly</span> <span class="k">for</span> <span class="n">back</span><span class="o">-</span><span class="n">compatibility</span><span class="o">.</span>     <span class="n">You</span> <span class="n">should</span>
+  <span class="n">rather</span> <span class="n">use</span><span class="p">:;</span>
+
+          <span class="nb">eval</span> <span class="s2">&quot;$(_VERDI_COMPLETE=source verdi)&quot;</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">help</span>  <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-computer">
+<span id="id5"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">computer</span></code><a class="headerlink" href="#verdi-computer" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>  <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="n">COMMAND</span> <span class="p">[</span><span class="n">ARGS</span><span class="p">]</span><span class="o">...</span>
+
+  <span class="n">Setup</span> <span class="ow">and</span> <span class="n">manage</span> <span class="n">computers</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">help</span>  <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+
+<span class="n">Commands</span><span class="p">:</span>
+  <span class="n">configure</span>  <span class="n">Configure</span> <span class="n">the</span> <span class="n">Authinfo</span> <span class="n">details</span> <span class="k">for</span> <span class="n">a</span> <span class="n">computer</span> <span class="p">(</span><span class="ow">and</span> <span class="n">user</span><span class="p">)</span><span class="o">.</span>
+  <span class="n">delete</span>     <span class="n">Delete</span> <span class="n">a</span> <span class="n">computer</span><span class="o">.</span>
+  <span class="n">disable</span>    <span class="n">Disable</span> <span class="n">the</span> <span class="n">computer</span> <span class="k">for</span> <span class="n">the</span> <span class="n">given</span> <span class="n">user</span><span class="o">.</span>
+  <span class="n">duplicate</span>  <span class="n">Duplicate</span> <span class="n">a</span> <span class="n">computer</span> <span class="n">allowing</span> <span class="n">to</span> <span class="n">change</span> <span class="n">some</span> <span class="n">parameters</span><span class="o">.</span>
+  <span class="n">enable</span>     <span class="n">Enable</span> <span class="n">the</span> <span class="n">computer</span> <span class="k">for</span> <span class="n">the</span> <span class="n">given</span> <span class="n">user</span><span class="o">.</span>
+  <span class="nb">list</span>       <span class="n">List</span> <span class="nb">all</span> <span class="n">available</span> <span class="n">computers</span><span class="o">.</span>
+  <span class="n">rename</span>     <span class="n">Rename</span> <span class="n">a</span> <span class="n">computer</span><span class="o">.</span>
+  <span class="n">setup</span>      <span class="n">Create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">computer</span><span class="o">.</span>
+  <span class="n">show</span>       <span class="n">Show</span> <span class="n">detailed</span> <span class="n">information</span> <span class="k">for</span> <span class="n">a</span> <span class="n">computer</span><span class="o">.</span>
+  <span class="n">test</span>       <span class="n">Test</span> <span class="n">the</span> <span class="n">connection</span> <span class="n">to</span> <span class="n">a</span> <span class="n">computer</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-config">
+<span id="id6"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">config</span></code><a class="headerlink" href="#verdi-config" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>  <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="n">OPTION_NAME</span> <span class="n">OPTION_VALUE</span>
+
+  <span class="n">Configure</span> <span class="n">profile</span><span class="o">-</span><span class="n">specific</span> <span class="ow">or</span> <span class="k">global</span> <span class="n">AiiDA</span> <span class="n">options</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="k">global</span>  <span class="n">Apply</span> <span class="n">the</span> <span class="n">option</span> <span class="n">configuration</span> <span class="n">wide</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">unset</span>   <span class="n">Remove</span> <span class="n">the</span> <span class="n">line</span> <span class="n">matching</span> <span class="n">the</span> <span class="n">option</span> <span class="n">name</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">config</span> <span class="n">file</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">help</span>    <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-daemon">
+<span id="id7"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">daemon</span></code><a class="headerlink" href="#verdi-daemon" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>  <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="n">COMMAND</span> <span class="p">[</span><span class="n">ARGS</span><span class="p">]</span><span class="o">...</span>
+
+  <span class="n">Inspect</span> <span class="ow">and</span> <span class="n">manage</span> <span class="n">the</span> <span class="n">daemon</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">help</span>  <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+
+<span class="n">Commands</span><span class="p">:</span>
+  <span class="n">decr</span>     <span class="n">Remove</span> <span class="n">NUMBER</span> <span class="p">[</span><span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">]</span> <span class="n">workers</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">running</span> <span class="n">daemon</span><span class="o">.</span>
+  <span class="n">incr</span>     <span class="n">Add</span> <span class="n">NUMBER</span> <span class="p">[</span><span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">]</span> <span class="n">workers</span> <span class="n">to</span> <span class="n">the</span> <span class="n">running</span> <span class="n">daemon</span><span class="o">.</span>
+  <span class="n">logshow</span>  <span class="n">Show</span> <span class="n">the</span> <span class="n">log</span> <span class="n">of</span> <span class="n">the</span> <span class="n">daemon</span><span class="p">,</span> <span class="n">press</span> <span class="n">CTRL</span><span class="o">+</span><span class="n">C</span> <span class="n">to</span> <span class="n">quit</span><span class="o">.</span>
+  <span class="n">restart</span>  <span class="n">Restart</span> <span class="n">the</span> <span class="n">daemon</span><span class="o">.</span>
+  <span class="n">start</span>    <span class="n">Start</span> <span class="n">the</span> <span class="n">daemon</span> <span class="k">with</span> <span class="n">NUMBER</span> <span class="n">workers</span><span class="o">.</span>
+  <span class="n">status</span>   <span class="n">Print</span> <span class="n">the</span> <span class="n">status</span> <span class="n">of</span> <span class="n">the</span> <span class="n">current</span> <span class="n">daemon</span> <span class="ow">or</span> <span class="nb">all</span> <span class="n">daemons</span><span class="o">.</span>
+  <span class="n">stop</span>     <span class="n">Stop</span> <span class="n">the</span> <span class="n">daemon</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-data">
+<span id="id8"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">data</span></code><a class="headerlink" href="#verdi-data" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>  <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="n">COMMAND</span> <span class="p">[</span><span class="n">ARGS</span><span class="p">]</span><span class="o">...</span>
+
+  <span class="n">Inspect</span><span class="p">,</span> <span class="n">create</span> <span class="ow">and</span> <span class="n">manage</span> <span class="n">data</span> <span class="n">nodes</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">help</span>  <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-database">
+<span id="id9"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">database</span></code><a class="headerlink" href="#verdi-database" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>  <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="n">COMMAND</span> <span class="p">[</span><span class="n">ARGS</span><span class="p">]</span><span class="o">...</span>
+
+  <span class="n">Inspect</span> <span class="ow">and</span> <span class="n">manage</span> <span class="n">the</span> <span class="n">database</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">help</span>  <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+
+<span class="n">Commands</span><span class="p">:</span>
+  <span class="n">integrity</span>  <span class="n">Check</span> <span class="n">the</span> <span class="n">integrity</span> <span class="n">of</span> <span class="n">the</span> <span class="n">database</span> <span class="ow">and</span> <span class="n">fix</span> <span class="n">potential</span> <span class="n">issues</span><span class="o">.</span>
+  <span class="n">migrate</span>    <span class="n">Migrate</span> <span class="n">the</span> <span class="n">database</span> <span class="n">to</span> <span class="n">the</span> <span class="n">latest</span> <span class="n">schema</span> <span class="n">version</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-devel">
+<span id="id10"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">devel</span></code><a class="headerlink" href="#verdi-devel" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Usage:  [OPTIONS] COMMAND [ARGS]...
+
+  Commands for developers.
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  check-load-time   Check for common indicators that slowdown `verdi`.
+  configure-backup  Configure backup of the repository folder.
+  run_daemon        Run a daemon instance in the current interpreter.
+  tests             Run the unittest suite or parts of it.
+  validate-plugins  Validate all plugins by checking they can be loaded.
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-export">
+<span id="id11"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">export</span></code><a class="headerlink" href="#verdi-export" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>  <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="n">COMMAND</span> <span class="p">[</span><span class="n">ARGS</span><span class="p">]</span><span class="o">...</span>
+
+  <span class="n">Create</span> <span class="ow">and</span> <span class="n">manage</span> <span class="n">export</span> <span class="n">archives</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">help</span>  <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+
+<span class="n">Commands</span><span class="p">:</span>
+  <span class="n">create</span>   <span class="n">Export</span> <span class="n">subsets</span> <span class="n">of</span> <span class="n">the</span> <span class="n">provenance</span> <span class="n">graph</span> <span class="n">to</span> <span class="n">file</span> <span class="k">for</span> <span class="n">sharing</span><span class="o">.</span>
+  <span class="n">inspect</span>  <span class="n">Inspect</span> <span class="n">contents</span> <span class="n">of</span> <span class="n">an</span> <span class="n">exported</span> <span class="n">archive</span> <span class="n">without</span> <span class="n">importing</span> <span class="n">it</span><span class="o">.</span>
+  <span class="n">migrate</span>  <span class="n">Migrate</span> <span class="n">an</span> <span class="n">export</span> <span class="n">archive</span> <span class="n">to</span> <span class="n">a</span> <span class="n">more</span> <span class="n">recent</span> <span class="nb">format</span> <span class="n">version</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-graph">
+<span id="id12"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">graph</span></code><a class="headerlink" href="#verdi-graph" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>  <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="n">COMMAND</span> <span class="p">[</span><span class="n">ARGS</span><span class="p">]</span><span class="o">...</span>
+
+  <span class="n">Create</span> <span class="n">visual</span> <span class="n">representations</span> <span class="n">of</span> <span class="n">the</span> <span class="n">provenance</span> <span class="n">graph</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">help</span>  <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+
+<span class="n">Commands</span><span class="p">:</span>
+  <span class="n">generate</span>  <span class="n">Generate</span> <span class="n">a</span> <span class="n">graph</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">ROOT_NODE</span> <span class="p">(</span><span class="n">specified</span> <span class="n">by</span> <span class="n">pk</span> <span class="ow">or</span> <span class="n">uuid</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-group">
+<span id="id13"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">group</span></code><a class="headerlink" href="#verdi-group" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>  <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="n">COMMAND</span> <span class="p">[</span><span class="n">ARGS</span><span class="p">]</span><span class="o">...</span>
+
+  <span class="n">Create</span><span class="p">,</span> <span class="n">inspect</span> <span class="ow">and</span> <span class="n">manage</span> <span class="n">groups</span> <span class="n">of</span> <span class="n">nodes</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">help</span>  <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+
+<span class="n">Commands</span><span class="p">:</span>
+  <span class="n">add</span><span class="o">-</span><span class="n">nodes</span>     <span class="n">Add</span> <span class="n">nodes</span> <span class="n">to</span> <span class="n">the</span> <span class="n">a</span> <span class="n">group</span><span class="o">.</span>
+  <span class="n">copy</span>          <span class="n">Duplicate</span> <span class="n">a</span> <span class="n">group</span><span class="o">.</span>
+  <span class="n">create</span>        <span class="n">Create</span> <span class="n">an</span> <span class="n">empty</span> <span class="n">group</span> <span class="k">with</span> <span class="n">a</span> <span class="n">given</span> <span class="n">name</span><span class="o">.</span>
+  <span class="n">delete</span>        <span class="n">Delete</span> <span class="n">a</span> <span class="n">group</span><span class="o">.</span>
+  <span class="n">description</span>   <span class="n">Change</span> <span class="n">the</span> <span class="n">description</span> <span class="n">of</span> <span class="n">a</span> <span class="n">group</span><span class="o">.</span>
+  <span class="nb">list</span>          <span class="n">Show</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">existing</span> <span class="n">groups</span><span class="o">.</span>
+  <span class="n">path</span>          <span class="n">Inspect</span> <span class="n">groups</span> <span class="n">of</span> <span class="n">nodes</span><span class="p">,</span> <span class="k">with</span> <span class="n">delimited</span> <span class="n">label</span> <span class="n">paths</span><span class="o">.</span>
+  <span class="n">relabel</span>       <span class="n">Change</span> <span class="n">the</span> <span class="n">label</span> <span class="n">of</span> <span class="n">a</span> <span class="n">group</span><span class="o">.</span>
+  <span class="n">remove</span><span class="o">-</span><span class="n">nodes</span>  <span class="n">Remove</span> <span class="n">nodes</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">group</span><span class="o">.</span>
+  <span class="n">show</span>          <span class="n">Show</span> <span class="n">information</span> <span class="k">for</span> <span class="n">a</span> <span class="n">given</span> <span class="n">group</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-help">
+<span id="id14"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">help</span></code><a class="headerlink" href="#verdi-help" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>  <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="p">[</span><span class="n">COMMAND</span><span class="p">]</span>
+
+  <span class="n">Show</span> <span class="n">help</span> <span class="k">for</span> <span class="n">given</span> <span class="n">command</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">help</span>  <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-import">
+<span id="id15"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">import</span></code><a class="headerlink" href="#verdi-import" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>  <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="p">]</span> <span class="p">[</span><span class="n">ARCHIVES</span><span class="p">]</span><span class="o">...</span>
+
+  <span class="n">Import</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">an</span> <span class="n">AiiDA</span> <span class="n">archive</span> <span class="n">file</span><span class="o">.</span>
+
+  <span class="n">The</span> <span class="n">archive</span> <span class="n">can</span> <span class="n">be</span> <span class="n">specified</span> <span class="n">by</span> <span class="n">its</span> <span class="n">relative</span> <span class="ow">or</span> <span class="n">absolute</span> <span class="n">file</span> <span class="n">path</span><span class="p">,</span> <span class="ow">or</span> <span class="n">its</span>
+  <span class="n">HTTP</span> <span class="n">URL</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">w</span><span class="p">,</span> <span class="o">--</span><span class="n">webpages</span> <span class="n">TEXT</span><span class="o">...</span>          <span class="n">Discover</span> <span class="nb">all</span> <span class="n">URL</span> <span class="n">targets</span> <span class="n">pointing</span> <span class="n">to</span> <span class="n">files</span>
+                                  <span class="k">with</span> <span class="n">the</span> <span class="o">.</span><span class="n">aiida</span> <span class="n">extension</span> <span class="k">for</span> <span class="n">these</span> <span class="n">HTTP</span>
+                                  <span class="n">addresses</span><span class="o">.</span> <span class="n">Automatically</span> <span class="n">discovered</span> <span class="n">archive</span>
+                                  <span class="n">URLs</span> <span class="n">will</span> <span class="n">be</span> <span class="n">downloadeded</span> <span class="ow">and</span> <span class="n">added</span> <span class="n">to</span>
+                                  <span class="n">ARCHIVES</span> <span class="k">for</span> <span class="n">importing</span>
+
+  <span class="o">-</span><span class="n">G</span><span class="p">,</span> <span class="o">--</span><span class="n">group</span> <span class="n">GROUP</span>               <span class="n">Specify</span> <span class="n">group</span> <span class="n">to</span> <span class="n">which</span> <span class="nb">all</span> <span class="n">the</span> <span class="kn">import</span> <span class="nn">nodes</span>
+                                  <span class="n">will</span> <span class="n">be</span> <span class="n">added</span><span class="o">.</span> <span class="n">If</span> <span class="n">such</span> <span class="n">a</span> <span class="n">group</span> <span class="n">does</span> <span class="ow">not</span>
+                                  <span class="n">exist</span><span class="p">,</span> <span class="n">it</span> <span class="n">will</span> <span class="n">be</span> <span class="n">created</span> <span class="n">automatically</span><span class="o">.</span>
+
+  <span class="o">-</span><span class="n">e</span><span class="p">,</span> <span class="o">--</span><span class="n">extras</span><span class="o">-</span><span class="n">mode</span><span class="o">-</span><span class="n">existing</span> <span class="p">[</span><span class="n">keep_existing</span><span class="o">|</span><span class="n">update_existing</span><span class="o">|</span><span class="n">mirror</span><span class="o">|</span><span class="n">none</span><span class="o">|</span><span class="n">ask</span><span class="p">]</span>
+                                  <span class="n">Specify</span> <span class="n">which</span> <span class="n">extras</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">export</span> <span class="n">archive</span>
+                                  <span class="n">should</span> <span class="n">be</span> <span class="n">imported</span> <span class="k">for</span> <span class="n">nodes</span> <span class="n">that</span> <span class="n">are</span>
+                                  <span class="n">already</span> <span class="n">contained</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">database</span><span class="p">:</span> <span class="n">ask</span><span class="p">:</span>
+                                  <span class="kn">import</span> <span class="nn">all</span> <span class="n">extras</span> <span class="ow">and</span> <span class="n">prompt</span> <span class="n">what</span> <span class="n">to</span> <span class="n">do</span> <span class="k">for</span>
+                                  <span class="n">existing</span> <span class="n">extras</span><span class="o">.</span> <span class="n">keep_existing</span><span class="p">:</span> <span class="kn">import</span> <span class="nn">all</span>
+                                  <span class="n">extras</span> <span class="ow">and</span> <span class="n">keep</span> <span class="n">original</span> <span class="n">value</span> <span class="n">of</span> <span class="n">existing</span>
+                                  <span class="n">extras</span><span class="o">.</span> <span class="n">update_existing</span><span class="p">:</span> <span class="kn">import</span> <span class="nn">all</span> <span class="n">extras</span>
+                                  <span class="ow">and</span> <span class="n">overwrite</span> <span class="n">value</span> <span class="n">of</span> <span class="n">existing</span> <span class="n">extras</span><span class="o">.</span>
+                                  <span class="n">mirror</span><span class="p">:</span> <span class="kn">import</span> <span class="nn">all</span> <span class="n">extras</span> <span class="ow">and</span> <span class="n">remove</span> <span class="nb">any</span>
+                                  <span class="n">existing</span> <span class="n">extras</span> <span class="n">that</span> <span class="n">are</span> <span class="ow">not</span> <span class="n">present</span> <span class="ow">in</span> <span class="n">the</span>
+                                  <span class="n">archive</span><span class="o">.</span> <span class="n">none</span><span class="p">:</span> <span class="n">do</span> <span class="ow">not</span> <span class="kn">import</span> <span class="nn">any</span> <span class="n">extras</span><span class="o">.</span>
+
+  <span class="o">-</span><span class="n">n</span><span class="p">,</span> <span class="o">--</span><span class="n">extras</span><span class="o">-</span><span class="n">mode</span><span class="o">-</span><span class="n">new</span> <span class="p">[</span><span class="n">import</span><span class="o">|</span><span class="n">none</span><span class="p">]</span>
+                                  <span class="n">Specify</span> <span class="n">whether</span> <span class="n">to</span> <span class="kn">import</span> <span class="nn">extras</span> <span class="n">of</span> <span class="n">new</span>
+                                  <span class="n">nodes</span><span class="p">:</span> <span class="n">import</span><span class="p">:</span> <span class="kn">import</span> <span class="nn">extras.</span> <span class="n">none</span><span class="p">:</span> <span class="n">do</span> <span class="ow">not</span>
+                                  <span class="kn">import</span> <span class="nn">extras.</span>
+
+  <span class="o">--</span><span class="n">comment</span><span class="o">-</span><span class="n">mode</span> <span class="p">[</span><span class="n">newest</span><span class="o">|</span><span class="n">overwrite</span><span class="p">]</span>
+                                  <span class="n">Specify</span> <span class="n">the</span> <span class="n">way</span> <span class="n">to</span> <span class="kn">import</span> <span class="nn">Comments</span> <span class="k">with</span>
+                                  <span class="n">identical</span> <span class="n">UUIDs</span><span class="p">:</span> <span class="n">newest</span><span class="p">:</span> <span class="n">Only</span> <span class="n">the</span> <span class="n">newest</span>
+                                  <span class="n">Comments</span> <span class="p">(</span><span class="n">based</span> <span class="n">on</span> <span class="n">mtime</span><span class="p">)</span>
+                                  <span class="p">(</span><span class="n">default</span><span class="p">)</span><span class="o">.</span><span class="n">overwrite</span><span class="p">:</span> <span class="n">Replace</span> <span class="n">existing</span>
+                                  <span class="n">Comments</span> <span class="k">with</span> <span class="n">those</span> <span class="kn">from</span> <span class="nn">the</span> <span class="kn">import</span> <span class="n">file</span><span class="o">.</span>
+
+  <span class="o">--</span><span class="n">migration</span> <span class="o">/</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">migration</span>    <span class="n">Force</span> <span class="n">migration</span> <span class="n">of</span> <span class="n">export</span> <span class="n">file</span> <span class="n">archives</span><span class="p">,</span> <span class="k">if</span>
+                                  <span class="n">needed</span><span class="o">.</span>  <span class="p">[</span><span class="n">default</span><span class="p">:</span> <span class="kc">True</span><span class="p">]</span>
+
+  <span class="o">-</span><span class="n">n</span><span class="p">,</span> <span class="o">--</span><span class="n">non</span><span class="o">-</span><span class="n">interactive</span>           <span class="n">Non</span><span class="o">-</span><span class="n">interactive</span> <span class="n">mode</span><span class="p">:</span> <span class="n">never</span> <span class="n">prompt</span> <span class="k">for</span>
+                                  <span class="nb">input</span><span class="o">.</span>
+
+  <span class="o">--</span><span class="n">help</span>                          <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-node">
+<span id="id16"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">node</span></code><a class="headerlink" href="#verdi-node" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>  <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="n">COMMAND</span> <span class="p">[</span><span class="n">ARGS</span><span class="p">]</span><span class="o">...</span>
+
+  <span class="n">Inspect</span><span class="p">,</span> <span class="n">create</span> <span class="ow">and</span> <span class="n">manage</span> <span class="n">nodes</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">help</span>  <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+
+<span class="n">Commands</span><span class="p">:</span>
+  <span class="n">attributes</span>   <span class="n">Show</span> <span class="n">the</span> <span class="n">attributes</span> <span class="n">of</span> <span class="n">one</span> <span class="ow">or</span> <span class="n">more</span> <span class="n">nodes</span><span class="o">.</span>
+  <span class="n">comment</span>      <span class="n">Inspect</span><span class="p">,</span> <span class="n">create</span> <span class="ow">and</span> <span class="n">manage</span> <span class="n">node</span> <span class="n">comments</span><span class="o">.</span>
+  <span class="n">delete</span>       <span class="n">Delete</span> <span class="n">nodes</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">provenance</span> <span class="n">graph</span><span class="o">.</span>
+  <span class="n">description</span>  <span class="n">View</span> <span class="ow">or</span> <span class="nb">set</span> <span class="n">the</span> <span class="n">description</span> <span class="n">of</span> <span class="n">one</span> <span class="ow">or</span> <span class="n">more</span> <span class="n">nodes</span><span class="o">.</span>
+  <span class="n">extras</span>       <span class="n">Show</span> <span class="n">the</span> <span class="n">extras</span> <span class="n">of</span> <span class="n">one</span> <span class="ow">or</span> <span class="n">more</span> <span class="n">nodes</span><span class="o">.</span>
+  <span class="n">graph</span>        <span class="n">Create</span> <span class="n">visual</span> <span class="n">representations</span> <span class="n">of</span> <span class="n">the</span> <span class="n">provenance</span> <span class="n">graph</span><span class="o">.</span>
+  <span class="n">label</span>        <span class="n">View</span> <span class="ow">or</span> <span class="nb">set</span> <span class="n">the</span> <span class="n">label</span> <span class="n">of</span> <span class="n">one</span> <span class="ow">or</span> <span class="n">more</span> <span class="n">nodes</span><span class="o">.</span>
+  <span class="n">rehash</span>       <span class="n">Recompute</span> <span class="n">the</span> <span class="nb">hash</span> <span class="k">for</span> <span class="n">nodes</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">database</span><span class="o">.</span>
+  <span class="n">repo</span>         <span class="n">Inspect</span> <span class="n">the</span> <span class="n">content</span> <span class="n">of</span> <span class="n">a</span> <span class="n">node</span> <span class="n">repository</span> <span class="n">folder</span><span class="o">.</span>
+  <span class="n">show</span>         <span class="n">Show</span> <span class="n">generic</span> <span class="n">information</span> <span class="n">on</span> <span class="n">one</span> <span class="ow">or</span> <span class="n">more</span> <span class="n">nodes</span><span class="o">.</span>
+  <span class="n">tree</span>         <span class="n">Show</span> <span class="n">a</span> <span class="n">tree</span> <span class="n">of</span> <span class="n">nodes</span> <span class="n">starting</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">given</span> <span class="n">node</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-plugin">
+<span id="id17"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">plugin</span></code><a class="headerlink" href="#verdi-plugin" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>  <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="n">COMMAND</span> <span class="p">[</span><span class="n">ARGS</span><span class="p">]</span><span class="o">...</span>
+
+  <span class="n">Inspect</span> <span class="n">AiiDA</span> <span class="n">plugins</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">help</span>  <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+
+<span class="n">Commands</span><span class="p">:</span>
+  <span class="nb">list</span>  <span class="n">Display</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">available</span> <span class="n">plugins</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-process">
+<span id="id18"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">process</span></code><a class="headerlink" href="#verdi-process" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>  <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="n">COMMAND</span> <span class="p">[</span><span class="n">ARGS</span><span class="p">]</span><span class="o">...</span>
+
+  <span class="n">Inspect</span> <span class="ow">and</span> <span class="n">manage</span> <span class="n">processes</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">help</span>  <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+
+<span class="n">Commands</span><span class="p">:</span>
+  <span class="n">call</span><span class="o">-</span><span class="n">root</span>  <span class="n">Show</span> <span class="n">root</span> <span class="n">process</span> <span class="n">of</span> <span class="n">the</span> <span class="n">call</span> <span class="n">stack</span> <span class="k">for</span> <span class="n">the</span> <span class="n">given</span> <span class="n">processes</span><span class="o">.</span>
+  <span class="n">kill</span>       <span class="n">Kill</span> <span class="n">running</span> <span class="n">processes</span><span class="o">.</span>
+  <span class="nb">list</span>       <span class="n">Show</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">running</span> <span class="ow">or</span> <span class="n">terminated</span> <span class="n">processes</span><span class="o">.</span>
+  <span class="n">pause</span>      <span class="n">Pause</span> <span class="n">running</span> <span class="n">processes</span><span class="o">.</span>
+  <span class="n">play</span>       <span class="n">Play</span> <span class="p">(</span><span class="n">unpause</span><span class="p">)</span> <span class="n">paused</span> <span class="n">processes</span><span class="o">.</span>
+  <span class="n">report</span>     <span class="n">Show</span> <span class="n">the</span> <span class="n">log</span> <span class="n">report</span> <span class="k">for</span> <span class="n">one</span> <span class="ow">or</span> <span class="n">multiple</span> <span class="n">processes</span><span class="o">.</span>
+  <span class="n">show</span>       <span class="n">Show</span> <span class="n">details</span> <span class="k">for</span> <span class="n">one</span> <span class="ow">or</span> <span class="n">multiple</span> <span class="n">processes</span><span class="o">.</span>
+  <span class="n">status</span>     <span class="n">Print</span> <span class="n">the</span> <span class="n">status</span> <span class="n">of</span> <span class="n">one</span> <span class="ow">or</span> <span class="n">multiple</span> <span class="n">processes</span><span class="o">.</span>
+  <span class="n">watch</span>      <span class="n">Watch</span> <span class="n">the</span> <span class="n">state</span> <span class="n">transitions</span> <span class="k">for</span> <span class="n">a</span> <span class="n">process</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-profile">
+<span id="id19"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">profile</span></code><a class="headerlink" href="#verdi-profile" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>  <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="n">COMMAND</span> <span class="p">[</span><span class="n">ARGS</span><span class="p">]</span><span class="o">...</span>
+
+  <span class="n">Inspect</span> <span class="ow">and</span> <span class="n">manage</span> <span class="n">the</span> <span class="n">configured</span> <span class="n">profiles</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">help</span>  <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+
+<span class="n">Commands</span><span class="p">:</span>
+  <span class="n">delete</span>      <span class="n">Delete</span> <span class="n">one</span> <span class="ow">or</span> <span class="n">more</span> <span class="n">profiles</span><span class="o">.</span>
+  <span class="nb">list</span>        <span class="n">Display</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">available</span> <span class="n">profiles</span><span class="o">.</span>
+  <span class="n">setdefault</span>  <span class="n">Set</span> <span class="n">a</span> <span class="n">profile</span> <span class="k">as</span> <span class="n">the</span> <span class="n">default</span> <span class="n">one</span><span class="o">.</span>
+  <span class="n">show</span>        <span class="n">Show</span> <span class="n">details</span> <span class="k">for</span> <span class="n">a</span> <span class="n">profile</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-quicksetup">
+<span id="id20"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">quicksetup</span></code><a class="headerlink" href="#verdi-quicksetup" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>  <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span>
+
+  <span class="n">Setup</span> <span class="n">a</span> <span class="n">new</span> <span class="n">profile</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">fully</span> <span class="n">automated</span> <span class="n">fashion</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">n</span><span class="p">,</span> <span class="o">--</span><span class="n">non</span><span class="o">-</span><span class="n">interactive</span>           <span class="n">Non</span><span class="o">-</span><span class="n">interactive</span> <span class="n">mode</span><span class="p">:</span> <span class="n">never</span> <span class="n">prompt</span> <span class="k">for</span>
+                                  <span class="nb">input</span><span class="o">.</span>
+
+  <span class="o">--</span><span class="n">profile</span> <span class="n">PROFILE</span>               <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">new</span> <span class="n">profile</span><span class="o">.</span>  <span class="p">[</span><span class="n">required</span><span class="p">]</span>
+  <span class="o">--</span><span class="n">email</span> <span class="n">EMAIL</span>                   <span class="n">Email</span> <span class="n">address</span> <span class="n">associated</span> <span class="k">with</span> <span class="n">the</span> <span class="n">data</span> <span class="n">you</span>
+                                  <span class="n">generate</span><span class="o">.</span> <span class="n">The</span> <span class="n">email</span> <span class="n">address</span> <span class="ow">is</span> <span class="n">exported</span>
+                                  <span class="n">along</span> <span class="k">with</span> <span class="n">the</span> <span class="n">data</span><span class="p">,</span> <span class="n">when</span> <span class="n">sharing</span> <span class="n">it</span><span class="o">.</span>
+                                  <span class="p">[</span><span class="n">required</span><span class="p">]</span>
+
+  <span class="o">--</span><span class="n">first</span><span class="o">-</span><span class="n">name</span> <span class="n">NONEMPTYSTRING</span>     <span class="n">First</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">user</span><span class="o">.</span>  <span class="p">[</span><span class="n">required</span><span class="p">]</span>
+  <span class="o">--</span><span class="n">last</span><span class="o">-</span><span class="n">name</span> <span class="n">NONEMPTYSTRING</span>      <span class="n">Last</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">user</span><span class="o">.</span>  <span class="p">[</span><span class="n">required</span><span class="p">]</span>
+  <span class="o">--</span><span class="n">institution</span> <span class="n">NONEMPTYSTRING</span>    <span class="n">Institution</span> <span class="n">of</span> <span class="n">the</span> <span class="n">user</span><span class="o">.</span>  <span class="p">[</span><span class="n">required</span><span class="p">]</span>
+  <span class="o">--</span><span class="n">db</span><span class="o">-</span><span class="n">engine</span> <span class="p">[</span><span class="n">postgresql_psycopg2</span><span class="p">]</span>
+                                  <span class="n">Engine</span> <span class="n">to</span> <span class="n">use</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">to</span> <span class="n">the</span> <span class="n">database</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">db</span><span class="o">-</span><span class="n">backend</span> <span class="p">[</span><span class="n">django</span><span class="o">|</span><span class="n">sqlalchemy</span><span class="p">]</span>
+                                  <span class="n">Database</span> <span class="n">backend</span> <span class="n">to</span> <span class="n">use</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">db</span><span class="o">-</span><span class="n">host</span> <span class="n">HOSTNAME</span>              <span class="n">Database</span> <span class="n">server</span> <span class="n">host</span><span class="o">.</span> <span class="n">Leave</span> <span class="n">empty</span> <span class="k">for</span> <span class="s2">&quot;peer&quot;</span>
+                                  <span class="n">authentication</span><span class="o">.</span>
+
+  <span class="o">--</span><span class="n">db</span><span class="o">-</span><span class="n">port</span> <span class="n">INTEGER</span>               <span class="n">Database</span> <span class="n">server</span> <span class="n">port</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">db</span><span class="o">-</span><span class="n">name</span> <span class="n">NONEMPTYSTRING</span>        <span class="n">Name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">database</span> <span class="n">to</span> <span class="n">create</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">db</span><span class="o">-</span><span class="n">username</span> <span class="n">NONEMPTYSTRING</span>    <span class="n">Name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">database</span> <span class="n">user</span> <span class="n">to</span> <span class="n">create</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">db</span><span class="o">-</span><span class="n">password</span> <span class="n">TEXT</span>              <span class="n">Password</span> <span class="n">of</span> <span class="n">the</span> <span class="n">database</span> <span class="n">user</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">su</span><span class="o">-</span><span class="n">db</span><span class="o">-</span><span class="n">name</span> <span class="n">TEXT</span>               <span class="n">Name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">template</span> <span class="n">database</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">to</span>
+                                  <span class="k">as</span> <span class="n">the</span> <span class="n">database</span> <span class="n">superuser</span><span class="o">.</span>
+
+  <span class="o">--</span><span class="n">su</span><span class="o">-</span><span class="n">db</span><span class="o">-</span><span class="n">username</span> <span class="n">TEXT</span>           <span class="n">User</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">database</span> <span class="nb">super</span> <span class="n">user</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">su</span><span class="o">-</span><span class="n">db</span><span class="o">-</span><span class="n">password</span> <span class="n">TEXT</span>           <span class="n">Password</span> <span class="n">to</span> <span class="n">connect</span> <span class="k">as</span> <span class="n">the</span> <span class="n">database</span>
+                                  <span class="n">superuser</span><span class="o">.</span>
+
+  <span class="o">--</span><span class="n">repository</span> <span class="n">DIRECTORY</span>          <span class="n">Absolute</span> <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">file</span> <span class="n">repository</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">config</span> <span class="n">FILE</span>                   <span class="n">Load</span> <span class="n">option</span> <span class="n">values</span> <span class="kn">from</span> <span class="nn">configuration</span> <span class="n">file</span>
+                                  <span class="ow">in</span> <span class="n">yaml</span> <span class="nb">format</span><span class="o">.</span>
+
+  <span class="o">--</span><span class="n">help</span>                          <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-rehash">
+<span id="id21"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">rehash</span></code><a class="headerlink" href="#verdi-rehash" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>  <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="p">[</span><span class="n">NODES</span><span class="p">]</span><span class="o">...</span>
+
+  <span class="n">Recompute</span> <span class="n">the</span> <span class="nb">hash</span> <span class="k">for</span> <span class="n">nodes</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">database</span><span class="o">.</span>
+
+  <span class="n">The</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">nodes</span> <span class="n">that</span> <span class="n">will</span> <span class="n">be</span> <span class="n">rehashed</span> <span class="n">can</span> <span class="n">be</span> <span class="n">filtered</span> <span class="n">by</span> <span class="n">their</span> <span class="n">identifier</span>
+  <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="n">based</span> <span class="n">on</span> <span class="n">their</span> <span class="n">class</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">e</span><span class="p">,</span> <span class="o">--</span><span class="n">entry</span><span class="o">-</span><span class="n">point</span> <span class="n">PLUGIN</span>  <span class="n">Only</span> <span class="n">include</span> <span class="n">nodes</span> <span class="n">that</span> <span class="n">are</span> <span class="k">class</span> <span class="nc">or</span> <span class="n">sub</span> <span class="k">class</span> <span class="nc">of</span>
+                            <span class="n">the</span> <span class="k">class</span> <span class="nc">identified</span> <span class="n">by</span> <span class="n">this</span> <span class="n">entry</span> <span class="n">point</span><span class="o">.</span>
+
+  <span class="o">-</span><span class="n">f</span><span class="p">,</span> <span class="o">--</span><span class="n">force</span>               <span class="n">Do</span> <span class="ow">not</span> <span class="n">ask</span> <span class="k">for</span> <span class="n">confirmation</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">help</span>                    <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-restapi">
+<span id="id22"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">restapi</span></code><a class="headerlink" href="#verdi-restapi" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>  <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span>
+
+  <span class="n">Run</span> <span class="n">the</span> <span class="n">AiiDA</span> <span class="n">REST</span> <span class="n">API</span> <span class="n">server</span><span class="o">.</span>
+
+  <span class="n">Example</span> <span class="n">Usage</span><span class="p">:</span>
+
+      <span class="n">verdi</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">profile_name</span><span class="o">&gt;</span> <span class="n">restapi</span> <span class="o">--</span><span class="n">hostname</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.5</span> <span class="o">--</span><span class="n">port</span> <span class="mi">6789</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">H</span><span class="p">,</span> <span class="o">--</span><span class="n">hostname</span> <span class="n">HOSTNAME</span>  <span class="n">Hostname</span><span class="o">.</span>
+  <span class="o">-</span><span class="n">P</span><span class="p">,</span> <span class="o">--</span><span class="n">port</span> <span class="n">INTEGER</span>       <span class="n">Port</span> <span class="n">number</span><span class="o">.</span>
+  <span class="o">-</span><span class="n">c</span><span class="p">,</span> <span class="o">--</span><span class="n">config</span><span class="o">-</span><span class="nb">dir</span> <span class="n">PATH</span>    <span class="n">Path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">configuration</span> <span class="n">directory</span>
+  <span class="o">--</span><span class="n">debug</span>                  <span class="n">Enable</span> <span class="n">debugging</span>
+  <span class="o">--</span><span class="n">wsgi</span><span class="o">-</span><span class="n">profile</span>           <span class="n">Whether</span> <span class="n">to</span> <span class="n">enable</span> <span class="n">WSGI</span> <span class="n">profiler</span> <span class="n">middleware</span> <span class="k">for</span>
+                           <span class="n">finding</span> <span class="n">bottlenecks</span>
+
+  <span class="o">--</span><span class="n">hookup</span> <span class="o">/</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">hookup</span>   <span class="n">Hookup</span> <span class="n">app</span> <span class="n">to</span> <span class="n">flask</span> <span class="n">server</span>
+  <span class="o">--</span><span class="n">help</span>                   <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-run">
+<span id="id23"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">run</span></code><a class="headerlink" href="#verdi-run" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>  <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="p">]</span> <span class="n">SCRIPTNAME</span> <span class="p">[</span><span class="n">VARARGS</span><span class="p">]</span><span class="o">...</span>
+
+  <span class="n">Execute</span> <span class="n">scripts</span> <span class="k">with</span> <span class="n">preloaded</span> <span class="n">AiiDA</span> <span class="n">environment</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">auto</span><span class="o">-</span><span class="n">group</span>                    <span class="n">Enables</span> <span class="n">the</span> <span class="n">autogrouping</span>
+  <span class="o">-</span><span class="n">l</span><span class="p">,</span> <span class="o">--</span><span class="n">auto</span><span class="o">-</span><span class="n">group</span><span class="o">-</span><span class="n">label</span><span class="o">-</span><span class="n">prefix</span> <span class="n">TEXT</span>
+                                  <span class="n">Specify</span> <span class="n">the</span> <span class="n">prefix</span> <span class="n">of</span> <span class="n">the</span> <span class="n">label</span> <span class="n">of</span> <span class="n">the</span> <span class="n">auto</span>
+                                  <span class="n">group</span> <span class="p">(</span><span class="n">numbers</span> <span class="n">might</span> <span class="n">be</span> <span class="n">automatically</span>
+                                  <span class="n">appended</span> <span class="n">to</span> <span class="n">generate</span> <span class="n">unique</span> <span class="n">names</span> <span class="n">per</span> <span class="n">run</span><span class="p">)</span><span class="o">.</span>
+
+  <span class="o">-</span><span class="n">n</span><span class="p">,</span> <span class="o">--</span><span class="n">group</span><span class="o">-</span><span class="n">name</span> <span class="n">TEXT</span>           <span class="n">Specify</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">auto</span> <span class="n">group</span>
+                                  <span class="p">[</span><span class="n">DEPRECATED</span><span class="p">,</span> <span class="n">USE</span> <span class="o">--</span><span class="n">auto</span><span class="o">-</span><span class="n">group</span><span class="o">-</span><span class="n">label</span><span class="o">-</span><span class="n">prefix</span>
+                                  <span class="n">instead</span><span class="p">]</span><span class="o">.</span> <span class="n">This</span> <span class="n">also</span> <span class="n">enables</span> <span class="n">auto</span><span class="o">-</span><span class="n">grouping</span><span class="o">.</span>
+
+  <span class="o">-</span><span class="n">e</span><span class="p">,</span> <span class="o">--</span><span class="n">exclude</span> <span class="n">TEXT</span>              <span class="n">Exclude</span> <span class="n">these</span> <span class="n">classes</span> <span class="kn">from</span> <span class="nn">auto</span> <span class="n">grouping</span>
+                                  <span class="p">(</span><span class="n">use</span> <span class="n">full</span> <span class="n">entrypoint</span> <span class="n">strings</span><span class="p">)</span><span class="o">.</span>
+
+  <span class="o">-</span><span class="n">i</span><span class="p">,</span> <span class="o">--</span><span class="n">include</span> <span class="n">TEXT</span>              <span class="n">Include</span> <span class="n">these</span> <span class="n">classes</span> <span class="kn">from</span> <span class="nn">auto</span> <span class="n">grouping</span>
+                                  <span class="p">(</span><span class="n">use</span> <span class="n">full</span> <span class="n">entrypoint</span> <span class="n">strings</span> <span class="ow">or</span> <span class="s2">&quot;all&quot;</span><span class="p">)</span><span class="o">.</span>
+
+  <span class="o">--</span><span class="n">help</span>                          <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-setup">
+<span id="id24"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">setup</span></code><a class="headerlink" href="#verdi-setup" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>  <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span>
+
+  <span class="n">Setup</span> <span class="n">a</span> <span class="n">new</span> <span class="n">profile</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">n</span><span class="p">,</span> <span class="o">--</span><span class="n">non</span><span class="o">-</span><span class="n">interactive</span>           <span class="n">Non</span><span class="o">-</span><span class="n">interactive</span> <span class="n">mode</span><span class="p">:</span> <span class="n">never</span> <span class="n">prompt</span> <span class="k">for</span>
+                                  <span class="nb">input</span><span class="o">.</span>
+
+  <span class="o">--</span><span class="n">profile</span> <span class="n">PROFILE</span>               <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">new</span> <span class="n">profile</span><span class="o">.</span>  <span class="p">[</span><span class="n">required</span><span class="p">]</span>
+  <span class="o">--</span><span class="n">email</span> <span class="n">EMAIL</span>                   <span class="n">Email</span> <span class="n">address</span> <span class="n">associated</span> <span class="k">with</span> <span class="n">the</span> <span class="n">data</span> <span class="n">you</span>
+                                  <span class="n">generate</span><span class="o">.</span> <span class="n">The</span> <span class="n">email</span> <span class="n">address</span> <span class="ow">is</span> <span class="n">exported</span>
+                                  <span class="n">along</span> <span class="k">with</span> <span class="n">the</span> <span class="n">data</span><span class="p">,</span> <span class="n">when</span> <span class="n">sharing</span> <span class="n">it</span><span class="o">.</span>
+                                  <span class="p">[</span><span class="n">required</span><span class="p">]</span>
+
+  <span class="o">--</span><span class="n">first</span><span class="o">-</span><span class="n">name</span> <span class="n">NONEMPTYSTRING</span>     <span class="n">First</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">user</span><span class="o">.</span>  <span class="p">[</span><span class="n">required</span><span class="p">]</span>
+  <span class="o">--</span><span class="n">last</span><span class="o">-</span><span class="n">name</span> <span class="n">NONEMPTYSTRING</span>      <span class="n">Last</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">user</span><span class="o">.</span>  <span class="p">[</span><span class="n">required</span><span class="p">]</span>
+  <span class="o">--</span><span class="n">institution</span> <span class="n">NONEMPTYSTRING</span>    <span class="n">Institution</span> <span class="n">of</span> <span class="n">the</span> <span class="n">user</span><span class="o">.</span>  <span class="p">[</span><span class="n">required</span><span class="p">]</span>
+  <span class="o">--</span><span class="n">db</span><span class="o">-</span><span class="n">engine</span> <span class="p">[</span><span class="n">postgresql_psycopg2</span><span class="p">]</span>
+                                  <span class="n">Engine</span> <span class="n">to</span> <span class="n">use</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">to</span> <span class="n">the</span> <span class="n">database</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">db</span><span class="o">-</span><span class="n">backend</span> <span class="p">[</span><span class="n">django</span><span class="o">|</span><span class="n">sqlalchemy</span><span class="p">]</span>
+                                  <span class="n">Database</span> <span class="n">backend</span> <span class="n">to</span> <span class="n">use</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">db</span><span class="o">-</span><span class="n">host</span> <span class="n">HOSTNAME</span>              <span class="n">Database</span> <span class="n">server</span> <span class="n">host</span><span class="o">.</span> <span class="n">Leave</span> <span class="n">empty</span> <span class="k">for</span> <span class="s2">&quot;peer&quot;</span>
+                                  <span class="n">authentication</span><span class="o">.</span>
+
+  <span class="o">--</span><span class="n">db</span><span class="o">-</span><span class="n">port</span> <span class="n">INTEGER</span>               <span class="n">Database</span> <span class="n">server</span> <span class="n">port</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">db</span><span class="o">-</span><span class="n">name</span> <span class="n">NONEMPTYSTRING</span>        <span class="n">Name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">database</span> <span class="n">to</span> <span class="n">create</span><span class="o">.</span>  <span class="p">[</span><span class="n">required</span><span class="p">]</span>
+  <span class="o">--</span><span class="n">db</span><span class="o">-</span><span class="n">username</span> <span class="n">NONEMPTYSTRING</span>    <span class="n">Name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">database</span> <span class="n">user</span> <span class="n">to</span> <span class="n">create</span><span class="o">.</span>
+                                  <span class="p">[</span><span class="n">required</span><span class="p">]</span>
+
+  <span class="o">--</span><span class="n">db</span><span class="o">-</span><span class="n">password</span> <span class="n">TEXT</span>              <span class="n">Password</span> <span class="n">of</span> <span class="n">the</span> <span class="n">database</span> <span class="n">user</span><span class="o">.</span>  <span class="p">[</span><span class="n">required</span><span class="p">]</span>
+  <span class="o">--</span><span class="n">repository</span> <span class="n">DIRECTORY</span>          <span class="n">Absolute</span> <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">file</span> <span class="n">repository</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">config</span> <span class="n">FILE</span>                   <span class="n">Load</span> <span class="n">option</span> <span class="n">values</span> <span class="kn">from</span> <span class="nn">configuration</span> <span class="n">file</span>
+                                  <span class="ow">in</span> <span class="n">yaml</span> <span class="nb">format</span><span class="o">.</span>
+
+  <span class="o">--</span><span class="n">help</span>                          <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-shell">
+<span id="id25"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">shell</span></code><a class="headerlink" href="#verdi-shell" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>  <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span>
+
+  <span class="n">Start</span> <span class="n">a</span> <span class="n">python</span> <span class="n">shell</span> <span class="k">with</span> <span class="n">preloaded</span> <span class="n">AiiDA</span> <span class="n">environment</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">plain</span>                         <span class="n">Use</span> <span class="n">a</span> <span class="n">plain</span> <span class="n">Python</span> <span class="n">shell</span><span class="o">.</span><span class="p">)</span>
+  <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">startup</span>                    <span class="n">When</span> <span class="n">using</span> <span class="n">plain</span> <span class="n">Python</span><span class="p">,</span> <span class="n">ignore</span> <span class="n">the</span>
+                                  <span class="n">PYTHONSTARTUP</span> <span class="n">environment</span> <span class="n">variable</span> <span class="ow">and</span>
+                                  <span class="o">~/.</span><span class="n">pythonrc</span><span class="o">.</span><span class="n">py</span> <span class="n">script</span><span class="o">.</span>
+
+  <span class="o">-</span><span class="n">i</span><span class="p">,</span> <span class="o">--</span><span class="n">interface</span> <span class="p">[</span><span class="n">ipython</span><span class="o">|</span><span class="n">bpython</span><span class="p">]</span>
+                                  <span class="n">Specify</span> <span class="n">an</span> <span class="n">interactive</span> <span class="n">interpreter</span>
+                                  <span class="n">interface</span><span class="o">.</span>
+
+  <span class="o">--</span><span class="n">help</span>                          <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-status">
+<span id="id26"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">status</span></code><a class="headerlink" href="#verdi-status" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>  <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span>
+
+  <span class="n">Print</span> <span class="n">status</span> <span class="n">of</span> <span class="n">AiiDA</span> <span class="n">services</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">help</span>  <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdi-user">
+<span id="id27"></span><h2><code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">user</span></code><a class="headerlink" href="#verdi-user" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>  <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="n">COMMAND</span> <span class="p">[</span><span class="n">ARGS</span><span class="p">]</span><span class="o">...</span>
+
+  <span class="n">Inspect</span> <span class="ow">and</span> <span class="n">manage</span> <span class="n">users</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">help</span>  <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+
+<span class="n">Commands</span><span class="p">:</span>
+  <span class="n">configure</span>    <span class="n">Configure</span> <span class="n">a</span> <span class="n">new</span> <span class="ow">or</span> <span class="n">existing</span> <span class="n">user</span><span class="o">.</span>
+  <span class="nb">list</span>         <span class="n">Show</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">users</span><span class="o">.</span>
+  <span class="nb">set</span><span class="o">-</span><span class="n">default</span>  <span class="n">Set</span> <span class="n">a</span> <span class="n">user</span> <span class="k">as</span> <span class="n">the</span> <span class="n">default</span> <span class="n">user</span> <span class="k">for</span> <span class="n">the</span> <span class="n">profile</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,648 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.backends.djsite.db.models &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/language_data.js"></script>
+        <script src="../../../../../_static/togglebutton.js"></script>
+        <script src="../../../../../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../../aiida.html">aiida</a> &raquo;</li>
+        
+          <li><a href="../../../backends.html">aiida.backends</a> &raquo;</li>
+        
+          <li><a href="../../djsite.html">aiida.backends.djsite</a> &raquo;</li>
+        
+      <li>aiida.backends.djsite.db.models</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for aiida.backends.djsite.db.models</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1">###########################################################################</span>
+<span class="c1"># Copyright (c), The AiiDA team. All rights reserved.                     #</span>
+<span class="c1"># This file is part of the AiiDA code.                                    #</span>
+<span class="c1">#                                                                         #</span>
+<span class="c1"># The code is hosted on GitHub at https://github.com/aiidateam/aiida-core #</span>
+<span class="c1"># For further information on the license, see the LICENSE.txt file        #</span>
+<span class="c1"># For further information please visit http://www.aiida.net               #</span>
+<span class="c1">###########################################################################</span>
+<span class="c1"># pylint: disable=import-error,no-name-in-module</span>
+<span class="sd">&quot;&quot;&quot;Module that defines db models.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">contextlib</span>
+
+<span class="kn">from</span> <span class="nn">django.contrib.postgres.fields</span> <span class="kn">import</span> <span class="n">JSONField</span>
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span> <span class="k">as</span> <span class="n">m</span>
+<span class="kn">from</span> <span class="nn">django.db.models.query</span> <span class="kn">import</span> <span class="n">QuerySet</span>
+<span class="kn">from</span> <span class="nn">pytz</span> <span class="kn">import</span> <span class="n">UTC</span>
+
+<span class="kn">import</span> <span class="nn">aiida.backends.djsite.db.migrations</span> <span class="k">as</span> <span class="nn">migrations</span>
+<span class="kn">from</span> <span class="nn">aiida.common</span> <span class="kn">import</span> <span class="n">timezone</span>
+<span class="kn">from</span> <span class="nn">aiida.common.utils</span> <span class="kn">import</span> <span class="n">get_new_uuid</span>
+
+<span class="c1"># This variable identifies the schema version of this file.</span>
+<span class="c1"># Every time you change the schema below in *ANY* way, REMEMBER TO CHANGE</span>
+<span class="c1"># the version here in the migration file and update migrations/__init__.py.</span>
+<span class="c1"># See the documentation for how to do all this.</span>
+<span class="c1">#</span>
+<span class="c1"># The version is checked at code load time to verify that the code schema</span>
+<span class="c1"># version and the DB schema version are the same. (The DB schema version</span>
+<span class="c1"># is stored in the DbSetting table and the check is done in the</span>
+<span class="c1"># load_dbenv() function).</span>
+<span class="n">SCHEMA_VERSION</span> <span class="o">=</span> <span class="n">migrations</span><span class="o">.</span><span class="n">current_schema_version</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="AiidaQuerySet"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.AiidaQuerySet">[docs]</a><span class="k">class</span> <span class="nc">AiidaQuerySet</span><span class="p">(</span><span class="n">QuerySet</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Represent a lazy database lookup for a set of objects.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AiidaQuerySet.iterator"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.AiidaQuerySet.iterator">[docs]</a>    <span class="k">def</span> <span class="nf">iterator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">2000</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">aiida.orm.implementation.django</span> <span class="kn">import</span> <span class="n">convert</span>
+        <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">iterator</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="n">chunk_size</span><span class="p">):</span>
+            <span class="k">yield</span> <span class="n">convert</span><span class="o">.</span><span class="n">get_backend_entity</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AiidaQuerySet.__iter__"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.AiidaQuerySet.__iter__">[docs]</a>    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Iterate for list comprehensions.</span>
+
+<span class="sd">        Note: used to rely on the iterator in django 1.8 but does no longer in django 1.11.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">aiida.orm.implementation.django</span> <span class="kn">import</span> <span class="n">convert</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">convert</span><span class="o">.</span><span class="n">get_backend_entity</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__iter__</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="AiidaQuerySet.__getitem__"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.AiidaQuerySet.__getitem__">[docs]</a>    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get item for [] operator</span>
+
+<span class="sd">        Note: used to rely on the iterator in django 1.8 but does no longer in django 1.11.&quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">aiida.orm.implementation.django</span> <span class="kn">import</span> <span class="n">convert</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">convert</span><span class="o">.</span><span class="n">get_backend_entity</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="AiidaObjectManager"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.AiidaObjectManager">[docs]</a><span class="k">class</span> <span class="nc">AiidaObjectManager</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">Manager</span><span class="p">):</span>
+
+<div class="viewcode-block" id="AiidaObjectManager.get_queryset"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.AiidaObjectManager.get_queryset">[docs]</a>    <span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">AiidaQuerySet</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">using</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="DbUser"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.DbUser">[docs]</a><span class="k">class</span> <span class="nc">DbUser</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>  <span class="c1"># pylint: disable=too-few-public-methods</span>
+    <span class="sd">&quot;&quot;&quot;Class that represents a user as the owner of a specific Node.&quot;&quot;&quot;</span>
+
+    <span class="n">is_anonymous</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">is_authenticated</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="n">USERNAME_FIELD</span> <span class="o">=</span> <span class="s1">&#39;email&#39;</span>
+    <span class="n">REQUIRED_FIELDS</span> <span class="o">=</span> <span class="p">()</span>
+
+    <span class="c1"># Set unique email field</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">EmailField</span><span class="p">(</span><span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">db_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">first_name</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">254</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">last_name</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">254</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">institution</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">254</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="DbNode"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.DbNode">[docs]</a><span class="k">class</span> <span class="nc">DbNode</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Generic node: data or calculation or code.</span>
+
+<span class="sd">    Nodes can be linked (DbLink table)</span>
+<span class="sd">    Naming convention for Node relationships: A --&gt; C --&gt; B.</span>
+
+<span class="sd">    * A is &#39;input&#39; of C.</span>
+<span class="sd">    * C is &#39;output&#39; of A.</span>
+
+<span class="sd">    Internal attributes, that define the node itself,</span>
+<span class="sd">    are stored in the DbAttribute table; further user-defined attributes,</span>
+<span class="sd">    called &#39;extra&#39;, are stored in the DbExtra table (same schema and methods</span>
+<span class="sd">    of the DbAttribute table, but the code does not rely on the content of the</span>
+<span class="sd">    table, therefore the user can use it at his will to tag or annotate nodes.</span>
+
+<span class="sd">    :note: Attributes in the DbAttribute table have to be thought as belonging</span>
+<span class="sd">       to the DbNode, (this is the reason for which there is no &#39;user&#39; field</span>
+<span class="sd">       in the DbAttribute field). Moreover, Attributes define uniquely the</span>
+<span class="sd">       Node so should be immutable.&quot;&quot;&quot;</span>
+
+    <span class="n">uuid</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">UUIDField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="n">get_new_uuid</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># in the form data.upffile., data.structure., calculation., ...</span>
+    <span class="c1"># Note that there is always a final dot, to allow to do queries of the</span>
+    <span class="c1"># type (node_type__startswith=&quot;calculation.&quot;) and avoid problems with classes</span>
+    <span class="c1"># starting with the same string</span>
+    <span class="c1"># max_length required for index by MySql</span>
+    <span class="n">node_type</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">,</span> <span class="n">db_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">process_type</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">,</span> <span class="n">db_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">,</span> <span class="n">db_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># creation time</span>
+    <span class="n">ctime</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">,</span> <span class="n">db_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">editable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">mtime</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">db_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">editable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="c1"># Cannot delete a user if something is associated to it</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">DbUser</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">m</span><span class="o">.</span><span class="n">PROTECT</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;dbnodes&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Direct links</span>
+    <span class="n">outputs</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">ManyToManyField</span><span class="p">(</span><span class="s1">&#39;self&#39;</span><span class="p">,</span> <span class="n">symmetrical</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;inputs&#39;</span><span class="p">,</span> <span class="n">through</span><span class="o">=</span><span class="s1">&#39;DbLink&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Used only if dbnode is a calculation, or remotedata</span>
+    <span class="c1"># Avoid that computers can be deleted if at least a node exists pointing</span>
+    <span class="c1"># to it.</span>
+    <span class="n">dbcomputer</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s1">&#39;DbComputer&#39;</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">m</span><span class="o">.</span><span class="n">PROTECT</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;dbnodes&#39;</span><span class="p">)</span>
+
+    <span class="c1"># JSON Attributes</span>
+    <span class="n">attributes</span> <span class="o">=</span> <span class="n">JSONField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="nb">dict</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># JSON Extras</span>
+    <span class="n">extras</span> <span class="o">=</span> <span class="n">JSONField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="nb">dict</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">objects</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">Manager</span><span class="p">()</span>
+    <span class="c1"># Return aiida Node instances or their subclasses instead of DbNode instances</span>
+    <span class="n">aiidaobjects</span> <span class="o">=</span> <span class="n">AiidaObjectManager</span><span class="p">()</span>
+
+<div class="viewcode-block" id="DbNode.get_simple_name"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.DbNode.get_simple_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_simple_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">invalid_result</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return a string with the last part of the type name.</span>
+
+<span class="sd">        If the type is empty, use &#39;Node&#39;.</span>
+<span class="sd">        If the type is invalid, return the content of the input variable</span>
+<span class="sd">        ``invalid_result``.</span>
+
+<span class="sd">        :param invalid_result: The value to be returned if the node type is</span>
+<span class="sd">            not recognized.&quot;&quot;&quot;</span>
+        <span class="n">thistype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_type</span>
+        <span class="c1"># Fix for base class</span>
+        <span class="k">if</span> <span class="n">thistype</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+            <span class="n">thistype</span> <span class="o">=</span> <span class="s1">&#39;node.Node.&#39;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">thistype</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">invalid_result</span>
+        <span class="n">thistype</span> <span class="o">=</span> <span class="n">thistype</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># Strip final dot</span>
+        <span class="k">return</span> <span class="n">thistype</span><span class="o">.</span><span class="n">rpartition</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="DbNode.__str__"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.DbNode.__str__">[docs]</a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">simplename</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_simple_name</span><span class="p">(</span><span class="n">invalid_result</span><span class="o">=</span><span class="s1">&#39;Unknown&#39;</span><span class="p">)</span>
+        <span class="c1"># node pk + type</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> node [</span><span class="si">{}</span><span class="s1">]: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">simplename</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> node [</span><span class="si">{}</span><span class="s1">]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">simplename</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pk</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="DbLink"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.DbLink">[docs]</a><span class="k">class</span> <span class="nc">DbLink</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Direct connection between two dbnodes. The label is identifying thelink type.&quot;&quot;&quot;</span>
+
+    <span class="c1"># If I delete an output, delete also the link; if I delete an input, stop</span>
+    <span class="c1"># NOTE: this will in most cases render a DbNode.objects.filter(...).delete()</span>
+    <span class="c1"># call unusable because some nodes will be inputs; Nodes will have to</span>
+    <span class="c1">#    be deleted in the proper order (or links will need to be deleted first)</span>
+    <span class="c1"># The `input` and `output` columns do not need an explicit `db_index` as it is `True` by default for foreign keys</span>
+    <span class="nb">input</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s1">&#39;DbNode&#39;</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;output_links&#39;</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">m</span><span class="o">.</span><span class="n">PROTECT</span><span class="p">)</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s1">&#39;DbNode&#39;</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;input_links&#39;</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">m</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">,</span> <span class="n">db_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="nb">type</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">,</span> <span class="n">db_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<div class="viewcode-block" id="DbLink.__str__"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.DbLink.__str__">[docs]</a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> (</span><span class="si">{}</span><span class="s1">) --&gt; </span><span class="si">{}</span><span class="s1"> (</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">get_simple_name</span><span class="p">(</span><span class="n">invalid_result</span><span class="o">=</span><span class="s1">&#39;Unknown node&#39;</span><span class="p">),</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">get_simple_name</span><span class="p">(</span><span class="n">invalid_result</span><span class="o">=</span><span class="s1">&#39;Unknown node&#39;</span><span class="p">),</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="DbSetting"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.DbSetting">[docs]</a><span class="k">class</span> <span class="nc">DbSetting</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This will store generic settings that should be database-wide.&quot;&quot;&quot;</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> <span class="n">db_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="n">JSONField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># I also add a description field for the variables</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># Modification time of this attribute</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">editable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<div class="viewcode-block" id="DbSetting.__str__"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.DbSetting.__str__">[docs]</a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;&#39;</span><span class="si">{}</span><span class="s2">&#39;=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="DbSetting.set_value"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.DbSetting.set_value">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">set_value</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">with_transaction</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">subspecifier_value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">other_attribs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stop_if_existing</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Delete a setting value.&quot;&quot;&quot;</span>
+        <span class="n">other_attribs</span> <span class="o">=</span> <span class="n">other_attribs</span> <span class="k">if</span> <span class="n">other_attribs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">{}</span>
+        <span class="n">setting</span> <span class="o">=</span> <span class="n">DbSetting</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">setting</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">stop_if_existing</span><span class="p">:</span>
+                <span class="k">return</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">setting</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">()</span>
+
+        <span class="n">setting</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">key</span>
+        <span class="n">setting</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="n">setting</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">timezone</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">tz</span><span class="o">=</span><span class="n">UTC</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s1">&#39;description&#39;</span> <span class="ow">in</span> <span class="n">other_attribs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">setting</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">other_attribs</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">]</span>
+        <span class="n">setting</span><span class="o">.</span><span class="n">save</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="DbSetting.getvalue"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.DbSetting.getvalue">[docs]</a>    <span class="k">def</span> <span class="nf">getvalue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;This can be called on a given row and will get the corresponding value.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">val</span></div>
+
+<div class="viewcode-block" id="DbSetting.get_description"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.DbSetting.get_description">[docs]</a>    <span class="k">def</span> <span class="nf">get_description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;This can be called on a given row and will get the corresponding description.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">description</span></div>
+
+<div class="viewcode-block" id="DbSetting.del_value"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.DbSetting.del_value">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">del_value</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">only_children</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">subspecifier_value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set a setting value.&quot;&quot;&quot;</span>
+
+        <span class="n">setting</span> <span class="o">=</span> <span class="n">DbSetting</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">setting</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">setting</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">setting</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">timezone</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span>
+            <span class="n">setting</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">()</span></div></div>
+
+
+<div class="viewcode-block" id="DbGroup"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.DbGroup">[docs]</a><span class="k">class</span> <span class="nc">DbGroup</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A group of nodes.</span>
+
+<span class="sd">    Any group of nodes can be created, but some groups may have specific meaning</span>
+<span class="sd">    if they satisfy specific rules (for instance, groups of UpdData objects are</span>
+<span class="sd">    pseudopotential families - if no two pseudos are included for the same</span>
+<span class="sd">    atomic element).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">uuid</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">UUIDField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="n">get_new_uuid</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># max_length is required by MySql to have indexes and unique constraints</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">,</span> <span class="n">db_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># The type_string of group: a user group, a pseudopotential group,...</span>
+    <span class="c1"># User groups have type_string equal to an empty string</span>
+    <span class="n">type_string</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">,</span> <span class="n">db_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">dbnodes</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">ManyToManyField</span><span class="p">(</span><span class="s1">&#39;DbNode&#39;</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;dbgroups&#39;</span><span class="p">)</span>
+    <span class="c1"># Creation time</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">,</span> <span class="n">editable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># The owner of the group, not of the calculations</span>
+    <span class="c1"># On user deletion, remove his/her groups too (not the calcuations, only</span>
+    <span class="c1"># the groups</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">DbUser</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">m</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;dbgroups&#39;</span><span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>  <span class="c1"># pylint: disable=too-few-public-methods</span>
+        <span class="n">unique_together</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="s1">&#39;type_string&#39;</span><span class="p">),)</span>
+
+<div class="viewcode-block" id="DbGroup.__str__"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.DbGroup.__str__">[docs]</a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;&lt;DbGroup [type_string: </span><span class="si">{}</span><span class="s1">] &quot;</span><span class="si">{}</span><span class="s1">&quot;&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">type_string</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="DbComputer"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.DbComputer">[docs]</a><span class="k">class</span> <span class="nc">DbComputer</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Table of computers or clusters.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">    * name: A name to be used to refer to this computer. Must be unique.</span>
+<span class="sd">    * hostname: Fully-qualified hostname of the host</span>
+<span class="sd">    * transport_type: a string with a valid transport type</span>
+
+
+<span class="sd">    Note: other things that may be set in the metadata:</span>
+
+<span class="sd">        * mpirun command</span>
+
+<span class="sd">        * num cores per node</span>
+
+<span class="sd">        * max num cores</span>
+
+<span class="sd">        * workdir: Full path of the aiida folder on the host. It can contain\</span>
+<span class="sd">            the string {username} that will be substituted by the username\</span>
+<span class="sd">            of the user on that machine.\</span>
+<span class="sd">            The actual workdir is then obtained as\</span>
+<span class="sd">            workdir.format(username=THE_ACTUAL_USERNAME)\</span>
+<span class="sd">            Example: \</span>
+<span class="sd">            workdir = &quot;/scratch/{username}/aiida/&quot;</span>
+
+
+<span class="sd">        * allocate full node = True or False</span>
+
+<span class="sd">        * ... (further limits per user etc.)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">uuid</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">UUIDField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="n">get_new_uuid</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">hostname</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># TODO: next three fields should not be blank...</span>
+    <span class="n">scheduler_type</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+    <span class="n">transport_type</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="n">JSONField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
+
+<div class="viewcode-block" id="DbComputer.__str__"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.DbComputer.__str__">[docs]</a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> (</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hostname</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="DbAuthInfo"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.DbAuthInfo">[docs]</a><span class="k">class</span> <span class="nc">DbAuthInfo</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Table that pairs aiida users and computers, with all required authentication</span>
+<span class="sd">    information.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Delete the DbAuthInfo if either the user or the computer are removed</span>
+    <span class="n">aiidauser</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">DbUser</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">m</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+    <span class="n">dbcomputer</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">DbComputer</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">m</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+    <span class="n">auth_params</span> <span class="o">=</span> <span class="n">JSONField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>  <span class="c1"># contains mainly the remoteuser and the private_key</span>
+
+    <span class="c1"># The keys defined in the metadata of the DbAuthInfo will override the</span>
+    <span class="c1"># keys with the same name defined in the DbComputer (using a dict.update()</span>
+    <span class="c1"># call of python).</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="n">JSONField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
+    <span class="c1"># Whether this computer is enabled (user-level enabling feature)</span>
+    <span class="n">enabled</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>  <span class="c1"># pylint: disable=too-few-public-methods</span>
+        <span class="n">unique_together</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;aiidauser&#39;</span><span class="p">,</span> <span class="s1">&#39;dbcomputer&#39;</span><span class="p">),)</span>
+
+<div class="viewcode-block" id="DbAuthInfo.__str__"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.DbAuthInfo.__str__">[docs]</a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;DB authorization info for </span><span class="si">{}</span><span class="s1"> on </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">aiidauser</span><span class="o">.</span><span class="n">email</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dbcomputer</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s1">&#39;DB authorization info for </span><span class="si">{}</span><span class="s1"> on </span><span class="si">{}</span><span class="s1"> [DISABLED]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">aiidauser</span><span class="o">.</span><span class="n">email</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dbcomputer</span><span class="o">.</span><span class="n">name</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="DbComment"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.DbComment">[docs]</a><span class="k">class</span> <span class="nc">DbComment</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Class to store comments. &quot;&quot;&quot;</span>
+    <span class="n">uuid</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">UUIDField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="n">get_new_uuid</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># Delete comments if the node is removed</span>
+    <span class="n">dbnode</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">DbNode</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;dbcomments&#39;</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">m</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+    <span class="n">ctime</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">,</span> <span class="n">editable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">mtime</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">editable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="c1"># Delete the comments of a deleted user (TODO: check if this is a good policy)</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">DbUser</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">m</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<div class="viewcode-block" id="DbComment.__str__"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.DbComment.__str__">[docs]</a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;DbComment for [</span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">] on </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dbnode</span><span class="o">.</span><span class="n">get_simple_name</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">dbnode</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span>
+            <span class="n">timezone</span><span class="o">.</span><span class="n">localtime</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ctime</span><span class="p">)</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="DbLog"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.DbLog">[docs]</a><span class="k">class</span> <span class="nc">DbLog</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Class to store logs.&quot;&quot;&quot;</span>
+    <span class="n">uuid</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">UUIDField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="n">get_new_uuid</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">,</span> <span class="n">editable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">loggername</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">,</span> <span class="n">db_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">levelname</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">db_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">dbnode</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">DbNode</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;dblogs&#39;</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">m</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="n">JSONField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
+
+<div class="viewcode-block" id="DbLog.__str__"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.DbLog.__str__">[docs]</a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;DbLog: </span><span class="si">{}</span><span class="s1"> for node </span><span class="si">{}</span><span class="s1">: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">levelname</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dbnode</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="suppress_auto_now"><a class="viewcode-back" href="../../../../../apidoc/aiida.backends.djsite.db.html#aiida.backends.djsite.db.models.suppress_auto_now">[docs]</a><span class="nd">@contextlib</span><span class="o">.</span><span class="n">contextmanager</span>
+<span class="k">def</span> <span class="nf">suppress_auto_now</span><span class="p">(</span><span class="n">list_of_models_fields</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This context manager disables the auto_now &amp; editable flags for the</span>
+<span class="sd">    fields of the given models.</span>
+<span class="sd">    This is useful when we would like to update the datetime fields of an</span>
+<span class="sd">    entry bypassing the automatic set of the date (with the current time).</span>
+<span class="sd">    This is very useful when entries are imported and we would like to keep e.g.</span>
+<span class="sd">    the modification time that we set during the import and not allow Django</span>
+<span class="sd">    to set it to the datetime that corresponds to when the entry was saved.</span>
+<span class="sd">    In the end the flags are returned to their original value.</span>
+<span class="sd">    :param list_of_models_fields: A list of (model, fields) tuples for</span>
+<span class="sd">    which the flags will be updated. The model is an object that corresponds</span>
+<span class="sd">    to the model objects and fields is a list of strings with the field names.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Here we store the original values of the fields of the models that will</span>
+    <span class="c1"># be updated</span>
+    <span class="c1"># E.g.</span>
+    <span class="c1"># _original_model_values = {</span>
+    <span class="c1">#   ModelA: [fieldA: {</span>
+    <span class="c1">#                       &#39;auto_now&#39;: orig_valA1</span>
+    <span class="c1">#                       &#39;editable&#39;: orig_valA2</span>
+    <span class="c1">#            },</span>
+    <span class="c1">#            fieldB: {</span>
+    <span class="c1">#                       &#39;auto_now&#39;: orig_valB1</span>
+    <span class="c1">#                       &#39;editable&#39;: orig_valB2</span>
+    <span class="c1">#            }</span>
+    <span class="c1">#    ]</span>
+    <span class="c1">#   ...</span>
+    <span class="c1"># }</span>
+    <span class="n">_original_model_values</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">model</span><span class="p">,</span> <span class="n">fields</span> <span class="ow">in</span> <span class="n">list_of_models_fields</span><span class="p">:</span>
+        <span class="n">_original_field_values</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">local_fields</span><span class="p">:</span>  <span class="c1"># pylint: disable=protected-access</span>
+            <span class="k">if</span> <span class="n">field</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">:</span>
+                <span class="n">_original_field_values</span><span class="p">[</span><span class="n">field</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;auto_now&#39;</span><span class="p">:</span> <span class="n">field</span><span class="o">.</span><span class="n">auto_now</span><span class="p">,</span>
+                    <span class="s1">&#39;editable&#39;</span><span class="p">:</span> <span class="n">field</span><span class="o">.</span><span class="n">editable</span><span class="p">,</span>
+                <span class="p">}</span>
+                <span class="n">field</span><span class="o">.</span><span class="n">auto_now</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="n">field</span><span class="o">.</span><span class="n">editable</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">_original_model_values</span><span class="p">[</span><span class="n">model</span><span class="p">]</span> <span class="o">=</span> <span class="n">_original_field_values</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">yield</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">_original_model_values</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">_original_model_values</span><span class="p">[</span><span class="n">model</span><span class="p">]:</span>
+                <span class="n">field</span><span class="o">.</span><span class="n">auto_now</span> <span class="o">=</span> <span class="n">_original_model_values</span><span class="p">[</span><span class="n">model</span><span class="p">][</span><span class="n">field</span><span class="p">][</span><span class="s1">&#39;auto_now&#39;</span><span class="p">]</span>
+                <span class="n">field</span><span class="o">.</span><span class="n">editable</span> <span class="o">=</span> <span class="n">_original_model_values</span><span class="p">[</span><span class="n">model</span><span class="p">][</span><span class="n">field</span><span class="p">][</span><span class="s1">&#39;editable&#39;</span><span class="p">]</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

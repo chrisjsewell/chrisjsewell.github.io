@@ -1,0 +1,640 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.cmdline.commands package &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>aiida.cmdline.commands package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/aiida.cmdline.commands.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-aiida.cmdline.commands">
+<span id="aiida-cmdline-commands-package"></span><h1>aiida.cmdline.commands package<a class="headerlink" href="#module-aiida.cmdline.commands" title="Permalink to this headline">¶</a></h1>
+<p>The <cite>verdi</cite> command line interface.</p>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aiida.cmdline.commands.cmd_data.html">aiida.cmdline.commands.cmd_data package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aiida.cmdline.commands.cmd_data.html#module-aiida.cmdline.commands.cmd_data.cmd_array">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="module-aiida.cmdline.commands.cmd_calcjob">
+<span id="submodules"></span><h2>Submodules<a class="headerlink" href="#module-aiida.cmdline.commands.cmd_calcjob" title="Permalink to this headline">¶</a></h2>
+<p><cite>verdi calcjob</cite> commands.</p>
+<span class="target" id="module-aiida.cmdline.commands.cmd_code"></span><p><cite>verdi code</cite> command.</p>
+<dl class="function">
+<dt id="aiida.cmdline.commands.cmd_code.get_computer_name">
+<code class="sig-prename descclassname">aiida.cmdline.commands.cmd_code.</code><code class="sig-name descname">get_computer_name</code><span class="sig-paren">(</span><em class="sig-param">ctx</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_code.html#get_computer_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_code.get_computer_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aiida.cmdline.commands.cmd_code.get_default">
+<code class="sig-prename descclassname">aiida.cmdline.commands.cmd_code.</code><code class="sig-name descname">get_default</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">ctx</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_code.html#get_default"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_code.get_default" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the default argument using a user instance property
+:param value: The name of the property to use
+:param ctx: The click context (which will be used to get the user)
+:return: The default value, or None</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.cmdline.commands.cmd_code.get_on_computer">
+<code class="sig-prename descclassname">aiida.cmdline.commands.cmd_code.</code><code class="sig-name descname">get_on_computer</code><span class="sig-paren">(</span><em class="sig-param">ctx</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_code.html#get_on_computer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_code.get_on_computer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aiida.cmdline.commands.cmd_code.print_list_res">
+<code class="sig-prename descclassname">aiida.cmdline.commands.cmd_code.</code><code class="sig-name descname">print_list_res</code><span class="sig-paren">(</span><em class="sig-param">qb_query</em>, <em class="sig-param">show_owner</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_code.html#print_list_res"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_code.print_list_res" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print a list of available codes.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.cmdline.commands.cmd_code.set_code_builder">
+<code class="sig-prename descclassname">aiida.cmdline.commands.cmd_code.</code><code class="sig-name descname">set_code_builder</code><span class="sig-paren">(</span><em class="sig-param">ctx</em>, <em class="sig-param">param</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_code.html#set_code_builder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_code.set_code_builder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the code spec for defaults of following options.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.cmdline.commands.cmd_comment"></span><p><cite>verdi comment</cite> command.</p>
+<span class="target" id="module-aiida.cmdline.commands.cmd_completioncommand"></span><p><cite>verdi completioncommand</cite> command, to return the string to insert
+into the bash script to activate completion.</p>
+<span class="target" id="module-aiida.cmdline.commands.cmd_computer"></span><p><cite>verdi computer</cite> command.</p>
+<dl class="function">
+<dt id="aiida.cmdline.commands.cmd_computer._computer_create_temp_file">
+<code class="sig-prename descclassname">aiida.cmdline.commands.cmd_computer.</code><code class="sig-name descname">_computer_create_temp_file</code><span class="sig-paren">(</span><em class="sig-param">transport</em>, <em class="sig-param">scheduler</em>, <em class="sig-param">authinfo</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_computer.html#_computer_create_temp_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_computer._computer_create_temp_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal test to check if it is possible to create a temporary file
+and then delete it in the work directory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>exceptions could be raised</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>transport</strong> – an open transport</p></li>
+<li><p><strong>scheduler</strong> – the corresponding scheduler class</p></li>
+<li><p><strong>authinfo</strong> – the AuthInfo object (from which one can get computer and aiidauser)</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>tuple of boolean indicating success or failure and an optional string message</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.cmdline.commands.cmd_computer._computer_get_remote_username">
+<code class="sig-prename descclassname">aiida.cmdline.commands.cmd_computer.</code><code class="sig-name descname">_computer_get_remote_username</code><span class="sig-paren">(</span><em class="sig-param">transport</em>, <em class="sig-param">scheduler</em>, <em class="sig-param">authinfo</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_computer.html#_computer_get_remote_username"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_computer._computer_get_remote_username" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal test to check if it is possible to determine the username on the remote.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transport</strong> – an open transport</p></li>
+<li><p><strong>scheduler</strong> – the corresponding scheduler class</p></li>
+<li><p><strong>authinfo</strong> – the AuthInfo object</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>tuple of boolean indicating success or failure and an optional string message</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.cmdline.commands.cmd_computer._computer_test_get_jobs">
+<code class="sig-prename descclassname">aiida.cmdline.commands.cmd_computer.</code><code class="sig-name descname">_computer_test_get_jobs</code><span class="sig-paren">(</span><em class="sig-param">transport</em>, <em class="sig-param">scheduler</em>, <em class="sig-param">authinfo</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_computer.html#_computer_test_get_jobs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_computer._computer_test_get_jobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal test to check if it is possible to check the queue state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transport</strong> – an open transport</p></li>
+<li><p><strong>scheduler</strong> – the corresponding scheduler class</p></li>
+<li><p><strong>authinfo</strong> – the AuthInfo object (from which one can get computer and aiidauser)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>tuple of boolean indicating success or failure and an optional string message</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.cmdline.commands.cmd_computer._computer_test_no_unexpected_output">
+<code class="sig-prename descclassname">aiida.cmdline.commands.cmd_computer.</code><code class="sig-name descname">_computer_test_no_unexpected_output</code><span class="sig-paren">(</span><em class="sig-param">transport</em>, <em class="sig-param">scheduler</em>, <em class="sig-param">authinfo</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_computer.html#_computer_test_no_unexpected_output"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_computer._computer_test_no_unexpected_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test that there is no unexpected output from the connection.</p>
+<p>This can happen if e.g. there is some spurious command in the
+.bashrc or .bash_profile that is not guarded in case of non-interactive
+shells.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transport</strong> – an open transport</p></li>
+<li><p><strong>scheduler</strong> – the corresponding scheduler class</p></li>
+<li><p><strong>authinfo</strong> – the AuthInfo object (from which one can get computer and aiidauser)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>tuple of boolean indicating success or failure and an optional string message</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.cmdline.commands.cmd_computer.get_computer_names">
+<code class="sig-prename descclassname">aiida.cmdline.commands.cmd_computer.</code><code class="sig-name descname">get_computer_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_computer.html#get_computer_names"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_computer.get_computer_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the list of computers in the DB.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.cmdline.commands.cmd_computer.get_parameter_default">
+<code class="sig-prename descclassname">aiida.cmdline.commands.cmd_computer.</code><code class="sig-name descname">get_parameter_default</code><span class="sig-paren">(</span><em class="sig-param">parameter</em>, <em class="sig-param">ctx</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_computer.html#get_parameter_default"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_computer.get_parameter_default" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the value for a specific parameter from the computer_builder or the default value of that option</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> – parameter name</p></li>
+<li><p><strong>ctx</strong> – click context of the command</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>parameter default value, or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.cmdline.commands.cmd_computer.prompt_for_computer_configuration">
+<code class="sig-prename descclassname">aiida.cmdline.commands.cmd_computer.</code><code class="sig-name descname">prompt_for_computer_configuration</code><span class="sig-paren">(</span><em class="sig-param">computer</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_computer.html#prompt_for_computer_configuration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_computer.prompt_for_computer_configuration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aiida.cmdline.commands.cmd_computer.set_computer_builder">
+<code class="sig-prename descclassname">aiida.cmdline.commands.cmd_computer.</code><code class="sig-name descname">set_computer_builder</code><span class="sig-paren">(</span><em class="sig-param">ctx</em>, <em class="sig-param">param</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_computer.html#set_computer_builder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_computer.set_computer_builder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the computer spec for defaults of following options.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.cmdline.commands.cmd_config"></span><p><cite>verdi config</cite> command.</p>
+<span class="target" id="module-aiida.cmdline.commands.cmd_daemon"></span><p><cite>verdi daemon</cite> commands.</p>
+<dl class="function">
+<dt id="aiida.cmdline.commands.cmd_daemon.validate_daemon_workers">
+<code class="sig-prename descclassname">aiida.cmdline.commands.cmd_daemon.</code><code class="sig-name descname">validate_daemon_workers</code><span class="sig-paren">(</span><em class="sig-param">ctx</em>, <em class="sig-param">param</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_daemon.html#validate_daemon_workers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_daemon.validate_daemon_workers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validate the value for the number of daemon workers to start with default set by config.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.cmdline.commands.cmd_database"></span><p><cite>verdi database</cite> commands.</p>
+<span class="target" id="module-aiida.cmdline.commands.cmd_devel"></span><p><cite>verdi devel</cite> commands.</p>
+<span class="target" id="module-aiida.cmdline.commands.cmd_export"></span><p><cite>verdi export</cite> command.</p>
+<span class="target" id="module-aiida.cmdline.commands.cmd_graph"></span><p><cite>verdi graph</cite> commands</p>
+<span class="target" id="module-aiida.cmdline.commands.cmd_group"></span><p><cite>verdi group</cite> commands</p>
+<span class="target" id="module-aiida.cmdline.commands.cmd_help"></span><p>Command for <cite>verdi help</cite>.</p>
+<span class="target" id="module-aiida.cmdline.commands.cmd_import"></span><p><cite>verdi import</cite> command.</p>
+<dl class="class">
+<dt id="aiida.cmdline.commands.cmd_import.ExtrasImportCode">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.cmdline.commands.cmd_import.</code><code class="sig-name descname">ExtrasImportCode</code><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_import.html#ExtrasImportCode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_import.ExtrasImportCode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
+<p>Exit codes for the verdi command line.</p>
+<dl class="attribute">
+<dt id="aiida.cmdline.commands.cmd_import.ExtrasImportCode.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.cmdline.commands.cmd_import'</em><a class="headerlink" href="#aiida.cmdline.commands.cmd_import.ExtrasImportCode.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.cmdline.commands.cmd_import.ExtrasImportCode.ask">
+<code class="sig-name descname">ask</code><em class="property"> = 'kca'</em><a class="headerlink" href="#aiida.cmdline.commands.cmd_import.ExtrasImportCode.ask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.cmdline.commands.cmd_import.ExtrasImportCode.keep_existing">
+<code class="sig-name descname">keep_existing</code><em class="property"> = 'kcl'</em><a class="headerlink" href="#aiida.cmdline.commands.cmd_import.ExtrasImportCode.keep_existing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.cmdline.commands.cmd_import.ExtrasImportCode.mirror">
+<code class="sig-name descname">mirror</code><em class="property"> = 'ncu'</em><a class="headerlink" href="#aiida.cmdline.commands.cmd_import.ExtrasImportCode.mirror" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.cmdline.commands.cmd_import.ExtrasImportCode.none">
+<code class="sig-name descname">none</code><em class="property"> = 'knl'</em><a class="headerlink" href="#aiida.cmdline.commands.cmd_import.ExtrasImportCode.none" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.cmdline.commands.cmd_import.ExtrasImportCode.update_existing">
+<code class="sig-name descname">update_existing</code><em class="property"> = 'kcu'</em><a class="headerlink" href="#aiida.cmdline.commands.cmd_import.ExtrasImportCode.update_existing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.cmdline.commands.cmd_import._migrate_archive">
+<code class="sig-prename descclassname">aiida.cmdline.commands.cmd_import.</code><code class="sig-name descname">_migrate_archive</code><span class="sig-paren">(</span><em class="sig-param">ctx</em>, <em class="sig-param">temp_folder</em>, <em class="sig-param">file_to_import</em>, <em class="sig-param">archive</em>, <em class="sig-param">non_interactive</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_import.html#_migrate_archive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_import._migrate_archive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility function for <cite>verdi import</cite> to migrate archive
+Invoke click command <cite>verdi export migrate</cite>, passing in the archive,
+outputting the migrated archive in a temporary SandboxFolder.
+Try again to import the now migrated file, after a successful migration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ctx</strong> – Click context used to invoke <cite>verdi export migrate</cite>.</p></li>
+<li><p><strong>temp_folder</strong> – SandboxFolder, where the migrated file will be temporarily outputted.</p></li>
+<li><p><strong>file_to_import</strong> – Absolute path, including filename, of file to be migrated.</p></li>
+<li><p><strong>archive</strong> – Filename of archive to be migrated, and later attempted imported.</p></li>
+<li><p><strong>non_interactive</strong> – Whether or not the user should be asked for input for any reason.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Absolute path to migrated archive within SandboxFolder.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.cmdline.commands.cmd_import._try_import">
+<code class="sig-prename descclassname">aiida.cmdline.commands.cmd_import.</code><code class="sig-name descname">_try_import</code><span class="sig-paren">(</span><em class="sig-param">migration_performed</em>, <em class="sig-param">file_to_import</em>, <em class="sig-param">archive</em>, <em class="sig-param">group</em>, <em class="sig-param">migration</em>, <em class="sig-param">non_interactive</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_import.html#_try_import"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_import._try_import" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility function for <cite>verdi import</cite> to try to import archive</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>migration_performed</strong> – Boolean to determine the exception message to throw for
+<cite>~aiida.tools.importexport.common.exceptions.IncompatibleArchiveVersionError</cite></p></li>
+<li><p><strong>file_to_import</strong> – Absolute path, including filename, of file to be migrated.</p></li>
+<li><p><strong>archive</strong> – Filename of archive to be migrated, and later attempted imported.</p></li>
+<li><p><strong>group</strong> – AiiDA Group into which the import will be associated.</p></li>
+<li><p><strong>migration</strong> – Whether or not to force migration of archive, if needed.</p></li>
+<li><p><strong>non_interactive</strong> – Whether or not the user should be asked for input for any reason.</p></li>
+<li><p><strong>kwargs</strong> – Key-word-arguments that _must_ contain:
+* <cite>‘extras_mode_existing’</cite>: <cite>import_data</cite>’s <cite>‘extras_mode_existing’</cite> keyword, determining import rules for
+Extras.
+* <cite>‘extras_mode_new’</cite>: <cite>import_data</cite>’s <cite>‘extras_mode_new’</cite> keyword, determining import rules for Extras.
+* <cite>‘comment_mode’</cite>: <cite>import_data</cite>’s <cite>‘comment_mode’</cite> keyword, determining import rules for Comments.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-aiida.cmdline.commands.cmd_node"></span><p><cite>verdi node</cite> command.</p>
+<dl class="function">
+<dt id="aiida.cmdline.commands.cmd_node.echo_node_dict">
+<code class="sig-prename descclassname">aiida.cmdline.commands.cmd_node.</code><code class="sig-name descname">echo_node_dict</code><span class="sig-paren">(</span><em class="sig-param">nodes</em>, <em class="sig-param">keys</em>, <em class="sig-param">fmt</em>, <em class="sig-param">identifier</em>, <em class="sig-param">raw</em>, <em class="sig-param">use_attrs=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_node.html#echo_node_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_node.echo_node_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show the attributes or extras of one or more nodes.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.cmdline.commands.cmd_plugin"></span><p>Command for <cite>verdi plugins</cite>.</p>
+<span class="target" id="module-aiida.cmdline.commands.cmd_process"></span><p><cite>verdi process</cite> command.</p>
+<dl class="function">
+<dt id="aiida.cmdline.commands.cmd_process.process_actions">
+<code class="sig-prename descclassname">aiida.cmdline.commands.cmd_process.</code><code class="sig-name descname">process_actions</code><span class="sig-paren">(</span><em class="sig-param">futures_map</em>, <em class="sig-param">infinitive</em>, <em class="sig-param">present</em>, <em class="sig-param">past</em>, <em class="sig-param">wait=False</em>, <em class="sig-param">timeout=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_process.html#process_actions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_process.process_actions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process the requested actions sent to a set of Processes given a map of the futures and the
+corresponding processes.  This function will echo the correct information strings based on
+the outcomes of the futures and the given verb conjugations.  You can optionally wait for
+any pending actions to be completed before the functions returns and use a timeout to put
+a maximum wait time on the actions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>futures_map</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a>) – the map of action futures and the corresponding processes</p></li>
+<li><p><strong>infinitive</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – the infinitive form of the action verb</p></li>
+<li><p><strong>present</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – the present tense form</p></li>
+<li><p><strong>past</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – the past tense form</p></li>
+<li><p><strong>wait</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – if True, waits for pending actions to be competed, otherwise just returns</p></li>
+<li><p><strong>timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – the timeout (in seconds) to wait for actions to be completed</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-aiida.cmdline.commands.cmd_profile"></span><p><cite>verdi profile</cite> command.</p>
+<span class="target" id="module-aiida.cmdline.commands.cmd_rehash"></span><p><cite>verdi rehash</cite> command.</p>
+<span class="target" id="module-aiida.cmdline.commands.cmd_restapi"></span><p>This allows to hook-up the AiiDA built-in RESTful API.
+Main advantage of doing this by means of a verdi command is that different
+profiles can be selected at hook-up (-p flag).</p>
+<span class="target" id="module-aiida.cmdline.commands.cmd_run"></span><p><cite>verdi run</cite> command.</p>
+<dl class="function">
+<dt id="aiida.cmdline.commands.cmd_run.update_environment">
+<code class="sig-prename descclassname">aiida.cmdline.commands.cmd_run.</code><code class="sig-name descname">update_environment</code><span class="sig-paren">(</span><em class="sig-param">argv</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_run.html#update_environment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_run.update_environment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Context manager that temporarily replaces <cite>sys.argv</cite> with <cite>argv</cite> and adds current working dir to the path.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.cmdline.commands.cmd_run.validate_entrypoint_string">
+<code class="sig-prename descclassname">aiida.cmdline.commands.cmd_run.</code><code class="sig-name descname">validate_entrypoint_string</code><span class="sig-paren">(</span><em class="sig-param">ctx</em>, <em class="sig-param">param</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_run.html#validate_entrypoint_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_run.validate_entrypoint_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validate that <cite>value</cite> is a valid entrypoint string.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.cmdline.commands.cmd_setup"></span><p>The <cite>verdi setup</cite> and <cite>verdi quicksetup</cite> commands.</p>
+<span class="target" id="module-aiida.cmdline.commands.cmd_shell"></span><p>The verdi shell command</p>
+<span class="target" id="module-aiida.cmdline.commands.cmd_status"></span><p><cite>verdi status</cite> command.</p>
+<dl class="class">
+<dt id="aiida.cmdline.commands.cmd_status.ServiceStatus">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.cmdline.commands.cmd_status.</code><code class="sig-name descname">ServiceStatus</code><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_status.html#ServiceStatus"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_status.ServiceStatus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.IntEnum" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.IntEnum</span></code></a></p>
+<p>Describe status of services for ‘verdi status’ command.</p>
+<dl class="attribute">
+<dt id="aiida.cmdline.commands.cmd_status.ServiceStatus.DOWN">
+<code class="sig-name descname">DOWN</code><em class="property"> = 2</em><a class="headerlink" href="#aiida.cmdline.commands.cmd_status.ServiceStatus.DOWN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.cmdline.commands.cmd_status.ServiceStatus.ERROR">
+<code class="sig-name descname">ERROR</code><em class="property"> = 1</em><a class="headerlink" href="#aiida.cmdline.commands.cmd_status.ServiceStatus.ERROR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.cmdline.commands.cmd_status.ServiceStatus.UP">
+<code class="sig-name descname">UP</code><em class="property"> = 0</em><a class="headerlink" href="#aiida.cmdline.commands.cmd_status.ServiceStatus.UP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.cmdline.commands.cmd_status.ServiceStatus.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.cmdline.commands.cmd_status'</em><a class="headerlink" href="#aiida.cmdline.commands.cmd_status.ServiceStatus.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.cmdline.commands.cmd_status.print_status">
+<code class="sig-prename descclassname">aiida.cmdline.commands.cmd_status.</code><code class="sig-name descname">print_status</code><span class="sig-paren">(</span><em class="sig-param">status</em>, <em class="sig-param">service</em>, <em class="sig-param">msg=''</em>, <em class="sig-param">exception=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_status.html#print_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_status.print_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print status message.</p>
+<p>Includes colored indicator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>status</strong> – a ServiceStatus code</p></li>
+<li><p><strong>service</strong> – string for service name</p></li>
+<li><p><strong>msg</strong> – message string</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-aiida.cmdline.commands.cmd_user"></span><p><cite>verdi user</cite> command.</p>
+<dl class="function">
+<dt id="aiida.cmdline.commands.cmd_user.get_user_attribute_default">
+<code class="sig-prename descclassname">aiida.cmdline.commands.cmd_user.</code><code class="sig-name descname">get_user_attribute_default</code><span class="sig-paren">(</span><em class="sig-param">attribute</em>, <em class="sig-param">ctx</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_user.html#get_user_attribute_default"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_user.get_user_attribute_default" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the default value for the given attribute of the user passed in the context.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attribute</strong> – attribute for which to get the current value</p></li>
+<li><p><strong>ctx</strong> – click context which should contain the selected user</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>user attribute default value if set, or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.cmdline.commands.cmd_user.set_default_user">
+<code class="sig-prename descclassname">aiida.cmdline.commands.cmd_user.</code><code class="sig-name descname">set_default_user</code><span class="sig-paren">(</span><em class="sig-param">profile</em>, <em class="sig-param">user</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_user.html#set_default_user"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_user.set_default_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the user as the default user for the given profile.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>profile</strong> – the profile</p></li>
+<li><p><strong>user</strong> – the user</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-aiida.cmdline.commands.cmd_verdi"></span><p>The main <cite>verdi</cite> click group.</p>
+<dl class="class">
+<dt id="aiida.cmdline.commands.cmd_verdi.MostSimilarCommandGroup">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.cmdline.commands.cmd_verdi.</code><code class="sig-name descname">MostSimilarCommandGroup</code><span class="sig-paren">(</span><em class="sig-param">name=None</em>, <em class="sig-param">commands=None</em>, <em class="sig-param">**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_verdi.html#MostSimilarCommandGroup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_verdi.MostSimilarCommandGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">click.core.Group</span></code></p>
+<p>Overloads the get_command to display a list of possible command
+candidates if the command could not be found with an exact match.</p>
+<dl class="attribute">
+<dt id="aiida.cmdline.commands.cmd_verdi.MostSimilarCommandGroup.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.cmdline.commands.cmd_verdi'</em><a class="headerlink" href="#aiida.cmdline.commands.cmd_verdi.MostSimilarCommandGroup.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.cmdline.commands.cmd_verdi.MostSimilarCommandGroup.get_command">
+<code class="sig-name descname">get_command</code><span class="sig-paren">(</span><em class="sig-param">ctx</em>, <em class="sig-param">cmd_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/cmdline/commands/cmd_verdi.html#MostSimilarCommandGroup.get_command"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.cmdline.commands.cmd_verdi.MostSimilarCommandGroup.get_command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override the default click.Group get_command with one giving the user
+a selection of possible commands if the exact command name could not be found.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

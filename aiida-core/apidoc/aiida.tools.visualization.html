@@ -1,0 +1,866 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.tools.visualization package &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>aiida.tools.visualization package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/aiida.tools.visualization.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-aiida.tools.visualization">
+<span id="aiida-tools-visualization-package"></span><h1>aiida.tools.visualization package<a class="headerlink" href="#module-aiida.tools.visualization" title="Permalink to this headline">¶</a></h1>
+<p>Provides tools for visualization of the provenance graph.</p>
+<dl class="class">
+<dt id="aiida.tools.visualization.Graph">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.tools.visualization.</code><code class="sig-name descname">Graph</code><span class="sig-paren">(</span><em class="sig-param">engine=None</em>, <em class="sig-param">graph_attr=None</em>, <em class="sig-param">global_node_style=None</em>, <em class="sig-param">global_edge_style=None</em>, <em class="sig-param">include_sublabels=True</em>, <em class="sig-param">link_style_fn=None</em>, <em class="sig-param">node_style_fn=None</em>, <em class="sig-param">node_sublabel_fn=None</em>, <em class="sig-param">node_id_type='pk'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.Graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>a class to create graphviz graphs of the AiiDA node provenance</p>
+<dl class="attribute">
+<dt id="aiida.tools.visualization.Graph.__dict__">
+<code class="sig-name descname">__dict__</code><em class="property"> = mappingproxy({'__module__': 'aiida.tools.visualization.graph', '__doc__': 'a class to create graphviz graphs of the AiiDA node provenance', '__init__': &lt;function Graph.__init__&gt;, 'graphviz': &lt;property object&gt;, 'nodes': &lt;property object&gt;, 'edges': &lt;property object&gt;, '_load_node': &lt;staticmethod object&gt;, '_default_link_types': &lt;staticmethod object&gt;, 'add_node': &lt;function Graph.add_node&gt;, 'add_edge': &lt;function Graph.add_edge&gt;, '_convert_link_types': &lt;staticmethod object&gt;, 'add_incoming': &lt;function Graph.add_incoming&gt;, 'add_outgoing': &lt;function Graph.add_outgoing&gt;, 'recurse_descendants': &lt;function Graph.recurse_descendants&gt;, 'recurse_ancestors': &lt;function Graph.recurse_ancestors&gt;, 'add_origin_to_targets': &lt;function Graph.add_origin_to_targets&gt;, 'add_origins_to_targets': &lt;function Graph.add_origins_to_targets&gt;, '__dict__': &lt;attribute '__dict__' of 'Graph' objects&gt;, '__weakref__': &lt;attribute '__weakref__' of 'Graph' objects&gt;})</em><a class="headerlink" href="#aiida.tools.visualization.Graph.__dict__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.Graph.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">engine=None</em>, <em class="sig-param">graph_attr=None</em>, <em class="sig-param">global_node_style=None</em>, <em class="sig-param">global_edge_style=None</em>, <em class="sig-param">include_sublabels=True</em>, <em class="sig-param">link_style_fn=None</em>, <em class="sig-param">node_style_fn=None</em>, <em class="sig-param">node_sublabel_fn=None</em>, <em class="sig-param">node_id_type='pk'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.Graph.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>a class to create graphviz graphs of the AiiDA node provenance</p>
+<p>Nodes and edges, are cached, so that they are only created once</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>engine</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – the graphviz engine, e.g. dot, circo (Default value = None)</p></li>
+<li><p><strong>graph_attr</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – attributes for the graphviz graph (Default value = None)</p></li>
+<li><p><strong>global_node_style</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – styles which will be added to all nodes.
+Note this will override any builtin attributes (Default value = None)</p></li>
+<li><p><strong>global_edge_style</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – styles which will be added to all edges.
+Note this will override any builtin attributes (Default value = None)</p></li>
+<li><p><strong>include_sublabels</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – if True, the note text will include node dependant sub-labels (Default value = True)</p></li>
+<li><p><strong>link_style_fn</strong> – callable mapping LinkType to graphviz style dict;
+link_style_fn(link_type) -&gt; dict (Default value = None)</p></li>
+<li><p><strong>node_sublabel_fn</strong> – callable mapping nodes to a graphviz style dict;
+node_sublabel_fn(node) -&gt; dict (Default value = None)</p></li>
+<li><p><strong>node_sublabel_fn</strong> – callable mapping data node to a sublabel (e.g. specifying some attribute values)
+node_sublabel_fn(node) -&gt; str (Default value = None)</p></li>
+<li><p><strong>node_id_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – the type of identifier to within the node text (‘pk’, ‘uuid’ or ‘label’)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.visualization.Graph.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.visualization.graph'</em><a class="headerlink" href="#aiida.tools.visualization.Graph.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.visualization.Graph.__weakref__">
+<code class="sig-name descname">__weakref__</code><a class="headerlink" href="#aiida.tools.visualization.Graph.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.Graph._convert_link_types">
+<em class="property">static </em><code class="sig-name descname">_convert_link_types</code><span class="sig-paren">(</span><em class="sig-param">link_types</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph._convert_link_types"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.Graph._convert_link_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert link types, which may be strings, to a member of LinkType</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.Graph._default_link_types">
+<em class="property">static </em><code class="sig-name descname">_default_link_types</code><span class="sig-paren">(</span><em class="sig-param">link_types</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph._default_link_types"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.Graph._default_link_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>If link_types is empty, it will return all the links_types</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>links</strong> – iterable with the link_types ()</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of <a class="reference internal" href="aiida.common.html#aiida.common.links.LinkType" title="aiida.common.links.LinkType"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.common.links.LinkType</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.Graph._load_node">
+<em class="property">static </em><code class="sig-name descname">_load_node</code><span class="sig-paren">(</span><em class="sig-param">node</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph._load_node"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.Graph._load_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>load a node (if not already loaded)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>node</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em> or </em><a class="reference internal" href="aiida.orm.nodes.html#aiida.orm.nodes.node.Node" title="aiida.orm.nodes.node.Node"><em>aiida.orm.nodes.node.Node</em></a>) – node or node pk/uuid</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>aiida.orm.nodes.node.Node</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.Graph.add_edge">
+<code class="sig-name descname">add_edge</code><span class="sig-paren">(</span><em class="sig-param">in_node</em>, <em class="sig-param">out_node</em>, <em class="sig-param">link_pair=None</em>, <em class="sig-param">style=None</em>, <em class="sig-param">overwrite=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph.add_edge"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.Graph.add_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>add single node to the graph</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>in_node</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><a class="reference internal" href="aiida.orm.nodes.html#aiida.orm.nodes.node.Node" title="aiida.orm.nodes.node.Node"><em>aiida.orm.nodes.node.Node</em></a>) – node or node pk/uuid</p></li>
+<li><p><strong>out_node</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em> or </em><a class="reference internal" href="aiida.orm.nodes.html#aiida.orm.nodes.node.Node" title="aiida.orm.nodes.node.Node"><em>aiida.orm.nodes.node.Node</em></a>) – node or node pk/uuid</p></li>
+<li><p><strong>link_pair</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em> or </em><a class="reference internal" href="aiida.orm.utils.html#aiida.orm.utils.links.LinkPair" title="aiida.orm.utils.links.LinkPair"><em>aiida.orm.utils.links.LinkPair</em></a>) – defining the relationship between the nodes</p></li>
+<li><p><strong>style</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – graphviz style parameters (Default value = None)</p></li>
+<li><p><strong>overwrite</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – whether to overrite existing edge (Default value = False)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.Graph.add_incoming">
+<code class="sig-name descname">add_incoming</code><span class="sig-paren">(</span><em class="sig-param">node</em>, <em class="sig-param">link_types=()</em>, <em class="sig-param">annotate_links=None</em>, <em class="sig-param">return_pks=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph.add_incoming"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.Graph.add_incoming" title="Permalink to this definition">¶</a></dt>
+<dd><p>add nodes and edges for incoming links to a node</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<a class="reference internal" href="aiida.orm.nodes.html#aiida.orm.nodes.node.Node" title="aiida.orm.nodes.node.Node"><em>aiida.orm.nodes.node.Node</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – node or node pk/uuid</p></li>
+<li><p><strong>link_types</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>] or </em><a class="reference internal" href="aiida.common.html#aiida.common.links.LinkType" title="aiida.common.links.LinkType"><em>aiida.common.links.LinkType</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><em>tuple</em></a><em>[</em><a class="reference internal" href="aiida.common.html#aiida.common.links.LinkType" title="aiida.common.links.LinkType"><em>aiida.common.links.LinkType</em></a><em>]</em>) – filter by link types (Default value = ())</p></li>
+<li><p><strong>annotate_links</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – label edges with the link ‘label’, ‘type’ or ‘both’ (Default value = None)</p></li>
+<li><p><strong>return_pks</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – whether to return a list of nodes, or list of node pks (Default value = True)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of nodes or node pks</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.Graph.add_node">
+<code class="sig-name descname">add_node</code><span class="sig-paren">(</span><em class="sig-param">node</em>, <em class="sig-param">style_override=None</em>, <em class="sig-param">overwrite=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph.add_node"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.Graph.add_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>add single node to the graph</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em> or </em><a class="reference internal" href="aiida.orm.nodes.html#aiida.orm.nodes.node.Node" title="aiida.orm.nodes.node.Node"><em>aiida.orm.nodes.node.Node</em></a>) – node or node pk/uuid</p></li>
+<li><p><strong>style_override</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – graphviz style parameters that will override default values</p></li>
+<li><p><strong>overwrite</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – whether to overrite an existing node (Default value = False)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.Graph.add_origin_to_targets">
+<code class="sig-name descname">add_origin_to_targets</code><span class="sig-paren">(</span><em class="sig-param">origin</em>, <em class="sig-param">target_cls</em>, <em class="sig-param">target_filters=None</em>, <em class="sig-param">include_target_inputs=False</em>, <em class="sig-param">include_target_outputs=False</em>, <em class="sig-param">origin_style=()</em>, <em class="sig-param">annotate_links=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph.add_origin_to_targets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.Graph.add_origin_to_targets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add nodes and edges from an origin node to all nodes of a target node class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>origin</strong> (<a class="reference internal" href="aiida.orm.nodes.html#aiida.orm.nodes.node.Node" title="aiida.orm.nodes.node.Node"><em>aiida.orm.nodes.node.Node</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – node or node pk/uuid</p></li>
+<li><p><strong>target_cls</strong> – target node class</p></li>
+<li><p><strong>target_filters</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – (Default value = None)</p></li>
+<li><p><strong>include_target_inputs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – (Default value = False)</p></li>
+<li><p><strong>include_target_outputs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – (Default value = False)</p></li>
+<li><p><strong>origin_style</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><em>tuple</em></a>) – node style map for origin node (Default value = ())</p></li>
+<li><p><strong>annotate_links</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – label edges with the link ‘label’, ‘type’ or ‘both’ (Default value = False)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.Graph.add_origins_to_targets">
+<code class="sig-name descname">add_origins_to_targets</code><span class="sig-paren">(</span><em class="sig-param">origin_cls</em>, <em class="sig-param">target_cls</em>, <em class="sig-param">origin_filters=None</em>, <em class="sig-param">target_filters=None</em>, <em class="sig-param">include_target_inputs=False</em>, <em class="sig-param">include_target_outputs=False</em>, <em class="sig-param">origin_style=()</em>, <em class="sig-param">annotate_links=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph.add_origins_to_targets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.Graph.add_origins_to_targets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add nodes and edges from all nodes of an origin class to all node of a target node class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>origin_cls</strong> – origin node class</p></li>
+<li><p><strong>target_cls</strong> – target node class</p></li>
+<li><p><strong>origin_filters</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – (Default value = None)</p></li>
+<li><p><strong>target_filters</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – (Default value = None)</p></li>
+<li><p><strong>include_target_inputs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – (Default value = False)</p></li>
+<li><p><strong>include_target_outputs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – (Default value = False)</p></li>
+<li><p><strong>origin_style</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><em>tuple</em></a>) – node style map for origin node (Default value = ())</p></li>
+<li><p><strong>annotate_links</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – label edges with the link ‘label’, ‘type’ or ‘both’ (Default value = False)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.Graph.add_outgoing">
+<code class="sig-name descname">add_outgoing</code><span class="sig-paren">(</span><em class="sig-param">node</em>, <em class="sig-param">link_types=()</em>, <em class="sig-param">annotate_links=None</em>, <em class="sig-param">return_pks=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph.add_outgoing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.Graph.add_outgoing" title="Permalink to this definition">¶</a></dt>
+<dd><p>add nodes and edges for outgoing links to a node</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<a class="reference internal" href="aiida.orm.nodes.html#aiida.orm.nodes.node.Node" title="aiida.orm.nodes.node.Node"><em>aiida.orm.nodes.node.Node</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – node or node pk</p></li>
+<li><p><strong>link_types</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>] or </em><a class="reference internal" href="aiida.common.html#aiida.common.links.LinkType" title="aiida.common.links.LinkType"><em>aiida.common.links.LinkType</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><em>tuple</em></a><em>[</em><a class="reference internal" href="aiida.common.html#aiida.common.links.LinkType" title="aiida.common.links.LinkType"><em>aiida.common.links.LinkType</em></a><em>]</em>) – filter by link types (Default value = ())</p></li>
+<li><p><strong>annotate_links</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – label edges with the link ‘label’, ‘type’ or ‘both’ (Default value = None)</p></li>
+<li><p><strong>return_pks</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – whether to return a list of nodes, or list of node pks (Default value = True)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of nodes or node pks</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.Graph.edges">
+<em class="property">property </em><code class="sig-name descname">edges</code><a class="headerlink" href="#aiida.tools.visualization.Graph.edges" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a copy of the edges</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.Graph.graphviz">
+<em class="property">property </em><code class="sig-name descname">graphviz</code><a class="headerlink" href="#aiida.tools.visualization.Graph.graphviz" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a copy of the graphviz.Digraph</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.Graph.nodes">
+<em class="property">property </em><code class="sig-name descname">nodes</code><a class="headerlink" href="#aiida.tools.visualization.Graph.nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a copy of the nodes</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.Graph.recurse_ancestors">
+<code class="sig-name descname">recurse_ancestors</code><span class="sig-paren">(</span><em class="sig-param">origin</em>, <em class="sig-param">depth=None</em>, <em class="sig-param">link_types=()</em>, <em class="sig-param">annotate_links=False</em>, <em class="sig-param">origin_style=None</em>, <em class="sig-param">include_process_outputs=False</em>, <em class="sig-param">print_func=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph.recurse_ancestors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.Graph.recurse_ancestors" title="Permalink to this definition">¶</a></dt>
+<dd><p>add nodes and edges from an origin recursively,
+following incoming links</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>origin</strong> (<a class="reference internal" href="aiida.orm.nodes.html#aiida.orm.nodes.node.Node" title="aiida.orm.nodes.node.Node"><em>aiida.orm.nodes.node.Node</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – node or node pk/uuid</p></li>
+<li><p><strong>depth</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – if not None, stop after travelling a certain depth into the graph (Default value = None)</p></li>
+<li><p><strong>link_types</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><em>tuple</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – filter by subset of link types (Default value = ())</p></li>
+<li><p><strong>annotate_links</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – label edges with the link ‘label’, ‘type’ or ‘both’ (Default value = False)</p></li>
+<li><p><strong>origin_style</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a>) – node style map for origin node (Default value = None)</p></li>
+<li><p><strong>include_process_outputs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – include outgoing links for all processes (Default value = False)</p></li>
+<li><p><strong>print_func</strong> – a function to stream information to, i.e. print_func(str)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.1.0: </span><cite>print_func</cite> will be removed in <cite>v2.0.0</cite></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.Graph.recurse_descendants">
+<code class="sig-name descname">recurse_descendants</code><span class="sig-paren">(</span><em class="sig-param">origin</em>, <em class="sig-param">depth=None</em>, <em class="sig-param">link_types=()</em>, <em class="sig-param">annotate_links=False</em>, <em class="sig-param">origin_style=None</em>, <em class="sig-param">include_process_inputs=False</em>, <em class="sig-param">print_func=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph.recurse_descendants"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.Graph.recurse_descendants" title="Permalink to this definition">¶</a></dt>
+<dd><p>add nodes and edges from an origin recursively,
+following outgoing links</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>origin</strong> (<a class="reference internal" href="aiida.orm.nodes.html#aiida.orm.nodes.node.Node" title="aiida.orm.nodes.node.Node"><em>aiida.orm.nodes.node.Node</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – node or node pk/uuid</p></li>
+<li><p><strong>depth</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – if not None, stop after travelling a certain depth into the graph (Default value = None)</p></li>
+<li><p><strong>link_types</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><em>tuple</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – filter by subset of link types (Default value = ())</p></li>
+<li><p><strong>annotate_links</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – label edges with the link ‘label’, ‘type’ or ‘both’ (Default value = False)</p></li>
+<li><p><strong>origin_style</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a>) – node style map for origin node (Default value = None)</p></li>
+<li><p><strong>include_calculation_inputs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – include incoming links for all processes (Default value = False)</p></li>
+<li><p><strong>print_func</strong> – a function to stream information to, i.e. print_func(str)
+(this feature is deprecated since <cite>v1.1.0</cite> and will be removed in <cite>v2.0.0</cite>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.visualization.default_link_styles">
+<code class="sig-prename descclassname">aiida.tools.visualization.</code><code class="sig-name descname">default_link_styles</code><span class="sig-paren">(</span><em class="sig-param">link_pair: aiida.orm.utils.links.LinkPair</em>, <em class="sig-param">add_label: bool</em>, <em class="sig-param">add_type: bool</em><span class="sig-paren">)</span> &#x2192; dict<a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#default_link_styles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.default_link_styles" title="Permalink to this definition">¶</a></dt>
+<dd><p>map link_pair to a graphviz edge style</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>link_type</strong> (<a class="reference internal" href="aiida.orm.utils.html#aiida.orm.utils.links.LinkPair" title="aiida.orm.utils.links.LinkPair"><em>aiida.orm.utils.links.LinkPair</em></a>) – a LinkPair attribute</p></li>
+<li><p><strong>add_label</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – include link label</p></li>
+<li><p><strong>add_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – include link type</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.visualization.default_node_styles">
+<code class="sig-prename descclassname">aiida.tools.visualization.</code><code class="sig-name descname">default_node_styles</code><span class="sig-paren">(</span><em class="sig-param">node</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#default_node_styles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.default_node_styles" title="Permalink to this definition">¶</a></dt>
+<dd><p>map a node to a graphviz node style</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>node</strong> (<a class="reference internal" href="aiida.orm.nodes.html#aiida.orm.nodes.node.Node" title="aiida.orm.nodes.node.Node"><em>aiida.orm.nodes.node.Node</em></a>) – the node to map</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.visualization.pstate_node_styles">
+<code class="sig-prename descclassname">aiida.tools.visualization.</code><code class="sig-name descname">pstate_node_styles</code><span class="sig-paren">(</span><em class="sig-param">node</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#pstate_node_styles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.pstate_node_styles" title="Permalink to this definition">¶</a></dt>
+<dd><p>map a process node to a graphviz node style</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>node</strong> (<a class="reference internal" href="aiida.orm.nodes.html#aiida.orm.nodes.node.Node" title="aiida.orm.nodes.node.Node"><em>aiida.orm.nodes.node.Node</em></a>) – the node to map</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.visualization.default_node_sublabels">
+<code class="sig-prename descclassname">aiida.tools.visualization.</code><code class="sig-name descname">default_node_sublabels</code><span class="sig-paren">(</span><em class="sig-param">node</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#default_node_sublabels"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.default_node_sublabels" title="Permalink to this definition">¶</a></dt>
+<dd><p>function mapping nodes to a sublabel
+(e.g. specifying some attribute values)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>node</strong> (<a class="reference internal" href="aiida.orm.nodes.html#aiida.orm.nodes.node.Node" title="aiida.orm.nodes.node.Node"><em>aiida.orm.nodes.node.Node</em></a>) – the node to map</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="module-aiida.tools.visualization.graph">
+<span id="submodules"></span><h2>Submodules<a class="headerlink" href="#module-aiida.tools.visualization.graph" title="Permalink to this headline">¶</a></h2>
+<p>provides functionality to create graphs of the AiiDa data providence,
+<em>via</em> graphviz.</p>
+<dl class="class">
+<dt id="aiida.tools.visualization.graph.Graph">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.tools.visualization.graph.</code><code class="sig-name descname">Graph</code><span class="sig-paren">(</span><em class="sig-param">engine=None</em>, <em class="sig-param">graph_attr=None</em>, <em class="sig-param">global_node_style=None</em>, <em class="sig-param">global_edge_style=None</em>, <em class="sig-param">include_sublabels=True</em>, <em class="sig-param">link_style_fn=None</em>, <em class="sig-param">node_style_fn=None</em>, <em class="sig-param">node_sublabel_fn=None</em>, <em class="sig-param">node_id_type='pk'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.graph.Graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>a class to create graphviz graphs of the AiiDA node provenance</p>
+<dl class="attribute">
+<dt id="aiida.tools.visualization.graph.Graph.__dict__">
+<code class="sig-name descname">__dict__</code><em class="property"> = mappingproxy({'__module__': 'aiida.tools.visualization.graph', '__doc__': 'a class to create graphviz graphs of the AiiDA node provenance', '__init__': &lt;function Graph.__init__&gt;, 'graphviz': &lt;property object&gt;, 'nodes': &lt;property object&gt;, 'edges': &lt;property object&gt;, '_load_node': &lt;staticmethod object&gt;, '_default_link_types': &lt;staticmethod object&gt;, 'add_node': &lt;function Graph.add_node&gt;, 'add_edge': &lt;function Graph.add_edge&gt;, '_convert_link_types': &lt;staticmethod object&gt;, 'add_incoming': &lt;function Graph.add_incoming&gt;, 'add_outgoing': &lt;function Graph.add_outgoing&gt;, 'recurse_descendants': &lt;function Graph.recurse_descendants&gt;, 'recurse_ancestors': &lt;function Graph.recurse_ancestors&gt;, 'add_origin_to_targets': &lt;function Graph.add_origin_to_targets&gt;, 'add_origins_to_targets': &lt;function Graph.add_origins_to_targets&gt;, '__dict__': &lt;attribute '__dict__' of 'Graph' objects&gt;, '__weakref__': &lt;attribute '__weakref__' of 'Graph' objects&gt;})</em><a class="headerlink" href="#aiida.tools.visualization.graph.Graph.__dict__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.graph.Graph.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">engine=None</em>, <em class="sig-param">graph_attr=None</em>, <em class="sig-param">global_node_style=None</em>, <em class="sig-param">global_edge_style=None</em>, <em class="sig-param">include_sublabels=True</em>, <em class="sig-param">link_style_fn=None</em>, <em class="sig-param">node_style_fn=None</em>, <em class="sig-param">node_sublabel_fn=None</em>, <em class="sig-param">node_id_type='pk'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.graph.Graph.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>a class to create graphviz graphs of the AiiDA node provenance</p>
+<p>Nodes and edges, are cached, so that they are only created once</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>engine</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – the graphviz engine, e.g. dot, circo (Default value = None)</p></li>
+<li><p><strong>graph_attr</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – attributes for the graphviz graph (Default value = None)</p></li>
+<li><p><strong>global_node_style</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – styles which will be added to all nodes.
+Note this will override any builtin attributes (Default value = None)</p></li>
+<li><p><strong>global_edge_style</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – styles which will be added to all edges.
+Note this will override any builtin attributes (Default value = None)</p></li>
+<li><p><strong>include_sublabels</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – if True, the note text will include node dependant sub-labels (Default value = True)</p></li>
+<li><p><strong>link_style_fn</strong> – callable mapping LinkType to graphviz style dict;
+link_style_fn(link_type) -&gt; dict (Default value = None)</p></li>
+<li><p><strong>node_sublabel_fn</strong> – callable mapping nodes to a graphviz style dict;
+node_sublabel_fn(node) -&gt; dict (Default value = None)</p></li>
+<li><p><strong>node_sublabel_fn</strong> – callable mapping data node to a sublabel (e.g. specifying some attribute values)
+node_sublabel_fn(node) -&gt; str (Default value = None)</p></li>
+<li><p><strong>node_id_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – the type of identifier to within the node text (‘pk’, ‘uuid’ or ‘label’)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.visualization.graph.Graph.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.visualization.graph'</em><a class="headerlink" href="#aiida.tools.visualization.graph.Graph.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.visualization.graph.Graph.__weakref__">
+<code class="sig-name descname">__weakref__</code><a class="headerlink" href="#aiida.tools.visualization.graph.Graph.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.graph.Graph._convert_link_types">
+<em class="property">static </em><code class="sig-name descname">_convert_link_types</code><span class="sig-paren">(</span><em class="sig-param">link_types</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph._convert_link_types"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.graph.Graph._convert_link_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert link types, which may be strings, to a member of LinkType</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.graph.Graph._default_link_types">
+<em class="property">static </em><code class="sig-name descname">_default_link_types</code><span class="sig-paren">(</span><em class="sig-param">link_types</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph._default_link_types"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.graph.Graph._default_link_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>If link_types is empty, it will return all the links_types</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>links</strong> – iterable with the link_types ()</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of <a class="reference internal" href="aiida.common.html#aiida.common.links.LinkType" title="aiida.common.links.LinkType"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.common.links.LinkType</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.graph.Graph._load_node">
+<em class="property">static </em><code class="sig-name descname">_load_node</code><span class="sig-paren">(</span><em class="sig-param">node</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph._load_node"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.graph.Graph._load_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>load a node (if not already loaded)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>node</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em> or </em><a class="reference internal" href="aiida.orm.nodes.html#aiida.orm.nodes.node.Node" title="aiida.orm.nodes.node.Node"><em>aiida.orm.nodes.node.Node</em></a>) – node or node pk/uuid</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>aiida.orm.nodes.node.Node</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.graph.Graph.add_edge">
+<code class="sig-name descname">add_edge</code><span class="sig-paren">(</span><em class="sig-param">in_node</em>, <em class="sig-param">out_node</em>, <em class="sig-param">link_pair=None</em>, <em class="sig-param">style=None</em>, <em class="sig-param">overwrite=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph.add_edge"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.graph.Graph.add_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>add single node to the graph</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>in_node</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><a class="reference internal" href="aiida.orm.nodes.html#aiida.orm.nodes.node.Node" title="aiida.orm.nodes.node.Node"><em>aiida.orm.nodes.node.Node</em></a>) – node or node pk/uuid</p></li>
+<li><p><strong>out_node</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em> or </em><a class="reference internal" href="aiida.orm.nodes.html#aiida.orm.nodes.node.Node" title="aiida.orm.nodes.node.Node"><em>aiida.orm.nodes.node.Node</em></a>) – node or node pk/uuid</p></li>
+<li><p><strong>link_pair</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em> or </em><a class="reference internal" href="aiida.orm.utils.html#aiida.orm.utils.links.LinkPair" title="aiida.orm.utils.links.LinkPair"><em>aiida.orm.utils.links.LinkPair</em></a>) – defining the relationship between the nodes</p></li>
+<li><p><strong>style</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – graphviz style parameters (Default value = None)</p></li>
+<li><p><strong>overwrite</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – whether to overrite existing edge (Default value = False)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.graph.Graph.add_incoming">
+<code class="sig-name descname">add_incoming</code><span class="sig-paren">(</span><em class="sig-param">node</em>, <em class="sig-param">link_types=()</em>, <em class="sig-param">annotate_links=None</em>, <em class="sig-param">return_pks=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph.add_incoming"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.graph.Graph.add_incoming" title="Permalink to this definition">¶</a></dt>
+<dd><p>add nodes and edges for incoming links to a node</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<a class="reference internal" href="aiida.orm.nodes.html#aiida.orm.nodes.node.Node" title="aiida.orm.nodes.node.Node"><em>aiida.orm.nodes.node.Node</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – node or node pk/uuid</p></li>
+<li><p><strong>link_types</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>] or </em><a class="reference internal" href="aiida.common.html#aiida.common.links.LinkType" title="aiida.common.links.LinkType"><em>aiida.common.links.LinkType</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><em>tuple</em></a><em>[</em><a class="reference internal" href="aiida.common.html#aiida.common.links.LinkType" title="aiida.common.links.LinkType"><em>aiida.common.links.LinkType</em></a><em>]</em>) – filter by link types (Default value = ())</p></li>
+<li><p><strong>annotate_links</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – label edges with the link ‘label’, ‘type’ or ‘both’ (Default value = None)</p></li>
+<li><p><strong>return_pks</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – whether to return a list of nodes, or list of node pks (Default value = True)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of nodes or node pks</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.graph.Graph.add_node">
+<code class="sig-name descname">add_node</code><span class="sig-paren">(</span><em class="sig-param">node</em>, <em class="sig-param">style_override=None</em>, <em class="sig-param">overwrite=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph.add_node"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.graph.Graph.add_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>add single node to the graph</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em> or </em><a class="reference internal" href="aiida.orm.nodes.html#aiida.orm.nodes.node.Node" title="aiida.orm.nodes.node.Node"><em>aiida.orm.nodes.node.Node</em></a>) – node or node pk/uuid</p></li>
+<li><p><strong>style_override</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – graphviz style parameters that will override default values</p></li>
+<li><p><strong>overwrite</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – whether to overrite an existing node (Default value = False)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.graph.Graph.add_origin_to_targets">
+<code class="sig-name descname">add_origin_to_targets</code><span class="sig-paren">(</span><em class="sig-param">origin</em>, <em class="sig-param">target_cls</em>, <em class="sig-param">target_filters=None</em>, <em class="sig-param">include_target_inputs=False</em>, <em class="sig-param">include_target_outputs=False</em>, <em class="sig-param">origin_style=()</em>, <em class="sig-param">annotate_links=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph.add_origin_to_targets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.graph.Graph.add_origin_to_targets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add nodes and edges from an origin node to all nodes of a target node class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>origin</strong> (<a class="reference internal" href="aiida.orm.nodes.html#aiida.orm.nodes.node.Node" title="aiida.orm.nodes.node.Node"><em>aiida.orm.nodes.node.Node</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – node or node pk/uuid</p></li>
+<li><p><strong>target_cls</strong> – target node class</p></li>
+<li><p><strong>target_filters</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – (Default value = None)</p></li>
+<li><p><strong>include_target_inputs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – (Default value = False)</p></li>
+<li><p><strong>include_target_outputs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – (Default value = False)</p></li>
+<li><p><strong>origin_style</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><em>tuple</em></a>) – node style map for origin node (Default value = ())</p></li>
+<li><p><strong>annotate_links</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – label edges with the link ‘label’, ‘type’ or ‘both’ (Default value = False)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.graph.Graph.add_origins_to_targets">
+<code class="sig-name descname">add_origins_to_targets</code><span class="sig-paren">(</span><em class="sig-param">origin_cls</em>, <em class="sig-param">target_cls</em>, <em class="sig-param">origin_filters=None</em>, <em class="sig-param">target_filters=None</em>, <em class="sig-param">include_target_inputs=False</em>, <em class="sig-param">include_target_outputs=False</em>, <em class="sig-param">origin_style=()</em>, <em class="sig-param">annotate_links=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph.add_origins_to_targets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.graph.Graph.add_origins_to_targets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add nodes and edges from all nodes of an origin class to all node of a target node class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>origin_cls</strong> – origin node class</p></li>
+<li><p><strong>target_cls</strong> – target node class</p></li>
+<li><p><strong>origin_filters</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – (Default value = None)</p></li>
+<li><p><strong>target_filters</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – (Default value = None)</p></li>
+<li><p><strong>include_target_inputs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – (Default value = False)</p></li>
+<li><p><strong>include_target_outputs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – (Default value = False)</p></li>
+<li><p><strong>origin_style</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><em>tuple</em></a>) – node style map for origin node (Default value = ())</p></li>
+<li><p><strong>annotate_links</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – label edges with the link ‘label’, ‘type’ or ‘both’ (Default value = False)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.graph.Graph.add_outgoing">
+<code class="sig-name descname">add_outgoing</code><span class="sig-paren">(</span><em class="sig-param">node</em>, <em class="sig-param">link_types=()</em>, <em class="sig-param">annotate_links=None</em>, <em class="sig-param">return_pks=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph.add_outgoing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.graph.Graph.add_outgoing" title="Permalink to this definition">¶</a></dt>
+<dd><p>add nodes and edges for outgoing links to a node</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<a class="reference internal" href="aiida.orm.nodes.html#aiida.orm.nodes.node.Node" title="aiida.orm.nodes.node.Node"><em>aiida.orm.nodes.node.Node</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – node or node pk</p></li>
+<li><p><strong>link_types</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>] or </em><a class="reference internal" href="aiida.common.html#aiida.common.links.LinkType" title="aiida.common.links.LinkType"><em>aiida.common.links.LinkType</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><em>tuple</em></a><em>[</em><a class="reference internal" href="aiida.common.html#aiida.common.links.LinkType" title="aiida.common.links.LinkType"><em>aiida.common.links.LinkType</em></a><em>]</em>) – filter by link types (Default value = ())</p></li>
+<li><p><strong>annotate_links</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – label edges with the link ‘label’, ‘type’ or ‘both’ (Default value = None)</p></li>
+<li><p><strong>return_pks</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – whether to return a list of nodes, or list of node pks (Default value = True)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of nodes or node pks</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.graph.Graph.edges">
+<em class="property">property </em><code class="sig-name descname">edges</code><a class="headerlink" href="#aiida.tools.visualization.graph.Graph.edges" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a copy of the edges</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.graph.Graph.graphviz">
+<em class="property">property </em><code class="sig-name descname">graphviz</code><a class="headerlink" href="#aiida.tools.visualization.graph.Graph.graphviz" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a copy of the graphviz.Digraph</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.graph.Graph.nodes">
+<em class="property">property </em><code class="sig-name descname">nodes</code><a class="headerlink" href="#aiida.tools.visualization.graph.Graph.nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a copy of the nodes</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.graph.Graph.recurse_ancestors">
+<code class="sig-name descname">recurse_ancestors</code><span class="sig-paren">(</span><em class="sig-param">origin</em>, <em class="sig-param">depth=None</em>, <em class="sig-param">link_types=()</em>, <em class="sig-param">annotate_links=False</em>, <em class="sig-param">origin_style=None</em>, <em class="sig-param">include_process_outputs=False</em>, <em class="sig-param">print_func=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph.recurse_ancestors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.graph.Graph.recurse_ancestors" title="Permalink to this definition">¶</a></dt>
+<dd><p>add nodes and edges from an origin recursively,
+following incoming links</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>origin</strong> (<a class="reference internal" href="aiida.orm.nodes.html#aiida.orm.nodes.node.Node" title="aiida.orm.nodes.node.Node"><em>aiida.orm.nodes.node.Node</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – node or node pk/uuid</p></li>
+<li><p><strong>depth</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – if not None, stop after travelling a certain depth into the graph (Default value = None)</p></li>
+<li><p><strong>link_types</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><em>tuple</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – filter by subset of link types (Default value = ())</p></li>
+<li><p><strong>annotate_links</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – label edges with the link ‘label’, ‘type’ or ‘both’ (Default value = False)</p></li>
+<li><p><strong>origin_style</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a>) – node style map for origin node (Default value = None)</p></li>
+<li><p><strong>include_process_outputs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – include outgoing links for all processes (Default value = False)</p></li>
+<li><p><strong>print_func</strong> – a function to stream information to, i.e. print_func(str)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.1.0: </span><cite>print_func</cite> will be removed in <cite>v2.0.0</cite></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.visualization.graph.Graph.recurse_descendants">
+<code class="sig-name descname">recurse_descendants</code><span class="sig-paren">(</span><em class="sig-param">origin</em>, <em class="sig-param">depth=None</em>, <em class="sig-param">link_types=()</em>, <em class="sig-param">annotate_links=False</em>, <em class="sig-param">origin_style=None</em>, <em class="sig-param">include_process_inputs=False</em>, <em class="sig-param">print_func=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#Graph.recurse_descendants"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.graph.Graph.recurse_descendants" title="Permalink to this definition">¶</a></dt>
+<dd><p>add nodes and edges from an origin recursively,
+following outgoing links</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>origin</strong> (<a class="reference internal" href="aiida.orm.nodes.html#aiida.orm.nodes.node.Node" title="aiida.orm.nodes.node.Node"><em>aiida.orm.nodes.node.Node</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – node or node pk/uuid</p></li>
+<li><p><strong>depth</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – if not None, stop after travelling a certain depth into the graph (Default value = None)</p></li>
+<li><p><strong>link_types</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><em>tuple</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – filter by subset of link types (Default value = ())</p></li>
+<li><p><strong>annotate_links</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – label edges with the link ‘label’, ‘type’ or ‘both’ (Default value = False)</p></li>
+<li><p><strong>origin_style</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a>) – node style map for origin node (Default value = None)</p></li>
+<li><p><strong>include_calculation_inputs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – include incoming links for all processes (Default value = False)</p></li>
+<li><p><strong>print_func</strong> – a function to stream information to, i.e. print_func(str)
+(this feature is deprecated since <cite>v1.1.0</cite> and will be removed in <cite>v2.0.0</cite>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.visualization.graph.default_link_styles">
+<code class="sig-prename descclassname">aiida.tools.visualization.graph.</code><code class="sig-name descname">default_link_styles</code><span class="sig-paren">(</span><em class="sig-param">link_pair: aiida.orm.utils.links.LinkPair</em>, <em class="sig-param">add_label: bool</em>, <em class="sig-param">add_type: bool</em><span class="sig-paren">)</span> &#x2192; dict<a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#default_link_styles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.graph.default_link_styles" title="Permalink to this definition">¶</a></dt>
+<dd><p>map link_pair to a graphviz edge style</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>link_type</strong> (<a class="reference internal" href="aiida.orm.utils.html#aiida.orm.utils.links.LinkPair" title="aiida.orm.utils.links.LinkPair"><em>aiida.orm.utils.links.LinkPair</em></a>) – a LinkPair attribute</p></li>
+<li><p><strong>add_label</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – include link label</p></li>
+<li><p><strong>add_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – include link type</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.visualization.graph.default_node_styles">
+<code class="sig-prename descclassname">aiida.tools.visualization.graph.</code><code class="sig-name descname">default_node_styles</code><span class="sig-paren">(</span><em class="sig-param">node</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#default_node_styles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.graph.default_node_styles" title="Permalink to this definition">¶</a></dt>
+<dd><p>map a node to a graphviz node style</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>node</strong> (<a class="reference internal" href="aiida.orm.nodes.html#aiida.orm.nodes.node.Node" title="aiida.orm.nodes.node.Node"><em>aiida.orm.nodes.node.Node</em></a>) – the node to map</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.visualization.graph.pstate_node_styles">
+<code class="sig-prename descclassname">aiida.tools.visualization.graph.</code><code class="sig-name descname">pstate_node_styles</code><span class="sig-paren">(</span><em class="sig-param">node</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#pstate_node_styles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.graph.pstate_node_styles" title="Permalink to this definition">¶</a></dt>
+<dd><p>map a process node to a graphviz node style</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>node</strong> (<a class="reference internal" href="aiida.orm.nodes.html#aiida.orm.nodes.node.Node" title="aiida.orm.nodes.node.Node"><em>aiida.orm.nodes.node.Node</em></a>) – the node to map</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.visualization.graph.default_node_sublabels">
+<code class="sig-prename descclassname">aiida.tools.visualization.graph.</code><code class="sig-name descname">default_node_sublabels</code><span class="sig-paren">(</span><em class="sig-param">node</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/visualization/graph.html#default_node_sublabels"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.visualization.graph.default_node_sublabels" title="Permalink to this definition">¶</a></dt>
+<dd><p>function mapping nodes to a sublabel
+(e.g. specifying some attribute values)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>node</strong> (<a class="reference internal" href="aiida.orm.nodes.html#aiida.orm.nodes.node.Node" title="aiida.orm.nodes.node.Node"><em>aiida.orm.nodes.node.Node</em></a>) – the node to map</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

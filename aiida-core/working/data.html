@@ -1,0 +1,360 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Concept &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Concept</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/working/data.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="concept">
+<span id="working-data"></span><h1>Concept<a class="headerlink" href="#concept" title="Permalink to this headline">¶</a></h1>
+<p>The nodes in the <a class="reference internal" href="../concepts/provenance.html#concepts-provenance"><span class="std std-ref">provenance graph</span></a> that are the inputs and outputs of processes are referred to as <cite>data</cite> and are represented by <a class="reference internal" href="../apidoc/aiida.orm.nodes.data.html#aiida.orm.nodes.data.data.Data" title="aiida.orm.nodes.data.data.Data"><code class="xref py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> nodes.
+Since data can come in all shapes and forms, the <a class="reference internal" href="../apidoc/aiida.orm.nodes.data.html#aiida.orm.nodes.data.data.Data" title="aiida.orm.nodes.data.data.Data"><code class="xref py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> class can be sub classed.
+AiiDA ships with some basic data types such as the <a class="reference internal" href="../apidoc/aiida.orm.nodes.data.html#aiida.orm.nodes.data.int.Int" title="aiida.orm.nodes.data.int.Int"><code class="xref py py-class docutils literal notranslate"><span class="pre">Int</span></code></a> which represents a simple integer and the <a class="reference internal" href="../apidoc/aiida.orm.nodes.data.html#aiida.orm.nodes.data.dict.Dict" title="aiida.orm.nodes.data.dict.Dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></a>, representing a dictionary of key-value pairs.
+There are also more complex data types such as the <a class="reference internal" href="../apidoc/aiida.orm.nodes.data.array.html#aiida.orm.nodes.data.array.array.ArrayData" title="aiida.orm.nodes.data.array.array.ArrayData"><code class="xref py py-class docutils literal notranslate"><span class="pre">ArrayData</span></code></a> which can store multidimensional arrays of numbers.
+These basic data types serve most needs for the majority of applications, but more specific solutions may be useful or even necessary.
+In the next sections, we will explain <a class="reference internal" href="#working-data-creating-new-types"><span class="std std-ref">how a new data type can be created</span></a> and what <a class="reference internal" href="#working-data-design-guidelines"><span class="std std-ref">guidelines</span></a> should ideally be observed during the design process.</p>
+</div>
+<div class="section" id="creating-new-data-types">
+<span id="working-data-creating-new-types"></span><h1>Creating new data types<a class="headerlink" href="#creating-new-data-types" title="Permalink to this headline">¶</a></h1>
+<p>Creating a new data type is as simple as creating a new sub class of the base <a class="reference internal" href="../apidoc/aiida.orm.nodes.data.html#aiida.orm.nodes.data.data.Data" title="aiida.orm.nodes.data.data.Data"><code class="xref py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> class.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aiida.orm</span> <span class="kn">import</span> <span class="n">Data</span>
+
+<span class="k">class</span> <span class="nc">NewData</span><span class="p">(</span><span class="n">Data</span><span class="p">)</span>
+    <span class="sd">&quot;&quot;&quot;A new data type that wraps a single value.&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>At this point, our new data type does nothing special.
+Typically, one creates a new data type to represent a specific type of data.
+For the purposes of this example, let’s assume that the goal of our <code class="docutils literal notranslate"><span class="pre">NewData</span></code> type is to store a single numerical value.
+To allow one to construct a new <code class="docutils literal notranslate"><span class="pre">NewData</span></code> data node with the desired <code class="docutils literal notranslate"><span class="pre">value</span></code>, for example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">node</span> <span class="o">=</span> <span class="n">NewData</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>we need to allow passing that value to the constructor of the node class.
+Therefore, we have to override the constructor <a class="reference internal" href="../apidoc/aiida.orm.nodes.html#aiida.orm.nodes.node.Node.__init__" title="aiida.orm.nodes.node.Node.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code></a>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aiida.orm</span> <span class="kn">import</span> <span class="n">Data</span>
+
+<span class="k">class</span> <span class="nc">NewData</span><span class="p">(</span><span class="n">Data</span><span class="p">)</span>
+    <span class="sd">&quot;&quot;&quot;A new data type that wraps a single value.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_attribute</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For the class to function properly, the signature of the constructor <strong>cannot be changed</strong> and the constructor of the parent class <strong>has to be called</strong>.</p>
+</div>
+<p>Before calling the construtor of the base class, we have to remove the <code class="docutils literal notranslate"><span class="pre">value</span></code> keyword from the keyword arguments <code class="docutils literal notranslate"><span class="pre">kwargs</span></code>, because the base class will not expect it and will raise an exception if left in the keyword arguments.
+The final step is to actually <em>store</em> the value that is passed by the caller of the constructor.
+A new node has two locations to permanently store any of its properties:</p>
+<ul class="simple">
+<li><p>the database</p></li>
+<li><p>the file repository</p></li>
+</ul>
+<p>The section on <a class="reference internal" href="#working-data-design-guidelines"><span class="std std-ref">design guidelines</span></a> will go into more detail what the advantages and disadvantages of each option are and when to use which.
+For now, since we are storing only a single value, the easiest and best option is to use the database.
+Each node has <em>attributes</em> that can store any key-value pair, as long as the value is JSON serializable.
+By adding the value to the node’s attributes, they will be queryable in the database once an instance of the <code class="docutils literal notranslate"><span class="pre">NewData</span></code> node is stored.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">node</span> <span class="o">=</span> <span class="n">NewData</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>   <span class="c1"># Creating new node instance in memory</span>
+<span class="n">node</span><span class="o">.</span><span class="n">set_attribute</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># While in memory, node attributes can be changed</span>
+<span class="n">node</span><span class="o">.</span><span class="n">store</span><span class="p">()</span>  <span class="c1"># Storing node instance in the database</span>
+</pre></div>
+</div>
+<p>After storing the node instance in the database, its attributes are frozen, and <code class="docutils literal notranslate"><span class="pre">node.set_attribute('value',</span> <span class="pre">7)</span></code> will fail.
+By storing the <code class="docutils literal notranslate"><span class="pre">value</span></code> in the attributes of the node instance, we ensure that that <code class="docutils literal notranslate"><span class="pre">value</span></code> can be retrieved even when the node is reloaded at a later point in time.</p>
+<p>Besides making sure that the content of a data node is stored in the database or file repository, the data type class can also provide useful methods for users to retrieve that data.
+For example, with the current state of the <code class="docutils literal notranslate"><span class="pre">NewData</span></code> class, in order to retrieve the <code class="docutils literal notranslate"><span class="pre">value</span></code> of a stored <code class="docutils literal notranslate"><span class="pre">NewData</span></code> node, one needs to do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">node</span> <span class="o">=</span> <span class="n">load_node</span><span class="p">(</span><span class="o">&lt;</span><span class="n">IDENTIFIER</span><span class="o">&gt;</span><span class="p">)</span>
+<span class="n">node</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In other words, the user of the <code class="docutils literal notranslate"><span class="pre">NewData</span></code> class needs to know that the <code class="docutils literal notranslate"><span class="pre">value</span></code> is stored as an attribute with the name ‘value’.
+This is not easy to remember and therefore not very user-friendly.
+Since the <code class="docutils literal notranslate"><span class="pre">NewData</span></code> type is a class, we can give it useful methods.
+Let’s introduce one that will return the value that was stored for it:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aiida.orm</span> <span class="kn">import</span> <span class="n">Data</span>
+
+<span class="k">class</span> <span class="nc">NewData</span><span class="p">(</span><span class="n">Data</span><span class="p">)</span>
+    <span class="sd">&quot;&quot;&quot;A new data type that wraps a single value.&quot;&quot;&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the value stored for this instance.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The addition of the instance property <code class="docutils literal notranslate"><span class="pre">value</span></code> makes retrieving the value of a <code class="docutils literal notranslate"><span class="pre">NewData</span></code> node a lot easier:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">node</span> <span class="o">=</span> <span class="n">load_node</span><span class="p">(</span><span class="o">&lt;</span><span class="n">IDENTIFIER</span><span class="p">)</span>
+<span class="n">value</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">value</span>
+</pre></div>
+</div>
+<p>As said before, in addition to their attributes, data types can also store their properties in the file repository.
+Imagine a data type that needs to wrap a single text file.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">aiida.orm</span> <span class="kn">import</span> <span class="n">Data</span>
+
+
+<span class="k">class</span> <span class="nc">TextFileData</span><span class="p">(</span><span class="n">Data</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Data class that can be used to wrap a single text file by storing it in its file repository.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filepath</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Construct a new instance and set the contents to that of the file.</span>
+
+<span class="sd">        :param file: an absolute filepath of the file to wrap</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>  <span class="c1"># Get the filename from the absolute path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">put_object_from_file</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>  <span class="c1"># Store the file in the repository under the given filename</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_attribute</span><span class="p">(</span><span class="s1">&#39;filename&#39;</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>  <span class="c1"># Store in the attributes what the filename is</span>
+
+    <span class="k">def</span> <span class="nf">get_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the content of the single file stored for this data node.</span>
+
+<span class="sd">        :return: the content of the file as a string</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s1">&#39;filename&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_object_content</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To create a new instance of this data type and get its content:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">node</span> <span class="o">=</span> <span class="n">TextFileData</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><span class="s1">&#39;/some/absolute/path/to/file.txt&#39;</span><span class="p">)</span>
+<span class="n">node</span><span class="o">.</span><span class="n">get_content</span><span class="p">()</span>  <span class="c1"># This will return the content of the file</span>
+</pre></div>
+</div>
+<p>This example is a simplified version of the <a class="reference internal" href="../apidoc/aiida.orm.nodes.data.html#aiida.orm.nodes.data.singlefile.SinglefileData" title="aiida.orm.nodes.data.singlefile.SinglefileData"><code class="xref py py-class docutils literal notranslate"><span class="pre">SinglefileData</span></code></a> data class that ships with <cite>aiida-core</cite>.
+If this happens to be your use case (or very close to it), it is of course better to use that class, or you can sub class it and adapt it where needed.</p>
+<p>The two new data types we have just implemented are of course trivial and not very useful, but the concepts are flexible and can easily be applied to more complex use-cases.
+The following section will provide useful guidelines on how to optimally design new data types.</p>
+</div>
+<div class="section" id="database-or-repository">
+<span id="working-data-design-guidelines"></span><h1>Database or repository?<a class="headerlink" href="#database-or-repository" title="Permalink to this headline">¶</a></h1>
+<p>When deciding where to store a property of a data type, one has to choose between the database and the file repository.
+The database will make it possible to search in the provenance graph based on criteria based on the property, e.g. all <code class="docutils literal notranslate"><span class="pre">NewData</span></code> nodes where the property is greater than 0.
+The downside is that storing too much information in the database can make it sluggish.
+Therefore, big data (think large files), whose content does not necessarily need to be queried for, is better stored in the file repository.
+Of course a data type may need to store multiple properties of varying character, but both storage locations can safely be used in parellel.
+When choosing the database as the storage location, the properties should be stored using the node <em>attributes</em>.
+To set and retrieve them, use the attribute methods of the <a class="reference internal" href="../apidoc/aiida.orm.nodes.html#aiida.orm.nodes.node.Node" title="aiida.orm.nodes.node.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a> class.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

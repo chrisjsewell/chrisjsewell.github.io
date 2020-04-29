@@ -1,0 +1,348 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>AiiDA cookbook (useful code snippets) &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>AiiDA cookbook (useful code snippets)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/working_with_aiida/cookbook.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="aiida-cookbook-useful-code-snippets">
+<h1>AiiDA cookbook (useful code snippets)<a class="headerlink" href="#aiida-cookbook-useful-code-snippets" title="Permalink to this headline">¶</a></h1>
+<p>This cookbook is intended to be a collection of useful short scripts and
+code snippets that may be useful in the everyday usage of AiiDA.
+Please read carefully the notes (if any) before running the scripts!</p>
+<div class="section" id="checking-the-queued-jobs-on-a-scheduler">
+<h2>Checking the queued jobs on a scheduler<a class="headerlink" href="#checking-the-queued-jobs-on-a-scheduler" title="Permalink to this headline">¶</a></h2>
+<p>If you want to know if which jobs are currently on the scheduler (e.g.
+to dynamically decide on which computer to submit, or to delay submission, etc.)
+you can use a modification of the following script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_scheduler_jobs</span><span class="p">(</span><span class="n">only_current_user</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a list of all current jobs in the scheduler.</span>
+
+<span class="sd">    .. note:: an SSH connection is open and closed at every</span>
+<span class="sd">        launch of this function.</span>
+
+<span class="sd">    :param only_current_user: if True, filters by these</span>
+<span class="sd">        considering only those of the current user (if this</span>
+<span class="sd">        feature is supported by the scheduler plugin). Otherwise,</span>
+<span class="sd">        if False show all jobs.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">aiida</span> <span class="kn">import</span> <span class="n">orm</span>
+
+    <span class="n">computer</span> <span class="o">=</span> <span class="n">Computer</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;deneb&#39;</span><span class="p">)</span>
+    <span class="n">transport</span> <span class="o">=</span> <span class="n">computer</span><span class="o">.</span><span class="n">get_transport</span><span class="p">()</span>
+    <span class="n">scheduler</span> <span class="o">=</span> <span class="n">computer</span><span class="o">.</span><span class="n">get_scheduler</span><span class="p">()</span>
+    <span class="n">scheduler</span><span class="o">.</span><span class="n">set_transport</span><span class="p">(</span><span class="n">transport</span><span class="p">)</span>
+
+    <span class="c1"># this opens the SSH connection, for SSH transports</span>
+    <span class="k">with</span> <span class="n">transport</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">only_current_user</span><span class="p">:</span>
+            <span class="n">remote_username</span> <span class="o">=</span> <span class="n">transport</span><span class="o">.</span><span class="n">whoami</span><span class="p">()</span>
+            <span class="n">all_jobs</span> <span class="o">=</span> <span class="n">scheduler</span><span class="o">.</span><span class="n">get_jobs</span><span class="p">(</span>
+                <span class="n">user</span><span class="o">=</span><span class="n">remote_username</span><span class="p">,</span>
+                <span class="n">as_dict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">all_jobs</span> <span class="o">=</span> <span class="n">scheduler</span><span class="o">.</span><span class="n">get_jobs</span><span class="p">(</span>
+                <span class="n">as_dict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">all_jobs</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">all_jobs</span> <span class="o">=</span> <span class="n">get_scheduler_jobs</span><span class="p">(</span><span class="n">only_current_user</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">user_jobs</span> <span class="o">=</span> <span class="n">get_scheduler_jobs</span><span class="p">(</span><span class="n">only_current_user</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Current user has </span><span class="si">{}</span><span class="s2"> jobs out of </span><span class="si">{}</span><span class="s2"> in the scheduler&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="nb">len</span><span class="p">(</span><span class="n">user_jobs</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_jobs</span><span class="p">)</span>
+    <span class="p">))</span>
+
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Detailed (user&#39;s) job view:&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">job_id</span><span class="p">,</span> <span class="n">job_info</span> <span class="ow">in</span> <span class="n">user_jobs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Job ID: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">job_id</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">job_info</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="s2">&quot;raw_data&quot;</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  </span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">run</span></code> to execute it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">verdi</span> <span class="n">run</span> <span class="n">file_with_script</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Every time you call the function, an ssh connection
+is executed! So be careful and run this function
+sparsely, or your supercomputer centre might block your account.</p>
+<p>Another alternative if you want to call many times the function
+is to pass the transport as a parameter, and keep it open from the outside.</p>
+</div>
+<p>An example output would be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Current</span> <span class="n">user</span> <span class="n">has</span> <span class="mi">5</span> <span class="n">jobs</span> <span class="n">out</span> <span class="n">of</span> <span class="mi">1425</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">scheduler</span>
+<span class="n">Detailed</span> <span class="p">(</span><span class="n">user</span><span class="s1">&#39;s) job view:</span>
+<span class="n">Job</span> <span class="n">ID</span><span class="p">:</span> <span class="mi">1658497</span>
+  <span class="n">job_id</span><span class="p">:</span> <span class="mi">1658497</span>
+  <span class="n">wallclock_time_seconds</span><span class="p">:</span> <span class="mi">38052</span>
+  <span class="n">title</span><span class="p">:</span> <span class="n">aiida</span><span class="o">-</span><span class="mi">2324985</span>
+  <span class="n">num_machines</span><span class="p">:</span> <span class="mi">4</span>
+  <span class="n">job_state</span><span class="p">:</span> <span class="n">RUNNING</span>
+  <span class="n">queue_name</span><span class="p">:</span> <span class="n">parallel</span>
+  <span class="n">num_mpiprocs</span><span class="p">:</span> <span class="mi">64</span>
+  <span class="n">allocated_machines_raw</span><span class="p">:</span> <span class="n">r02</span><span class="o">-</span><span class="n">node</span><span class="p">[</span><span class="mi">17</span><span class="o">-</span><span class="mi">18</span><span class="p">,</span><span class="mi">53</span><span class="o">-</span><span class="mi">54</span><span class="p">]</span>
+  <span class="n">submission_time</span><span class="p">:</span> <span class="mi">2018</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">28</span> <span class="mi">09</span><span class="p">:</span><span class="mi">21</span><span class="p">:</span><span class="mi">35</span>
+  <span class="n">job_owner</span><span class="p">:</span> <span class="n">some_remote_username</span>
+  <span class="n">dispatch_time</span><span class="p">:</span> <span class="mi">2018</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">28</span> <span class="mi">09</span><span class="p">:</span><span class="mi">21</span><span class="p">:</span><span class="mi">35</span>
+  <span class="n">annotation</span><span class="p">:</span> <span class="kc">None</span>
+  <span class="n">requested_wallclock_time_seconds</span><span class="p">:</span> <span class="mi">82800</span>
+
+<span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="getting-an-authinfo-knowing-the-computer-and-the-user">
+<h2>Getting an AuthInfo knowing the computer and the user<a class="headerlink" href="#getting-an-authinfo-knowing-the-computer-and-the-user" title="Permalink to this headline">¶</a></h2>
+<p>If you have an ORM <code class="docutils literal notranslate"><span class="pre">Computer</span></code> and and ORM <code class="docutils literal notranslate"><span class="pre">User</span></code>, the way to get
+an <code class="docutils literal notranslate"><span class="pre">AuthInfo</span></code> object is the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AuthInfo</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">dbcomputer_id</span><span class="o">=</span><span class="n">computer</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">aiidauser_id</span><span class="o">=</span><span class="n">user</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This might be useful, for instance, to then get a transport to connect to the
+computer.</p>
+<p>Here is, as an example, an useful utility function:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_authinfo_from_computername</span><span class="p">(</span><span class="n">computername</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">aiida.orm</span> <span class="kn">import</span> <span class="n">AuthInfo</span><span class="p">,</span> <span class="n">User</span><span class="p">,</span> <span class="n">Computer</span>
+    <span class="kn">from</span> <span class="nn">aiida.manage.manager</span> <span class="kn">import</span> <span class="n">get_manager</span>
+    <span class="n">manager</span> <span class="o">=</span> <span class="n">get_manager</span><span class="p">()</span>
+    <span class="n">profile</span> <span class="o">=</span> <span class="n">manager</span><span class="o">.</span><span class="n">get_profile</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">AuthInfo</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+        <span class="n">dbcomputer_id</span><span class="o">=</span><span class="n">Computer</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">computername</span><span class="p">)</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+        <span class="n">aiidauser_id</span><span class="o">=</span><span class="n">User</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="n">profile</span><span class="o">.</span><span class="n">default_user</span><span class="p">)</span><span class="o">.</span><span class="n">id</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>that you can then use, for instance, as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">authinfo</span> <span class="o">=</span> <span class="n">get_authinfo_from_computername</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">authinfo</span><span class="o">.</span><span class="n">get_transport</span><span class="p">()</span> <span class="k">as</span> <span class="n">transport</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">transport</span><span class="o">.</span><span class="n">listdir</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

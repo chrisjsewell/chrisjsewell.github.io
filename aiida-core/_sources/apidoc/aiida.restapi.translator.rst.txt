@@ -1,0 +1,52 @@
+aiida.restapi.translator package
+================================
+
+.. automodule:: aiida.restapi.translator
+   :members:
+   :special-members:
+   :private-members:
+   :undoc-members:
+   :show-inheritance:
+
+Subpackages
+-----------
+
+.. toctree::
+
+   aiida.restapi.translator.nodes
+
+Submodules
+----------
+
+
+.. automodule:: aiida.restapi.translator.base
+   :members:
+   :special-members:
+   :private-members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: aiida.restapi.translator.computer
+   :members:
+   :special-members:
+   :private-members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: aiida.restapi.translator.group
+   :members:
+   :special-members:
+   :private-members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: aiida.restapi.translator.user
+   :members:
+   :special-members:
+   :private-members:
+   :undoc-members:
+   :show-inheritance:
+

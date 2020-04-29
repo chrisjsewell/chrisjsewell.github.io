@@ -1,0 +1,605 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.backends.djsite package &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>aiida.backends.djsite package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/aiida.backends.djsite.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-aiida.backends.djsite">
+<span id="aiida-backends-djsite-package"></span><h1>aiida.backends.djsite package<a class="headerlink" href="#module-aiida.backends.djsite" title="Permalink to this headline">¶</a></h1>
+<p>Module with implementation of the database backend using Django.</p>
+<dl class="function">
+<dt id="aiida.backends.djsite.get_scoped_session">
+<code class="sig-prename descclassname">aiida.backends.djsite.</code><code class="sig-name descname">get_scoped_session</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/djsite.html#get_scoped_session"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.get_scoped_session" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a scoped session for the given profile that is exclusively to be used for the <cite>QueryBuilder</cite>.</p>
+<p>Since the <cite>QueryBuilder</cite> implementation uses SqlAlchemy to map the query onto the models in order to generate the
+SQL to be sent to the database, it requires a session, which is an <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.session.Session</span></code> instance.
+The only purpose is for SqlAlchemy to be able to connect to the database perform the query and retrieve the results.
+Even the Django backend implementation will use SqlAlchemy for its <cite>QueryBuilder</cite> and so also needs an SqlA session.
+It is important that we do not reuse the scoped session factory in the SqlAlchemy implementation, because that runs
+the risk of cross-talk once profiles can be switched dynamically in a single python interpreter. Therefore the
+Django implementation of the <cite>QueryBuilder</cite> should keep its own SqlAlchemy engine and scoped session factory
+instances that are used to provide the query builder with a session.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>profile</strong> – <a class="reference internal" href="aiida.manage.configuration.html#aiida.manage.configuration.profile.Profile" title="aiida.manage.configuration.profile.Profile"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.manage.configuration.profile.Profile</span></code></a> for which to configure the engine.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.session.Session</span></code> instance with engine configured for the given profile.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.djsite.reset_session">
+<code class="sig-prename descclassname">aiida.backends.djsite.</code><code class="sig-name descname">reset_session</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/djsite.html#reset_session"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.reset_session" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the session which means setting the global engine and session factory instances to <cite>None</cite>.</p>
+</dd></dl>
+
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aiida.backends.djsite.db.html">aiida.backends.djsite.db package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aiida.backends.djsite.db.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aiida.backends.djsite.db.migrations.html">aiida.backends.djsite.db.migrations package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="aiida.backends.djsite.db.migrations.html#module-aiida.backends.djsite.db.migrations.0001_initial">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aiida.backends.djsite.db.html#module-aiida.backends.djsite.db.models">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="module-aiida.backends.djsite.manage">
+<span id="submodules"></span><h2>Submodules<a class="headerlink" href="#module-aiida.backends.djsite.manage" title="Permalink to this headline">¶</a></h2>
+<p>Simple wrapper around Django’s <cite>manage.py</cite> CLI script.</p>
+<span class="target" id="module-aiida.backends.djsite.manager"></span><p>Utilities and configuration of the Django database schema.</p>
+<dl class="class">
+<dt id="aiida.backends.djsite.manager.DjangoBackendManager">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.backends.djsite.manager.</code><code class="sig-name descname">DjangoBackendManager</code><a class="reference internal" href="../_modules/aiida/backends/djsite/manager.html#DjangoBackendManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.manager.DjangoBackendManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="aiida.backends.html#aiida.backends.manager.BackendManager" title="aiida.backends.manager.BackendManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.backends.manager.BackendManager</span></code></a></p>
+<p>Class to manage the database schema.</p>
+<dl class="attribute">
+<dt id="aiida.backends.djsite.manager.DjangoBackendManager.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.backends.djsite.manager'</em><a class="headerlink" href="#aiida.backends.djsite.manager.DjangoBackendManager.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.djsite.manager.DjangoBackendManager._load_backend_environment">
+<code class="sig-name descname">_load_backend_environment</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/djsite/manager.html#DjangoBackendManager._load_backend_environment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.manager.DjangoBackendManager._load_backend_environment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the backend environment.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.djsite.manager.DjangoBackendManager._migrate_database_generation">
+<code class="sig-name descname">_migrate_database_generation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/djsite/manager.html#DjangoBackendManager._migrate_database_generation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.manager.DjangoBackendManager._migrate_database_generation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the database schema generation.</p>
+<p>For Django we also have to clear the <cite>django_migrations</cite> table that contains a history of all applied
+migrations. After clearing it, we reinsert the name of the new initial schema .</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.djsite.manager.DjangoBackendManager._migrate_database_version">
+<code class="sig-name descname">_migrate_database_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/djsite/manager.html#DjangoBackendManager._migrate_database_version"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.manager.DjangoBackendManager._migrate_database_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrate the database to the current schema version.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.djsite.manager.DjangoBackendManager.get_schema_generation_database">
+<code class="sig-name descname">get_schema_generation_database</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/djsite/manager.html#DjangoBackendManager.get_schema_generation_database"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.manager.DjangoBackendManager.get_schema_generation_database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the database schema version.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>distutils.version.StrictVersion</cite> with schema version of the database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.djsite.manager.DjangoBackendManager.get_schema_version_code">
+<code class="sig-name descname">get_schema_version_code</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/djsite/manager.html#DjangoBackendManager.get_schema_version_code"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.manager.DjangoBackendManager.get_schema_version_code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the code schema version.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.djsite.manager.DjangoBackendManager.get_schema_version_database">
+<code class="sig-name descname">get_schema_version_database</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/djsite/manager.html#DjangoBackendManager.get_schema_version_database"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.manager.DjangoBackendManager.get_schema_version_database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the database schema version.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>distutils.version.StrictVersion</cite> with schema version of the database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.djsite.manager.DjangoBackendManager.get_schema_version_reset">
+<code class="sig-name descname">get_schema_version_reset</code><span class="sig-paren">(</span><em class="sig-param">schema_generation_code</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/djsite/manager.html#DjangoBackendManager.get_schema_version_reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.manager.DjangoBackendManager.get_schema_version_reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return schema version the database should have to be able to automatically reset to code schema generation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>schema_generation_code</strong> – the schema generation of the code.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>schema version</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.djsite.manager.DjangoBackendManager.get_settings_manager">
+<code class="sig-name descname">get_settings_manager</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/djsite/manager.html#DjangoBackendManager.get_settings_manager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.manager.DjangoBackendManager.get_settings_manager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an instance of the <cite>SettingsManager</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>SettingsManager</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.djsite.manager.DjangoBackendManager.is_database_schema_ahead">
+<code class="sig-name descname">is_database_schema_ahead</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/djsite/manager.html#DjangoBackendManager.is_database_schema_ahead"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.manager.DjangoBackendManager.is_database_schema_ahead" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine whether the database schema version is ahead of the code schema version.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>this will not check whether the schema generations are equal</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>boolean, True if the database schema version is ahead of the code schema version.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.djsite.manager.DjangoBackendManager.reset_backend_environment">
+<code class="sig-name descname">reset_backend_environment</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/djsite/manager.html#DjangoBackendManager.reset_backend_environment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.manager.DjangoBackendManager.reset_backend_environment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the backend environment.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.djsite.manager.DjangoBackendManager.set_schema_version_database">
+<code class="sig-name descname">set_schema_version_database</code><span class="sig-paren">(</span><em class="sig-param">version</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/djsite/manager.html#DjangoBackendManager.set_schema_version_database"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.manager.DjangoBackendManager.set_schema_version_database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the database schema version.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>version</strong> – string with schema version to set</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aiida.backends.djsite.manager.DjangoSettingsManager">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.backends.djsite.manager.</code><code class="sig-name descname">DjangoSettingsManager</code><a class="reference internal" href="../_modules/aiida/backends/djsite/manager.html#DjangoSettingsManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.manager.DjangoSettingsManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="aiida.backends.html#aiida.backends.manager.SettingsManager" title="aiida.backends.manager.SettingsManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.backends.manager.SettingsManager</span></code></a></p>
+<p>Class to get, set and delete settings from the <cite>DbSettings</cite> table.</p>
+<dl class="attribute">
+<dt id="aiida.backends.djsite.manager.DjangoSettingsManager.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.backends.djsite.manager'</em><a class="headerlink" href="#aiida.backends.djsite.manager.DjangoSettingsManager.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.djsite.manager.DjangoSettingsManager.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param">key</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/djsite/manager.html#DjangoSettingsManager.delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.manager.DjangoSettingsManager.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the setting with the given key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key</strong> – the key identifying the setting</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><cite>~aiida.common.exceptions.NotExistent</cite> if the settings does not exist</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.djsite.manager.DjangoSettingsManager.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">key</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/djsite/manager.html#DjangoSettingsManager.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.manager.DjangoSettingsManager.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the setting with the given key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key</strong> – the key identifying the setting</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Setting</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><cite>~aiida.common.exceptions.NotExistent</cite> if the settings does not exist</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.djsite.manager.DjangoSettingsManager.set">
+<code class="sig-name descname">set</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">value</em>, <em class="sig-param">description=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/djsite/manager.html#DjangoSettingsManager.set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.manager.DjangoSettingsManager.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the settings with the given key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> – the key identifying the setting</p></li>
+<li><p><strong>value</strong> – the value for the setting</p></li>
+<li><p><strong>description</strong> – optional setting description</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.djsite.manager.DjangoSettingsManager.table_name">
+<code class="sig-name descname">table_name</code><em class="property"> = 'db_dbsetting'</em><a class="headerlink" href="#aiida.backends.djsite.manager.DjangoSettingsManager.table_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.djsite.manager.DjangoSettingsManager.validate_table_existence">
+<code class="sig-name descname">validate_table_existence</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/djsite/manager.html#DjangoSettingsManager.validate_table_existence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.manager.DjangoSettingsManager.validate_table_existence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verify that the <cite>DbSetting</cite> table actually exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><cite>~aiida.common.exceptions.NotExistent</cite> if the settings table does not exist</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.djsite.queries"></span><p>Django query backend.</p>
+<dl class="class">
+<dt id="aiida.backends.djsite.queries.DjangoQueryManager">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.backends.djsite.queries.</code><code class="sig-name descname">DjangoQueryManager</code><span class="sig-paren">(</span><em class="sig-param">backend</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/djsite/queries.html#DjangoQueryManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.queries.DjangoQueryManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="aiida.backends.general.html#aiida.backends.general.abstractqueries.AbstractQueryManager" title="aiida.backends.general.abstractqueries.AbstractQueryManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.backends.general.abstractqueries.AbstractQueryManager</span></code></a></p>
+<p>Object that mananges the Django queries.</p>
+<dl class="attribute">
+<dt id="aiida.backends.djsite.queries.DjangoQueryManager.__abstractmethods__">
+<code class="sig-name descname">__abstractmethods__</code><em class="property"> = frozenset({})</em><a class="headerlink" href="#aiida.backends.djsite.queries.DjangoQueryManager.__abstractmethods__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.djsite.queries.DjangoQueryManager.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.backends.djsite.queries'</em><a class="headerlink" href="#aiida.backends.djsite.queries.DjangoQueryManager.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.djsite.queries.DjangoQueryManager._abc_impl">
+<code class="sig-name descname">_abc_impl</code><em class="property"> = &lt;_abc_data object&gt;</em><a class="headerlink" href="#aiida.backends.djsite.queries.DjangoQueryManager._abc_impl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.djsite.queries.DjangoQueryManager.get_bands_and_parents_structure">
+<code class="sig-name descname">get_bands_and_parents_structure</code><span class="sig-paren">(</span><em class="sig-param">args</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/djsite/queries.html#DjangoQueryManager.get_bands_and_parents_structure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.queries.DjangoQueryManager.get_bands_and_parents_structure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns bands and closest parent structure.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.djsite.queries.DjangoQueryManager.get_creation_statistics">
+<code class="sig-name descname">get_creation_statistics</code><span class="sig-paren">(</span><em class="sig-param">user_pk=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/djsite/queries.html#DjangoQueryManager.get_creation_statistics"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.queries.DjangoQueryManager.get_creation_statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dictionary with the statistics of node creation, summarized by day,
+optimized for the Django backend.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>Days when no nodes were created are not present in the returned <cite>ctime_by_day</cite> dictionary.</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>user_pk</strong> – If None (default), return statistics for all users.
+If user pk is specified, return only the statistics for the given user.</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>a dictionary as
+follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="n">TOTAL_NUM_OF_NODES</span><span class="p">,</span>
+   <span class="s2">&quot;types&quot;</span><span class="p">:</span> <span class="p">{</span><span class="n">TYPESTRING1</span><span class="p">:</span> <span class="n">count</span><span class="p">,</span> <span class="n">TYPESTRING2</span><span class="p">:</span> <span class="n">count</span><span class="p">,</span> <span class="o">...</span><span class="p">},</span>
+   <span class="s2">&quot;ctime_by_day&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;YYYY-MMM-DD&#39;</span><span class="p">:</span> <span class="n">count</span><span class="p">,</span> <span class="o">...</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>where in <cite>ctime_by_day</cite> the key is a string in the format ‘YYYY-MM-DD’ and the value is
+an integer with the number of nodes created that day.</p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.djsite.queries.DjangoQueryManager.query_group">
+<em class="property">static </em><code class="sig-name descname">query_group</code><span class="sig-paren">(</span><em class="sig-param">q_object</em>, <em class="sig-param">args</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/djsite/queries.html#DjangoQueryManager.query_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.queries.DjangoQueryManager.query_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subselect to filter data nodes by their group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q_object</strong> – a query object</p></li>
+<li><p><strong>args</strong> – a namespace with parsed command line parameters.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.djsite.queries.DjangoQueryManager.query_past_days">
+<em class="property">static </em><code class="sig-name descname">query_past_days</code><span class="sig-paren">(</span><em class="sig-param">q_object</em>, <em class="sig-param">args</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/djsite/queries.html#DjangoQueryManager.query_past_days"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.queries.DjangoQueryManager.query_past_days" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subselect to filter data nodes by their age.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q_object</strong> – a query object</p></li>
+<li><p><strong>args</strong> – a namespace with parsed command line parameters.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.djsite.queries.get_closest_parents">
+<code class="sig-prename descclassname">aiida.backends.djsite.queries.</code><code class="sig-name descname">get_closest_parents</code><span class="sig-paren">(</span><em class="sig-param">pks</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/djsite/queries.html#get_closest_parents"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.queries.get_closest_parents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the closest parents dbnodes of a set of nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pks</strong> – one pk or an iterable of pks of nodes</p></li>
+<li><p><strong>chunk_size</strong> – we chunk the pks into groups of this size,
+to optimize the speed (default=50)</p></li>
+<li><p><strong>print_progress</strong> – print the the progression if True (default=False).</p></li>
+<li><p><strong>args</strong> – additional query parameters</p></li>
+<li><p><strong>kwargs</strong> – additional query parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a dictionary of the form
+pk1: pk of closest parent of node with pk1,
+pk2: pk of closest parent of node with pk2</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It works also if pks is a list of nodes rather than their pks</p>
+</div>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>find a way to always get a parent (when there is one) from each pk.
+Now, when the same parent has several children in pks, only
+one of them is kept. This is a BUG, related to the use of a dictionary
+(children_dict, see below…).
+For now a work around is to use chunk_size=1.</p>
+</div>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.djsite.settings"></span><p>Django settings for the AiiDA project.</p>
+<span class="target" id="module-aiida.backends.djsite.utils"></span><p>Utility functions specific to the Django backend.</p>
+<dl class="function">
+<dt id="aiida.backends.djsite.utils.delete_nodes_and_connections_django">
+<code class="sig-prename descclassname">aiida.backends.djsite.utils.</code><code class="sig-name descname">delete_nodes_and_connections_django</code><span class="sig-paren">(</span><em class="sig-param">pks_to_delete</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/djsite/utils.html#delete_nodes_and_connections_django"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.djsite.utils.delete_nodes_and_connections_django" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete all nodes corresponding to pks in the input.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pks_to_delete</strong> – A list, tuple or set of pks that should be deleted.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

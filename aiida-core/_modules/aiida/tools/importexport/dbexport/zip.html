@@ -1,0 +1,380 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.tools.importexport.dbexport.zip &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/language_data.js"></script>
+        <script src="../../../../../_static/togglebutton.js"></script>
+        <script src="../../../../../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../../aiida.html">aiida</a> &raquo;</li>
+        
+          <li><a href="../dbexport.html">aiida.tools.importexport.dbexport</a> &raquo;</li>
+        
+      <li>aiida.tools.importexport.dbexport.zip</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for aiida.tools.importexport.dbexport.zip</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1">###########################################################################</span>
+<span class="c1"># Copyright (c), The AiiDA team. All rights reserved.                     #</span>
+<span class="c1"># This file is part of the AiiDA code.                                    #</span>
+<span class="c1">#                                                                         #</span>
+<span class="c1"># The code is hosted on GitHub at https://github.com/aiidateam/aiida-core #</span>
+<span class="c1"># For further information on the license, see the LICENSE.txt file        #</span>
+<span class="c1"># For further information please visit http://www.aiida.net               #</span>
+<span class="c1">###########################################################################</span>
+<span class="sd">&quot;&quot;&quot;Export a zip-file.&quot;&quot;&quot;</span>
+<span class="c1"># pylint: disable=missing-docstring,redefined-builtin</span>
+<span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">zipfile</span>
+
+
+<div class="viewcode-block" id="MyWritingZipFile"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.dbexport.html#aiida.tools.importexport.dbexport.zip.MyWritingZipFile">[docs]</a><span class="k">class</span> <span class="nc">MyWritingZipFile</span><span class="p">:</span>
+
+<div class="viewcode-block" id="MyWritingZipFile.__init__"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.dbexport.html#aiida.tools.importexport.dbexport.zip.MyWritingZipFile.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zip_file</span><span class="p">,</span> <span class="n">fname</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_zipfile</span> <span class="o">=</span> <span class="n">zip_file</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fname</span> <span class="o">=</span> <span class="n">fname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_buffer</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="MyWritingZipFile.open"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.dbexport.html#aiida.tools.importexport.dbexport.zip.MyWritingZipFile.open">[docs]</a>    <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s1">&#39;Cannot open again!&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_buffer</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="MyWritingZipFile.write"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.dbexport.html#aiida.tools.importexport.dbexport.zip.MyWritingZipFile.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_buffer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MyWritingZipFile.close"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.dbexport.html#aiida.tools.importexport.dbexport.zip.MyWritingZipFile.close">[docs]</a>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_buffer</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_zipfile</span><span class="o">.</span><span class="n">writestr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fname</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_buffer</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_buffer</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="MyWritingZipFile.__enter__"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.dbexport.html#aiida.tools.importexport.dbexport.zip.MyWritingZipFile.__enter__">[docs]</a>    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="MyWritingZipFile.__exit__"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.dbexport.html#aiida.tools.importexport.dbexport.zip.MyWritingZipFile.__exit__">[docs]</a>    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div></div>
+
+
+<div class="viewcode-block" id="ZipFolder"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.dbexport.html#aiida.tools.importexport.dbexport.zip.ZipFolder">[docs]</a><span class="k">class</span> <span class="nc">ZipFolder</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    To improve: if zipfile is closed, do something</span>
+<span class="sd">    (e.g. add explicit open method, rename open to openfile,</span>
+<span class="sd">    set _zipfile to None, ...)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ZipFolder.__init__"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.dbexport.html#aiida.tools.importexport.dbexport.zip.ZipFolder.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zipfolder_or_fname</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subfolder</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">use_compression</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">allowZip64</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :param zipfolder_or_fname: either another ZipFolder instance,</span>
+<span class="sd">          of which you want to get a subfolder, or a filename to create.</span>
+<span class="sd">        :param mode: the file mode; see the zipfile.ZipFile docs for valid</span>
+<span class="sd">          strings. Note: can be specified only if zipfolder_or_fname is a</span>
+<span class="sd">          string (the filename to generate)</span>
+<span class="sd">        :param subfolder: the subfolder that specified the &quot;current working</span>
+<span class="sd">          directory&quot; in the zip file. If zipfolder_or_fname is a ZipFolder,</span>
+<span class="sd">          subfolder is a relative path from zipfolder_or_fname.subfolder</span>
+<span class="sd">        :param use_compression: either True, to compress files in the Zip, or</span>
+<span class="sd">          False if you just want to pack them together without compressing.</span>
+<span class="sd">          It is ignored if zipfolder_or_fname is a ZipFolder isntance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">zipfolder_or_fname</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">the_mode</span> <span class="o">=</span> <span class="n">mode</span>
+            <span class="k">if</span> <span class="n">the_mode</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">the_mode</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span>
+            <span class="k">if</span> <span class="n">use_compression</span><span class="p">:</span>
+                <span class="n">compression</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZIP_DEFLATED</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">compression</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZIP_STORED</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_zipfile</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span>
+                <span class="n">zipfolder_or_fname</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">the_mode</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="n">compression</span><span class="p">,</span> <span class="n">allowZip64</span><span class="o">=</span><span class="n">allowZip64</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_pwd</span> <span class="o">=</span> <span class="n">subfolder</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">mode</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Cannot specify &#39;mode&#39; when passing a ZipFolder&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_zipfile</span> <span class="o">=</span> <span class="n">zipfolder_or_fname</span><span class="o">.</span><span class="n">_zipfile</span>  <span class="c1"># pylint: disable=protected-access</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_pwd</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">zipfolder_or_fname</span><span class="o">.</span><span class="n">pwd</span><span class="p">,</span> <span class="n">subfolder</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ZipFolder.__enter__"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.dbexport.html#aiida.tools.importexport.dbexport.zip.ZipFolder.__enter__">[docs]</a>    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="ZipFolder.__exit__"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.dbexport.html#aiida.tools.importexport.dbexport.zip.ZipFolder.__exit__">[docs]</a>    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="ZipFolder.close"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.dbexport.html#aiida.tools.importexport.dbexport.zip.ZipFolder.close">[docs]</a>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_zipfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">pwd</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pwd</span>
+
+<div class="viewcode-block" id="ZipFolder.open"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.dbexport.html#aiida.tools.importexport.dbexport.zip.ZipFolder.open">[docs]</a>    <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;w&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">MyWritingZipFile</span><span class="p">(</span><span class="n">zip_file</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_zipfile</span><span class="p">,</span> <span class="n">fname</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_internal_path</span><span class="p">(</span><span class="n">fname</span><span class="p">))</span>
+        <span class="c1"># else</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_zipfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_internal_path</span><span class="p">(</span><span class="n">fname</span><span class="p">),</span> <span class="n">mode</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ZipFolder._get_internal_path"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.dbexport.html#aiida.tools.importexport.dbexport.zip.ZipFolder._get_internal_path">[docs]</a>    <span class="k">def</span> <span class="nf">_get_internal_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pwd</span><span class="p">,</span> <span class="n">filename</span><span class="p">))</span></div>
+
+    <span class="c1"># pylint: disable=unused-argument</span>
+<div class="viewcode-block" id="ZipFolder.get_subfolder"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.dbexport.html#aiida.tools.importexport.dbexport.zip.ZipFolder.get_subfolder">[docs]</a>    <span class="k">def</span> <span class="nf">get_subfolder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">subfolder</span><span class="p">,</span> <span class="n">create</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">reset_limit</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="c1"># reset_limit: ignored</span>
+        <span class="c1"># create: ignored, for the time being</span>
+        <span class="k">return</span> <span class="n">ZipFolder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">subfolder</span><span class="o">=</span><span class="n">subfolder</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ZipFolder.exists"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.dbexport.html#aiida.tools.importexport.dbexport.zip.ZipFolder.exists">[docs]</a>    <span class="k">def</span> <span class="nf">exists</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check whether path already exists in the ZipFolder&quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_zipfile</span><span class="o">.</span><span class="n">getinfo</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+            <span class="n">exists</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="n">exists</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="n">exists</span></div>
+
+<div class="viewcode-block" id="ZipFolder.insert_path"><a class="viewcode-back" href="../../../../../apidoc/aiida.tools.importexport.dbexport.html#aiida.tools.importexport.dbexport.zip.ZipFolder.insert_path">[docs]</a>    <span class="k">def</span> <span class="nf">insert_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src</span><span class="p">,</span> <span class="n">dest_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">dest_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">base_filename</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">src</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">base_filename</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">dest_name</span><span class="p">)</span>
+
+        <span class="n">base_filename</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_internal_path</span><span class="p">(</span><span class="n">base_filename</span><span class="p">)</span>
+
+        <span class="n">src</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">src</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="n">src</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;src must be an absolute path in insert_file&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">overwrite</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">base_filename</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s1">&#39;destination already exists: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">base_filename</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">src</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">dirpath</span><span class="p">,</span> <span class="n">dirnames</span><span class="p">,</span> <span class="n">filenames</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">src</span><span class="p">):</span>
+                <span class="n">relpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">dirpath</span><span class="p">,</span> <span class="n">src</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">dirnames</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">filenames</span><span class="p">:</span>
+                    <span class="n">real_src</span> <span class="o">=</span> <span class="n">dirpath</span>
+                    <span class="n">real_dest</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_filename</span><span class="p">,</span> <span class="n">relpath</span><span class="p">)</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">sep</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">real_dest</span><span class="p">):</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_zipfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">real_src</span><span class="p">,</span> <span class="n">real_dest</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">dirnames</span> <span class="o">+</span> <span class="n">filenames</span><span class="p">:</span>
+                        <span class="n">real_src</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirpath</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
+                        <span class="n">real_dest</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_filename</span><span class="p">,</span> <span class="n">relpath</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">real_dest</span><span class="p">):</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_zipfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">real_src</span><span class="p">,</span> <span class="n">real_dest</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_zipfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">base_filename</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

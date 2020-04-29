@@ -1,0 +1,423 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Repository backup (.aiida folder) &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Repository backup (<code class="docutils literal notranslate"><span class="pre">.aiida</span></code> folder)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/backup/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p id="backup">AiiDA stores:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>the profile configuration in the <code class="docutils literal notranslate"><span class="pre">config.json</span></code> file located in the <code class="docutils literal notranslate"><span class="pre">.aiida</span></code> folder. Typically located at <code class="docutils literal notranslate"><span class="pre">~/.aiida</span></code> (see also <a class="reference internal" href="../install/configuration.html#configure-aiida"><span class="std std-ref">Configure AiiDA</span></a>).</p></li>
+<li><p>files associated with nodes in the repository folder (one per profile). Typically located in the <code class="docutils literal notranslate"><span class="pre">.aiida</span></code> folder.</p></li>
+<li><p>queryable metadata in the PostgreSQL database (one per profile).</p></li>
+</ul>
+</div></blockquote>
+<p>All three components are required for the operation of AiiDA and should be backed up.</p>
+<div class="section" id="repository-backup-aiida-folder">
+<span id="repository-backup"></span><h1>Repository backup (<code class="docutils literal notranslate"><span class="pre">.aiida</span></code> folder)<a class="headerlink" href="#repository-backup-aiida-folder" title="Permalink to this headline">¶</a></h1>
+<p>For <strong>small repositories</strong> back up the <code class="docutils literal notranslate"><span class="pre">.aiida</span></code> folder either by making a full copy or using tools for incremental backups like <code class="docutils literal notranslate"><span class="pre">rsync</span></code>.</p>
+<p>For <strong>large repositories</strong> with more than 100k nodes, even incremental backups can take a significant amount of time.
+AiiDA provides a helper script that takes advantage of the AiiDA database in order to figure out which files have been added since your last backup.
+The instructions below explain how to use it:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>Configure your backup using <code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">-p</span> <span class="pre">PROFILENAME</span> <span class="pre">devel</span> <span class="pre">configure-backup</span></code> where <code class="docutils literal notranslate"><span class="pre">PROFILENAME</span></code> is the name of the AiiDA profile that should be backed up.
+| This will ask for information on:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The “backup folder”, where the backup <em>configuration file</em> will be placed.
+This defaults to a folder named <code class="docutils literal notranslate"><span class="pre">backup_PROFILENAME</span></code> in your <code class="docutils literal notranslate"><span class="pre">.aiida</span></code> directory.</p></li>
+<li><p>The “destination folder”, where the files of the backup will be stored.
+This defaults to a subfolder of the backup folder but we <strong>strongly suggest to back up to a different drive</strong> (see note below).</p></li>
+</ul>
+</div></blockquote>
+<p>The configuration step creates two files in the “backup folder”: a <code class="docutils literal notranslate"><span class="pre">backup_info.json</span></code> configuration file (can also be edited manually) and a <code class="docutils literal notranslate"><span class="pre">start_backup.py</span></code> script.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Using the same disk for your backup forgoes protection against the most common cause of data loss: disk failure.
+One simple option is to use a destination folder mounted over ssh.</p>
+<p>On Ubuntu, install <code class="docutils literal notranslate"><span class="pre">sshfs</span></code> using <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">sshfs</span></code>.
+Imagine you run your calculations on <cite>server_1</cite> and would like to back up regularly to <cite>server_2</cite>.
+Mount a <cite>server_2</cite> directory on <cite>server_1</cite> using the following command on <cite>server_1</cite>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sshfs -o <span class="nv">idmap</span><span class="o">=</span>user -o rw backup_user@server_2:/home/backup_user/backup_destination_dir/ /home/aiida_user/remote_backup_dir/
+</pre></div>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">gnome-session-properties</span></code> in the terminal to add this line to the actions performed at start-up.
+Do <strong>not</strong> add it to your shell’s startup file (e.g. <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code>) or your computer will complain that the mount point is not empty whenever you open a new terminal.</p>
+</div>
+</li>
+<li><p>Run the <code class="docutils literal notranslate"><span class="pre">start_backup.py</span></code> script in the “backup folder” to start the backup.</p>
+<p>This will back up all data added after the <code class="docutils literal notranslate"><span class="pre">oldest_object_backedup</span></code> date.
+It will only carry out a new backup every <code class="docutils literal notranslate"><span class="pre">periodicity</span></code> days, until a certain end date if specified (using <code class="docutils literal notranslate"><span class="pre">end_date_of_backup</span></code> or <code class="docutils literal notranslate"><span class="pre">days_to_backup</span></code>), see <a class="reference internal" href="#backup-configuration-options"><span class="std std-ref">Configuration options</span></a> below.</p>
+<div class="line-block">
+<div class="line">Once you’ve checked that it works, make sure to run the script periodically (e.g. using a daily cron job, see note below).</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On Ubuntu, you can set up a cron job using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">crontab</span> <span class="o">-</span><span class="n">u</span> <span class="n">USERNAME</span> <span class="o">-</span><span class="n">e</span>
+</pre></div>
+</div>
+<p>It will open an editor, where you can add a line of the form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">00</span> <span class="mi">03</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">USERNAME</span><span class="o">/.</span><span class="n">aiida</span><span class="o">/</span><span class="n">backup</span><span class="o">/</span><span class="n">start_backup</span><span class="o">.</span><span class="n">py</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span> <span class="o">|</span> <span class="n">mail</span> <span class="o">-</span><span class="n">s</span> <span class="s2">&quot;Incremental backup of the repository&quot;</span> <span class="n">USER_EMAIL</span><span class="nd">@domain</span><span class="o">.</span><span class="n">net</span>
+</pre></div>
+</div>
+<p>or (if you need to backup a different profile than the default one):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">00</span> <span class="mi">03</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="n">verdi</span> <span class="o">-</span><span class="n">p</span> <span class="n">PROFILENAME</span> <span class="n">run</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">USERNAME</span><span class="o">/.</span><span class="n">aiida</span><span class="o">/</span><span class="n">backup</span><span class="o">/</span><span class="n">start_backup</span><span class="o">.</span><span class="n">py</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span> <span class="o">|</span> <span class="n">mail</span> <span class="o">-</span><span class="n">s</span> <span class="s2">&quot;Incremental backup of the repository&quot;</span> <span class="n">USER_EMAIL</span><span class="nd">@domain</span><span class="o">.</span><span class="n">net</span>
+</pre></div>
+</div>
+<p>This will launch the backup of the database every day at 3 AM (03:00), and send the output (or any error message) to the email address specified at the end (provided the <code class="docutils literal notranslate"><span class="pre">mail</span></code> command – from <code class="docutils literal notranslate"><span class="pre">mailutils</span></code> – is configured appropriately).</p>
+</div>
+</li>
+</ol>
+</div></blockquote>
+<p>Finally, if you have a separate automatic backup of your home directory set up, do not forget to exclude the repository folder.</p>
+<div class="section" id="configuration-options">
+<span id="backup-configuration-options"></span><h2>Configuration options<a class="headerlink" href="#configuration-options" title="Permalink to this headline">¶</a></h2>
+<p>The configuration options in the <code class="docutils literal notranslate"><span class="pre">backup_info.json</span></code> are:</p>
+<ul>
+<li><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">periodicity</span></code> (in <cite>days</cite>):</div>
+<div class="line">The backup runs periodically for a number of days defined in the periodicity variable.
+The purpose of this variable is to limit the backup to run only on a few number of days and therefore to limit the number of files that are backed up at every round.</div>
+<div class="line">E.g. <code class="docutils literal notranslate"><span class="pre">&quot;periodicity&quot;:</span> <span class="pre">2</span></code>.</div>
+<div class="line">Example: If you have files in the AiiDA repositories created in the past 30 days, and periodicity is 15, the first run will backup the files of the first 15 days; a second run of the script will backup the next 15 days, completing the backup (if it is run within the same day).
+Further runs will only backup newer files, if they are created.</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">oldest_object_backedup</span></code> (<cite>timestamp</cite> or <code class="docutils literal notranslate"><span class="pre">null</span></code>):</div>
+<div class="line">This is the timestamp of the oldest object that was backed up.
+If you are not aware of this value or if it is the first time you start a backup for this repository, then set this value to <code class="docutils literal notranslate"><span class="pre">null</span></code>.
+Then the script will search the creation date of the oldest Node object in the database and start the backup from that date.</div>
+<div class="line">E.g. <code class="docutils literal notranslate"><span class="pre">&quot;oldest_object_backedup&quot;:</span> <span class="pre">&quot;2015-07-20</span> <span class="pre">11:13:08.145804+02:00&quot;</span></code></div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">end_date_of_backup</span></code> (<cite>timestamp</cite> or <code class="docutils literal notranslate"><span class="pre">null</span></code>):</div>
+<div class="line">If set, the backup script will backup files that have a modification date up until the value specified by this variable.
+If not set, the ending of the backup will be set by the <code class="docutils literal notranslate"><span class="pre">days_to_backup</span></code> variable, which specifies how many days to backup from the start of the backup.
+If none of these variables are set (<code class="docutils literal notranslate"><span class="pre">end_date_of_backup</span></code> and <code class="docutils literal notranslate"><span class="pre">days_to_backup</span></code>), then the end date of backup is set to the current date.</div>
+<div class="line">E.g. <code class="docutils literal notranslate"><span class="pre">&quot;end_date_of_backup&quot;:</span> <span class="pre">null</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;end_date_of_backup&quot;:</span> <span class="pre">&quot;2015-07-20</span> <span class="pre">11:13:08.145804+02:00&quot;</span></code>.</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">days_to_backup</span></code> (in <cite>days</cite> or <code class="docutils literal notranslate"><span class="pre">null</span></code>):</div>
+<div class="line">If set, you specify how many days you will backup from the starting date of your backup.
+If it is set to <code class="docutils literal notranslate"><span class="pre">null</span></code> and also <code class="docutils literal notranslate"><span class="pre">end_date_of_backup</span></code> is set to <code class="docutils literal notranslate"><span class="pre">null</span></code>, then the end date of the backup is set to the current date.
+You can not set <code class="docutils literal notranslate"><span class="pre">days_to_backup</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">end_date_of_backup</span></code> at the same time (it will lead to an error).</div>
+<div class="line">E.g. <code class="docutils literal notranslate"><span class="pre">&quot;days_to_backup&quot;:</span> <span class="pre">null</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;days_to_backup&quot;:</span> <span class="pre">5</span></code>.</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">backup_length_threshold</span></code> (in <cite>hours</cite>):</div>
+<div class="line">The backup script runs in rounds and on every round it will backup a number of days that are controlled primarily by <code class="docutils literal notranslate"><span class="pre">periodicity</span></code> and also by <code class="docutils literal notranslate"><span class="pre">end_date_of_backup</span></code> / <code class="docutils literal notranslate"><span class="pre">days_to_backup</span></code>, for the last backup round.
+The <code class="docutils literal notranslate"><span class="pre">backup_length_threshold</span></code> specifies the <em>lowest acceptable</em> round length.
+This is important for the end of the backup.</div>
+<div class="line">E.g. <code class="docutils literal notranslate"><span class="pre">backup_length_threshold:</span> <span class="pre">1</span></code></div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">backup_dir</span></code> (absolute path):</div>
+<div class="line">The destination directory of the backup.</div>
+<div class="line">E.g. <code class="docutils literal notranslate"><span class="pre">&quot;backup_dir&quot;:</span> <span class="pre">&quot;/home/USERNAME/.aiida/backup/backup_dest&quot;</span></code>.</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="database-backup">
+<span id="backup-postgresql"></span><h1>Database backup<a class="headerlink" href="#database-backup" title="Permalink to this headline">¶</a></h1>
+<p>PostgreSQL typically spreads database information over multiple files that, if backed up directly, are not guaranteed to restore the database.
+We therefore strongly recommend to periodically dump the database contents to a file (which you can then back up using your method of choice).</p>
+<p>The instructions below show how to achieve this under Ubuntu 12.04 and 18.04.
+In the following, we assume your database is called <code class="docutils literal notranslate"><span class="pre">aiidadb</span></code>, and the database user and owner is <code class="docutils literal notranslate"><span class="pre">aiida</span></code>.
+You’ll find this information in the output of <code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">profile</span> <span class="pre">show</span></code>.</p>
+<p>In order to dump your database, use a bash script similar to <a class="reference download internal" download="" href="../_downloads/7e33cf3e96706d32d2f91c5e5420cb2e/backup_postgresql.sh"><code class="xref download docutils literal notranslate"><span class="pre">backup_postgresql.sh</span></code></a>:</p>
+<div class="highlight-shell notranslate" id="backup-script"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">AIIDAUSER</span><span class="o">=</span>aiida
+<span class="nv">AIIDADB</span><span class="o">=</span>aiidadb
+<span class="nv">AIIDAPORT</span><span class="o">=</span><span class="m">5432</span>
+<span class="c1">## STORE THE PASSWORD, IN THE PROPER FORMAT, IN THE ~/.pgpass file</span>
+<span class="c1">## see http://www.postgresql.org/docs/current/static/libpq-pgpass.html</span>
+<span class="nv">AIIDALOCALTMPDUMPFILE</span><span class="o">=</span>~/.aiida/<span class="si">${</span><span class="nv">AIIDADB</span><span class="si">}</span>-backup.psql.gz
+
+
+<span class="k">if</span> <span class="o">[</span> -e <span class="si">${</span><span class="nv">AIIDALOCALTMPDUMPFILE</span><span class="si">}</span> <span class="o">]</span>
+<span class="k">then</span>
+    mv <span class="si">${</span><span class="nv">AIIDALOCALTMPDUMPFILE</span><span class="si">}</span> <span class="si">${</span><span class="nv">AIIDALOCALTMPDUMPFILE</span><span class="si">}</span>~
+<span class="k">fi</span>
+
+<span class="c1"># NOTE: password stored in ~/.pgpass, where pg_dump will read it automatically</span>
+pg_dump -h localhost -p <span class="nv">$AIIDAPORT</span> -U <span class="nv">$AIIDAUSER</span> <span class="nv">$AIIDADB</span> <span class="p">|</span> gzip &gt; <span class="nv">$AIIDALOCALTMPDUMPFILE</span> <span class="o">||</span> rm <span class="nv">$AIIDALOCALTMPDUMPFILE</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In order to avoid having to enter your database password each time you use the script, you can create a file <a class="reference download internal" download="" href="../_downloads/7fb51f7120747a8bd835edd777bc03a0/pgpass"><code class="xref download docutils literal notranslate"><span class="pre">.pgpass</span></code></a> in your home directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">localhost</span><span class="p">:</span><span class="mi">5432</span><span class="p">:</span><span class="n">aiidadb</span><span class="p">:</span><span class="n">aiida</span><span class="p">:</span><span class="n">YOUR_DATABASE_PASSWORD</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">YOUR_DATABASE_PASSWORD</span></code> is the password you set up for the database.</p>
+<p>This file needs read and write permissions: <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">u=rw</span> <span class="pre">~/.pgpass</span></code>.</p>
+</div>
+<p>In order to automatically dump the database to a file <code class="docutils literal notranslate"><span class="pre">~/.aiida/${AIIDADB}-backup.psql.gz</span></code> once per day, you can add a cron job:</p>
+<p>Add the following script <a class="reference download internal" download="" href="../_downloads/383866349ed243e5c96e794e3b2d3fad/backup-aiidadb-USERNAME"><code class="xref download docutils literal notranslate"><span class="pre">backup-aiidadb-USERNAME</span></code></a> to the folder <code class="docutils literal notranslate"><span class="pre">/etc/cron.daily/</span></code>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+su USERNAME -c <span class="s2">&quot;/home/USERNAME/.aiida/backup_postgresql.sh&quot;</span>
+</pre></div>
+</div>
+<p>and replace all instances of <code class="docutils literal notranslate"><span class="pre">USERNAME</span></code> with your UNIX user name.</p>
+<p>Remember to give the script execute permissions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">cron</span><span class="o">.</span><span class="n">daily</span><span class="o">/</span><span class="n">backup</span><span class="o">-</span><span class="n">aiidadb</span><span class="o">-</span><span class="n">USERNAME</span>
+</pre></div>
+</div>
+<p>Finally make sure your database folder (<code class="docutils literal notranslate"><span class="pre">/home/USERNAME/.aiida/</span></code>) containing this dump file and the <code class="docutils literal notranslate"><span class="pre">repository</span></code> directory, is properly backed up by your backup software (under Ubuntu, 12.04: Backup -&gt; check the “Folders” tab, 18.04: Backups -&gt; check the “Folder to save” tab).</p>
+</div>
+<div class="section" id="restore-backup">
+<span id="restore-postgresql"></span><h1>Restore backup<a class="headerlink" href="#restore-backup" title="Permalink to this headline">¶</a></h1>
+<p>In order to restore a backup, you will need to:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><div class="line-block">
+<div class="line">Restore the repository folder.</div>
+<div class="line">If you used the <a class="reference internal" href="#backup-script"><span class="std std-ref">backup script</span></a>, this involves extracting the corresponding zip file (should be created in <code class="docutils literal notranslate"><span class="pre">~/.aiida/</span></code>).</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">Create an empty database following the instructions described in <a class="reference internal" href="../install/installation.html#database"><span class="std std-ref">Database setup</span></a> skipping the <code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">setup</span></code> phase.</div>
+<div class="line">The database should have the same name and database username as the original one (i.e. if you are restoring on the original postgresql cluster, you may have to either rename or delete the original database).</div>
+</div>
+</li>
+<li><p>As the <code class="docutils literal notranslate"><span class="pre">postgres</span></code> user, <code class="docutils literal notranslate"><span class="pre">cd</span></code> to the folder containing the database dump (<code class="docutils literal notranslate"><span class="pre">aiidadb-backup.psql</span></code>) and load it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="o">-</span><span class="n">h</span> <span class="n">localhost</span> <span class="o">-</span><span class="n">U</span> <span class="n">aiida</span> <span class="o">-</span><span class="n">d</span> <span class="n">aiidadb</span> <span class="o">-</span><span class="n">f</span> <span class="n">aiidadb</span><span class="o">-</span><span class="n">backup</span><span class="o">.</span><span class="n">psql</span>
+</pre></div>
+</div>
+<p>After supplying your database password, the database should be restored.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On Ubuntu, type <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">su</span> <span class="pre">-</span> <span class="pre">postgres</span></code> to become the postgres UNIX user.</p>
+</div>
+</li>
+</ol>
+</div></blockquote>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

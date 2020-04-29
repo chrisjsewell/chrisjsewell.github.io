@@ -1,0 +1,1377 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.tools.graph package &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>aiida.tools.graph package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/aiida.tools.graph.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-aiida.tools.graph">
+<span id="aiida-tools-graph-package"></span><h1>aiida.tools.graph package<a class="headerlink" href="#module-aiida.tools.graph" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-aiida.tools.graph.age_entities">
+<span id="submodules"></span><h2>Submodules<a class="headerlink" href="#module-aiida.tools.graph.age_entities" title="Permalink to this headline">¶</a></h2>
+<p>Entities for the AiiDA Graph Explorer utility</p>
+<dl class="class">
+<dt id="aiida.tools.graph.age_entities.AbstractSetContainer">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.tools.graph.age_entities.</code><code class="sig-name descname">AbstractSetContainer</code><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#AbstractSetContainer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.AbstractSetContainer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Abstract Class</p>
+<p>This class defines a set that can be speciaized to contain either
+nodes (either AiiDA nodes or Aiida groups) or edges (AiiDA links,
+or records of the connections between groups and nodes).
+Instances of this class reference a subset of entities in a database
+via a unique identifier.
+There are also a few operators defined, for simplicity, to do
+set-additions (unions) and deletions.
+The underlying Python-class is <strong>set</strong>, which means that adding
+an instance to an AiidaEntitySet that is already contained by it
+will not create a duplicate.</p>
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_entities.AbstractSetContainer.__abstractmethods__">
+<code class="sig-name descname">__abstractmethods__</code><em class="property"> = frozenset({'_check_input_for_set', '_check_self_and_other', 'get_template'})</em><a class="headerlink" href="#aiida.tools.graph.age_entities.AbstractSetContainer.__abstractmethods__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AbstractSetContainer.__add__">
+<code class="sig-name descname">__add__</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#AbstractSetContainer.__add__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.AbstractSetContainer.__add__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Addition (return = self + other): defined as the set union</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_entities.AbstractSetContainer.__dict__">
+<code class="sig-name descname">__dict__</code><em class="property"> = mappingproxy({'__module__': 'aiida.tools.graph.age_entities', '__doc__': 'Abstract Class\n\n    This class defines a set that can be speciaized to contain either\n    nodes (either AiiDA nodes or Aiida groups) or edges (AiiDA links,\n    or records of the connections between groups and nodes).\n    Instances of this class reference a subset of entities in a database\n    via a unique identifier.\n    There are also a few operators defined, for simplicity, to do\n    set-additions (unions) and deletions.\n    The underlying Python-class is **set**, which means that adding\n    an instance to an AiidaEntitySet that is already contained by it\n    will not create a duplicate.\n    ', '__init__': &lt;function AbstractSetContainer.__init__&gt;, '_check_self_and_other': &lt;function AbstractSetContainer._check_self_and_other&gt;, '_check_input_for_set': &lt;function AbstractSetContainer._check_input_for_set&gt;, 'get_template': &lt;function AbstractSetContainer.get_template&gt;, 'keyset': &lt;property object&gt;, 'additional_identifiers': &lt;property object&gt;, '__add__': &lt;function AbstractSetContainer.__add__&gt;, '__iadd__': &lt;function AbstractSetContainer.__iadd__&gt;, '__sub__': &lt;function AbstractSetContainer.__sub__&gt;, '__isub__': &lt;function AbstractSetContainer.__isub__&gt;, '__len__': &lt;function AbstractSetContainer.__len__&gt;, '__repr__': &lt;function AbstractSetContainer.__repr__&gt;, '__eq__': &lt;function AbstractSetContainer.__eq__&gt;, '__ne__': &lt;function AbstractSetContainer.__ne__&gt;, 'set_entities': &lt;function AbstractSetContainer.set_entities&gt;, 'add_entities': &lt;function AbstractSetContainer.add_entities&gt;, 'copy': &lt;function AbstractSetContainer.copy&gt;, 'empty': &lt;function AbstractSetContainer.empty&gt;, '__dict__': &lt;attribute '__dict__' of 'AbstractSetContainer' objects&gt;, '__weakref__': &lt;attribute '__weakref__' of 'AbstractSetContainer' objects&gt;, '__hash__': None, '__abstractmethods__': frozenset({'_check_input_for_set', 'get_template', '_check_self_and_other'}), '_abc_impl': &lt;_abc_data object&gt;})</em><a class="headerlink" href="#aiida.tools.graph.age_entities.AbstractSetContainer.__dict__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AbstractSetContainer.__eq__">
+<code class="sig-name descname">__eq__</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#AbstractSetContainer.__eq__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.AbstractSetContainer.__eq__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return self==value.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_entities.AbstractSetContainer.__hash__">
+<code class="sig-name descname">__hash__</code><em class="property"> = None</em><a class="headerlink" href="#aiida.tools.graph.age_entities.AbstractSetContainer.__hash__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AbstractSetContainer.__iadd__">
+<code class="sig-name descname">__iadd__</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#AbstractSetContainer.__iadd__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.AbstractSetContainer.__iadd__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Addition inplace (self += other)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AbstractSetContainer.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#AbstractSetContainer.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.AbstractSetContainer.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialization method</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AbstractSetContainer.__isub__">
+<code class="sig-name descname">__isub__</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#AbstractSetContainer.__isub__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.AbstractSetContainer.__isub__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subtraction inplace (self -= other)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AbstractSetContainer.__len__">
+<code class="sig-name descname">__len__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#AbstractSetContainer.__len__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.AbstractSetContainer.__len__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_entities.AbstractSetContainer.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.graph.age_entities'</em><a class="headerlink" href="#aiida.tools.graph.age_entities.AbstractSetContainer.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AbstractSetContainer.__ne__">
+<code class="sig-name descname">__ne__</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#AbstractSetContainer.__ne__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.AbstractSetContainer.__ne__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return self!=value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AbstractSetContainer.__repr__">
+<code class="sig-name descname">__repr__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#AbstractSetContainer.__repr__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.AbstractSetContainer.__repr__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AbstractSetContainer.__sub__">
+<code class="sig-name descname">__sub__</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#AbstractSetContainer.__sub__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.AbstractSetContainer.__sub__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subtraction (return = self - other): defined as the set-difference</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_entities.AbstractSetContainer.__weakref__">
+<code class="sig-name descname">__weakref__</code><a class="headerlink" href="#aiida.tools.graph.age_entities.AbstractSetContainer.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_entities.AbstractSetContainer._abc_impl">
+<code class="sig-name descname">_abc_impl</code><em class="property"> = &lt;_abc_data object&gt;</em><a class="headerlink" href="#aiida.tools.graph.age_entities.AbstractSetContainer._abc_impl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AbstractSetContainer._check_input_for_set">
+<em class="property">abstract </em><code class="sig-name descname">_check_input_for_set</code><span class="sig-paren">(</span><em class="sig-param">input_for_set</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#AbstractSetContainer._check_input_for_set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.AbstractSetContainer._check_input_for_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility function</p>
+<p>When provinding input keys for the internal set, this utility function will
+check and process the input accordingly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_for_set</strong> – input argument for the keyset (must be either an
+AiiDA instance of node or group, or an identifier of the type used
+by the container).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AbstractSetContainer._check_self_and_other">
+<em class="property">abstract </em><code class="sig-name descname">_check_self_and_other</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#AbstractSetContainer._check_self_and_other"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.AbstractSetContainer._check_self_and_other" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility function</p>
+<p>When called, will check whether self and other instance are compatible.
+(i.e. if they contain the same AiiDA class, same identifiers, length of
+tuples, etc)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#aiida.tools.graph.age_entities.AbstractSetContainer" title="aiida.tools.graph.age_entities.AbstractSetContainer"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.graph.age_entities.AbstractSetContainer</span></code></a>) – the other entity to check for compatibility.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AbstractSetContainer.add_entities">
+<code class="sig-name descname">add_entities</code><span class="sig-paren">(</span><em class="sig-param">new_entitites</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#AbstractSetContainer.add_entities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.AbstractSetContainer.add_entities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add new entitities to the existing set of self.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>new_entities</strong> – an iterable of new entities to add.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AbstractSetContainer.additional_identifiers">
+<em class="property">property </em><code class="sig-name descname">additional_identifiers</code><a class="headerlink" href="#aiida.tools.graph.age_entities.AbstractSetContainer.additional_identifiers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Additional identifiers for the entities</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AbstractSetContainer.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#AbstractSetContainer.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.AbstractSetContainer.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create new instance with the same defining attributes and the same keyset.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AbstractSetContainer.empty">
+<code class="sig-name descname">empty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#AbstractSetContainer.empty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.AbstractSetContainer.empty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets the contained set to be an empty set</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AbstractSetContainer.get_template">
+<em class="property">abstract </em><code class="sig-name descname">get_template</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#AbstractSetContainer.get_template"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.AbstractSetContainer.get_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create new instance with the same defining attributes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AbstractSetContainer.keyset">
+<em class="property">property </em><code class="sig-name descname">keyset</code><a class="headerlink" href="#aiida.tools.graph.age_entities.AbstractSetContainer.keyset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set containing the keys of the entities</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AbstractSetContainer.set_entities">
+<code class="sig-name descname">set_entities</code><span class="sig-paren">(</span><em class="sig-param">new_entitites</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#AbstractSetContainer.set_entities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.AbstractSetContainer.set_entities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replaces contained set with the new entities.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>new_entities</strong> – entities which will replace the ones contained
+by the EntitySet. Must be an AiiDA instance (Node or Group) or
+an appropriate identifier (ID).</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aiida.tools.graph.age_entities.AiidaEntitySet">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.tools.graph.age_entities.</code><code class="sig-name descname">AiidaEntitySet</code><span class="sig-paren">(</span><em class="sig-param">aiida_cls</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#AiidaEntitySet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.AiidaEntitySet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.graph.age_entities.AbstractSetContainer" title="aiida.tools.graph.age_entities.AbstractSetContainer"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.graph.age_entities.AbstractSetContainer</span></code></a></p>
+<p>Extension of AbstractSetContainer</p>
+<p>This class is used to store <cite>graph nodes</cite> (aidda nodes or aiida groups).</p>
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_entities.AiidaEntitySet.__abstractmethods__">
+<code class="sig-name descname">__abstractmethods__</code><em class="property"> = frozenset({})</em><a class="headerlink" href="#aiida.tools.graph.age_entities.AiidaEntitySet.__abstractmethods__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AiidaEntitySet.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">aiida_cls</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#AiidaEntitySet.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.AiidaEntitySet.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialization method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>aiida_cls</strong> – a valid AiiDA ORM class (Node or Group supported).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_entities.AiidaEntitySet.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.graph.age_entities'</em><a class="headerlink" href="#aiida.tools.graph.age_entities.AiidaEntitySet.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_entities.AiidaEntitySet._abc_impl">
+<code class="sig-name descname">_abc_impl</code><em class="property"> = &lt;_abc_data object&gt;</em><a class="headerlink" href="#aiida.tools.graph.age_entities.AiidaEntitySet._abc_impl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AiidaEntitySet._check_input_for_set">
+<code class="sig-name descname">_check_input_for_set</code><span class="sig-paren">(</span><em class="sig-param">input_for_set</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#AiidaEntitySet._check_input_for_set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.AiidaEntitySet._check_input_for_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility function</p>
+<p>When provinding input keys for the internal set, this utility function will
+check and process the input accordingly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_for_set</strong> – input argument for the keyset (must be either an
+AiiDA instance of node or group, or an identifier of the type used
+by the container).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AiidaEntitySet._check_self_and_other">
+<code class="sig-name descname">_check_self_and_other</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#AiidaEntitySet._check_self_and_other"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.AiidaEntitySet._check_self_and_other" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility function</p>
+<p>When called, will check whether self and other instance are compatible.
+(i.e. if they contain the same AiiDA class, same identifiers, length of
+tuples, etc)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#aiida.tools.graph.age_entities.AbstractSetContainer" title="aiida.tools.graph.age_entities.AbstractSetContainer"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.graph.age_entities.AbstractSetContainer</span></code></a>) – the other entity to check for compatibility.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AiidaEntitySet.aiida_cls">
+<em class="property">property </em><code class="sig-name descname">aiida_cls</code><a class="headerlink" href="#aiida.tools.graph.age_entities.AiidaEntitySet.aiida_cls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class of nodes contained in the entity set (node or group)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AiidaEntitySet.get_entities">
+<code class="sig-name descname">get_entities</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#AiidaEntitySet.get_entities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.AiidaEntitySet.get_entities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterator that returns the AiiDA entities</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AiidaEntitySet.get_template">
+<code class="sig-name descname">get_template</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#AiidaEntitySet.get_template"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.AiidaEntitySet.get_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create new instance with the same defining attributes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AiidaEntitySet.identifier">
+<em class="property">property </em><code class="sig-name descname">identifier</code><a class="headerlink" href="#aiida.tools.graph.age_entities.AiidaEntitySet.identifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Identifier used for the nodes or groups (currently always id)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.AiidaEntitySet.identifier_type">
+<em class="property">property </em><code class="sig-name descname">identifier_type</code><a class="headerlink" href="#aiida.tools.graph.age_entities.AiidaEntitySet.identifier_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type of identifier for the node or group (for id is int)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aiida.tools.graph.age_entities.Basket">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.tools.graph.age_entities.</code><code class="sig-name descname">Basket</code><span class="sig-paren">(</span><em class="sig-param">nodes=None</em>, <em class="sig-param">groups=None</em>, <em class="sig-param">nodes_nodes=None</em>, <em class="sig-param">groups_nodes=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#Basket"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.Basket" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Container for several instances of
+<a class="reference internal" href="#aiida.tools.graph.age_entities.AiidaEntitySet" title="aiida.tools.graph.age_entities.AiidaEntitySet"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.graph.age_entities.AiidaEntitySet</span></code></a> .</p>
+<p>In the current implementation, it contains one EntitySet for Nodes and one for Groups,
+and one EdgeSet for Node-Node edges (links) and one for Group-Node connections.</p>
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.Basket.__add__">
+<code class="sig-name descname">__add__</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#Basket.__add__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.Basket.__add__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_entities.Basket.__dict__">
+<code class="sig-name descname">__dict__</code><em class="property"> = mappingproxy({'__module__': 'aiida.tools.graph.age_entities', '__doc__': 'Container for several instances of\n    :py:class:`aiida.tools.graph.age_entities.AiidaEntitySet` .\n\n    In the current implementation, it contains one EntitySet for Nodes and one for Groups,\n    and one EdgeSet for Node-Node edges (links) and one for Group-Node connections.\n    ', '__init__': &lt;function Basket.__init__&gt;, 'sets': &lt;property object&gt;, 'dict': &lt;property object&gt;, 'nodes': &lt;property object&gt;, 'groups': &lt;property object&gt;, '__getitem__': &lt;function Basket.__getitem__&gt;, '__setitem__': &lt;function Basket.__setitem__&gt;, '__add__': &lt;function Basket.__add__&gt;, '__iadd__': &lt;function Basket.__iadd__&gt;, '__sub__': &lt;function Basket.__sub__&gt;, '__isub__': &lt;function Basket.__isub__&gt;, '__len__': &lt;function Basket.__len__&gt;, '__eq__': &lt;function Basket.__eq__&gt;, '__ne__': &lt;function Basket.__ne__&gt;, '__repr__': &lt;function Basket.__repr__&gt;, 'empty': &lt;function Basket.empty&gt;, 'get_template': &lt;function Basket.get_template&gt;, 'copy': &lt;function Basket.copy&gt;, '__dict__': &lt;attribute '__dict__' of 'Basket' objects&gt;, '__weakref__': &lt;attribute '__weakref__' of 'Basket' objects&gt;, '__hash__': None})</em><a class="headerlink" href="#aiida.tools.graph.age_entities.Basket.__dict__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.Basket.__eq__">
+<code class="sig-name descname">__eq__</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#Basket.__eq__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.Basket.__eq__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return self==value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.Basket.__getitem__">
+<code class="sig-name descname">__getitem__</code><span class="sig-paren">(</span><em class="sig-param">key</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#Basket.__getitem__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.Basket.__getitem__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_entities.Basket.__hash__">
+<code class="sig-name descname">__hash__</code><em class="property"> = None</em><a class="headerlink" href="#aiida.tools.graph.age_entities.Basket.__hash__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.Basket.__iadd__">
+<code class="sig-name descname">__iadd__</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#Basket.__iadd__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.Basket.__iadd__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.Basket.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">nodes=None</em>, <em class="sig-param">groups=None</em>, <em class="sig-param">nodes_nodes=None</em>, <em class="sig-param">groups_nodes=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#Basket.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.Basket.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialization method</p>
+<p>During initialization of the basket, both the sets of nodes and the set of
+groups can be provided as one of the following: an AiidaEntitySet with the
+respective type (node or group) or a list/set/tuple with the ids of the
+respective node or group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nodes</strong> – AiiDA nodes provided in an acceptable way.</p></li>
+<li><p><strong>groups</strong> – AiiDA groups provided in an acceptable way.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.Basket.__isub__">
+<code class="sig-name descname">__isub__</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#Basket.__isub__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.Basket.__isub__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.Basket.__len__">
+<code class="sig-name descname">__len__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#Basket.__len__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.Basket.__len__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_entities.Basket.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.graph.age_entities'</em><a class="headerlink" href="#aiida.tools.graph.age_entities.Basket.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.Basket.__ne__">
+<code class="sig-name descname">__ne__</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#Basket.__ne__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.Basket.__ne__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return self!=value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.Basket.__repr__">
+<code class="sig-name descname">__repr__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#Basket.__repr__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.Basket.__repr__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.Basket.__setitem__">
+<code class="sig-name descname">__setitem__</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">val</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#Basket.__setitem__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.Basket.__setitem__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.Basket.__sub__">
+<code class="sig-name descname">__sub__</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#Basket.__sub__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.Basket.__sub__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_entities.Basket.__weakref__">
+<code class="sig-name descname">__weakref__</code><a class="headerlink" href="#aiida.tools.graph.age_entities.Basket.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.Basket.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#Basket.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.Basket.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create new instance with the same defining attributes and content.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.Basket.dict">
+<em class="property">property </em><code class="sig-name descname">dict</code><a class="headerlink" href="#aiida.tools.graph.age_entities.Basket.dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>All sets in the basket returned as a dictionary.
+This includes the keys ‘nodes’, ‘groups’, ‘nodes_nodes’ and ‘nodes_groups’.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.Basket.empty">
+<code class="sig-name descname">empty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#Basket.empty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.Basket.empty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Empty every subset from its content</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.Basket.get_template">
+<code class="sig-name descname">get_template</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#Basket.get_template"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.Basket.get_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create new nasket with the same defining attributes for its internal containers.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.Basket.groups">
+<em class="property">property </em><code class="sig-name descname">groups</code><a class="headerlink" href="#aiida.tools.graph.age_entities.Basket.groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set of groups stored in the basket</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.Basket.nodes">
+<em class="property">property </em><code class="sig-name descname">nodes</code><a class="headerlink" href="#aiida.tools.graph.age_entities.Basket.nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set of nodes stored in the basket</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.Basket.sets">
+<em class="property">property </em><code class="sig-name descname">sets</code><a class="headerlink" href="#aiida.tools.graph.age_entities.Basket.sets" title="Permalink to this definition">¶</a></dt>
+<dd><p>All sets in the basket returned as an ordered list.
+The order is: ‘groups’, ‘groups_nodes’, ‘nodes’, ‘nodes_nodes’.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aiida.tools.graph.age_entities.DirectedEdgeSet">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.tools.graph.age_entities.</code><code class="sig-name descname">DirectedEdgeSet</code><span class="sig-paren">(</span><em class="sig-param">aiida_cls_to</em>, <em class="sig-param">aiida_cls_from</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#DirectedEdgeSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.DirectedEdgeSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.graph.age_entities.AbstractSetContainer" title="aiida.tools.graph.age_entities.AbstractSetContainer"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.graph.age_entities.AbstractSetContainer</span></code></a></p>
+<p>Extension of AbstractSetContainer</p>
+<p>This class is used to store <cite>graph edges</cite> (aidda nodes or aiida groups).</p>
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_entities.DirectedEdgeSet.__abstractmethods__">
+<code class="sig-name descname">__abstractmethods__</code><em class="property"> = frozenset({})</em><a class="headerlink" href="#aiida.tools.graph.age_entities.DirectedEdgeSet.__abstractmethods__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.DirectedEdgeSet.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">aiida_cls_to</em>, <em class="sig-param">aiida_cls_from</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#DirectedEdgeSet.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.DirectedEdgeSet.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialization method</p>
+<p>The classes that the link connects must be provided.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>aiida_cls_to</strong> – a valid AiiDA ORM class (Node or Group supported).</p></li>
+<li><p><strong>aiida_cls_from</strong> – a valid AiiDA ORM class (Node supported).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_entities.DirectedEdgeSet.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.graph.age_entities'</em><a class="headerlink" href="#aiida.tools.graph.age_entities.DirectedEdgeSet.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_entities.DirectedEdgeSet._abc_impl">
+<code class="sig-name descname">_abc_impl</code><em class="property"> = &lt;_abc_data object&gt;</em><a class="headerlink" href="#aiida.tools.graph.age_entities.DirectedEdgeSet._abc_impl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.DirectedEdgeSet._check_input_for_set">
+<code class="sig-name descname">_check_input_for_set</code><span class="sig-paren">(</span><em class="sig-param">input_for_set</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#DirectedEdgeSet._check_input_for_set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.DirectedEdgeSet._check_input_for_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility function</p>
+<p>When provinding input keys for the internal set, this utility function will
+check and process the input accordingly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_for_set</strong> – input argument for the keyset (must be either an
+AiiDA instance of node or group, or an identifier of the type used
+by the container).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.DirectedEdgeSet._check_self_and_other">
+<code class="sig-name descname">_check_self_and_other</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#DirectedEdgeSet._check_self_and_other"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.DirectedEdgeSet._check_self_and_other" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility function</p>
+<p>When called, will check whether self and other instance are compatible.
+(i.e. if they contain the same AiiDA class, same identifiers, length of
+tuples, etc)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#aiida.tools.graph.age_entities.AbstractSetContainer" title="aiida.tools.graph.age_entities.AbstractSetContainer"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.graph.age_entities.AbstractSetContainer</span></code></a>) – the other entity to check for compatibility.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.DirectedEdgeSet.aiida_cls_from">
+<em class="property">property </em><code class="sig-name descname">aiida_cls_from</code><a class="headerlink" href="#aiida.tools.graph.age_entities.DirectedEdgeSet.aiida_cls_from" title="Permalink to this definition">¶</a></dt>
+<dd><p>The class of nodes which the edge points from</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.DirectedEdgeSet.aiida_cls_to">
+<em class="property">property </em><code class="sig-name descname">aiida_cls_to</code><a class="headerlink" href="#aiida.tools.graph.age_entities.DirectedEdgeSet.aiida_cls_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>The class of nodes which the edge points to</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.DirectedEdgeSet.edge_identifiers">
+<em class="property">property </em><code class="sig-name descname">edge_identifiers</code><a class="headerlink" href="#aiida.tools.graph.age_entities.DirectedEdgeSet.edge_identifiers" title="Permalink to this definition">¶</a></dt>
+<dd><p>The identifiers for the edges</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.DirectedEdgeSet.edge_namedtuple">
+<em class="property">property </em><code class="sig-name descname">edge_namedtuple</code><a class="headerlink" href="#aiida.tools.graph.age_entities.DirectedEdgeSet.edge_namedtuple" title="Permalink to this definition">¶</a></dt>
+<dd><p>The namedtuple type used for the edges` identifiers</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.DirectedEdgeSet.get_template">
+<code class="sig-name descname">get_template</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_entities.html#DirectedEdgeSet.get_template"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_entities.DirectedEdgeSet.get_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create new instance with the same defining attributes.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aiida.tools.graph.age_entities.GroupNodeEdge">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.tools.graph.age_entities.</code><code class="sig-name descname">GroupNodeEdge</code><span class="sig-paren">(</span><em class="sig-param">node_id</em>, <em class="sig-param">group_id</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.tools.graph.age_entities.GroupNodeEdge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a></p>
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.GroupNodeEdge.__getnewargs__">
+<code class="sig-name descname">__getnewargs__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aiida.tools.graph.age_entities.GroupNodeEdge.__getnewargs__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return self as a plain tuple.  Used by copy and pickle.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_entities.GroupNodeEdge.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.graph.age_entities'</em><a class="headerlink" href="#aiida.tools.graph.age_entities.GroupNodeEdge.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.GroupNodeEdge.__new__">
+<em class="property">static </em><code class="sig-name descname">__new__</code><span class="sig-paren">(</span><em class="sig-param">_cls</em>, <em class="sig-param">node_id</em>, <em class="sig-param">group_id</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.tools.graph.age_entities.GroupNodeEdge.__new__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create new instance of GroupNodeEdge(node_id, group_id)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.GroupNodeEdge.__repr__">
+<code class="sig-name descname">__repr__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aiida.tools.graph.age_entities.GroupNodeEdge.__repr__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a nicely formatted representation string</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_entities.GroupNodeEdge.__slots__">
+<code class="sig-name descname">__slots__</code><em class="property"> = ()</em><a class="headerlink" href="#aiida.tools.graph.age_entities.GroupNodeEdge.__slots__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.GroupNodeEdge._asdict">
+<code class="sig-name descname">_asdict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aiida.tools.graph.age_entities.GroupNodeEdge._asdict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new OrderedDict which maps field names to their values.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_entities.GroupNodeEdge._fields">
+<code class="sig-name descname">_fields</code><em class="property"> = ('node_id', 'group_id')</em><a class="headerlink" href="#aiida.tools.graph.age_entities.GroupNodeEdge._fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_entities.GroupNodeEdge._fields_defaults">
+<code class="sig-name descname">_fields_defaults</code><em class="property"> = {}</em><a class="headerlink" href="#aiida.tools.graph.age_entities.GroupNodeEdge._fields_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.GroupNodeEdge._make">
+<em class="property">classmethod </em><code class="sig-name descname">_make</code><span class="sig-paren">(</span><em class="sig-param">iterable</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.tools.graph.age_entities.GroupNodeEdge._make" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a new GroupNodeEdge object from a sequence or iterable</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.GroupNodeEdge._replace">
+<code class="sig-name descname">_replace</code><span class="sig-paren">(</span><em class="sig-param">**kwds</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.tools.graph.age_entities.GroupNodeEdge._replace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new GroupNodeEdge object replacing specified fields with new values</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.GroupNodeEdge.group_id">
+<em class="property">property </em><code class="sig-name descname">group_id</code><a class="headerlink" href="#aiida.tools.graph.age_entities.GroupNodeEdge.group_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_entities.GroupNodeEdge.node_id">
+<em class="property">property </em><code class="sig-name descname">node_id</code><a class="headerlink" href="#aiida.tools.graph.age_entities.GroupNodeEdge.node_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-aiida.tools.graph.age_rules"></span><p>Rules for the AiiDA Graph Explorer utility</p>
+<dl class="class">
+<dt id="aiida.tools.graph.age_rules.Operation">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.tools.graph.age_rules.</code><code class="sig-name descname">Operation</code><span class="sig-paren">(</span><em class="sig-param">max_iterations</em>, <em class="sig-param">track_edges</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#Operation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.Operation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Base class for all AGE explorer classes</p>
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_rules.Operation.__abstractmethods__">
+<code class="sig-name descname">__abstractmethods__</code><em class="property"> = frozenset({'run'})</em><a class="headerlink" href="#aiida.tools.graph.age_rules.Operation.__abstractmethods__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_rules.Operation.__dict__">
+<code class="sig-name descname">__dict__</code><em class="property"> = mappingproxy({'__module__': 'aiida.tools.graph.age_rules', '__doc__': 'Base class for all AGE explorer classes', '__init__': &lt;function Operation.__init__&gt;, 'set_max_iterations': &lt;function Operation.set_max_iterations&gt;, 'iterations_done': &lt;property object&gt;, 'run': &lt;function Operation.run&gt;, '__dict__': &lt;attribute '__dict__' of 'Operation' objects&gt;, '__weakref__': &lt;attribute '__weakref__' of 'Operation' objects&gt;, '__abstractmethods__': frozenset({'run'}), '_abc_impl': &lt;_abc_data object&gt;})</em><a class="headerlink" href="#aiida.tools.graph.age_rules.Operation.__dict__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_rules.Operation.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">max_iterations</em>, <em class="sig-param">track_edges</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#Operation.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.Operation.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialization method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>max_iterations</strong> – maximum number of iterations to perform.</p></li>
+<li><p><strong>track_edges</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – if True, will also track and return the edges traversed.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_rules.Operation.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.graph.age_rules'</em><a class="headerlink" href="#aiida.tools.graph.age_rules.Operation.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_rules.Operation.__weakref__">
+<code class="sig-name descname">__weakref__</code><a class="headerlink" href="#aiida.tools.graph.age_rules.Operation.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_rules.Operation._abc_impl">
+<code class="sig-name descname">_abc_impl</code><em class="property"> = &lt;_abc_data object&gt;</em><a class="headerlink" href="#aiida.tools.graph.age_rules.Operation._abc_impl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_rules.Operation.iterations_done">
+<em class="property">property </em><code class="sig-name descname">iterations_done</code><a class="headerlink" href="#aiida.tools.graph.age_rules.Operation.iterations_done" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of iterations performed</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_rules.Operation.run">
+<em class="property">abstract </em><code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param">operational_set</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#Operation.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.Operation.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes the operational_set and overwrites it with the set of nodes that results
+from applying the rule (this might or not include the initial set of nodes as
+well depending on the rule).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>operational_set</strong> (<a class="reference internal" href="#aiida.tools.graph.age_entities.Basket" title="aiida.tools.graph.age_entities.Basket"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.graph.age_entities.Basket</span></code></a>) – initital set of nodes to be overwritten by the rule.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_rules.Operation.set_max_iterations">
+<code class="sig-name descname">set_max_iterations</code><span class="sig-paren">(</span><em class="sig-param">max_iterations</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#Operation.set_max_iterations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.Operation.set_max_iterations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the max iterations</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aiida.tools.graph.age_rules.QueryRule">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.tools.graph.age_rules.</code><code class="sig-name descname">QueryRule</code><span class="sig-paren">(</span><em class="sig-param">querybuilder</em>, <em class="sig-param">max_iterations=1</em>, <em class="sig-param">track_edges=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#QueryRule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.QueryRule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.graph.age_rules.Operation" title="aiida.tools.graph.age_rules.Operation"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.graph.age_rules.Operation</span></code></a></p>
+<p>Parent class for every rule that implements a query.</p>
+<p>QueryRules take a generic QueryBuilder instance and a set of starting nodes and then
+perform successive iterations of that query, each one from the set of nodes that the
+previous one found. Depending on the class of rule used the final result will be
+either the whole set of nodes traversed (UpdateRule), or only the final set of nodes
+found in the last iteration of the query (ReplaceRule).</p>
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_rules.QueryRule.__abstractmethods__">
+<code class="sig-name descname">__abstractmethods__</code><em class="property"> = frozenset({})</em><a class="headerlink" href="#aiida.tools.graph.age_rules.QueryRule.__abstractmethods__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_rules.QueryRule.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">querybuilder</em>, <em class="sig-param">max_iterations=1</em>, <em class="sig-param">track_edges=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#QueryRule.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.QueryRule.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialization method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>querybuilder</strong> – an instance of the QueryBuilder class from which to take the
+procedure for traversal</p></li>
+<li><p><strong>max_iterations</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – the number of iterations to run this query on (must be
+a finite number for ReplaceRules)</p></li>
+<li><p><strong>track_edges</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – whether to track which edges are traversed and store them</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_rules.QueryRule.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.graph.age_rules'</em><a class="headerlink" href="#aiida.tools.graph.age_rules.QueryRule.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_rules.QueryRule._abc_impl">
+<code class="sig-name descname">_abc_impl</code><em class="property"> = &lt;_abc_data object&gt;</em><a class="headerlink" href="#aiida.tools.graph.age_rules.QueryRule._abc_impl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_rules.QueryRule._init_run">
+<code class="sig-name descname">_init_run</code><span class="sig-paren">(</span><em class="sig-param">operational_set</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#QueryRule._init_run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.QueryRule._init_run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialization Utility method</p>
+<p>This method initializes a run. It initializes the accumulator_set in order
+for it to only contain the operational_set, and to be of the same kind.
+This function modifies the its QueryBuilder instance to give the right results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>operational_set</strong> – input with which to initialize the accumulator_set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_rules.QueryRule._load_results">
+<code class="sig-name descname">_load_results</code><span class="sig-paren">(</span><em class="sig-param">target_set</em>, <em class="sig-param">operational_set</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#QueryRule._load_results"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.QueryRule._load_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>Single application of the rules to the operational set</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target_set</strong> – where the new results will be loaded (it will be first emptied of all previous content).
+There is no returned value for this method.</p></li>
+<li><p><strong>operational_set</strong> – where the results originate from (walkers)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_rules.QueryRule.empty_accumulator">
+<code class="sig-name descname">empty_accumulator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#QueryRule.empty_accumulator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.QueryRule.empty_accumulator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_rules.QueryRule.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param">operational_set</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#QueryRule.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.QueryRule.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes the operational_set and overwrites it with the set of nodes that results
+from applying the rule (this might or not include the initial set of nodes as
+well depending on the rule).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>operational_set</strong> (<a class="reference internal" href="#aiida.tools.graph.age_entities.Basket" title="aiida.tools.graph.age_entities.Basket"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.graph.age_entities.Basket</span></code></a>) – initital set of nodes to be overwritten by the rule.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_rules.QueryRule.set_accumulator">
+<code class="sig-name descname">set_accumulator</code><span class="sig-paren">(</span><em class="sig-param">accumulator_set</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#QueryRule.set_accumulator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.QueryRule.set_accumulator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_rules.QueryRule.set_edge_keys">
+<code class="sig-name descname">set_edge_keys</code><span class="sig-paren">(</span><em class="sig-param">edge_keys</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#QueryRule.set_edge_keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.QueryRule.set_edge_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the edge keys that are use to classify the edges during the run of this query.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>edge_keys</strong> – a list of projections on the edge itself, or a tuple that specifies
+(tag, project) if the projection is not on the edge</p>
+</dd>
+</dl>
+<p>Example: For node-to-node graph traversals, it is often convenient to save
+the information on the links:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qb</span>  <span class="o">=</span> <span class="n">QueryBuilder</span><span class="p">()</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Node</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="s1">&#39;n1&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Node</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="s1">&#39;n2&#39;</span><span class="p">)</span>
+<span class="n">rule</span> <span class="o">=</span> <span class="n">RuleSequence</span><span class="p">(</span><span class="n">qb</span><span class="p">,</span> <span class="n">track_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">rule</span><span class="o">.</span><span class="n">set_edge_keys</span><span class="p">([</span><span class="s1">&#39;input_id&#39;</span><span class="p">,</span> <span class="s1">&#39;output_id&#39;</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">])</span>
+
+<span class="c1"># Now for UUIDS:</span>
+<span class="n">qb</span>  <span class="o">=</span> <span class="n">QueryBuilder</span><span class="p">()</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Node</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="s1">&#39;n1&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Node</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="s1">&#39;n2&#39;</span><span class="p">)</span>
+<span class="n">rule</span> <span class="o">=</span> <span class="n">RuleSequence</span><span class="p">(</span><span class="n">qb</span><span class="p">,</span> <span class="n">track_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">rule</span><span class="o">.</span><span class="n">set_edge_keys</span><span class="p">([(</span><span class="s1">&#39;n1&#39;</span><span class="p">,</span><span class="s1">&#39;uuid&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;n2&#39;</span><span class="p">,</span><span class="s1">&#39;uuid&#39;</span><span class="p">),</span> <span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aiida.tools.graph.age_rules.ReplaceRule">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.tools.graph.age_rules.</code><code class="sig-name descname">ReplaceRule</code><span class="sig-paren">(</span><em class="sig-param">querybuilder</em>, <em class="sig-param">max_iterations=1</em>, <em class="sig-param">track_edges=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#ReplaceRule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.ReplaceRule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.graph.age_rules.QueryRule" title="aiida.tools.graph.age_rules.QueryRule"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.graph.age_rules.QueryRule</span></code></a></p>
+<p>The ReplaceRule does not accumulate results, but just sets the operational_set to
+new results. Therefore it can only function using a finite number of iterations,
+since it does not keep track of which nodes where visited already (otherwise, if
+it was following a cycle, it would run indefinitely).</p>
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_rules.ReplaceRule.__abstractmethods__">
+<code class="sig-name descname">__abstractmethods__</code><em class="property"> = frozenset({})</em><a class="headerlink" href="#aiida.tools.graph.age_rules.ReplaceRule.__abstractmethods__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_rules.ReplaceRule.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">querybuilder</em>, <em class="sig-param">max_iterations=1</em>, <em class="sig-param">track_edges=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#ReplaceRule.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.ReplaceRule.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialization method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>querybuilder</strong> – an instance of the QueryBuilder class from which to take the
+procedure for traversal</p></li>
+<li><p><strong>max_iterations</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – the number of iterations to run this query on (must be
+a finite number for ReplaceRules)</p></li>
+<li><p><strong>track_edges</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – whether to track which edges are traversed and store them</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_rules.ReplaceRule.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.graph.age_rules'</em><a class="headerlink" href="#aiida.tools.graph.age_rules.ReplaceRule.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_rules.ReplaceRule._abc_impl">
+<code class="sig-name descname">_abc_impl</code><em class="property"> = &lt;_abc_data object&gt;</em><a class="headerlink" href="#aiida.tools.graph.age_rules.ReplaceRule._abc_impl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_rules.ReplaceRule.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param">operational_set</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#ReplaceRule.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.ReplaceRule.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes the operational_set and overwrites it with the set of nodes that results
+from applying the rule (this might or not include the initial set of nodes as
+well depending on the rule).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>operational_set</strong> (<a class="reference internal" href="#aiida.tools.graph.age_entities.Basket" title="aiida.tools.graph.age_entities.Basket"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.graph.age_entities.Basket</span></code></a>) – initital set of nodes to be overwritten by the rule.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aiida.tools.graph.age_rules.RuleSaveWalkers">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.tools.graph.age_rules.</code><code class="sig-name descname">RuleSaveWalkers</code><span class="sig-paren">(</span><em class="sig-param">stash</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#RuleSaveWalkers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.RuleSaveWalkers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.graph.age_rules.Operation" title="aiida.tools.graph.age_rules.Operation"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.graph.age_rules.Operation</span></code></a></p>
+<p>Save the Walkers:</p>
+<p>When initialized, this rule will save a pointer to an external stash variable.
+When run, this stash will be emptied and a given operational_set will be saved
+there instead.</p>
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_rules.RuleSaveWalkers.__abstractmethods__">
+<code class="sig-name descname">__abstractmethods__</code><em class="property"> = frozenset({})</em><a class="headerlink" href="#aiida.tools.graph.age_rules.RuleSaveWalkers.__abstractmethods__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_rules.RuleSaveWalkers.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">stash</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#RuleSaveWalkers.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.RuleSaveWalkers.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialization method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>stash</strong> – external variable in which to save the operational_set</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_rules.RuleSaveWalkers.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.graph.age_rules'</em><a class="headerlink" href="#aiida.tools.graph.age_rules.RuleSaveWalkers.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_rules.RuleSaveWalkers._abc_impl">
+<code class="sig-name descname">_abc_impl</code><em class="property"> = &lt;_abc_data object&gt;</em><a class="headerlink" href="#aiida.tools.graph.age_rules.RuleSaveWalkers._abc_impl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_rules.RuleSaveWalkers.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param">operational_set</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#RuleSaveWalkers.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.RuleSaveWalkers.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes the operational_set and overwrites it with the set of nodes that results
+from applying the rule (this might or not include the initial set of nodes as
+well depending on the rule).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>operational_set</strong> (<a class="reference internal" href="#aiida.tools.graph.age_entities.Basket" title="aiida.tools.graph.age_entities.Basket"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.graph.age_entities.Basket</span></code></a>) – initital set of nodes to be overwritten by the rule.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aiida.tools.graph.age_rules.RuleSequence">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.tools.graph.age_rules.</code><code class="sig-name descname">RuleSequence</code><span class="sig-paren">(</span><em class="sig-param">rules</em>, <em class="sig-param">max_iterations=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#RuleSequence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.RuleSequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.graph.age_rules.Operation" title="aiida.tools.graph.age_rules.Operation"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.graph.age_rules.Operation</span></code></a></p>
+<p>Rule for concatenation</p>
+<p>Rule Sequence is used to concatenate a series of rules together.
+Concatenating querybuilders in a single rule its not enough because
+one might want to stash results to perform two independent operations
+in the starting set instead of a second operation from the results of
+the first (see RuleSetWalkers and RuleSaveWalkers).</p>
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_rules.RuleSequence.__abstractmethods__">
+<code class="sig-name descname">__abstractmethods__</code><em class="property"> = frozenset({})</em><a class="headerlink" href="#aiida.tools.graph.age_rules.RuleSequence.__abstractmethods__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_rules.RuleSequence.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">rules</em>, <em class="sig-param">max_iterations=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#RuleSequence.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.RuleSequence.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialization method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>max_iterations</strong> – maximum number of iterations to perform.</p></li>
+<li><p><strong>track_edges</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – if True, will also track and return the edges traversed.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_rules.RuleSequence.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.graph.age_rules'</em><a class="headerlink" href="#aiida.tools.graph.age_rules.RuleSequence.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_rules.RuleSequence._abc_impl">
+<code class="sig-name descname">_abc_impl</code><em class="property"> = &lt;_abc_data object&gt;</em><a class="headerlink" href="#aiida.tools.graph.age_rules.RuleSequence._abc_impl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_rules.RuleSequence.empty_accumulator">
+<code class="sig-name descname">empty_accumulator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#RuleSequence.empty_accumulator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.RuleSequence.empty_accumulator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Empties the accumulator set</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_rules.RuleSequence.empty_visits">
+<code class="sig-name descname">empty_visits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#RuleSequence.empty_visits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.RuleSequence.empty_visits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Empties the visits set</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_rules.RuleSequence.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param">operational_set</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#RuleSequence.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.RuleSequence.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes the operational_set and overwrites it with the set of nodes that results
+from applying the rule (this might or not include the initial set of nodes as
+well depending on the rule).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>operational_set</strong> (<a class="reference internal" href="#aiida.tools.graph.age_entities.Basket" title="aiida.tools.graph.age_entities.Basket"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.graph.age_entities.Basket</span></code></a>) – initital set of nodes to be overwritten by the rule.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_rules.RuleSequence.set_accumulator">
+<code class="sig-name descname">set_accumulator</code><span class="sig-paren">(</span><em class="sig-param">accumulator_set</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#RuleSequence.set_accumulator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.RuleSequence.set_accumulator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the accumulator set</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_rules.RuleSequence.set_visits">
+<code class="sig-name descname">set_visits</code><span class="sig-paren">(</span><em class="sig-param">visits_set</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#RuleSequence.set_visits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.RuleSequence.set_visits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the visits set</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aiida.tools.graph.age_rules.RuleSetWalkers">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.tools.graph.age_rules.</code><code class="sig-name descname">RuleSetWalkers</code><span class="sig-paren">(</span><em class="sig-param">stash</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#RuleSetWalkers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.RuleSetWalkers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.graph.age_rules.Operation" title="aiida.tools.graph.age_rules.Operation"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.graph.age_rules.Operation</span></code></a></p>
+<p>Set the Walkers:</p>
+<p>When initialized, this rule will save a pointer to an external stash variable.
+When run, the given operational_set will be emptied and the stash will be
+loaded in it.</p>
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_rules.RuleSetWalkers.__abstractmethods__">
+<code class="sig-name descname">__abstractmethods__</code><em class="property"> = frozenset({})</em><a class="headerlink" href="#aiida.tools.graph.age_rules.RuleSetWalkers.__abstractmethods__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_rules.RuleSetWalkers.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">stash</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#RuleSetWalkers.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.RuleSetWalkers.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialization method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>stash</strong> – external variable from which to load into the operational_set</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_rules.RuleSetWalkers.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.graph.age_rules'</em><a class="headerlink" href="#aiida.tools.graph.age_rules.RuleSetWalkers.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_rules.RuleSetWalkers._abc_impl">
+<code class="sig-name descname">_abc_impl</code><em class="property"> = &lt;_abc_data object&gt;</em><a class="headerlink" href="#aiida.tools.graph.age_rules.RuleSetWalkers._abc_impl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_rules.RuleSetWalkers.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param">operational_set</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#RuleSetWalkers.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.RuleSetWalkers.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes the operational_set and overwrites it with the set of nodes that results
+from applying the rule (this might or not include the initial set of nodes as
+well depending on the rule).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>operational_set</strong> (<a class="reference internal" href="#aiida.tools.graph.age_entities.Basket" title="aiida.tools.graph.age_entities.Basket"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.graph.age_entities.Basket</span></code></a>) – initital set of nodes to be overwritten by the rule.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aiida.tools.graph.age_rules.UpdateRule">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.tools.graph.age_rules.</code><code class="sig-name descname">UpdateRule</code><span class="sig-paren">(</span><em class="sig-param">querybuilder</em>, <em class="sig-param">max_iterations=1</em>, <em class="sig-param">track_edges=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#UpdateRule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.UpdateRule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.tools.graph.age_rules.QueryRule" title="aiida.tools.graph.age_rules.QueryRule"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.graph.age_rules.QueryRule</span></code></a></p>
+<p>The UpdateRule will accumulate every node visited and return it as a set of nodes
+(and thus, without duplication). It can be used requesting both a finite number
+of iterations or an infinite number of iterations (in which case it will stop once
+no new nodes are added to the accumulation set).</p>
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_rules.UpdateRule.__abstractmethods__">
+<code class="sig-name descname">__abstractmethods__</code><em class="property"> = frozenset({})</em><a class="headerlink" href="#aiida.tools.graph.age_rules.UpdateRule.__abstractmethods__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_rules.UpdateRule.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.graph.age_rules'</em><a class="headerlink" href="#aiida.tools.graph.age_rules.UpdateRule.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.graph.age_rules.UpdateRule._abc_impl">
+<code class="sig-name descname">_abc_impl</code><em class="property"> = &lt;_abc_data object&gt;</em><a class="headerlink" href="#aiida.tools.graph.age_rules.UpdateRule._abc_impl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.graph.age_rules.UpdateRule.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param">operational_set</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/age_rules.html#UpdateRule.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.age_rules.UpdateRule.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes the operational_set and overwrites it with the set of nodes that results
+from applying the rule (this might or not include the initial set of nodes as
+well depending on the rule).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>operational_set</strong> (<a class="reference internal" href="#aiida.tools.graph.age_entities.Basket" title="aiida.tools.graph.age_entities.Basket"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.tools.graph.age_entities.Basket</span></code></a>) – initital set of nodes to be overwritten by the rule.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-aiida.tools.graph.graph_traversers"></span><p>Module for functions to traverse AiiDA graphs.</p>
+<dl class="function">
+<dt id="aiida.tools.graph.graph_traversers.get_nodes_delete">
+<code class="sig-prename descclassname">aiida.tools.graph.graph_traversers.</code><code class="sig-name descname">get_nodes_delete</code><span class="sig-paren">(</span><em class="sig-param">starting_pks</em>, <em class="sig-param">get_links=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/graph_traversers.html#get_nodes_delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.graph_traversers.get_nodes_delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will return the set of all nodes that can be connected
+to a list of initial nodes through any sequence of specified authorized
+links and directions for deletion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>starting_pks</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><em>tuple</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set" title="(in Python v3.8)"><em>set</em></a>) – Contains the (valid) pks of the starting nodes.</p></li>
+<li><p><strong>get_links</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – Pass True to also return the links between all nodes (found + initial).</p></li>
+<li><p><strong>create_forward</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – will traverse CREATE links in the forward direction.</p></li>
+<li><p><strong>call_calc_forward</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – will traverse CALL_CALC links in the forward direction.</p></li>
+<li><p><strong>call_work_forward</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – will traverse CALL_WORK links in the forward direction.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.graph.graph_traversers.get_nodes_export">
+<code class="sig-prename descclassname">aiida.tools.graph.graph_traversers.</code><code class="sig-name descname">get_nodes_export</code><span class="sig-paren">(</span><em class="sig-param">starting_pks</em>, <em class="sig-param">get_links=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/graph_traversers.html#get_nodes_export"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.graph_traversers.get_nodes_export" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will return the set of all nodes that can be connected
+to a list of initial nodes through any sequence of specified authorized
+links and directions for export. This will also return the links and
+the traversal rules parsed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>starting_pks</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><em>tuple</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set" title="(in Python v3.8)"><em>set</em></a>) – Contains the (valid) pks of the starting nodes.</p></li>
+<li><p><strong>get_links</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – Pass True to also return the links between all nodes (found + initial).</p></li>
+<li><p><strong>input_calc_forward</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – will traverse INPUT_CALC links in the forward direction.</p></li>
+<li><p><strong>create_backward</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – will traverse CREATE links in the backward direction.</p></li>
+<li><p><strong>return_backward</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – will traverse RETURN links in the backward direction.</p></li>
+<li><p><strong>input_work_forward</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – will traverse INPUT_WORK links in the forward direction.</p></li>
+<li><p><strong>call_calc_backward</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – will traverse CALL_CALC links in the backward direction.</p></li>
+<li><p><strong>call_work_backward</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – will traverse CALL_WORK links in the backward direction.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.graph.graph_traversers.traverse_graph">
+<code class="sig-prename descclassname">aiida.tools.graph.graph_traversers.</code><code class="sig-name descname">traverse_graph</code><span class="sig-paren">(</span><em class="sig-param">starting_pks</em>, <em class="sig-param">max_iterations=None</em>, <em class="sig-param">get_links=False</em>, <em class="sig-param">links_forward=()</em>, <em class="sig-param">links_backward=()</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/graph_traversers.html#traverse_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.graph_traversers.traverse_graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will return the set of all nodes that can be connected
+to a list of initial nodes through any sequence of specified links.
+Optionally, it may also return the links that connect these nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>starting_pks</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><em>tuple</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set" title="(in Python v3.8)"><em>set</em></a>) – Contains the (valid) pks of the starting nodes.</p></li>
+<li><p><strong>max_iterations</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – The number of iterations to apply the set of rules (a value of ‘None’ will
+iterate until no new nodes are added).</p></li>
+<li><p><strong>get_links</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – Pass True to also return the links between all nodes (found + initial).</p></li>
+<li><p><strong>links_forward</strong> (<a class="reference internal" href="aiida.common.html#aiida.common.links.LinkType" title="aiida.common.links.LinkType"><em>aiida.common.links.LinkType</em></a>) – List with all the links that should be traversed in the forward direction.</p></li>
+<li><p><strong>links_backward</strong> (<a class="reference internal" href="aiida.common.html#aiida.common.links.LinkType" title="aiida.common.links.LinkType"><em>aiida.common.links.LinkType</em></a>) – List with all the links that should be traversed in the backward direction.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.tools.graph.graph_traversers.validate_traversal_rules">
+<code class="sig-prename descclassname">aiida.tools.graph.graph_traversers.</code><code class="sig-name descname">validate_traversal_rules</code><span class="sig-paren">(</span><em class="sig-param">ruleset=&lt;GraphTraversalRules.DEFAULT: {'input_calc_forward': GraphTraversalRule(link_type=&lt;LinkType.INPUT_CALC: 'input_calc'&gt;</em>, <em class="sig-param">direction='forward'</em>, <em class="sig-param">toggleable=True</em>, <em class="sig-param">default=False)</em>, <em class="sig-param">'input_calc_backward': GraphTraversalRule(link_type=&lt;LinkType.INPUT_CALC: 'input_calc'&gt;</em>, <em class="sig-param">direction='backward'</em>, <em class="sig-param">toggleable=True</em>, <em class="sig-param">default=False)</em>, <em class="sig-param">'create_forward': GraphTraversalRule(link_type=&lt;LinkType.CREATE: 'create'&gt;</em>, <em class="sig-param">direction='forward'</em>, <em class="sig-param">toggleable=True</em>, <em class="sig-param">default=False)</em>, <em class="sig-param">'create_backward': GraphTraversalRule(link_type=&lt;LinkType.CREATE: 'create'&gt;</em>, <em class="sig-param">direction='backward'</em>, <em class="sig-param">toggleable=True</em>, <em class="sig-param">default=False)</em>, <em class="sig-param">'return_forward': GraphTraversalRule(link_type=&lt;LinkType.RETURN: 'return'&gt;</em>, <em class="sig-param">direction='forward'</em>, <em class="sig-param">toggleable=True</em>, <em class="sig-param">default=False)</em>, <em class="sig-param">'return_backward': GraphTraversalRule(link_type=&lt;LinkType.RETURN: 'return'&gt;</em>, <em class="sig-param">direction='backward'</em>, <em class="sig-param">toggleable=True</em>, <em class="sig-param">default=False)</em>, <em class="sig-param">'input_work_forward': GraphTraversalRule(link_type=&lt;LinkType.INPUT_WORK: 'input_work'&gt;</em>, <em class="sig-param">direction='forward'</em>, <em class="sig-param">toggleable=True</em>, <em class="sig-param">default=False)</em>, <em class="sig-param">'input_work_backward': GraphTraversalRule(link_type=&lt;LinkType.INPUT_WORK: 'input_work'&gt;</em>, <em class="sig-param">direction='backward'</em>, <em class="sig-param">toggleable=True</em>, <em class="sig-param">default=False)</em>, <em class="sig-param">'call_calc_forward': GraphTraversalRule(link_type=&lt;LinkType.CALL_CALC: 'call_calc'&gt;</em>, <em class="sig-param">direction='forward'</em>, <em class="sig-param">toggleable=True</em>, <em class="sig-param">default=False)</em>, <em class="sig-param">'call_calc_backward': GraphTraversalRule(link_type=&lt;LinkType.CALL_CALC: 'call_calc'&gt;</em>, <em class="sig-param">direction='backward'</em>, <em class="sig-param">toggleable=True</em>, <em class="sig-param">default=False)</em>, <em class="sig-param">'call_work_forward': GraphTraversalRule(link_type=&lt;LinkType.CALL_WORK: 'call_work'&gt;</em>, <em class="sig-param">direction='forward'</em>, <em class="sig-param">toggleable=True</em>, <em class="sig-param">default=False)</em>, <em class="sig-param">'call_work_backward': GraphTraversalRule(link_type=&lt;LinkType.CALL_WORK: 'call_work'&gt;</em>, <em class="sig-param">direction='backward'</em>, <em class="sig-param">toggleable=True</em>, <em class="sig-param">default=False)}&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/graph/graph_traversers.html#validate_traversal_rules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.graph.graph_traversers.validate_traversal_rules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validates the keywords with a ruleset template and returns a parsed dictionary
+ready to be used.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ruleset</strong> (<a class="reference internal" href="aiida.common.html#aiida.common.links.GraphTraversalRules" title="aiida.common.links.GraphTraversalRules"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.common.links.GraphTraversalRules</span></code></a>) – Ruleset template used to validate the set of rules.</p></li>
+<li><p><strong>input_calc_forward</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – will traverse INPUT_CALC links in the forward direction.</p></li>
+<li><p><strong>input_calc_backward</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – will traverse INPUT_CALC links in the backward direction.</p></li>
+<li><p><strong>create_forward</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – will traverse CREATE links in the forward direction.</p></li>
+<li><p><strong>create_backward</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – will traverse CREATE links in the backward direction.</p></li>
+<li><p><strong>return_forward</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – will traverse RETURN links in the forward direction.</p></li>
+<li><p><strong>return_backward</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – will traverse RETURN links in the backward direction.</p></li>
+<li><p><strong>input_work_forward</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – will traverse INPUT_WORK links in the forward direction.</p></li>
+<li><p><strong>input_work_backward</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – will traverse INPUT_WORK links in the backward direction.</p></li>
+<li><p><strong>call_calc_forward</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – will traverse CALL_CALC links in the forward direction.</p></li>
+<li><p><strong>call_calc_backward</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – will traverse CALL_CALC links in the backward direction.</p></li>
+<li><p><strong>call_work_forward</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – will traverse CALL_WORK links in the forward direction.</p></li>
+<li><p><strong>call_work_backward</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – will traverse CALL_WORK links in the backward direction.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

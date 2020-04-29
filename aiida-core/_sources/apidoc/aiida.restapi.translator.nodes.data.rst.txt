@@ -1,0 +1,60 @@
+aiida.restapi.translator.nodes.data package
+===========================================
+
+.. automodule:: aiida.restapi.translator.nodes.data
+   :members:
+   :special-members:
+   :private-members:
+   :undoc-members:
+   :show-inheritance:
+
+Subpackages
+-----------
+
+.. toctree::
+
+   aiida.restapi.translator.nodes.data.array
+
+Submodules
+----------
+
+
+.. automodule:: aiida.restapi.translator.nodes.data.cif
+   :members:
+   :special-members:
+   :private-members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: aiida.restapi.translator.nodes.data.code
+   :members:
+   :special-members:
+   :private-members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: aiida.restapi.translator.nodes.data.kpoints
+   :members:
+   :special-members:
+   :private-members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: aiida.restapi.translator.nodes.data.structure
+   :members:
+   :special-members:
+   :private-members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: aiida.restapi.translator.nodes.data.upf
+   :members:
+   :special-members:
+   :private-members:
+   :undoc-members:
+   :show-inheritance:
+

@@ -1,0 +1,987 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.backends package &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>aiida.backends package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/aiida.backends.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-aiida.backends">
+<span id="aiida-backends-package"></span><h1>aiida.backends package<a class="headerlink" href="#module-aiida.backends" title="Permalink to this headline">¶</a></h1>
+<p>Module for implementations of database backends.</p>
+<dl class="function">
+<dt id="aiida.backends.get_backend_manager">
+<code class="sig-prename descclassname">aiida.backends.</code><code class="sig-name descname">get_backend_manager</code><span class="sig-paren">(</span><em class="sig-param">backend</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends.html#get_backend_manager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.get_backend_manager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an instance of the <cite>BackendManager</cite> for the current backend.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>backend</strong> – the type of the database backend</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><cite>BackendManager</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aiida.backends.djsite.html">aiida.backends.djsite package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aiida.backends.djsite.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aiida.backends.djsite.db.html">aiida.backends.djsite.db package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="aiida.backends.djsite.db.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="aiida.backends.djsite.db.migrations.html">aiida.backends.djsite.db.migrations package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="aiida.backends.djsite.db.migrations.html#module-aiida.backends.djsite.db.migrations.0001_initial">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="aiida.backends.djsite.db.html#module-aiida.backends.djsite.db.models">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aiida.backends.djsite.html#module-aiida.backends.djsite.manage">Submodules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aiida.backends.general.html">aiida.backends.general package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aiida.backends.general.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aiida.backends.general.migrations.html">aiida.backends.general.migrations package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="aiida.backends.general.migrations.html#module-aiida.backends.general.migrations.calc_state">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aiida.backends.general.html#module-aiida.backends.general.abstractqueries">Submodules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aiida.backends.sqlalchemy.html">aiida.backends.sqlalchemy package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aiida.backends.sqlalchemy.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aiida.backends.sqlalchemy.migrations.html">aiida.backends.sqlalchemy.migrations package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="aiida.backends.sqlalchemy.migrations.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="aiida.backends.sqlalchemy.migrations.versions.html">aiida.backends.sqlalchemy.migrations.versions package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="aiida.backends.sqlalchemy.migrations.versions.html#module-aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="aiida.backends.sqlalchemy.migrations.html#module-aiida.backends.sqlalchemy.migrations.env">Submodules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="aiida.backends.sqlalchemy.models.html">aiida.backends.sqlalchemy.models package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="aiida.backends.sqlalchemy.models.html#module-aiida.backends.sqlalchemy.models.authinfo">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aiida.backends.sqlalchemy.html#module-aiida.backends.sqlalchemy.manage">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="module-aiida.backends.manager">
+<span id="submodules"></span><h2>Submodules<a class="headerlink" href="#module-aiida.backends.manager" title="Permalink to this headline">¶</a></h2>
+<p>Module for settings and utilities to determine and set the database schema versions.</p>
+<dl class="class">
+<dt id="aiida.backends.manager.BackendManager">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.backends.manager.</code><code class="sig-name descname">BackendManager</code><a class="reference internal" href="../_modules/aiida/backends/manager.html#BackendManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.manager.BackendManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Class to manage the database schema and environment.</p>
+<dl class="attribute">
+<dt id="aiida.backends.manager.BackendManager.__dict__">
+<code class="sig-name descname">__dict__</code><em class="property"> = mappingproxy({'__module__': 'aiida.backends.manager', '__doc__': 'Class to manage the database schema and environment.', '_settings_manager': None, 'get_settings_manager': &lt;function BackendManager.get_settings_manager&gt;, 'load_backend_environment': &lt;function BackendManager.load_backend_environment&gt;, '_load_backend_environment': &lt;function BackendManager._load_backend_environment&gt;, 'reset_backend_environment': &lt;function BackendManager.reset_backend_environment&gt;, 'migrate': &lt;function BackendManager.migrate&gt;, '_migrate_database_generation': &lt;function BackendManager._migrate_database_generation&gt;, '_migrate_database_version': &lt;function BackendManager._migrate_database_version&gt;, 'is_database_schema_ahead': &lt;function BackendManager.is_database_schema_ahead&gt;, 'get_schema_version_code': &lt;function BackendManager.get_schema_version_code&gt;, 'get_schema_version_reset': &lt;function BackendManager.get_schema_version_reset&gt;, 'get_schema_version_database': &lt;function BackendManager.get_schema_version_database&gt;, 'set_schema_version_database': &lt;function BackendManager.set_schema_version_database&gt;, 'get_schema_generation_database': &lt;function BackendManager.get_schema_generation_database&gt;, 'set_schema_generation_database': &lt;function BackendManager.set_schema_generation_database&gt;, 'validate_schema': &lt;function BackendManager.validate_schema&gt;, 'validate_schema_generation_for_migration': &lt;function BackendManager.validate_schema_generation_for_migration&gt;, 'validate_schema_version_for_migration': &lt;function BackendManager.validate_schema_version_for_migration&gt;, 'validate_schema_generation': &lt;function BackendManager.validate_schema_generation&gt;, 'validate_schema_version': &lt;function BackendManager.validate_schema_version&gt;, '__dict__': &lt;attribute '__dict__' of 'BackendManager' objects&gt;, '__weakref__': &lt;attribute '__weakref__' of 'BackendManager' objects&gt;})</em><a class="headerlink" href="#aiida.backends.manager.BackendManager.__dict__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.manager.BackendManager.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.backends.manager'</em><a class="headerlink" href="#aiida.backends.manager.BackendManager.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.manager.BackendManager.__weakref__">
+<code class="sig-name descname">__weakref__</code><a class="headerlink" href="#aiida.backends.manager.BackendManager.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.BackendManager._load_backend_environment">
+<em class="property">abstract </em><code class="sig-name descname">_load_backend_environment</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/manager.html#BackendManager._load_backend_environment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.manager.BackendManager._load_backend_environment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the backend environment.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.BackendManager._migrate_database_generation">
+<code class="sig-name descname">_migrate_database_generation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/manager.html#BackendManager._migrate_database_generation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.manager.BackendManager._migrate_database_generation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrate the database schema generation.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>this should NEVER be called directly because there is no validation performed on whether the
+current database schema generation and version can actually be migrated.</p>
+</div>
+<p>This normally just consists out of setting the schema generation value, but depending on the backend more might
+be needed. In that case, this method should be overridden and call <cite>super</cite> first, followed by the additional
+logic that is required.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.BackendManager._migrate_database_version">
+<code class="sig-name descname">_migrate_database_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/manager.html#BackendManager._migrate_database_version"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.manager.BackendManager._migrate_database_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrate the database to the current schema version.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>this should NEVER be called directly because there is no validation performed on whether the
+current database schema generation and version can actually be migrated.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.manager.BackendManager._settings_manager">
+<code class="sig-name descname">_settings_manager</code><em class="property"> = None</em><a class="headerlink" href="#aiida.backends.manager.BackendManager._settings_manager" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.BackendManager.get_schema_generation_database">
+<code class="sig-name descname">get_schema_generation_database</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/manager.html#BackendManager.get_schema_generation_database"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.manager.BackendManager.get_schema_generation_database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the database schema generation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>distutils.version.LooseVersion</cite> with schema generation of the database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.BackendManager.get_schema_version_code">
+<em class="property">abstract </em><code class="sig-name descname">get_schema_version_code</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/manager.html#BackendManager.get_schema_version_code"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.manager.BackendManager.get_schema_version_code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the code schema version.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.BackendManager.get_schema_version_database">
+<em class="property">abstract </em><code class="sig-name descname">get_schema_version_database</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/manager.html#BackendManager.get_schema_version_database"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.manager.BackendManager.get_schema_version_database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the database schema version.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>distutils.version.LooseVersion</cite> with schema version of the database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.BackendManager.get_schema_version_reset">
+<em class="property">abstract </em><code class="sig-name descname">get_schema_version_reset</code><span class="sig-paren">(</span><em class="sig-param">schema_generation_code</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/manager.html#BackendManager.get_schema_version_reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.manager.BackendManager.get_schema_version_reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return schema version the database should have to be able to automatically reset to code schema generation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>schema_generation_code</strong> – the schema generation of the code.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>schema version</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.BackendManager.get_settings_manager">
+<em class="property">abstract </em><code class="sig-name descname">get_settings_manager</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/manager.html#BackendManager.get_settings_manager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.manager.BackendManager.get_settings_manager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an instance of the <cite>SettingsManager</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>SettingsManager</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.BackendManager.is_database_schema_ahead">
+<em class="property">abstract </em><code class="sig-name descname">is_database_schema_ahead</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/manager.html#BackendManager.is_database_schema_ahead"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.manager.BackendManager.is_database_schema_ahead" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine whether the database schema version is ahead of the code schema version.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>this will not check whether the schema generations are equal</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>boolean, True if the database schema version is ahead of the code schema version.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.BackendManager.load_backend_environment">
+<code class="sig-name descname">load_backend_environment</code><span class="sig-paren">(</span><em class="sig-param">profile</em>, <em class="sig-param">validate_schema=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/manager.html#BackendManager.load_backend_environment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.manager.BackendManager.load_backend_environment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the backend environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>profile</strong> – the profile whose backend environment to load</p></li>
+<li><p><strong>validate_schema</strong> – boolean, if True, validate the schema first before loading the environment.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.BackendManager.migrate">
+<code class="sig-name descname">migrate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/manager.html#BackendManager.migrate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.manager.BackendManager.migrate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrate the database to the latest schema generation or version.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.BackendManager.reset_backend_environment">
+<em class="property">abstract </em><code class="sig-name descname">reset_backend_environment</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/manager.html#BackendManager.reset_backend_environment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.manager.BackendManager.reset_backend_environment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the backend environment.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.BackendManager.set_schema_generation_database">
+<code class="sig-name descname">set_schema_generation_database</code><span class="sig-paren">(</span><em class="sig-param">generation</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/manager.html#BackendManager.set_schema_generation_database"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.manager.BackendManager.set_schema_generation_database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the database schema generation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>generation</strong> – string with schema generation to set</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.BackendManager.set_schema_version_database">
+<em class="property">abstract </em><code class="sig-name descname">set_schema_version_database</code><span class="sig-paren">(</span><em class="sig-param">version</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/manager.html#BackendManager.set_schema_version_database"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.manager.BackendManager.set_schema_version_database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the database schema version.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>version</strong> – string with schema version to set</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.BackendManager.validate_schema">
+<code class="sig-name descname">validate_schema</code><span class="sig-paren">(</span><em class="sig-param">profile</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/manager.html#BackendManager.validate_schema"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.manager.BackendManager.validate_schema" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validate that the current database generation and schema are up-to-date with that of the code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>profile</strong> – the profile for which to validate the database schema</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="aiida.common.html#aiida.common.exceptions.ConfigurationError" title="aiida.common.exceptions.ConfigurationError"><strong>aiida.common.exceptions.ConfigurationError</strong></a> – if database schema version or generation is not up-to-date</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.BackendManager.validate_schema_generation">
+<code class="sig-name descname">validate_schema_generation</code><span class="sig-paren">(</span><em class="sig-param">profile</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/manager.html#BackendManager.validate_schema_generation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.manager.BackendManager.validate_schema_generation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validate that the current database schema generation is up-to-date with that of the code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="aiida.common.html#aiida.common.exceptions.IncompatibleDatabaseSchema" title="aiida.common.exceptions.IncompatibleDatabaseSchema"><strong>aiida.common.exceptions.IncompatibleDatabaseSchema</strong></a> – if database schema generation is not up-to-date</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.BackendManager.validate_schema_generation_for_migration">
+<code class="sig-name descname">validate_schema_generation_for_migration</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/manager.html#BackendManager.validate_schema_generation_for_migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.manager.BackendManager.validate_schema_generation_for_migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validate whether the current database schema generation can be migrated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="aiida.common.html#aiida.common.exceptions.IncompatibleDatabaseSchema" title="aiida.common.exceptions.IncompatibleDatabaseSchema"><strong>aiida.common.exceptions.IncompatibleDatabaseSchema</strong></a> – if database schema generation cannot be migrated</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.BackendManager.validate_schema_version">
+<code class="sig-name descname">validate_schema_version</code><span class="sig-paren">(</span><em class="sig-param">profile</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/manager.html#BackendManager.validate_schema_version"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.manager.BackendManager.validate_schema_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validate that the current database schema version is up-to-date with that of the code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>profile</strong> – the profile for which to validate the database schema</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="aiida.common.html#aiida.common.exceptions.IncompatibleDatabaseSchema" title="aiida.common.exceptions.IncompatibleDatabaseSchema"><strong>aiida.common.exceptions.IncompatibleDatabaseSchema</strong></a> – if database schema version is not up-to-date</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.BackendManager.validate_schema_version_for_migration">
+<code class="sig-name descname">validate_schema_version_for_migration</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/manager.html#BackendManager.validate_schema_version_for_migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.manager.BackendManager.validate_schema_version_for_migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validate whether the current database schema version can be migrated.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>this will not validate that the schema generation is correct.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="aiida.common.html#aiida.common.exceptions.IncompatibleDatabaseSchema" title="aiida.common.exceptions.IncompatibleDatabaseSchema"><strong>aiida.common.exceptions.IncompatibleDatabaseSchema</strong></a> – if database schema version cannot be migrated</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aiida.backends.manager.Setting">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.backends.manager.</code><code class="sig-name descname">Setting</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">value</em>, <em class="sig-param">description</em>, <em class="sig-param">time</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.backends.manager.Setting" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a></p>
+<dl class="method">
+<dt id="aiida.backends.manager.Setting.__getnewargs__">
+<code class="sig-name descname">__getnewargs__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aiida.backends.manager.Setting.__getnewargs__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return self as a plain tuple.  Used by copy and pickle.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.manager.Setting.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.backends.manager'</em><a class="headerlink" href="#aiida.backends.manager.Setting.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.Setting.__new__">
+<em class="property">static </em><code class="sig-name descname">__new__</code><span class="sig-paren">(</span><em class="sig-param">_cls</em>, <em class="sig-param">key</em>, <em class="sig-param">value</em>, <em class="sig-param">description</em>, <em class="sig-param">time</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.backends.manager.Setting.__new__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create new instance of Setting(key, value, description, time)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.Setting.__repr__">
+<code class="sig-name descname">__repr__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aiida.backends.manager.Setting.__repr__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a nicely formatted representation string</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.manager.Setting.__slots__">
+<code class="sig-name descname">__slots__</code><em class="property"> = ()</em><a class="headerlink" href="#aiida.backends.manager.Setting.__slots__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.Setting._asdict">
+<code class="sig-name descname">_asdict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aiida.backends.manager.Setting._asdict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new OrderedDict which maps field names to their values.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.manager.Setting._fields">
+<code class="sig-name descname">_fields</code><em class="property"> = ('key', 'value', 'description', 'time')</em><a class="headerlink" href="#aiida.backends.manager.Setting._fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.manager.Setting._fields_defaults">
+<code class="sig-name descname">_fields_defaults</code><em class="property"> = {}</em><a class="headerlink" href="#aiida.backends.manager.Setting._fields_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.Setting._make">
+<em class="property">classmethod </em><code class="sig-name descname">_make</code><span class="sig-paren">(</span><em class="sig-param">iterable</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.backends.manager.Setting._make" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a new Setting object from a sequence or iterable</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.Setting._replace">
+<code class="sig-name descname">_replace</code><span class="sig-paren">(</span><em class="sig-param">**kwds</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.backends.manager.Setting._replace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new Setting object replacing specified fields with new values</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.Setting.description">
+<em class="property">property </em><code class="sig-name descname">description</code><a class="headerlink" href="#aiida.backends.manager.Setting.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.Setting.key">
+<em class="property">property </em><code class="sig-name descname">key</code><a class="headerlink" href="#aiida.backends.manager.Setting.key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.Setting.time">
+<em class="property">property </em><code class="sig-name descname">time</code><a class="headerlink" href="#aiida.backends.manager.Setting.time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.Setting.value">
+<em class="property">property </em><code class="sig-name descname">value</code><a class="headerlink" href="#aiida.backends.manager.Setting.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aiida.backends.manager.SettingsManager">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.backends.manager.</code><code class="sig-name descname">SettingsManager</code><a class="reference internal" href="../_modules/aiida/backends/manager.html#SettingsManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.manager.SettingsManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Class to get, set and delete settings from the <cite>DbSettings</cite> table.</p>
+<dl class="attribute">
+<dt id="aiida.backends.manager.SettingsManager.__dict__">
+<code class="sig-name descname">__dict__</code><em class="property"> = mappingproxy({'__module__': 'aiida.backends.manager', '__doc__': 'Class to get, set and delete settings from the `DbSettings` table.', 'get': &lt;function SettingsManager.get&gt;, 'set': &lt;function SettingsManager.set&gt;, 'delete': &lt;function SettingsManager.delete&gt;, '__dict__': &lt;attribute '__dict__' of 'SettingsManager' objects&gt;, '__weakref__': &lt;attribute '__weakref__' of 'SettingsManager' objects&gt;})</em><a class="headerlink" href="#aiida.backends.manager.SettingsManager.__dict__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.manager.SettingsManager.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.backends.manager'</em><a class="headerlink" href="#aiida.backends.manager.SettingsManager.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.manager.SettingsManager.__weakref__">
+<code class="sig-name descname">__weakref__</code><a class="headerlink" href="#aiida.backends.manager.SettingsManager.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.SettingsManager.delete">
+<em class="property">abstract </em><code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param">key</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/manager.html#SettingsManager.delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.manager.SettingsManager.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the setting with the given key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key</strong> – the key identifying the setting</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><cite>~aiida.common.exceptions.NotExistent</cite> if the settings does not exist</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.SettingsManager.get">
+<em class="property">abstract </em><code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">key</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/manager.html#SettingsManager.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.manager.SettingsManager.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the setting with the given key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key</strong> – the key identifying the setting</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Setting</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><cite>~aiida.common.exceptions.NotExistent</cite> if the settings does not exist</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.manager.SettingsManager.set">
+<em class="property">abstract </em><code class="sig-name descname">set</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">value</em>, <em class="sig-param">description=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/manager.html#SettingsManager.set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.manager.SettingsManager.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the settings with the given key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> – the key identifying the setting</p></li>
+<li><p><strong>value</strong> – the value for the setting</p></li>
+<li><p><strong>description</strong> – optional setting description</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.testbase"></span><p>Basic test classes.</p>
+<dl class="class">
+<dt id="aiida.backends.testbase.AiidaPostgresTestCase">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.backends.testbase.</code><code class="sig-name descname">AiidaPostgresTestCase</code><span class="sig-paren">(</span><em class="sig-param">methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testbase.html#AiidaPostgresTestCase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testbase.AiidaPostgresTestCase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiida.backends.testbase.AiidaTestCase" title="aiida.backends.testbase.AiidaTestCase"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.backends.testbase.AiidaTestCase</span></code></a></p>
+<p>Setup postgres tests.</p>
+<dl class="attribute">
+<dt id="aiida.backends.testbase.AiidaPostgresTestCase.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.backends.testbase'</em><a class="headerlink" href="#aiida.backends.testbase.AiidaPostgresTestCase.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.testbase.AiidaPostgresTestCase.setUpClass">
+<em class="property">classmethod </em><code class="sig-name descname">setUpClass</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testbase.html#AiidaPostgresTestCase.setUpClass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testbase.AiidaPostgresTestCase.setUpClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setup the PGTest postgres test cluster.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.testbase.AiidaPostgresTestCase.tearDownClass">
+<em class="property">classmethod </em><code class="sig-name descname">tearDownClass</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testbase.html#AiidaPostgresTestCase.tearDownClass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testbase.AiidaPostgresTestCase.tearDownClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the PGTest postgres test cluster.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="aiida.backends.testbase.AiidaTestCase">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.backends.testbase.</code><code class="sig-name descname">AiidaTestCase</code><span class="sig-paren">(</span><em class="sig-param">methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testbase.html#AiidaTestCase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testbase.AiidaTestCase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<p>This is the base class for AiiDA tests, independent of the backend.</p>
+<p>Internally it loads the AiidaTestImplementation subclass according to the current backend.</p>
+<dl class="attribute">
+<dt id="aiida.backends.testbase.AiidaTestCase._AiidaTestCase__backend_instance">
+<code class="sig-name descname">_AiidaTestCase__backend_instance</code><em class="property"> = None</em><a class="headerlink" href="#aiida.backends.testbase.AiidaTestCase._AiidaTestCase__backend_instance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.testbase.AiidaTestCase.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.backends.testbase'</em><a class="headerlink" href="#aiida.backends.testbase.AiidaTestCase.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.testbase.AiidaTestCase._class_was_setup">
+<code class="sig-name descname">_class_was_setup</code><em class="property"> = False</em><a class="headerlink" href="#aiida.backends.testbase.AiidaTestCase._class_was_setup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.testbase.AiidaTestCase.assertClickResultNoException">
+<code class="sig-name descname">assertClickResultNoException</code><span class="sig-paren">(</span><em class="sig-param">cli_result</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testbase.html#AiidaTestCase.assertClickResultNoException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testbase.AiidaTestCase.assertClickResultNoException" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.testbase.AiidaTestCase.assertClickSuccess">
+<code class="sig-name descname">assertClickSuccess</code><span class="sig-paren">(</span><em class="sig-param">cli_result</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testbase.html#AiidaTestCase.assertClickSuccess"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testbase.AiidaTestCase.assertClickSuccess" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.testbase.AiidaTestCase.backend">
+<code class="sig-name descname">backend</code><em class="property">: aiida.orm.implementation.Backend</em><em class="property"> = None</em><a class="headerlink" href="#aiida.backends.testbase.AiidaTestCase.backend" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.testbase.AiidaTestCase.clean_db">
+<em class="property">classmethod </em><code class="sig-name descname">clean_db</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testbase.html#AiidaTestCase.clean_db"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testbase.AiidaTestCase.clean_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clean up database and reset caches.</p>
+<p>Resets AiiDA manager cache, which could otherwise be left in an inconsistent state when cleaning the database.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.testbase.AiidaTestCase.clean_repository">
+<em class="property">classmethod </em><code class="sig-name descname">clean_repository</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testbase.html#AiidaTestCase.clean_repository"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testbase.AiidaTestCase.clean_repository" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cleans up file repository.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.testbase.AiidaTestCase.computer">
+<code class="sig-name descname">computer</code><a class="headerlink" href="#aiida.backends.testbase.AiidaTestCase.computer" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class that, when used as a decorator, works as if the
+two decorators &#64;property and &#64;classmethod where applied together
+(i.e., the object works as a property, both for the Class and for any
+of its instance; and is called with the class cls rather than with the
+instance as its first argument).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.testbase.AiidaTestCase.create_computer">
+<em class="property">classmethod </em><code class="sig-name descname">create_computer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testbase.html#AiidaTestCase.create_computer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testbase.AiidaTestCase.create_computer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.testbase.AiidaTestCase.create_user">
+<em class="property">classmethod </em><code class="sig-name descname">create_user</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testbase.html#AiidaTestCase.create_user"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testbase.AiidaTestCase.create_user" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.testbase.AiidaTestCase.get_backend_class">
+<em class="property">classmethod </em><code class="sig-name descname">get_backend_class</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testbase.html#AiidaTestCase.get_backend_class"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testbase.AiidaTestCase.get_backend_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get backend class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.testbase.AiidaTestCase.insert_data">
+<em class="property">classmethod </em><code class="sig-name descname">insert_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testbase.html#AiidaTestCase.insert_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testbase.AiidaTestCase.insert_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method setups the database (by creating a default user) and
+inserts default data into the database (which is for the moment a
+default computer).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.testbase.AiidaTestCase.reset_database">
+<code class="sig-name descname">reset_database</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testbase.html#AiidaTestCase.reset_database"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testbase.AiidaTestCase.reset_database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the database to the default state deleting any content currently stored</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.testbase.AiidaTestCase.setUp">
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testbase.html#AiidaTestCase.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testbase.AiidaTestCase.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.testbase.AiidaTestCase.setUpClass">
+<em class="property">classmethod </em><code class="sig-name descname">setUpClass</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testbase.html#AiidaTestCase.setUpClass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testbase.AiidaTestCase.setUpClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up class fixture before running tests in the class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.testbase.AiidaTestCase.tearDown">
+<code class="sig-name descname">tearDown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testbase.html#AiidaTestCase.tearDown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testbase.AiidaTestCase.tearDown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for deconstructing the test fixture after testing it.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.testbase.AiidaTestCase.tearDownClass">
+<em class="property">classmethod </em><code class="sig-name descname">tearDownClass</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testbase.html#AiidaTestCase.tearDownClass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testbase.AiidaTestCase.tearDownClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for deconstructing the class fixture after running all tests in the class.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.testbase.AiidaTestCase.user_email">
+<code class="sig-name descname">user_email</code><a class="headerlink" href="#aiida.backends.testbase.AiidaTestCase.user_email" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class that, when used as a decorator, works as if the
+two decorators &#64;property and &#64;classmethod where applied together
+(i.e., the object works as a property, both for the Class and for any
+of its instance; and is called with the class cls rather than with the
+instance as its first argument).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.testbase.check_if_tests_can_run">
+<code class="sig-prename descclassname">aiida.backends.testbase.</code><code class="sig-name descname">check_if_tests_can_run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testbase.html#check_if_tests_can_run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testbase.check_if_tests_can_run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verify that the currently loaded profile is a test profile, otherwise raise <cite>TestsNotAllowedError</cite>.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.testimplbase"></span><p>Implementation-dependednt base tests</p>
+<dl class="class">
+<dt id="aiida.backends.testimplbase.AiidaTestImplementation">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.backends.testimplbase.</code><code class="sig-name descname">AiidaTestImplementation</code><a class="reference internal" href="../_modules/aiida/backends/testimplbase.html#AiidaTestImplementation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testimplbase.AiidaTestImplementation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/abc.html#abc.ABC" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></a></p>
+<p>For each implementation, define what to do at setUp and tearDown.</p>
+<p>Each subclass must reimplement two <em>standard</em> methods (i.e., <em>not</em> classmethods), called
+respectively <code class="docutils literal notranslate"><span class="pre">setUpClass_method</span></code> and <code class="docutils literal notranslate"><span class="pre">tearDownClass_method</span></code>.
+It is also required to implement setUp_method and tearDown_method to be run for each single test
+They can set local properties (e.g. <code class="docutils literal notranslate"><span class="pre">self.xxx</span> <span class="pre">=</span> <span class="pre">yyy</span></code>) but remember that <code class="docutils literal notranslate"><span class="pre">xxx</span></code>
+is not visible to the upper (calling) Test class.</p>
+<p>Moreover, it is required that they define in the setUpClass_method the two properties:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self.computer</span></code> that must be a Computer object</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.user_email</span></code> that must be a string</p></li>
+</ul>
+<p>These two are then exposed by the <code class="docutils literal notranslate"><span class="pre">self.get_computer()</span></code> and <code class="docutils literal notranslate"><span class="pre">self.get_user_email()</span></code>
+methods.</p>
+<dl class="attribute">
+<dt id="aiida.backends.testimplbase.AiidaTestImplementation.__abstractmethods__">
+<code class="sig-name descname">__abstractmethods__</code><em class="property"> = frozenset({'clean_db', 'setUpClass_method', 'tearDownClass_method'})</em><a class="headerlink" href="#aiida.backends.testimplbase.AiidaTestImplementation.__abstractmethods__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.testimplbase.AiidaTestImplementation.__dict__">
+<code class="sig-name descname">__dict__</code><em class="property"> = mappingproxy({'__module__': 'aiida.backends.testimplbase', '__doc__': 'For each implementation, define what to do at setUp and tearDown.\n\n    Each subclass must reimplement two *standard* methods (i.e., *not* classmethods), called\n    respectively ``setUpClass_method`` and ``tearDownClass_method``.\n    It is also required to implement setUp_method and tearDown_method to be run for each single test\n    They can set local properties (e.g. ``self.xxx = yyy``) but remember that ``xxx``\n    is not visible to the upper (calling) Test class.\n\n    Moreover, it is required that they define in the setUpClass_method the two properties:\n\n    - ``self.computer`` that must be a Computer object\n    - ``self.user_email`` that must be a string\n\n    These two are then exposed by the ``self.get_computer()`` and ``self.get_user_email()``\n    methods.', 'backend': None, 'computer': None, 'user': None, 'user_email': None, 'setUpClass_method': &lt;function AiidaTestImplementation.setUpClass_method&gt;, 'tearDownClass_method': &lt;function AiidaTestImplementation.tearDownClass_method&gt;, 'clean_db': &lt;function AiidaTestImplementation.clean_db&gt;, 'insert_data': &lt;function AiidaTestImplementation.insert_data&gt;, 'create_user': &lt;function AiidaTestImplementation.create_user&gt;, 'create_computer': &lt;function AiidaTestImplementation.create_computer&gt;, 'get_computer': &lt;function AiidaTestImplementation.get_computer&gt;, 'get_user_email': &lt;function AiidaTestImplementation.get_user_email&gt;, '__dict__': &lt;attribute '__dict__' of 'AiidaTestImplementation' objects&gt;, '__weakref__': &lt;attribute '__weakref__' of 'AiidaTestImplementation' objects&gt;, '__abstractmethods__': frozenset({'tearDownClass_method', 'clean_db', 'setUpClass_method'}), '_abc_impl': &lt;_abc_data object&gt;})</em><a class="headerlink" href="#aiida.backends.testimplbase.AiidaTestImplementation.__dict__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.testimplbase.AiidaTestImplementation.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.backends.testimplbase'</em><a class="headerlink" href="#aiida.backends.testimplbase.AiidaTestImplementation.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.testimplbase.AiidaTestImplementation.__weakref__">
+<code class="sig-name descname">__weakref__</code><a class="headerlink" href="#aiida.backends.testimplbase.AiidaTestImplementation.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.testimplbase.AiidaTestImplementation._abc_impl">
+<code class="sig-name descname">_abc_impl</code><em class="property"> = &lt;_abc_data object&gt;</em><a class="headerlink" href="#aiida.backends.testimplbase.AiidaTestImplementation._abc_impl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.testimplbase.AiidaTestImplementation.backend">
+<code class="sig-name descname">backend</code><em class="property">: aiida.orm.implementation.Backend</em><em class="property"> = None</em><a class="headerlink" href="#aiida.backends.testimplbase.AiidaTestImplementation.backend" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.testimplbase.AiidaTestImplementation.clean_db">
+<em class="property">abstract </em><code class="sig-name descname">clean_db</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testimplbase.html#AiidaTestImplementation.clean_db"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testimplbase.AiidaTestImplementation.clean_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method implements the logic to fully clean the DB.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.testimplbase.AiidaTestImplementation.computer">
+<code class="sig-name descname">computer</code><em class="property">: aiida.orm.Computer</em><em class="property"> = None</em><a class="headerlink" href="#aiida.backends.testimplbase.AiidaTestImplementation.computer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.testimplbase.AiidaTestImplementation.create_computer">
+<code class="sig-name descname">create_computer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testimplbase.html#AiidaTestImplementation.create_computer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testimplbase.AiidaTestImplementation.create_computer" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method creates and stores a computer.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.testimplbase.AiidaTestImplementation.create_user">
+<code class="sig-name descname">create_user</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testimplbase.html#AiidaTestImplementation.create_user"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testimplbase.AiidaTestImplementation.create_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method creates and stores the default user. It has the same effect
+as the verdi setup.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.testimplbase.AiidaTestImplementation.get_computer">
+<code class="sig-name descname">get_computer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testimplbase.html#AiidaTestImplementation.get_computer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testimplbase.AiidaTestImplementation.get_computer" title="Permalink to this definition">¶</a></dt>
+<dd><p>An ORM Computer object present in the DB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.testimplbase.AiidaTestImplementation.get_user_email">
+<code class="sig-name descname">get_user_email</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testimplbase.html#AiidaTestImplementation.get_user_email"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testimplbase.AiidaTestImplementation.get_user_email" title="Permalink to this definition">¶</a></dt>
+<dd><p>A string with the email of the User.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.testimplbase.AiidaTestImplementation.insert_data">
+<code class="sig-name descname">insert_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testimplbase.html#AiidaTestImplementation.insert_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testimplbase.AiidaTestImplementation.insert_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.testimplbase.AiidaTestImplementation.setUpClass_method">
+<em class="property">abstract </em><code class="sig-name descname">setUpClass_method</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testimplbase.html#AiidaTestImplementation.setUpClass_method"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testimplbase.AiidaTestImplementation.setUpClass_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class prepares the database (cleans it up and installs some basic entries).
+You have also to set a self.computer and a self.user_email as explained in the docstring of the
+AiidaTestImplemention docstring.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.backends.testimplbase.AiidaTestImplementation.tearDownClass_method">
+<em class="property">abstract </em><code class="sig-name descname">tearDownClass_method</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/testimplbase.html#AiidaTestImplementation.tearDownClass_method"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.testimplbase.AiidaTestImplementation.tearDownClass_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>Backend-specific tasks for tearing down the test environment.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.testimplbase.AiidaTestImplementation.user">
+<code class="sig-name descname">user</code><em class="property">: aiida.orm.User</em><em class="property"> = None</em><a class="headerlink" href="#aiida.backends.testimplbase.AiidaTestImplementation.user" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.backends.testimplbase.AiidaTestImplementation.user_email">
+<code class="sig-name descname">user_email</code><em class="property">: str</em><em class="property"> = None</em><a class="headerlink" href="#aiida.backends.testimplbase.AiidaTestImplementation.user_email" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.utils"></span><dl class="function">
+<dt id="aiida.backends.utils.create_scoped_session_factory">
+<code class="sig-prename descclassname">aiida.backends.utils.</code><code class="sig-name descname">create_scoped_session_factory</code><span class="sig-paren">(</span><em class="sig-param">engine</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/utils.html#create_scoped_session_factory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.utils.create_scoped_session_factory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.utils.create_sqlalchemy_engine">
+<code class="sig-prename descclassname">aiida.backends.utils.</code><code class="sig-name descname">create_sqlalchemy_engine</code><span class="sig-paren">(</span><em class="sig-param">profile</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/utils.html#create_sqlalchemy_engine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.utils.create_sqlalchemy_engine" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.utils.delete_nodes_and_connections">
+<code class="sig-prename descclassname">aiida.backends.utils.</code><code class="sig-name descname">delete_nodes_and_connections</code><span class="sig-paren">(</span><em class="sig-param">pks</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/utils.html#delete_nodes_and_connections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.utils.delete_nodes_and_connections" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

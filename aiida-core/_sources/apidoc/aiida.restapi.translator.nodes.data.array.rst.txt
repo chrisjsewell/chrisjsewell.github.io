@@ -1,0 +1,21 @@
+aiida.restapi.translator.nodes.data.array package
+=================================================
+
+.. automodule:: aiida.restapi.translator.nodes.data.array
+   :members:
+   :special-members:
+   :private-members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+
+.. automodule:: aiida.restapi.translator.nodes.data.array.bands
+   :members:
+   :special-members:
+   :private-members:
+   :undoc-members:
+   :show-inheritance:
+

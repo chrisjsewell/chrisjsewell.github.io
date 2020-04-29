@@ -1,0 +1,873 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.tools.groups package &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>aiida.tools.groups package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/aiida.tools.groups.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-aiida.tools.groups">
+<span id="aiida-tools-groups-package"></span><h1>aiida.tools.groups package<a class="headerlink" href="#module-aiida.tools.groups" title="Permalink to this headline">¶</a></h1>
+<p>Provides tools for interacting with AiiDA Groups.</p>
+<dl class="class">
+<dt id="aiida.tools.groups.GroupPath">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.tools.groups.</code><code class="sig-name descname">GroupPath</code><span class="sig-paren">(</span><em class="sig-param">path=''</em>, <em class="sig-param">cls=&lt;class 'aiida.orm.groups.Group'&gt;</em>, <em class="sig-param">warn_invalid_child=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.GroupPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>A class to provide label delimited access to groups.</p>
+<p>See tests for usage examples.</p>
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.__contains__">
+<code class="sig-name descname">__contains__</code><span class="sig-paren">(</span><em class="sig-param">key: str</em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.__contains__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.GroupPath.__contains__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether a child exists for this key.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.groups.GroupPath.__dict__">
+<code class="sig-name descname">__dict__</code><em class="property"> = mappingproxy({'__module__': 'aiida.tools.groups.paths', '__doc__': 'A class to provide label delimited access to groups.\n\n    See tests for usage examples.\n    ', '__init__': &lt;function GroupPath.__init__&gt;, '_validate_path': &lt;function GroupPath._validate_path&gt;, '__repr__': &lt;function GroupPath.__repr__&gt;, '__eq__': &lt;function GroupPath.__eq__&gt;, '__lt__': &lt;function GroupPath.__lt__&gt;, 'path': &lt;property object&gt;, 'path_list': &lt;property object&gt;, 'key': &lt;property object&gt;, 'delimiter': &lt;property object&gt;, 'cls': &lt;property object&gt;, 'parent': &lt;property object&gt;, '__truediv__': &lt;function GroupPath.__truediv__&gt;, '__getitem__': &lt;function GroupPath.__getitem__&gt;, 'get_group': &lt;function GroupPath.get_group&gt;, 'group_ids': &lt;property object&gt;, 'is_virtual': &lt;property object&gt;, 'get_or_create_group': &lt;function GroupPath.get_or_create_group&gt;, 'delete_group': &lt;function GroupPath.delete_group&gt;, 'children': &lt;property object&gt;, '__iter__': &lt;function GroupPath.__iter__&gt;, '__len__': &lt;function GroupPath.__len__&gt;, '__contains__': &lt;function GroupPath.__contains__&gt;, 'walk': &lt;function GroupPath.walk&gt;, 'walk_nodes': &lt;function GroupPath.walk_nodes&gt;, 'browse': &lt;property object&gt;, '__dict__': &lt;attribute '__dict__' of 'GroupPath' objects&gt;, '__weakref__': &lt;attribute '__weakref__' of 'GroupPath' objects&gt;, '__hash__': None, '__gt__': &lt;function _gt_from_lt&gt;, '__le__': &lt;function _le_from_lt&gt;, '__ge__': &lt;function _ge_from_lt&gt;})</em><a class="headerlink" href="#aiida.tools.groups.GroupPath.__dict__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.__eq__">
+<code class="sig-name descname">__eq__</code><span class="sig-paren">(</span><em class="sig-param">other: Any</em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.__eq__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.GroupPath.__eq__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compare equality of path and <code class="docutils literal notranslate"><span class="pre">Group</span></code> subclass to another <code class="docutils literal notranslate"><span class="pre">GroupPath</span></code> object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.__ge__">
+<code class="sig-name descname">__ge__</code><span class="sig-paren">(</span><em class="sig-param">other</em>, <em class="sig-param">NotImplemented=NotImplemented</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.tools.groups.GroupPath.__ge__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a &gt;= b.  Computed by &#64;total_ordering from (not a &lt; b).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.__getitem__">
+<code class="sig-name descname">__getitem__</code><span class="sig-paren">(</span><em class="sig-param">path: str</em><span class="sig-paren">)</span> &#x2192; aiida.tools.groups.paths.GroupPath<a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.__getitem__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.GroupPath.__getitem__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a child <code class="docutils literal notranslate"><span class="pre">GroupPath</span></code>, with a new path formed by appending <code class="docutils literal notranslate"><span class="pre">path</span></code> to the current path.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.__gt__">
+<code class="sig-name descname">__gt__</code><span class="sig-paren">(</span><em class="sig-param">other</em>, <em class="sig-param">NotImplemented=NotImplemented</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.tools.groups.GroupPath.__gt__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a &gt; b.  Computed by &#64;total_ordering from (not a &lt; b) and (a != b).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.groups.GroupPath.__hash__">
+<code class="sig-name descname">__hash__</code><em class="property"> = None</em><a class="headerlink" href="#aiida.tools.groups.GroupPath.__hash__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">path=''</em>, <em class="sig-param">cls=&lt;class 'aiida.orm.groups.Group'&gt;</em>, <em class="sig-param">warn_invalid_child=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.GroupPath.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instantiate the class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – The initial path of the group.</p></li>
+<li><p><strong>cls</strong> – The subclass of <cite>Group</cite> to operate on.</p></li>
+<li><p><strong>warn_invalid_child</strong> – Issue a warning, when iterating children, if a child path is invalid.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.__iter__">
+<code class="sig-name descname">__iter__</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Iterable[aiida.tools.groups.paths.GroupPath]<a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.__iter__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.GroupPath.__iter__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterate through all (direct) children of this path.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.__le__">
+<code class="sig-name descname">__le__</code><span class="sig-paren">(</span><em class="sig-param">other</em>, <em class="sig-param">NotImplemented=NotImplemented</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.tools.groups.GroupPath.__le__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a &lt;= b.  Computed by &#64;total_ordering from (a &lt; b) or (a == b).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.__len__">
+<code class="sig-name descname">__len__</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.__len__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.GroupPath.__len__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of children for this path.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.__lt__">
+<code class="sig-name descname">__lt__</code><span class="sig-paren">(</span><em class="sig-param">other: Any</em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.__lt__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.GroupPath.__lt__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compare less-than operator of path and <code class="docutils literal notranslate"><span class="pre">Group</span></code> subclass to another <code class="docutils literal notranslate"><span class="pre">GroupPath</span></code> object.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.groups.GroupPath.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.groups.paths'</em><a class="headerlink" href="#aiida.tools.groups.GroupPath.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.__repr__">
+<code class="sig-name descname">__repr__</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.__repr__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.GroupPath.__repr__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represent the instantiated class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.__truediv__">
+<code class="sig-name descname">__truediv__</code><span class="sig-paren">(</span><em class="sig-param">path: str</em><span class="sig-paren">)</span> &#x2192; aiida.tools.groups.paths.GroupPath<a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.__truediv__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.GroupPath.__truediv__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a child <code class="docutils literal notranslate"><span class="pre">GroupPath</span></code>, with a new path formed by appending <code class="docutils literal notranslate"><span class="pre">path</span></code> to the current path.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.groups.GroupPath.__weakref__">
+<code class="sig-name descname">__weakref__</code><a class="headerlink" href="#aiida.tools.groups.GroupPath.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath._validate_path">
+<code class="sig-name descname">_validate_path</code><span class="sig-paren">(</span><em class="sig-param">path</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath._validate_path"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.GroupPath._validate_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validate the supplied path.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.browse">
+<em class="property">property </em><code class="sig-name descname">browse</code><a class="headerlink" href="#aiida.tools.groups.GroupPath.browse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a <code class="docutils literal notranslate"><span class="pre">GroupAttr</span></code> instance, for attribute access to children.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.children">
+<em class="property">property </em><code class="sig-name descname">children</code><a class="headerlink" href="#aiida.tools.groups.GroupPath.children" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterate through all (direct) children of this path.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.cls">
+<em class="property">property </em><code class="sig-name descname">cls</code><a class="headerlink" href="#aiida.tools.groups.GroupPath.cls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the cls used to query for and instantiate a <code class="docutils literal notranslate"><span class="pre">Group</span></code> with.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.delete_group">
+<code class="sig-name descname">delete_group</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.delete_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.GroupPath.delete_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the concrete group associated with this path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p>GroupNotFoundError, GroupNotUniqueError</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.delimiter">
+<em class="property">property </em><code class="sig-name descname">delimiter</code><a class="headerlink" href="#aiida.tools.groups.GroupPath.delimiter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the delimiter used to split path into components.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.get_group">
+<code class="sig-name descname">get_group</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Optional[self.cls]<a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.get_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.GroupPath.get_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the concrete group associated with this path.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.get_or_create_group">
+<code class="sig-name descname">get_or_create_group</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; self.cls, bool<a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.get_or_create_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.GroupPath.get_or_create_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the concrete group associated with this path or, create it, if it does not already exist.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.group_ids">
+<em class="property">property </em><code class="sig-name descname">group_ids</code><a class="headerlink" href="#aiida.tools.groups.GroupPath.group_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all the UUID associated with this GroupPath.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>and empty list, if no group associated with this label,
+or can be multiple if cls was None</p>
+</dd>
+</dl>
+<p>This is an efficient method for checking existence,
+which does not require the (slow) loading of the ORM entity.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.is_virtual">
+<em class="property">property </em><code class="sig-name descname">is_virtual</code><a class="headerlink" href="#aiida.tools.groups.GroupPath.is_virtual" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether there is one or more concrete groups associated with this path.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.key">
+<em class="property">property </em><code class="sig-name descname">key</code><a class="headerlink" href="#aiida.tools.groups.GroupPath.key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the final component of the the path.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.parent">
+<em class="property">property </em><code class="sig-name descname">parent</code><a class="headerlink" href="#aiida.tools.groups.GroupPath.parent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the parent path.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.path">
+<em class="property">property </em><code class="sig-name descname">path</code><a class="headerlink" href="#aiida.tools.groups.GroupPath.path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the path string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.path_list">
+<em class="property">property </em><code class="sig-name descname">path_list</code><a class="headerlink" href="#aiida.tools.groups.GroupPath.path_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of the path components.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.walk">
+<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">return_virtual=True</em><span class="sig-paren">)</span> &#x2192; Iterable[aiida.tools.groups.paths.GroupPath]<a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.walk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.GroupPath.walk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recursively iterate through all children of this path.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.GroupPath.walk_nodes">
+<code class="sig-name descname">walk_nodes</code><span class="sig-paren">(</span><em class="sig-param">filters=None</em>, <em class="sig-param">node_class=None</em>, <em class="sig-param">query_batch=None</em><span class="sig-paren">)</span> &#x2192; Iterable[aiida.tools.groups.paths.WalkNodeResult]<a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.walk_nodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.GroupPath.walk_nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recursively iterate through all nodes of this path and its children.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filters</strong> – filters to apply to the node query</p></li>
+<li><p><strong>node_class</strong> – return only nodes of a certain class (or list of classes)</p></li>
+<li><p><strong>batch_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – The size of the batches to ask the backend to batch results in subcollections.
+You can optimize the speed of the query by tuning this parameter.
+Be aware though that is only safe if no commit will take place during this transaction.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.groups.InvalidPath">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.groups.</code><code class="sig-name descname">InvalidPath</code><a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#InvalidPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.InvalidPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<p>An exception to indicate that a path is not valid.</p>
+<dl class="attribute">
+<dt id="aiida.tools.groups.InvalidPath.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.groups.paths'</em><a class="headerlink" href="#aiida.tools.groups.InvalidPath.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.groups.InvalidPath.__weakref__">
+<code class="sig-name descname">__weakref__</code><a class="headerlink" href="#aiida.tools.groups.InvalidPath.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.groups.GroupNotFoundError">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.groups.</code><code class="sig-name descname">GroupNotFoundError</code><span class="sig-paren">(</span><em class="sig-param">grouppath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupNotFoundError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.GroupNotFoundError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<p>An exception raised when a path does not have an associated group.</p>
+<dl class="method">
+<dt id="aiida.tools.groups.GroupNotFoundError.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">grouppath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupNotFoundError.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.GroupNotFoundError.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.groups.GroupNotFoundError.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.groups.paths'</em><a class="headerlink" href="#aiida.tools.groups.GroupNotFoundError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.groups.GroupNotFoundError.__weakref__">
+<code class="sig-name descname">__weakref__</code><a class="headerlink" href="#aiida.tools.groups.GroupNotFoundError.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.groups.GroupNotUniqueError">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.groups.</code><code class="sig-name descname">GroupNotUniqueError</code><span class="sig-paren">(</span><em class="sig-param">grouppath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupNotUniqueError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.GroupNotUniqueError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<p>An exception raised when a path has multiple associated groups.</p>
+<dl class="method">
+<dt id="aiida.tools.groups.GroupNotUniqueError.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">grouppath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupNotUniqueError.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.GroupNotUniqueError.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.groups.GroupNotUniqueError.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.groups.paths'</em><a class="headerlink" href="#aiida.tools.groups.GroupNotUniqueError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.groups.GroupNotUniqueError.__weakref__">
+<code class="sig-name descname">__weakref__</code><a class="headerlink" href="#aiida.tools.groups.GroupNotUniqueError.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.groups.NoGroupsInPathError">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.groups.</code><code class="sig-name descname">NoGroupsInPathError</code><span class="sig-paren">(</span><em class="sig-param">grouppath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#NoGroupsInPathError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.NoGroupsInPathError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<p>An exception raised when a path has multiple associated groups.</p>
+<dl class="method">
+<dt id="aiida.tools.groups.NoGroupsInPathError.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">grouppath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#NoGroupsInPathError.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.NoGroupsInPathError.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.groups.NoGroupsInPathError.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.groups.paths'</em><a class="headerlink" href="#aiida.tools.groups.NoGroupsInPathError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.groups.NoGroupsInPathError.__weakref__">
+<code class="sig-name descname">__weakref__</code><a class="headerlink" href="#aiida.tools.groups.NoGroupsInPathError.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="module-aiida.tools.groups.paths">
+<span id="submodules"></span><h2>Submodules<a class="headerlink" href="#module-aiida.tools.groups.paths" title="Permalink to this headline">¶</a></h2>
+<p>Provides functionality for managing large numbers of AiiDA Groups, via label delimitation.</p>
+<dl class="class">
+<dt id="aiida.tools.groups.paths.GroupPath">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.tools.groups.paths.</code><code class="sig-name descname">GroupPath</code><span class="sig-paren">(</span><em class="sig-param">path=''</em>, <em class="sig-param">cls=&lt;class 'aiida.orm.groups.Group'&gt;</em>, <em class="sig-param">warn_invalid_child=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>A class to provide label delimited access to groups.</p>
+<p>See tests for usage examples.</p>
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.__contains__">
+<code class="sig-name descname">__contains__</code><span class="sig-paren">(</span><em class="sig-param">key: str</em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.__contains__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.__contains__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether a child exists for this key.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.groups.paths.GroupPath.__dict__">
+<code class="sig-name descname">__dict__</code><em class="property"> = mappingproxy({'__module__': 'aiida.tools.groups.paths', '__doc__': 'A class to provide label delimited access to groups.\n\n    See tests for usage examples.\n    ', '__init__': &lt;function GroupPath.__init__&gt;, '_validate_path': &lt;function GroupPath._validate_path&gt;, '__repr__': &lt;function GroupPath.__repr__&gt;, '__eq__': &lt;function GroupPath.__eq__&gt;, '__lt__': &lt;function GroupPath.__lt__&gt;, 'path': &lt;property object&gt;, 'path_list': &lt;property object&gt;, 'key': &lt;property object&gt;, 'delimiter': &lt;property object&gt;, 'cls': &lt;property object&gt;, 'parent': &lt;property object&gt;, '__truediv__': &lt;function GroupPath.__truediv__&gt;, '__getitem__': &lt;function GroupPath.__getitem__&gt;, 'get_group': &lt;function GroupPath.get_group&gt;, 'group_ids': &lt;property object&gt;, 'is_virtual': &lt;property object&gt;, 'get_or_create_group': &lt;function GroupPath.get_or_create_group&gt;, 'delete_group': &lt;function GroupPath.delete_group&gt;, 'children': &lt;property object&gt;, '__iter__': &lt;function GroupPath.__iter__&gt;, '__len__': &lt;function GroupPath.__len__&gt;, '__contains__': &lt;function GroupPath.__contains__&gt;, 'walk': &lt;function GroupPath.walk&gt;, 'walk_nodes': &lt;function GroupPath.walk_nodes&gt;, 'browse': &lt;property object&gt;, '__dict__': &lt;attribute '__dict__' of 'GroupPath' objects&gt;, '__weakref__': &lt;attribute '__weakref__' of 'GroupPath' objects&gt;, '__hash__': None, '__gt__': &lt;function _gt_from_lt&gt;, '__le__': &lt;function _le_from_lt&gt;, '__ge__': &lt;function _ge_from_lt&gt;})</em><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.__dict__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.__eq__">
+<code class="sig-name descname">__eq__</code><span class="sig-paren">(</span><em class="sig-param">other: Any</em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.__eq__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.__eq__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compare equality of path and <code class="docutils literal notranslate"><span class="pre">Group</span></code> subclass to another <code class="docutils literal notranslate"><span class="pre">GroupPath</span></code> object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.__ge__">
+<code class="sig-name descname">__ge__</code><span class="sig-paren">(</span><em class="sig-param">other</em>, <em class="sig-param">NotImplemented=NotImplemented</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.__ge__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a &gt;= b.  Computed by &#64;total_ordering from (not a &lt; b).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.__getitem__">
+<code class="sig-name descname">__getitem__</code><span class="sig-paren">(</span><em class="sig-param">path: str</em><span class="sig-paren">)</span> &#x2192; aiida.tools.groups.paths.GroupPath<a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.__getitem__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.__getitem__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a child <code class="docutils literal notranslate"><span class="pre">GroupPath</span></code>, with a new path formed by appending <code class="docutils literal notranslate"><span class="pre">path</span></code> to the current path.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.__gt__">
+<code class="sig-name descname">__gt__</code><span class="sig-paren">(</span><em class="sig-param">other</em>, <em class="sig-param">NotImplemented=NotImplemented</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.__gt__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a &gt; b.  Computed by &#64;total_ordering from (not a &lt; b) and (a != b).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.groups.paths.GroupPath.__hash__">
+<code class="sig-name descname">__hash__</code><em class="property"> = None</em><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.__hash__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">path=''</em>, <em class="sig-param">cls=&lt;class 'aiida.orm.groups.Group'&gt;</em>, <em class="sig-param">warn_invalid_child=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instantiate the class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – The initial path of the group.</p></li>
+<li><p><strong>cls</strong> – The subclass of <cite>Group</cite> to operate on.</p></li>
+<li><p><strong>warn_invalid_child</strong> – Issue a warning, when iterating children, if a child path is invalid.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.__iter__">
+<code class="sig-name descname">__iter__</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Iterable[aiida.tools.groups.paths.GroupPath]<a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.__iter__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.__iter__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterate through all (direct) children of this path.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.__le__">
+<code class="sig-name descname">__le__</code><span class="sig-paren">(</span><em class="sig-param">other</em>, <em class="sig-param">NotImplemented=NotImplemented</em><span class="sig-paren">)</span><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.__le__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a &lt;= b.  Computed by &#64;total_ordering from (a &lt; b) or (a == b).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.__len__">
+<code class="sig-name descname">__len__</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.__len__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.__len__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of children for this path.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.__lt__">
+<code class="sig-name descname">__lt__</code><span class="sig-paren">(</span><em class="sig-param">other: Any</em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.__lt__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.__lt__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compare less-than operator of path and <code class="docutils literal notranslate"><span class="pre">Group</span></code> subclass to another <code class="docutils literal notranslate"><span class="pre">GroupPath</span></code> object.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.groups.paths.GroupPath.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.groups.paths'</em><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.__repr__">
+<code class="sig-name descname">__repr__</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.__repr__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.__repr__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represent the instantiated class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.__truediv__">
+<code class="sig-name descname">__truediv__</code><span class="sig-paren">(</span><em class="sig-param">path: str</em><span class="sig-paren">)</span> &#x2192; aiida.tools.groups.paths.GroupPath<a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.__truediv__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.__truediv__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a child <code class="docutils literal notranslate"><span class="pre">GroupPath</span></code>, with a new path formed by appending <code class="docutils literal notranslate"><span class="pre">path</span></code> to the current path.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.groups.paths.GroupPath.__weakref__">
+<code class="sig-name descname">__weakref__</code><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath._validate_path">
+<code class="sig-name descname">_validate_path</code><span class="sig-paren">(</span><em class="sig-param">path</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath._validate_path"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath._validate_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validate the supplied path.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.browse">
+<em class="property">property </em><code class="sig-name descname">browse</code><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.browse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a <code class="docutils literal notranslate"><span class="pre">GroupAttr</span></code> instance, for attribute access to children.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.children">
+<em class="property">property </em><code class="sig-name descname">children</code><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.children" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterate through all (direct) children of this path.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.cls">
+<em class="property">property </em><code class="sig-name descname">cls</code><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.cls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the cls used to query for and instantiate a <code class="docutils literal notranslate"><span class="pre">Group</span></code> with.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.delete_group">
+<code class="sig-name descname">delete_group</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.delete_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.delete_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the concrete group associated with this path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p>GroupNotFoundError, GroupNotUniqueError</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.delimiter">
+<em class="property">property </em><code class="sig-name descname">delimiter</code><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.delimiter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the delimiter used to split path into components.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.get_group">
+<code class="sig-name descname">get_group</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Optional[self.cls]<a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.get_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.get_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the concrete group associated with this path.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.get_or_create_group">
+<code class="sig-name descname">get_or_create_group</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; self.cls, bool<a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.get_or_create_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.get_or_create_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the concrete group associated with this path or, create it, if it does not already exist.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.group_ids">
+<em class="property">property </em><code class="sig-name descname">group_ids</code><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.group_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all the UUID associated with this GroupPath.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>and empty list, if no group associated with this label,
+or can be multiple if cls was None</p>
+</dd>
+</dl>
+<p>This is an efficient method for checking existence,
+which does not require the (slow) loading of the ORM entity.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.is_virtual">
+<em class="property">property </em><code class="sig-name descname">is_virtual</code><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.is_virtual" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether there is one or more concrete groups associated with this path.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.key">
+<em class="property">property </em><code class="sig-name descname">key</code><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the final component of the the path.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.parent">
+<em class="property">property </em><code class="sig-name descname">parent</code><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.parent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the parent path.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.path">
+<em class="property">property </em><code class="sig-name descname">path</code><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the path string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.path_list">
+<em class="property">property </em><code class="sig-name descname">path_list</code><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.path_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of the path components.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.walk">
+<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">return_virtual=True</em><span class="sig-paren">)</span> &#x2192; Iterable[aiida.tools.groups.paths.GroupPath]<a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.walk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.walk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recursively iterate through all children of this path.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupPath.walk_nodes">
+<code class="sig-name descname">walk_nodes</code><span class="sig-paren">(</span><em class="sig-param">filters=None</em>, <em class="sig-param">node_class=None</em>, <em class="sig-param">query_batch=None</em><span class="sig-paren">)</span> &#x2192; Iterable[aiida.tools.groups.paths.WalkNodeResult]<a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupPath.walk_nodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.paths.GroupPath.walk_nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recursively iterate through all nodes of this path and its children.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filters</strong> – filters to apply to the node query</p></li>
+<li><p><strong>node_class</strong> – return only nodes of a certain class (or list of classes)</p></li>
+<li><p><strong>batch_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – The size of the batches to ask the backend to batch results in subcollections.
+You can optimize the speed of the query by tuning this parameter.
+Be aware though that is only safe if no commit will take place during this transaction.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.groups.paths.InvalidPath">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.groups.paths.</code><code class="sig-name descname">InvalidPath</code><a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#InvalidPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.paths.InvalidPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<p>An exception to indicate that a path is not valid.</p>
+<dl class="attribute">
+<dt id="aiida.tools.groups.paths.InvalidPath.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.groups.paths'</em><a class="headerlink" href="#aiida.tools.groups.paths.InvalidPath.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.groups.paths.InvalidPath.__weakref__">
+<code class="sig-name descname">__weakref__</code><a class="headerlink" href="#aiida.tools.groups.paths.InvalidPath.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.groups.paths.GroupNotFoundError">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.groups.paths.</code><code class="sig-name descname">GroupNotFoundError</code><span class="sig-paren">(</span><em class="sig-param">grouppath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupNotFoundError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.paths.GroupNotFoundError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<p>An exception raised when a path does not have an associated group.</p>
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupNotFoundError.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">grouppath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupNotFoundError.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.paths.GroupNotFoundError.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.groups.paths.GroupNotFoundError.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.groups.paths'</em><a class="headerlink" href="#aiida.tools.groups.paths.GroupNotFoundError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.groups.paths.GroupNotFoundError.__weakref__">
+<code class="sig-name descname">__weakref__</code><a class="headerlink" href="#aiida.tools.groups.paths.GroupNotFoundError.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.groups.paths.GroupNotUniqueError">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.groups.paths.</code><code class="sig-name descname">GroupNotUniqueError</code><span class="sig-paren">(</span><em class="sig-param">grouppath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupNotUniqueError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.paths.GroupNotUniqueError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<p>An exception raised when a path has multiple associated groups.</p>
+<dl class="method">
+<dt id="aiida.tools.groups.paths.GroupNotUniqueError.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">grouppath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#GroupNotUniqueError.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.paths.GroupNotUniqueError.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.groups.paths.GroupNotUniqueError.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.groups.paths'</em><a class="headerlink" href="#aiida.tools.groups.paths.GroupNotUniqueError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.groups.paths.GroupNotUniqueError.__weakref__">
+<code class="sig-name descname">__weakref__</code><a class="headerlink" href="#aiida.tools.groups.paths.GroupNotUniqueError.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="aiida.tools.groups.paths.NoGroupsInPathError">
+<em class="property">exception </em><code class="sig-prename descclassname">aiida.tools.groups.paths.</code><code class="sig-name descname">NoGroupsInPathError</code><span class="sig-paren">(</span><em class="sig-param">grouppath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#NoGroupsInPathError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.paths.NoGroupsInPathError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<p>An exception raised when a path has multiple associated groups.</p>
+<dl class="method">
+<dt id="aiida.tools.groups.paths.NoGroupsInPathError.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">grouppath</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/tools/groups/paths.html#NoGroupsInPathError.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.tools.groups.paths.NoGroupsInPathError.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.groups.paths.NoGroupsInPathError.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.tools.groups.paths'</em><a class="headerlink" href="#aiida.tools.groups.paths.NoGroupsInPathError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.tools.groups.paths.NoGroupsInPathError.__weakref__">
+<code class="sig-name descname">__weakref__</code><a class="headerlink" href="#aiida.tools.groups.paths.NoGroupsInPathError.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

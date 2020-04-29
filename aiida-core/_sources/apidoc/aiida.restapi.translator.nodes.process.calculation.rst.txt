@@ -1,0 +1,29 @@
+aiida.restapi.translator.nodes.process.calculation package
+==========================================================
+
+.. automodule:: aiida.restapi.translator.nodes.process.calculation
+   :members:
+   :special-members:
+   :private-members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+
+.. automodule:: aiida.restapi.translator.nodes.process.calculation.calcfunction
+   :members:
+   :special-members:
+   :private-members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: aiida.restapi.translator.nodes.process.calculation.calcjob
+   :members:
+   :special-members:
+   :private-members:
+   :undoc-members:
+   :show-inheritance:
+

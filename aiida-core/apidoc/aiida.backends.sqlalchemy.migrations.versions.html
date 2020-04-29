@@ -1,0 +1,1068 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.backends.sqlalchemy.migrations.versions package &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>aiida.backends.sqlalchemy.migrations.versions package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/aiida.backends.sqlalchemy.migrations.versions.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-aiida.backends.sqlalchemy.migrations.versions">
+<span id="aiida-backends-sqlalchemy-migrations-versions-package"></span><h1>aiida.backends.sqlalchemy.migrations.versions package<a class="headerlink" href="#module-aiida.backends.sqlalchemy.migrations.versions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning">
+<span id="submodules"></span><h2>Submodules<a class="headerlink" href="#module-aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning" title="Permalink to this headline">¶</a></h2>
+<p>This migration cleans the log records from non-Node entity records.
+It removes from the DbLog table the legacy workflow records and records
+that correspond to an unknown entity and places them to corresponding files.</p>
+<p>This migration corresponds to the 0024_dblog_update Django migration.</p>
+<p>Revision ID: 041a79fc615f
+Revises: 7ca08c391c49
+Create Date: 2018-12-28 15:53:14.596810</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/041a79fc615f_dblog_cleaning.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Downgrade function to the previous schema.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.export_and_clean_workflow_logs">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.</code><code class="sig-name descname">export_and_clean_workflow_logs</code><span class="sig-paren">(</span><em class="sig-param">connection</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/041a79fc615f_dblog_cleaning.html#export_and_clean_workflow_logs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.export_and_clean_workflow_logs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export the logs records that correspond to legacy workflows and to unknown entities (place them to files
+and remove them from the DbLog table).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.get_legacy_workflow_log_number">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.</code><code class="sig-name descname">get_legacy_workflow_log_number</code><span class="sig-paren">(</span><em class="sig-param">connection</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/041a79fc615f_dblog_cleaning.html#get_legacy_workflow_log_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.get_legacy_workflow_log_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of the log records that correspond to legacy workflows</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.get_logs_with_no_nodes_number">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.</code><code class="sig-name descname">get_logs_with_no_nodes_number</code><span class="sig-paren">(</span><em class="sig-param">connection</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/041a79fc615f_dblog_cleaning.html#get_logs_with_no_nodes_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.get_logs_with_no_nodes_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of the log records that correspond to nodes that were deleted</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.get_serialized_legacy_workflow_logs">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.</code><code class="sig-name descname">get_serialized_legacy_workflow_logs</code><span class="sig-paren">(</span><em class="sig-param">connection</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/041a79fc615f_dblog_cleaning.html#get_serialized_legacy_workflow_logs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.get_serialized_legacy_workflow_logs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the serialized log records that correspond to legacy workflows</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.get_serialized_logs_with_no_nodes">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.</code><code class="sig-name descname">get_serialized_logs_with_no_nodes</code><span class="sig-paren">(</span><em class="sig-param">connection</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/041a79fc615f_dblog_cleaning.html#get_serialized_logs_with_no_nodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.get_serialized_logs_with_no_nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the serialized log records that correspond to nodes that were deleted</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.get_serialized_unknown_entity_logs">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.</code><code class="sig-name descname">get_serialized_unknown_entity_logs</code><span class="sig-paren">(</span><em class="sig-param">connection</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/041a79fc615f_dblog_cleaning.html#get_serialized_unknown_entity_logs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.get_serialized_unknown_entity_logs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the serialized log records that correspond to unknown entities</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.get_unknown_entity_log_number">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.</code><code class="sig-name descname">get_unknown_entity_log_number</code><span class="sig-paren">(</span><em class="sig-param">connection</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/041a79fc615f_dblog_cleaning.html#get_unknown_entity_log_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.get_unknown_entity_log_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of the log records that correspond to unknown entities</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/041a79fc615f_dblog_cleaning.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.041a79fc615f_dblog_cleaning.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changing the log table columns to use uuid to reference remote objects and log entries.
+Upgrade function.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.07fac78e6209_drop_computer_transport_params"></span><p>Drop the <cite>transport_params</cite> from the <cite>Computer</cite> database model.</p>
+<p>Revision ID: 07fac78e6209
+Revises: de2eaf6978b4
+Create Date: 2019-02-16 15:32:42.745450</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.07fac78e6209_drop_computer_transport_params.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.07fac78e6209_drop_computer_transport_params.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/07fac78e6209_drop_computer_transport_params.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.07fac78e6209_drop_computer_transport_params.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the downgrade.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.07fac78e6209_drop_computer_transport_params.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.07fac78e6209_drop_computer_transport_params.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/07fac78e6209_drop_computer_transport_params.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.07fac78e6209_drop_computer_transport_params.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the upgrade.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.0aebbeab274d_base_data_plugin_type_string"></span><p>Correct the type string for the base data types</p>
+<p>Revision ID: 0aebbeab274d
+Revises: 7a6587e16f4c
+Create Date: 2018-02-24 20:12:44.731358</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.0aebbeab274d_base_data_plugin_type_string.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.0aebbeab274d_base_data_plugin_type_string.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/0aebbeab274d_base_data_plugin_type_string.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.0aebbeab274d_base_data_plugin_type_string.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.0aebbeab274d_base_data_plugin_type_string.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.0aebbeab274d_base_data_plugin_type_string.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/0aebbeab274d_base_data_plugin_type_string.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.0aebbeab274d_base_data_plugin_type_string.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.118349c10896_default_link_label"></span><p>Update all link labels with the value <cite>_return</cite> which is the legacy default single link label.</p>
+<p>The old process functions used to use <cite>_return</cite> as the default link label, however, since labels that start or end with
+and underscore are illegal because they are used for namespacing.</p>
+<p>Revision ID: 118349c10896
+Revises: 91b573400be5
+Create Date: 2019-11-21 09:43:45.006053</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.118349c10896_default_link_label.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.118349c10896_default_link_label.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/118349c10896_default_link_label.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.118349c10896_default_link_label.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the downgrade.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.118349c10896_default_link_label.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.118349c10896_default_link_label.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/118349c10896_default_link_label.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.118349c10896_default_link_label.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the upgrade.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.12536798d4d3_trajectory_symbols_to_attribute"></span><p>Move trajectory symbols from repository array to attribute</p>
+<p>Revision ID: 12536798d4d3
+Revises: 37f3d4882837
+Create Date: 2019-01-21 10:15:02.451308</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.12536798d4d3_trajectory_symbols_to_attribute.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.12536798d4d3_trajectory_symbols_to_attribute.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/12536798d4d3_trajectory_symbols_to_attribute.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.12536798d4d3_trajectory_symbols_to_attribute.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the downgrade.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.12536798d4d3_trajectory_symbols_to_attribute.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.12536798d4d3_trajectory_symbols_to_attribute.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/12536798d4d3_trajectory_symbols_to_attribute.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.12536798d4d3_trajectory_symbols_to_attribute.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the upgrade.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.140c971ae0a3_migrate_builtin_calculations"></span><p>Migration to reflect the name change of the built in calculation entry points in the database.</p>
+<p>Revision ID: 140c971ae0a3
+Revises: 162b99bca4a2
+Create Date: 2018-12-06 12:42:01.897037</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.140c971ae0a3_migrate_builtin_calculations.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.140c971ae0a3_migrate_builtin_calculations.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/140c971ae0a3_migrate_builtin_calculations.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.140c971ae0a3_migrate_builtin_calculations.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the downgrade.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.140c971ae0a3_migrate_builtin_calculations.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.140c971ae0a3_migrate_builtin_calculations.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/140c971ae0a3_migrate_builtin_calculations.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.140c971ae0a3_migrate_builtin_calculations.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the upgrade.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.162b99bca4a2_drop_dbcalcstate"></span><p>Drop the DbCalcState table</p>
+<p>Revision ID: 162b99bca4a2
+Revises: a603da2cc809
+Create Date: 2018-11-14 08:37:13.719646</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.162b99bca4a2_drop_dbcalcstate.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.162b99bca4a2_drop_dbcalcstate.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/162b99bca4a2_drop_dbcalcstate.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.162b99bca4a2_drop_dbcalcstate.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.162b99bca4a2_drop_dbcalcstate.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.162b99bca4a2_drop_dbcalcstate.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/162b99bca4a2_drop_dbcalcstate.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.162b99bca4a2_drop_dbcalcstate.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.1830c8430131_drop_node_columns_nodeversion_public"></span><p>Drop the columns <cite>nodeversion</cite> and <cite>public</cite> from the <cite>DbNode</cite> model.</p>
+<p>Revision ID: 1830c8430131
+Revises: 1b8ed3425af9
+Create Date: 2019-05-27 15:35:37.404644</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.1830c8430131_drop_node_columns_nodeversion_public.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.1830c8430131_drop_node_columns_nodeversion_public.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/1830c8430131_drop_node_columns_nodeversion_public.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.1830c8430131_drop_node_columns_nodeversion_public.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.1830c8430131_drop_node_columns_nodeversion_public.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.1830c8430131_drop_node_columns_nodeversion_public.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/1830c8430131_drop_node_columns_nodeversion_public.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.1830c8430131_drop_node_columns_nodeversion_public.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.1b8ed3425af9_remove_legacy_workflows"></span><p>Remove legacy workflows</p>
+<p>Revision ID: 1b8ed3425af9
+Revises: 3d6190594e19
+Create Date: 2019-04-03 17:11:44.073582</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.1b8ed3425af9_remove_legacy_workflows.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.1b8ed3425af9_remove_legacy_workflows.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/1b8ed3425af9_remove_legacy_workflows.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.1b8ed3425af9_remove_legacy_workflows.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the downgrade.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.1b8ed3425af9_remove_legacy_workflows.export_workflow_data">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.1b8ed3425af9_remove_legacy_workflows.</code><code class="sig-name descname">export_workflow_data</code><span class="sig-paren">(</span><em class="sig-param">connection</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/1b8ed3425af9_remove_legacy_workflows.html#export_workflow_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.1b8ed3425af9_remove_legacy_workflows.export_workflow_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export existing legacy workflow data to a JSON file.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.1b8ed3425af9_remove_legacy_workflows.json_serializer">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.1b8ed3425af9_remove_legacy_workflows.</code><code class="sig-name descname">json_serializer</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/1b8ed3425af9_remove_legacy_workflows.html#json_serializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.1b8ed3425af9_remove_legacy_workflows.json_serializer" title="Permalink to this definition">¶</a></dt>
+<dd><p>JSON serializer for objects not serializable by default json code</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.1b8ed3425af9_remove_legacy_workflows.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.1b8ed3425af9_remove_legacy_workflows.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/1b8ed3425af9_remove_legacy_workflows.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.1b8ed3425af9_remove_legacy_workflows.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the upgrade.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.239cea6d2452_provenance_redesign"></span><p>Migration after the provenance redesign</p>
+<p>Revision ID: 239cea6d2452
+Revises: 140c971ae0a3
+Create Date: 2018-12-04 21:14:15.250247</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.239cea6d2452_provenance_redesign.detect_unexpected_links">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.239cea6d2452_provenance_redesign.</code><code class="sig-name descname">detect_unexpected_links</code><span class="sig-paren">(</span><em class="sig-param">connection</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/239cea6d2452_provenance_redesign.html#detect_unexpected_links"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.239cea6d2452_provenance_redesign.detect_unexpected_links" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scan the database for any links that are unexpected.</p>
+<p>The checks will verify that there are no outgoing <cite>call</cite> or <cite>return</cite> links from calculation nodes and that if a
+workflow node has a <cite>create</cite> link, it has at least an accompanying return link to the same data node, or it has a
+<cite>call</cite> link to a calculation node that takes the created data node as input.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.239cea6d2452_provenance_redesign.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.239cea6d2452_provenance_redesign.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/239cea6d2452_provenance_redesign.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.239cea6d2452_provenance_redesign.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>The downgrade migration actions.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.239cea6d2452_provenance_redesign.migrate_infer_calculation_entry_point">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.239cea6d2452_provenance_redesign.</code><code class="sig-name descname">migrate_infer_calculation_entry_point</code><span class="sig-paren">(</span><em class="sig-param">connection</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/239cea6d2452_provenance_redesign.html#migrate_infer_calculation_entry_point"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.239cea6d2452_provenance_redesign.migrate_infer_calculation_entry_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the process type for calculation nodes by inferring it from their type string.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.239cea6d2452_provenance_redesign.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.239cea6d2452_provenance_redesign.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/239cea6d2452_provenance_redesign.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.239cea6d2452_provenance_redesign.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>The upgrade migration actions.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.26d561acd560_data_migration_legacy_job_calculations"></span><p>Data migration for legacy <cite>JobCalculations</cite>.</p>
+<p>These old nodes have already been migrated to the correct <cite>CalcJobNode</cite> type in a previous migration, but they can
+still contain a <cite>state</cite> attribute with a deprecated <cite>JobCalcState</cite> value and they are missing a value for the
+<cite>process_state</cite>, <cite>process_status</cite>, <cite>process_label</cite> and <cite>exit_status</cite>. The <cite>process_label</cite> is impossible to infer
+consistently in SQL so it will be omitted. The other  will be mapped from the <cite>state</cite> attribute as follows:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Old state            | Process state  | Exit status | Process status
+---------------------|----------------|-------------|----------------------------------------------------------
+`NEW`                | `Killed`       |    `None`   | Legacy `JobCalculation` with state `NEW`
+`TOSUBMIT`           | `Killed`       |    `None`   | Legacy `JobCalculation` with state `TOSUBMIT`
+`SUBMITTING`         | `Killed`       |    `None`   | Legacy `JobCalculation` with state `SUBMITTING`
+`WITHSCHEDULER`      | `Killed`       |    `None`   | Legacy `JobCalculation` with state `WITHSCHEDULER`
+`COMPUTED`           | `Killed`       |    `None`   | Legacy `JobCalculation` with state `COMPUTED`
+`RETRIEVING`         | `Killed`       |    `None`   | Legacy `JobCalculation` with state `RETRIEVING`
+`PARSING`            | `Killed`       |    `None`   | Legacy `JobCalculation` with state `PARSING`
+`SUBMISSIONFAILED`   | `Excepted`     |    `None`   | Legacy `JobCalculation` with state `SUBMISSIONFAILED`
+`RETRIEVALFAILED`    | `Excepted`     |    `None`   | Legacy `JobCalculation` with state `RETRIEVALFAILED`
+`PARSINGFAILED`      | `Excepted`     |    `None`   | Legacy `JobCalculation` with state `PARSINGFAILED`
+`FAILED`             | `Finished`     |      2      |  -
+`FINISHED`           | `Finished`     |      0      |  -
+`IMPORTED`           |       -        |      -      |  -
+</pre></div>
+</div>
+<p>Note the <cite>IMPORTED</cite> state was never actually stored in the <cite>state</cite> attribute, so we do not have to consider it.
+The old <cite>state</cite> attribute has to be removed after the data is migrated, because its value is no longer valid or useful.</p>
+<p>Note: in addition to the three attributes mentioned in the table, all matched nodes will get <cite>Legacy JobCalculation</cite> as
+their <cite>process_label</cite> which is one of the default columns of <cite>verdi process list</cite>.</p>
+<p>Revision ID: 26d561acd560
+Revises: 07fac78e6209
+Create Date: 2019-06-22 09:55:25.284168</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.26d561acd560_data_migration_legacy_job_calculations.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.26d561acd560_data_migration_legacy_job_calculations.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/26d561acd560_data_migration_legacy_job_calculations.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.26d561acd560_data_migration_legacy_job_calculations.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the downgrade.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.26d561acd560_data_migration_legacy_job_calculations.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.26d561acd560_data_migration_legacy_job_calculations.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/26d561acd560_data_migration_legacy_job_calculations.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.26d561acd560_data_migration_legacy_job_calculations.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the upgrade.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.35d4ee9a1b0e_code_hidden_attr_to_extra"></span><p>Migrating ‘hidden’ properties from DbAttribute to DbExtra for code.Code. nodes</p>
+<p>Revision ID: 35d4ee9a1b0e
+Revises: 89176227b25
+Create Date: 2018-02-21 22:00:43.460534</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.35d4ee9a1b0e_code_hidden_attr_to_extra.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.35d4ee9a1b0e_code_hidden_attr_to_extra.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/35d4ee9a1b0e_code_hidden_attr_to_extra.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.35d4ee9a1b0e_code_hidden_attr_to_extra.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.35d4ee9a1b0e_code_hidden_attr_to_extra.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.35d4ee9a1b0e_code_hidden_attr_to_extra.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/35d4ee9a1b0e_code_hidden_attr_to_extra.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.35d4ee9a1b0e_code_hidden_attr_to_extra.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.375c2db70663_dblog_uuid_uniqueness_constraint"></span><p>This migration adds uniqueness constraint to the UUID column.</p>
+<p>This migration corresponds to the 0024_dblog_update Django migration.</p>
+<p>Revision ID: 375c2db70663
+Revises: ea2f50e7f615
+Create Date: 2019-01-30 20:26:16.550071</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.375c2db70663_dblog_uuid_uniqueness_constraint.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.375c2db70663_dblog_uuid_uniqueness_constraint.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/375c2db70663_dblog_uuid_uniqueness_constraint.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.375c2db70663_dblog_uuid_uniqueness_constraint.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove unique key constraint to the UUID column.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.375c2db70663_dblog_uuid_uniqueness_constraint.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.375c2db70663_dblog_uuid_uniqueness_constraint.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/375c2db70663_dblog_uuid_uniqueness_constraint.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.375c2db70663_dblog_uuid_uniqueness_constraint.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add unique key constraint to the UUID column.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.37f3d4882837_make_all_uuid_columns_unique"></span><p>Make all uuid columns unique</p>
+<p>Revision ID: 37f3d4882837
+Revises: 6a5c2ea1439d
+Create Date: 2018-11-17 17:18:58.691209</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.37f3d4882837_make_all_uuid_columns_unique.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.37f3d4882837_make_all_uuid_columns_unique.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/37f3d4882837_make_all_uuid_columns_unique.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.37f3d4882837_make_all_uuid_columns_unique.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.37f3d4882837_make_all_uuid_columns_unique.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.37f3d4882837_make_all_uuid_columns_unique.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/37f3d4882837_make_all_uuid_columns_unique.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.37f3d4882837_make_all_uuid_columns_unique.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.37f3d4882837_make_all_uuid_columns_unique.verify_uuid_uniqueness">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.37f3d4882837_make_all_uuid_columns_unique.</code><code class="sig-name descname">verify_uuid_uniqueness</code><span class="sig-paren">(</span><em class="sig-param">table</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/37f3d4882837_make_all_uuid_columns_unique.html#verify_uuid_uniqueness"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.37f3d4882837_make_all_uuid_columns_unique.verify_uuid_uniqueness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether the database contains duplicate UUIDS.</p>
+<p>Note that we have to redefine this method from aiida.manage.database.integrity.verify_uuid_uniqueness
+because that uses the default database connection, while here the one created by Alembic should be used instead.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p>IntegrityError if database contains nodes with duplicate UUIDS.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.3d6190594e19_remove_dbcomputer_enabled"></span><p>Remove <cite>DbComputer.enabled</cite></p>
+<p>Revision ID: 3d6190594e19
+Revises: 5a49629f0d45
+Create Date: 2019-04-03 14:38:50.585639</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.3d6190594e19_remove_dbcomputer_enabled.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.3d6190594e19_remove_dbcomputer_enabled.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/3d6190594e19_remove_dbcomputer_enabled.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.3d6190594e19_remove_dbcomputer_enabled.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.3d6190594e19_remove_dbcomputer_enabled.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.3d6190594e19_remove_dbcomputer_enabled.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/3d6190594e19_remove_dbcomputer_enabled.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.3d6190594e19_remove_dbcomputer_enabled.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.59edaf8a8b79_adding_indexes_and_constraints_to_the_"></span><p>Adding indexes and constraints to the dbnode-dbgroup relationship table</p>
+<p>Revision ID: 59edaf8a8b79
+Revises: a514d673c163
+Create Date: 2018-06-22 14:50:18.447211</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.59edaf8a8b79_adding_indexes_and_constraints_to_the_.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.59edaf8a8b79_adding_indexes_and_constraints_to_the_.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/59edaf8a8b79_adding_indexes_and_constraints_to_the_.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.59edaf8a8b79_adding_indexes_and_constraints_to_the_.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.59edaf8a8b79_adding_indexes_and_constraints_to_the_.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.59edaf8a8b79_adding_indexes_and_constraints_to_the_.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/59edaf8a8b79_adding_indexes_and_constraints_to_the_.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.59edaf8a8b79_adding_indexes_and_constraints_to_the_.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.5a49629f0d45_dblink_indices"></span><p>Adding indices on the <cite>input_id</cite>, <cite>output_id</cite> and <cite>type</cite> column of the <cite>DbLink</cite> table</p>
+<p>Revision ID: 5a49629f0d45
+Revises: 5ddd24e52864
+Create Date: 2019-03-04 16:38:42.249231</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.5a49629f0d45_dblink_indices.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.5a49629f0d45_dblink_indices.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/5a49629f0d45_dblink_indices.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.5a49629f0d45_dblink_indices.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the downgrade.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.5a49629f0d45_dblink_indices.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.5a49629f0d45_dblink_indices.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/5a49629f0d45_dblink_indices.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.5a49629f0d45_dblink_indices.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the upgrade.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.5d4d844852b6_invalidating_node_hash"></span><p>Invalidating node hash - User should rehash nodes for caching</p>
+<p>Revision ID: 5d4d844852b6
+Revises: 62fe0d36de90
+Create Date: 2018-10-26 17:14:33.566670</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.5d4d844852b6_invalidating_node_hash.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.5d4d844852b6_invalidating_node_hash.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/5d4d844852b6_invalidating_node_hash.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.5d4d844852b6_invalidating_node_hash.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>drop the hashes also when downgrading</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.5d4d844852b6_invalidating_node_hash.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.5d4d844852b6_invalidating_node_hash.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/5d4d844852b6_invalidating_node_hash.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.5d4d844852b6_invalidating_node_hash.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>drop the hashes when upgrading</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.5ddd24e52864_dbnode_type_to_dbnode_node_type"></span><p>Renaming <cite>DbNode.type</cite> to <cite>DbNode.node_type</cite></p>
+<p>Revision ID: 5ddd24e52864
+Revises: d254fdfed416
+Create Date: 2019-02-22 17:09:57.715114</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.5ddd24e52864_dbnode_type_to_dbnode_node_type.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.5ddd24e52864_dbnode_type_to_dbnode_node_type.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/5ddd24e52864_dbnode_type_to_dbnode_node_type.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.5ddd24e52864_dbnode_type_to_dbnode_node_type.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the downgrade.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.5ddd24e52864_dbnode_type_to_dbnode_node_type.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.5ddd24e52864_dbnode_type_to_dbnode_node_type.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/5ddd24e52864_dbnode_type_to_dbnode_node_type.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.5ddd24e52864_dbnode_type_to_dbnode_node_type.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the upgrade.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.61fc0913fae9_remove_node_prefix"></span><p>Final data migration for <cite>Nodes</cite> after <cite>aiida.orm.nodes</cite> reorganization was finalized to remove the <cite>node.</cite> prefix</p>
+<p>Revision ID: 61fc0913fae9
+Revises: ce56d84bcc35
+Create Date: 2019-02-16 15:32:42.745450</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.61fc0913fae9_remove_node_prefix.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.61fc0913fae9_remove_node_prefix.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/61fc0913fae9_remove_node_prefix.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.61fc0913fae9_remove_node_prefix.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the downgrade.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.61fc0913fae9_remove_node_prefix.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.61fc0913fae9_remove_node_prefix.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/61fc0913fae9_remove_node_prefix.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.61fc0913fae9_remove_node_prefix.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the upgrade.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.62fe0d36de90_add_node_uuid_unique_constraint"></span><p>Add a unique constraint on the UUID column of the Node model</p>
+<p>Revision ID: 62fe0d36de90
+Revises: 59edaf8a8b79
+Create Date: 2018-07-02 17:50:42.929382</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.62fe0d36de90_add_node_uuid_unique_constraint.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.62fe0d36de90_add_node_uuid_unique_constraint.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/62fe0d36de90_add_node_uuid_unique_constraint.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.62fe0d36de90_add_node_uuid_unique_constraint.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.62fe0d36de90_add_node_uuid_unique_constraint.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.62fe0d36de90_add_node_uuid_unique_constraint.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/62fe0d36de90_add_node_uuid_unique_constraint.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.62fe0d36de90_add_node_uuid_unique_constraint.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.62fe0d36de90_add_node_uuid_unique_constraint.verify_node_uuid_uniqueness">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.62fe0d36de90_add_node_uuid_unique_constraint.</code><code class="sig-name descname">verify_node_uuid_uniqueness</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/62fe0d36de90_add_node_uuid_unique_constraint.html#verify_node_uuid_uniqueness"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.62fe0d36de90_add_node_uuid_unique_constraint.verify_node_uuid_uniqueness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether the database contains nodes with duplicate UUIDS.</p>
+<p>Note that we have to redefine this method from aiida.manage.database.integrity.verify_node_uuid_uniqueness
+because that uses the default database connection, while here the one created by Alembic should be used instead.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p>IntegrityError if database contains nodes with duplicate UUIDS.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.6a5c2ea1439d_move_data_within_node_module"></span><p>Data migration for <cite>Data</cite> nodes after it was moved in the <cite>aiida.orm.node</cite> module changing the type string.</p>
+<p>Revision ID: 6a5c2ea1439d
+Revises: 375c2db70663
+Create Date: 2019-01-18 19:44:32.156083</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.6a5c2ea1439d_move_data_within_node_module.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.6a5c2ea1439d_move_data_within_node_module.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/6a5c2ea1439d_move_data_within_node_module.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.6a5c2ea1439d_move_data_within_node_module.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the downgrade.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.6a5c2ea1439d_move_data_within_node_module.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.6a5c2ea1439d_move_data_within_node_module.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/6a5c2ea1439d_move_data_within_node_module.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.6a5c2ea1439d_move_data_within_node_module.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the upgrade.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.6c629c886f84_process_type"></span><p>Add the process_type column to DbNode</p>
+<p>Revision ID: 6c629c886f84
+Revises: 0aebbeab274d
+Create Date: 2018-03-15 13:23:12.941148</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.6c629c886f84_process_type.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.6c629c886f84_process_type.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/6c629c886f84_process_type.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.6c629c886f84_process_type.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.6c629c886f84_process_type.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.6c629c886f84_process_type.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/6c629c886f84_process_type.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.6c629c886f84_process_type.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.70c7d732f1b2_delete_dbpath"></span><p>Deleting dbpath table and triggers</p>
+<p>Revision ID: 70c7d732f1b2
+Revises:
+Create Date: 2017-10-17 10:30:23.327195</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.70c7d732f1b2_delete_dbpath.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.70c7d732f1b2_delete_dbpath.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/70c7d732f1b2_delete_dbpath.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.70c7d732f1b2_delete_dbpath.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.70c7d732f1b2_delete_dbpath.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.70c7d732f1b2_delete_dbpath.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/70c7d732f1b2_delete_dbpath.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.70c7d732f1b2_delete_dbpath.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.7a6587e16f4c_unique_constraints_for_the_db_dbgroup_"></span><p>Unique constraints for the db_dbgroup_dbnodes table</p>
+<p>Revision ID: 7a6587e16f4c
+Revises: 35d4ee9a1b0e
+Create Date: 2019-02-11 19:25:11.744902</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.7a6587e16f4c_unique_constraints_for_the_db_dbgroup_.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.7a6587e16f4c_unique_constraints_for_the_db_dbgroup_.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/7a6587e16f4c_unique_constraints_for_the_db_dbgroup_.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.7a6587e16f4c_unique_constraints_for_the_db_dbgroup_.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove unique constraints from the db_dbgroup_dbnodes table.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.7a6587e16f4c_unique_constraints_for_the_db_dbgroup_.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.7a6587e16f4c_unique_constraints_for_the_db_dbgroup_.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/7a6587e16f4c_unique_constraints_for_the_db_dbgroup_.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.7a6587e16f4c_unique_constraints_for_the_db_dbgroup_.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add unique constraints to the db_dbgroup_dbnodes table.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.7b38a9e783e7_seal_unsealed_processes"></span><p>Seal any process nodes that have not yet been sealed but should.</p>
+<p>This should have been accomplished by the last step in the previous migration, but because the WHERE clause was
+incorrect, not all nodes that should have been targeted were included. The problem is with the statement:</p>
+<blockquote>
+<div><p>attributes-&gt;&gt;’process_state’ NOT IN (‘created’, ‘running’, ‘waiting’)</p>
+</div></blockquote>
+<p>The problem here is that this will yield <cite>False</cite> if the attribute <cite>process_state</cite> does not even exist. This will be the
+case for legacy calculations like <cite>InlineCalculation</cite> nodes. Their node type was already migrated in <cite>0020</cite> but most of
+them will be unsealed.</p>
+<p>Revision ID: 7b38a9e783e7
+Revises: e734dd5e50d7
+Create Date: 2019-10-28 13:22:56.224234</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.7b38a9e783e7_seal_unsealed_processes.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.7b38a9e783e7_seal_unsealed_processes.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/7b38a9e783e7_seal_unsealed_processes.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.7b38a9e783e7_seal_unsealed_processes.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the downgrade.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.7b38a9e783e7_seal_unsealed_processes.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.7b38a9e783e7_seal_unsealed_processes.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/7b38a9e783e7_seal_unsealed_processes.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.7b38a9e783e7_seal_unsealed_processes.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the upgrade.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.7ca08c391c49_calc_job_option_attribute_keys"></span><p>Migration of ProcessNode attributes for metadata options whose key changed.</p>
+<p>Revision ID: 7ca08c391c49
+Revises: e72ad251bcdb
+Create Date: 2019-01-15 15:03:43.876133</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.7ca08c391c49_calc_job_option_attribute_keys.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.7ca08c391c49_calc_job_option_attribute_keys.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/7ca08c391c49_calc_job_option_attribute_keys.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.7ca08c391c49_calc_job_option_attribute_keys.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.7ca08c391c49_calc_job_option_attribute_keys.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.7ca08c391c49_calc_job_option_attribute_keys.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/7ca08c391c49_calc_job_option_attribute_keys.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.7ca08c391c49_calc_job_option_attribute_keys.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migration of ProcessNode attributes for metadata options whose key changed.</p>
+<p>Renamed attribute keys:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><cite>custom_environment_variables</cite> -&gt; <cite>environment_variables</cite> (CalcJobNode)</p></li>
+<li><p><cite>jobresource_params</cite> -&gt; <cite>resources</cite> (CalcJobNode)</p></li>
+<li><p><cite>_process_label</cite> -&gt; <cite>process_label</cite> (ProcessNode)</p></li>
+<li><p><cite>parser</cite> -&gt; <cite>parser_name</cite> (CalcJobNode)</p></li>
+</ul>
+</div></blockquote>
+<dl class="simple">
+<dt>Deleted attributes:</dt><dd><ul class="simple">
+<li><p><cite>linkname_retrieved</cite> (We do not actually delete it just in case some relies on it)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.89176227b25_add_indexes_to_dbworkflowdata_table"></span><p>Add indexes to dbworkflowdata table</p>
+<p>Revision ID: 89176227b25
+Revises:
+Create Date: 2017-11-03 11:06:00.327195</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.89176227b25_add_indexes_to_dbworkflowdata_table.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.89176227b25_add_indexes_to_dbworkflowdata_table.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/89176227b25_add_indexes_to_dbworkflowdata_table.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.89176227b25_add_indexes_to_dbworkflowdata_table.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.89176227b25_add_indexes_to_dbworkflowdata_table.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.89176227b25_add_indexes_to_dbworkflowdata_table.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/89176227b25_add_indexes_to_dbworkflowdata_table.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.89176227b25_add_indexes_to_dbworkflowdata_table.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.91b573400be5_prepare_schema_reset"></span><p>Prepare schema reset.</p>
+<p>Revision ID: 91b573400be5
+Revises: 7b38a9e783e7
+Create Date: 2019-07-25 14:58:39.866822</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.91b573400be5_prepare_schema_reset.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.91b573400be5_prepare_schema_reset.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/91b573400be5_prepare_schema_reset.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.91b573400be5_prepare_schema_reset.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the downgrade.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.91b573400be5_prepare_schema_reset.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.91b573400be5_prepare_schema_reset.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/91b573400be5_prepare_schema_reset.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.91b573400be5_prepare_schema_reset.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the upgrade.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.a514d673c163_drop_dblock"></span><p>Drop the DbLock model</p>
+<p>Revision ID: a514d673c163
+Revises: f9a69de76a9a
+Create Date: 2018-05-10 19:08:51.780194</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.a514d673c163_drop_dblock.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.a514d673c163_drop_dblock.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/a514d673c163_drop_dblock.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.a514d673c163_drop_dblock.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.a514d673c163_drop_dblock.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.a514d673c163_drop_dblock.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/a514d673c163_drop_dblock.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.a514d673c163_drop_dblock.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.a603da2cc809_code_sub_class_of_data"></span><p>Correct the type string for the code class</p>
+<p>Revision ID: a603da2cc809
+Revises: 5d4d844852b6
+Create Date: 2018-11-13 18:15:07.300709</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.a603da2cc809_code_sub_class_of_data.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.a603da2cc809_code_sub_class_of_data.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/a603da2cc809_code_sub_class_of_data.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.a603da2cc809_code_sub_class_of_data.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.a603da2cc809_code_sub_class_of_data.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.a603da2cc809_code_sub_class_of_data.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/a603da2cc809_code_sub_class_of_data.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.a603da2cc809_code_sub_class_of_data.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.a6048f0ffca8_update_linktypes"></span><p>Updating link types - This is a copy of the Django migration script</p>
+<p>Revision ID: a6048f0ffca8
+Revises:
+Create Date: 2017-10-17 10:51:23.327195</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.a6048f0ffca8_update_linktypes.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.a6048f0ffca8_update_linktypes.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/a6048f0ffca8_update_linktypes.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.a6048f0ffca8_update_linktypes.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.a6048f0ffca8_update_linktypes.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.a6048f0ffca8_update_linktypes.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/a6048f0ffca8_update_linktypes.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.a6048f0ffca8_update_linktypes.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.b8b23ddefad4_dbgroup_name_to_label_type_to_type_string"></span><p>DbGroup class: Rename name with label and type with type_string</p>
+<p>Revision ID: b8b23ddefad4
+Revises: 239cea6d2452
+Create Date: 2018-12-06 15:25:32.865136</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.b8b23ddefad4_dbgroup_name_to_label_type_to_type_string.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.b8b23ddefad4_dbgroup_name_to_label_type_to_type_string.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/b8b23ddefad4_dbgroup_name_to_label_type_to_type_string.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.b8b23ddefad4_dbgroup_name_to_label_type_to_type_string.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>The downgrade migration actions.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.b8b23ddefad4_dbgroup_name_to_label_type_to_type_string.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.b8b23ddefad4_dbgroup_name_to_label_type_to_type_string.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/b8b23ddefad4_dbgroup_name_to_label_type_to_type_string.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.b8b23ddefad4_dbgroup_name_to_label_type_to_type_string.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>The upgrade migration actions.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.bf591f31dd12_dbgroup_type_string"></span><p>Migration after the <cite>Group</cite> class became pluginnable and so the group <cite>type_string</cite> changed.</p>
+<p>Revision ID: bf591f31dd12
+Revises: 118349c10896
+Create Date: 2020-03-31 10:00:52.609146</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.bf591f31dd12_dbgroup_type_string.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.bf591f31dd12_dbgroup_type_string.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/bf591f31dd12_dbgroup_type_string.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.bf591f31dd12_dbgroup_type_string.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the downgrade.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.bf591f31dd12_dbgroup_type_string.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.bf591f31dd12_dbgroup_type_string.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/bf591f31dd12_dbgroup_type_string.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.bf591f31dd12_dbgroup_type_string.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the upgrade.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.ce56d84bcc35_delete_trajectory_symbols_array"></span><p>Delete trajectory symbols array from the repository and the reference in the attributes</p>
+<p>Revision ID: ce56d84bcc35
+Revises: 12536798d4d3
+Create Date: 2019-01-21 15:35:07.280805</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.ce56d84bcc35_delete_trajectory_symbols_array.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.ce56d84bcc35_delete_trajectory_symbols_array.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/ce56d84bcc35_delete_trajectory_symbols_array.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.ce56d84bcc35_delete_trajectory_symbols_array.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the downgrade.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.ce56d84bcc35_delete_trajectory_symbols_array.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.ce56d84bcc35_delete_trajectory_symbols_array.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/ce56d84bcc35_delete_trajectory_symbols_array.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.ce56d84bcc35_delete_trajectory_symbols_array.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the upgrade.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.d254fdfed416_rename_parameter_data_to_dict"></span><p>Data migration for after <cite>ParameterData</cite> was renamed to <cite>Dict</cite>.</p>
+<p>Revision ID: d254fdfed416
+Revises: 61fc0913fae9
+Create Date: 2019-02-25 19:29:11.753089</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.d254fdfed416_rename_parameter_data_to_dict.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.d254fdfed416_rename_parameter_data_to_dict.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/d254fdfed416_rename_parameter_data_to_dict.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.d254fdfed416_rename_parameter_data_to_dict.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the downgrade.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.d254fdfed416_rename_parameter_data_to_dict.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.d254fdfed416_rename_parameter_data_to_dict.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/d254fdfed416_rename_parameter_data_to_dict.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.d254fdfed416_rename_parameter_data_to_dict.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the upgrade.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.de2eaf6978b4_simplify_user_model"></span><p>Drop various columns from the <cite>DbUser</cite> model.</p>
+<p>These columns were part of the default Django user model</p>
+<p>Revision ID: de2eaf6978b4
+Revises: 1830c8430131
+Create Date: 2019-05-28 11:15:33.242602</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.de2eaf6978b4_simplify_user_model.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.de2eaf6978b4_simplify_user_model.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/de2eaf6978b4_simplify_user_model.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.de2eaf6978b4_simplify_user_model.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the downgrade.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.de2eaf6978b4_simplify_user_model.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.de2eaf6978b4_simplify_user_model.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/de2eaf6978b4_simplify_user_model.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.de2eaf6978b4_simplify_user_model.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the upgrade.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.e15ef2630a1b_initial_schema"></span><p>Initial schema</p>
+<p>Revision ID: e15ef2630a1b
+Revises:
+Create Date: 2017-06-28 17:12:23.327195</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.e15ef2630a1b_initial_schema.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.e15ef2630a1b_initial_schema.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/e15ef2630a1b_initial_schema.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.e15ef2630a1b_initial_schema.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.e15ef2630a1b_initial_schema.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.e15ef2630a1b_initial_schema.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/e15ef2630a1b_initial_schema.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.e15ef2630a1b_initial_schema.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.e72ad251bcdb_dbgroup_class_change_type_string_values"></span><p>DbGroup class: change type_string values</p>
+<p>Revision ID: e72ad251bcdb
+Revises: b8b23ddefad4
+Create Date: 2018-12-06 19:34:47.732890</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.e72ad251bcdb_dbgroup_class_change_type_string_values.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.e72ad251bcdb_dbgroup_class_change_type_string_values.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/e72ad251bcdb_dbgroup_class_change_type_string_values.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.e72ad251bcdb_dbgroup_class_change_type_string_values.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.e72ad251bcdb_dbgroup_class_change_type_string_values.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.e72ad251bcdb_dbgroup_class_change_type_string_values.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/e72ad251bcdb_dbgroup_class_change_type_string_values.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.e72ad251bcdb_dbgroup_class_change_type_string_values.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.e734dd5e50d7_data_migration_legacy_process_attributes"></span><p>Data migration for some legacy process attributes.</p>
+<p>Attribute keys that are renamed:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><cite>_sealed</cite> -&gt; <cite>sealed</cite></p></li>
+</ul>
+</div></blockquote>
+<p>Attribute keys that are removed entirely:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><cite>_finished</cite></p></li>
+<li><p><cite>_failed</cite></p></li>
+<li><p><cite>_aborted</cite></p></li>
+<li><p><cite>_do_abort</cite></p></li>
+</ul>
+</div></blockquote>
+<p>Finally, after these first migrations, any remaining process nodes that still do not have a sealed attribute and have
+it set to <cite>True</cite>. Excluding the nodes that have a <cite>process_state</cite> attribute of one of the active states <cite>created</cite>,
+running` or <cite>waiting</cite>, because those are actual valid active processes that are not yet sealed.</p>
+<p>Revision ID: e734dd5e50d7
+Revises: e797afa09270
+Create Date: 2019-07-04 18:23:56.127994</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.e734dd5e50d7_data_migration_legacy_process_attributes.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.e734dd5e50d7_data_migration_legacy_process_attributes.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/e734dd5e50d7_data_migration_legacy_process_attributes.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.e734dd5e50d7_data_migration_legacy_process_attributes.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the downgrade.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.e734dd5e50d7_data_migration_legacy_process_attributes.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.e734dd5e50d7_data_migration_legacy_process_attributes.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/e734dd5e50d7_data_migration_legacy_process_attributes.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.e734dd5e50d7_data_migration_legacy_process_attributes.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Migrations for the upgrade.</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.e797afa09270_reset_hash"></span><p>Invalidating node hash - User should rehash nodes for caching</p>
+<p>Revision ID: e797afa09270
+Revises: 26d561acd560
+Create Date: 2019-07-01 19:39:33.605457</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.e797afa09270_reset_hash.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.e797afa09270_reset_hash.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/e797afa09270_reset_hash.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.e797afa09270_reset_hash.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>drop the hashes also when downgrading</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.e797afa09270_reset_hash.drop_hashes">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.e797afa09270_reset_hash.</code><code class="sig-name descname">drop_hashes</code><span class="sig-paren">(</span><em class="sig-param">conn</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/e797afa09270_reset_hash.html#drop_hashes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.e797afa09270_reset_hash.drop_hashes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Drop hashes of nodes.</p>
+<p>Print warning only if the DB actually contains nodes.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.e797afa09270_reset_hash.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.e797afa09270_reset_hash.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/e797afa09270_reset_hash.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.e797afa09270_reset_hash.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>drop the hashes when upgrading</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.ea2f50e7f615_dblog_create_uuid_column"></span><p>This migration creates UUID column and populates it with distinct UUIDs</p>
+<p>This migration corresponds to the 0024_dblog_update Django migration.</p>
+<p>Revision ID: ea2f50e7f615
+Revises: 041a79fc615f
+Create Date: 2019-01-30 19:22:50.984380</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.ea2f50e7f615_dblog_create_uuid_column.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.ea2f50e7f615_dblog_create_uuid_column.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/ea2f50e7f615_dblog_create_uuid_column.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.ea2f50e7f615_dblog_create_uuid_column.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove the UUID column</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.ea2f50e7f615_dblog_create_uuid_column.set_new_uuid">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.ea2f50e7f615_dblog_create_uuid_column.</code><code class="sig-name descname">set_new_uuid</code><span class="sig-paren">(</span><em class="sig-param">connection</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/ea2f50e7f615_dblog_create_uuid_column.html#set_new_uuid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.ea2f50e7f615_dblog_create_uuid_column.set_new_uuid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set new and distinct UUIDs to all the logs</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.ea2f50e7f615_dblog_create_uuid_column.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.ea2f50e7f615_dblog_create_uuid_column.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/ea2f50e7f615_dblog_create_uuid_column.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.ea2f50e7f615_dblog_create_uuid_column.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an UUID column an populate it with unique UUIDs</p>
+</dd></dl>
+
+<span class="target" id="module-aiida.backends.sqlalchemy.migrations.versions.f9a69de76a9a_delete_kombu_tables"></span><p>Delete the kombu tables that were used by the old Celery based daemon and the obsolete related timestamps</p>
+<p>Revision ID: f9a69de76a9a
+Revises: 6c629c886f84
+Create Date: 2018-05-10 15:07:59.235950</p>
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.f9a69de76a9a_delete_kombu_tables.downgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.f9a69de76a9a_delete_kombu_tables.</code><code class="sig-name descname">downgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/f9a69de76a9a_delete_kombu_tables.html#downgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.f9a69de76a9a_delete_kombu_tables.downgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="aiida.backends.sqlalchemy.migrations.versions.f9a69de76a9a_delete_kombu_tables.upgrade">
+<code class="sig-prename descclassname">aiida.backends.sqlalchemy.migrations.versions.f9a69de76a9a_delete_kombu_tables.</code><code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/backends/sqlalchemy/migrations/versions/f9a69de76a9a_delete_kombu_tables.html#upgrade"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.backends.sqlalchemy.migrations.versions.f9a69de76a9a_delete_kombu_tables.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

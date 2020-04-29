@@ -1,0 +1,512 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.backends.djsite.db.migrations.0037_attributes_extras_settings_json &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../../" src="../../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../../_static/jquery.js"></script>
+        <script src="../../../../../../_static/underscore.js"></script>
+        <script src="../../../../../../_static/doctools.js"></script>
+        <script src="../../../../../../_static/language_data.js"></script>
+        <script src="../../../../../../_static/togglebutton.js"></script>
+        <script src="../../../../../../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../../../aiida.html">aiida</a> &raquo;</li>
+        
+          <li><a href="../../../../backends.html">aiida.backends</a> &raquo;</li>
+        
+          <li><a href="../../../djsite.html">aiida.backends.djsite</a> &raquo;</li>
+        
+          <li><a href="../migrations.html">aiida.backends.djsite.db.migrations</a> &raquo;</li>
+        
+      <li>aiida.backends.djsite.db.migrations.0037_attributes_extras_settings_json</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for aiida.backends.djsite.db.migrations.0037_attributes_extras_settings_json</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1">###########################################################################</span>
+<span class="c1"># Copyright (c), The AiiDA team. All rights reserved.                     #</span>
+<span class="c1"># This file is part of the AiiDA code.                                    #</span>
+<span class="c1">#                                                                         #</span>
+<span class="c1"># The code is hosted on GitHub at https://github.com/aiidateam/aiida-core #</span>
+<span class="c1"># For further information on the license, see the LICENSE.txt file        #</span>
+<span class="c1"># For further information please visit http://www.aiida.net               #</span>
+<span class="c1">###########################################################################</span>
+<span class="c1"># pylint: disable=invalid-name,import-error,no-name-in-module,too-few-public-methods,no-member</span>
+<span class="sd">&quot;&quot;&quot;Adding JSONB field for Node.attributes and Node.Extras&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="kn">import</span> <span class="nn">click</span>
+<span class="kn">import</span> <span class="nn">django.contrib.postgres.fields.jsonb</span>
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">migrations</span><span class="p">,</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">transaction</span>
+
+<span class="kn">from</span> <span class="nn">aiida.backends.djsite.db.migrations</span> <span class="kn">import</span> <span class="n">upgrade_schema_version</span>
+<span class="kn">from</span> <span class="nn">aiida.cmdline.utils</span> <span class="kn">import</span> <span class="n">echo</span>
+<span class="kn">from</span> <span class="nn">aiida.common.timezone</span> <span class="kn">import</span> <span class="n">datetime_to_isoformat</span>
+
+<span class="n">REVISION</span> <span class="o">=</span> <span class="s1">&#39;1.0.37&#39;</span>
+<span class="n">DOWN_REVISION</span> <span class="o">=</span> <span class="s1">&#39;1.0.36&#39;</span>
+
+<span class="c1"># Nodes are processes in groups of the following size</span>
+<span class="n">group_size</span> <span class="o">=</span> <span class="mi">1000</span>
+
+
+<div class="viewcode-block" id="lazy_bulk_fetch"><a class="viewcode-back" href="../../../../../../apidoc/aiida.backends.djsite.db.migrations.html#aiida.backends.djsite.db.migrations.0037_attributes_extras_settings_json.lazy_bulk_fetch">[docs]</a><span class="k">def</span> <span class="nf">lazy_bulk_fetch</span><span class="p">(</span><span class="n">max_obj</span><span class="p">,</span> <span class="n">max_count</span><span class="p">,</span> <span class="n">fetch_func</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="n">start</span>
+    <span class="k">while</span> <span class="n">counter</span> <span class="o">&lt;</span> <span class="n">max_count</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">fetch_func</span><span class="p">()[</span><span class="n">counter</span><span class="p">:</span><span class="n">counter</span> <span class="o">+</span> <span class="n">max_obj</span><span class="p">]</span>
+        <span class="n">counter</span> <span class="o">+=</span> <span class="n">max_obj</span></div>
+
+
+<div class="viewcode-block" id="transition_attributes_extras"><a class="viewcode-back" href="../../../../../../apidoc/aiida.backends.djsite.db.migrations.html#aiida.backends.djsite.db.migrations.0037_attributes_extras_settings_json.transition_attributes_extras">[docs]</a><span class="k">def</span> <span class="nf">transition_attributes_extras</span><span class="p">(</span><span class="n">apps</span><span class="p">,</span> <span class="n">_</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Migrate the DbAttribute &amp; the DbExtras tables into the attributes and extras columns of DbNode. &quot;&quot;&quot;</span>
+    <span class="n">db_node_model</span> <span class="o">=</span> <span class="n">apps</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="s1">&#39;DbNode&#39;</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">transaction</span><span class="o">.</span><span class="n">atomic</span><span class="p">():</span>
+        <span class="n">total_node_no</span> <span class="o">=</span> <span class="n">db_node_model</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">total_node_no</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="k">with</span> <span class="n">click</span><span class="o">.</span><span class="n">progressbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Updating attributes and extras&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="n">total_node_no</span><span class="p">,</span> <span class="n">show_pos</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">pr_bar</span><span class="p">:</span>
+            <span class="n">fetcher</span> <span class="o">=</span> <span class="n">lazy_bulk_fetch</span><span class="p">(</span><span class="n">group_size</span><span class="p">,</span> <span class="n">total_node_no</span><span class="p">,</span> <span class="n">db_node_model</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">)</span>
+            <span class="n">error</span> <span class="o">=</span> <span class="kc">False</span>
+
+            <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">fetcher</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">curr_dbnode</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">:</span>
+
+                    <span class="c1"># Migrating attributes</span>
+                    <span class="n">dbattrs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">curr_dbnode</span><span class="o">.</span><span class="n">dbattributes</span><span class="o">.</span><span class="n">all</span><span class="p">())</span>
+                    <span class="n">attrs</span><span class="p">,</span> <span class="n">err_</span> <span class="o">=</span> <span class="n">attributes_to_dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">dbattrs</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">key</span><span class="p">))</span>
+                    <span class="n">error</span> <span class="o">|=</span> <span class="n">err_</span>
+                    <span class="n">curr_dbnode</span><span class="o">.</span><span class="n">attributes</span> <span class="o">=</span> <span class="n">attrs</span>
+
+                    <span class="c1"># Migrating extras</span>
+                    <span class="n">dbextr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">curr_dbnode</span><span class="o">.</span><span class="n">dbextras</span><span class="o">.</span><span class="n">all</span><span class="p">())</span>
+                    <span class="n">extr</span><span class="p">,</span> <span class="n">err_</span> <span class="o">=</span> <span class="n">attributes_to_dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">dbextr</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">key</span><span class="p">))</span>
+                    <span class="n">error</span> <span class="o">|=</span> <span class="n">err_</span>
+                    <span class="n">curr_dbnode</span><span class="o">.</span><span class="n">extras</span> <span class="o">=</span> <span class="n">extr</span>
+
+                    <span class="c1"># Saving the result</span>
+                    <span class="n">curr_dbnode</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+                    <span class="n">pr_bar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+                    <span class="k">if</span> <span class="n">error</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;There has been some errors during the migration&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="transition_settings"><a class="viewcode-back" href="../../../../../../apidoc/aiida.backends.djsite.db.migrations.html#aiida.backends.djsite.db.migrations.0037_attributes_extras_settings_json.transition_settings">[docs]</a><span class="k">def</span> <span class="nf">transition_settings</span><span class="p">(</span><span class="n">apps</span><span class="p">,</span> <span class="n">_</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Migrate the DbSetting EAV val into the JSONB val column of the same table. &quot;&quot;&quot;</span>
+    <span class="n">db_setting_model</span> <span class="o">=</span> <span class="n">apps</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="s1">&#39;DbSetting&#39;</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">transaction</span><span class="o">.</span><span class="n">atomic</span><span class="p">():</span>
+        <span class="n">total_settings_no</span> <span class="o">=</span> <span class="n">db_setting_model</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">total_settings_no</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="k">with</span> <span class="n">click</span><span class="o">.</span><span class="n">progressbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Updating settings&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="n">total_settings_no</span><span class="p">,</span> <span class="n">show_pos</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">pr_bar</span><span class="p">:</span>
+            <span class="n">fetcher</span> <span class="o">=</span> <span class="n">lazy_bulk_fetch</span><span class="p">(</span><span class="n">group_size</span><span class="p">,</span> <span class="n">total_settings_no</span><span class="p">,</span> <span class="n">db_setting_model</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">)</span>
+            <span class="n">error</span> <span class="o">=</span> <span class="kc">False</span>
+
+            <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">fetcher</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">curr_dbsetting</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">:</span>
+
+                    <span class="c1"># Migrating dbsetting.val</span>
+                    <span class="n">dt</span> <span class="o">=</span> <span class="n">curr_dbsetting</span><span class="o">.</span><span class="n">datatype</span>
+                    <span class="n">val</span> <span class="o">=</span> <span class="kc">None</span>
+                    <span class="k">if</span> <span class="n">dt</span> <span class="o">==</span> <span class="s1">&#39;txt&#39;</span><span class="p">:</span>
+                        <span class="n">val</span> <span class="o">=</span> <span class="n">curr_dbsetting</span><span class="o">.</span><span class="n">tval</span>
+                    <span class="k">elif</span> <span class="n">dt</span> <span class="o">==</span> <span class="s1">&#39;float&#39;</span><span class="p">:</span>
+                        <span class="n">val</span> <span class="o">=</span> <span class="n">curr_dbsetting</span><span class="o">.</span><span class="n">fval</span>
+                        <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="ow">or</span> <span class="n">math</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+                            <span class="n">val</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+                    <span class="k">elif</span> <span class="n">dt</span> <span class="o">==</span> <span class="s1">&#39;int&#39;</span><span class="p">:</span>
+                        <span class="n">val</span> <span class="o">=</span> <span class="n">curr_dbsetting</span><span class="o">.</span><span class="n">ival</span>
+                    <span class="k">elif</span> <span class="n">dt</span> <span class="o">==</span> <span class="s1">&#39;bool&#39;</span><span class="p">:</span>
+                        <span class="n">val</span> <span class="o">=</span> <span class="n">curr_dbsetting</span><span class="o">.</span><span class="n">bval</span>
+                    <span class="k">elif</span> <span class="n">dt</span> <span class="o">==</span> <span class="s1">&#39;date&#39;</span><span class="p">:</span>
+                        <span class="n">val</span> <span class="o">=</span> <span class="n">datetime_to_isoformat</span><span class="p">(</span><span class="n">curr_dbsetting</span><span class="o">.</span><span class="n">dval</span><span class="p">)</span>
+
+                    <span class="n">curr_dbsetting</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
+
+                    <span class="c1"># Saving the result</span>
+                    <span class="n">curr_dbsetting</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+                    <span class="n">pr_bar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+                    <span class="k">if</span> <span class="n">error</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;There has been some errors during the migration&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="attributes_to_dict"><a class="viewcode-back" href="../../../../../../apidoc/aiida.backends.djsite.db.migrations.html#aiida.backends.djsite.db.migrations.0037_attributes_extras_settings_json.attributes_to_dict">[docs]</a><span class="k">def</span> <span class="nf">attributes_to_dict</span><span class="p">(</span><span class="n">attr_list</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Transform the attributes of a node into a dictionary. It assumes the key</span>
+<span class="sd">    are ordered alphabetically, and that they all belong to the same node.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="n">error</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">attr_list</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">tmp_d</span> <span class="o">=</span> <span class="n">select_from_key</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="n">echo</span><span class="o">.</span><span class="n">echo_error</span><span class="p">(</span><span class="s2">&quot;Couldn&#39;t transfer attribute </span><span class="si">{}</span><span class="s2"> with key </span><span class="si">{}</span><span class="s2"> for dbnode </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">dbnode_id</span><span class="p">))</span>
+            <span class="n">error</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">continue</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tmp_d</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+        <span class="n">dt</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">datatype</span>
+
+        <span class="k">if</span> <span class="n">dt</span> <span class="o">==</span> <span class="s1">&#39;dict&#39;</span><span class="p">:</span>
+            <span class="n">tmp_d</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">elif</span> <span class="n">dt</span> <span class="o">==</span> <span class="s1">&#39;list&#39;</span><span class="p">:</span>
+            <span class="n">tmp_d</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">a</span><span class="o">.</span><span class="n">ival</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="n">dt</span> <span class="o">==</span> <span class="s1">&#39;txt&#39;</span><span class="p">:</span>
+                <span class="n">val</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">tval</span>
+            <span class="k">elif</span> <span class="n">dt</span> <span class="o">==</span> <span class="s1">&#39;float&#39;</span><span class="p">:</span>
+                <span class="n">val</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">fval</span>
+                <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="ow">or</span> <span class="n">math</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+                    <span class="n">val</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">dt</span> <span class="o">==</span> <span class="s1">&#39;int&#39;</span><span class="p">:</span>
+                <span class="n">val</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">ival</span>
+            <span class="k">elif</span> <span class="n">dt</span> <span class="o">==</span> <span class="s1">&#39;bool&#39;</span><span class="p">:</span>
+                <span class="n">val</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">bval</span>
+            <span class="k">elif</span> <span class="n">dt</span> <span class="o">==</span> <span class="s1">&#39;date&#39;</span><span class="p">:</span>
+                <span class="n">val</span> <span class="o">=</span> <span class="n">datetime_to_isoformat</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">dval</span><span class="p">)</span>
+
+            <span class="n">tmp_d</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="k">return</span> <span class="n">d</span><span class="p">,</span> <span class="n">error</span></div>
+
+
+<div class="viewcode-block" id="select_from_key"><a class="viewcode-back" href="../../../../../../apidoc/aiida.backends.djsite.db.migrations.html#aiida.backends.djsite.db.migrations.0037_attributes_extras_settings_json.select_from_key">[docs]</a><span class="k">def</span> <span class="nf">select_from_key</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return element of the dict to do the insertion on. If it is foo.1.bar, it</span>
+<span class="sd">    will return d[&quot;foo&quot;][1]. If it is only foo, it will return d directly.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">tmp_d</span> <span class="o">=</span> <span class="n">d</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">path</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tmp_d</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+            <span class="n">tmp_d</span> <span class="o">=</span> <span class="n">tmp_d</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="p">)]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">tmp_d</span> <span class="o">=</span> <span class="n">tmp_d</span><span class="p">[</span><span class="n">p</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">tmp_d</span></div>
+
+
+<div class="viewcode-block" id="Migration"><a class="viewcode-back" href="../../../../../../apidoc/aiida.backends.djsite.db.migrations.html#aiida.backends.djsite.db.migrations.0037_attributes_extras_settings_json.Migration">[docs]</a><span class="k">class</span> <span class="nc">Migration</span><span class="p">(</span><span class="n">migrations</span><span class="o">.</span><span class="n">Migration</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This migration changes Django backend to support the JSONB fields.</span>
+<span class="sd">    It is a schema migration that removes the DbAttribute and DbExtra</span>
+<span class="sd">    tables and their reference to the DbNode tables and adds the</span>
+<span class="sd">    corresponding JSONB columns to the DbNode table.</span>
+<span class="sd">    It is also a data migration that transforms and adds the data of</span>
+<span class="sd">    the DbAttribute and DbExtra tables to the JSONB columns to the</span>
+<span class="sd">    DbNode table.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="s1">&#39;0036_drop_computer_transport_params&#39;</span><span class="p">),</span>
+    <span class="p">]</span>
+
+    <span class="n">operations</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="c1"># ############################################</span>
+        <span class="c1"># Migration of the Attribute and Extras tables</span>
+        <span class="c1"># ############################################</span>
+
+        <span class="c1"># Create the DbNode.attributes JSONB and DbNode.extras JSONB fields</span>
+        <span class="n">migrations</span><span class="o">.</span><span class="n">AddField</span><span class="p">(</span>
+            <span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;dbnode&#39;</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="s1">&#39;attributes&#39;</span><span class="p">,</span>
+            <span class="n">field</span><span class="o">=</span><span class="n">django</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">postgres</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">jsonb</span><span class="o">.</span><span class="n">JSONField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="nb">dict</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="p">),</span>
+        <span class="n">migrations</span><span class="o">.</span><span class="n">AddField</span><span class="p">(</span>
+            <span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;dbnode&#39;</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="s1">&#39;extras&#39;</span><span class="p">,</span>
+            <span class="n">field</span><span class="o">=</span><span class="n">django</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">postgres</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">jsonb</span><span class="o">.</span><span class="n">JSONField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="nb">dict</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="p">),</span>
+        <span class="c1"># Migrate the data from the DbAttribute table to the JSONB field</span>
+        <span class="n">migrations</span><span class="o">.</span><span class="n">RunPython</span><span class="p">(</span><span class="n">transition_attributes_extras</span><span class="p">,</span> <span class="n">reverse_code</span><span class="o">=</span><span class="n">migrations</span><span class="o">.</span><span class="n">RunPython</span><span class="o">.</span><span class="n">noop</span><span class="p">),</span>
+        <span class="n">migrations</span><span class="o">.</span><span class="n">AlterUniqueTogether</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="s1">&#39;dbattribute&#39;</span><span class="p">,</span>
+            <span class="n">unique_together</span><span class="o">=</span><span class="nb">set</span><span class="p">([]),</span>
+        <span class="p">),</span>
+        <span class="c1"># Delete the DbAttribute table</span>
+        <span class="n">migrations</span><span class="o">.</span><span class="n">DeleteModel</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;DbAttribute&#39;</span><span class="p">,),</span>
+        <span class="n">migrations</span><span class="o">.</span><span class="n">AlterUniqueTogether</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="s1">&#39;dbextra&#39;</span><span class="p">,</span>
+            <span class="n">unique_together</span><span class="o">=</span><span class="nb">set</span><span class="p">([]),</span>
+        <span class="p">),</span>
+        <span class="c1"># Delete the DbExtra table</span>
+        <span class="n">migrations</span><span class="o">.</span><span class="n">DeleteModel</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;DbExtra&#39;</span><span class="p">,),</span>
+
+        <span class="c1"># ###############################</span>
+        <span class="c1"># Migration of the Settings table</span>
+
+        <span class="c1"># ###############################</span>
+        <span class="c1"># Create the DbSetting.val JSONB field</span>
+        <span class="n">migrations</span><span class="o">.</span><span class="n">AddField</span><span class="p">(</span>
+            <span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;dbsetting&#39;</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="s1">&#39;val&#39;</span><span class="p">,</span>
+            <span class="n">field</span><span class="o">=</span><span class="n">django</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">postgres</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">jsonb</span><span class="o">.</span><span class="n">JSONField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="p">),</span>
+        <span class="c1"># Migrate the data from the DbSetting EAV to the JSONB val field</span>
+        <span class="n">migrations</span><span class="o">.</span><span class="n">RunPython</span><span class="p">(</span><span class="n">transition_settings</span><span class="p">,</span> <span class="n">reverse_code</span><span class="o">=</span><span class="n">migrations</span><span class="o">.</span><span class="n">RunPython</span><span class="o">.</span><span class="n">noop</span><span class="p">),</span>
+
+        <span class="c1"># Delete the tval, fval, ival, bval, dval</span>
+        <span class="n">migrations</span><span class="o">.</span><span class="n">RemoveField</span><span class="p">(</span>
+            <span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;dbsetting&#39;</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="s1">&#39;tval&#39;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">migrations</span><span class="o">.</span><span class="n">RemoveField</span><span class="p">(</span>
+            <span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;dbsetting&#39;</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="s1">&#39;fval&#39;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">migrations</span><span class="o">.</span><span class="n">RemoveField</span><span class="p">(</span>
+            <span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;dbsetting&#39;</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="s1">&#39;ival&#39;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">migrations</span><span class="o">.</span><span class="n">RemoveField</span><span class="p">(</span>
+            <span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;dbsetting&#39;</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="s1">&#39;bval&#39;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">migrations</span><span class="o">.</span><span class="n">RemoveField</span><span class="p">(</span>
+            <span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;dbsetting&#39;</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="s1">&#39;dval&#39;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">migrations</span><span class="o">.</span><span class="n">RemoveField</span><span class="p">(</span>
+            <span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;dbsetting&#39;</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="s1">&#39;datatype&#39;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">migrations</span><span class="o">.</span><span class="n">AlterField</span><span class="p">(</span>
+            <span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;dbsetting&#39;</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="s1">&#39;key&#39;</span><span class="p">,</span>
+            <span class="n">field</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(),</span>
+        <span class="p">),</span>
+        <span class="n">migrations</span><span class="o">.</span><span class="n">AlterUniqueTogether</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="s1">&#39;dbsetting&#39;</span><span class="p">,</span>
+            <span class="n">unique_together</span><span class="o">=</span><span class="nb">set</span><span class="p">([]),</span>
+        <span class="p">),</span>
+        <span class="n">migrations</span><span class="o">.</span><span class="n">AlterField</span><span class="p">(</span>
+            <span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;dbsetting&#39;</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="s1">&#39;key&#39;</span><span class="p">,</span>
+            <span class="n">field</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> <span class="n">db_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="p">),</span>
+        <span class="n">upgrade_schema_version</span><span class="p">(</span><span class="n">REVISION</span><span class="p">,</span> <span class="n">DOWN_REVISION</span><span class="p">),</span>
+    <span class="p">]</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

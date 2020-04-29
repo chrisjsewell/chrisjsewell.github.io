@@ -1,0 +1,734 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.restapi.translator.base &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/togglebutton.js"></script>
+        <script src="../../../../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../aiida.html">aiida</a> &raquo;</li>
+        
+      <li>aiida.restapi.translator.base</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for aiida.restapi.translator.base</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1">###########################################################################</span>
+<span class="c1"># Copyright (c), The AiiDA team. All rights reserved.                     #</span>
+<span class="c1"># This file is part of the AiiDA code.                                    #</span>
+<span class="c1">#                                                                         #</span>
+<span class="c1"># The code is hosted on GitHub at https://github.com/aiidateam/aiida-core #</span>
+<span class="c1"># For further information on the license, see the LICENSE.txt file        #</span>
+<span class="c1"># For further information please visit http://www.aiida.net               #</span>
+<span class="c1">###########################################################################</span>
+<span class="sd">&quot;&quot;&quot;Base translator class&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">aiida.common.exceptions</span> <span class="kn">import</span> <span class="n">InputValidationError</span><span class="p">,</span> <span class="n">InvalidOperation</span>
+<span class="kn">from</span> <span class="nn">aiida.orm.querybuilder</span> <span class="kn">import</span> <span class="n">QueryBuilder</span>
+<span class="kn">from</span> <span class="nn">aiida.restapi.common.exceptions</span> <span class="kn">import</span> <span class="n">RestValidationError</span><span class="p">,</span> \
+    <span class="n">RestInputValidationError</span>
+<span class="kn">from</span> <span class="nn">aiida.restapi.common.utils</span> <span class="kn">import</span> <span class="n">PK_DBSYNONYM</span>
+
+
+<div class="viewcode-block" id="BaseTranslator"><a class="viewcode-back" href="../../../../apidoc/aiida.restapi.translator.html#aiida.restapi.resources.BaseTranslator">[docs]</a><span class="k">class</span> <span class="nc">BaseTranslator</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generic class for translator. It contains the methods</span>
+<span class="sd">    required to build a related QueryBuilder object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># pylint: disable=too-many-instance-attributes,fixme</span>
+
+    <span class="c1"># A label associated to the present class</span>
+    <span class="n">__label__</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># The AiiDA class one-to-one associated to the present class</span>
+    <span class="n">_aiida_class</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># The string name of the AiiDA class</span>
+    <span class="n">_aiida_type</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># If True (False) the corresponding AiiDA class has (no) uuid property</span>
+    <span class="n">_has_uuid</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="n">_result_type</span> <span class="o">=</span> <span class="n">__label__</span>
+
+    <span class="n">_default</span> <span class="o">=</span> <span class="n">_default_projections</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;**&#39;</span><span class="p">]</span>
+
+    <span class="n">_is_qb_initialized</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">_is_id_query</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_total_count</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="BaseTranslator.__init__"><a class="viewcode-back" href="../../../../apidoc/aiida.restapi.translator.html#aiida.restapi.resources.BaseTranslator.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialise the parameters.</span>
+<span class="sd">        Create the basic query_help</span>
+
+<span class="sd">        keyword Class (default None but becomes this class): is the class</span>
+<span class="sd">        from which one takes the initial values of the attributes. By default</span>
+<span class="sd">        is this class so that class atributes are translated into object</span>
+<span class="sd">        attributes. In case of inheritance one cane use the</span>
+<span class="sd">        same constructore but pass the inheriting class to pass its attributes.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Basic filter (dict) to set the identity of the uuid. None if</span>
+        <span class="c1">#  no specific node is requested</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_id_filter</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># basic query_help object</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_query_help</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="p">[{</span>
+                <span class="s1">&#39;cls&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aiida_class</span><span class="p">,</span>
+                <span class="s1">&#39;tag&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">__label__</span>
+            <span class="p">}],</span>
+            <span class="s1">&#39;filters&#39;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="s1">&#39;project&#39;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="s1">&#39;order_by&#39;</span><span class="p">:</span> <span class="p">{}</span>
+        <span class="p">}</span>
+        <span class="c1"># query_builder object (No initialization)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">qbobj</span> <span class="o">=</span> <span class="n">QueryBuilder</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">limit_default</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;LIMIT_DEFAULT&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">schema</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="BaseTranslator.__repr__"><a class="viewcode-back" href="../../../../apidoc/aiida.restapi.translator.html#aiida.restapi.resources.BaseTranslator.__repr__">[docs]</a>    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This function is required for the caching system to be able to compare</span>
+<span class="sd">        two NodeTranslator objects. Comparison is done on the value returned by __repr__</span>
+
+<span class="sd">        :return: representation of NodeTranslator objects. Returns nothing</span>
+<span class="sd">            because the inputs of self.get_nodes are sufficient to determine the</span>
+<span class="sd">            identity of two queries.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="s1">&#39;&#39;</span></div>
+
+<div class="viewcode-block" id="BaseTranslator.get_projectable_properties"><a class="viewcode-back" href="../../../../apidoc/aiida.restapi.translator.html#aiida.restapi.resources.BaseTranslator.get_projectable_properties">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">get_projectable_properties</span><span class="p">():</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This method is extended in specific translators classes.</span>
+<span class="sd">        It returns a dict as follows:</span>
+<span class="sd">        dict(fields=projectable_properties, ordering=ordering)</span>
+<span class="sd">        where projectable_properties is a dict and ordering is a list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">{}</span></div>
+
+<div class="viewcode-block" id="BaseTranslator.init_qb"><a class="viewcode-back" href="../../../../apidoc/aiida.restapi.translator.html#aiida.restapi.resources.BaseTranslator.init_qb">[docs]</a>    <span class="k">def</span> <span class="nf">init_qb</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize query builder object by means of _query_help</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">qbobj</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_query_help</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_is_qb_initialized</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="BaseTranslator.count"><a class="viewcode-back" href="../../../../apidoc/aiida.restapi.translator.html#aiida.restapi.resources.BaseTranslator.count">[docs]</a>    <span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Count the number of rows returned by the query and set total_count</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_qb_initialized</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_total_count</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">qbobj</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">InvalidOperation</span><span class="p">(</span><span class="s1">&#39;query builder object has not been initialized.&#39;</span><span class="p">)</span></div>
+
+            <span class="c1"># def caching_method(self):</span>
+            <span class="c1">#     &quot;&quot;&quot;</span>
+            <span class="c1">#     class method for caching. It is a wrapper of the</span>
+            <span class="c1"># flask_cache memoize</span>
+            <span class="c1">#     method. To be used as a decorator</span>
+            <span class="c1">#     :return: the flask_cache memoize method with the timeout kwarg</span>
+            <span class="c1">#     corrispondent to the class</span>
+            <span class="c1">#     &quot;&quot;&quot;</span>
+            <span class="c1">#     return cache.memoize()</span>
+            <span class="c1">#</span>
+
+            <span class="c1">#    @cache.memoize(timeout=CACHING_TIMEOUTS[self.__label__])</span>
+
+<div class="viewcode-block" id="BaseTranslator.get_total_count"><a class="viewcode-back" href="../../../../apidoc/aiida.restapi.translator.html#aiida.restapi.resources.BaseTranslator.get_total_count">[docs]</a>    <span class="k">def</span> <span class="nf">get_total_count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the number of rows of the query.</span>
+
+<span class="sd">        :return: total_count</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1">## Count the results if needed</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total_count</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total_count</span></div>
+
+<div class="viewcode-block" id="BaseTranslator.set_filters"><a class="viewcode-back" href="../../../../apidoc/aiida.restapi.translator.html#aiida.restapi.resources.BaseTranslator.set_filters">[docs]</a>    <span class="k">def</span> <span class="nf">set_filters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filters</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add filters in query_help.</span>
+
+<span class="sd">        :param filters: it is a dictionary where keys are the tag names</span>
+<span class="sd">            given in the path in query_help and their values are the dictionary</span>
+<span class="sd">            of filters want to add for that tag name. Format for the Filters</span>
+<span class="sd">            dictionary::</span>
+
+<span class="sd">                filters = {</span>
+<span class="sd">                    &quot;tag1&quot; : {k1:v1, k2:v2},</span>
+<span class="sd">                    &quot;tag2&quot; : {k1:v1, k2:v2},</span>
+<span class="sd">                }</span>
+
+<span class="sd">        :return: query_help dict including filters if any.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">filters</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">filters</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">filters</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>  <span class="c1"># pylint: disable=too-many-nested-blocks</span>
+            <span class="k">if</span> <span class="n">filters</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">tag</span><span class="p">,</span> <span class="n">tag_filters</span> <span class="ow">in</span> <span class="n">filters</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="k">if</span> <span class="n">tag_filters</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tag_filters</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_query_help</span><span class="p">[</span><span class="s1">&#39;filters&#39;</span><span class="p">][</span><span class="n">tag</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+                        <span class="k">for</span> <span class="n">filter_key</span><span class="p">,</span> <span class="n">filter_value</span> <span class="ow">in</span> <span class="n">tag_filters</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                            <span class="k">if</span> <span class="n">filter_key</span> <span class="o">==</span> <span class="s1">&#39;pk&#39;</span><span class="p">:</span>
+                                <span class="n">filter_key</span> <span class="o">=</span> <span class="n">PK_DBSYNONYM</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_query_help</span><span class="p">[</span><span class="s1">&#39;filters&#39;</span><span class="p">][</span><span class="n">tag</span><span class="p">][</span><span class="n">filter_key</span><span class="p">]</span> \
+                                <span class="o">=</span> <span class="n">filter_value</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">InputValidationError</span><span class="p">(</span>
+                <span class="s1">&#39;Pass data in dictionary format where &#39;</span>
+                <span class="s1">&#39;keys are the tag names given in the &#39;</span>
+                <span class="s1">&#39;path in query_help and and their values&#39;</span>
+                <span class="s1">&#39; are the dictionary of filters want &#39;</span>
+                <span class="s1">&#39;to add for that tag name.&#39;</span>
+            <span class="p">)</span></div>
+
+<div class="viewcode-block" id="BaseTranslator.get_default_projections"><a class="viewcode-back" href="../../../../apidoc/aiida.restapi.translator.html#aiida.restapi.resources.BaseTranslator.get_default_projections">[docs]</a>    <span class="k">def</span> <span class="nf">get_default_projections</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        method to get default projections of the node</span>
+<span class="sd">        :return: self._default_projections</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_projections</span></div>
+
+<div class="viewcode-block" id="BaseTranslator.set_default_projections"><a class="viewcode-back" href="../../../../apidoc/aiida.restapi.translator.html#aiida.restapi.resources.BaseTranslator.set_default_projections">[docs]</a>    <span class="k">def</span> <span class="nf">set_default_projections</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        It calls the set_projections() methods internally to add the</span>
+<span class="sd">        default projections in query_help</span>
+
+<span class="sd">        :return: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_projections</span><span class="p">({</span><span class="bp">self</span><span class="o">.</span><span class="n">__label__</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_projections</span><span class="p">})</span></div>
+
+<div class="viewcode-block" id="BaseTranslator.set_projections"><a class="viewcode-back" href="../../../../apidoc/aiida.restapi.translator.html#aiida.restapi.resources.BaseTranslator.set_projections">[docs]</a>    <span class="k">def</span> <span class="nf">set_projections</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">projections</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        add the projections in query_help</span>
+
+<span class="sd">        :param projections: it is a dictionary where keys are the tag names</span>
+<span class="sd">         given in the path in query_help and values are the list of the names</span>
+<span class="sd">         you want to project in the final output</span>
+<span class="sd">        :return: updated query_help with projections</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">projections</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">projections</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">project_key</span><span class="p">,</span> <span class="n">project_list</span> <span class="ow">in</span> <span class="n">projections</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_query_help</span><span class="p">[</span><span class="s1">&#39;project&#39;</span><span class="p">][</span><span class="n">project_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">project_list</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">InputValidationError</span><span class="p">(</span>
+                <span class="s1">&#39;Pass data in dictionary format where &#39;</span>
+                <span class="s1">&#39;keys are the tag names given in the &#39;</span>
+                <span class="s1">&#39;path in query_help and values are the &#39;</span>
+                <span class="s1">&#39;list of the names you want to project &#39;</span>
+                <span class="s1">&#39;in the final output&#39;</span>
+            <span class="p">)</span></div>
+
+<div class="viewcode-block" id="BaseTranslator.set_order"><a class="viewcode-back" href="../../../../apidoc/aiida.restapi.translator.html#aiida.restapi.resources.BaseTranslator.set_order">[docs]</a>    <span class="k">def</span> <span class="nf">set_order</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">orders</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add order_by clause in query_help</span>
+<span class="sd">        :param orders: dictionary of orders you want to apply on final</span>
+<span class="sd">        results</span>
+<span class="sd">        :return: None or exception if any.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1">## Validate input</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">orders</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">InputValidationError</span><span class="p">(</span>
+                <span class="s1">&#39;orders has to be a dictionary&#39;</span>
+                <span class="s2">&quot;compatible with the &#39;order_by&#39; section&quot;</span>
+                <span class="s1">&#39;of the query_help&#39;</span>
+            <span class="p">)</span>
+
+        <span class="c1">## Auxiliary_function to get the ordering cryterion</span>
+        <span class="k">def</span> <span class="nf">def_order</span><span class="p">(</span><span class="n">columns</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Takes a list of signed column names ex. [&#39;id&#39;, &#39;-ctime&#39;,</span>
+<span class="sd">            &#39;+mtime&#39;]</span>
+<span class="sd">            and transforms it in a order_by compatible dictionary</span>
+<span class="sd">            :param columns: (list of strings)</span>
+<span class="sd">            :return: a dictionary</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+            <span class="n">order_dict</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">column</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span><span class="p">:</span>
+                    <span class="n">order_dict</span><span class="p">[</span><span class="n">column</span><span class="p">[</span><span class="mi">1</span><span class="p">:]]</span> <span class="o">=</span> <span class="s1">&#39;desc&#39;</span>
+                <span class="k">elif</span> <span class="n">column</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;+&#39;</span><span class="p">:</span>
+                    <span class="n">order_dict</span><span class="p">[</span><span class="n">column</span><span class="p">[</span><span class="mi">1</span><span class="p">:]]</span> <span class="o">=</span> <span class="s1">&#39;asc&#39;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">order_dict</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;asc&#39;</span>
+            <span class="k">if</span> <span class="s1">&#39;pk&#39;</span> <span class="ow">in</span> <span class="n">order_dict</span><span class="p">:</span>
+                <span class="n">order_dict</span><span class="p">[</span><span class="n">PK_DBSYNONYM</span><span class="p">]</span> <span class="o">=</span> <span class="n">order_dict</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;pk&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">order_dict</span>
+
+        <span class="c1">## Assign orderby field query_help</span>
+        <span class="k">if</span> <span class="s1">&#39;id&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">orders</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_result_type</span><span class="p">]</span> <span class="ow">and</span> <span class="s1">&#39;-id&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">orders</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_result_type</span><span class="p">]:</span>
+            <span class="n">orders</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_result_type</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">tag</span><span class="p">,</span> <span class="n">columns</span> <span class="ow">in</span> <span class="n">orders</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_query_help</span><span class="p">[</span><span class="s1">&#39;order_by&#39;</span><span class="p">][</span><span class="n">tag</span><span class="p">]</span> <span class="o">=</span> <span class="n">def_order</span><span class="p">(</span><span class="n">columns</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BaseTranslator.set_query"><a class="viewcode-back" href="../../../../apidoc/aiida.restapi.translator.html#aiida.restapi.resources.BaseTranslator.set_query">[docs]</a>    <span class="k">def</span> <span class="nf">set_query</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">filters</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">orders</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">projections</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">query_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">node_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">attributes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">attributes_filter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">extras</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">extras_filter</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">):</span>
+        <span class="c1"># pylint: disable=too-many-arguments,unused-argument,too-many-locals,too-many-branches</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds filters, default projections, order specs to the query_help,</span>
+<span class="sd">        and initializes the qb object</span>
+
+<span class="sd">        :param filters: dictionary with the filters</span>
+<span class="sd">        :param orders: dictionary with the order for each tag</span>
+<span class="sd">        :param projections: dictionary with the projection. It is discarded</span>
+<span class="sd">            if query_type==&#39;attributes&#39;/&#39;extras&#39;</span>
+<span class="sd">        :param query_type: (string) specify the result or the content (&quot;attr&quot;)</span>
+<span class="sd">        :param id: (integer) id of a specific node</span>
+<span class="sd">        :param filename: name of the file to return its content</span>
+<span class="sd">        :param attributes: flag to show attributes in nodes endpoint</span>
+<span class="sd">        :param attributes_filter: list of node attributes to query</span>
+<span class="sd">        :param extras: flag to show attributes in nodes endpoint</span>
+<span class="sd">        :param extras_filter: list of node extras to query</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">tagged_filters</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c1">## Check if filters are well defined and construct an ad-hoc filter</span>
+        <span class="c1"># for id_query</span>
+        <span class="k">if</span> <span class="n">node_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_is_id_query</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_result_type</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">__label__</span> <span class="ow">and</span> <span class="n">filters</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">RestInputValidationError</span><span class="p">(</span><span class="s1">&#39;selecting a specific id does not allow to specify filters&#39;</span><span class="p">)</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_check_id_validity</span><span class="p">(</span><span class="n">node_id</span><span class="p">)</span>
+            <span class="k">except</span> <span class="n">RestValidationError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">RestValidationError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">exc</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">tagged_filters</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">__label__</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_id_filter</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_result_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">__label__</span><span class="p">:</span>
+                    <span class="n">tagged_filters</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_result_type</span><span class="p">]</span> <span class="o">=</span> <span class="n">filters</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">tagged_filters</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">__label__</span><span class="p">]</span> <span class="o">=</span> <span class="n">filters</span>
+
+        <span class="c1">## Add filters</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_filters</span><span class="p">(</span><span class="n">tagged_filters</span><span class="p">)</span>
+
+        <span class="c1">## Add projections</span>
+        <span class="k">if</span> <span class="n">projections</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">attributes</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">extras</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">set_default_projections</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">default_projections</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_default_projections</span><span class="p">()</span>
+
+                <span class="k">if</span> <span class="n">attributes</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">attributes_filter</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">default_projections</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;attributes&#39;</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="c1">## Check if attributes_filter is not a list</span>
+                        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">attributes_filter</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                            <span class="n">attributes_filter</span> <span class="o">=</span> <span class="p">[</span><span class="n">attributes_filter</span><span class="p">]</span>
+                        <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">attributes_filter</span><span class="p">:</span>
+                            <span class="n">default_projections</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;attributes.&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">attr</span><span class="p">))</span>
+                <span class="k">elif</span> <span class="n">attributes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">attributes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">False</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">RestValidationError</span><span class="p">(</span><span class="s1">&#39;The attributes filter is false by default and can only be set to true.&#39;</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">extras</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">extras_filter</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">default_projections</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;extras&#39;</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="c1">## Check if extras_filter is not a list</span>
+                        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">extras_filter</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                            <span class="n">extras_filter</span> <span class="o">=</span> <span class="p">[</span><span class="n">extras_filter</span><span class="p">]</span>
+                        <span class="k">for</span> <span class="n">extra</span> <span class="ow">in</span> <span class="n">extras_filter</span><span class="p">:</span>
+                            <span class="n">default_projections</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;extras.&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">extra</span><span class="p">))</span>
+                <span class="k">elif</span> <span class="n">extras</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">extras</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">False</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">RestValidationError</span><span class="p">(</span><span class="s1">&#39;The extras filter is false by default and can only be set to true.&#39;</span><span class="p">)</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">set_projections</span><span class="p">({</span><span class="bp">self</span><span class="o">.</span><span class="n">__label__</span><span class="p">:</span> <span class="n">default_projections</span><span class="p">})</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">tagged_projections</span> <span class="o">=</span> <span class="p">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_result_type</span><span class="p">:</span> <span class="n">projections</span><span class="p">}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_projections</span><span class="p">(</span><span class="n">tagged_projections</span><span class="p">)</span>
+
+        <span class="c1">##Add order_by</span>
+        <span class="k">if</span> <span class="n">orders</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">tagged_orders</span> <span class="o">=</span> <span class="p">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_result_type</span><span class="p">:</span> <span class="n">orders</span><span class="p">}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_order</span><span class="p">(</span><span class="n">tagged_orders</span><span class="p">)</span>
+
+        <span class="c1">## Initialize the query_object</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">init_qb</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="BaseTranslator.get_query_help"><a class="viewcode-back" href="../../../../apidoc/aiida.restapi.translator.html#aiida.restapi.resources.BaseTranslator.get_query_help">[docs]</a>    <span class="k">def</span> <span class="nf">get_query_help</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :return: return QB json dictionary</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_query_help</span></div>
+
+<div class="viewcode-block" id="BaseTranslator.set_limit_offset"><a class="viewcode-back" href="../../../../apidoc/aiida.restapi.translator.html#aiida.restapi.resources.BaseTranslator.set_limit_offset">[docs]</a>    <span class="k">def</span> <span class="nf">set_limit_offset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        sets limits and offset directly to the query_builder object</span>
+
+<span class="sd">        :param limit:</span>
+<span class="sd">        :param offset:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1">## mandatory params</span>
+        <span class="c1"># none</span>
+
+        <span class="c1">## non-mandatory params</span>
+        <span class="k">if</span> <span class="n">limit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">limit</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">limit</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">InputValidationError</span><span class="p">(</span><span class="s1">&#39;Limit value must be an integer&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">limit</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">limit_default</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">RestValidationError</span><span class="p">(</span><span class="s1">&#39;Limit and perpage cannot be bigger than </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">limit_default</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">limit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">limit_default</span>
+
+        <span class="k">if</span> <span class="n">offset</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">offset</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">offset</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">InputValidationError</span><span class="p">(</span><span class="s1">&#39;Offset value must be an integer&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_qb_initialized</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">limit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">qbobj</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">limit</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">pass</span>
+            <span class="k">if</span> <span class="n">offset</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">qbobj</span><span class="o">.</span><span class="n">offset</span><span class="p">(</span><span class="n">offset</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">InvalidOperation</span><span class="p">(</span><span class="s1">&#39;query builder object has not been initialized.&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BaseTranslator.get_formatted_result"><a class="viewcode-back" href="../../../../apidoc/aiida.restapi.translator.html#aiida.restapi.resources.BaseTranslator.get_formatted_result">[docs]</a>    <span class="k">def</span> <span class="nf">get_formatted_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Runs the query and retrieves results tagged as &quot;label&quot;.</span>
+
+<span class="sd">        :param label: the tag of the results to be extracted out of</span>
+<span class="sd">          the query rows.</span>
+<span class="sd">        :type label: str</span>
+<span class="sd">        :return: a list of the query results</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_qb_initialized</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">InvalidOperation</span><span class="p">(</span><span class="s1">&#39;query builder object has not been initialized.&#39;</span><span class="p">)</span>
+
+        <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total_count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">qbobj</span><span class="o">.</span><span class="n">dict</span><span class="p">():</span>
+                <span class="n">tmp</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="n">label</span><span class="p">]</span>
+
+                <span class="c1"># Note: In code cleanup and design change, remove this node dependant part</span>
+                <span class="c1"># from base class and move it to node translator.</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_result_type</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;with_outgoing&#39;</span><span class="p">,</span> <span class="s1">&#39;with_incoming&#39;</span><span class="p">]:</span>
+                    <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;link_type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">__label__</span> <span class="o">+</span> <span class="s1">&#39;--&#39;</span> <span class="o">+</span> <span class="n">label</span><span class="p">][</span><span class="s1">&#39;type&#39;</span><span class="p">]</span>
+                    <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;link_label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">__label__</span> <span class="o">+</span> <span class="s1">&#39;--&#39;</span> <span class="o">+</span> <span class="n">label</span><span class="p">][</span><span class="s1">&#39;label&#39;</span><span class="p">]</span>
+                <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+
+        <span class="c1"># TODO think how to make it less hardcoded</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_result_type</span> <span class="o">==</span> <span class="s1">&#39;with_outgoing&#39;</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;incoming&#39;</span><span class="p">:</span> <span class="n">results</span><span class="p">}</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_result_type</span> <span class="o">==</span> <span class="s1">&#39;with_incoming&#39;</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;outgoing&#39;</span><span class="p">:</span> <span class="n">results</span><span class="p">}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="p">{</span><span class="bp">self</span><span class="o">.</span><span class="n">__label__</span><span class="p">:</span> <span class="n">results</span><span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">result</span></div>
+
+<div class="viewcode-block" id="BaseTranslator.get_results"><a class="viewcode-back" href="../../../../apidoc/aiida.restapi.translator.html#aiida.restapi.resources.BaseTranslator.get_results">[docs]</a>    <span class="k">def</span> <span class="nf">get_results</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns either list of nodes or details of single node from database.</span>
+
+<span class="sd">        :return: either list of nodes or details of single node from database</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1">## Check whether the querybuilder object has been initialized</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_qb_initialized</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">InvalidOperation</span><span class="p">(</span><span class="s1">&#39;query builder object has not been initialized.&#39;</span><span class="p">)</span>
+
+        <span class="c1">## Count the total number of rows returned by the query (if not</span>
+        <span class="c1"># already done)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total_count</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+
+        <span class="c1">## Retrieve data</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_formatted_result</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_result_type</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">data</span></div>
+
+<div class="viewcode-block" id="BaseTranslator._check_id_validity"><a class="viewcode-back" href="../../../../apidoc/aiida.restapi.translator.html#aiida.restapi.resources.BaseTranslator._check_id_validity">[docs]</a>    <span class="k">def</span> <span class="nf">_check_id_validity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node_id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Checks whether id corresponds to an object of the expected type,</span>
+<span class="sd">        whenever type is a valid column of the database (ex. for nodes,</span>
+<span class="sd">        but not for users)</span>
+
+<span class="sd">        :param node_id: id (or id starting pattern)</span>
+
+<span class="sd">        :return: True if node_id valid, False if invalid. If True, sets the id</span>
+<span class="sd">          filter attribute correctly</span>
+
+<span class="sd">        :raise RestValidationError: if no node is found or id pattern does</span>
+<span class="sd">          not identify a unique node</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">aiida.common.exceptions</span> <span class="kn">import</span> <span class="n">MultipleObjectsError</span><span class="p">,</span> <span class="n">NotExistent</span>
+        <span class="kn">from</span> <span class="nn">aiida.orm.utils.loaders</span> <span class="kn">import</span> <span class="n">IdentifierType</span><span class="p">,</span> <span class="n">get_loader</span>
+
+        <span class="n">loader</span> <span class="o">=</span> <span class="n">get_loader</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_aiida_class</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_uuid</span><span class="p">:</span>
+
+            <span class="c1"># For consistency check that id is a string</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="n">RestValidationError</span><span class="p">(</span><span class="s1">&#39;parameter id has to be a string&#39;</span><span class="p">)</span>
+
+            <span class="n">identifier_type</span> <span class="o">=</span> <span class="n">IdentifierType</span><span class="o">.</span><span class="n">UUID</span>
+            <span class="n">qbobj</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">loader</span><span class="o">.</span><span class="n">get_query_builder</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="n">identifier_type</span><span class="p">,</span> <span class="n">sub_classes</span><span class="o">=</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_aiida_class</span><span class="p">,))</span>
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="c1"># Similarly, check that id is an integer</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="n">RestValidationError</span><span class="p">(</span><span class="s1">&#39;parameter id has to be an integer&#39;</span><span class="p">)</span>
+
+            <span class="n">identifier_type</span> <span class="o">=</span> <span class="n">IdentifierType</span><span class="o">.</span><span class="n">ID</span>
+            <span class="n">qbobj</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">loader</span><span class="o">.</span><span class="n">get_query_builder</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="n">identifier_type</span><span class="p">,</span> <span class="n">sub_classes</span><span class="o">=</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_aiida_class</span><span class="p">,))</span>
+
+        <span class="c1"># For efficiency I don&#39;t go further than two results</span>
+        <span class="n">qbobj</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">pk</span> <span class="o">=</span> <span class="n">qbobj</span><span class="o">.</span><span class="n">one</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pk</span>
+        <span class="k">except</span> <span class="n">MultipleObjectsError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">RestInputValidationError</span><span class="p">(</span><span class="s1">&#39;More than one node found. Provide longer starting pattern for id.&#39;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">NotExistent</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">RestInputValidationError</span><span class="p">(</span>
+                <span class="s2">&quot;either no object&#39;s id starts&quot;</span>
+                <span class="s2">&quot; with &#39;</span><span class="si">{}</span><span class="s2">&#39; or the corresponding object&quot;</span>
+                <span class="s1">&#39; is not of type aiida.orm.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aiida_type</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># create a permanent filter</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_id_filter</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;==&#39;</span><span class="p">:</span> <span class="n">pk</span><span class="p">}}</span>
+            <span class="k">return</span> <span class="kc">True</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

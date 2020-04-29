@@ -1,0 +1,740 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aiida.plugins package &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>aiida.plugins package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/aiida.plugins.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-aiida.plugins">
+<span id="aiida-plugins-package"></span><h1>aiida.plugins package<a class="headerlink" href="#module-aiida.plugins" title="Permalink to this headline">¶</a></h1>
+<p>Classes and functions to load and interact with plugin classes accessible through defined entry points.</p>
+<dl class="function">
+<dt id="aiida.plugins.load_entry_point">
+<code class="sig-prename descclassname">aiida.plugins.</code><code class="sig-name descname">load_entry_point</code><span class="sig-paren">(</span><em class="sig-param">group</em>, <em class="sig-param">name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/entry_point.html#load_entry_point"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.load_entry_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the class registered under the entry point for a given name and group</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>group</strong> – the entry point group</p></li>
+<li><p><strong>name</strong> – the name of the entry point</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>class registered at the given entry point</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.8)"><strong>TypeError</strong></a> – if the entry_point_string is not a string type</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.8)"><strong>ValueError</strong></a> – if the entry_point_string cannot be split into two parts on the entry point string separator</p></li>
+<li><p><a class="reference internal" href="aiida.common.html#aiida.common.MissingEntryPointError" title="aiida.common.MissingEntryPointError"><strong>aiida.common.MissingEntryPointError</strong></a> – entry point was not registered</p></li>
+<li><p><a class="reference internal" href="aiida.common.html#aiida.common.MultipleEntryPointError" title="aiida.common.MultipleEntryPointError"><strong>aiida.common.MultipleEntryPointError</strong></a> – entry point could not be uniquely resolved</p></li>
+<li><p><a class="reference internal" href="aiida.common.html#aiida.common.LoadingEntryPointError" title="aiida.common.LoadingEntryPointError"><strong>aiida.common.LoadingEntryPointError</strong></a> – entry point could not be loaded</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.plugins.load_entry_point_from_string">
+<code class="sig-prename descclassname">aiida.plugins.</code><code class="sig-name descname">load_entry_point_from_string</code><span class="sig-paren">(</span><em class="sig-param">entry_point_string</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/entry_point.html#load_entry_point_from_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.load_entry_point_from_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the class registered for a given entry point string that determines group and name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entry_point_string</strong> – the entry point string</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>class registered at the given entry point</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.8)"><strong>TypeError</strong></a> – if the entry_point_string is not a string type</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.8)"><strong>ValueError</strong></a> – if the entry_point_string cannot be split into two parts on the entry point string separator</p></li>
+<li><p><a class="reference internal" href="aiida.common.html#aiida.common.MissingEntryPointError" title="aiida.common.MissingEntryPointError"><strong>aiida.common.MissingEntryPointError</strong></a> – entry point was not registered</p></li>
+<li><p><a class="reference internal" href="aiida.common.html#aiida.common.MultipleEntryPointError" title="aiida.common.MultipleEntryPointError"><strong>aiida.common.MultipleEntryPointError</strong></a> – entry point could not be uniquely resolved</p></li>
+<li><p><a class="reference internal" href="aiida.common.html#aiida.common.LoadingEntryPointError" title="aiida.common.LoadingEntryPointError"><strong>aiida.common.LoadingEntryPointError</strong></a> – entry point could not be loaded</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.plugins.BaseFactory">
+<code class="sig-prename descclassname">aiida.plugins.</code><code class="sig-name descname">BaseFactory</code><span class="sig-paren">(</span><em class="sig-param">group</em>, <em class="sig-param">name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/factories.html#BaseFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.BaseFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the plugin class registered under a given entry point group and name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>group</strong> – entry point group</p></li>
+<li><p><strong>name</strong> – entry point name</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the plugin class</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="aiida.common.html#aiida.common.MissingEntryPointError" title="aiida.common.MissingEntryPointError"><strong>aiida.common.MissingEntryPointError</strong></a> – entry point was not registered</p></li>
+<li><p><a class="reference internal" href="aiida.common.html#aiida.common.MultipleEntryPointError" title="aiida.common.MultipleEntryPointError"><strong>aiida.common.MultipleEntryPointError</strong></a> – entry point could not be uniquely resolved</p></li>
+<li><p><a class="reference internal" href="aiida.common.html#aiida.common.LoadingEntryPointError" title="aiida.common.LoadingEntryPointError"><strong>aiida.common.LoadingEntryPointError</strong></a> – entry point could not be loaded</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.plugins.CalculationFactory">
+<code class="sig-prename descclassname">aiida.plugins.</code><code class="sig-name descname">CalculationFactory</code><span class="sig-paren">(</span><em class="sig-param">entry_point_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/factories.html#CalculationFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.CalculationFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <cite>CalcJob</cite> sub class registered under the given entry point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entry_point_name</strong> – the entry point name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>sub class of <a class="reference internal" href="aiida.engine.processes.calcjobs.html#aiida.engine.processes.calcjobs.calcjob.CalcJob" title="aiida.engine.processes.calcjobs.calcjob.CalcJob"><code class="xref py py-class docutils literal notranslate"><span class="pre">CalcJob</span></code></a></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="aiida.common.html#aiida.common.InvalidEntryPointTypeError" title="aiida.common.InvalidEntryPointTypeError"><strong>aiida.common.InvalidEntryPointTypeError</strong></a> – if the type of the loaded entry point is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.plugins.DataFactory">
+<code class="sig-prename descclassname">aiida.plugins.</code><code class="sig-name descname">DataFactory</code><span class="sig-paren">(</span><em class="sig-param">entry_point_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/factories.html#DataFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.DataFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <cite>Data</cite> sub class registered under the given entry point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entry_point_name</strong> – the entry point name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>sub class of <a class="reference internal" href="aiida.orm.nodes.data.html#aiida.orm.nodes.data.data.Data" title="aiida.orm.nodes.data.data.Data"><code class="xref py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="aiida.common.html#aiida.common.InvalidEntryPointTypeError" title="aiida.common.InvalidEntryPointTypeError"><strong>aiida.common.InvalidEntryPointTypeError</strong></a> – if the type of the loaded entry point is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.plugins.DbImporterFactory">
+<code class="sig-prename descclassname">aiida.plugins.</code><code class="sig-name descname">DbImporterFactory</code><span class="sig-paren">(</span><em class="sig-param">entry_point_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/factories.html#DbImporterFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.DbImporterFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <cite>DbImporter</cite> sub class registered under the given entry point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entry_point_name</strong> – the entry point name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>sub class of <a class="reference internal" href="aiida.tools.dbimporters.html#aiida.tools.dbimporters.baseclasses.DbImporter" title="aiida.tools.dbimporters.baseclasses.DbImporter"><code class="xref py py-class docutils literal notranslate"><span class="pre">DbImporter</span></code></a></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="aiida.common.html#aiida.common.InvalidEntryPointTypeError" title="aiida.common.InvalidEntryPointTypeError"><strong>aiida.common.InvalidEntryPointTypeError</strong></a> – if the type of the loaded entry point is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.plugins.GroupFactory">
+<code class="sig-prename descclassname">aiida.plugins.</code><code class="sig-name descname">GroupFactory</code><span class="sig-paren">(</span><em class="sig-param">entry_point_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/factories.html#GroupFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.GroupFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <cite>Group</cite> sub class registered under the given entry point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entry_point_name</strong> – the entry point name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>sub class of <a class="reference internal" href="aiida.orm.html#aiida.orm.groups.Group" title="aiida.orm.groups.Group"><code class="xref py py-class docutils literal notranslate"><span class="pre">Group</span></code></a></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="aiida.common.html#aiida.common.InvalidEntryPointTypeError" title="aiida.common.InvalidEntryPointTypeError"><strong>aiida.common.InvalidEntryPointTypeError</strong></a> – if the type of the loaded entry point is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.plugins.OrbitalFactory">
+<code class="sig-prename descclassname">aiida.plugins.</code><code class="sig-name descname">OrbitalFactory</code><span class="sig-paren">(</span><em class="sig-param">entry_point_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/factories.html#OrbitalFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.OrbitalFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <cite>Orbital</cite> sub class registered under the given entry point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entry_point_name</strong> – the entry point name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>sub class of <a class="reference internal" href="aiida.tools.data.orbital.html#aiida.tools.data.orbital.orbital.Orbital" title="aiida.tools.data.orbital.orbital.Orbital"><code class="xref py py-class docutils literal notranslate"><span class="pre">Orbital</span></code></a></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="aiida.common.html#aiida.common.InvalidEntryPointTypeError" title="aiida.common.InvalidEntryPointTypeError"><strong>aiida.common.InvalidEntryPointTypeError</strong></a> – if the type of the loaded entry point is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.plugins.ParserFactory">
+<code class="sig-prename descclassname">aiida.plugins.</code><code class="sig-name descname">ParserFactory</code><span class="sig-paren">(</span><em class="sig-param">entry_point_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/factories.html#ParserFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.ParserFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <cite>Parser</cite> sub class registered under the given entry point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entry_point_name</strong> – the entry point name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>sub class of <a class="reference internal" href="aiida.parsers.html#aiida.parsers.parser.Parser" title="aiida.parsers.parser.Parser"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parser</span></code></a></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="aiida.common.html#aiida.common.InvalidEntryPointTypeError" title="aiida.common.InvalidEntryPointTypeError"><strong>aiida.common.InvalidEntryPointTypeError</strong></a> – if the type of the loaded entry point is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.plugins.SchedulerFactory">
+<code class="sig-prename descclassname">aiida.plugins.</code><code class="sig-name descname">SchedulerFactory</code><span class="sig-paren">(</span><em class="sig-param">entry_point_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/factories.html#SchedulerFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.SchedulerFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <cite>Scheduler</cite> sub class registered under the given entry point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entry_point_name</strong> – the entry point name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>sub class of <a class="reference internal" href="aiida.schedulers.html#aiida.schedulers.scheduler.Scheduler" title="aiida.schedulers.scheduler.Scheduler"><code class="xref py py-class docutils literal notranslate"><span class="pre">Scheduler</span></code></a></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="aiida.common.html#aiida.common.InvalidEntryPointTypeError" title="aiida.common.InvalidEntryPointTypeError"><strong>aiida.common.InvalidEntryPointTypeError</strong></a> – if the type of the loaded entry point is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.plugins.TransportFactory">
+<code class="sig-prename descclassname">aiida.plugins.</code><code class="sig-name descname">TransportFactory</code><span class="sig-paren">(</span><em class="sig-param">entry_point_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/factories.html#TransportFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.TransportFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <cite>Transport</cite> sub class registered under the given entry point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entry_point_name</strong> – the entry point name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>sub class of <a class="reference internal" href="aiida.transports.html#aiida.transports.transport.Transport" title="aiida.transports.transport.Transport"><code class="xref py py-class docutils literal notranslate"><span class="pre">Transport</span></code></a></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="aiida.common.html#aiida.common.InvalidEntryPointTypeError" title="aiida.common.InvalidEntryPointTypeError"><strong>aiida.common.InvalidEntryPointTypeError</strong></a> – if the type of the loaded entry point is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.plugins.WorkflowFactory">
+<code class="sig-prename descclassname">aiida.plugins.</code><code class="sig-name descname">WorkflowFactory</code><span class="sig-paren">(</span><em class="sig-param">entry_point_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/factories.html#WorkflowFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.WorkflowFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <cite>WorkChain</cite> sub class registered under the given entry point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entry_point_name</strong> – the entry point name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>sub class of <a class="reference internal" href="aiida.engine.processes.workchains.html#aiida.engine.processes.workchains.workchain.WorkChain" title="aiida.engine.processes.workchains.workchain.WorkChain"><code class="xref py py-class docutils literal notranslate"><span class="pre">WorkChain</span></code></a> or a <cite>workfunction</cite></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="aiida.common.html#aiida.common.InvalidEntryPointTypeError" title="aiida.common.InvalidEntryPointTypeError"><strong>aiida.common.InvalidEntryPointTypeError</strong></a> – if the type of the loaded entry point is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="module-aiida.plugins.entry_point">
+<span id="submodules"></span><h2>Submodules<a class="headerlink" href="#module-aiida.plugins.entry_point" title="Permalink to this headline">¶</a></h2>
+<p>Module to manage loading entrypoints.</p>
+<dl class="function">
+<dt id="aiida.plugins.entry_point.load_entry_point">
+<code class="sig-prename descclassname">aiida.plugins.entry_point.</code><code class="sig-name descname">load_entry_point</code><span class="sig-paren">(</span><em class="sig-param">group</em>, <em class="sig-param">name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/entry_point.html#load_entry_point"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.entry_point.load_entry_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the class registered under the entry point for a given name and group</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>group</strong> – the entry point group</p></li>
+<li><p><strong>name</strong> – the name of the entry point</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>class registered at the given entry point</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.8)"><strong>TypeError</strong></a> – if the entry_point_string is not a string type</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.8)"><strong>ValueError</strong></a> – if the entry_point_string cannot be split into two parts on the entry point string separator</p></li>
+<li><p><a class="reference internal" href="aiida.common.html#aiida.common.MissingEntryPointError" title="aiida.common.MissingEntryPointError"><strong>aiida.common.MissingEntryPointError</strong></a> – entry point was not registered</p></li>
+<li><p><a class="reference internal" href="aiida.common.html#aiida.common.MultipleEntryPointError" title="aiida.common.MultipleEntryPointError"><strong>aiida.common.MultipleEntryPointError</strong></a> – entry point could not be uniquely resolved</p></li>
+<li><p><a class="reference internal" href="aiida.common.html#aiida.common.LoadingEntryPointError" title="aiida.common.LoadingEntryPointError"><strong>aiida.common.LoadingEntryPointError</strong></a> – entry point could not be loaded</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.plugins.entry_point.load_entry_point_from_string">
+<code class="sig-prename descclassname">aiida.plugins.entry_point.</code><code class="sig-name descname">load_entry_point_from_string</code><span class="sig-paren">(</span><em class="sig-param">entry_point_string</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/entry_point.html#load_entry_point_from_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.entry_point.load_entry_point_from_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the class registered for a given entry point string that determines group and name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entry_point_string</strong> – the entry point string</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>class registered at the given entry point</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.8)"><strong>TypeError</strong></a> – if the entry_point_string is not a string type</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.8)"><strong>ValueError</strong></a> – if the entry_point_string cannot be split into two parts on the entry point string separator</p></li>
+<li><p><a class="reference internal" href="aiida.common.html#aiida.common.MissingEntryPointError" title="aiida.common.MissingEntryPointError"><strong>aiida.common.MissingEntryPointError</strong></a> – entry point was not registered</p></li>
+<li><p><a class="reference internal" href="aiida.common.html#aiida.common.MultipleEntryPointError" title="aiida.common.MultipleEntryPointError"><strong>aiida.common.MultipleEntryPointError</strong></a> – entry point could not be uniquely resolved</p></li>
+<li><p><a class="reference internal" href="aiida.common.html#aiida.common.LoadingEntryPointError" title="aiida.common.LoadingEntryPointError"><strong>aiida.common.LoadingEntryPointError</strong></a> – entry point could not be loaded</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-aiida.plugins.factories"></span><p>Definition of factories to load classes from the various plugin groups.</p>
+<dl class="function">
+<dt id="aiida.plugins.factories.BaseFactory">
+<code class="sig-prename descclassname">aiida.plugins.factories.</code><code class="sig-name descname">BaseFactory</code><span class="sig-paren">(</span><em class="sig-param">group</em>, <em class="sig-param">name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/factories.html#BaseFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.factories.BaseFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the plugin class registered under a given entry point group and name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>group</strong> – entry point group</p></li>
+<li><p><strong>name</strong> – entry point name</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the plugin class</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="aiida.common.html#aiida.common.MissingEntryPointError" title="aiida.common.MissingEntryPointError"><strong>aiida.common.MissingEntryPointError</strong></a> – entry point was not registered</p></li>
+<li><p><a class="reference internal" href="aiida.common.html#aiida.common.MultipleEntryPointError" title="aiida.common.MultipleEntryPointError"><strong>aiida.common.MultipleEntryPointError</strong></a> – entry point could not be uniquely resolved</p></li>
+<li><p><a class="reference internal" href="aiida.common.html#aiida.common.LoadingEntryPointError" title="aiida.common.LoadingEntryPointError"><strong>aiida.common.LoadingEntryPointError</strong></a> – entry point could not be loaded</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.plugins.factories.CalculationFactory">
+<code class="sig-prename descclassname">aiida.plugins.factories.</code><code class="sig-name descname">CalculationFactory</code><span class="sig-paren">(</span><em class="sig-param">entry_point_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/factories.html#CalculationFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.factories.CalculationFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <cite>CalcJob</cite> sub class registered under the given entry point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entry_point_name</strong> – the entry point name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>sub class of <a class="reference internal" href="aiida.engine.processes.calcjobs.html#aiida.engine.processes.calcjobs.calcjob.CalcJob" title="aiida.engine.processes.calcjobs.calcjob.CalcJob"><code class="xref py py-class docutils literal notranslate"><span class="pre">CalcJob</span></code></a></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="aiida.common.html#aiida.common.InvalidEntryPointTypeError" title="aiida.common.InvalidEntryPointTypeError"><strong>aiida.common.InvalidEntryPointTypeError</strong></a> – if the type of the loaded entry point is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.plugins.factories.DataFactory">
+<code class="sig-prename descclassname">aiida.plugins.factories.</code><code class="sig-name descname">DataFactory</code><span class="sig-paren">(</span><em class="sig-param">entry_point_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/factories.html#DataFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.factories.DataFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <cite>Data</cite> sub class registered under the given entry point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entry_point_name</strong> – the entry point name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>sub class of <a class="reference internal" href="aiida.orm.nodes.data.html#aiida.orm.nodes.data.data.Data" title="aiida.orm.nodes.data.data.Data"><code class="xref py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="aiida.common.html#aiida.common.InvalidEntryPointTypeError" title="aiida.common.InvalidEntryPointTypeError"><strong>aiida.common.InvalidEntryPointTypeError</strong></a> – if the type of the loaded entry point is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.plugins.factories.DbImporterFactory">
+<code class="sig-prename descclassname">aiida.plugins.factories.</code><code class="sig-name descname">DbImporterFactory</code><span class="sig-paren">(</span><em class="sig-param">entry_point_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/factories.html#DbImporterFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.factories.DbImporterFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <cite>DbImporter</cite> sub class registered under the given entry point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entry_point_name</strong> – the entry point name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>sub class of <a class="reference internal" href="aiida.tools.dbimporters.html#aiida.tools.dbimporters.baseclasses.DbImporter" title="aiida.tools.dbimporters.baseclasses.DbImporter"><code class="xref py py-class docutils literal notranslate"><span class="pre">DbImporter</span></code></a></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="aiida.common.html#aiida.common.InvalidEntryPointTypeError" title="aiida.common.InvalidEntryPointTypeError"><strong>aiida.common.InvalidEntryPointTypeError</strong></a> – if the type of the loaded entry point is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.plugins.factories.GroupFactory">
+<code class="sig-prename descclassname">aiida.plugins.factories.</code><code class="sig-name descname">GroupFactory</code><span class="sig-paren">(</span><em class="sig-param">entry_point_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/factories.html#GroupFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.factories.GroupFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <cite>Group</cite> sub class registered under the given entry point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entry_point_name</strong> – the entry point name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>sub class of <a class="reference internal" href="aiida.orm.html#aiida.orm.groups.Group" title="aiida.orm.groups.Group"><code class="xref py py-class docutils literal notranslate"><span class="pre">Group</span></code></a></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="aiida.common.html#aiida.common.InvalidEntryPointTypeError" title="aiida.common.InvalidEntryPointTypeError"><strong>aiida.common.InvalidEntryPointTypeError</strong></a> – if the type of the loaded entry point is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.plugins.factories.OrbitalFactory">
+<code class="sig-prename descclassname">aiida.plugins.factories.</code><code class="sig-name descname">OrbitalFactory</code><span class="sig-paren">(</span><em class="sig-param">entry_point_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/factories.html#OrbitalFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.factories.OrbitalFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <cite>Orbital</cite> sub class registered under the given entry point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entry_point_name</strong> – the entry point name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>sub class of <a class="reference internal" href="aiida.tools.data.orbital.html#aiida.tools.data.orbital.orbital.Orbital" title="aiida.tools.data.orbital.orbital.Orbital"><code class="xref py py-class docutils literal notranslate"><span class="pre">Orbital</span></code></a></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="aiida.common.html#aiida.common.InvalidEntryPointTypeError" title="aiida.common.InvalidEntryPointTypeError"><strong>aiida.common.InvalidEntryPointTypeError</strong></a> – if the type of the loaded entry point is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.plugins.factories.ParserFactory">
+<code class="sig-prename descclassname">aiida.plugins.factories.</code><code class="sig-name descname">ParserFactory</code><span class="sig-paren">(</span><em class="sig-param">entry_point_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/factories.html#ParserFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.factories.ParserFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <cite>Parser</cite> sub class registered under the given entry point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entry_point_name</strong> – the entry point name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>sub class of <a class="reference internal" href="aiida.parsers.html#aiida.parsers.parser.Parser" title="aiida.parsers.parser.Parser"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parser</span></code></a></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="aiida.common.html#aiida.common.InvalidEntryPointTypeError" title="aiida.common.InvalidEntryPointTypeError"><strong>aiida.common.InvalidEntryPointTypeError</strong></a> – if the type of the loaded entry point is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.plugins.factories.SchedulerFactory">
+<code class="sig-prename descclassname">aiida.plugins.factories.</code><code class="sig-name descname">SchedulerFactory</code><span class="sig-paren">(</span><em class="sig-param">entry_point_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/factories.html#SchedulerFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.factories.SchedulerFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <cite>Scheduler</cite> sub class registered under the given entry point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entry_point_name</strong> – the entry point name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>sub class of <a class="reference internal" href="aiida.schedulers.html#aiida.schedulers.scheduler.Scheduler" title="aiida.schedulers.scheduler.Scheduler"><code class="xref py py-class docutils literal notranslate"><span class="pre">Scheduler</span></code></a></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="aiida.common.html#aiida.common.InvalidEntryPointTypeError" title="aiida.common.InvalidEntryPointTypeError"><strong>aiida.common.InvalidEntryPointTypeError</strong></a> – if the type of the loaded entry point is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.plugins.factories.TransportFactory">
+<code class="sig-prename descclassname">aiida.plugins.factories.</code><code class="sig-name descname">TransportFactory</code><span class="sig-paren">(</span><em class="sig-param">entry_point_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/factories.html#TransportFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.factories.TransportFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <cite>Transport</cite> sub class registered under the given entry point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entry_point_name</strong> – the entry point name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>sub class of <a class="reference internal" href="aiida.transports.html#aiida.transports.transport.Transport" title="aiida.transports.transport.Transport"><code class="xref py py-class docutils literal notranslate"><span class="pre">Transport</span></code></a></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="aiida.common.html#aiida.common.InvalidEntryPointTypeError" title="aiida.common.InvalidEntryPointTypeError"><strong>aiida.common.InvalidEntryPointTypeError</strong></a> – if the type of the loaded entry point is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="aiida.plugins.factories.WorkflowFactory">
+<code class="sig-prename descclassname">aiida.plugins.factories.</code><code class="sig-name descname">WorkflowFactory</code><span class="sig-paren">(</span><em class="sig-param">entry_point_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/factories.html#WorkflowFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.factories.WorkflowFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <cite>WorkChain</cite> sub class registered under the given entry point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entry_point_name</strong> – the entry point name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>sub class of <a class="reference internal" href="aiida.engine.processes.workchains.html#aiida.engine.processes.workchains.workchain.WorkChain" title="aiida.engine.processes.workchains.workchain.WorkChain"><code class="xref py py-class docutils literal notranslate"><span class="pre">WorkChain</span></code></a> or a <cite>workfunction</cite></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="aiida.common.html#aiida.common.InvalidEntryPointTypeError" title="aiida.common.InvalidEntryPointTypeError"><strong>aiida.common.InvalidEntryPointTypeError</strong></a> – if the type of the loaded entry point is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-aiida.plugins.utils"></span><p>Utilities dealing with plugins and entry points.</p>
+<dl class="class">
+<dt id="aiida.plugins.utils.PluginVersionProvider">
+<em class="property">class </em><code class="sig-prename descclassname">aiida.plugins.utils.</code><code class="sig-name descname">PluginVersionProvider</code><a class="reference internal" href="../_modules/aiida/plugins/utils.html#PluginVersionProvider"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.utils.PluginVersionProvider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Utility class that determines version information about a given plugin resource.</p>
+<dl class="attribute">
+<dt id="aiida.plugins.utils.PluginVersionProvider.__dict__">
+<code class="sig-name descname">__dict__</code><em class="property"> = mappingproxy({'__module__': 'aiida.plugins.utils', '__doc__': 'Utility class that determines version information about a given plugin resource.', '__init__': &lt;function PluginVersionProvider.__init__&gt;, 'logger': &lt;property object&gt;, 'get_version_info': &lt;function PluginVersionProvider.get_version_info&gt;, '__dict__': &lt;attribute '__dict__' of 'PluginVersionProvider' objects&gt;, '__weakref__': &lt;attribute '__weakref__' of 'PluginVersionProvider' objects&gt;})</em><a class="headerlink" href="#aiida.plugins.utils.PluginVersionProvider.__dict__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aiida.plugins.utils.PluginVersionProvider.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/utils.html#PluginVersionProvider.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.utils.PluginVersionProvider.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.plugins.utils.PluginVersionProvider.__module__">
+<code class="sig-name descname">__module__</code><em class="property"> = 'aiida.plugins.utils'</em><a class="headerlink" href="#aiida.plugins.utils.PluginVersionProvider.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="aiida.plugins.utils.PluginVersionProvider.__weakref__">
+<code class="sig-name descname">__weakref__</code><a class="headerlink" href="#aiida.plugins.utils.PluginVersionProvider.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.plugins.utils.PluginVersionProvider.get_version_info">
+<code class="sig-name descname">get_version_info</code><span class="sig-paren">(</span><em class="sig-param">plugin</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/aiida/plugins/utils.html#PluginVersionProvider.get_version_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiida.plugins.utils.PluginVersionProvider.get_version_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the version information for a given plugin.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This container will keep a cache, so if this function was already called for the given <code class="docutils literal notranslate"><span class="pre">plugin</span></code> before
+for this instance, the result computer at last invocation will be returned.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>plugin</strong> – a class or function</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dictionary with the <cite>version.core</cite> and optionally <cite>version.plugin</cite> if it could be determined.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="aiida.plugins.utils.PluginVersionProvider.logger">
+<em class="property">property </em><code class="sig-name descname">logger</code><a class="headerlink" href="#aiida.plugins.utils.PluginVersionProvider.logger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

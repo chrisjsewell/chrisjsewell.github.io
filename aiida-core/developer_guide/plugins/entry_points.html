@@ -1,0 +1,447 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Entry Points &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/togglebutton.js"></script>
+        <script src="../../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Entry Points</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/developer_guide/plugins/entry_points.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="entry-points">
+<span id="plugins-entry-points"></span><h1>Entry Points<a class="headerlink" href="#entry-points" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-an-entry-point">
+<h2>What is an Entry Point?<a class="headerlink" href="#what-is-an-entry-point" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">setuptools</span></code> package to which <code class="docutils literal notranslate"><span class="pre">pip</span></code> is a frontend has a feature called
+<a class="reference external" href="https://setuptools.readthedocs.io/en/latest/setuptools.html#dynamic-discovery-of-services-and-plugins">entry points</a>.
+When a distribution which registers entry points is installed,
+the entry point specifications are written to a file inside the distribution’s
+<code class="docutils literal notranslate"><span class="pre">.egg-info</span></code> folder. <code class="docutils literal notranslate"><span class="pre">setuptools</span></code> provides a package <code class="docutils literal notranslate"><span class="pre">pkg_resources</span></code> which
+can find these entry points by distribution, group and/or name and load the
+data structure to which it points.</p>
+<p>This is the way AiiDA finds plugins and and loads the functionality they provide.</p>
+</div>
+<div class="section" id="aiida-entry-points">
+<span id="plugins-aiida-entry-points"></span><h2>AiiDA Entry Points<a class="headerlink" href="#aiida-entry-points" title="Permalink to this headline">¶</a></h2>
+<p>AiiDA defines a set of entry point groups that it will search for new functionality provided by plugins.
+You can list those groups and their contents via:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">verdi</span> <span class="n">plugin</span> <span class="nb">list</span>  <span class="c1"># list all groups</span>
+<span class="n">verdi</span> <span class="n">plugin</span> <span class="nb">list</span> <span class="n">aiida</span><span class="o">.</span><span class="n">calculations</span>  <span class="c1"># show contents of one group</span>
+</pre></div>
+</div>
+<p>Plugin packages can add new entry points through the <code class="docutils literal notranslate"><span class="pre">entry_points</span></code> field in the <code class="docutils literal notranslate"><span class="pre">setup.json</span></code> file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
+   <span class="o">&lt;</span><span class="n">Entry</span> <span class="n">Point</span> <span class="n">Group</span><span class="o">&gt;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="o">&lt;</span><span class="n">Entry</span> <span class="n">Point</span> <span class="n">Specification</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="o">...</span>
+   <span class="p">],</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">&lt;Entry</span> <span class="pre">Point</span> <span class="pre">Group&gt;</span></code> can be any of the groups shown in the output of <code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">plugin</span> <span class="pre">list</span></code>, and the <code class="docutils literal notranslate"><span class="pre">&lt;Entry</span> <span class="pre">Point</span> <span class="pre">Specification&gt;</span></code> contains the entry point name and the path to the Python object it points to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;mycode.mydat = aiida_mycode.data.mydat:MyData&quot;</span>
+</pre></div>
+</div>
+<p>We <em>strongly</em> suggest to start the name of each entry point with the name of the plugin package (omitting the ‘aiida-‘ prefix).
+For a package <code class="docutils literal notranslate"><span class="pre">aiida-mycode</span></code>, this leads to specifications like <code class="docutils literal notranslate"><span class="pre">&quot;mycode.&lt;something&gt;</span> <span class="pre">=</span> <span class="pre">&lt;module.path:class&gt;&quot;</span></code>.
+Exceptions to this rule can be tolerated if required for backwards compatibility.</p>
+<p>Below, we list the entry point groups defined and searched by AiiDA.</p>
+</div>
+<div class="section" id="aiida-calculations">
+<h2><code class="docutils literal notranslate"><span class="pre">aiida.calculations</span></code><a class="headerlink" href="#aiida-calculations" title="Permalink to this headline">¶</a></h2>
+<p>Entry points in this group are expected to be subclasses of <a class="reference internal" href="../../apidoc/aiida.orm.nodes.process.calculation.html#aiida.orm.nodes.process.calculation.calcjob.CalcJobNode" title="aiida.orm.nodes.process.calculation.calcjob.CalcJobNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">aiida.orm.JobCalculation</span></code></a>. This replaces the previous method of placing a python module with the class in question inside the <code class="docutils literal notranslate"><span class="pre">aiida/orm/calculation/job</span></code> subpackage.</p>
+<p>Example entry point specification:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
+   <span class="s2">&quot;aiida.calculations&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;mycode.mycode = aiida_mycode.calcs.mycode:MycodeCalculation&quot;</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">aiida_mycode/calcs/mycode.py</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aiida.orm</span> <span class="kn">import</span> <span class="n">JobCalculation</span>
+<span class="k">class</span> <span class="nc">MycodeCalculation</span><span class="p">(</span><span class="n">JobCalculation</span><span class="p">):</span>
+   <span class="o">...</span>
+</pre></div>
+</div>
+<p>Will lead to usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aiida.plugins</span> <span class="kn">import</span> <span class="n">CalculationFactory</span>
+<span class="n">calc</span> <span class="o">=</span> <span class="n">CalculationFactory</span><span class="p">(</span><span class="s1">&#39;mycode.mycode&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="aiida-parsers">
+<h2><code class="docutils literal notranslate"><span class="pre">aiida.parsers</span></code><a class="headerlink" href="#aiida-parsers" title="Permalink to this headline">¶</a></h2>
+<p>Aiida expects a subclass of <code class="docutils literal notranslate"><span class="pre">Parser</span></code>. Replaces the previous approach consisting in placing a parser module under <code class="docutils literal notranslate"><span class="pre">aiida/parsers/plugins</span></code>.</p>
+<p>Example spec:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
+   <span class="s2">&quot;aiida.calculations&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;mycode.mycode = aiida_mycode.parsers.mycode:MycodeParser&quot;</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">aida_mycode/parsers/myparser.py</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aiida.parsers</span> <span class="kn">import</span> <span class="n">Parser</span>
+<span class="k">class</span> <span class="nc">MycodeParser</span><span class="p">(</span><span class="n">Parser</span><span class="p">)</span>
+   <span class="o">...</span>
+</pre></div>
+</div>
+<p>Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aiida.plugins</span> <span class="kn">import</span> <span class="n">ParserFactory</span>
+<span class="n">parser</span> <span class="o">=</span> <span class="n">ParserFactory</span><span class="p">(</span><span class="s1">&#39;mycode.mycode&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="aiida-data">
+<h2><code class="docutils literal notranslate"><span class="pre">aiida.data</span></code><a class="headerlink" href="#aiida-data" title="Permalink to this headline">¶</a></h2>
+<p>Group for <a class="reference internal" href="../../apidoc/aiida.orm.nodes.data.html#aiida.orm.nodes.data.data.Data" title="aiida.orm.nodes.data.data.Data"><code class="xref py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> subclasses. Previously located in a subpackage of <code class="docutils literal notranslate"><span class="pre">aiida/orm/data</span></code>.</p>
+<p>Spec:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
+   <span class="s2">&quot;aiida.data&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;mycode.mydata = aiida_mycode.data.mydat:MyData&quot;</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">aiida_mycode/data/mydat.py</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aiida.orm</span> <span class="kn">import</span> <span class="n">Data</span>
+<span class="k">class</span> <span class="nc">MyData</span><span class="p">(</span><span class="n">Data</span><span class="p">):</span>
+   <span class="o">...</span>
+</pre></div>
+</div>
+<p>Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aiida.plugins</span> <span class="kn">import</span> <span class="n">DataFactory</span>
+<span class="n">params</span> <span class="o">=</span> <span class="n">DataFactory</span><span class="p">(</span><span class="s1">&#39;mycode.mydata&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="aiida-workflows">
+<h2><code class="docutils literal notranslate"><span class="pre">aiida.workflows</span></code><a class="headerlink" href="#aiida-workflows" title="Permalink to this headline">¶</a></h2>
+<p>Package AiiDA workflows as follows:</p>
+<p>Spec:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
+   <span class="s2">&quot;aiida.workflows&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;mycode.mywf = aiida_mycode.workflows.mywf:MyWorkflow&quot;</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">aiida_mycode/workflows/mywf.py</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aiida.engine.workchain</span> <span class="kn">import</span> <span class="n">WorkChain</span>
+<span class="k">class</span> <span class="nc">MyWorkflow</span><span class="p">(</span><span class="n">WorkChain</span><span class="p">):</span>
+   <span class="o">...</span>
+</pre></div>
+</div>
+<p>Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aiida.plugins</span> <span class="kn">import</span> <span class="n">WorkflowFactory</span>
+<span class="n">wf</span> <span class="o">=</span> <span class="n">WorkflowFactory</span><span class="p">(</span><span class="s1">&#39;mycode.mywf&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For old-style workflows the entry point mechanism of the plugin system is not supported.
+Therefore one cannot load these workflows with the <code class="docutils literal notranslate"><span class="pre">WorkflowFactory</span></code>.
+The only way to run these, is to store their source code in the <code class="docutils literal notranslate"><span class="pre">aiida/workflows/user</span></code> directory and use normal python imports to load the classes.</p>
+</div>
+</div>
+<div class="section" id="aiida-cmdline">
+<h2><code class="docutils literal notranslate"><span class="pre">aiida.cmdline</span></code><a class="headerlink" href="#aiida-cmdline" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">verdi</span></code> uses the <cite>click_</cite> framework, which makes it possible to add new subcommands to existing verdi commands, such as <code class="docutils literal notranslate"><span class="pre">verdi</span> <span class="pre">data</span> <span class="pre">mydata</span></code>.
+AiiDA expects each entry point to be either a <code class="docutils literal notranslate"><span class="pre">click.Command</span></code> or <code class="docutils literal notranslate"><span class="pre">click.CommandGroup</span></code>.</p>
+<p>Spec:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
+   <span class="s2">&quot;aiida.cmdline.data&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;mydata = aiida_mycode.commands.mydata:mydata&quot;</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">aiida_mycode/commands/mydata.py</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">click</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+<span class="n">mydata</span><span class="p">():</span>
+   <span class="sd">&quot;&quot;&quot;commandline help for mydata command&quot;&quot;&quot;</span>
+
+<span class="nd">@mydata</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s1">&#39;animate&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--format&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">argument</span><span class="p">(</span><span class="s1">&#39;pk&#39;</span><span class="p">)</span>
+<span class="n">create_fancy_animation</span><span class="p">(</span><span class="nb">format</span><span class="p">,</span> <span class="n">pk</span><span class="p">):</span>
+   <span class="sd">&quot;&quot;&quot;help&quot;&quot;&quot;</span>
+   <span class="o">...</span>
+</pre></div>
+</div>
+<p>Usage:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>verdi data mydata animate --format<span class="o">=</span>Format PK
+</pre></div>
+</div>
+</div>
+<div class="section" id="aiida-tools-dbexporters">
+<h2><code class="docutils literal notranslate"><span class="pre">aiida.tools.dbexporters</span></code><a class="headerlink" href="#aiida-tools-dbexporters" title="Permalink to this headline">¶</a></h2>
+<p>If your plugin package adds support for exporting to an external database, use this entry point to have aiida find the module where you define the necessary functions.</p>
+</div>
+<div class="section" id="aiida-tools-dbimporters">
+<h2><code class="docutils literal notranslate"><span class="pre">aiida.tools.dbimporters</span></code><a class="headerlink" href="#aiida-tools-dbimporters" title="Permalink to this headline">¶</a></h2>
+<p>If your plugin package adds support for importing from an external database, use this entry point to have aiida find the module where you define the necessary functions.</p>
+</div>
+<div class="section" id="aiida-schedulers">
+<h2><code class="docutils literal notranslate"><span class="pre">aiida.schedulers</span></code><a class="headerlink" href="#aiida-schedulers" title="Permalink to this headline">¶</a></h2>
+<p>We recommend naming the plugin package after the scheduler (e.g. <code class="docutils literal notranslate"><span class="pre">aiida-myscheduler</span></code>), so that the entry point name can simply equal the name of the scheduler:</p>
+<p>Spec:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
+   <span class="s2">&quot;aiida.schedulers&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;myscheduler = aiida_myscheduler.myscheduler:MyScheduler&quot;</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">aiida_myscheduler/myscheduler.py</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aiida.schedulers</span> <span class="kn">import</span> <span class="n">Scheduler</span>
+<span class="k">class</span> <span class="nc">MyScheduler</span><span class="p">(</span><span class="n">Scheduler</span><span class="p">):</span>
+   <span class="o">...</span>
+</pre></div>
+</div>
+<p>Usage: The scheduler is used in the familiar way by entering ‘myscheduler’ as the scheduler option when setting up a computer.</p>
+</div>
+<div class="section" id="aiida-transports">
+<h2><code class="docutils literal notranslate"><span class="pre">aiida.transports</span></code><a class="headerlink" href="#aiida-transports" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">aiida-core</span></code> ships with two modes of transporting files and folders to remote computers: <code class="docutils literal notranslate"><span class="pre">ssh</span></code> and <code class="docutils literal notranslate"><span class="pre">local</span></code> (stub for when the remote computer is actually the same).
+We recommend naming the plugin package after the mode of transport (e.g. <code class="docutils literal notranslate"><span class="pre">aiida-mytransport</span></code>), so that the entry point name can simply equal the name of the transport:</p>
+<p>Spec:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
+   <span class="s2">&quot;aiida.transports&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;mytransport = aiida_mytransport.mytransport:MyTransport&quot;</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">aiida_mytransport/mytransport.py</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aiida.transports</span> <span class="kn">import</span> <span class="n">Transport</span>
+<span class="k">class</span> <span class="nc">MyTransport</span><span class="p">(</span><span class="n">Transport</span><span class="p">):</span>
+   <span class="o">...</span>
+</pre></div>
+</div>
+<p>Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aiida.plugins</span> <span class="kn">import</span> <span class="n">TransportFactory</span>
+<span class="n">transport</span> <span class="o">=</span> <span class="n">TransportFactory</span><span class="p">(</span><span class="s1">&#39;mytransport&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When setting up a new computer, specify <code class="docutils literal notranslate"><span class="pre">mytransport</span></code> as the transport mode.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

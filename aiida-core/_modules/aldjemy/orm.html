@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aldjemy.orm &mdash; AiiDA 1.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/togglebutton.js"></script>
+        <script src="../../_static/contentui.js"></script>
+        <script >var togglebuttonSelector = '.toggle';</script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> AiiDA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/about.html">What is AiiDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/get_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/installation.html">Advanced Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Plugins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../plugins/placeholder.html">Placeholder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../development/placeholder.html">Placeholder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">AiiDA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>aldjemy.orm</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for aldjemy.orm</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">orm</span>
+<span class="kn">import</span> <span class="nn">django</span>
+<span class="kn">from</span> <span class="nn">django.db.models.fields.related</span> <span class="kn">import</span> <span class="p">(</span><span class="n">ForeignKey</span><span class="p">,</span> <span class="n">OneToOneField</span><span class="p">,</span>
+        <span class="n">ManyToManyField</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">connections</span><span class="p">,</span> <span class="n">router</span>
+<span class="kn">from</span> <span class="nn">django.db.backends</span> <span class="kn">import</span> <span class="n">signals</span>
+<span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>
+
+<span class="kn">from</span> <span class="nn">.core</span> <span class="kn">import</span> <span class="n">get_meta</span><span class="p">,</span> <span class="n">get_engine</span><span class="p">,</span> <span class="n">Cache</span>
+<span class="kn">from</span> <span class="nn">.table</span> <span class="kn">import</span> <span class="n">get_django_models</span><span class="p">,</span> <span class="n">generate_tables</span>
+
+
+<span class="k">def</span> <span class="nf">get_session</span><span class="p">(</span><span class="n">alias</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">recreate</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">connection</span> <span class="o">=</span> <span class="n">connections</span><span class="p">[</span><span class="n">alias</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">connection</span><span class="p">,</span> <span class="s1">&#39;sa_session&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">recreate</span><span class="p">:</span>
+        <span class="n">engine</span> <span class="o">=</span> <span class="n">get_engine</span><span class="p">(</span><span class="n">alias</span><span class="p">)</span>
+        <span class="n">session</span> <span class="o">=</span> <span class="n">orm</span><span class="o">.</span><span class="n">sessionmaker</span><span class="p">(</span><span class="n">bind</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
+        <span class="n">connection</span><span class="o">.</span><span class="n">sa_session</span> <span class="o">=</span> <span class="n">session</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">connection</span><span class="o">.</span><span class="n">sa_session</span>
+
+
+<span class="k">def</span> <span class="nf">new_session</span><span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="n">connection</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">connection</span><span class="o">.</span><span class="n">alias</span> <span class="ow">in</span> <span class="n">settings</span><span class="o">.</span><span class="n">DATABASES</span><span class="p">:</span>
+        <span class="n">get_session</span><span class="p">(</span><span class="n">alias</span><span class="o">=</span><span class="n">connection</span><span class="o">.</span><span class="n">alias</span><span class="p">,</span> <span class="n">recreate</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="n">signals</span><span class="o">.</span><span class="n">connection_created</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">new_session</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">get_remote_field</span><span class="p">(</span><span class="n">foreign_key</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">django</span><span class="o">.</span><span class="n">VERSION</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">foreign_key</span><span class="o">.</span><span class="n">related</span>
+    <span class="k">elif</span> <span class="n">django</span><span class="o">.</span><span class="n">VERSION</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">foreign_key</span><span class="o">.</span><span class="n">rel</span>
+    <span class="k">return</span> <span class="n">foreign_key</span><span class="o">.</span><span class="n">remote_field</span>
+
+
+<span class="k">def</span> <span class="nf">_extract_model_attrs</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">sa_models</span><span class="p">):</span>
+    <span class="n">tables</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">tables</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">db_table</span>
+    <span class="n">qualname</span> <span class="o">=</span> <span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">schema</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span> <span class="k">if</span> <span class="n">metadata</span><span class="o">.</span><span class="n">schema</span> <span class="k">else</span> <span class="n">name</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="n">tables</span><span class="p">[</span><span class="n">qualname</span><span class="p">]</span>
+    <span class="n">fks</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">fields</span>
+             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="n">ForeignKey</span><span class="p">,</span> <span class="n">OneToOneField</span><span class="p">))]</span>
+    <span class="n">attrs</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">rel_fields</span> <span class="o">=</span> <span class="n">fks</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">many_to_many</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">fields</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ForeignKey</span><span class="p">,</span> <span class="n">OneToOneField</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">model</span> <span class="o">!=</span> <span class="n">model</span> <span class="ow">or</span> <span class="n">f</span><span class="o">.</span><span class="n">column</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">c</span><span class="p">:</span>
+                <span class="k">continue</span>  <span class="c1"># Fields from parent model are not supported</span>
+            <span class="n">attrs</span><span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">orm</span><span class="o">.</span><span class="n">column_property</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">c</span><span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">column</span><span class="p">])</span>
+
+    <span class="k">for</span> <span class="n">fk</span> <span class="ow">in</span> <span class="n">rel_fields</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">fk</span><span class="o">.</span><span class="n">column</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">c</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fk</span><span class="p">,</span> <span class="n">ManyToManyField</span><span class="p">):</span>
+            <span class="k">continue</span>
+
+        <span class="k">if</span> <span class="n">django</span><span class="o">.</span><span class="n">VERSION</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
+            <span class="n">parent_model</span> <span class="o">=</span> <span class="n">fk</span><span class="o">.</span><span class="n">related</span><span class="o">.</span><span class="n">parent_model</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">parent_model</span> <span class="o">=</span> <span class="n">get_remote_field</span><span class="p">(</span><span class="n">fk</span><span class="p">)</span><span class="o">.</span><span class="n">model</span>
+
+        <span class="n">parent_model_meta</span> <span class="o">=</span> <span class="n">parent_model</span><span class="o">.</span><span class="n">_meta</span>
+
+        <span class="k">if</span> <span class="n">parent_model_meta</span><span class="o">.</span><span class="n">proxy</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="n">p_table_name</span> <span class="o">=</span> <span class="n">parent_model_meta</span><span class="o">.</span><span class="n">db_table</span>
+        <span class="n">p_table_qualname</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">metadata</span><span class="o">.</span><span class="n">schema</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">p_table_name</span>
+            <span class="k">if</span> <span class="n">metadata</span><span class="o">.</span><span class="n">schema</span> <span class="k">else</span> <span class="n">p_table_name</span>
+        <span class="p">)</span>
+        <span class="n">p_table</span> <span class="o">=</span> <span class="n">tables</span><span class="p">[</span><span class="n">p_table_qualname</span><span class="p">]</span>
+        <span class="n">p_name</span> <span class="o">=</span> <span class="n">parent_model_meta</span><span class="o">.</span><span class="n">pk</span><span class="o">.</span><span class="n">column</span>
+
+        <span class="k">if</span> <span class="n">django</span><span class="o">.</span><span class="n">VERSION</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">):</span>
+            <span class="n">disable_backref</span> <span class="o">=</span> <span class="n">fk</span><span class="o">.</span><span class="n">rel</span><span class="o">.</span><span class="n">related_name</span> <span class="ow">and</span> <span class="n">fk</span><span class="o">.</span><span class="n">rel</span><span class="o">.</span><span class="n">related_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
+            <span class="n">backref</span> <span class="o">=</span> <span class="p">(</span><span class="n">fk</span><span class="o">.</span><span class="n">rel</span><span class="o">.</span><span class="n">related_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
+                       <span class="k">if</span> <span class="n">fk</span><span class="o">.</span><span class="n">rel</span><span class="o">.</span><span class="n">related_name</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">disable_backref</span> <span class="o">=</span> <span class="n">fk</span><span class="o">.</span><span class="n">remote_field</span><span class="o">.</span><span class="n">related_name</span> <span class="ow">and</span> <span class="n">fk</span><span class="o">.</span><span class="n">remote_field</span><span class="o">.</span><span class="n">related_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
+            <span class="n">backref</span> <span class="o">=</span> <span class="p">(</span><span class="n">fk</span><span class="o">.</span><span class="n">remote_field</span><span class="o">.</span><span class="n">related_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
+                       <span class="k">if</span> <span class="n">fk</span><span class="o">.</span><span class="n">remote_field</span><span class="o">.</span><span class="n">related_name</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">backref</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">disable_backref</span><span class="p">:</span>
+            <span class="n">backref</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">object_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fk</span><span class="p">,</span> <span class="n">OneToOneField</span><span class="p">):</span>
+                <span class="n">backref</span> <span class="o">=</span> <span class="n">backref</span> <span class="o">+</span> <span class="s1">&#39;_set&#39;</span>
+        <span class="k">elif</span> <span class="n">backref</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fk</span><span class="p">,</span> <span class="n">OneToOneField</span><span class="p">):</span>
+            <span class="n">backref</span> <span class="o">=</span> <span class="n">orm</span><span class="o">.</span><span class="n">backref</span><span class="p">(</span><span class="n">backref</span><span class="p">,</span> <span class="n">uselist</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="n">kw</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fk</span><span class="p">,</span> <span class="n">ManyToManyField</span><span class="p">):</span>
+            <span class="n">model_pk</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">pk</span><span class="o">.</span><span class="n">column</span>
+            <span class="n">sec_table_name</span> <span class="o">=</span> <span class="n">get_remote_field</span><span class="p">(</span><span class="n">fk</span><span class="p">)</span><span class="o">.</span><span class="n">field</span><span class="o">.</span><span class="n">m2m_db_table</span><span class="p">()</span>
+            <span class="n">sec_table_qualname</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">metadata</span><span class="o">.</span><span class="n">schema</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">sec_table_name</span>
+                <span class="k">if</span> <span class="n">metadata</span><span class="o">.</span><span class="n">schema</span> <span class="k">else</span> <span class="n">sec_table_name</span>
+            <span class="p">)</span>
+            <span class="n">sec_table</span> <span class="o">=</span> <span class="n">tables</span><span class="p">[</span><span class="n">sec_table_qualname</span><span class="p">]</span>
+            <span class="n">sec_column</span> <span class="o">=</span> <span class="n">fk</span><span class="o">.</span><span class="n">m2m_column_name</span><span class="p">()</span>
+            <span class="n">p_sec_column</span> <span class="o">=</span> <span class="n">fk</span><span class="o">.</span><span class="n">m2m_reverse_name</span><span class="p">()</span>
+            <span class="n">kw</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                <span class="n">secondary</span><span class="o">=</span><span class="n">sec_table</span><span class="p">,</span>
+                <span class="n">primaryjoin</span><span class="o">=</span><span class="p">(</span><span class="n">sec_table</span><span class="o">.</span><span class="n">c</span><span class="p">[</span><span class="n">sec_column</span><span class="p">]</span> <span class="o">==</span> <span class="n">table</span><span class="o">.</span><span class="n">c</span><span class="p">[</span><span class="n">model_pk</span><span class="p">]),</span>
+                <span class="n">secondaryjoin</span><span class="o">=</span><span class="p">(</span><span class="n">sec_table</span><span class="o">.</span><span class="n">c</span><span class="p">[</span><span class="n">p_sec_column</span><span class="p">]</span> <span class="o">==</span> <span class="n">p_table</span><span class="o">.</span><span class="n">c</span><span class="p">[</span><span class="n">p_name</span><span class="p">])</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="n">fk</span><span class="o">.</span><span class="n">model</span><span class="p">()</span> <span class="o">!=</span> <span class="n">model</span><span class="p">:</span>
+                <span class="n">backref</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">kw</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                <span class="n">foreign_keys</span><span class="o">=</span><span class="p">[</span><span class="n">table</span><span class="o">.</span><span class="n">c</span><span class="p">[</span><span class="n">fk</span><span class="o">.</span><span class="n">column</span><span class="p">]],</span>
+                <span class="n">primaryjoin</span><span class="o">=</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">c</span><span class="p">[</span><span class="n">fk</span><span class="o">.</span><span class="n">column</span><span class="p">]</span> <span class="o">==</span> <span class="n">p_table</span><span class="o">.</span><span class="n">c</span><span class="p">[</span><span class="n">p_name</span><span class="p">]),</span>
+                <span class="n">remote_side</span><span class="o">=</span><span class="n">p_table</span><span class="o">.</span><span class="n">c</span><span class="p">[</span><span class="n">p_name</span><span class="p">],</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="n">backref</span><span class="p">:</span>
+                <span class="n">kw</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">backref</span><span class="o">=</span><span class="n">backref</span><span class="p">)</span>
+        <span class="n">attrs</span><span class="p">[</span><span class="n">fk</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">orm</span><span class="o">.</span><span class="n">relationship</span><span class="p">(</span>
+                <span class="n">sa_models</span><span class="p">[</span><span class="n">parent_model</span><span class="p">],</span>
+                <span class="o">**</span><span class="n">kw</span>
+                <span class="p">)</span>
+    <span class="k">return</span> <span class="n">attrs</span>
+
+
+<span class="k">def</span> <span class="nf">prepare_models</span><span class="p">():</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="n">get_meta</span><span class="p">()</span>
+    <span class="n">models</span> <span class="o">=</span> <span class="p">[</span><span class="n">model</span> <span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">get_django_models</span><span class="p">()</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">model</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">proxy</span><span class="p">]</span>
+    <span class="n">Cache</span><span class="o">.</span><span class="n">sa_models</span> <span class="o">=</span> <span class="n">construct_models</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span>
+    <span class="n">Cache</span><span class="o">.</span><span class="n">models</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">models</span><span class="p">:</span>
+        <span class="n">table_name</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">metadata</span><span class="o">.</span><span class="n">schema</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">model</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">db_table</span>
+            <span class="k">if</span> <span class="n">metadata</span><span class="o">.</span><span class="n">schema</span> <span class="k">else</span> <span class="n">model</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">db_table</span>
+        <span class="p">)</span>
+        <span class="n">Cache</span><span class="o">.</span><span class="n">models</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">Cache</span><span class="o">.</span><span class="n">sa_models</span><span class="p">[</span><span class="n">model</span><span class="p">]</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">sa</span> <span class="o">=</span> <span class="n">Cache</span><span class="o">.</span><span class="n">sa_models</span><span class="p">[</span><span class="n">model</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">construct_models</span><span class="p">(</span><span class="n">metadata</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">metadata</span><span class="o">.</span><span class="n">tables</span><span class="p">:</span>
+        <span class="n">generate_tables</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span>
+    <span class="n">tables</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">tables</span>
+    <span class="n">models</span> <span class="o">=</span> <span class="p">[</span><span class="n">model</span> <span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">get_django_models</span><span class="p">()</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">model</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">proxy</span><span class="p">]</span>
+
+    <span class="n">sa_models_by_django_models</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">models</span><span class="p">:</span>
+
+        <span class="n">table_name</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">metadata</span><span class="o">.</span><span class="n">schema</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">model</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">db_table</span>
+            <span class="k">if</span> <span class="n">metadata</span><span class="o">.</span><span class="n">schema</span> <span class="k">else</span> <span class="n">model</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">db_table</span>
+        <span class="p">)</span>
+        <span class="n">mixin</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;aldjemy_mixin&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">bases</span> <span class="o">=</span> <span class="p">(</span><span class="n">mixin</span><span class="p">,</span> <span class="n">BaseSQLAModel</span><span class="p">)</span> <span class="k">if</span> <span class="n">mixin</span> <span class="k">else</span> <span class="p">(</span><span class="n">BaseSQLAModel</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="n">tables</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span>
+
+        <span class="c1"># because querying happens on sqlalchemy side, we can use only one</span>
+        <span class="c1"># type of queries for alias, so we use &#39;read&#39; type</span>
+        <span class="n">sa_model</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">object_name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span>
+                        <span class="p">{</span><span class="s1">&#39;table&#39;</span><span class="p">:</span> <span class="n">table</span><span class="p">,</span>
+                         <span class="s1">&#39;alias&#39;</span><span class="p">:</span> <span class="n">router</span><span class="o">.</span><span class="n">db_for_read</span><span class="p">(</span><span class="n">model</span><span class="p">)})</span>
+
+        <span class="n">sa_models_by_django_models</span><span class="p">[</span><span class="n">model</span><span class="p">]</span> <span class="o">=</span> <span class="n">sa_model</span>
+
+    <span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">models</span><span class="p">:</span>
+        <span class="n">sa_model</span> <span class="o">=</span> <span class="n">sa_models_by_django_models</span><span class="p">[</span><span class="n">model</span><span class="p">]</span>
+        <span class="n">table_name</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">metadata</span><span class="o">.</span><span class="n">schema</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">model</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">db_table</span>
+            <span class="k">if</span> <span class="n">metadata</span><span class="o">.</span><span class="n">schema</span> <span class="k">else</span> <span class="n">model</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">db_table</span>
+        <span class="p">)</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="n">tables</span><span class="p">[</span><span class="n">table_name</span><span class="p">]</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="n">_extract_model_attrs</span><span class="p">(</span>
+            <span class="n">metadata</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">sa_models_by_django_models</span><span class="p">)</span>
+        <span class="n">orm</span><span class="o">.</span><span class="n">mapper</span><span class="p">(</span><span class="n">sa_model</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">attrs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">sa_models_by_django_models</span>
+
+
+<span class="k">class</span> <span class="nc">BaseSQLAModel</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">query</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="n">alias</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="s1">&#39;alias&#39;</span><span class="p">,</span> <span class="s1">&#39;default&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="ow">or</span> <span class="n">kw</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">get_session</span><span class="p">(</span><span class="n">alias</span><span class="p">)</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">get_session</span><span class="p">(</span><span class="n">alias</span><span class="p">)</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (Theory and Simulation of Materials (THEOS) and National Centre for Computational Design and Discovery of Novel Materials (NCCR MARVEL)), Switzerland and ROBERT BOSCH LLC, USA. All rights reserved
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
