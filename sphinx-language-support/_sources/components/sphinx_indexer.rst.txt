@@ -1,0 +1,18 @@
+.. _sphinx_indexer:
+
+``sphinx_indexer``
+==================
+
+The ``sphinx_indexer`` package provides a Sphinx extension for indexing the project
+in an SQLite database, allowing for fast searching of information.
+
+To use the extension, add ``sphinx_indexer`` to the list of extensions in your
+:file:`conf.py` file:
+
+.. code-block:: python
+
+    extensions = [..., 'sphinx_indexer', ...]
+
+
+See :ref:`sphinx_db_schema` for the database schema,
+of the generated database.

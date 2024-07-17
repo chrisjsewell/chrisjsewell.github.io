@@ -1,0 +1,158 @@
+.. _development:
+
+Development
+===========
+
+Repository structure
+--------------------
+
+This repository is a monorepo, consisting of the following packages:
+
+- ``python/``: Contains the python packages.
+
+  - ``rst_fast_parse/``: A fast parser for reStructuredText.
+
+  - ``sphinx_db/``: An ORM schema for the sphinx index database.
+  - ``sphinx_indexer/``: A Sphinx extension for creating a index database, during a Sphinx build.
+  - ``sphinx_lsp/``: A language server for Sphinx documentation projects.
+
+    This reads from the sphinx index database and provides language server capabilities.
+
+  - ``vscode_uri/``: A library for handling URIs in language servers.
+
+- ``vscode/``: Contains the code for the VS Code Extension.
+
+  - This is principally the language client, which starts and communicates with the language server.
+
+- ``docs/``: Contains the documentation.
+
+Formatting and linting
+-----------------------
+
+The easiest way to run the formatting and linting is to use the `pre-commit`_ tool.
+Install it, then run::
+
+    pre-commit run --all
+
+This will run formatting and linting on all files in the repository (principally using `ruff`_ and `eslint`_).
+
+To install as a pre-commit hook::
+
+    pre-commit install
+
+Managing the Python code
+------------------------
+
+The python code is managed principally using `rye`_, to manage a workspace of multiple packages.
+
+Here are some useful commands (run from the root of the repository):
+
+- ``rye sync``: Create/update a virtualenv for the repository (in ``.venv``).
+- ``rye test -a``: Run the tests, against each package.
+  - ``rye test -a -- --cov=src``: Run the tests, with coverage, against each package.
+- ``rye run check``: Run all of ruff formatting and linting, and mypy, for the entire repository.
+  - ``rye format``: Code formatter (ruff), for the entire repository.
+  - ``rye lint``: Run the linter (ruff), for the entire repository.
+  - ``rye run mypy:all``: Run mypy, against each package.
+- ``rye run docs:clean``: Build the documentation (removing any previous build first).
+- ``rye run bumpver update --patch --dry``: Dry run of bumping the version number, across all packages.
+- ``rye run bundle:dev``: Run a development install of packages into ``vscode/bundled``.
+- ``rye run bundle:prod``: Run a production install of packages into ``vscode/bundled``.
+
+Managing the VS Code Extension
+------------------------------
+
+The Typescript code is managed using `npm`_.
+
+To run the extension in development mode, you must first install the dependencies into ``vscode/node_modules``::
+
+    cd vscode
+    npm install
+
+You also need to install the Python bundled libraries into ``vscode/bundled``::
+
+    rye run bundle:dev
+
+.. note::
+
+  ``bundle:dev`` installs the libraries in development mode,
+  so that local changes to the libraries are reflected in the extension, without needing to reinstall,
+  although you will need to run the command "Sphinx: Restart Server" command in VS Code.
+
+Now, within a VS Code Window, you can press ``F5`` to start the extension in a new window
+(or Select `VSCode Extension` from the "Run and Debug View" in the Sidebar).
+
+Packaging the VS Code Extension
+-------------------------------
+
+Packaging the extension involves creating a ``.vsix`` file (see https://code.visualstudio.com/api/working-with-extensions/publishing-extension#packaging-extensions).
+
+First you may want to update the version numbers across the repository, e.g.::
+
+    rye run bumpver update --patch --dry
+
+As above, you need to install the Javascript and Python dependencies into ``vscode/node_modules`` and ``vscode/bundled`` respectively.
+
+.. important::
+
+    You must run ``rye run bundle:prod`` to install the Python libraries,
+    which will install the libraries in production mode, so that the libraries are not pointing to the local source code which is not included in the extension.
+
+Then, you can run the following command to create the ``.vsix`` file::
+
+    cd vscode
+    vsce package --pre-release
+
+This can be published to the Marketplace, or installed locally.
+
+.. note::
+
+  Currently all the bundled Python libraries are universal wheels,
+  and so it should not be necessary to perform platform-specific builds: https://code.visualstudio.com/api/working-with-extensions/publishing-extension#platformspecific-extensions
+
+Design decisions
+----------------
+
+Why rye?
+........
+
+At the time of writing, the `rye`_ is the only tool
+that has a good story for working with a monorepo of multiple python packages.
+
+It also has nice integrations with ruff etc.
+
+Note, in the future, it looks like ``uv`` will subsume ``rye``,
+but with a "clear migration path" (https://github.com/astral-sh/rye/discussions/1164#discussioncomment-9812734).
+
+There is also work in hatch: https://github.com/pypa/hatch/issues/233#issuecomment-2132250445
+
+Why pygls?
+..........
+
+The `language server protocol`_ is programming language agnostic
+and so, in theory, any language can be used to implement the language server.
+This is also made possible, by the creation of an sqlite database in the sphinx build which is also language agnostic.
+
+There are benefits to writing the language server in TypeScript,
+since `<https://github.com/microsoft/vscode-languageserver-node>`__ is in essence the reference implementation,
+and also since VS Code already ships with a NodeJS runtime,
+so we wouldn't have to worry about setting up the language server for the users system.
+
+However, I run in to a problem when looking to use an sqlite library
+(I was intending to use https://github.com/WiseLibs/better-sqlite3 via https://orm.drizzle.team/docs/get-started-sqlite#better-sqlite3).
+This is built against certain NodeJS version / Operating System,
+and so now you would essentially need some way to ship all builds and choose on-the-fly which one to use based on the users system 😕.
+(see also https://stackoverflow.com/a/76866302 and https://github.com/microsoft/vscode-discussions/discussions/16).
+
+Given that Sphinx is a Python project, and since all python distributions come with sqlite3 built-in,
+using python for the language server is the other obvious choice.
+Although it introduces complications, in selecting a Python runtime, and injecting the language server into it,
+this does come with the benefit of being able to share a common sqlite ORM between the indexer and the language server,
+and making it easier for users to extend the language server with Python code.
+
+.. _pre-commit: https://pre-commit.com/
+.. _ruff: https://docs.astral.sh/ruff/
+.. _eslint: https://eslint.org/
+.. _rye: https://rye.astral.sh/
+.. _npm: https://www.npmjs.com/
+.. _language server protocol: https://microsoft.github.io/language-server-protocol/

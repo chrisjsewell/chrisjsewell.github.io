@@ -1,0 +1,6 @@
+.. _sphinx_lsp:
+
+``sphinx_lsp``
+==============
+
+.. todo:: Add description

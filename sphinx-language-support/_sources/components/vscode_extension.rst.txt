@@ -1,0 +1,50 @@
+.. _vscode_extension:
+
+VS Code Extension
+=================
+
+.. todo:: Add description
+
+Features
+--------
+
+:file:`conf.py` files
+.....................
+
+Configuration variables
+~~~~~~~~~~~~~~~~~~~~~~~
+
+For autocompletion of configuration values,
+start typing at the start of a line and they should show automatically, or press `Ctrl+Space`.
+
+.. image:: /_images/conf_completion.png
+   :alt: conf.py completions
+   :align: center
+
+:file:`*.rst` files
+...................
+
+Outline
+~~~~~~~
+
+For an outline of the document, open the "Outline" view in the Sidebar.
+
+.. image:: /_images/rst_outline.png
+   :alt: Outline view
+   :align: center
+   :height: 250px
+
+Directives
+~~~~~~~~~~
+
+To autocomplete a directive, start typing at the start of a line and they should show automatically, or press `Ctrl+Space`.
+
+.. image:: /_images/rst_directive_completion.png
+   :alt: Directive completion
+   :align: center
+
+For a description of a directive, hover over the directive name.
+
+.. image:: /_images/rst_directive_hover.png
+   :alt: Directive hover
+   :align: center

@@ -1,0 +1,31 @@
+.. _configuration:
+
+Configuration
+=============
+
+.. _config-file-discovery:
+
+File discovery
+--------------
+
+Similar to `ruff <https://docs.astral.sh/ruff/configuration/#config-file-discovery>`_,
+the LSP supports hierarchical configuration, such that the "closest" config file in the directory hierarchy is used for every individual file,
+with all paths in the config file being resolved relative to the directory containing that config file.
+
+Configuration can be in a :file:`sphinx.toml` or :file:`pyproject.toml` file,
+although note any :file:`pyproject.toml` that lacks a ``[tool.sphinx]`` section will be ignored.
+
+For example, given the following directory structure::
+
+    project/
+    ├── docs1/
+    │   ├── conf.py
+    │   └── doc1.rst
+    │   └── sphinx.toml
+    ├── docs2/
+    │   ├── conf.py
+    │   └── doc2.rst
+    └── sphinx.toml
+
+The configuration for :file:`doc1.rst` will be read from :file:`project/docs1/sphinx.toml`,
+whereas for :file:`doc2.rst` it will be read from :file:`project/sphinx.toml`.

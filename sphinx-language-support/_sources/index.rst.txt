@@ -1,0 +1,105 @@
+Sphinx Language Support
+=======================
+
+This project provides tools to improve the authoring experience of working with :external+sphinx:doc:`Sphinx <index>` documentation projects.
+
+Principally, it provides:
+
+- a :ref:`sphinx extension <sphinx_indexer>` to generate an database of key information from a Sphinx project,
+- a :ref:`language server <sphinx_lsp>` to provide code intelligence for Sphinx projects, and
+- a :ref:`VS Code extension <vscode_extension>` to run the language server.
+
+.. _quickstart:
+
+Quick Start
+-----------
+
+#. See the :external+sphinx:doc:`Sphinx guide <usage/quickstart>` for setting up a Sphinx project.
+
+#. Within your sphinx Python environment,
+   install the :ref:`sphinx_indexer <sphinx_indexer>` package,
+   and add the extension to your :file:`conf.py` file:
+
+   .. code-block:: python
+
+      extensions = [..., "sphinx_indexer"]
+
+#. Run the the sphinx build.
+
+#. Either add a :file:`sphinx.toml` file in the project root
+   or add to an existing :file:`pyproject.toml` file the following content:
+
+   .. tab-set::
+
+      .. tab-item:: :file:`sphinx.toml`
+
+        .. code-block:: toml
+
+            srcdir = "."           # or the relative path to your source folder
+            lsp.outdir = "_build"  # or the relative path to your build folder
+
+      .. tab-item:: :file:`pyproject.toml`
+
+        .. code-block:: toml
+
+            [tool.sphinx]
+            srcdir = "."           # or the relative path to your source folder
+            lsp.outdir = "_build"  # or the relative path to your build folder
+
+#. Open your project in VS Code and install the :ref:`Sphinx Language Support <vscode_extension>` extension.
+
+#. Try out the features, such as:
+
+   - Hover over a directive name to see a description.
+   - Auto-complete directive names.
+
+.. tip::
+
+    The language server does currently handle re-running the Sphinx build when the source files change.
+
+    For this you may want to check out `sphinx-autobuild <https://github.com/sphinx-doc/sphinx-autobuild>`_.
+
+.. seealso::
+
+  - :ref:`how-it-works` for an overview of the system architecture.
+  - :ref:`troubleshooting` for troubleshooting and debugging tips.
+  - :ref:`development` for how to develop the tools.
+
+Site Map
+--------
+
+.. toctree::
+
+   Quick Start <self>
+
+.. toctree::
+   :caption: User Guides
+   :maxdepth: 2
+   :glob:
+
+   usage/*
+
+.. toctree::
+    :caption: Components
+    :maxdepth: 1
+    :glob:
+
+    components/*
+
+.. toctree::
+   :caption: Development
+   :maxdepth: 2
+
+   development/index
+
+Indices and tables
+-------------------
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+TODOs
+-----
+
+.. todolist::

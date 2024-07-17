@@ -1,0 +1,6 @@
+.. _troubleshooting:
+
+Troubleshooting
+===============
+
+.. todo:: Add troubleshooting guide

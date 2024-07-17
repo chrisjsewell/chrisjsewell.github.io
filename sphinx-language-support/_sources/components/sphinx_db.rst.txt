@@ -1,0 +1,33 @@
+.. _sphinx_db:
+
+``sphinx_db``
+=============
+
+.. todo:: Add description
+
+.. _sphinx_db_schema:
+
+Database Schema
+---------------
+
+Project initialization
+......................
+
+.. sqla-model:: sphinx_db.orm.ConfigVariable
+
+.. sqla-model:: sphinx_db.orm.Directive
+
+.. sqla-model:: sphinx_db.orm.Role
+
+.. sqla-model:: sphinx_db.orm.ObjectRoles
+
+.. sqla-model:: sphinx_db.orm.IntersphinxTarget
+
+Project build
+.............
+
+.. sqla-model:: sphinx_db.orm.BuildWarning
+
+.. sqla-model:: sphinx_db.orm.DocumentTarget
+
+.. sqla-model:: sphinx_db.orm.ProjectTarget

@@ -1,0 +1,59 @@
+.. _how-it-works:
+
+How it works
+------------
+
+Below is a high-level overview of the system architecture:
+
+- The sphinx command-line tool is used to build the project.
+
+  - Adding the :ref:`sphinx_indexer` extension to sphinx generates an SQLite database within the build folder.
+
+- The LSP client (such as the :ref:`VS Code extension <vscode_extension>`) manages starting the :ref:`sphinx_lsp language server <sphinx_lsp>`,
+  and communicates with it over the LSP protocol.
+
+- When the client asks the server for particular information about a source document:
+
+  - the server searches for the closest configuration file (see :ref:`file discovery <config-file-discovery>`), to get information such as the location of the database.
+
+  - the server queries the database to gather the necessary information
+    and sends it back to the client.
+
+.. graphviz::
+   :align: center
+   :caption: System architecture
+
+   digraph G {
+      rankdir=LR;
+      bgcolor="#FFFFFFCA";
+
+      node [shape=box, style=rounded];
+
+      subgraph cluster_sphinx {
+        label="Sphinx"
+        sphinx_indexer [label="sphinx_indexer"];
+      }
+
+      client [label="Client"];
+      server [label="sphinx_lsp"];
+
+      subgraph cluster_project {
+        label="User project"
+        config [label="sphinx.toml"];
+        subgraph cluster_source {
+            label="source folder"
+            file [label="doc.rst"];
+        }
+        subgraph cluster_build {
+            label="build folder"
+            database [label="index.sqlite"];
+        }
+      }
+
+      sphinx_indexer -> database;
+      client -> file [style=dashed];
+      client -> server [dir=both, style=dashed];
+      server -> config [style=dashed];
+      server -> database [style=dashed];
+
+   }
