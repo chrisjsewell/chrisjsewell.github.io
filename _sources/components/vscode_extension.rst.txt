@@ -5,6 +5,8 @@ VS Code Extension
 
 .. todo:: Add description
 
+.. _vscode_extension-features:
+
 Features
 --------
 
@@ -48,3 +50,38 @@ For a description of a directive, hover over the directive name.
 .. image:: /_images/rst_directive_hover.png
    :alt: Directive hover
    :align: center
+
+
+HTML Preview
+............
+
+To open a preview of the HTML output for a source file (``rst`` or ``md``),
+you can either:
+
+- Click on the editor title icon:
+
+  .. image:: /_images/preview_editor_icon.png
+     :alt: HTML preview editor icon
+     :align: center
+
+- Right-click in the editor and select "Open Sphinx Preview" or "Open Sphinx Preview (External)":
+
+  .. image:: /_images/preview_editor_menu.png
+     :alt: HTML preview context menu
+     :align: center
+     :height: 150px
+
+- Right-click on a file in the Explorer and select "Open Sphinx Preview" or "Open Sphinx Preview (External)":
+
+  .. image:: /_images/preview_explorer_menu.png
+     :alt: HTML preview explorer menu
+     :align: center
+     :height: 200px
+
+Selecting *External* will open the preview in your default browser,
+otherwise it will open in a new tab in the editor.
+
+.. note::
+
+  This extension uses `Live Preview <https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server>`__ to provide the preview.
+  See this extension for more configuration options.

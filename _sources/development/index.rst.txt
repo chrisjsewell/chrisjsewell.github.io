@@ -110,8 +110,8 @@ This can be published to the Marketplace, or installed locally.
   Currently all the bundled Python libraries are universal wheels,
   and so it should not be necessary to perform platform-specific builds: https://code.visualstudio.com/api/working-with-extensions/publishing-extension#platformspecific-extensions
 
-Design decisions
-----------------
+Design notes
+------------
 
 Why rye?
 ........
@@ -149,6 +149,32 @@ using python for the language server is the other obvious choice.
 Although it introduces complications, in selecting a Python runtime, and injecting the language server into it,
 this does come with the benefit of being able to share a common sqlite ORM between the indexer and the language server,
 and making it easier for users to extend the language server with Python code.
+
+Python environment discovery
+............................
+
+The language server needs to be able to use a Python environment, within which to run the Sphinx language server.
+
+This code is included in :file:`vscode/src/python.ts`,
+and is principally based on the code in:
+
+- https://github.com/microsoft/vscode-mypy/tree/v2023.6.0
+- https://github.com/astral-sh/ruff-vscode/tree/2024.34.0
+
+HTML Preview
+............
+
+The HTML preview functionality is principally delegated to https://github.com/microsoft/vscode-livepreview;
+on a preview command, the extension will first "ask" the language server to provide the related HTML file given the source file,
+and then a command is sent to the Live Preview extension to open the HTML file.
+This also handles watching the HTML file for changes and updating the preview, etc.
+
+By delegating to the Live Preview extension, we can avoid having to write/maintain our own HTML previewer,
+I'm sure microsoft is can do a better job of it than us 😄.
+
+The only feature currently missing is the ability to sync the position in the source file with the preview.
+There are ways to pass messages to the WebView (https://code.visualstudio.com/api/extension-guides/webview#scripts-and-message-passing),
+and there is a feature request for this: https://github.com/microsoft/vscode-livepreview/issues/214.
 
 .. _pre-commit: https://pre-commit.com/
 .. _ruff: https://docs.astral.sh/ruff/

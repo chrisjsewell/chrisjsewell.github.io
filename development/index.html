@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="prev" title="VS Code Extension" href="../components/vscode_extension.html" />
 
     <!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
-        <title>Development - Sphinx Language Support v0.0.5</title>
+        <title>Development - Sphinx Language Support v0.0.6</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Sphinx Language Support v0.0.5</div></a>
+      <a href="../index.html"><div class="brand">Sphinx Language Support v0.0.6</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -205,7 +205,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">Sphinx Language Support v0.0.5</span>
+  <span class="sidebar-brand-text">Sphinx Language Support v0.0.6</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -374,8 +374,8 @@ which will install the libraries in production mode, so that the libraries are n
 and so it should not be necessary to perform platform-specific builds: <a class="reference external" href="https://code.visualstudio.com/api/working-with-extensions/publishing-extension#platformspecific-extensions">https://code.visualstudio.com/api/working-with-extensions/publishing-extension#platformspecific-extensions</a></p>
 </div>
 </section>
-<section id="design-decisions">
-<h2>Design decisions<a class="headerlink" href="#design-decisions" title="Link to this heading">¶</a></h2>
+<section id="design-notes">
+<h2>Design notes<a class="headerlink" href="#design-notes" title="Link to this heading">¶</a></h2>
 <section id="why-rye">
 <h3>Why rye?<a class="headerlink" href="#why-rye" title="Link to this heading">¶</a></h3>
 <p>At the time of writing, the <a class="reference external" href="https://rye.astral.sh/">rye</a> is the only tool
@@ -404,6 +404,28 @@ using python for the language server is the other obvious choice.
 Although it introduces complications, in selecting a Python runtime, and injecting the language server into it,
 this does come with the benefit of being able to share a common sqlite ORM between the indexer and the language server,
 and making it easier for users to extend the language server with Python code.</p>
+</section>
+<section id="python-environment-discovery">
+<h3>Python environment discovery<a class="headerlink" href="#python-environment-discovery" title="Link to this heading">¶</a></h3>
+<p>The language server needs to be able to use a Python environment, within which to run the Sphinx language server.</p>
+<p>This code is included in <code class="file docutils literal notranslate"><span class="pre">vscode/src/python.ts</span></code>,
+and is principally based on the code in:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/microsoft/vscode-mypy/tree/v2023.6.0">https://github.com/microsoft/vscode-mypy/tree/v2023.6.0</a></p></li>
+<li><p><a class="reference external" href="https://github.com/astral-sh/ruff-vscode/tree/2024.34.0">https://github.com/astral-sh/ruff-vscode/tree/2024.34.0</a></p></li>
+</ul>
+</section>
+<section id="html-preview">
+<h3>HTML Preview<a class="headerlink" href="#html-preview" title="Link to this heading">¶</a></h3>
+<p>The HTML preview functionality is principally delegated to <a class="reference external" href="https://github.com/microsoft/vscode-livepreview">https://github.com/microsoft/vscode-livepreview</a>;
+on a preview command, the extension will first “ask” the language server to provide the related HTML file given the source file,
+and then a command is sent to the Live Preview extension to open the HTML file.
+This also handles watching the HTML file for changes and updating the preview, etc.</p>
+<p>By delegating to the Live Preview extension, we can avoid having to write/maintain our own HTML previewer,
+I’m sure microsoft is can do a better job of it than us 😄.</p>
+<p>The only feature currently missing is the ability to sync the position in the source file with the preview.
+There are ways to pass messages to the WebView (<a class="reference external" href="https://code.visualstudio.com/api/extension-guides/webview#scripts-and-message-passing">https://code.visualstudio.com/api/extension-guides/webview#scripts-and-message-passing</a>),
+and there is a feature request for this: <a class="reference external" href="https://github.com/microsoft/vscode-livepreview/issues/214">https://github.com/microsoft/vscode-livepreview/issues/214</a>.</p>
 </section>
 </section>
 </section>
@@ -461,9 +483,11 @@ and making it easier for users to extend the language server with Python code.</
 <li><a class="reference internal" href="#managing-the-python-code">Managing the Python code</a></li>
 <li><a class="reference internal" href="#managing-the-vs-code-extension">Managing the VS Code Extension</a></li>
 <li><a class="reference internal" href="#packaging-the-vs-code-extension">Packaging the VS Code Extension</a></li>
-<li><a class="reference internal" href="#design-decisions">Design decisions</a><ul>
+<li><a class="reference internal" href="#design-notes">Design notes</a><ul>
 <li><a class="reference internal" href="#why-rye">Why rye?</a></li>
 <li><a class="reference internal" href="#why-pygls">Why pygls?</a></li>
+<li><a class="reference internal" href="#python-environment-discovery">Python environment discovery</a></li>
+<li><a class="reference internal" href="#html-preview">HTML Preview</a></li>
 </ul>
 </li>
 </ul>
@@ -477,7 +501,7 @@ and making it easier for users to extend the language server with Python code.</
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=282f96c0"></script>
+</div><script src="../_static/documentation_options.js?v=1fd71caa"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=4e2eecee"></script>

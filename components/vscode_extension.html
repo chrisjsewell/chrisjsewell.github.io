@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Development" href="../development/index.html" /><link rel="prev" title="sphinx_lsp" href="sphinx_lsp.html" />
 
     <!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
-        <title>VS Code Extension - Sphinx Language Support v0.0.5</title>
+        <title>VS Code Extension - Sphinx Language Support v0.0.6</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Sphinx Language Support v0.0.5</div></a>
+      <a href="../index.html"><div class="brand">Sphinx Language Support v0.0.6</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -205,7 +205,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">Sphinx Language Support v0.0.5</span>
+  <span class="sidebar-brand-text">Sphinx Language Support v0.0.6</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -279,7 +279,7 @@
 <p>Add description</p>
 </div>
 <section id="features">
-<h2>Features<a class="headerlink" href="#features" title="Link to this heading">¶</a></h2>
+<span id="vscode-extension-features"></span><h2>Features<a class="headerlink" href="#features" title="Link to this heading">¶</a></h2>
 <section id="conf-py-files">
 <h3><code class="file docutils literal notranslate"><span class="pre">conf.py</span></code> files<a class="headerlink" href="#conf-py-files" title="Link to this heading">¶</a></h3>
 <section id="configuration-variables">
@@ -304,6 +304,31 @@ start typing at the start of a line and they should show automatically, or press
 <p>For a description of a directive, hover over the directive name.</p>
 <img alt="Directive hover" class="align-center" src="../_images/rst_directive_hover.png" />
 </section>
+</section>
+<section id="html-preview">
+<h3>HTML Preview<a class="headerlink" href="#html-preview" title="Link to this heading">¶</a></h3>
+<p>To open a preview of the HTML output for a source file (<code class="docutils literal notranslate"><span class="pre">rst</span></code> or <code class="docutils literal notranslate"><span class="pre">md</span></code>),
+you can either:</p>
+<ul>
+<li><p>Click on the editor title icon:</p>
+<img alt="HTML preview editor icon" class="align-center" src="../_images/preview_editor_icon.png" />
+</li>
+<li><p>Right-click in the editor and select “Open Sphinx Preview” or “Open Sphinx Preview (External)”:</p>
+<a class="reference internal image-reference" href="../_images/preview_editor_menu.png"><img alt="HTML preview context menu" class="align-center" src="../_images/preview_editor_menu.png" style="height: 150px;" />
+</a>
+</li>
+<li><p>Right-click on a file in the Explorer and select “Open Sphinx Preview” or “Open Sphinx Preview (External)”:</p>
+<a class="reference internal image-reference" href="../_images/preview_explorer_menu.png"><img alt="HTML preview explorer menu" class="align-center" src="../_images/preview_explorer_menu.png" style="height: 200px;" />
+</a>
+</li>
+</ul>
+<p>Selecting <em>External</em> will open the preview in your default browser,
+otherwise it will open in a new tab in the editor.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This extension uses <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server">Live Preview</a> to provide the preview.
+See this extension for more configuration options.</p>
+</div>
 </section>
 </section>
 </section>
@@ -374,6 +399,7 @@ start typing at the start of a line and they should show automatically, or press
 <li><a class="reference internal" href="#directives">Directives</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#html-preview">HTML Preview</a></li>
 </ul>
 </li>
 </ul>
@@ -387,7 +413,7 @@ start typing at the start of a line and they should show automatically, or press
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=282f96c0"></script>
+</div><script src="../_static/documentation_options.js?v=1fd71caa"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=4e2eecee"></script>

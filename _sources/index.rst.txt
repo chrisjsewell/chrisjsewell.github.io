@@ -48,10 +48,7 @@ Quick Start
 
 #. Open your project in VS Code and install the :ref:`Sphinx Language Support <vscode_extension>` extension.
 
-#. Try out the features, such as:
-
-   - Hover over a directive name to see a description.
-   - Auto-complete directive names.
+#. Try out the features defined in the :ref:`Extension features <vscode_extension-features>`.
 
 .. tip::
 
