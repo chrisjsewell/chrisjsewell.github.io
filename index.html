@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Configuration" href="usage/configuration.html" />
 
     <!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
-        <title>Sphinx Language Support v0.0.6</title>
+        <title>Sphinx Language Support v0.0.7</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=fd3f3429" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">Sphinx Language Support v0.0.6</div></a>
+      <a href="#"><div class="brand">Sphinx Language Support v0.0.7</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -205,7 +205,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
   
   
-  <span class="sidebar-brand-text">Sphinx Language Support v0.0.6</span>
+  <span class="sidebar-brand-text">Sphinx Language Support v0.0.7</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -224,10 +224,10 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Components</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="components/sphinx_db.html"><code class="docutils literal notranslate"><span class="pre">sphinx_db</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="components/sphinx_indexer.html"><code class="docutils literal notranslate"><span class="pre">sphinx_indexer</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="components/sphinx_lsp.html"><code class="docutils literal notranslate"><span class="pre">sphinx_lsp</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="components/vscode_extension.html">VS Code Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/sphinx_lsp.html"><code class="docutils literal notranslate"><span class="pre">sphinx_lsp</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/sphinx_indexer.html"><code class="docutils literal notranslate"><span class="pre">sphinx_indexer</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/sphinx_db.html"><code class="docutils literal notranslate"><span class="pre">sphinx_db</span></code></a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
@@ -274,17 +274,24 @@
         <article role="main" id="furo-main-content">
           <section id="sphinx-language-support">
 <h1>Sphinx Language Support<a class="headerlink" href="#sphinx-language-support" title="Link to this heading">¶</a></h1>
-<p>This project provides tools to improve the authoring experience of working with <a class="reference external" href="https://www.sphinx-doc.org/en/master/index.html" title="(in Sphinx v7.4.7)"><span class="xref std std-doc">Sphinx</span></a> documentation projects.</p>
+<p>This project provides tools to improve the authoring experience of working with <a class="reference external" href="https://www.sphinx-doc.org/en/master/index.html" title="(in Sphinx v8.0.0)"><span class="xref std std-doc">Sphinx</span></a> documentation projects.</p>
 <p>Principally, it provides:</p>
 <ul class="simple">
 <li><p>a <a class="reference internal" href="components/sphinx_indexer.html#sphinx-indexer"><span class="std std-ref">sphinx extension</span></a> to generate an database of key information from a Sphinx project,</p></li>
 <li><p>a <a class="reference internal" href="components/sphinx_lsp.html#sphinx-lsp"><span class="std std-ref">language server</span></a> to provide code intelligence for Sphinx projects, and</p></li>
 <li><p>a <a class="reference internal" href="components/vscode_extension.html#vscode-extension"><span class="std std-ref">VS Code extension</span></a> to run the language server.</p></li>
 </ul>
+<p>See <a class="reference internal" href="components/vscode_extension.html#vscode-extension-features"><span class="std std-ref">Extension features</span></a> for more information on the features provided by the VS Code extension, which include:</p>
+<ul class="simple">
+<li><p>multi-project support,</p></li>
+<li><p>running Sphinx builds,</p></li>
+<li><p>opening HTML previews,</p></li>
+<li><p>outlines, auto-completions and hover information, …</p></li>
+</ul>
 <section id="quick-start">
 <span id="quickstart"></span><h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading">¶</a></h2>
 <ol class="arabic">
-<li><p>See the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/quickstart.html" title="(in Sphinx v7.4.7)"><span class="xref std std-doc">Sphinx guide</span></a> for setting up a Sphinx project.</p></li>
+<li><p>See the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/quickstart.html" title="(in Sphinx v8.0.0)"><span class="xref std std-doc">Sphinx guide</span></a> for setting up a Sphinx project.</p></li>
 <li><p>Within your sphinx Python environment,
 install the <a class="reference internal" href="components/sphinx_indexer.html#sphinx-indexer"><span class="std std-ref">sphinx_indexer</span></a> package,
 and add the extension to your <code class="file docutils literal notranslate"><span class="pre">conf.py</span></code> file:</p>
@@ -299,8 +306,11 @@ or add to an existing <code class="file docutils literal notranslate"><span clas
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-0">
 <code class="file docutils literal notranslate"><span class="pre">sphinx.toml</span></code></label><div class="sd-tab-content docutils">
-<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">srcdir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;.&quot;</span><span class="w">           </span><span class="c1"># or the relative path to your source folder</span>
-<span class="n">lsp</span><span class="p">.</span><span class="n">outdir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;_build&quot;</span><span class="w">  </span><span class="c1"># or the relative path to your build folder</span>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">srcdir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;.&quot;</span><span class="w">       </span><span class="c1"># or the relative path to your source folder</span>
+
+<span class="k">[builds.default]</span>
+<span class="n">outdir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;_build&quot;</span><span class="w">  </span><span class="c1"># or the relative path to your build folder</span>
+<span class="n">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;sphinx-build {{srcdir}} {{outdir}}&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -308,8 +318,11 @@ or add to an existing <code class="file docutils literal notranslate"><span clas
 <label class="sd-tab-label" for="sd-tab-item-1">
 <code class="file docutils literal notranslate"><span class="pre">pyproject.toml</span></code></label><div class="sd-tab-content docutils">
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[tool.sphinx]</span>
-<span class="n">srcdir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;.&quot;</span><span class="w">           </span><span class="c1"># or the relative path to your source folder</span>
-<span class="n">lsp</span><span class="p">.</span><span class="n">outdir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;_build&quot;</span><span class="w">  </span><span class="c1"># or the relative path to your build folder</span>
+<span class="n">srcdir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;.&quot;</span><span class="w">       </span><span class="c1"># or the relative path to your source folder</span>
+
+<span class="k">[tool.sphinx.builds.default]</span>
+<span class="n">outdir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;_build&quot;</span><span class="w">  </span><span class="c1"># or the relative path to your build folder</span>
+<span class="n">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;sphinx-build {{srcdir}} {{outdir}}&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -318,14 +331,10 @@ or add to an existing <code class="file docutils literal notranslate"><span clas
 <li><p>Open your project in VS Code and install the <a class="reference internal" href="components/vscode_extension.html#vscode-extension"><span class="std std-ref">Sphinx Language Support</span></a> extension.</p></li>
 <li><p>Try out the features defined in the <a class="reference internal" href="components/vscode_extension.html#vscode-extension-features"><span class="std std-ref">Extension features</span></a>.</p></li>
 </ol>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>The language server does currently handle re-running the Sphinx build when the source files change.</p>
-<p>For this you may want to check out <a class="reference external" href="https://github.com/sphinx-doc/sphinx-autobuild">sphinx-autobuild</a>.</p>
-</div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <ul class="simple">
+<li><p>The <a class="reference internal" href="usage/configuration.html#configuration"><span class="std std-ref">configuration guide</span></a></p></li>
 <li><p><a class="reference internal" href="usage/how_it_works.html#how-it-works"><span class="std std-ref">How it works</span></a> for an overview of the system architecture.</p></li>
 <li><p><a class="reference internal" href="usage/troubleshooting.html#troubleshooting"><span class="std std-ref">Troubleshooting</span></a> for troubleshooting and debugging tips.</p></li>
 <li><p><a class="reference internal" href="development/index.html#development"><span class="std std-ref">Development</span></a> for how to develop the tools.</p></li>
@@ -344,6 +353,8 @@ or add to an existing <code class="file docutils literal notranslate"><span clas
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="usage/configuration.html">Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="usage/configuration.html#file-discovery">File discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/configuration.html#top-level-configuration">Top-level configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/configuration.html#build-configuration">Build configuration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="usage/how_it_works.html">How it works</a></li>
@@ -353,10 +364,10 @@ or add to an existing <code class="file docutils literal notranslate"><span clas
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Components</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="components/sphinx_db.html"><code class="docutils literal notranslate"><span class="pre">sphinx_db</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="components/sphinx_indexer.html"><code class="docutils literal notranslate"><span class="pre">sphinx_indexer</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="components/sphinx_lsp.html"><code class="docutils literal notranslate"><span class="pre">sphinx_lsp</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="components/vscode_extension.html">VS Code Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/sphinx_lsp.html"><code class="docutils literal notranslate"><span class="pre">sphinx_lsp</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/sphinx_indexer.html"><code class="docutils literal notranslate"><span class="pre">sphinx_indexer</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/sphinx_db.html"><code class="docutils literal notranslate"><span class="pre">sphinx_db</span></code></a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -394,11 +405,6 @@ or add to an existing <code class="file docutils literal notranslate"><span clas
 <p>Add description</p>
 </div>
 <p class="todo-source">(The <a class="reference internal" href="components/sphinx_lsp.html#id2"><em>original entry</em></a> is located in /Users/chrisjsewell/GitHub/sphinx-lsp/docs/source/components/sphinx_lsp.rst, line 6.)</p>
-<div class="admonition-todo admonition">
-<p class="admonition-title">Todo</p>
-<p>Add description</p>
-</div>
-<p class="todo-source">(The <a class="reference internal" href="components/vscode_extension.html#id1"><em>original entry</em></a> is located in /Users/chrisjsewell/GitHub/sphinx-lsp/docs/source/components/vscode_extension.rst, line 6.)</p>
 <div class="admonition-todo admonition">
 <p class="admonition-title">Todo</p>
 <p>Add troubleshooting guide</p>
@@ -470,7 +476,7 @@ or add to an existing <code class="file docutils literal notranslate"><span clas
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=1fd71caa"></script>
+</div><script src="_static/documentation_options.js?v=bbaf98b3"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=4e2eecee"></script>

@@ -14,6 +14,7 @@ This repository is a monorepo, consisting of the following packages:
 
   - ``sphinx_db/``: An ORM schema for the sphinx index database.
   - ``sphinx_indexer/``: A Sphinx extension for creating a index database, during a Sphinx build.
+  - ``sphinx_config/``: A schema, reader and discoverer for a Sphinx configuration file.
   - ``sphinx_lsp/``: A language server for Sphinx documentation projects.
 
     This reads from the sphinx index database and provides language server capabilities.

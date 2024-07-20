@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="How it works" href="how_it_works.html" /><link rel="prev" title="Sphinx Language Support" href="../index.html" />
 
     <!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
-        <title>Configuration - Sphinx Language Support v0.0.6</title>
+        <title>Configuration - Sphinx Language Support v0.0.7</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Sphinx Language Support v0.0.6</div></a>
+      <a href="../index.html"><div class="brand">Sphinx Language Support v0.0.7</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -205,7 +205,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">Sphinx Language Support v0.0.6</span>
+  <span class="sidebar-brand-text">Sphinx Language Support v0.0.7</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -224,10 +224,10 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Components</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../components/sphinx_db.html"><code class="docutils literal notranslate"><span class="pre">sphinx_db</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../components/sphinx_indexer.html"><code class="docutils literal notranslate"><span class="pre">sphinx_indexer</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../components/sphinx_lsp.html"><code class="docutils literal notranslate"><span class="pre">sphinx_lsp</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../components/vscode_extension.html">VS Code Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../components/sphinx_lsp.html"><code class="docutils literal notranslate"><span class="pre">sphinx_lsp</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../components/sphinx_indexer.html"><code class="docutils literal notranslate"><span class="pre">sphinx_indexer</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../components/sphinx_db.html"><code class="docutils literal notranslate"><span class="pre">sphinx_db</span></code></a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
@@ -296,6 +296,101 @@ although note any <code class="file docutils literal notranslate"><span class="p
 <p>The configuration for <code class="file docutils literal notranslate"><span class="pre">doc1.rst</span></code> will be read from <code class="file docutils literal notranslate"><span class="pre">project/docs1/sphinx.toml</span></code>,
 whereas for <code class="file docutils literal notranslate"><span class="pre">doc2.rst</span></code> it will be read from <code class="file docutils literal notranslate"><span class="pre">project/sphinx.toml</span></code>.</p>
 </section>
+<section id="top-level-configuration">
+<h2>Top-level configuration<a class="headerlink" href="#top-level-configuration" title="Link to this heading">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">srcdir<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The path to the source directory,
+relative to the config file.
+The default is <code class="docutils literal notranslate"><span class="pre">&quot;.&quot;</span></code>.</p>
+</dd>
+<dt class="field-even">builds<span class="colon">:</span></dt>
+<dd class="field-even"><p>A table of build configurations.
+The default is a single build configuration named <code class="docutils literal notranslate"><span class="pre">default</span></code>.</p>
+</dd>
+</dl>
+</section>
+<section id="build-configuration">
+<h2>Build configuration<a class="headerlink" href="#build-configuration" title="Link to this heading">¶</a></h2>
+<dl class="field-list">
+<dt class="field-odd">outdir<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The path to the output directory,
+relative to the config file.
+The default is <code class="docutils literal notranslate"><span class="pre">&quot;_build&quot;</span></code>.</p>
+</dd>
+<dt class="field-even">confdir<span class="colon">:</span></dt>
+<dd class="field-even"><p>The path to the configuration directory,
+relative to the config file.</p>
+</dd>
+<dt class="field-odd">doctreedir<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The path to the doctree directory,
+relative to the config file.</p>
+</dd>
+<dt class="field-even">command<span class="colon">:</span></dt>
+<dd class="field-even"><p>The command to run to build the project.
+The command can contain placeholders withing double curly braces,
+e.g. <code class="docutils literal notranslate"><span class="pre">&quot;sphinx-build</span> <span class="pre">{{srcdir}}</span> <span class="pre">{{outdir}}&quot;</span></code>.</p>
+<p>The following placeholders are supported:</p>
+<dl class="field-list simple">
+<dt class="field-odd">srcdir<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The absolute path to the source directory.</p>
+</dd>
+<dt class="field-even">confdir<span class="colon">:</span></dt>
+<dd class="field-even"><p>The absolute path to the configuration directory (empty if not set).</p>
+</dd>
+<dt class="field-odd">doctreedir<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The absolute path to the doctree directory (empty if not set).</p>
+</dd>
+<dt class="field-even">outdir<span class="colon">:</span></dt>
+<dd class="field-even"><p>The absolute path to the output directory.</p>
+</dd>
+<dt class="field-odd">file<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The absolute path to a specific file to rebuild (empty if not set).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<section id="special-build-names">
+<h3>Special build names<a class="headerlink" href="#special-build-names" title="Link to this heading">¶</a></h3>
+<p>The build name <code class="docutils literal notranslate"><span class="pre">default</span></code> is used as the default build configuration.</p>
+<p>If present, the build name <code class="docutils literal notranslate"><span class="pre">index</span></code> is used for the build configuration by the language server, to find the index database (see <a class="reference internal" href="how_it_works.html#how-it-works"><span class="std std-ref">How it works</span></a>).</p>
+<p>If present, the build name <code class="docutils literal notranslate"><span class="pre">preview</span></code> is used for the build configuration by the HTML previewer, to find the HTML files.</p>
+<p>For example, the following configuration specifies different output directories for the server and preview builds:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+<code class="file docutils literal notranslate"><span class="pre">sphinx.toml</span></code></label><div class="sd-tab-content docutils">
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">srcdir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;source&quot;</span>
+
+<span class="k">[builds.index]</span>
+<span class="n">outdir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;_build/index&quot;</span>
+<span class="n">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;sphinx-build -b dummy {{srcdir}} {{outdir}}&quot;</span>
+
+<span class="k">[builds.preview]</span>
+<span class="n">outdir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;_build/preview&quot;</span>
+<span class="n">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;sphinx-build -b html {{srcdir}} {{outdir}}&quot;</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+<code class="file docutils literal notranslate"><span class="pre">pyproject.toml</span></code></label><div class="sd-tab-content docutils">
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[tool.sphinx]</span>
+<span class="n">srcdir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;source&quot;</span>
+
+<span class="k">[tool.sphinx.builds.index]</span>
+<span class="n">outdir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;_build/index&quot;</span>
+<span class="n">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;sphinx-build -b dummy {{srcdir}} {{outdir}}&quot;</span>
+
+<span class="k">[tool.sphinx.builds.preview]</span>
+<span class="n">outdir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;_build/preview&quot;</span>
+<span class="n">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;sphinx-build -b html {{srcdir}} {{outdir}}&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 
         </article>
@@ -355,6 +450,11 @@ whereas for <code class="file docutils literal notranslate"><span class="pre">do
             <ul>
 <li><a class="reference internal" href="#">Configuration</a><ul>
 <li><a class="reference internal" href="#file-discovery">File discovery</a></li>
+<li><a class="reference internal" href="#top-level-configuration">Top-level configuration</a></li>
+<li><a class="reference internal" href="#build-configuration">Build configuration</a><ul>
+<li><a class="reference internal" href="#special-build-names">Special build names</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -366,7 +466,7 @@ whereas for <code class="file docutils literal notranslate"><span class="pre">do
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=1fd71caa"></script>
+</div><script src="../_static/documentation_options.js?v=bbaf98b3"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=4e2eecee"></script>

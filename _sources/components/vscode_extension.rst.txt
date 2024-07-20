@@ -3,12 +3,90 @@
 VS Code Extension
 =================
 
-.. todo:: Add description
+The Sphinx Language Support extension provides features for working with Sphinx projects in Visual Studio Code.
 
 .. _vscode_extension-features:
 
 Features
 --------
+
+Sphinx builds
+.............
+
+To launch  a build for a source file of a Sphinx project (``rst`` or ``md``), you can either:
+
+- Click on the editor title icon:
+
+  .. image:: /_images/build_editor_icon.png
+     :alt: Build editor icon
+     :align: center
+
+- Right-click in the editor and select "Launch Sphinx Build "
+
+- Right-click on a file in the Explorer panel and select "Launch Sphinx Build"
+
+If you have multiple build configurations for your project, this will first prompt you to select the build configuration to use.
+
+If a build configuration is found/selected (see :ref:`configuration`), then the command will be launched in a Terminal.
+
+To guard against multiple builds running at the same time, for the same output directory,
+terminals are re-used for the same output directory.
+
+.. image:: /_images/build_running_terminal.png
+   :alt: Build running terminal
+   :align: center
+   :height: 250px
+
+.. note::
+
+  By default, new terminals will open with the workspace folder as the working directory,
+  and also first apply configured platform settings, such as loading the selected Python environment.
+
+.. tip::
+
+    The extension does not currently handle automatically re-running the Sphinx build when the source files change.
+
+    For this you may want to check out `sphinx-autobuild <https://github.com/sphinx-doc/sphinx-autobuild>`_.
+
+HTML Preview
+............
+
+The following commands will look for the ``preview`` or ``default`` build configuration,
+to determine the relative path to the built HTML file (see :ref:`configuration`).
+
+To open a preview of the HTML output for a source file (``rst`` or ``md``),
+you can either:
+
+- Click on the editor title icon:
+
+  .. image:: /_images/preview_editor_icon.png
+     :alt: HTML preview editor icon
+     :align: center
+
+- Right-click in the editor and select "Open Sphinx Preview" or "Open Sphinx Preview (External)":
+
+  .. image:: /_images/preview_editor_menu.png
+     :alt: HTML preview context menu
+     :align: center
+     :height: 150px
+
+- Right-click on a file in the Explorer panel and select "Open Sphinx Preview" or "Open Sphinx Preview (External)":
+
+  .. image:: /_images/preview_explorer_menu.png
+     :alt: HTML preview explorer menu
+     :align: center
+     :height: 200px
+
+Selecting *External* will open the preview in your default browser,
+otherwise it will open in a new tab in the editor.
+
+.. note::
+
+  This extension uses `Live Preview <https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server>`__ to provide the preview.
+  See this extension for more configuration options.
+
+  For example, you may want to increase the ``livePreview.previewDebounceDelay``,
+  if working on a remote filesystem.
 
 :file:`conf.py` files
 .....................
@@ -17,7 +95,7 @@ Configuration variables
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 For autocompletion of configuration values,
-start typing at the start of a line and they should show automatically, or press `Ctrl+Space`.
+start typing at the start of a line and they should show automatically, or press ``Ctrl+Space``.
 
 .. image:: /_images/conf_completion.png
    :alt: conf.py completions
@@ -50,38 +128,3 @@ For a description of a directive, hover over the directive name.
 .. image:: /_images/rst_directive_hover.png
    :alt: Directive hover
    :align: center
-
-
-HTML Preview
-............
-
-To open a preview of the HTML output for a source file (``rst`` or ``md``),
-you can either:
-
-- Click on the editor title icon:
-
-  .. image:: /_images/preview_editor_icon.png
-     :alt: HTML preview editor icon
-     :align: center
-
-- Right-click in the editor and select "Open Sphinx Preview" or "Open Sphinx Preview (External)":
-
-  .. image:: /_images/preview_editor_menu.png
-     :alt: HTML preview context menu
-     :align: center
-     :height: 150px
-
-- Right-click on a file in the Explorer and select "Open Sphinx Preview" or "Open Sphinx Preview (External)":
-
-  .. image:: /_images/preview_explorer_menu.png
-     :alt: HTML preview explorer menu
-     :align: center
-     :height: 200px
-
-Selecting *External* will open the preview in your default browser,
-otherwise it will open in a new tab in the editor.
-
-.. note::
-
-  This extension uses `Live Preview <https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server>`__ to provide the preview.
-  See this extension for more configuration options.

@@ -29,3 +29,80 @@ For example, given the following directory structure::
 
 The configuration for :file:`doc1.rst` will be read from :file:`project/docs1/sphinx.toml`,
 whereas for :file:`doc2.rst` it will be read from :file:`project/sphinx.toml`.
+
+Top-level configuration
+-----------------------
+
+:srcdir: The path to the source directory,
+         relative to the config file.
+         The default is ``"."``.
+
+:builds: A table of build configurations.
+         The default is a single build configuration named ``default``.
+
+Build configuration
+-------------------
+
+:outdir: The path to the output directory,
+         relative to the config file.
+         The default is ``"_build"``.
+
+:confdir: The path to the configuration directory,
+          relative to the config file.
+
+:doctreedir: The path to the doctree directory,
+             relative to the config file.
+
+:command: The command to run to build the project.
+          The command can contain placeholders withing double curly braces,
+          e.g. ``"sphinx-build {{srcdir}} {{outdir}}"``.
+
+          The following placeholders are supported:
+
+          :srcdir: The absolute path to the source directory.
+          :confdir: The absolute path to the configuration directory (empty if not set).
+          :doctreedir: The absolute path to the doctree directory (empty if not set).
+          :outdir: The absolute path to the output directory.
+          :file: The absolute path to a specific file to rebuild (empty if not set).
+
+Special build names
+~~~~~~~~~~~~~~~~~~~
+
+The build name ``default`` is used as the default build configuration.
+
+If present, the build name ``index`` is used for the build configuration by the language server, to find the index database (see :ref:`how-it-works`).
+
+If present, the build name ``preview`` is used for the build configuration by the HTML previewer, to find the HTML files.
+
+For example, the following configuration specifies different output directories for the server and preview builds:
+
+.. tab-set::
+
+  .. tab-item:: :file:`sphinx.toml`
+
+    .. code-block:: toml
+
+        srcdir = "source"
+
+        [builds.index]
+        outdir = "_build/index"
+        command = "sphinx-build -b dummy {{srcdir}} {{outdir}}"
+
+        [builds.preview]
+        outdir = "_build/preview"
+        command = "sphinx-build -b html {{srcdir}} {{outdir}}"
+
+  .. tab-item:: :file:`pyproject.toml`
+
+    .. code-block:: toml
+
+        [tool.sphinx]
+        srcdir = "source"
+
+        [tool.sphinx.builds.index]
+        outdir = "_build/index"
+        command = "sphinx-build -b dummy {{srcdir}} {{outdir}}"
+
+        [tool.sphinx.builds.preview]
+        outdir = "_build/preview"
+        command = "sphinx-build -b html {{srcdir}} {{outdir}}"

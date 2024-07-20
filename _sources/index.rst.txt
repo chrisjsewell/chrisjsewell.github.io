@@ -9,6 +9,13 @@ Principally, it provides:
 - a :ref:`language server <sphinx_lsp>` to provide code intelligence for Sphinx projects, and
 - a :ref:`VS Code extension <vscode_extension>` to run the language server.
 
+See :ref:`Extension features <vscode_extension-features>` for more information on the features provided by the VS Code extension, which include:
+
+- multi-project support,
+- running Sphinx builds,
+- opening HTML previews,
+- outlines, auto-completions and hover information, ...
+
 .. _quickstart:
 
 Quick Start
@@ -35,29 +42,30 @@ Quick Start
 
         .. code-block:: toml
 
-            srcdir = "."           # or the relative path to your source folder
-            lsp.outdir = "_build"  # or the relative path to your build folder
+            srcdir = "."       # or the relative path to your source folder
+
+            [builds.default]
+            outdir = "_build"  # or the relative path to your build folder
+            command = "sphinx-build {{srcdir}} {{outdir}}"
 
       .. tab-item:: :file:`pyproject.toml`
 
         .. code-block:: toml
 
             [tool.sphinx]
-            srcdir = "."           # or the relative path to your source folder
-            lsp.outdir = "_build"  # or the relative path to your build folder
+            srcdir = "."       # or the relative path to your source folder
+
+            [tool.sphinx.builds.default]
+            outdir = "_build"  # or the relative path to your build folder
+            command = "sphinx-build {{srcdir}} {{outdir}}"
 
 #. Open your project in VS Code and install the :ref:`Sphinx Language Support <vscode_extension>` extension.
 
 #. Try out the features defined in the :ref:`Extension features <vscode_extension-features>`.
 
-.. tip::
-
-    The language server does currently handle re-running the Sphinx build when the source files change.
-
-    For this you may want to check out `sphinx-autobuild <https://github.com/sphinx-doc/sphinx-autobuild>`_.
-
 .. seealso::
 
+  - The :ref:`configuration guide <configuration>`
   - :ref:`how-it-works` for an overview of the system architecture.
   - :ref:`troubleshooting` for troubleshooting and debugging tips.
   - :ref:`development` for how to develop the tools.
@@ -80,6 +88,7 @@ Site Map
     :caption: Components
     :maxdepth: 1
     :glob:
+    :reversed:
 
     components/*
 

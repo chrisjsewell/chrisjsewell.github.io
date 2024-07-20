@@ -13,10 +13,10 @@ for path in Path(__file__).parent.iterdir():
         path.unlink()
 
 
-source = "../sphinx-lsp/docs/_build"
+source = "../sphinx-lsp/docs/_build/html"
 
 for path in Path(source).iterdir():
-    if path.name in exclude:
+    if path.name in exclude or path.name.startswith('sphinx-index-v'):
         continue
     if path.is_dir():
         shutil.copytree(path, Path(__file__).parent / path.name)
